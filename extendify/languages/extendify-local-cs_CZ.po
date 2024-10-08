@@ -514,376 +514,376 @@ msgstr "Zobrazit web"
 msgid "Skip to Assist"
 msgstr "Přeskočit na asistenci"
 
-#: public/build/extendify-draft-3378b7906748ec0719bb.js:1
+#: public/build/extendify-draft-067919778b1271992eb0.js:1
 msgid "A paragraph …"
 msgstr "Odstavec …"
 
-#: public/build/extendify-draft-3378b7906748ec0719bb.js:1
+#: public/build/extendify-draft-067919778b1271992eb0.js:1
 msgid "Write a paragraph about"
 msgstr "Napište odstavec o"
 
-#: public/build/extendify-draft-3378b7906748ec0719bb.js:1
+#: public/build/extendify-draft-067919778b1271992eb0.js:1
 msgid "Blog post …"
 msgstr "Příspěvek na blogu …"
 
-#: public/build/extendify-draft-3378b7906748ec0719bb.js:1
+#: public/build/extendify-draft-067919778b1271992eb0.js:1
 msgid "Write a blog post about"
 msgstr "Napište blogový příspěvek na téma"
 
-#: public/build/extendify-draft-3378b7906748ec0719bb.js:1
+#: public/build/extendify-draft-067919778b1271992eb0.js:1
 msgid "An informative article …"
 msgstr "Informativní článek …"
 
-#: public/build/extendify-draft-3378b7906748ec0719bb.js:1
+#: public/build/extendify-draft-067919778b1271992eb0.js:1
 msgid "Write an informative article about"
 msgstr "Napište informativní článek o"
 
-#: public/build/extendify-draft-3378b7906748ec0719bb.js:1
+#: public/build/extendify-draft-067919778b1271992eb0.js:1
 msgid "Headline …"
 msgstr "Nadpis …"
 
-#: public/build/extendify-draft-3378b7906748ec0719bb.js:1
+#: public/build/extendify-draft-067919778b1271992eb0.js:1
 msgid "Write a headline for"
 msgstr "Napište titulek pro"
 
-#: public/build/extendify-draft-3378b7906748ec0719bb.js:1
+#: public/build/extendify-draft-067919778b1271992eb0.js:1
 msgid "List …"
 msgstr "Seznam …"
 
-#: public/build/extendify-draft-3378b7906748ec0719bb.js:1
+#: public/build/extendify-draft-067919778b1271992eb0.js:1
 msgid "Write a list of"
 msgstr "Napište seznam"
 
 #: public/build/extendify-assist-page-ef4d3be2b2a7c3c8f48b.js:7
-#: public/build/extendify-draft-3378b7906748ec0719bb.js:1
-#: public/build/extendify-draft-3378b7906748ec0719bb.js:7
+#: public/build/extendify-draft-067919778b1271992eb0.js:1
+#: public/build/extendify-draft-067919778b1271992eb0.js:7
 msgid "Improve writing"
 msgstr "Vylepšete psaní"
 
-#: public/build/extendify-draft-3378b7906748ec0719bb.js:1
-#: public/build/extendify-draft-3378b7906748ec0719bb.js:7
+#: public/build/extendify-draft-067919778b1271992eb0.js:1
+#: public/build/extendify-draft-067919778b1271992eb0.js:7
 msgid "Fix spelling & grammar"
 msgstr "Opravit pravopis a gramatiku"
 
 #: public/build/extendify-assist-page-ef4d3be2b2a7c3c8f48b.js:7
-#: public/build/extendify-draft-3378b7906748ec0719bb.js:1
-#: public/build/extendify-draft-3378b7906748ec0719bb.js:7
+#: public/build/extendify-draft-067919778b1271992eb0.js:1
+#: public/build/extendify-draft-067919778b1271992eb0.js:7
 msgid "Simplify language"
 msgstr "Zjednodušit jazyk"
 
 #: public/build/extendify-assist-page-ef4d3be2b2a7c3c8f48b.js:7
-#: public/build/extendify-draft-3378b7906748ec0719bb.js:1
-#: public/build/extendify-draft-3378b7906748ec0719bb.js:7
+#: public/build/extendify-draft-067919778b1271992eb0.js:1
+#: public/build/extendify-draft-067919778b1271992eb0.js:7
 msgid "Make shorter"
 msgstr "Zkrátit"
 
 #: public/build/extendify-assist-page-ef4d3be2b2a7c3c8f48b.js:7
-#: public/build/extendify-draft-3378b7906748ec0719bb.js:1
-#: public/build/extendify-draft-3378b7906748ec0719bb.js:7
+#: public/build/extendify-draft-067919778b1271992eb0.js:1
+#: public/build/extendify-draft-067919778b1271992eb0.js:7
 msgid "Make longer"
 msgstr "Prodloužit"
 
-#: public/build/extendify-draft-3378b7906748ec0719bb.js:1
+#: public/build/extendify-draft-067919778b1271992eb0.js:1
 msgid "AI is writing..."
 msgstr "AI píše..."
 
 #: public/build/extendify-assist-page-ef4d3be2b2a7c3c8f48b.js:7
-#: public/build/extendify-draft-3378b7906748ec0719bb.js:1
+#: public/build/extendify-draft-067919778b1271992eb0.js:1
 msgid "Ask AI to edit"
 msgstr "Požádat AI o úpravu"
 
-#: public/build/extendify-draft-3378b7906748ec0719bb.js:1
+#: public/build/extendify-draft-067919778b1271992eb0.js:1
 msgid "Ask AI to generate text"
 msgstr "Požádejte AI o vygenerování textu"
 
-#: public/build/extendify-draft-3378b7906748ec0719bb.js:1
+#: public/build/extendify-draft-067919778b1271992eb0.js:1
 msgid "Submit"
 msgstr "Potvrdit"
 
-#: public/build/extendify-draft-3378b7906748ec0719bb.js:1
+#: public/build/extendify-draft-067919778b1271992eb0.js:1
 msgid "Replace selected block text"
 msgstr "Nahradit text vybraného bloku"
 
-#: public/build/extendify-draft-3378b7906748ec0719bb.js:1
+#: public/build/extendify-draft-067919778b1271992eb0.js:1
 msgid "Insert at top"
 msgstr "Vložit na začátek"
 
-#: public/build/extendify-draft-3378b7906748ec0719bb.js:1
+#: public/build/extendify-draft-067919778b1271992eb0.js:1
 msgid "Insert after the selected text"
 msgstr "Vložit za vybraný text"
 
-#: public/build/extendify-draft-3378b7906748ec0719bb.js:1
+#: public/build/extendify-draft-067919778b1271992eb0.js:1
 msgid "Insert at bottom"
 msgstr "Vložit na konec"
 
-#: public/build/extendify-draft-3378b7906748ec0719bb.js:1
+#: public/build/extendify-draft-067919778b1271992eb0.js:1
 msgid "Try again"
 msgstr "Zkusit znovu"
 
-#: public/build/extendify-draft-3378b7906748ec0719bb.js:1
+#: public/build/extendify-draft-067919778b1271992eb0.js:1
 msgid "Discard"
 msgstr "Zrušit"
 
 #: public/build/extendify-assist-page-ef4d3be2b2a7c3c8f48b.js:7
-#: public/build/extendify-draft-3378b7906748ec0719bb.js:1
+#: public/build/extendify-draft-067919778b1271992eb0.js:1
 msgid "Remove selection"
 msgstr "Odstranit výběr"
 
 #. translators: %1$s is the number of used credits, %2$s is the total credits
-#: public/build/extendify-draft-3378b7906748ec0719bb.js:3
-#: public/build/extendify-draft-3378b7906748ec0719bb.js:5
+#: public/build/extendify-draft-067919778b1271992eb0.js:3
+#: public/build/extendify-draft-067919778b1271992eb0.js:5
 msgid "%1$s of %2$s daily image credits used"
 msgstr "Využito %1$s z %2$s denních kreditů na obrázky"
 
-#: public/build/extendify-draft-3378b7906748ec0719bb.js:5
+#: public/build/extendify-draft-067919778b1271992eb0.js:5
 msgid "You can still explore and find great images on Unsplash until your credits reset."
 msgstr "Stále můžete hledat skvělé obrázky na Unsplash, dokud se vaše kredity neobnoví."
 
-#: public/build/extendify-draft-3378b7906748ec0719bb.js:5
+#: public/build/extendify-draft-067919778b1271992eb0.js:5
 msgid "Search on Unsplash"
 msgstr "Hledat na Unsplash"
 
-#: public/build/extendify-draft-3378b7906748ec0719bb.js:5
+#: public/build/extendify-draft-067919778b1271992eb0.js:5
 msgid "Tell AI about the image you would like to create"
 msgstr "Popište umělé inteligenci obrázek, který byste chtěli vytvořit"
 
-#: public/build/extendify-draft-3378b7906748ec0719bb.js:5
+#: public/build/extendify-draft-067919778b1271992eb0.js:5
 msgid "Image Prompt"
 msgstr "Prompt k obrázku"
 
 #: public/build/extendify-assist-page-ef4d3be2b2a7c3c8f48b.js:7
-#: public/build/extendify-draft-3378b7906748ec0719bb.js:5
+#: public/build/extendify-draft-067919778b1271992eb0.js:5
 msgid "Aspect Ratio"
 msgstr "Poměr stran"
 
-#: public/build/extendify-draft-3378b7906748ec0719bb.js:5
+#: public/build/extendify-draft-067919778b1271992eb0.js:5
 msgid "Square: 1:1"
 msgstr "Čtverec: 1:1"
 
-#: public/build/extendify-draft-3378b7906748ec0719bb.js:5
+#: public/build/extendify-draft-067919778b1271992eb0.js:5
 msgid "Landscape: 4:3"
 msgstr "Na šířku: 4:3"
 
-#: public/build/extendify-draft-3378b7906748ec0719bb.js:5
+#: public/build/extendify-draft-067919778b1271992eb0.js:5
 msgid "Portrait: 3:4"
 msgstr "Na výšku: 3:4"
 
-#: public/build/extendify-draft-3378b7906748ec0719bb.js:5
+#: public/build/extendify-draft-067919778b1271992eb0.js:5
 msgid "Generating image..."
 msgstr "Generování obrázku..."
 
-#: public/build/extendify-draft-3378b7906748ec0719bb.js:5
+#: public/build/extendify-draft-067919778b1271992eb0.js:5
 msgid "Generate image"
 msgstr "Vygenerovat obrázek"
 
-#: public/build/extendify-draft-3378b7906748ec0719bb.js:5
+#: public/build/extendify-draft-067919778b1271992eb0.js:5
 msgid "Cancel"
 msgstr "Zrušit"
 
-#: public/build/extendify-draft-3378b7906748ec0719bb.js:5
+#: public/build/extendify-draft-067919778b1271992eb0.js:5
 msgid "Generating your image: "
 msgstr "Generování obrázku:"
 
 #. translators: "Importing image" means the image is being added to the WordPress post editor
-#: public/build/extendify-draft-3378b7906748ec0719bb.js:7
+#: public/build/extendify-draft-067919778b1271992eb0.js:7
 msgid "Importing image..."
 msgstr "Importování obrázku..."
 
-#: public/build/extendify-draft-3378b7906748ec0719bb.js:7
+#: public/build/extendify-draft-067919778b1271992eb0.js:7
 msgid "Use this image"
 msgstr "Použít tento obrázek"
 
-#: public/build/extendify-draft-3378b7906748ec0719bb.js:7
+#: public/build/extendify-draft-067919778b1271992eb0.js:7
 msgid "Delete image"
 msgstr "Smazat obrázek"
 
-#: public/build/extendify-draft-3378b7906748ec0719bb.js:7
+#: public/build/extendify-draft-067919778b1271992eb0.js:7
 msgid "AI Image"
 msgstr "AI obrázek"
 
-#: public/build/extendify-draft-3378b7906748ec0719bb.js:7
+#: public/build/extendify-draft-067919778b1271992eb0.js:7
 msgid "Go Back"
 msgstr "Vrátit se zpět"
 
 #: public/build/extendify-assist-page-ef4d3be2b2a7c3c8f48b.js:7
-#: public/build/extendify-draft-3378b7906748ec0719bb.js:7
+#: public/build/extendify-draft-067919778b1271992eb0.js:7
 msgid "AI Image Generator"
 msgstr "Generátor obrázků s AI"
 
-#: public/build/extendify-draft-3378b7906748ec0719bb.js:7
+#: public/build/extendify-draft-067919778b1271992eb0.js:7
 msgid "Image Description"
 msgstr "Popis obrázku"
 
-#: public/build/extendify-draft-3378b7906748ec0719bb.js:7
+#: public/build/extendify-draft-067919778b1271992eb0.js:7
 msgid "Your request was rejected as a result of our safety system. Your prompt may contain text that is not allowed by our safety system."
 msgstr "Váš požadavek byl zamítnut naším bezpečnostním systémem. Váš dotaz možná obsahuje text, který není naším bezpečnostním systémem povolen."
 
-#: public/build/extendify-draft-3378b7906748ec0719bb.js:7
+#: public/build/extendify-draft-067919778b1271992eb0.js:7
 msgid "Service temporarily unavailable"
 msgstr "Služba je dočasně nedostupná"
 
 #. translators: This string represents the title of an "Home" page on a website. Please translate it in a way that fits the standard phrasing for a "Home" page in the target language, considering the common usage in websites for that language.
 #: public/build/extendify-assist-page-ef4d3be2b2a7c3c8f48b.js:43
-#: public/build/extendify-draft-3378b7906748ec0719bb.js:7
+#: public/build/extendify-draft-067919778b1271992eb0.js:7
 #: public/build/extendify-launch-0f93b7d9e1127392117b.js:41
 msgid "Home"
 msgstr "Domů"
 
-#: public/build/extendify-draft-3378b7906748ec0719bb.js:7
+#: public/build/extendify-draft-067919778b1271992eb0.js:7
 msgid "Use AI to generate custom images based on your description."
 msgstr "Použijte AI k vytvoření obrázků na základě vašeho popisu."
 
-#: public/build/extendify-draft-3378b7906748ec0719bb.js:7
+#: public/build/extendify-draft-067919778b1271992eb0.js:7
 msgid "Add a prompt"
 msgstr "Přidat prompt"
 
-#: public/build/extendify-draft-3378b7906748ec0719bb.js:7
+#: public/build/extendify-draft-067919778b1271992eb0.js:7
 msgid "Discover Stock Photos"
 msgstr "Objevte fotobanky"
 
-#: public/build/extendify-draft-3378b7906748ec0719bb.js:7
+#: public/build/extendify-draft-067919778b1271992eb0.js:7
 msgid "Search and add free stock photos from Unsplash.com"
 msgstr "Vyhledejte a přidejte bezplatné fotky z Unsplash.com"
 
-#: public/build/extendify-draft-3378b7906748ec0719bb.js:7
+#: public/build/extendify-draft-067919778b1271992eb0.js:7
 msgid "Search Unsplash"
 msgstr "Vyhledat na Unsplash"
 
-#: public/build/extendify-draft-3378b7906748ec0719bb.js:7
+#: public/build/extendify-draft-067919778b1271992eb0.js:7
 msgid "No images found."
 msgstr "Nebyly nalezeny žádné obrázky."
 
-#: public/build/extendify-draft-3378b7906748ec0719bb.js:7
+#: public/build/extendify-draft-067919778b1271992eb0.js:7
 msgid "Unsplash"
 msgstr "Unsplash"
 
-#: public/build/extendify-draft-3378b7906748ec0719bb.js:7
+#: public/build/extendify-draft-067919778b1271992eb0.js:7
 msgid "Photos from Unsplash"
 msgstr "Fotografie z Unsplash"
 
-#: public/build/extendify-draft-3378b7906748ec0719bb.js:7
+#: public/build/extendify-draft-067919778b1271992eb0.js:7
 #: public/build/extendify-help-center-3d55e69f476b931bf98d.js:1
 msgid "Terms of Use"
 msgstr "Podmínky použití"
 
-#: public/build/extendify-draft-3378b7906748ec0719bb.js:7
+#: public/build/extendify-draft-067919778b1271992eb0.js:7
 #: public/build/extendify-help-center-3d55e69f476b931bf98d.js:1
 msgid "Accept"
 msgstr "Přijmout"
 
-#: public/build/extendify-draft-3378b7906748ec0719bb.js:7
+#: public/build/extendify-draft-067919778b1271992eb0.js:7
 msgid "Suggested prompts"
 msgstr "Doporučené prompty"
 
-#: public/build/extendify-draft-3378b7906748ec0719bb.js:7
+#: public/build/extendify-draft-067919778b1271992eb0.js:7
 msgid "Get Personalized Image"
 msgstr "Získat personalizovaný obrázek"
 
-#: public/build/extendify-draft-3378b7906748ec0719bb.js:7
+#: public/build/extendify-draft-067919778b1271992eb0.js:7
 msgid "Catalan"
 msgstr "Katalánština"
 
-#: public/build/extendify-draft-3378b7906748ec0719bb.js:7
+#: public/build/extendify-draft-067919778b1271992eb0.js:7
 msgid "Danish"
 msgstr "Dánština"
 
-#: public/build/extendify-draft-3378b7906748ec0719bb.js:7
+#: public/build/extendify-draft-067919778b1271992eb0.js:7
 msgid "Dutch"
 msgstr "Nizozemština"
 
-#: public/build/extendify-draft-3378b7906748ec0719bb.js:7
+#: public/build/extendify-draft-067919778b1271992eb0.js:7
 msgid "Dutch (Belgium)"
 msgstr "Holandština (Belgie)"
 
-#: public/build/extendify-draft-3378b7906748ec0719bb.js:7
+#: public/build/extendify-draft-067919778b1271992eb0.js:7
 msgid "English"
 msgstr "Angličtina"
 
-#: public/build/extendify-draft-3378b7906748ec0719bb.js:7
+#: public/build/extendify-draft-067919778b1271992eb0.js:7
 msgid "Estonian"
 msgstr "Estonština"
 
-#: public/build/extendify-draft-3378b7906748ec0719bb.js:7
+#: public/build/extendify-draft-067919778b1271992eb0.js:7
 msgid "Finnish"
 msgstr "Finština"
 
-#: public/build/extendify-draft-3378b7906748ec0719bb.js:7
+#: public/build/extendify-draft-067919778b1271992eb0.js:7
 msgid "French (Belgium)"
 msgstr "Francouzština (Belgie)"
 
-#: public/build/extendify-draft-3378b7906748ec0719bb.js:7
+#: public/build/extendify-draft-067919778b1271992eb0.js:7
 msgid "French (France)"
 msgstr "Francouzština (Francie)"
 
-#: public/build/extendify-draft-3378b7906748ec0719bb.js:7
+#: public/build/extendify-draft-067919778b1271992eb0.js:7
 msgid "German"
 msgstr "Němčina"
 
-#: public/build/extendify-draft-3378b7906748ec0719bb.js:7
+#: public/build/extendify-draft-067919778b1271992eb0.js:7
 msgid "German (Switzerland)"
 msgstr "Němčina (Švýcarsko)"
 
-#: public/build/extendify-draft-3378b7906748ec0719bb.js:7
+#: public/build/extendify-draft-067919778b1271992eb0.js:7
 msgid "Indonesian"
 msgstr "Indonéština"
 
-#: public/build/extendify-draft-3378b7906748ec0719bb.js:7
+#: public/build/extendify-draft-067919778b1271992eb0.js:7
 msgid "Italian"
 msgstr "Italština"
 
-#: public/build/extendify-draft-3378b7906748ec0719bb.js:7
+#: public/build/extendify-draft-067919778b1271992eb0.js:7
 msgid "Japanese"
 msgstr "Japonština"
 
-#: public/build/extendify-draft-3378b7906748ec0719bb.js:7
+#: public/build/extendify-draft-067919778b1271992eb0.js:7
 msgid "Polish"
 msgstr "Polština"
 
-#: public/build/extendify-draft-3378b7906748ec0719bb.js:7
+#: public/build/extendify-draft-067919778b1271992eb0.js:7
 msgid "Portuguese (Brazil)"
 msgstr "Portugalština (Brazílie)"
 
-#: public/build/extendify-draft-3378b7906748ec0719bb.js:7
+#: public/build/extendify-draft-067919778b1271992eb0.js:7
 msgid "Portuguese (Portugal)"
 msgstr "Portugalština (Portugalsko)"
 
-#: public/build/extendify-draft-3378b7906748ec0719bb.js:7
+#: public/build/extendify-draft-067919778b1271992eb0.js:7
 msgid "Spanish (Spain)"
 msgstr "Španělština (Španělsko)"
 
-#: public/build/extendify-draft-3378b7906748ec0719bb.js:7
+#: public/build/extendify-draft-067919778b1271992eb0.js:7
 msgid "Swedish"
 msgstr "Švédština"
 
-#: public/build/extendify-draft-3378b7906748ec0719bb.js:7
+#: public/build/extendify-draft-067919778b1271992eb0.js:7
 msgid "Ukrainian"
 msgstr "Ukrajinština"
 
-#: public/build/extendify-draft-3378b7906748ec0719bb.js:7
+#: public/build/extendify-draft-067919778b1271992eb0.js:7
 msgid "Vietnamese"
 msgstr "Vietnamština"
 
 #: public/build/extendify-assist-page-ef4d3be2b2a7c3c8f48b.js:7
-#: public/build/extendify-draft-3378b7906748ec0719bb.js:7
+#: public/build/extendify-draft-067919778b1271992eb0.js:7
 msgid "Translate"
 msgstr "Přeložit"
 
-#: public/build/extendify-draft-3378b7906748ec0719bb.js:7
+#: public/build/extendify-draft-067919778b1271992eb0.js:7
 msgid "Translate to..."
 msgstr "Přeložit do..."
 
 #: public/build/extendify-assist-page-ef4d3be2b2a7c3c8f48b.js:7
-#: public/build/extendify-draft-3378b7906748ec0719bb.js:7
+#: public/build/extendify-draft-067919778b1271992eb0.js:7
 #: public/build/extendify-help-center-3d55e69f476b931bf98d.js:1
 msgid "Ask AI"
 msgstr "Zeptejte se AI"
 
-#: public/build/extendify-draft-3378b7906748ec0719bb.js:7
+#: public/build/extendify-draft-067919778b1271992eb0.js:7
 msgid "Custom prompt"
 msgstr "Vlastní prompt"
 
 #: public/build/extendify-assist-page-ef4d3be2b2a7c3c8f48b.js:7
-#: public/build/extendify-draft-3378b7906748ec0719bb.js:7
+#: public/build/extendify-draft-067919778b1271992eb0.js:7
 msgid "AI Tools"
 msgstr "AI nástroje"
 
@@ -2059,35 +2059,35 @@ msgstr "Nastavit rezervace"
 msgid "Start getting bookings from your website by configuring the SimplyBook.me plugin."
 msgstr "Začněte přijímat rezervace na svém webu konfigurací pluginu SimplyBook.me."
 
-#: public/build/extendify-draft-3378b7906748ec0719bb.js:7
+#: public/build/extendify-draft-067919778b1271992eb0.js:7
 msgid "Bulgarian"
 msgstr "Bulharština"
 
-#: public/build/extendify-draft-3378b7906748ec0719bb.js:7
+#: public/build/extendify-draft-067919778b1271992eb0.js:7
 msgid "Czech"
 msgstr "Čeština"
 
-#: public/build/extendify-draft-3378b7906748ec0719bb.js:7
+#: public/build/extendify-draft-067919778b1271992eb0.js:7
 msgid "French (Canada)"
 msgstr "Francouzština (Kanada)"
 
-#: public/build/extendify-draft-3378b7906748ec0719bb.js:7
+#: public/build/extendify-draft-067919778b1271992eb0.js:7
 msgid "Hungarian"
 msgstr "Maďarština"
 
-#: public/build/extendify-draft-3378b7906748ec0719bb.js:7
+#: public/build/extendify-draft-067919778b1271992eb0.js:7
 msgid "Norwegian"
 msgstr "Norština"
 
-#: public/build/extendify-draft-3378b7906748ec0719bb.js:7
+#: public/build/extendify-draft-067919778b1271992eb0.js:7
 msgid "Russian"
 msgstr "Ruština"
 
-#: public/build/extendify-draft-3378b7906748ec0719bb.js:7
+#: public/build/extendify-draft-067919778b1271992eb0.js:7
 msgid "Slovak"
 msgstr "Slovenčina"
 
-#: public/build/extendify-draft-3378b7906748ec0719bb.js:7
+#: public/build/extendify-draft-067919778b1271992eb0.js:7
 msgid "Turkish"
 msgstr "turečtina"
 
@@ -2446,6 +2446,6 @@ msgstr "Vychutnejte si klasickou francouzskou bistro kuchyni s kalifornským ná
 msgid "Find your dream home or make profitable investments with Pinnacle Properties, Austin's premier real estate agency. Trust our experienced agents for personalized services."
 msgstr "Najděte svůj vysněný domov nebo získejte výhodné investice s Pinnacle Properties, přední realitní kanceláří v Austinu. Důvěřujte našim zkušeným agentům pro osobní služby."
 
-#: public/build/extendify-draft-3378b7906748ec0719bb.js:7
+#: public/build/extendify-draft-067919778b1271992eb0.js:7
 msgid "Greek"
-msgstr ""
+msgstr "Řečtina"

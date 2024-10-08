@@ -56,7 +56,7 @@ export const Unsplash = () => {
 
 	useEffect(() => {
 		if (!search) return setSearchDebounced('');
-		const id = setTimeout(() => setSearchDebounced(search), 300);
+		const id = setTimeout(() => setSearchDebounced(search), 750);
 		return () => clearTimeout(id);
 	}, [search]);
 

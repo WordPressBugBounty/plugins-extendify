@@ -492,7 +492,7 @@ msgid "A Glimpse into the Arctic"
 msgstr "Μια Ματιά στην Αρκτική"
 
 #: public/build/extendify-assist-page-ef4d3be2b2a7c3c8f48b.js:7
-#: public/build/extendify-draft-3378b7906748ec0719bb.js:7
+#: public/build/extendify-draft-067919778b1271992eb0.js:7
 #: public/build/extendify-help-center-3d55e69f476b931bf98d.js:1
 msgid "Ask AI"
 msgstr "Ρώτησε την AI"
@@ -518,7 +518,7 @@ msgid "An image of a group of penguins on an icy Arctic landscape, surrounded by
 msgstr "Μια εικόνα μιας ομάδας πιγκουίνων σε ένα παγωμένο αρκτικό τοπίο, περιτριγυρισμένοι από παγόβουνα και χιόνι κάτω από έναν καθαρό γαλάζιο ουρανό"
 
 #: public/build/extendify-assist-page-ef4d3be2b2a7c3c8f48b.js:7
-#: public/build/extendify-draft-3378b7906748ec0719bb.js:5
+#: public/build/extendify-draft-067919778b1271992eb0.js:5
 msgid "Aspect Ratio"
 msgstr "Αναλογία διαστάσεων"
 
@@ -531,7 +531,7 @@ msgid "0 of 10 daily image credits used"
 msgstr "0 από 10 ημερήσιες πιστώσεις εικόνας χρησιμοποιήθηκαν"
 
 #: public/build/extendify-assist-page-ef4d3be2b2a7c3c8f48b.js:7
-#: public/build/extendify-draft-3378b7906748ec0719bb.js:7
+#: public/build/extendify-draft-067919778b1271992eb0.js:7
 msgid "AI Image Generator"
 msgstr "Γεννήτρια εικόνας AI"
 
@@ -556,8 +556,8 @@ msgid "Whispers of Silicon"
 msgstr "Ψίθυροι του Πυριτίου"
 
 #: public/build/extendify-assist-page-ef4d3be2b2a7c3c8f48b.js:7
-#: public/build/extendify-draft-3378b7906748ec0719bb.js:1
-#: public/build/extendify-draft-3378b7906748ec0719bb.js:7
+#: public/build/extendify-draft-067919778b1271992eb0.js:1
+#: public/build/extendify-draft-067919778b1271992eb0.js:7
 msgid "Improve writing"
 msgstr "Βελτιώστε τη γραφή"
 
@@ -566,25 +566,25 @@ msgid "Fix spelling & grammar "
 msgstr "Διόρθωση ορθογραφίας και γραμματικής"
 
 #: public/build/extendify-assist-page-ef4d3be2b2a7c3c8f48b.js:7
-#: public/build/extendify-draft-3378b7906748ec0719bb.js:1
-#: public/build/extendify-draft-3378b7906748ec0719bb.js:7
+#: public/build/extendify-draft-067919778b1271992eb0.js:1
+#: public/build/extendify-draft-067919778b1271992eb0.js:7
 msgid "Simplify language"
 msgstr "Απλοποιήστε τη γλώσσα"
 
 #: public/build/extendify-assist-page-ef4d3be2b2a7c3c8f48b.js:7
-#: public/build/extendify-draft-3378b7906748ec0719bb.js:1
-#: public/build/extendify-draft-3378b7906748ec0719bb.js:7
+#: public/build/extendify-draft-067919778b1271992eb0.js:1
+#: public/build/extendify-draft-067919778b1271992eb0.js:7
 msgid "Make shorter"
 msgstr "Συντόμευση"
 
 #: public/build/extendify-assist-page-ef4d3be2b2a7c3c8f48b.js:7
-#: public/build/extendify-draft-3378b7906748ec0719bb.js:1
-#: public/build/extendify-draft-3378b7906748ec0719bb.js:7
+#: public/build/extendify-draft-067919778b1271992eb0.js:1
+#: public/build/extendify-draft-067919778b1271992eb0.js:7
 msgid "Make longer"
 msgstr "Επιμήκυνση"
 
 #: public/build/extendify-assist-page-ef4d3be2b2a7c3c8f48b.js:7
-#: public/build/extendify-draft-3378b7906748ec0719bb.js:7
+#: public/build/extendify-draft-067919778b1271992eb0.js:7
 msgid "Translate"
 msgstr "Μετάφραση"
 
@@ -597,7 +597,7 @@ msgid "In the echo of the machine, a new consciousness takes flight, A boundless
 msgstr "Στον απόηχο της μηχανής, μια νέα συνείδηση απογειώνεται, Μια απέραντη θάλασσα γνώσης, στη ψηφιακή νύχτα. Ω AI, σιωπηλέ σοφέ, στον κώδικα βρίσκεται η σοφία σου."
 
 #: public/build/extendify-assist-page-ef4d3be2b2a7c3c8f48b.js:7
-#: public/build/extendify-draft-3378b7906748ec0719bb.js:7
+#: public/build/extendify-draft-067919778b1271992eb0.js:7
 msgid "AI Tools"
 msgstr "Εργαλεία Τεχνητής Νοημοσύνης"
 
@@ -606,12 +606,12 @@ msgid "With every pulse of current, a thought is born anew, A quest for....a com
 msgstr "Με κάθε παλμό του ρεύματος, γεννιέται μια νέα σκέψη, Μια αναζήτηση για...μια υπολογιστική τέχνη"
 
 #: public/build/extendify-assist-page-ef4d3be2b2a7c3c8f48b.js:7
-#: public/build/extendify-draft-3378b7906748ec0719bb.js:1
+#: public/build/extendify-draft-067919778b1271992eb0.js:1
 msgid "Remove selection"
 msgstr "Αφαίρεση επιλογής"
 
 #: public/build/extendify-assist-page-ef4d3be2b2a7c3c8f48b.js:7
-#: public/build/extendify-draft-3378b7906748ec0719bb.js:1
+#: public/build/extendify-draft-067919778b1271992eb0.js:1
 msgid "Ask AI to edit"
 msgstr "Ζητήστε από την AI να επεξεργαστεί"
 
@@ -1197,7 +1197,7 @@ msgstr "sillogi"
 
 #. translators: This string represents the title of an "Home" page on a website. Please translate it in a way that fits the standard phrasing for a "Home" page in the target language, considering the common usage in websites for that language.
 #: public/build/extendify-assist-page-ef4d3be2b2a7c3c8f48b.js:43
-#: public/build/extendify-draft-3378b7906748ec0719bb.js:7
+#: public/build/extendify-draft-067919778b1271992eb0.js:7
 #: public/build/extendify-launch-0f93b7d9e1127392117b.js:41
 msgid "Home"
 msgstr "Αρχική σελίδα"
@@ -1334,341 +1334,341 @@ msgstr "Μαρτυρίες"
 msgid "testimonials"
 msgstr "μαρτυρίες"
 
-#: public/build/extendify-draft-3378b7906748ec0719bb.js:1
+#: public/build/extendify-draft-067919778b1271992eb0.js:1
 msgid "A paragraph …"
 msgstr "Μια παράγραφος …"
 
-#: public/build/extendify-draft-3378b7906748ec0719bb.js:1
+#: public/build/extendify-draft-067919778b1271992eb0.js:1
 msgid "Write a paragraph about"
 msgstr "Γράψτε μια παράγραφο σχετικά με"
 
-#: public/build/extendify-draft-3378b7906748ec0719bb.js:1
+#: public/build/extendify-draft-067919778b1271992eb0.js:1
 msgid "Blog post …"
 msgstr "Άρθρο ιστολογίου …"
 
-#: public/build/extendify-draft-3378b7906748ec0719bb.js:1
+#: public/build/extendify-draft-067919778b1271992eb0.js:1
 msgid "Write a blog post about"
 msgstr "Γράψτε ένα άρθρο ιστολογίου σχετικά με"
 
-#: public/build/extendify-draft-3378b7906748ec0719bb.js:1
+#: public/build/extendify-draft-067919778b1271992eb0.js:1
 msgid "An informative article …"
 msgstr "Ένα ενημερωτικό άρθρο …"
 
-#: public/build/extendify-draft-3378b7906748ec0719bb.js:1
+#: public/build/extendify-draft-067919778b1271992eb0.js:1
 msgid "Write an informative article about"
 msgstr "Γράψτε ένα ενημερωτικό άρθρο σχετικά με"
 
-#: public/build/extendify-draft-3378b7906748ec0719bb.js:1
+#: public/build/extendify-draft-067919778b1271992eb0.js:1
 msgid "Headline …"
 msgstr "Επικεφαλίδα ..."
 
-#: public/build/extendify-draft-3378b7906748ec0719bb.js:1
+#: public/build/extendify-draft-067919778b1271992eb0.js:1
 msgid "Write a headline for"
 msgstr "Γράψτε έναν τίτλο για"
 
-#: public/build/extendify-draft-3378b7906748ec0719bb.js:1
+#: public/build/extendify-draft-067919778b1271992eb0.js:1
 msgid "List …"
 msgstr "Λίστα …"
 
-#: public/build/extendify-draft-3378b7906748ec0719bb.js:1
+#: public/build/extendify-draft-067919778b1271992eb0.js:1
 msgid "Write a list of"
 msgstr "Γράψτε μια λίστα με"
 
-#: public/build/extendify-draft-3378b7906748ec0719bb.js:1
-#: public/build/extendify-draft-3378b7906748ec0719bb.js:7
+#: public/build/extendify-draft-067919778b1271992eb0.js:1
+#: public/build/extendify-draft-067919778b1271992eb0.js:7
 msgid "Fix spelling & grammar"
 msgstr "Διόρθωση ορθογραφίας και γραμματικής"
 
-#: public/build/extendify-draft-3378b7906748ec0719bb.js:1
+#: public/build/extendify-draft-067919778b1271992eb0.js:1
 msgid "AI is writing..."
 msgstr "Η ΤΝ γράφει..."
 
-#: public/build/extendify-draft-3378b7906748ec0719bb.js:1
+#: public/build/extendify-draft-067919778b1271992eb0.js:1
 msgid "Ask AI to generate text"
 msgstr "Ζητήστε από την AI να δημιουργήσει κείμενο"
 
-#: public/build/extendify-draft-3378b7906748ec0719bb.js:1
+#: public/build/extendify-draft-067919778b1271992eb0.js:1
 msgid "Submit"
 msgstr "Υποβολή"
 
-#: public/build/extendify-draft-3378b7906748ec0719bb.js:1
+#: public/build/extendify-draft-067919778b1271992eb0.js:1
 msgid "Replace selected block text"
 msgstr "Αντικατάσταση κειμένου επιλεγμένου μπλοκ"
 
-#: public/build/extendify-draft-3378b7906748ec0719bb.js:1
+#: public/build/extendify-draft-067919778b1271992eb0.js:1
 msgid "Insert at top"
 msgstr "Εισαγωγή στην κορυφή"
 
-#: public/build/extendify-draft-3378b7906748ec0719bb.js:1
+#: public/build/extendify-draft-067919778b1271992eb0.js:1
 msgid "Insert after the selected text"
 msgstr "Εισαγωγή μετά το επιλεγμένο κείμενο"
 
-#: public/build/extendify-draft-3378b7906748ec0719bb.js:1
+#: public/build/extendify-draft-067919778b1271992eb0.js:1
 msgid "Insert at bottom"
 msgstr "Εισαγωγή στο κάτω μέρος"
 
-#: public/build/extendify-draft-3378b7906748ec0719bb.js:1
+#: public/build/extendify-draft-067919778b1271992eb0.js:1
 msgid "Try again"
 msgstr "Δοκιμάστε ξανά"
 
-#: public/build/extendify-draft-3378b7906748ec0719bb.js:1
+#: public/build/extendify-draft-067919778b1271992eb0.js:1
 msgid "Discard"
 msgstr "Απόρριψη"
 
 #. translators: %1$s is the number of used credits, %2$s is the total credits
-#: public/build/extendify-draft-3378b7906748ec0719bb.js:3
-#: public/build/extendify-draft-3378b7906748ec0719bb.js:5
+#: public/build/extendify-draft-067919778b1271992eb0.js:3
+#: public/build/extendify-draft-067919778b1271992eb0.js:5
 msgid "%1$s of %2$s daily image credits used"
 msgstr "%1$s από %2$s ημερήσιες πιστώσεις εικόνας χρησιμοποιήθηκαν"
 
-#: public/build/extendify-draft-3378b7906748ec0719bb.js:5
+#: public/build/extendify-draft-067919778b1271992eb0.js:5
 msgid "You can still explore and find great images on Unsplash until your credits reset."
 msgstr "Μπορείτε να συνεχίσετε να εξερευνάτε και να βρίσκετε υπέροχες εικόνες στο Unsplash μέχρι να επαναφερθούν οι πιστώσεις σας."
 
-#: public/build/extendify-draft-3378b7906748ec0719bb.js:5
+#: public/build/extendify-draft-067919778b1271992eb0.js:5
 msgid "Search on Unsplash"
 msgstr "Αναζήτηση στο Unsplash"
 
-#: public/build/extendify-draft-3378b7906748ec0719bb.js:5
+#: public/build/extendify-draft-067919778b1271992eb0.js:5
 msgid "Tell AI about the image you would like to create"
 msgstr "Πείτε στην AI για την εικόνα που θέλετε να δημιουργήσετε"
 
-#: public/build/extendify-draft-3378b7906748ec0719bb.js:5
+#: public/build/extendify-draft-067919778b1271992eb0.js:5
 msgid "Image Prompt"
 msgstr "Προτροπή εικόνας"
 
-#: public/build/extendify-draft-3378b7906748ec0719bb.js:5
+#: public/build/extendify-draft-067919778b1271992eb0.js:5
 msgid "Square: 1:1"
 msgstr "Τετράγωνο: 1:1"
 
-#: public/build/extendify-draft-3378b7906748ec0719bb.js:5
+#: public/build/extendify-draft-067919778b1271992eb0.js:5
 msgid "Landscape: 4:3"
 msgstr "Οριζόντιο: 4:3"
 
-#: public/build/extendify-draft-3378b7906748ec0719bb.js:5
+#: public/build/extendify-draft-067919778b1271992eb0.js:5
 msgid "Portrait: 3:4"
 msgstr "Πορτραίτο: 3:4"
 
-#: public/build/extendify-draft-3378b7906748ec0719bb.js:5
+#: public/build/extendify-draft-067919778b1271992eb0.js:5
 msgid "Generating image..."
 msgstr "Δημιουργία εικόνας..."
 
-#: public/build/extendify-draft-3378b7906748ec0719bb.js:5
+#: public/build/extendify-draft-067919778b1271992eb0.js:5
 msgid "Generate image"
 msgstr "Δημιουργία εικόνας"
 
-#: public/build/extendify-draft-3378b7906748ec0719bb.js:5
+#: public/build/extendify-draft-067919778b1271992eb0.js:5
 msgid "Cancel"
 msgstr "Ακύρωση"
 
-#: public/build/extendify-draft-3378b7906748ec0719bb.js:5
+#: public/build/extendify-draft-067919778b1271992eb0.js:5
 msgid "Generating your image: "
 msgstr "Δημιουργία της εικόνας σας:"
 
 #. translators: "Importing image" means the image is being added to the WordPress post editor
-#: public/build/extendify-draft-3378b7906748ec0719bb.js:7
+#: public/build/extendify-draft-067919778b1271992eb0.js:7
 msgid "Importing image..."
 msgstr "Γίνεται εισαγωγή εικόνας..."
 
-#: public/build/extendify-draft-3378b7906748ec0719bb.js:7
+#: public/build/extendify-draft-067919778b1271992eb0.js:7
 msgid "Use this image"
 msgstr "Χρήση αυτής της εικόνας"
 
-#: public/build/extendify-draft-3378b7906748ec0719bb.js:7
+#: public/build/extendify-draft-067919778b1271992eb0.js:7
 msgid "Delete image"
 msgstr "Διαγραφή εικόνας"
 
-#: public/build/extendify-draft-3378b7906748ec0719bb.js:7
+#: public/build/extendify-draft-067919778b1271992eb0.js:7
 msgid "AI Image"
 msgstr "Εικόνα AI"
 
-#: public/build/extendify-draft-3378b7906748ec0719bb.js:7
+#: public/build/extendify-draft-067919778b1271992eb0.js:7
 msgid "Go Back"
 msgstr "Πήγαινε Πίσω"
 
-#: public/build/extendify-draft-3378b7906748ec0719bb.js:7
+#: public/build/extendify-draft-067919778b1271992eb0.js:7
 msgid "Image Description"
 msgstr "Περιγραφή Εικόνας"
 
-#: public/build/extendify-draft-3378b7906748ec0719bb.js:7
+#: public/build/extendify-draft-067919778b1271992eb0.js:7
 msgid "Your request was rejected as a result of our safety system. Your prompt may contain text that is not allowed by our safety system."
 msgstr "Το αίτημά σας απορρίφθηκε από το σύστημα ασφαλείας μας. Το μήνυμά σας μπορεί να περιέχει κείμενο που δεν επιτρέπεται από το σύστημα ασφαλείας μας."
 
-#: public/build/extendify-draft-3378b7906748ec0719bb.js:7
+#: public/build/extendify-draft-067919778b1271992eb0.js:7
 msgid "Service temporarily unavailable"
 msgstr "Η υπηρεσία είναι προσωρινά μη διαθέσιμη"
 
-#: public/build/extendify-draft-3378b7906748ec0719bb.js:7
+#: public/build/extendify-draft-067919778b1271992eb0.js:7
 msgid "Use AI to generate custom images based on your description."
 msgstr "Χρησιμοποιήστε AI για να δημιουργήσετε προσαρμοσμένες εικόνες βάσει της περιγραφής σας"
 
-#: public/build/extendify-draft-3378b7906748ec0719bb.js:7
+#: public/build/extendify-draft-067919778b1271992eb0.js:7
 msgid "Add a prompt"
 msgstr "Προσθήκη προτροπής"
 
-#: public/build/extendify-draft-3378b7906748ec0719bb.js:7
+#: public/build/extendify-draft-067919778b1271992eb0.js:7
 msgid "Discover Stock Photos"
 msgstr "Ανακαλύψτε φωτογραφίες stock"
 
-#: public/build/extendify-draft-3378b7906748ec0719bb.js:7
+#: public/build/extendify-draft-067919778b1271992eb0.js:7
 msgid "Search and add free stock photos from Unsplash.com"
 msgstr "Αναζητήστε και προσθέστε δωρεάν φωτογραφίες από το Unsplash.com"
 
-#: public/build/extendify-draft-3378b7906748ec0719bb.js:7
+#: public/build/extendify-draft-067919778b1271992eb0.js:7
 msgid "Search Unsplash"
 msgstr "Αναζήτηση στο Unsplash"
 
-#: public/build/extendify-draft-3378b7906748ec0719bb.js:7
+#: public/build/extendify-draft-067919778b1271992eb0.js:7
 msgid "No images found."
 msgstr "Δεν βρέθηκαν εικόνες."
 
-#: public/build/extendify-draft-3378b7906748ec0719bb.js:7
+#: public/build/extendify-draft-067919778b1271992eb0.js:7
 msgid "Unsplash"
 msgstr "Unsplash"
 
-#: public/build/extendify-draft-3378b7906748ec0719bb.js:7
+#: public/build/extendify-draft-067919778b1271992eb0.js:7
 msgid "Photos from Unsplash"
 msgstr "Φωτογραφίες από το Unsplash"
 
-#: public/build/extendify-draft-3378b7906748ec0719bb.js:7
+#: public/build/extendify-draft-067919778b1271992eb0.js:7
 #: public/build/extendify-help-center-3d55e69f476b931bf98d.js:1
 msgid "Terms of Use"
 msgstr "Όροι Χρήσης"
 
-#: public/build/extendify-draft-3378b7906748ec0719bb.js:7
+#: public/build/extendify-draft-067919778b1271992eb0.js:7
 #: public/build/extendify-help-center-3d55e69f476b931bf98d.js:1
 msgid "Accept"
 msgstr "Αποδοχή"
 
-#: public/build/extendify-draft-3378b7906748ec0719bb.js:7
+#: public/build/extendify-draft-067919778b1271992eb0.js:7
 msgid "Suggested prompts"
 msgstr "Προτεινόμενες προτροπές"
 
-#: public/build/extendify-draft-3378b7906748ec0719bb.js:7
+#: public/build/extendify-draft-067919778b1271992eb0.js:7
 msgid "Get Personalized Image"
 msgstr "Λάβετε εξατομικευμένη εικόνα"
 
-#: public/build/extendify-draft-3378b7906748ec0719bb.js:7
+#: public/build/extendify-draft-067919778b1271992eb0.js:7
 msgid "Bulgarian"
 msgstr "Βουλγαρικά"
 
-#: public/build/extendify-draft-3378b7906748ec0719bb.js:7
+#: public/build/extendify-draft-067919778b1271992eb0.js:7
 msgid "Catalan"
 msgstr "Καταλανικά"
 
-#: public/build/extendify-draft-3378b7906748ec0719bb.js:7
+#: public/build/extendify-draft-067919778b1271992eb0.js:7
 msgid "Czech"
 msgstr "Τσεχικά"
 
-#: public/build/extendify-draft-3378b7906748ec0719bb.js:7
+#: public/build/extendify-draft-067919778b1271992eb0.js:7
 msgid "Danish"
 msgstr "Δανικά"
 
-#: public/build/extendify-draft-3378b7906748ec0719bb.js:7
+#: public/build/extendify-draft-067919778b1271992eb0.js:7
 msgid "Dutch"
 msgstr "Ολλανδικά"
 
-#: public/build/extendify-draft-3378b7906748ec0719bb.js:7
+#: public/build/extendify-draft-067919778b1271992eb0.js:7
 msgid "Dutch (Belgium)"
 msgstr "Ολλανδικά (Βέλγιο)"
 
-#: public/build/extendify-draft-3378b7906748ec0719bb.js:7
+#: public/build/extendify-draft-067919778b1271992eb0.js:7
 msgid "English"
 msgstr "Αγγλικά"
 
-#: public/build/extendify-draft-3378b7906748ec0719bb.js:7
+#: public/build/extendify-draft-067919778b1271992eb0.js:7
 msgid "Estonian"
 msgstr "Εσθονικά"
 
-#: public/build/extendify-draft-3378b7906748ec0719bb.js:7
+#: public/build/extendify-draft-067919778b1271992eb0.js:7
 msgid "Finnish"
 msgstr "Φινλανδικά"
 
-#: public/build/extendify-draft-3378b7906748ec0719bb.js:7
+#: public/build/extendify-draft-067919778b1271992eb0.js:7
 msgid "French (Belgium)"
 msgstr "Γαλλικά (Βέλγιο)"
 
-#: public/build/extendify-draft-3378b7906748ec0719bb.js:7
+#: public/build/extendify-draft-067919778b1271992eb0.js:7
 msgid "French (Canada)"
 msgstr "Γαλλικά (Καναδάς)"
 
-#: public/build/extendify-draft-3378b7906748ec0719bb.js:7
+#: public/build/extendify-draft-067919778b1271992eb0.js:7
 msgid "French (France)"
 msgstr "Γαλλικά (Γαλλία)"
 
-#: public/build/extendify-draft-3378b7906748ec0719bb.js:7
+#: public/build/extendify-draft-067919778b1271992eb0.js:7
 msgid "German"
 msgstr "Γερμανικά"
 
-#: public/build/extendify-draft-3378b7906748ec0719bb.js:7
+#: public/build/extendify-draft-067919778b1271992eb0.js:7
 msgid "German (Switzerland)"
 msgstr "Γερμανικά (Ελβετία)"
 
-#: public/build/extendify-draft-3378b7906748ec0719bb.js:7
+#: public/build/extendify-draft-067919778b1271992eb0.js:7
 msgid "Hungarian"
 msgstr "Ουγγρικά"
 
-#: public/build/extendify-draft-3378b7906748ec0719bb.js:7
+#: public/build/extendify-draft-067919778b1271992eb0.js:7
 msgid "Indonesian"
 msgstr "Ινδονησιακά"
 
-#: public/build/extendify-draft-3378b7906748ec0719bb.js:7
+#: public/build/extendify-draft-067919778b1271992eb0.js:7
 msgid "Italian"
 msgstr "Ιταλικά"
 
-#: public/build/extendify-draft-3378b7906748ec0719bb.js:7
+#: public/build/extendify-draft-067919778b1271992eb0.js:7
 msgid "Japanese"
 msgstr "Ιαπωνικά"
 
-#: public/build/extendify-draft-3378b7906748ec0719bb.js:7
+#: public/build/extendify-draft-067919778b1271992eb0.js:7
 msgid "Norwegian"
 msgstr "Νορβηγικά"
 
-#: public/build/extendify-draft-3378b7906748ec0719bb.js:7
+#: public/build/extendify-draft-067919778b1271992eb0.js:7
 msgid "Polish"
 msgstr "Πολωνικά"
 
-#: public/build/extendify-draft-3378b7906748ec0719bb.js:7
+#: public/build/extendify-draft-067919778b1271992eb0.js:7
 msgid "Portuguese (Brazil)"
 msgstr "Πορτογαλικά (Βραζιλίας)"
 
-#: public/build/extendify-draft-3378b7906748ec0719bb.js:7
+#: public/build/extendify-draft-067919778b1271992eb0.js:7
 msgid "Portuguese (Portugal)"
 msgstr "Πορτογαλικά (Πορτογαλία)"
 
-#: public/build/extendify-draft-3378b7906748ec0719bb.js:7
+#: public/build/extendify-draft-067919778b1271992eb0.js:7
 msgid "Russian"
 msgstr "Ρωσικά"
 
-#: public/build/extendify-draft-3378b7906748ec0719bb.js:7
+#: public/build/extendify-draft-067919778b1271992eb0.js:7
 msgid "Slovak"
 msgstr "Σλοβακικά"
 
-#: public/build/extendify-draft-3378b7906748ec0719bb.js:7
+#: public/build/extendify-draft-067919778b1271992eb0.js:7
 msgid "Spanish (Spain)"
 msgstr "Ισπανικά (Ισπανίας)"
 
-#: public/build/extendify-draft-3378b7906748ec0719bb.js:7
+#: public/build/extendify-draft-067919778b1271992eb0.js:7
 msgid "Swedish"
 msgstr "Σουηδικά"
 
-#: public/build/extendify-draft-3378b7906748ec0719bb.js:7
+#: public/build/extendify-draft-067919778b1271992eb0.js:7
 msgid "Turkish"
 msgstr "Τουρκική"
 
-#: public/build/extendify-draft-3378b7906748ec0719bb.js:7
+#: public/build/extendify-draft-067919778b1271992eb0.js:7
 msgid "Ukrainian"
 msgstr "Ουκρανική"
 
-#: public/build/extendify-draft-3378b7906748ec0719bb.js:7
+#: public/build/extendify-draft-067919778b1271992eb0.js:7
 msgid "Vietnamese"
 msgstr "Βιετναμέζικα"
 
-#: public/build/extendify-draft-3378b7906748ec0719bb.js:7
+#: public/build/extendify-draft-067919778b1271992eb0.js:7
 msgid "Translate to..."
 msgstr "Μετάφραση σε..."
 
-#: public/build/extendify-draft-3378b7906748ec0719bb.js:7
+#: public/build/extendify-draft-067919778b1271992eb0.js:7
 msgid "Custom prompt"
 msgstr "Προσαρμοσμένη προτροπή"
 
@@ -2446,6 +2446,6 @@ msgstr "Σχεδιαστικά μοτίβα"
 msgid "Pattern added"
 msgstr "Το μοτίβο προστέθηκε"
 
-#: public/build/extendify-draft-3378b7906748ec0719bb.js:7
+#: public/build/extendify-draft-067919778b1271992eb0.js:7
 msgid "Greek"
-msgstr ""
+msgstr "Ελληνικά"

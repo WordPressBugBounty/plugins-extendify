@@ -60,12 +60,12 @@ msgstr "Infoga mönster"
 msgid "Extendify Library User Settings"
 msgstr "Användarinställningar för Extendify-biblioteket"
 
-#: public/build/extendify-draft-3378b7906748ec0719bb.js:7
+#: public/build/extendify-draft-067919778b1271992eb0.js:7
 #: public/build/extendify-help-center-3d55e69f476b931bf98d.js:1
 msgid "Accept"
 msgstr "Acceptera"
 
-#: public/build/extendify-draft-3378b7906748ec0719bb.js:7
+#: public/build/extendify-draft-067919778b1271992eb0.js:7
 #: public/build/extendify-help-center-3d55e69f476b931bf98d.js:1
 msgid "Terms of Use"
 msgstr "Användarvillkor"
@@ -143,65 +143,65 @@ msgstr "Anpassar din upplevelse"
 msgid "Populating data"
 msgstr "Fyller i data"
 
-#: public/build/extendify-draft-3378b7906748ec0719bb.js:7
+#: public/build/extendify-draft-067919778b1271992eb0.js:7
 msgid "Service temporarily unavailable"
 msgstr "Tjänsten är inte tillgänglig just nu"
 
-#: public/build/extendify-draft-3378b7906748ec0719bb.js:1
+#: public/build/extendify-draft-067919778b1271992eb0.js:1
 msgid "Discard"
 msgstr "Kasta"
 
-#: public/build/extendify-draft-3378b7906748ec0719bb.js:1
+#: public/build/extendify-draft-067919778b1271992eb0.js:1
 msgid "Try again"
 msgstr "Försök igen"
 
 #: public/build/extendify-assist-page-ef4d3be2b2a7c3c8f48b.js:7
-#: public/build/extendify-draft-3378b7906748ec0719bb.js:7
+#: public/build/extendify-draft-067919778b1271992eb0.js:7
 msgid "AI Tools"
 msgstr "AI-verktyg"
 
-#: public/build/extendify-draft-3378b7906748ec0719bb.js:1
+#: public/build/extendify-draft-067919778b1271992eb0.js:1
 msgid "Replace selected block text"
 msgstr "Ersätt texten i det markerade blocket"
 
-#: public/build/extendify-draft-3378b7906748ec0719bb.js:1
+#: public/build/extendify-draft-067919778b1271992eb0.js:1
 msgid "Ask AI to generate text"
 msgstr "Be AI att generera text"
 
-#: public/build/extendify-draft-3378b7906748ec0719bb.js:1
+#: public/build/extendify-draft-067919778b1271992eb0.js:1
 msgid "AI is writing..."
 msgstr "AI skriver…"
 
 #: public/build/extendify-assist-page-ef4d3be2b2a7c3c8f48b.js:7
-#: public/build/extendify-draft-3378b7906748ec0719bb.js:1
-#: public/build/extendify-draft-3378b7906748ec0719bb.js:7
+#: public/build/extendify-draft-067919778b1271992eb0.js:1
+#: public/build/extendify-draft-067919778b1271992eb0.js:7
 msgid "Simplify language"
 msgstr "Förenkla språket"
 
 #: public/build/extendify-assist-page-ef4d3be2b2a7c3c8f48b.js:7
-#: public/build/extendify-draft-3378b7906748ec0719bb.js:1
-#: public/build/extendify-draft-3378b7906748ec0719bb.js:7
+#: public/build/extendify-draft-067919778b1271992eb0.js:1
+#: public/build/extendify-draft-067919778b1271992eb0.js:7
 msgid "Make longer"
 msgstr "Gör längre"
 
 #: public/build/extendify-assist-page-ef4d3be2b2a7c3c8f48b.js:7
-#: public/build/extendify-draft-3378b7906748ec0719bb.js:1
-#: public/build/extendify-draft-3378b7906748ec0719bb.js:7
+#: public/build/extendify-draft-067919778b1271992eb0.js:1
+#: public/build/extendify-draft-067919778b1271992eb0.js:7
 msgid "Make shorter"
 msgstr "Gör kortare"
 
-#: public/build/extendify-draft-3378b7906748ec0719bb.js:1
-#: public/build/extendify-draft-3378b7906748ec0719bb.js:7
+#: public/build/extendify-draft-067919778b1271992eb0.js:1
+#: public/build/extendify-draft-067919778b1271992eb0.js:7
 msgid "Fix spelling & grammar"
 msgstr "Korrigera stavning och grammatik"
 
 #: public/build/extendify-assist-page-ef4d3be2b2a7c3c8f48b.js:7
-#: public/build/extendify-draft-3378b7906748ec0719bb.js:1
-#: public/build/extendify-draft-3378b7906748ec0719bb.js:7
+#: public/build/extendify-draft-067919778b1271992eb0.js:1
+#: public/build/extendify-draft-067919778b1271992eb0.js:7
 msgid "Improve writing"
 msgstr "Förbättra texten"
 
-#: public/build/extendify-draft-3378b7906748ec0719bb.js:1
+#: public/build/extendify-draft-067919778b1271992eb0.js:1
 msgid "Write a blog post about"
 msgstr "Skriv ett blogginlägg om"
 
@@ -412,7 +412,7 @@ msgstr "Skapa en supersnabb, vacker och helt anpassad webbplats på några minut
 
 #. translators: This string represents the title of an "Home" page on a website. Please translate it in a way that fits the standard phrasing for a "Home" page in the target language, considering the common usage in websites for that language.
 #: public/build/extendify-assist-page-ef4d3be2b2a7c3c8f48b.js:43
-#: public/build/extendify-draft-3378b7906748ec0719bb.js:7
+#: public/build/extendify-draft-067919778b1271992eb0.js:7
 #: public/build/extendify-launch-0f93b7d9e1127392117b.js:41
 msgid "Home"
 msgstr "Startsida"
@@ -875,7 +875,7 @@ msgstr "Design"
 msgid "Close"
 msgstr "Stäng"
 
-#: public/build/extendify-draft-3378b7906748ec0719bb.js:1
+#: public/build/extendify-draft-067919778b1271992eb0.js:1
 msgid "Submit"
 msgstr "Skicka"
 
@@ -995,220 +995,220 @@ msgid "Continue"
 msgstr "Fortsätt"
 
 #: public/build/extendify-assist-page-ef4d3be2b2a7c3c8f48b.js:7
-#: public/build/extendify-draft-3378b7906748ec0719bb.js:7
+#: public/build/extendify-draft-067919778b1271992eb0.js:7
 #: public/build/extendify-help-center-3d55e69f476b931bf98d.js:1
 msgid "Ask AI"
 msgstr "Fråga AI"
 
-#: public/build/extendify-draft-3378b7906748ec0719bb.js:1
+#: public/build/extendify-draft-067919778b1271992eb0.js:1
 msgid "Insert at top"
 msgstr "Infoga överst"
 
-#: public/build/extendify-draft-3378b7906748ec0719bb.js:1
+#: public/build/extendify-draft-067919778b1271992eb0.js:1
 msgid "Insert after the selected text"
 msgstr "Infoga efter markerad text"
 
-#: public/build/extendify-draft-3378b7906748ec0719bb.js:1
+#: public/build/extendify-draft-067919778b1271992eb0.js:1
 msgid "Insert at bottom"
 msgstr "Infoga längst ner"
 
-#: public/build/extendify-draft-3378b7906748ec0719bb.js:1
+#: public/build/extendify-draft-067919778b1271992eb0.js:1
 msgid "A paragraph …"
 msgstr "Ett stycke …"
 
-#: public/build/extendify-draft-3378b7906748ec0719bb.js:1
+#: public/build/extendify-draft-067919778b1271992eb0.js:1
 msgid "Write a paragraph about"
 msgstr "Skriv ett stycke om"
 
-#: public/build/extendify-draft-3378b7906748ec0719bb.js:1
+#: public/build/extendify-draft-067919778b1271992eb0.js:1
 msgid "Blog post …"
 msgstr "Blogginlägg …"
 
-#: public/build/extendify-draft-3378b7906748ec0719bb.js:1
+#: public/build/extendify-draft-067919778b1271992eb0.js:1
 msgid "An informative article …"
 msgstr "En informativ artikel …"
 
-#: public/build/extendify-draft-3378b7906748ec0719bb.js:1
+#: public/build/extendify-draft-067919778b1271992eb0.js:1
 msgid "Write an informative article about"
 msgstr "Skriv en informativ artikel om"
 
-#: public/build/extendify-draft-3378b7906748ec0719bb.js:1
+#: public/build/extendify-draft-067919778b1271992eb0.js:1
 msgid "Headline …"
 msgstr "Rubrik …"
 
-#: public/build/extendify-draft-3378b7906748ec0719bb.js:1
+#: public/build/extendify-draft-067919778b1271992eb0.js:1
 msgid "Write a headline for"
 msgstr "Skriv en rubrik för"
 
-#: public/build/extendify-draft-3378b7906748ec0719bb.js:1
+#: public/build/extendify-draft-067919778b1271992eb0.js:1
 msgid "List …"
 msgstr "Lista …"
 
-#: public/build/extendify-draft-3378b7906748ec0719bb.js:1
+#: public/build/extendify-draft-067919778b1271992eb0.js:1
 msgid "Write a list of"
 msgstr "Skriv en lista över"
 
-#: public/build/extendify-draft-3378b7906748ec0719bb.js:7
+#: public/build/extendify-draft-067919778b1271992eb0.js:7
 msgid "Catalan"
 msgstr "Katalanska"
 
-#: public/build/extendify-draft-3378b7906748ec0719bb.js:7
+#: public/build/extendify-draft-067919778b1271992eb0.js:7
 msgid "Danish"
 msgstr "Danska"
 
-#: public/build/extendify-draft-3378b7906748ec0719bb.js:7
+#: public/build/extendify-draft-067919778b1271992eb0.js:7
 msgid "Dutch"
 msgstr "Holländska"
 
-#: public/build/extendify-draft-3378b7906748ec0719bb.js:7
+#: public/build/extendify-draft-067919778b1271992eb0.js:7
 msgid "Dutch (Belgium)"
 msgstr "Nederländska (Belgien)"
 
-#: public/build/extendify-draft-3378b7906748ec0719bb.js:7
+#: public/build/extendify-draft-067919778b1271992eb0.js:7
 msgid "English"
 msgstr "Engelska"
 
-#: public/build/extendify-draft-3378b7906748ec0719bb.js:7
+#: public/build/extendify-draft-067919778b1271992eb0.js:7
 msgid "Estonian"
 msgstr "Estniska"
 
-#: public/build/extendify-draft-3378b7906748ec0719bb.js:7
+#: public/build/extendify-draft-067919778b1271992eb0.js:7
 msgid "Finnish"
 msgstr "Finska"
 
-#: public/build/extendify-draft-3378b7906748ec0719bb.js:7
+#: public/build/extendify-draft-067919778b1271992eb0.js:7
 msgid "French (Belgium)"
 msgstr "Franska (Belgien)"
 
-#: public/build/extendify-draft-3378b7906748ec0719bb.js:7
+#: public/build/extendify-draft-067919778b1271992eb0.js:7
 msgid "French (France)"
 msgstr "Franska (Frankrike)"
 
-#: public/build/extendify-draft-3378b7906748ec0719bb.js:7
+#: public/build/extendify-draft-067919778b1271992eb0.js:7
 msgid "German"
 msgstr "Tyska"
 
-#: public/build/extendify-draft-3378b7906748ec0719bb.js:7
+#: public/build/extendify-draft-067919778b1271992eb0.js:7
 msgid "German (Switzerland)"
 msgstr "Tyska (Schweiz)"
 
-#: public/build/extendify-draft-3378b7906748ec0719bb.js:7
+#: public/build/extendify-draft-067919778b1271992eb0.js:7
 msgid "Indonesian"
 msgstr "Indonesiska"
 
-#: public/build/extendify-draft-3378b7906748ec0719bb.js:7
+#: public/build/extendify-draft-067919778b1271992eb0.js:7
 msgid "Italian"
 msgstr "Italienska"
 
-#: public/build/extendify-draft-3378b7906748ec0719bb.js:7
+#: public/build/extendify-draft-067919778b1271992eb0.js:7
 msgid "Japanese"
 msgstr "Japanska"
 
-#: public/build/extendify-draft-3378b7906748ec0719bb.js:7
+#: public/build/extendify-draft-067919778b1271992eb0.js:7
 msgid "Polish"
 msgstr "Polska"
 
-#: public/build/extendify-draft-3378b7906748ec0719bb.js:7
+#: public/build/extendify-draft-067919778b1271992eb0.js:7
 msgid "Portuguese (Brazil)"
 msgstr "Portugisiska (Brasilien)"
 
-#: public/build/extendify-draft-3378b7906748ec0719bb.js:7
+#: public/build/extendify-draft-067919778b1271992eb0.js:7
 msgid "Portuguese (Portugal)"
 msgstr "Portugisiska (Portugal)"
 
-#: public/build/extendify-draft-3378b7906748ec0719bb.js:7
+#: public/build/extendify-draft-067919778b1271992eb0.js:7
 msgid "Spanish (Spain)"
 msgstr "Spanska (Spanien)"
 
-#: public/build/extendify-draft-3378b7906748ec0719bb.js:7
+#: public/build/extendify-draft-067919778b1271992eb0.js:7
 msgid "Swedish"
 msgstr "Svenska"
 
-#: public/build/extendify-draft-3378b7906748ec0719bb.js:7
+#: public/build/extendify-draft-067919778b1271992eb0.js:7
 msgid "Ukrainian"
 msgstr "Ukrainska"
 
-#: public/build/extendify-draft-3378b7906748ec0719bb.js:7
+#: public/build/extendify-draft-067919778b1271992eb0.js:7
 msgid "Vietnamese"
 msgstr "Vietnamesiska"
 
 #: public/build/extendify-assist-page-ef4d3be2b2a7c3c8f48b.js:7
-#: public/build/extendify-draft-3378b7906748ec0719bb.js:7
+#: public/build/extendify-draft-067919778b1271992eb0.js:7
 msgid "Translate"
 msgstr "Översätt"
 
-#: public/build/extendify-draft-3378b7906748ec0719bb.js:7
+#: public/build/extendify-draft-067919778b1271992eb0.js:7
 msgid "Translate to..."
 msgstr "Översätt till..."
 
 #: public/build/extendify-assist-page-ef4d3be2b2a7c3c8f48b.js:7
-#: public/build/extendify-draft-3378b7906748ec0719bb.js:1
+#: public/build/extendify-draft-067919778b1271992eb0.js:1
 msgid "Ask AI to edit"
 msgstr "Be AI att redigera"
 
 #: public/build/extendify-assist-page-ef4d3be2b2a7c3c8f48b.js:7
-#: public/build/extendify-draft-3378b7906748ec0719bb.js:1
+#: public/build/extendify-draft-067919778b1271992eb0.js:1
 msgid "Remove selection"
 msgstr "Ta bort markering"
 
-#: public/build/extendify-draft-3378b7906748ec0719bb.js:7
+#: public/build/extendify-draft-067919778b1271992eb0.js:7
 msgid "Suggested prompts"
 msgstr "Föreslagna uppmaningar"
 
-#: public/build/extendify-draft-3378b7906748ec0719bb.js:7
+#: public/build/extendify-draft-067919778b1271992eb0.js:7
 msgid "Custom prompt"
 msgstr "Anpassad uppmaning"
 
-#: public/build/extendify-draft-3378b7906748ec0719bb.js:5
+#: public/build/extendify-draft-067919778b1271992eb0.js:5
 msgid "You can still explore and find great images on Unsplash until your credits reset."
 msgstr "Du kan fortfarande utforska och hitta fantastiska bilder på Unsplash tills dina krediter återställs."
 
-#: public/build/extendify-draft-3378b7906748ec0719bb.js:5
+#: public/build/extendify-draft-067919778b1271992eb0.js:5
 msgid "Search on Unsplash"
 msgstr "Sök på Unsplash"
 
-#: public/build/extendify-draft-3378b7906748ec0719bb.js:5
+#: public/build/extendify-draft-067919778b1271992eb0.js:5
 msgid "Tell AI about the image you would like to create"
 msgstr "Berätta för AI vilken bild du vill skapa"
 
-#: public/build/extendify-draft-3378b7906748ec0719bb.js:5
+#: public/build/extendify-draft-067919778b1271992eb0.js:5
 msgid "Image Prompt"
 msgstr "Bilduppmaning"
 
-#: public/build/extendify-draft-3378b7906748ec0719bb.js:5
+#: public/build/extendify-draft-067919778b1271992eb0.js:5
 msgid "Generating image..."
 msgstr "Genererar bild ..."
 
-#: public/build/extendify-draft-3378b7906748ec0719bb.js:5
+#: public/build/extendify-draft-067919778b1271992eb0.js:5
 msgid "Generate image"
 msgstr "Generera bild"
 
-#: public/build/extendify-draft-3378b7906748ec0719bb.js:5
+#: public/build/extendify-draft-067919778b1271992eb0.js:5
 msgid "Cancel"
 msgstr "Avbryt"
 
-#: public/build/extendify-draft-3378b7906748ec0719bb.js:5
+#: public/build/extendify-draft-067919778b1271992eb0.js:5
 msgid "Generating your image: "
 msgstr "Genererar din bild: "
 
 #. translators: "Importing image" means the image is being added to the WordPress post editor
-#: public/build/extendify-draft-3378b7906748ec0719bb.js:7
+#: public/build/extendify-draft-067919778b1271992eb0.js:7
 msgid "Importing image..."
 msgstr "Importerar bild..."
 
-#: public/build/extendify-draft-3378b7906748ec0719bb.js:7
+#: public/build/extendify-draft-067919778b1271992eb0.js:7
 msgid "Use this image"
 msgstr "Använd denna bild"
 
-#: public/build/extendify-draft-3378b7906748ec0719bb.js:7
+#: public/build/extendify-draft-067919778b1271992eb0.js:7
 msgid "Delete image"
 msgstr "Ta bort bild"
 
-#: public/build/extendify-draft-3378b7906748ec0719bb.js:7
+#: public/build/extendify-draft-067919778b1271992eb0.js:7
 msgid "Image Description"
 msgstr "Bildbeskrivning"
 
-#: public/build/extendify-draft-3378b7906748ec0719bb.js:7
+#: public/build/extendify-draft-067919778b1271992eb0.js:7
 msgid "Your request was rejected as a result of our safety system. Your prompt may contain text that is not allowed by our safety system."
 msgstr "Din förfrågan avvisades på grund av vårt säkerhetssystem. Din begäran kan innehålla text som inte är tillåten av vårt säkerhetssystem."
 
@@ -1504,25 +1504,25 @@ msgid "Service offline. Check back later."
 msgstr "Tjänsten är offline. Kom tillbaka senare."
 
 #. translators: %1$s is the number of used credits, %2$s is the total credits
-#: public/build/extendify-draft-3378b7906748ec0719bb.js:3
-#: public/build/extendify-draft-3378b7906748ec0719bb.js:5
+#: public/build/extendify-draft-067919778b1271992eb0.js:3
+#: public/build/extendify-draft-067919778b1271992eb0.js:5
 msgid "%1$s of %2$s daily image credits used"
 msgstr "%1$s av %2$s dagliga bildkrediter använda"
 
 #: public/build/extendify-assist-page-ef4d3be2b2a7c3c8f48b.js:7
-#: public/build/extendify-draft-3378b7906748ec0719bb.js:5
+#: public/build/extendify-draft-067919778b1271992eb0.js:5
 msgid "Aspect Ratio"
 msgstr "Bildförhållande"
 
-#: public/build/extendify-draft-3378b7906748ec0719bb.js:5
+#: public/build/extendify-draft-067919778b1271992eb0.js:5
 msgid "Square: 1:1"
 msgstr "Fyrkant: 1:1"
 
-#: public/build/extendify-draft-3378b7906748ec0719bb.js:5
+#: public/build/extendify-draft-067919778b1271992eb0.js:5
 msgid "Landscape: 4:3"
 msgstr "Liggande: 4:3"
 
-#: public/build/extendify-draft-3378b7906748ec0719bb.js:5
+#: public/build/extendify-draft-067919778b1271992eb0.js:5
 msgid "Portrait: 3:4"
 msgstr "Stående: 3:4"
 
@@ -1576,52 +1576,52 @@ msgstr "Installerar..."
 msgid "Install Now"
 msgstr "Installera nu"
 
-#: public/build/extendify-draft-3378b7906748ec0719bb.js:7
+#: public/build/extendify-draft-067919778b1271992eb0.js:7
 msgid "AI Image"
 msgstr "AI-bild"
 
-#: public/build/extendify-draft-3378b7906748ec0719bb.js:7
+#: public/build/extendify-draft-067919778b1271992eb0.js:7
 msgid "Go Back"
 msgstr "Gå tillbaka"
 
 #: public/build/extendify-assist-page-ef4d3be2b2a7c3c8f48b.js:7
-#: public/build/extendify-draft-3378b7906748ec0719bb.js:7
+#: public/build/extendify-draft-067919778b1271992eb0.js:7
 msgid "AI Image Generator"
 msgstr "AI-bildgenerator"
 
-#: public/build/extendify-draft-3378b7906748ec0719bb.js:7
+#: public/build/extendify-draft-067919778b1271992eb0.js:7
 msgid "Use AI to generate custom images based on your description."
 msgstr "Använd AI för att generera anpassade bilder baserat på din beskrivning."
 
-#: public/build/extendify-draft-3378b7906748ec0719bb.js:7
+#: public/build/extendify-draft-067919778b1271992eb0.js:7
 msgid "Add a prompt"
 msgstr "Lägg till en uppmaning"
 
-#: public/build/extendify-draft-3378b7906748ec0719bb.js:7
+#: public/build/extendify-draft-067919778b1271992eb0.js:7
 msgid "Discover Stock Photos"
 msgstr "Upptäck arkivfoton"
 
-#: public/build/extendify-draft-3378b7906748ec0719bb.js:7
+#: public/build/extendify-draft-067919778b1271992eb0.js:7
 msgid "Search and add free stock photos from Unsplash.com"
 msgstr "Sök och lägg till gratis arkivfoton från Unsplash.com"
 
-#: public/build/extendify-draft-3378b7906748ec0719bb.js:7
+#: public/build/extendify-draft-067919778b1271992eb0.js:7
 msgid "Search Unsplash"
 msgstr "Sök på Unsplash"
 
-#: public/build/extendify-draft-3378b7906748ec0719bb.js:7
+#: public/build/extendify-draft-067919778b1271992eb0.js:7
 msgid "No images found."
 msgstr "Inga bilder hittades."
 
-#: public/build/extendify-draft-3378b7906748ec0719bb.js:7
+#: public/build/extendify-draft-067919778b1271992eb0.js:7
 msgid "Unsplash"
 msgstr "Unsplash"
 
-#: public/build/extendify-draft-3378b7906748ec0719bb.js:7
+#: public/build/extendify-draft-067919778b1271992eb0.js:7
 msgid "Photos from Unsplash"
 msgstr "Foton från Unsplash"
 
-#: public/build/extendify-draft-3378b7906748ec0719bb.js:7
+#: public/build/extendify-draft-067919778b1271992eb0.js:7
 msgid "Get Personalized Image"
 msgstr "Få personligt anpassade bilder"
 
@@ -2071,35 +2071,35 @@ msgstr "Ett komplett designbibliotek anpassat för varje webbplats för att enke
 msgid "Explore Design Library"
 msgstr "Utforska designbiblioteket"
 
-#: public/build/extendify-draft-3378b7906748ec0719bb.js:7
+#: public/build/extendify-draft-067919778b1271992eb0.js:7
 msgid "Bulgarian"
 msgstr "Bulgariska"
 
-#: public/build/extendify-draft-3378b7906748ec0719bb.js:7
+#: public/build/extendify-draft-067919778b1271992eb0.js:7
 msgid "Czech"
 msgstr "Tjeckiska"
 
-#: public/build/extendify-draft-3378b7906748ec0719bb.js:7
+#: public/build/extendify-draft-067919778b1271992eb0.js:7
 msgid "French (Canada)"
 msgstr "Franska (Kanada)"
 
-#: public/build/extendify-draft-3378b7906748ec0719bb.js:7
+#: public/build/extendify-draft-067919778b1271992eb0.js:7
 msgid "Hungarian"
 msgstr "Ungerska"
 
-#: public/build/extendify-draft-3378b7906748ec0719bb.js:7
+#: public/build/extendify-draft-067919778b1271992eb0.js:7
 msgid "Norwegian"
 msgstr "Norska"
 
-#: public/build/extendify-draft-3378b7906748ec0719bb.js:7
+#: public/build/extendify-draft-067919778b1271992eb0.js:7
 msgid "Russian"
 msgstr "Ryska"
 
-#: public/build/extendify-draft-3378b7906748ec0719bb.js:7
+#: public/build/extendify-draft-067919778b1271992eb0.js:7
 msgid "Slovak"
 msgstr "Slovakiska"
 
-#: public/build/extendify-draft-3378b7906748ec0719bb.js:7
+#: public/build/extendify-draft-067919778b1271992eb0.js:7
 msgid "Turkish"
 msgstr "Turkiska"
 
@@ -2446,6 +2446,6 @@ msgstr "Njut av klassisk fransk bistrokök med en kalifornisk twist på The Bist
 msgid "Find your dream home or make profitable investments with Pinnacle Properties, Austin's premier real estate agency. Trust our experienced agents for personalized services."
 msgstr "Hitta ditt drömhem eller gör lönsamma investeringar med Pinnacle Properties, Austins främsta fastighetsbyrå. Lita på våra erfarna agenter för personliga tjänster."
 
-#: public/build/extendify-draft-3378b7906748ec0719bb.js:7
+#: public/build/extendify-draft-067919778b1271992eb0.js:7
 msgid "Greek"
-msgstr ""
+msgstr "Grekiska"
