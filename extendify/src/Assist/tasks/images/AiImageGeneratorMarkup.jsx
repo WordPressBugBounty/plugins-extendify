@@ -181,7 +181,10 @@ export const AiImageGeneratorMarkup = (props) => (
 										<div className="h-4 w-2.5 bg-current"></div>
 									</div>
 								</div>
-								<Button variant="primary" className="w-full justify-center">
+								<Button
+									variant="primary"
+									__next40pxDefaultSize
+									className="w-full justify-center">
 									{__('Generate Image', 'extendify-local')}
 								</Button>
 								<div className="mt-5 flex items-center justify-items-center gap-2">

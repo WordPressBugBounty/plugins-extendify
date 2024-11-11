@@ -47,7 +47,6 @@ use Extendify\Shared\Controllers\ActivityController;
         ApiRouter::get('/launch/options', [WPController::class, 'getOption']);
         ApiRouter::get('/launch/active-plugins', [WPController::class, 'getActivePlugins']);
         ApiRouter::get('/launch/goals', [DataController::class, 'getGoals']);
-        ApiRouter::get('/launch/suggested-plugins', [DataController::class, 'getSuggestedPlugins']);
         ApiRouter::get('/launch/ping', [DataController::class, 'ping']);
         ApiRouter::get('/launch/prefetch-assist-data', [WPController::class, 'prefetchAssistData']);
         ApiRouter::post('/launch/create-navigation', [WPController::class, 'createNavigationWithMeta']);

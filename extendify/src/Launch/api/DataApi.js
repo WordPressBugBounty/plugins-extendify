@@ -1,12 +1,14 @@
+import { getHeadersAndFooters } from '@launch/api/WPApi';
+import { Axios as api } from '@launch/api/axios';
 import { useUserSelectionStore } from '@launch/state/user-selections';
 import { PATTERNS_HOST, AI_HOST } from '../../constants';
-import { getHeadersAndFooters } from './WPApi';
-import { Axios as api } from './axios';
 
 const fetchTemplates = async (type, siteType, otherData = {}) => {
 	const { showLocalizedCopy, wpVersion, wpLanguage, allowedPlugins } =
 		window.extSharedData;
-	const { goals, plugins } = useUserSelectionStore.getState();
+	const { goals, getGoalsPlugins } = useUserSelectionStore.getState();
+	const plugins = getGoalsPlugins();
+
 	const url = new URL(`${PATTERNS_HOST}/api/${type}-templates`);
 	url.searchParams.append('siteType', siteType?.slug);
 	wpVersion && url.searchParams.append('wpVersion', wpVersion);
@@ -33,8 +35,8 @@ const fetchTemplates = async (type, siteType, otherData = {}) => {
 	return await res.json();
 };
 
-export const getHomeTemplates = async ({ siteType }) => {
-	const styles = await fetchTemplates('home', siteType);
+export const getHomeTemplates = async ({ siteType, siteStructure }) => {
+	const styles = await fetchTemplates('home', siteType, { siteStructure });
 	const { headers, footers } = await getHeadersAndFooters();
 	if (!styles?.length) {
 		throw new Error('Could not get styles');
@@ -51,9 +53,12 @@ export const getHomeTemplates = async ({ siteType }) => {
 	});
 };
 
-export const getPageTemplates = async (siteType) => {
+export const getPageTemplates = async ({ siteType, siteStructure }) => {
 	const { siteInformation } = useUserSelectionStore.getState();
-	const pages = await fetchTemplates('page', siteType, { siteInformation });
+	const pages = await fetchTemplates('page', siteType, {
+		siteInformation,
+		siteStructure,
+	});
 	if (!pages?.recommended) {
 		throw new Error('Could not get pages');
 	}
@@ -73,20 +78,14 @@ export const getPageTemplates = async (siteType) => {
 
 export const getGoals = async ({ siteTypeSlug }) => {
 	const goals = await api.get('launch/goals', {
-		params: { site_type: siteTypeSlug ?? 'all' },
+		params: {
+			site_type: siteTypeSlug ?? 'all',
+		},
 	});
 	if (!goals?.data?.length) {
 		throw new Error('Could not get goals');
 	}
 	return goals.data;
-};
-
-export const getSuggestedPlugins = async () => {
-	const suggested = await api.get('launch/suggested-plugins');
-	if (!suggested?.data?.length) {
-		throw new Error('Could not get suggested plugins');
-	}
-	return suggested.data;
 };
 
 // Optionally add items to request body
@@ -124,11 +123,14 @@ export const generateCustomPatterns = async (page, userState) => {
 export const getLinkSuggestions = async (pageContent, availablePages) => {
 	const abort = new AbortController();
 	const timeout = setTimeout(() => abort.abort(), 10000);
+	const { siteType } = useUserSelectionStore.getState();
 	try {
 		const res = await fetch(`${AI_HOST}/api/link-pages`, {
 			method: 'POST',
 			headers: { 'Content-Type': 'application/json' },
 			body: JSON.stringify({
+				...extraBody,
+				siteType: siteType?.slug,
 				pageContent,
 				availablePages,
 			}),
@@ -142,3 +144,35 @@ export const getLinkSuggestions = async (pageContent, availablePages) => {
 };
 
 export const pingServer = () => api.get('launch/ping');
+
+export const getSiteProfile = async ({ title, description, siteType }) => {
+	const url = `${AI_HOST}/api/site-profile`;
+	const method = 'POST';
+	const headers = { 'Content-Type': 'application/json' };
+	const body = JSON.stringify({
+		...extraBody,
+		title,
+		description,
+		siteType: siteType?.slug,
+	});
+	const fallback = {
+		aiSiteType: null,
+		aiDescription: null,
+		aiKeywords: [],
+	};
+	let response;
+	try {
+		response = await fetch(url, { method, headers, body });
+	} catch (error) {
+		// try one more time
+		response = await fetch(url, { method, headers, body });
+	}
+	if (!response.ok) return fallback;
+	let data;
+	try {
+		data = await response.json();
+	} catch (error) {
+		return fallback;
+	}
+	return data?.aiSiteType ? data : fallback;
+};

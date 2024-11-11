@@ -1,6 +1,7 @@
 import { useEffect, useRef, useState } from '@wordpress/element';
 import { useGlobalStore } from '@launch/state/Global';
 import { usePagesStore } from '@launch/state/Pages';
+import { usePagesSelectionStore } from '@launch/state/pages-selections';
 import { useUserSelectionStore } from '@launch/state/user-selections';
 import { INSIGHTS_HOST } from '../../constants';
 
@@ -8,13 +9,15 @@ import { INSIGHTS_HOST } from '../../constants';
 export const useTelemetry = () => {
 	const {
 		goals,
-		pages: selectedPages,
-		plugins: selectedPlugins,
+		getGoalsPlugins,
 		siteType,
-		style: selectedStyle,
 		siteTypeSearch,
 		siteStructure,
+		variation,
 	} = useUserSelectionStore();
+	const { pages: selectedPages, style: selectedStyle } =
+		usePagesSelectionStore();
+	const selectedPlugins = getGoalsPlugins();
 	const { generating } = useGlobalStore();
 	const { pages, currentPageIndex } = usePagesStore();
 	const [stepProgress, setStepProgress] = useState([]);
@@ -70,7 +73,7 @@ export const useTelemetry = () => {
 				body: JSON.stringify({
 					siteType: siteType?.slug,
 					siteCreatedAt: window.extSharedData?.siteCreatedAt,
-					style: selectedStyle?.variation?.title,
+					style: variation?.title,
 					siteStructure: siteStructure,
 					pages: selectedPages?.map((p) => p.slug),
 					goals: goals?.map((g) => g.slug),
@@ -111,5 +114,6 @@ export const useTelemetry = () => {
 		goals,
 		siteType,
 		siteStructure,
+		variation,
 	]);
 };

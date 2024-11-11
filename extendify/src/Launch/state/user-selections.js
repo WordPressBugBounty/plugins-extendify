@@ -15,10 +15,8 @@ const initialState = {
 		acceptTerms: false,
 	},
 	siteTypeSearch: [],
-	style: null,
-	pages: [],
-	plugins: undefined,
-	goals: undefined,
+	goals: [],
+	variation: null,
 };
 
 const key = `extendify-launch-user-selection-${window.extSharedData.siteId}`;
@@ -51,6 +49,9 @@ const state = (set, get) => ({
 	setBusinessInformation(name, value) {
 		const businessInformation = { ...get().businessInformation, [name]: value };
 		set({ businessInformation });
+	},
+	getGoalsPlugins() {
+		return get().goals.flatMap((goal) => goal.plugins);
 	},
 	has(type, item) {
 		if (!item?.id) return false;
@@ -85,18 +86,11 @@ const state = (set, get) => ({
 		}
 		get().add(type, item);
 	},
-	setStyle(style) {
-		set({ style });
-	},
-	canLaunch() {
-		// The user can launch if they have a complete selection
-		return (
-			Object.keys(get()?.siteType ?? {})?.length > 0 &&
-			Object.keys(get()?.style ?? {})?.length > 0
-		);
-	},
 	resetState() {
 		set(initialState);
+	},
+	setVariation(variation) {
+		set({ variation });
 	},
 });
 

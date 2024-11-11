@@ -82,6 +82,7 @@ export const GenerateForm = ({ isGenerating, errorMessage }) => {
 				type="submit"
 				className="w-full justify-center"
 				variant="primary"
+				__next40pxDefaultSize
 				disabled={isGenerating || !prompt || usedCredits >= imageCredits.total}>
 				{isGenerating
 					? __('Generating image...', 'extendify-local')

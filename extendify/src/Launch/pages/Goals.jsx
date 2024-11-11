@@ -1,7 +1,7 @@
 import { useEffect, useState } from '@wordpress/element';
 import { __ } from '@wordpress/i18n';
 import classNames from 'classnames';
-import { getGoals, getSuggestedPlugins } from '@launch/api/DataApi';
+import { getGoals } from '@launch/api/DataApi';
 import { CheckboxInputCard } from '@launch/components/CheckboxInputCard';
 import { LoadingIndicator } from '@launch/components/LoadingIndicator';
 import { Title } from '@launch/components/Title';
@@ -14,7 +14,6 @@ import * as IconComponents from '@launch/svg';
 
 export const goalsFetcher = async (params) => ({
 	goals: await getGoals(params),
-	suggestedPlugins: await getSuggestedPlugins(),
 });
 export const goalsParams = () => ({
 	key: 'goals',
@@ -30,12 +29,8 @@ export const state = pageState('Goals', () => ({
 }));
 
 export const Goals = () => {
-	const { siteType } = useUserSelectionStore();
-	const { error, loading, data } = useFetch(
-		goalsParams(siteType?.slug),
-		goalsFetcher,
-	);
-	const { goals, suggestedPlugins } = data ?? {};
+	const { error, loading, data } = useFetch(goalsParams(), goalsFetcher);
+	const { goals } = data ?? {};
 
 	return (
 		<PageLayout>
@@ -51,7 +46,7 @@ export const Goals = () => {
 					{loading || error ? (
 						<LoadingIndicator />
 					) : (
-						<GoalsSelector goals={goals} suggestedPlugins={suggestedPlugins} />
+						<GoalsSelector goals={goals} />
 					)}
 				</div>
 			</div>
@@ -59,8 +54,8 @@ export const Goals = () => {
 	);
 };
 
-const GoalsSelector = ({ goals, suggestedPlugins }) => {
-	const { addMany, toggle, goals: selected } = useUserSelectionStore();
+const GoalsSelector = ({ goals }) => {
+	const { addMany, goals: selected } = useUserSelectionStore();
 	const [selectedGoals, setSelectedGoals] = useState(selected ?? []);
 
 	const nextPage = usePagesStore((state) => state.nextPage);
@@ -80,19 +75,8 @@ const GoalsSelector = ({ goals, suggestedPlugins }) => {
 	};
 
 	useEffect(() => {
-		state.setState({ ready: false });
-		const timer = setTimeout(() => {
-			addMany('goals', selectedGoals, { clearExisting: true });
-			const goalSlugs = selectedGoals?.map((goal) => goal.slug);
-			// Select all plugins that match the selected goals
-			const plugins = suggestedPlugins?.filter((p) =>
-				p.goals.find((goalSlug) => goalSlugs?.includes(goalSlug)),
-			);
-			addMany('plugins', plugins, { clearExisting: true });
-			state.setState({ ready: true });
-		}, 750);
-		return () => clearTimeout(timer);
-	}, [selectedGoals, addMany, toggle, suggestedPlugins]);
+		addMany('goals', selectedGoals, { clearExisting: true });
+	}, [selectedGoals, addMany]);
 
 	return (
 		<form

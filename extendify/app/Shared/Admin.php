@@ -83,6 +83,12 @@ class Admin
             true
         );
 
+        $siteProfile = \get_option('extendify_site_profile', [
+            'aiSiteType' => '',
+            'aiDescription' => '',
+            'aiKeywords' => [],
+        ]);
+
         $partnerData = PartnerData::getPartnerData();
         $userConsent = get_user_meta(get_current_user_id(), 'extendify_ai_consent', true);
         $htmlAllowlist = [
@@ -111,6 +117,7 @@ class Admin
                 'version' => \esc_attr(Config::$version),
                 'siteTitle' => \esc_attr(\get_bloginfo('name')),
                 'siteType' => Escaper::recursiveEscAttr(\get_option('extendify_siteType', [])),
+                'siteProfile' => Escaper::recursiveEscAttr($siteProfile),
                 'adminUrl' => \esc_url_raw(\admin_url()),
                 'wpLanguage' => \esc_attr(\get_locale()),
                 'wpVersion' => \esc_attr(\get_bloginfo('version')),

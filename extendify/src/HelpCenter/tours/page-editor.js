@@ -15,14 +15,6 @@ export default {
 		allowOverflow: true,
 		startFrom: [window.extSharedData.adminUrl + 'post-new.php?post_type=page'],
 	},
-	onStart: () => {
-		// close sidebar if open
-		document
-			.querySelector(`[aria-label="${__('Settings')}"].is-pressed`)
-			?.click();
-		// If the Extendify library is open, close it
-		return dispatchEvent(new CustomEvent('extendify::close-library'));
-	},
 	steps: [
 		{
 			title: __('Add a Block', 'extendify-local'),
@@ -41,16 +33,11 @@ export default {
 			},
 			events: {
 				beforeAttach: async () => {
-					if (
-						window.wp.data
-							.select('core/edit-post')
-							.isFeatureActive('welcomeGuide')
-					) {
-						await window.wp.data
-							.dispatch('core/edit-post')
-							.toggleFeature('welcomeGuide');
-					}
-					return await waitUntilExists(inserterButtonSelector());
+					await waitUntilExists(inserterButtonSelector());
+					// If the Extendify library is open, close it
+					return requestAnimationFrame(() =>
+						dispatchEvent(new CustomEvent('extendify::close-library')),
+					);
 				},
 			},
 		},
@@ -77,7 +64,8 @@ export default {
 					document
 						.querySelector(inserterButtonSelector(':not(.is-pressed)'))
 						?.click();
-					return await waitUntilExists('.block-editor-inserter__tabs');
+
+					return await waitUntilExists('.block-editor-tabbed-sidebar');
 				},
 				onAttach: () => {
 					const toggle = document.querySelector(inserterButtonSelector());
@@ -197,11 +185,9 @@ export default {
 							'.edit-post-sidebar__panel-tab,[data-tab-id="edit-post/document"]',
 						)
 						?.click();
-					await waitUntilExists('.edit-post-post-status');
-					document
-						.querySelector('.edit-post-post-status:not(.is-opened) button')
-						?.click();
-					await waitUntilExists('.edit-post-post-status.is-opened');
+
+					await waitUntilExists('.editor-post-status');
+					document.querySelector('.edit-post-post-status button')?.click();
 				},
 			},
 		},

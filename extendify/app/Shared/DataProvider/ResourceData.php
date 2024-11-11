@@ -154,6 +154,7 @@ class ResourceData
      */
     protected function cacheData($functionName, $data)
     {
-        set_transient('extendify_' . $functionName, Sanitizer::sanitizeArray($data));
+        // The scheduler runs monthly, one day before the cache expires.
+        set_transient('extendify_' . $functionName, Sanitizer::sanitizeArray($data), (DAY_IN_SECONDS + MONTH_IN_SECONDS));
     }
 }

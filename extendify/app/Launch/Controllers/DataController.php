@@ -33,22 +33,6 @@ class DataController
     }
 
     /**
-     * Get Goals information.
-     *
-     * @return \WP_REST_Response
-     */
-    public static function getSuggestedPlugins()
-    {
-        $response = Http::get('/suggested-plugins');
-
-        if (is_wp_error($response)) {
-            return new \WP_REST_Response([], 500);
-        }
-
-        return new \WP_REST_Response($response);
-    }
-
-    /**
      * Just here to check for 200 (vs server rate limting)
      *
      * @return \WP_REST_Response

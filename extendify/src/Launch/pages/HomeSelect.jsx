@@ -11,14 +11,19 @@ import { useFetch } from '@launch/hooks/useFetch';
 import { useIsMountedLayout } from '@launch/hooks/useIsMounted';
 import { PageLayout } from '@launch/layouts/PageLayout';
 import { pageState } from '@launch/state/factory';
+import { usePagesSelectionStore } from '@launch/state/pages-selections';
 import { useUserSelectionStore } from '@launch/state/user-selections';
 import { Checkmark } from '@launch/svg';
 
 export const fetcher = getHomeTemplates;
-export const fetchData = (siteType) => ({
-	key: 'home-pages-list',
-	siteType: siteType ?? useUserSelectionStore?.getState().siteType,
-});
+export const fetchData = () => {
+	const { siteType, siteStructure } = useUserSelectionStore?.getState() || {};
+	return {
+		key: 'home-pages-list',
+		siteType,
+		siteStructure,
+	};
+};
 
 export const state = pageState('Layout', () => ({
 	ready: false,
@@ -53,19 +58,28 @@ const DesignSelector = ({ homeTemplate }) => {
 	const { data: variations } = useFetch('variations', getThemeVariations);
 	const isMounted = useIsMountedLayout();
 	const [styles, setStyles] = useState([]);
-	const { setStyle, style: currentStyle } = useUserSelectionStore();
-	const onSelect = useCallback((style) => setStyle(style), [setStyle]);
+	const { setStyle, style: currentStyle } = usePagesSelectionStore();
+	const { setVariation, variation } = useUserSelectionStore();
+
+	const onSelect = useCallback(
+		(style) => {
+			setStyle(style);
+			setVariation(style?.variation);
+		},
+		[setStyle, setVariation],
+	);
 	const wrapperRef = useRef();
 	const once = useRef(false);
 
 	useEffect(() => {
-		state.setState({ ready: !!currentStyle?.variation?.title });
-	}, [currentStyle]);
+		state.setState({ ready: !!variation?.title });
+	}, [variation]);
 
 	useEffect(() => {
 		if (!homeTemplate || !variations) return;
 		if (styles.length) return;
 		setStyle(null);
+		setVariation(null);
 		(async () => {
 			const slicedEntries = Array.from(homeTemplate.entries());
 			for (const [index, style] of slicedEntries) {
@@ -84,7 +98,14 @@ const DesignSelector = ({ homeTemplate }) => {
 				await new Promise((resolve) => setTimeout(resolve, random));
 			}
 		})();
-	}, [homeTemplate, isMounted, variations, styles.length, setStyle]);
+	}, [
+		homeTemplate,
+		isMounted,
+		variations,
+		styles.length,
+		setStyle,
+		setVariation,
+	]);
 
 	useEffect(() => {
 		if (!currentStyle || !styles || once.current) return;

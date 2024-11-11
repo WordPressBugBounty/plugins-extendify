@@ -7,13 +7,18 @@ import { Title } from '@launch/components/Title';
 import { useFetch } from '@launch/hooks/useFetch';
 import { PageLayout } from '@launch/layouts/PageLayout';
 import { pageState } from '@launch/state/factory';
+import { usePagesSelectionStore } from '@launch/state/pages-selections';
 import { useUserSelectionStore } from '@launch/state/user-selections';
 
-export const fetcher = ({ siteType }) => getPageTemplates(siteType);
-export const fetchData = (siteType) => ({
-	key: 'pages-list',
-	siteType: siteType ?? useUserSelectionStore?.getState().siteType,
-});
+export const fetcher = getPageTemplates;
+export const fetchData = () => {
+	const { siteType, siteStructure } = useUserSelectionStore?.getState() || {};
+	return {
+		key: 'pages-list',
+		siteType,
+		siteStructure,
+	};
+};
 
 export const state = pageState('Pages', () => ({
 	ready: true,
@@ -21,7 +26,7 @@ export const state = pageState('Pages', () => ({
 	validation: null,
 	onRemove: () => {
 		// If the page is removed then clean up the selected pages
-		const { pages, remove } = useUserSelectionStore.getState();
+		const { pages, remove } = usePagesSelectionStore.getState();
 		pages.forEach((page) => remove('pages', page));
 	},
 }));
@@ -30,7 +35,8 @@ export const PagesSelect = () => {
 	const { data: availablePages, loading } = useFetch(fetchData, fetcher);
 	const [previewing, setPreviewing] = useState();
 	const [expandMore, setExpandMore] = useState();
-	const { pages, remove, removeAll, add, has, style } = useUserSelectionStore();
+	const { pages, remove, removeAll, add, has, style } =
+		usePagesSelectionStore();
 	const pagePreviewRef = useRef();
 
 	const homePage = useMemo(

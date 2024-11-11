@@ -3,6 +3,7 @@ import { useEffect, useLayoutEffect, useState } from '@wordpress/element';
 import { __ } from '@wordpress/i18n';
 import { AnimatePresence, motion } from 'framer-motion';
 import { NavigationButton } from '@launch/components/NavigationButton';
+import { useCanLaunch } from '@launch/hooks/useCanLaunch';
 import {
 	PagesSelect,
 	fetcher as pagesSelectFetcher,
@@ -146,7 +147,7 @@ const PrevButton = () => {
 const NextButton = () => {
 	const { nextPage, currentPageIndex, pages } = usePagesStore();
 	const totalPages = usePagesStore((state) => state.count());
-	const canLaunch = useUserSelectionStore((state) => state.canLaunch());
+	const canLaunch = useCanLaunch();
 	const onLastPage = currentPageIndex === totalPages - 1;
 	const currentPageKey = Array.from(pages.keys())[currentPageIndex];
 	const pageState = pages.get(currentPageKey).state;

@@ -1,7 +1,7 @@
 import apiFetch from '@wordpress/api-fetch';
 import { __ } from '@wordpress/i18n';
 import { pageNames } from '@shared/lib/pages';
-import { Axios as api } from './axios';
+import { Axios as api } from '@launch/api/axios';
 
 const wpRoot = window.extOnbData.wpRoot;
 
@@ -32,16 +32,8 @@ export const installPlugin = async (plugin) => {
 		// Install plugin and try to activate it.
 		const response = await api.post(`${wpRoot}wp/v2/plugins`, {
 			slug: plugin.wordpressSlug,
-			status: 'active',
 		});
 		if (!response.ok) return response;
-	} catch (e) {
-		// Fail gracefully for now
-	}
-
-	try {
-		// Try and activate it if the above fails
-		return await activatePlugin(plugin);
 	} catch (e) {
 		// Fail gracefully for now
 	}
@@ -137,22 +129,42 @@ export const addPatternSectionsToNav = async (homePatterns, headerCode) => {
 	return updateNavAttributes(headerCode, { ref: navigation.id });
 };
 
-export const addPagesToNav = async (pages, wpPages, headerCode) => {
-	// We match the original slugs as the new ones could have changed by wp
-	const findWpPage = ({ slug }) =>
-		wpPages.find(({ originalSlug: s }) => s === slug) || {};
+export const addPagesToNav = async (
+	allPages,
+	createdPages,
+	pluginPages,
+	headerCode,
+) => {
+	// Because WP may have changed the slug and permalink (i.e., because of different languages),
+	// we are using the `originalSlug` property to match the original pages with the updated ones.
+	const findCreatedPage = ({ slug }) =>
+		createdPages.find(({ originalSlug: s }) => s === slug) || {};
 
-	const pageListItems = pages
-		.filter((p) => findWpPage(p)?.id) // make sure its a page
+	const filteredCreatedPages = allPages
+		.filter((p) => findCreatedPage(p)?.id) // make sure its a page
 		.filter(({ slug }) => slug !== 'home') // exclude home page
+		.map((page) => findCreatedPage(page));
+
+	const navigationLinks = filteredCreatedPages
+		.concat(pluginPages)
 		.map((page) => {
-			const { id, title, link, type } = findWpPage(page);
-			return `<!-- wp:navigation-link { "label":"${title.rendered}", "type":"${type}", "id":"${id}", "url":"${link}", "kind":"post-type", "isTopLevelLink":true } /-->`;
+			const { id, title, link, type } = page;
+
+			const attributes = JSON.stringify({
+				label: title.rendered,
+				id,
+				type,
+				url: link,
+				kind: id ? 'post-type' : 'custom',
+				isTopLevelLink: true,
+			});
+
+			return `<!-- wp:navigation-link ${attributes} /-->`;
 		})
 		.join('');
 
 	// Create a custom navigation
-	const navigation = await saveNavigation(pageListItems);
+	const navigation = await saveNavigation(navigationLinks);
 
 	// Add ref to nav attributes
 	return updateNavAttributes(headerCode, { ref: navigation.id });

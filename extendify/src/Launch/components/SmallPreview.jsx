@@ -1,4 +1,4 @@
-import { BlockPreview, transformStyles } from '@wordpress/block-editor';
+import { BlockPreview } from '@wordpress/block-editor';
 import { rawHandler } from '@wordpress/blocks';
 import {
 	useState,
@@ -23,13 +23,6 @@ export const SmallPreview = ({ style, onSelect, selected }) => {
 	const [ready, setReady] = useState(false);
 	const variation = style?.variation;
 	const theme = variation?.settings?.color?.palette?.theme;
-	const transformedStyles = useMemo(
-		() =>
-			themeJSON?.[style?.variation?.title]
-				? transformStyles([{ css: themeJSON[style?.variation?.title] }])
-				: null,
-		[style?.variation],
-	);
 
 	const onLoad = useCallback(
 		(frame) => {
@@ -43,19 +36,23 @@ export const SmallPreview = ({ style, onSelect, selected }) => {
 				if (now - lastRun < 100) return requestAnimationFrame(checkOnStyles);
 				lastRun = now;
 				frame?.contentDocument?.querySelector('[href*=load-styles]')?.remove();
-				const style = `<style id="ext-tj">
-               		${transformedStyles}
+				const stylesToInject = `<style id="ext-tj">
+               		${themeJSON[style?.variation?.title]}
 									.wp-block-missing { display: none !important }
+									img[src^=data] { filter: url(#wp-duotone-primary) !important }
             	</style>`;
 				if (!frame.contentDocument?.getElementById('ext-tj')) {
-					frame.contentDocument?.body?.insertAdjacentHTML('beforeend', style);
+					frame.contentDocument?.body?.insertAdjacentHTML(
+						'beforeend',
+						stylesToInject,
+					);
 				}
 				counter++;
 				requestAnimationFrame(checkOnStyles); // recursive
 			};
 			checkOnStyles();
 		},
-		[transformedStyles],
+		[style?.variation?.title],
 	);
 
 	const { loading, ready: show } = usePreviewIframe({

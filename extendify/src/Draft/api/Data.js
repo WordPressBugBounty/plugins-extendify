@@ -101,35 +101,3 @@ export const downloadPing = (id, source, details = {}) =>
 		headers: { 'Content-Type': 'application/json' },
 		body: JSON.stringify({ id, source, ...details }),
 	});
-
-export const searchUnsplash = async (search = '') => {
-	const queryString = new URLSearchParams({
-		...extraBody,
-	});
-
-	if (search) queryString.append('query', search);
-
-	const res = await fetch(
-		`${AI_HOST}/api/draft/image/unsplash?${queryString.toString()}`,
-		{
-			method: 'GET',
-			headers: { 'Content-Type': 'application/json' },
-		},
-	);
-
-	if (!res.ok) throw new Error('Bad response from server');
-	const images = await res.json();
-
-	if (!Array.isArray(images)) {
-		throw new Error('Bad response from server');
-	}
-
-	const result = {
-		images,
-		total: res.headers.get('X-Total'),
-		perPage: res.headers.get('X-Per-Page'),
-		requestID: res.headers.get('X-Request-Id'),
-	};
-
-	return result;
-};

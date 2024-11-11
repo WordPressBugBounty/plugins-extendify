@@ -10,6 +10,8 @@ export const DropdownTranslate = ({
 	updatePrompt,
 }) => {
 	const items = [
+		{ language: __('Arabic', 'extendify-local'), code: 'ar' },
+		{ language: __('Arabic (Morocco)', 'extendify-local'), code: 'ary' },
 		{ language: __('Bulgarian', 'extendify-local'), code: 'bg_BG' },
 		{ language: __('Catalan', 'extendify-local'), code: 'ca' },
 		{ language: __('Czech', 'extendify-local'), code: 'cs_CZ' },
@@ -17,6 +19,7 @@ export const DropdownTranslate = ({
 		{ language: __('Dutch', 'extendify-local'), code: 'nl_NL' },
 		{ language: __('Dutch (Belgium)', 'extendify-local'), code: 'de_BE' },
 		{ language: __('English', 'extendify-local'), code: 'en' },
+		{ language: __('English (UK)', 'extendify-local'), code: 'en_GB' },
 		{ language: __('Estonian', 'extendify-local'), code: 'et' },
 		{ language: __('Finnish', 'extendify-local'), code: 'fi' },
 		{ language: __('French (Belgium)', 'extendify-local'), code: 'fr_BE' },
@@ -25,6 +28,7 @@ export const DropdownTranslate = ({
 		{ language: __('German', 'extendify-local'), code: 'de_DE' },
 		{ language: __('German (Switzerland)', 'extendify-local'), code: 'de_CH' },
 		{ language: __('Greek', 'extendify-local'), code: 'el' },
+		{ language: __('Hindi', 'extendify-local'), code: 'hi_IN' },
 		{ language: __('Hungarian', 'extendify-local'), code: 'hu_HU' },
 		{ language: __('Indonesian', 'extendify-local'), code: 'id_ID' },
 		{ language: __('Italian', 'extendify-local'), code: 'it_IT' },
@@ -36,6 +40,8 @@ export const DropdownTranslate = ({
 		{ language: __('Russian', 'extendify-local'), code: 'ru_RU' },
 		{ language: __('Slovak', 'extendify-local'), code: 'sk_SK' },
 		{ language: __('Spanish (Spain)', 'extendify-local'), code: 'es_ES' },
+		{ language: __('Spanish (Colombia)', 'extendify-local'), code: 'es_CO' },
+		{ language: __('Spanish (Mexico)', 'extendify-local'), code: 'es_MX' },
 		{ language: __('Swedish', 'extendify-local'), code: 'sv_SE' },
 		{ language: __('Turkish', 'extendify-local'), code: 'tr_TR' },
 		{ language: __('Ukrainian', 'extendify-local'), code: 'uk' },

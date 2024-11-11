@@ -57,7 +57,7 @@ export const QuickLinks = ({ className }) => {
 		},
 		{
 			title: __('Edit header', 'extendify-local'),
-			link: `${adminUrl}site-editor.php?postId=extendable%2F%2Fheader&postType=wp_template_part`,
+			link: `${adminUrl}site-editor.php?postId=extendable%2F%2Fheader&postType=wp_template_part&canvas=edit`,
 			slug: 'edit-header',
 			icon: header,
 			show: themeSlug === 'extendable',

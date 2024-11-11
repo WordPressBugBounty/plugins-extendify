@@ -160,6 +160,14 @@ export const GuidedTour = () => {
 		onTourPage,
 	]);
 
+	// Check for the inert attribute and remove it if it exists
+	useEffect(() => {
+		if (!currentStep) return;
+		document
+			.querySelectorAll('[inert]')
+			.forEach((el) => el?.removeAttribute('inert'));
+	}, [currentStep]);
+
 	// register a custom event to start the specified tour.
 	useEffect(() => {
 		const handle = (event) => {

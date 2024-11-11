@@ -3,8 +3,10 @@ import { __ } from '@wordpress/i18n';
 import { Transition } from '@headlessui/react';
 import { pageNames } from '@shared/lib/pages';
 import { colord } from 'colord';
+import { getSiteProfile } from '@launch/api/DataApi';
 import {
 	installPlugin,
+	activatePlugin,
 	updateTemplatePart,
 	addPagesToNav,
 	addPatternSectionsToNav,
@@ -16,6 +18,7 @@ import {
 	postLaunchFunctions,
 } from '@launch/api/WPApi';
 import { PagesSkeleton } from '@launch/components/CreatingSite/PageSkeleton';
+import { useCanLaunch } from '@launch/hooks/useCanLaunch';
 import { useConfetti } from '@launch/hooks/useConfetti';
 import { useWarnOnLeave } from '@launch/hooks/useWarnOnLeave';
 import {
@@ -31,6 +34,7 @@ import {
 	updateGlobalStyleVariant,
 } from '@launch/lib/wp';
 import { usePagesStore } from '@launch/state/Pages';
+import { usePagesSelectionStore } from '@launch/state/pages-selections';
 import { useUserSelectionStore } from '@launch/state/user-selections';
 import { Logo, Spinner } from '@launch/svg';
 
@@ -39,18 +43,20 @@ export const CreatingSite = () => {
 	const [confettiReady, setConfettiReady] = useState(false);
 	const [confettiColors, setConfettiColors] = useState(['#ffffff']);
 	const [warnOnLeaveReady, setWarnOnLeaveReady] = useState(true);
-	const canLaunch = useUserSelectionStore((state) => state.canLaunch());
+	const canLaunch = useCanLaunch();
 	const {
-		pages,
-		style,
-		plugins,
 		goals,
 		businessInformation,
 		siteType,
 		siteInformation,
 		siteTypeSearch,
 		siteStructure,
+		getGoalsPlugins,
+		variation,
 	} = useUserSelectionStore();
+
+	const { pages, style } = usePagesSelectionStore();
+
 	const [info, setInfo] = useState([]);
 	const [infoDesc, setInfoDesc] = useState([]);
 	const inform = (msg) => setInfo((info) => [msg, ...info]);
@@ -77,8 +83,18 @@ export const CreatingSite = () => {
 			informDesc(__('Creating a beautiful website', 'extendify-local'));
 			await new Promise((resolve) => setTimeout(resolve, 1000));
 
+			if (businessInformation.description) {
+				const profile = await getSiteProfile({
+					title: siteInformation.title,
+					description: businessInformation.description,
+					siteType,
+				});
+				await waitFor200Response();
+				await updateOption('extendify_site_profile', profile);
+			}
+
 			await waitFor200Response();
-			await updateGlobalStyleVariant(style?.variation ?? {});
+			await updateGlobalStyleVariant(variation ?? {});
 
 			await waitFor200Response();
 			await updateTemplatePart('extendable/header', style?.headerCode);
@@ -86,49 +102,60 @@ export const CreatingSite = () => {
 			await waitFor200Response();
 			await updateTemplatePart('extendable/footer', style?.footerCode);
 
+			const goalsPlugins = getGoalsPlugins();
+			const requiredPlugins = window.extSharedData?.requiredPlugins ?? [];
+
 			// Add required plugins to the end of the list to give them lower priority
 			// when filtering out duplicates.
-			const pluginsSorted = [
-				...(plugins ?? []),
-				...(window.extSharedData?.requiredPlugins ?? []),
-			]
-				// We add give to the front. See here why:
-				// https://github.com/extendify/company-product/issues/713
-				.sort(({ wordpressSlug }) => (wordpressSlug === 'give' ? -1 : 1))
+			const sortedPlugins = [...goalsPlugins, ...requiredPlugins]
 				// Remove duplicates
 				.reduce((acc, plugin) => {
 					const found = acc.find(
 						({ wordpressSlug: s }) => s === plugin.wordpressSlug,
 					);
 					return found ? acc : [...acc, plugin];
-				}, []);
+				}, [])
+				// We add give to the front. See here why:
+				// https://github.com/extendify/company-product/issues/713
+				.sort(({ wordpressSlug }) => (wordpressSlug === 'give' ? -1 : 1));
 
-			if (pluginsSorted?.length) {
+			if (sortedPlugins?.length) {
 				inform(__('Installing necessary plugins', 'extendify-local'));
 
-				for (const [index, plugin] of pluginsSorted.entries()) {
+				for (const [index, plugin] of sortedPlugins.entries()) {
 					informDesc(
 						__(
-							`${index + 1}/${pluginsSorted.length}: ${plugin.name}`,
+							`${index + 1}/${sortedPlugins.length}: ${plugin.name}`,
 							'extendify-local',
 						),
 					);
 
-					await waitFor200Response();
+					// Install plugin (2 attempts)
 					try {
+						await waitFor200Response();
 						await installPlugin(plugin);
-					} catch (e) {
+					} catch (_) {
 						// If this fails, wait and try again
 						await waitFor200Response();
 						await installPlugin(plugin);
 					}
-				}
 
-				inform(__('Populating data', 'extendify-local'));
-				informDesc(__('Personalizing your experience', 'extendify-local'));
-				await prefetchAssistData();
-				await waitFor200Response();
+					// Activate plugin  (2 attempts)
+					try {
+						await waitFor200Response();
+						await activatePlugin(plugin);
+					} catch (_) {
+						// If this fails, wait and try again
+						await waitFor200Response();
+						await activatePlugin(plugin);
+					}
+				}
 			}
+
+			inform(__('Populating data', 'extendify-local'));
+			informDesc(__('Personalizing your experience', 'extendify-local'));
+			await prefetchAssistData();
+			await waitFor200Response();
 
 			inform(__('Adding page content', 'extendify-local'));
 			informDesc(__('Starting off with a full website', 'extendify-local'));
@@ -199,7 +226,7 @@ export const CreatingSite = () => {
 			informDesc(__('Setting up site layout', 'extendify-local'));
 			const addBlogPageToNav = goals?.some((goal) => goal.slug === 'blog');
 
-			let navPagesMultiPageSite = [
+			const navPagesMultiPageSite = [
 				...pages,
 				addBlogPageToNav ? blogPage : null,
 				homePage,
@@ -208,39 +235,30 @@ export const CreatingSite = () => {
 				// Sorted AZ by title in all languages
 				.sort((a, b) => a?.name?.localeCompare(b?.name));
 
+			const pluginPages = [];
+
 			// Fetch active plugins after installing plugins
 			let { data: activePlugins } = await getActivePlugins();
+
 			// Add plugin related pages only if plugin is active
 			if (wasInstalled(activePlugins, 'woocommerce')) {
 				const shopPageId = await getOption('woocommerce_shop_page_id');
 				const shopPage = await getPageById(shopPageId);
-				const cartPageId = await getOption('woocommerce_cart_page_id');
-				const cartPage = await getPageById(cartPageId);
-				if (shopPageId && shopPage && cartPageId && cartPage) {
-					const wooShopPage = {
-						id: shopPageId,
-						slug: shopPage.slug,
-						title: shopPage.title.rendered,
-					};
-					const wooCartPage = {
-						id: cartPageId,
-						slug: cartPage.slug,
-						title: cartPage.title.rendered,
-					};
-					navPagesMultiPageSite = [
-						...navPagesMultiPageSite,
-						wooShopPage,
-						wooCartPage,
-					];
+
+				if (shopPage) {
+					pluginPages.push(shopPage);
 				}
 			}
 
 			if (wasInstalled(activePlugins, 'the-events-calendar')) {
 				const eventsPage = {
-					slug: 'events',
-					title: __('Events', 'extendify-local'),
+					title: {
+						rendered: __('Events', 'extendify-local'),
+					},
+					link: '/events',
 				};
-				navPagesMultiPageSite = [...navPagesMultiPageSite, eventsPage];
+
+				pluginPages.push(eventsPage);
 			}
 
 			if (wasInstalled(activePlugins, 'wpforms-lite')) {
@@ -272,6 +290,7 @@ export const CreatingSite = () => {
 				: await addPagesToNav(
 						navPagesMultiPageSite,
 						pagesWithLinksUpdated,
+						pluginPages,
 						style?.headerCode,
 					);
 
@@ -311,7 +330,7 @@ export const CreatingSite = () => {
 		}
 	}, [
 		pages,
-		plugins,
+		getGoalsPlugins,
 		style,
 		canLaunch,
 		goals,
@@ -321,6 +340,7 @@ export const CreatingSite = () => {
 		siteTypeSearch,
 		setPagesToAnimate,
 		siteStructure,
+		variation,
 	]);
 
 	useEffect(() => {

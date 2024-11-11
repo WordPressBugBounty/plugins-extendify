@@ -51,19 +51,19 @@ const defaultPages = [
 		},
 	],
 	[
+		'site-structure',
+		{
+			component: SiteStructure,
+			state: siteStructureState,
+		},
+	],
+	[
 		'goals',
 		{
 			component: Goals,
 			fetcher: [goalsFetcher],
 			fetchData: [goalsData],
 			state: goalsState,
-		},
-	],
-	[
-		'site-structure',
-		{
-			component: SiteStructure,
-			state: siteStructureState,
 		},
 	],
 	[
