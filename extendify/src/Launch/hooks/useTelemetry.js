@@ -28,7 +28,8 @@ export const useTelemetry = () => {
 		const p = [...pages].map((p) => p[0]);
 		// Add pages as they move around
 		setStepProgress((progress) =>
-			progress?.at(-1) === p[currentPageIndex]
+			// Return early if launched, or on the same page
+			[p[currentPageIndex], 'launched'].includes(progress?.at(-1))
 				? progress
 				: [...progress, p[currentPageIndex]],
 		);

@@ -117,7 +117,7 @@ class Admin
                 'version' => \esc_attr(Config::$version),
                 'siteTitle' => \esc_attr(\get_bloginfo('name')),
                 'siteType' => Escaper::recursiveEscAttr(\get_option('extendify_siteType', [])),
-                'siteProfile' => Escaper::recursiveEscAttr($siteProfile),
+                'siteProfile' => Escaper::recursiveEscAttr((array) $siteProfile),
                 'adminUrl' => \esc_url_raw(\admin_url()),
                 'wpLanguage' => \esc_attr(\get_locale()),
                 'wpVersion' => \esc_attr(\get_bloginfo('version')),

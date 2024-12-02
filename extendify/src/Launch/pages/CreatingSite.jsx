@@ -424,7 +424,7 @@ export const CreatingSite = () => {
 							}
 						})}
 						<div className="mt-6 flex items-center space-x-4">
-							<Spinner className="spin" />
+							<Spinner className="spin rtl:ml-3" />
 							{infoDesc.map((step, index) => {
 								if (!index) {
 									return (

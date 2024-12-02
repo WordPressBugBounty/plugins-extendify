@@ -1,6 +1,6 @@
 import { Snackbar } from '@wordpress/components';
 import { useEffect, useLayoutEffect, useState } from '@wordpress/element';
-import { __ } from '@wordpress/i18n';
+import { __, isRTL } from '@wordpress/i18n';
 import { AnimatePresence, motion } from 'framer-motion';
 import { NavigationButton } from '@launch/components/NavigationButton';
 import { useCanLaunch } from '@launch/hooks/useCanLaunch';
@@ -124,8 +124,12 @@ const PrevButton = () => {
 				}
 				className="border-gray-200 bg-white text-design-main hover:bg-gray-50 focus:bg-gray-50">
 				<>
-					<LeftCaret className="mt-px h-5 w-5" />
-					{__('Exit Launch', 'extendify-local')}
+					{isRTL() ? (
+						<RightCaret className="mt-px h-5 w-5" />
+					) : (
+						<LeftCaret className="mt-px h-5 w-5" />
+					)}
+					<span>{__('Exit Launch', 'extendify-local')}</span>
 				</>
 			</NavigationButton>
 		);
@@ -137,8 +141,12 @@ const PrevButton = () => {
 			data-test="back-button"
 			className="border-gray-200 bg-white text-design-main hover:bg-gray-50 focus:bg-gray-50">
 			<>
-				<LeftCaret className="mt-px h-5 w-5" />
-				{__('Back', 'extendify-local')}
+				{isRTL() ? (
+					<RightCaret className="mt-px h-5 w-5" />
+				) : (
+					<LeftCaret className="mt-px h-5 w-5" />
+				)}
+				<span>{__('Back', 'extendify-local')}</span>
 			</>
 		</NavigationButton>
 	);
@@ -192,7 +200,11 @@ const NextButton = () => {
 					className="mr-2 border-gray-200 bg-white text-design-main hover:bg-gray-50 focus:bg-gray-50">
 					<>
 						{__('Skip', 'extendify-local')}
-						<RightCaret className="mt-px h-5 w-5" />
+						{isRTL() ? (
+							<LeftCaret className="mt-px h-5 w-5" />
+						) : (
+							<RightCaret className="mt-px h-5 w-5" />
+						)}
 					</>
 				</NavigationButton>
 			) : (
@@ -203,7 +215,11 @@ const NextButton = () => {
 					data-test="next-button">
 					<>
 						{__('Next', 'extendify-local')}
-						<RightCaret className="mt-px h-5 w-5" />
+						{isRTL() ? (
+							<LeftCaret className="mt-px h-5 w-5" />
+						) : (
+							<RightCaret className="mt-px h-5 w-5" />
+						)}
 					</>
 				</NavigationButton>
 			)}

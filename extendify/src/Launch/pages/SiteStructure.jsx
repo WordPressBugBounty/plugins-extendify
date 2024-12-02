@@ -4,8 +4,8 @@ import {
 	useMemo,
 	useState,
 } from '@wordpress/element';
-import { __ } from '@wordpress/i18n';
-import { Icon, arrowRight } from '@wordpress/icons';
+import { __, isRTL } from '@wordpress/i18n';
+import { Icon, arrowRight, arrowLeft } from '@wordpress/icons';
 import classNames from 'classnames';
 import { Title } from '@launch/components/Title';
 import { PageLayout } from '@launch/layouts/PageLayout';
@@ -110,7 +110,7 @@ const ButtonSelect = ({ title, description, onClick, selected, imageSrc }) => (
 			<p className="m-0 mb-3 p-0 text-gray-700 3xl:mb-4">{description}</p>
 			<div className="flex items-center justify-between">
 				<h1 className="m-0 p-0 text-lg font-semibold">{title}</h1>
-				<Icon icon={arrowRight} />
+				<Icon icon={isRTL() ? arrowLeft : arrowRight} />
 			</div>
 		</div>
 	</div>

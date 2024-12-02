@@ -103,7 +103,7 @@ export const RestartLaunchModal = ({ setPage }) => {
 								<Dialog.Title className="m-0 flex items-center py-6 pl-8 pr-7 text-2xl font-bold text-gray-900">
 									{__('Start over?', 'extendify-local')}
 								</Dialog.Title>
-								<div className="relative max-w-screen-sm px-8 py-0 text-left text-base font-normal">
+								<div className="relative max-w-screen-sm px-8 py-0 text-left text-base font-normal rtl:text-right">
 									{__(
 										'Go through the onboarding process again to create a new site.',
 										'extendify-local',
@@ -120,7 +120,7 @@ export const RestartLaunchModal = ({ setPage }) => {
 										)}
 									</strong>
 								</div>
-								<div className="flex justify-end space-x-4 px-8 py-8 text-base">
+								<div className="flex justify-end gap-2 px-8 py-8 text-base">
 									<NavigationButton
 										data-test="modal-exit-button"
 										onClick={handleExit}

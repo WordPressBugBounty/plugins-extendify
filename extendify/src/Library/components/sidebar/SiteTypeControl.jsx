@@ -81,7 +81,7 @@ export const SiteTypeControl = () => {
 										setSearch('');
 										setIsOpen(false);
 									}}
-									className="mb-0.5 block w-full cursor-pointer rounded bg-transparent px-3 py-1 text-left text-sm text-gray-900 hover:bg-gray-100">
+									className="mb-0.5 block w-full cursor-pointer rounded bg-transparent px-3 py-1 text-left text-sm text-gray-900 hover:bg-gray-100 rtl:text-right">
 									{siteType.name}
 								</button>
 							</li>

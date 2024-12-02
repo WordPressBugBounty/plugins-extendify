@@ -108,7 +108,10 @@ export const QuickLinks = ({ className }) => {
 								title={item.title}
 								data-test={`assist-quick-links-module-${item.slug}`}
 								className="flex items-center justify-center py-1.5 text-sm text-gray-800 no-underline hover:text-design-main hover:underline hover:underline-offset-2">
-								<Icon icon={item.icon} className="mr-2 fill-current" />
+								<Icon
+									icon={item.icon}
+									className="mr-2 fill-current rtl:ml-2 rtl:mr-auto"
+								/>
 								<span className="mr-1">{item.title}</span>
 							</a>
 						))}

@@ -62,7 +62,7 @@ export const SiteTones = () => {
 								htmlFor={tone.value}
 								className="flex h-full w-full cursor-pointer items-center justify-between p-2 text-gray-900">
 								<div className="flex flex-auto items-center">
-									<span className="relative mr-1 inline-block h-4 w-4 align-middle">
+									<span className="relative mr-1 inline-block h-4 w-4 align-middle rtl:ml-1 rtl:mr-0">
 										<input
 											id={tone.value}
 											className="h-4 w-4 rounded-sm focus:ring-0 focus:ring-offset-0"

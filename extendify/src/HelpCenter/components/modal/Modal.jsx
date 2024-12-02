@@ -27,7 +27,7 @@ export const Modal = () => {
 	if (visibility === 'minimized') {
 		return (
 			<div className="extendify-help-center">
-				<div className="fixed bottom-0 right-0 z-high mx-auto w-[420px] md:m-8">
+				<div className="fixed bottom-0 right-0 z-high mx-auto w-[420px] md:m-8 rtl:left-0 rtl:right-auto">
 					<MinimizedButton />
 				</div>
 			</div>
@@ -51,7 +51,7 @@ export const Modal = () => {
 			onClose={() => undefined}>
 			<div
 				// TODO: later measure the dashboard height using h-fit and apply that elsewhere
-				className="fixed bottom-0 right-0 z-high mx-auto h-full max-h-[589px] w-full max-w-[420px] md:m-8 md:mt-20">
+				className="fixed bottom-0 right-0 z-high mx-auto h-full max-h-[589px] w-full max-w-[420px] md:m-8 md:mt-20 rtl:left-0 rtl:right-auto">
 				<motion.div
 					key="help-center-modal"
 					initial={{ y: 6, opacity: 0 }}
