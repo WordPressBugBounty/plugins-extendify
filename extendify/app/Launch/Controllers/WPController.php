@@ -109,5 +109,4 @@ class WPController
 
         return new \WP_REST_Response(['success' => true]);
     }
-
 }

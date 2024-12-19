@@ -12,11 +12,11 @@ import { forwardRef } from '@wordpress/element';
 import { pageNames } from '@shared/lib/pages';
 import classNames from 'classnames';
 import { AnimatePresence, motion } from 'framer-motion';
+import themeJSON from '@launch/_data/theme-processed.json';
 import { usePreviewIframe } from '@launch/hooks/usePreviewIframe';
 import { hexTomatrixValues, lowerImageQuality } from '@launch/lib/util';
-import themeJSON from '../_data/theme-processed.json';
 
-export const PagePreview = forwardRef(({ style }, ref) => {
+export const PagePreview = forwardRef(({ style, siteTitle, loading }, ref) => {
 	const previewContainer = useRef(null);
 	const blockRef = useRef(null);
 	const [ready, setReady] = useState(false);
@@ -33,7 +33,11 @@ export const PagePreview = forwardRef(({ style }, ref) => {
 				const now = performance.now();
 				if (now - lastRun < 100) return requestAnimationFrame(checkOnStyles);
 				lastRun = now;
-				frame?.contentDocument?.querySelector('[href*=load-styles]')?.remove();
+				const content = frame?.contentDocument;
+				if (content) {
+					content.querySelector('[href*=load-styles]')?.remove();
+					content.querySelector('[href*=site-title]').textContent = siteTitle;
+				}
 				if (!frame.contentDocument?.getElementById('ext-tj')) {
 					const primaryColor =
 						style?.variation?.settings?.color?.palette?.theme?.find(
@@ -78,7 +82,7 @@ export const PagePreview = forwardRef(({ style }, ref) => {
 			};
 			checkOnStyles();
 		},
-		[style?.variation],
+		[style?.variation, siteTitle],
 	);
 
 	const { ready: showPreview } = usePreviewIframe({
@@ -128,10 +132,12 @@ export const PagePreview = forwardRef(({ style }, ref) => {
 		return () => clearTimeout(timer);
 	}, [blocks]);
 
+	const isLoading = !showPreview && loading;
+
 	return (
 		<>
 			<AnimatePresence>
-				{showPreview || (
+				{(isLoading || !showPreview) && (
 					<motion.div
 						initial={{ opacity: 0.7 }}
 						animate={{ opacity: 1 }}

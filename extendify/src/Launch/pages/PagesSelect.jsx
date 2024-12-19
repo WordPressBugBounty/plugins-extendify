@@ -3,6 +3,7 @@ import { __ } from '@wordpress/i18n';
 import { getPageTemplates } from '@launch/api/DataApi';
 import { PagePreview } from '@launch/components/PagePreview';
 import { PageSelectButton } from '@launch/components/PageSelectButton';
+import { PageSelectButtonPlaceholder } from '@launch/components/PageSelectButtonPlaceholder';
 import { Title } from '@launch/components/Title';
 import { useFetch } from '@launch/hooks/useFetch';
 import { PageLayout } from '@launch/layouts/PageLayout';
@@ -10,20 +11,28 @@ import { pageState } from '@launch/state/factory';
 import { usePagesSelectionStore } from '@launch/state/pages-selections';
 import { useUserSelectionStore } from '@launch/state/user-selections';
 
-export const fetcher = getPageTemplates;
-export const fetchData = () => {
-	const { siteType, siteStructure } = useUserSelectionStore?.getState() || {};
+const fetcher = getPageTemplates;
+const fetchData = () => {
+	const { siteType, siteStructure, siteStrings, siteImages, goals } =
+		useUserSelectionStore?.getState() || {};
+	const {
+		style: { siteStyle },
+	} = usePagesSelectionStore.getState();
 	return {
 		key: 'pages-list',
 		siteType,
 		siteStructure,
+		siteStrings,
+		siteImages,
+		siteStyle,
+		goals,
 	};
 };
 
 export const state = pageState('Pages', () => ({
 	ready: true,
 	canSkip: false,
-	validation: null,
+	useNav: true,
 	onRemove: () => {
 		// If the page is removed then clean up the selected pages
 		const { pages, remove } = usePagesSelectionStore.getState();
@@ -32,12 +41,17 @@ export const state = pageState('Pages', () => ({
 }));
 
 export const PagesSelect = () => {
-	const { data: availablePages, loading } = useFetch(fetchData, fetcher);
+	const { data: availablePages, loading, error } = useFetch(fetchData, fetcher);
 	const [previewing, setPreviewing] = useState();
 	const [expandMore, setExpandMore] = useState();
+	const { siteInformation } = useUserSelectionStore();
 	const { pages, remove, removeAll, add, has, style } =
 		usePagesSelectionStore();
 	const pagePreviewRef = useRef();
+
+	useEffect(() => {
+		state.setState({ ready: !loading && !error });
+	}, [loading, error]);
 
 	const homePage = useMemo(
 		() => ({
@@ -96,7 +110,7 @@ export const PagesSelect = () => {
 
 	return (
 		<PageLayout>
-			<div className="grow space-y-4 overflow-y-scroll lg:flex lg:space-y-0">
+			<div className="grow space-y-4 overflow-y-auto lg:flex lg:space-y-0">
 				<div className="l6:px-16 hidden h-full min-h-screen grow overflow-y-hidden bg-gray-100 px-4 pt-0 lg:block lg:min-h-0 lg:pb-0 xl:px-32">
 					<div className="flex h-full flex-col">
 						<h3 className="my-2 text-center text-base font-medium text-gray-700 lg:my-4 lg:text-lg">
@@ -104,14 +118,19 @@ export const PagesSelect = () => {
 						</h3>
 						<div
 							ref={pagePreviewRef}
-							className="relative h-full grow overflow-x-hidden rounded-t-lg lg:h-auto lg:overflow-y-scroll">
-							{previewing && !loading && (
-								<PagePreview ref={pagePreviewRef} style={styleMemo} />
+							className="relative h-full grow overflow-x-hidden rounded-t-lg lg:h-auto lg:overflow-y-auto">
+							{previewing && (
+								<PagePreview
+									ref={pagePreviewRef}
+									style={styleMemo}
+									siteTitle={siteInformation.title}
+									loading={loading}
+								/>
 							)}
 						</div>
 					</div>
 				</div>
-				<div className="flex w-full flex-col items-center overflow-y-auto px-6 py-8 lg:max-w-lg lg:px-12 lg:py-16">
+				<div className="flex w-full flex-col items-center overflow-y-auto px-6 py-8 lg:max-w-lg lg:px-12">
 					<Title
 						title={__(
 							'Pick the pages to add to your website',
@@ -133,19 +152,25 @@ export const PagesSelect = () => {
 							forceChecked={true}
 							onChange={() => undefined}
 						/>
-						{availablePages?.recommended?.map((page) => (
-							<PageSelectButton
-								key={page.id}
-								page={page}
-								previewing={page.id === previewing?.id}
-								onPreview={() => setPreviewing(page)}
-								checked={has('pages', page)}
-								onChange={() => handlePageToggle(page)}
-							/>
-						))}
+						{!loading &&
+							!error &&
+							availablePages?.recommended?.map((page) => (
+								<PageSelectButton
+									key={page.id}
+									page={page}
+									previewing={page.id === previewing?.id}
+									onPreview={() => setPreviewing(page)}
+									checked={has('pages', page)}
+									onChange={() => handlePageToggle(page)}
+								/>
+							))}
+						{(loading || error) &&
+							Array.from({ length: 5 }, (_, index) => (
+								<PageSelectButtonPlaceholder key={index} />
+							))}
 					</div>
 
-					{!expandMore && (
+					{!loading && !expandMore && (
 						<div className="flex items-center justify-center">
 							<button
 								type="button"

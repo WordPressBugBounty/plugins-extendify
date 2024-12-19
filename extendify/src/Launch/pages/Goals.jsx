@@ -1,40 +1,30 @@
 import { useEffect, useState } from '@wordpress/element';
 import { __ } from '@wordpress/i18n';
 import classNames from 'classnames';
-import { getGoals } from '@launch/api/DataApi';
 import { CheckboxInputCard } from '@launch/components/CheckboxInputCard';
 import { LoadingIndicator } from '@launch/components/LoadingIndicator';
 import { Title } from '@launch/components/Title';
-import { useFetch } from '@launch/hooks/useFetch';
+import { useGoals } from '@launch/hooks/useGoals';
 import { PageLayout } from '@launch/layouts/PageLayout';
 import { usePagesStore } from '@launch/state/Pages';
 import { pageState } from '@launch/state/factory';
 import { useUserSelectionStore } from '@launch/state/user-selections';
 import * as IconComponents from '@launch/svg';
 
-export const goalsFetcher = async (params) => ({
-	goals: await getGoals(params),
-});
-export const goalsParams = () => ({
-	key: 'goals',
-	siteTypeSlug: useUserSelectionStore.getState()?.siteType?.slug,
-});
-
 export const state = pageState('Goals', () => ({
 	title: __('Goals', 'extendify-local'),
 	ready: false,
 	canSkip: false,
-	validation: null,
+	useNav: true,
 	onRemove: () => {},
 }));
 
 export const Goals = () => {
-	const { error, loading, data } = useFetch(goalsParams(), goalsFetcher);
-	const { goals } = data ?? {};
+	const { loading, goals } = useGoals();
 
 	return (
 		<PageLayout>
-			<div className="grow overflow-y-scroll px-6 py-8 md:p-12 3xl:p-16">
+			<div className="grow overflow-y-auto px-6 py-8 md:p-12 3xl:p-16">
 				<Title
 					title={__('What are your goals for your website?', 'extendify-local')}
 					description={__(
@@ -43,11 +33,7 @@ export const Goals = () => {
 					)}
 				/>
 				<div className="relative mx-auto w-full max-w-3xl">
-					{loading || error ? (
-						<LoadingIndicator />
-					) : (
-						<GoalsSelector goals={goals} />
-					)}
+					{loading ? <LoadingIndicator /> : <GoalsSelector goals={goals} />}
 				</div>
 			</div>
 		</PageLayout>

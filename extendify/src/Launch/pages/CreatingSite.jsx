@@ -3,22 +3,23 @@ import { __ } from '@wordpress/i18n';
 import { Transition } from '@headlessui/react';
 import { pageNames } from '@shared/lib/pages';
 import { colord } from 'colord';
-import { getSiteProfile } from '@launch/api/DataApi';
 import {
 	installPlugin,
 	activatePlugin,
 	updateTemplatePart,
-	addPagesToNav,
-	addPatternSectionsToNav,
+	addSectionLinksToNav,
+	addPageLinksToNav,
 	updateOption,
 	getOption,
 	getPageById,
 	getActivePlugins,
 	prefetchAssistData,
 	postLaunchFunctions,
+	createNavigation,
+	updateNavAttributes,
 } from '@launch/api/WPApi';
+import { importTemporaryProducts } from '@launch/api/WooCommerce';
 import { PagesSkeleton } from '@launch/components/CreatingSite/PageSkeleton';
-import { useCanLaunch } from '@launch/hooks/useCanLaunch';
 import { useConfetti } from '@launch/hooks/useConfetti';
 import { useWarnOnLeave } from '@launch/hooks/useWarnOnLeave';
 import {
@@ -29,6 +30,7 @@ import { uploadLogo } from '@launch/lib/logo';
 import { waitFor200Response, wasInstalled } from '@launch/lib/util';
 import {
 	createWpPages,
+	createBlogSampleData,
 	generateCustomPageContent,
 	replacePlaceholderPatterns,
 	updateGlobalStyleVariant,
@@ -43,20 +45,19 @@ export const CreatingSite = () => {
 	const [confettiReady, setConfettiReady] = useState(false);
 	const [confettiColors, setConfettiColors] = useState(['#ffffff']);
 	const [warnOnLeaveReady, setWarnOnLeaveReady] = useState(true);
-	const canLaunch = useCanLaunch();
 	const {
 		goals,
 		businessInformation,
 		siteType,
 		siteInformation,
-		siteTypeSearch,
 		siteStructure,
 		getGoalsPlugins,
 		variation,
+		siteProfile,
+		siteStrings,
+		siteImages,
 	} = useUserSelectionStore();
-
 	const { pages, style } = usePagesSelectionStore();
-
 	const [info, setInfo] = useState([]);
 	const [infoDesc, setInfoDesc] = useState([]);
 	const inform = (msg) => setInfo((info) => [msg, ...info]);
@@ -67,37 +68,43 @@ export const CreatingSite = () => {
 	useWarnOnLeave(warnOnLeaveReady);
 
 	const doEverything = useCallback(async () => {
-		if (!canLaunch) {
-			throw new Error(__('Site is not ready to launch.', 'extendify-local'));
-		}
-
-		// As we add more site structures, abstract these into configs
-		const addPatternsAsNav = siteStructure === 'single-page';
-		const linkButtonsToPages = siteStructure === 'multi-page';
-		const stickyNav = siteStructure === 'single-page';
-
 		try {
+			const hasBlogGoal = goals?.find((goal) => goal.slug === 'blog');
+
 			await updateOption('permalink_structure', '/%postname%/');
 			await waitFor200Response();
 			inform(__('Applying your website styles', 'extendify-local'));
 			informDesc(__('Creating a beautiful website', 'extendify-local'));
 			await new Promise((resolve) => setTimeout(resolve, 1000));
 
-			if (businessInformation.description) {
-				const profile = await getSiteProfile({
-					title: siteInformation.title,
-					description: businessInformation.description,
-					siteType,
-				});
-				await waitFor200Response();
-				await updateOption('extendify_site_profile', profile);
+			if (siteInformation.title) {
+				await updateOption('blogname', siteInformation.title);
 			}
+
+			await waitFor200Response();
+			const siteTypeUpdated = {
+				...(siteType ?? {}),
+				// Override with the ai site type if it exists
+				name: siteProfile?.aiSiteType ?? siteType.name,
+			};
+
+			await updateOption(
+				'extendify_siteType',
+				// Only persist the site type if the slug exists
+				siteType?.slug ? siteTypeUpdated : {},
+			);
 
 			await waitFor200Response();
 			await updateGlobalStyleVariant(variation ?? {});
 
+			const navigationId = await createNavigation();
+
+			const headerCode = updateNavAttributes(style?.headerCode, {
+				ref: navigationId,
+			});
+
 			await waitFor200Response();
-			await updateTemplatePart('extendable/header', style?.headerCode);
+			await updateTemplatePart('extendable/header', headerCode);
 
 			await waitFor200Response();
 			await updateTemplatePart('extendable/footer', style?.footerCode);
@@ -137,7 +144,11 @@ export const CreatingSite = () => {
 					} catch (_) {
 						// If this fails, wait and try again
 						await waitFor200Response();
-						await installPlugin(plugin);
+						try {
+							await installPlugin(plugin);
+						} catch (e) {
+							// Fail silently if the plugin is already installed
+						}
 					}
 
 					// Activate plugin  (2 attempts)
@@ -147,7 +158,11 @@ export const CreatingSite = () => {
 					} catch (_) {
 						// If this fails, wait and try again
 						await waitFor200Response();
-						await activatePlugin(plugin);
+						try {
+							await activatePlugin(plugin);
+						} catch (e) {
+							// Fail silently if the plugin can't be activated
+						}
 					}
 				}
 			}
@@ -183,7 +198,6 @@ export const CreatingSite = () => {
 				);
 			}
 
-			const hasBlogGoal = goals?.find((goal) => goal.slug === 'blog');
 			const pagesToCreate = [
 				...pages,
 				homePage,
@@ -207,28 +221,25 @@ export const CreatingSite = () => {
 					businessInformation,
 					siteType,
 					siteInformation,
-					siteTypeSearch,
 				},
 			);
 
 			const createdPages = await createWpPages(pagesWithCustomContent, {
-				stickyNav,
+				stickyNav: siteStructure === 'single-page',
 			});
-			const pagesWithLinksUpdated = linkButtonsToPages
-				? await updateButtonLinks(createdPages)
-				: updateSinglePageLinksToContactSection(
-						createdPages,
-						pagesWithCustomContent,
-					);
+
+			if (hasBlogGoal) {
+				informDesc(__('Creating blog sample data', 'extendify-local'));
+				await createBlogSampleData(siteStrings, siteImages);
+			}
 
 			setPagesToAnimate([]);
 			await waitFor200Response();
 			informDesc(__('Setting up site layout', 'extendify-local'));
-			const addBlogPageToNav = goals?.some((goal) => goal.slug === 'blog');
 
 			const navPagesMultiPageSite = [
 				...pages,
-				addBlogPageToNav ? blogPage : null,
+				hasBlogGoal ? blogPage : null,
 				homePage,
 			]
 				.filter(Boolean)
@@ -248,6 +259,9 @@ export const CreatingSite = () => {
 				if (shopPage) {
 					pluginPages.push(shopPage);
 				}
+
+				informDesc(__('Importing shop sample data', 'extendify-local'));
+				await importTemporaryProducts();
 			}
 
 			if (wasInstalled(activePlugins, 'the-events-calendar')) {
@@ -255,7 +269,8 @@ export const CreatingSite = () => {
 					title: {
 						rendered: __('Events', 'extendify-local'),
 					},
-					link: '/events',
+					slug: 'events',
+					link: `${window.extSharedData.homeUrl}/events`,
 				};
 
 				pluginPages.push(eventsPage);
@@ -282,20 +297,28 @@ export const CreatingSite = () => {
 			);
 			await waitFor200Response();
 
-			const updatedHeaderCode = addPatternsAsNav
-				? await addPatternSectionsToNav(
-						homePage?.patterns ?? [],
-						style?.headerCode,
-					)
-				: await addPagesToNav(
-						navPagesMultiPageSite,
-						pagesWithLinksUpdated,
-						pluginPages,
-						style?.headerCode,
-					);
+			const pagesWithLinksUpdated =
+				siteStructure === 'single-page'
+					? await updateSinglePageLinksToContactSection(
+							createdPages,
+							pagesWithCustomContent,
+						)
+					: await updateButtonLinks(createdPages, pluginPages);
 
-			await waitFor200Response();
-			await updateTemplatePart('extendable/header', updatedHeaderCode);
+			if (siteStructure === 'single-page') {
+				await addSectionLinksToNav(
+					navigationId,
+					homePage?.patterns,
+					pluginPages,
+				);
+			} else {
+				await addPageLinksToNav(
+					navigationId,
+					navPagesMultiPageSite,
+					pagesWithLinksUpdated,
+					pluginPages,
+				);
+			}
 
 			inform(__('Setting up your Site Assistant', 'extendify-local'));
 			informDesc(__('Helping you to succeed', 'extendify-local'));
@@ -332,15 +355,16 @@ export const CreatingSite = () => {
 		pages,
 		getGoalsPlugins,
 		style,
-		canLaunch,
 		goals,
 		businessInformation,
 		siteType,
 		siteInformation,
-		siteTypeSearch,
 		setPagesToAnimate,
 		siteStructure,
 		variation,
+		siteProfile,
+		siteStrings,
+		siteImages,
 	]);
 
 	useEffect(() => {

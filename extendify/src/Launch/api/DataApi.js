@@ -1,7 +1,7 @@
+import { PATTERNS_HOST, AI_HOST, IMAGES_HOST } from '@constants';
 import { getHeadersAndFooters } from '@launch/api/WPApi';
 import { Axios as api } from '@launch/api/axios';
 import { useUserSelectionStore } from '@launch/state/user-selections';
-import { PATTERNS_HOST, AI_HOST } from '../../constants';
 
 const fetchTemplates = async (type, siteType, otherData = {}) => {
 	const { showLocalizedCopy, wpVersion, wpLanguage, allowedPlugins } =
@@ -10,7 +10,7 @@ const fetchTemplates = async (type, siteType, otherData = {}) => {
 	const plugins = getGoalsPlugins();
 
 	const url = new URL(`${PATTERNS_HOST}/api/${type}-templates`);
-	url.searchParams.append('siteType', siteType?.slug);
+	siteType?.slug && url.searchParams.append('siteType', siteType?.slug);
 	wpVersion && url.searchParams.append('wpVersion', wpVersion);
 	wpLanguage && url.searchParams.append('lang', wpLanguage);
 	goals?.length && url.searchParams.append('goals', JSON.stringify(goals));
@@ -35,8 +35,23 @@ const fetchTemplates = async (type, siteType, otherData = {}) => {
 	return await res.json();
 };
 
-export const getHomeTemplates = async ({ siteType, siteStructure }) => {
-	const styles = await fetchTemplates('home', siteType, { siteStructure });
+export const getHomeTemplates = async ({
+	siteType,
+	siteStructure,
+	siteProfile,
+	siteStrings,
+	siteImages,
+	siteStyles,
+	goals,
+}) => {
+	const styles = await fetchTemplates('home', siteType, {
+		siteStructure,
+		siteProfile,
+		siteStrings,
+		siteImages,
+		siteStyles,
+		goals,
+	});
 	const { headers, footers } = await getHeadersAndFooters();
 	if (!styles?.length) {
 		throw new Error('Could not get styles');
@@ -53,11 +68,21 @@ export const getHomeTemplates = async ({ siteType, siteStructure }) => {
 	});
 };
 
-export const getPageTemplates = async ({ siteType, siteStructure }) => {
-	const { siteInformation } = useUserSelectionStore.getState();
+export const getPageTemplates = async ({
+	siteType,
+	siteStructure,
+	siteStrings,
+	siteImages,
+	siteStyle,
+}) => {
+	const { siteInformation, siteProfile } = useUserSelectionStore.getState();
 	const pages = await fetchTemplates('page', siteType, {
 		siteInformation,
 		siteStructure,
+		siteStrings,
+		siteImages,
+		siteStyle,
+		siteProfile,
 	});
 	if (!pages?.recommended) {
 		throw new Error('Could not get pages');
@@ -76,10 +101,12 @@ export const getPageTemplates = async ({ siteType, siteStructure }) => {
 	};
 };
 
-export const getGoals = async ({ siteTypeSlug }) => {
+export const getGoals = async ({ title, siteTypeSlug, siteProfile }) => {
 	const goals = await api.get('launch/goals', {
 		params: {
-			site_type: siteTypeSlug ?? 'all',
+			title,
+			site_type: siteTypeSlug,
+			site_profile: siteProfile,
 		},
 	});
 	if (!goals?.data?.length) {
@@ -97,6 +124,7 @@ const allowList = [
 	'wpLanguage',
 	'wpVersion',
 ];
+
 const extraBody = {
 	...Object.fromEntries(
 		Object.entries(window.extSharedData).filter(([key]) =>
@@ -145,7 +173,7 @@ export const getLinkSuggestions = async (pageContent, availablePages) => {
 
 export const pingServer = () => api.get('launch/ping');
 
-export const getSiteProfile = async ({ title, description, siteType }) => {
+export const getSiteProfile = async ({ title, description }) => {
 	const url = `${AI_HOST}/api/site-profile`;
 	const method = 'POST';
 	const headers = { 'Content-Type': 'application/json' };
@@ -153,7 +181,6 @@ export const getSiteProfile = async ({ title, description, siteType }) => {
 		...extraBody,
 		title,
 		description,
-		siteType: siteType?.slug,
 	});
 	const fallback = {
 		aiSiteType: null,
@@ -175,4 +202,88 @@ export const getSiteProfile = async ({ title, description, siteType }) => {
 		return fallback;
 	}
 	return data?.aiSiteType ? data : fallback;
+};
+
+export const getSiteStrings = async (siteProfile) => {
+	const url = `${AI_HOST}/api/site-strings`;
+	const method = 'POST';
+	const headers = { 'Content-Type': 'application/json' };
+	const body = JSON.stringify({ ...extraBody, siteProfile });
+	const fallback = { aiHeaders: [], aiBlogTitles: [] };
+	let response;
+	try {
+		response = await fetch(url, { method, headers, body });
+	} catch (error) {
+		// try one more time
+		response = await fetch(url, { method, headers, body });
+	}
+	if (!response.ok) return fallback;
+	let data;
+	try {
+		data = await response.json();
+	} catch (error) {
+		return fallback;
+	}
+	return data?.aiHeaders ? data : fallback;
+};
+
+export const getSiteImages = async (siteProfile) => {
+	const { aiSiteType, aiDescription, aiKeywords } = siteProfile;
+	const { siteInformation } = useUserSelectionStore.getState();
+	const search = new URLSearchParams({
+		aiSiteType,
+		aiDescription,
+		aiKeywords,
+		...extraBody,
+	});
+	if (siteInformation?.title) search.append('title', siteInformation.title);
+	const url = `${IMAGES_HOST}/api/search?${search}`;
+	const method = 'GET';
+	const headers = { 'Content-Type': 'application/json' };
+	const fallback = { siteImages: [] };
+	let response;
+	try {
+		response = await fetch(url, { method, headers });
+	} catch (error) {
+		// try one more time
+		response = await fetch(url, { method, headers });
+	}
+	if (!response.ok) return fallback;
+	let data;
+	try {
+		data = await response.json();
+	} catch (error) {
+		return fallback;
+	}
+
+	return data?.siteImages ? data : fallback;
+};
+
+export const getSiteStyles = async ({ title, siteProfile }) => {
+	const request = new Request(`${AI_HOST}/api/styles`, {
+		method: 'POST',
+		headers: { 'Content-Type': 'application/json' },
+		body: JSON.stringify({ ...extraBody, title, siteProfile }),
+	});
+
+	let response;
+
+	try {
+		response = await fetch(request);
+	} catch (error) {
+		// try one more time
+		response = await fetch(request);
+	}
+
+	const fallback = [];
+
+	if (!response.ok) {
+		return fallback;
+	}
+
+	try {
+		return await response.json();
+	} catch (_) {
+		return fallback;
+	}
 };

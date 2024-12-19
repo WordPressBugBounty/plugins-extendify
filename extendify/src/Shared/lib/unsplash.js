@@ -1,6 +1,6 @@
+import { AI_HOST } from '@constants';
 import { useAIConsentStore } from '@shared/state/ai-consent';
 import { useUnsplashCacheStore } from '@shared/state/unsplash-cache';
-import { AI_HOST } from '../../constants.js';
 
 const { showAIConsent, userGaveConsent } = useAIConsentStore.getState();
 

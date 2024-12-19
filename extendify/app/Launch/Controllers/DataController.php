@@ -23,7 +23,12 @@ class DataController
      */
     public static function getGoals($request)
     {
-        $response = Http::get('/goals?site_type=' . $request->get_param('site_type'));
+        $params = [
+            'title' => $request->get_param('title'),
+            'site_type' => $request->get_param('site_type'),
+            'site_profile' => $request->get_param('site_profile'),
+        ];
+        $response = Http::get('/goals?' . http_build_query($params));
 
         if (is_wp_error($response)) {
             return new \WP_REST_Response([], 500);

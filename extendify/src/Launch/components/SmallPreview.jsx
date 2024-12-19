@@ -12,11 +12,11 @@ import { pageNames } from '@shared/lib/pages';
 import classNames from 'classnames';
 import { colord } from 'colord';
 import { AnimatePresence, motion } from 'framer-motion';
+import themeJSON from '@launch/_data/theme-processed.json';
 import { usePreviewIframe } from '@launch/hooks/usePreviewIframe';
 import { lowerImageQuality } from '@launch/lib/util';
-import themeJSON from '../_data/theme-processed.json';
 
-export const SmallPreview = ({ style, onSelect, selected }) => {
+export const SmallPreview = ({ style, onSelect, selected, siteTitle }) => {
 	const previewContainer = useRef(null);
 	const blockRef = useRef(null);
 	const observer = useRef(null);
@@ -35,12 +35,16 @@ export const SmallPreview = ({ style, onSelect, selected }) => {
 				const now = performance.now();
 				if (now - lastRun < 100) return requestAnimationFrame(checkOnStyles);
 				lastRun = now;
-				frame?.contentDocument?.querySelector('[href*=load-styles]')?.remove();
+				const content = frame?.contentDocument;
+				if (content) {
+					content.querySelector('[href*=load-styles]')?.remove();
+					content.querySelector('[href*=site-title]').textContent = siteTitle;
+				}
 				const stylesToInject = `<style id="ext-tj">
-               		${themeJSON[style?.variation?.title]}
-									.wp-block-missing { display: none !important }
-									img[src^=data] { filter: url(#wp-duotone-primary) !important }
-            	</style>`;
+					${themeJSON[style?.variation?.title]}
+					.wp-block-missing { display: none !important }
+					img[src^=data] { filter: url(#wp-duotone-primary) !important }
+				</style>`;
 				if (!frame.contentDocument?.getElementById('ext-tj')) {
 					frame.contentDocument?.body?.insertAdjacentHTML(
 						'beforeend',
@@ -52,7 +56,7 @@ export const SmallPreview = ({ style, onSelect, selected }) => {
 			};
 			checkOnStyles();
 		},
-		[style?.variation?.title],
+		[style?.variation?.title, siteTitle],
 	);
 
 	const { loading, ready: show } = usePreviewIframe({

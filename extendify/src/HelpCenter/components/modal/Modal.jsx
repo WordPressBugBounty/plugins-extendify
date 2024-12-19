@@ -2,13 +2,13 @@ import { useEffect } from '@wordpress/element';
 import { __ } from '@wordpress/i18n';
 import { Dialog, DialogTitle } from '@headlessui/react';
 import { motion } from 'framer-motion';
+import { MinimizedButton } from '@help-center/components/buttons/MinimizedButton';
 import { ModalContent } from '@help-center/components/modal/ModalContent';
 import { Topbar } from '@help-center/components/modal/TopBar';
 import { useRouter } from '@help-center/hooks/useRouter';
 import { useAIChatStore } from '@help-center/state/ai-chat';
 import { useGlobalSyncStore } from '@help-center/state/globals-sync';
 import { useKnowledgeBaseStore } from '@help-center/state/knowledge-base';
-import { MinimizedButton } from '../buttons/MinimizedButton';
 
 export const Modal = () => {
 	const { visibility } = useGlobalSyncStore();

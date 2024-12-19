@@ -4,17 +4,31 @@ import { create } from 'zustand';
 import { devtools, persist, createJSONStorage } from 'zustand/middleware';
 
 const initialState = {
-	siteType: {},
+	siteType: {
+		slug: '0default',
+		name: 'Default',
+	},
 	siteStructure: undefined,
+	siteProfile: undefined,
+	siteStrings: undefined,
+	siteImages: undefined,
 	siteInformation: {
-		title: undefined,
+		title: window.extSharedData.siteTitle || '',
 	},
 	businessInformation: {
 		description: undefined,
 		tones: [],
 		acceptTerms: false,
 	},
-	siteTypeSearch: [],
+	goals: [],
+};
+
+// State to reset when the business description (site type) changes
+const resetState = {
+	siteStructure: undefined,
+	siteProfile: undefined,
+	siteStrings: undefined,
+	siteImages: undefined,
 	goals: [],
 	variation: null,
 };
@@ -26,21 +40,11 @@ const state = (set, get) => ({
 	// initialize the state with default values
 	...(incoming?.state ?? {}),
 	...(JSON.parse(localStorage.getItem(key) || '{}')?.state ?? {}), // For testing
-	setSiteType(siteType) {
-		// Reset the user's selections when site type changes
-		set({ ...initialState, siteType });
-	},
 	setSiteStructure(siteStructure) {
 		if (!['single-page', 'multi-page'].includes(siteStructure)) {
 			throw new Error("Page structure doesn't exist");
 		}
 		set({ siteStructure });
-	},
-	setSiteTypeSearch(search) {
-		set((state) => ({
-			// only keep last 10 searches
-			siteTypeSearch: [...state.siteTypeSearch, search].slice(-10),
-		}));
 	},
 	setSiteInformation(name, value) {
 		const siteInformation = { ...get().siteInformation, [name]: value };
@@ -49,6 +53,32 @@ const state = (set, get) => ({
 	setBusinessInformation(name, value) {
 		const businessInformation = { ...get().businessInformation, [name]: value };
 		set({ businessInformation });
+	},
+	setSiteProfile(data) {
+		set(resetState);
+		if (!data) data = {};
+		const siteProfile = Object.assign(
+			{
+				aiSiteType: null,
+				aiDescription: null,
+				aiKeywords: [],
+			},
+			data,
+		);
+		set({ siteProfile });
+	},
+	setSiteStrings: (data) => {
+		if (!data) data = {};
+		const siteStrings = Object.assign(
+			{ aiHeaders: [], aiBlogTitles: [] },
+			data,
+		);
+		set({ siteStrings });
+	},
+	setSiteImages: (data) => {
+		if (!data) data = {};
+		const siteImages = Object.assign({ siteImages: [] }, data);
+		set({ siteImages });
 	},
 	getGoalsPlugins() {
 		return get().goals.flatMap((goal) => goal.plugins);

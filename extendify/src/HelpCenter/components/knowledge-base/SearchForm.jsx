@@ -1,9 +1,9 @@
 import { useRef } from '@wordpress/element';
 import { __ } from '@wordpress/i18n';
 import { search as sIcon, Icon, closeSmall } from '@wordpress/icons';
+import { KB_HOST } from '@constants';
 import classNames from 'classnames';
 import { useKnowledgeBaseStore } from '@help-center/state/knowledge-base.js';
-import { KB_HOST } from '../../../constants';
 
 export const SearchForm = ({ onChange }) => {
 	const { searchTerm, clearSearchTerm, reset } = useKnowledgeBaseStore();

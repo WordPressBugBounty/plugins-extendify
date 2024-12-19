@@ -1,20 +1,14 @@
 import { useEffect, useRef, useState } from '@wordpress/element';
+import { INSIGHTS_HOST } from '@constants';
 import { useGlobalStore } from '@launch/state/Global';
 import { usePagesStore } from '@launch/state/Pages';
 import { usePagesSelectionStore } from '@launch/state/pages-selections';
 import { useUserSelectionStore } from '@launch/state/user-selections';
-import { INSIGHTS_HOST } from '../../constants';
 
 // Dev note: This entire section is opt-in only when partnerID is set as a constant
 export const useTelemetry = () => {
-	const {
-		goals,
-		getGoalsPlugins,
-		siteType,
-		siteTypeSearch,
-		siteStructure,
-		variation,
-	} = useUserSelectionStore();
+	const { goals, getGoalsPlugins, siteStructure, variation, siteProfile } =
+		useUserSelectionStore();
 	const { pages: selectedPages, style: selectedStyle } =
 		usePagesSelectionStore();
 	const selectedPlugins = getGoalsPlugins();
@@ -72,7 +66,7 @@ export const useTelemetry = () => {
 				},
 				signal: controller.signal,
 				body: JSON.stringify({
-					siteType: siteType?.slug,
+					siteType: siteProfile?.aiSiteType,
 					siteCreatedAt: window.extSharedData?.siteCreatedAt,
 					style: variation?.title,
 					siteStructure: siteStructure,
@@ -83,7 +77,6 @@ export const useTelemetry = () => {
 					stylesViewed: [...viewedStyles]
 						.filter((s) => s?.variation)
 						.map((s) => s.variation.title),
-					siteTypeSearches: siteTypeSearch,
 					insightsId: window.extSharedData?.siteId,
 					activeTests:
 						window.extOnbData?.activeTests?.length > 0
@@ -91,7 +84,7 @@ export const useTelemetry = () => {
 							: undefined,
 					hostPartner: window.extSharedData?.partnerId,
 					language: window.extSharedData?.wpLanguage,
-					siteURL: window.extSharedData?.home,
+					siteURL: window.extSharedData?.homeUrl,
 				}),
 			})
 				.catch(() => undefined)
@@ -110,10 +103,9 @@ export const useTelemetry = () => {
 		pages,
 		stepProgress,
 		viewedStyles,
-		siteTypeSearch,
 		currentPageIndex,
 		goals,
-		siteType,
+		siteProfile?.aiSiteType,
 		siteStructure,
 		variation,
 	]);
