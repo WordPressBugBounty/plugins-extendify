@@ -7,6 +7,8 @@ namespace Extendify\Launch\Services;
 
 defined('ABSPATH') || die('No direct access.');
 
+use Extendify\Config;
+use Extendify\PartnerData;
 use Extendify\Shared\Services\Sanitizer;
 
 /**
@@ -22,7 +24,16 @@ class WooCommerceImporter
     public static function import()
     {
         $response = wp_remote_get(add_query_arg(
-            ['wpLanguage' => get_locale()],
+            [
+                'wpLanguage' => get_locale(),
+                'siteProfile' => wp_json_encode(get_option('extendify_site_profile')),
+                'siteId' => get_option('extendify_site_id'),
+                'version' => Config::$version,
+                'title' => get_bloginfo('name'),
+                'wpVersion' => get_bloginfo('version'),
+                'partnerId' => PartnerData::$id,
+                'devbuild' => constant('EXTENDIFY_DEVMODE'),
+            ],
             'https://ai.extendify.com/api/plugins/woo/content'
         ));
         $data = [];

@@ -36,7 +36,8 @@ export const PagePreview = forwardRef(({ style, siteTitle, loading }, ref) => {
 				const content = frame?.contentDocument;
 				if (content) {
 					content.querySelector('[href*=load-styles]')?.remove();
-					content.querySelector('[href*=site-title]').textContent = siteTitle;
+					const siteTitleElement = content.querySelector('[href*=site-title]');
+					if (siteTitleElement) siteTitleElement.textContent = siteTitle;
 				}
 				if (!frame.contentDocument?.getElementById('ext-tj')) {
 					const primaryColor =

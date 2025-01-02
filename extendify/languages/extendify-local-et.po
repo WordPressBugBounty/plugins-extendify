@@ -54,41 +54,41 @@ msgstr "Lisa muster"
 msgid "Extendify Library User Settings"
 msgstr "Extendify teegi kasutaja sätted"
 
-#: public/build/extendify-draft-e84f365c9463a5246231.js:7
+#: public/build/extendify-draft-716152fdf43352872442.js:7
 #: public/build/extendify-help-center-09f694b4058ce79a45d5.js:1
 msgid "Accept"
 msgstr "Nõustun"
 
-#: public/build/extendify-draft-e84f365c9463a5246231.js:7
+#: public/build/extendify-draft-716152fdf43352872442.js:7
 #: public/build/extendify-help-center-09f694b4058ce79a45d5.js:1
 msgid "Terms of Use"
 msgstr "Kasutustingimused"
 
-#: public/build/extendify-launch-1f0326937879251d6ea1.js:5
+#: public/build/extendify-launch-deab5672abece2f9403b.js:5
 msgid "View more pages"
 msgstr "Vaata rohkem lehti"
 
-#: public/build/extendify-launch-1f0326937879251d6ea1.js:5
+#: public/build/extendify-launch-deab5672abece2f9403b.js:5
 msgid "We already selected the most common pages for your type of website."
 msgstr "Oleme juba ära märkinud sellistel veebisaitidel kasutatuimad lehed."
 
-#: public/build/extendify-launch-1f0326937879251d6ea1.js:5
+#: public/build/extendify-launch-deab5672abece2f9403b.js:5
 msgid "Pick the pages to add to your website"
 msgstr "Vali lehed, mida soovid oma veebisaidile lisada"
 
-#: public/build/extendify-launch-1f0326937879251d6ea1.js:5
+#: public/build/extendify-launch-deab5672abece2f9403b.js:5
 msgid "Home page"
 msgstr "Pealeht"
 
-#: public/build/extendify-launch-1f0326937879251d6ea1.js:5
+#: public/build/extendify-launch-deab5672abece2f9403b.js:5
 msgid "Pick a design for your website"
 msgstr "Vali oma veebisaidile disain"
 
-#: public/build/extendify-launch-1f0326937879251d6ea1.js:5
+#: public/build/extendify-launch-deab5672abece2f9403b.js:5
 msgid "We'll make sure your website has what it needs to achieve your goals."
 msgstr "Hoolitseme selle eest, et sinu veebisaidil oleks kõik vajalik sinu eesmärkide saavutamiseks."
 
-#: public/build/extendify-launch-1f0326937879251d6ea1.js:5
+#: public/build/extendify-launch-deab5672abece2f9403b.js:5
 msgid "What are your goals for your website?"
 msgstr "Millised on sinu eesmärgid veebisaidile?"
 
@@ -96,97 +96,97 @@ msgstr "Millised on sinu eesmärgid veebisaidile?"
 msgid "Searching..."
 msgstr "Otsimine..."
 
-#: public/build/extendify-launch-1f0326937879251d6ea1.js:5
+#: public/build/extendify-launch-deab5672abece2f9403b.js:5
 msgid "Enter your website name"
 msgstr "Sisesta oma veebisaidi nimi"
 
-#: public/build/extendify-launch-1f0326937879251d6ea1.js:9
+#: public/build/extendify-launch-deab5672abece2f9403b.js:9
 msgid "Helping you to succeed"
 msgstr "Aitame sinu edule kaasa"
 
-#: public/build/extendify-launch-1f0326937879251d6ea1.js:5
+#: public/build/extendify-launch-deab5672abece2f9403b.js:5
 msgid "Adding page content"
 msgstr "Lehe sisu lisamine"
 
-#: public/build/extendify-launch-1f0326937879251d6ea1.js:5
+#: public/build/extendify-launch-deab5672abece2f9403b.js:5
 msgid "Installing necessary plugins"
 msgstr "Vajalike pluginate paigaldamine"
 
-#: public/build/extendify-launch-1f0326937879251d6ea1.js:5
+#: public/build/extendify-launch-deab5672abece2f9403b.js:5
 msgid "Creating a beautiful website"
 msgstr "Ilusa veebisaidi loomine"
 
-#: public/build/extendify-launch-1f0326937879251d6ea1.js:5
+#: public/build/extendify-launch-deab5672abece2f9403b.js:5
 msgid "Applying your website styles"
 msgstr "Rakendame sinu veebisaidi stiile"
 
-#: public/build/extendify-launch-1f0326937879251d6ea1.js:5
+#: public/build/extendify-launch-deab5672abece2f9403b.js:5
 msgid "Personalizing your experience"
 msgstr "Isikupärastame sinu kogemust"
 
-#: public/build/extendify-launch-1f0326937879251d6ea1.js:5
+#: public/build/extendify-launch-deab5672abece2f9403b.js:5
 msgid "Populating data"
 msgstr "Täidame veebisaidi andmetega"
 
-#: public/build/extendify-draft-e84f365c9463a5246231.js:7
+#: public/build/extendify-draft-716152fdf43352872442.js:7
 msgid "Service temporarily unavailable"
 msgstr "Teenus pole ajutiselt saadaval"
 
-#: public/build/extendify-draft-e84f365c9463a5246231.js:1
+#: public/build/extendify-draft-716152fdf43352872442.js:1
 msgid "Discard"
 msgstr "Loobu"
 
-#: public/build/extendify-draft-e84f365c9463a5246231.js:1
+#: public/build/extendify-draft-716152fdf43352872442.js:1
 msgid "Try again"
 msgstr "Proovi uuesti"
 
 #: public/build/extendify-assist-page-8997bb466c9a43833230.js:7
-#: public/build/extendify-draft-e84f365c9463a5246231.js:7
+#: public/build/extendify-draft-716152fdf43352872442.js:7
 msgid "AI Tools"
 msgstr "AI tööriistad"
 
-#: public/build/extendify-draft-e84f365c9463a5246231.js:1
+#: public/build/extendify-draft-716152fdf43352872442.js:1
 msgid "Replace selected block text"
 msgstr "Asenda valitud ploki tekst"
 
-#: public/build/extendify-draft-e84f365c9463a5246231.js:1
+#: public/build/extendify-draft-716152fdf43352872442.js:1
 msgid "Ask AI to generate text"
 msgstr "Lase tekst luua AI abil"
 
-#: public/build/extendify-draft-e84f365c9463a5246231.js:1
+#: public/build/extendify-draft-716152fdf43352872442.js:1
 msgid "AI is writing..."
 msgstr "AI kirjutab..."
 
 #: public/build/extendify-assist-page-8997bb466c9a43833230.js:7
-#: public/build/extendify-draft-e84f365c9463a5246231.js:1
-#: public/build/extendify-draft-e84f365c9463a5246231.js:7
+#: public/build/extendify-draft-716152fdf43352872442.js:1
+#: public/build/extendify-draft-716152fdf43352872442.js:7
 msgid "Simplify language"
 msgstr "Lihtsusta keelekasutust"
 
 #: public/build/extendify-assist-page-8997bb466c9a43833230.js:7
-#: public/build/extendify-draft-e84f365c9463a5246231.js:1
-#: public/build/extendify-draft-e84f365c9463a5246231.js:7
+#: public/build/extendify-draft-716152fdf43352872442.js:1
+#: public/build/extendify-draft-716152fdf43352872442.js:7
 msgid "Make longer"
 msgstr "Pikenda"
 
 #: public/build/extendify-assist-page-8997bb466c9a43833230.js:7
-#: public/build/extendify-draft-e84f365c9463a5246231.js:1
-#: public/build/extendify-draft-e84f365c9463a5246231.js:7
+#: public/build/extendify-draft-716152fdf43352872442.js:1
+#: public/build/extendify-draft-716152fdf43352872442.js:7
 msgid "Make shorter"
 msgstr "Tee lühemaks"
 
-#: public/build/extendify-draft-e84f365c9463a5246231.js:1
-#: public/build/extendify-draft-e84f365c9463a5246231.js:7
+#: public/build/extendify-draft-716152fdf43352872442.js:1
+#: public/build/extendify-draft-716152fdf43352872442.js:7
 msgid "Fix spelling & grammar"
 msgstr "Paranda õigekirja ja grammatikat"
 
 #: public/build/extendify-assist-page-8997bb466c9a43833230.js:7
-#: public/build/extendify-draft-e84f365c9463a5246231.js:1
-#: public/build/extendify-draft-e84f365c9463a5246231.js:7
+#: public/build/extendify-draft-716152fdf43352872442.js:1
+#: public/build/extendify-draft-716152fdf43352872442.js:7
 msgid "Improve writing"
 msgstr "Paranda kirjutusstiili"
 
-#: public/build/extendify-draft-e84f365c9463a5246231.js:1
+#: public/build/extendify-draft-716152fdf43352872442.js:1
 msgid "Write a blog post about"
 msgstr "Kirjuta blogipostitus teemal"
 
@@ -393,8 +393,8 @@ msgstr "Loo Site Launcher'i abil mõne minutiga kiire, kaunis ja täielikult koh
 
 #. translators: This string represents the title of an "Home" page on a website. Please translate it in a way that fits the standard phrasing for a "Home" page in the target language, considering the common usage in websites for that language.
 #: public/build/extendify-assist-page-8997bb466c9a43833230.js:43
-#: public/build/extendify-draft-e84f365c9463a5246231.js:7
-#: public/build/extendify-launch-1f0326937879251d6ea1.js:47
+#: public/build/extendify-draft-716152fdf43352872442.js:7
+#: public/build/extendify-launch-deab5672abece2f9403b.js:47
 msgid "Home"
 msgstr "Avaleht"
 
@@ -582,8 +582,8 @@ msgstr "Lehte ei leitud"
 
 #. translators: This string represents the title of an "Events" page on a website that lists events of any kind. Please translate it in a way that fits the standard phrasing for an "Events" page in the target language, considering the common usage in websites for that language.
 #: public/build/extendify-assist-page-8997bb466c9a43833230.js:27
-#: public/build/extendify-launch-1f0326937879251d6ea1.js:7
-#: public/build/extendify-launch-1f0326937879251d6ea1.js:31
+#: public/build/extendify-launch-deab5672abece2f9403b.js:7
+#: public/build/extendify-launch-deab5672abece2f9403b.js:31
 msgid "Events"
 msgstr "Sündmused"
 
@@ -635,7 +635,7 @@ msgstr "Ava uutele lehtedele"
 msgid "Toggle %s on new pages"
 msgstr "Lülita %s uutel lehtedel sisse"
 
-#: public/build/extendify-launch-1f0326937879251d6ea1.js:9
+#: public/build/extendify-launch-deab5672abece2f9403b.js:9
 msgid "We encountered a server error we cannot recover from. Please reload the page and try again."
 msgstr "Ilmnes serveri viga, mida ei ole võimalik käsitleda. Taaslae leht ja proovi uuesti."
 
@@ -667,7 +667,7 @@ msgstr "Site Assistant"
 
 #. translators: This string represents the title of a "Blog" page on a website that shows recent blog posts. Please translate it in a way that fits the standard phrasing for a "Blog" page in the target language, considering the common usage in websites for that language.
 #: public/build/extendify-assist-page-8997bb466c9a43833230.js:13
-#: public/build/extendify-launch-1f0326937879251d6ea1.js:17
+#: public/build/extendify-launch-deab5672abece2f9403b.js:17
 msgid "Blog"
 msgstr "Blogi"
 
@@ -736,28 +736,28 @@ msgstr "Jätka oma veebisaidi loomist"
 msgid "Let's Start Building Your Website"
 msgstr "Alustame sinu veebisaidi loomist"
 
-#: public/build/extendify-launch-1f0326937879251d6ea1.js:5
+#: public/build/extendify-launch-deab5672abece2f9403b.js:5
 msgid "Exit Launch"
 msgstr "Välju saidi käivitamisest"
 
-#: public/build/extendify-launch-1f0326937879251d6ea1.js:9
+#: public/build/extendify-launch-deab5672abece2f9403b.js:9
 msgid "Redirecting in 3, 2, 1..."
 msgstr "Ümbersuunamine 3, 2, 1..."
 
-#: public/build/extendify-launch-1f0326937879251d6ea1.js:9
+#: public/build/extendify-launch-deab5672abece2f9403b.js:9
 msgid "Your website has been created!"
 msgstr "Sinu veebisait on valmis!"
 
-#: public/build/extendify-launch-1f0326937879251d6ea1.js:9
+#: public/build/extendify-launch-deab5672abece2f9403b.js:9
 msgid "Setting up your Site Assistant"
 msgstr "Seadistame sinu saidi assistenti"
 
-#: public/build/extendify-launch-1f0326937879251d6ea1.js:5
+#: public/build/extendify-launch-deab5672abece2f9403b.js:5
 msgid "Starting off with a full website"
 msgstr "Alustame täieliku veebisaidiga"
 
 #: public/build/extendify-help-center-09f694b4058ce79a45d5.js:1
-#: public/build/extendify-launch-1f0326937879251d6ea1.js:5
+#: public/build/extendify-launch-deab5672abece2f9403b.js:5
 msgid "Back"
 msgstr "Tagasi"
 
@@ -766,19 +766,19 @@ msgid "Site Industry"
 msgstr "Saidi suunitlus"
 
 #: public/build/extendify-assist-page-8997bb466c9a43833230.js:1
-#: public/build/extendify-launch-1f0326937879251d6ea1.js:5
+#: public/build/extendify-launch-deab5672abece2f9403b.js:5
 msgid "Goals"
 msgstr "Eesmärgid"
 
-#: public/build/extendify-launch-1f0326937879251d6ea1.js:9
+#: public/build/extendify-launch-deab5672abece2f9403b.js:9
 msgid "Take me there"
 msgstr "Vii mind sinna"
 
-#: public/build/extendify-launch-1f0326937879251d6ea1.js:9
+#: public/build/extendify-launch-deab5672abece2f9403b.js:9
 msgid "Hey there, Launch is powered by Extendable and is required to proceed. You can install it from the link below and start over once activated."
 msgstr "Tere, Launch vajab tööks Extendable'i. Saad selle installida allolevalt lingilt ja pärast aktiveerimist protsessiga uuesti alustada."
 
-#: public/build/extendify-launch-1f0326937879251d6ea1.js:9
+#: public/build/extendify-launch-deab5672abece2f9403b.js:9
 msgid "One more thing before we start."
 msgstr "Veel üks asi enne, kui alustame."
 
@@ -791,7 +791,7 @@ msgid "View Site"
 msgstr "Vaata saiti"
 
 #: public/build/extendify-help-center-09f694b4058ce79a45d5.js:3
-#: public/build/extendify-launch-1f0326937879251d6ea1.js:5
+#: public/build/extendify-launch-deab5672abece2f9403b.js:5
 msgid "Next"
 msgstr "Järgmine"
 
@@ -800,20 +800,20 @@ msgstr "Järgmine"
 msgid "Pages"
 msgstr "Lehed"
 
-#: public/build/extendify-launch-1f0326937879251d6ea1.js:5
+#: public/build/extendify-launch-deab5672abece2f9403b.js:5
 msgid "You can personalize this later."
 msgstr "Saad seda hiljem kohandada."
 
 #: public/build/extendify-assist-page-8997bb466c9a43833230.js:1
-#: public/build/extendify-launch-1f0326937879251d6ea1.js:5
+#: public/build/extendify-launch-deab5672abece2f9403b.js:5
 msgid "Loading..."
 msgstr "Laadimine..."
 
-#: public/build/extendify-launch-1f0326937879251d6ea1.js:5
+#: public/build/extendify-launch-deab5672abece2f9403b.js:5
 msgid "Press to select"
 msgstr "Vajuta valimiseks"
 
-#: public/build/extendify-launch-1f0326937879251d6ea1.js:5
+#: public/build/extendify-launch-deab5672abece2f9403b.js:5
 msgid "Just a moment, this is taking longer than expected."
 msgstr "Üks hetk, see võtab oodatust kauem aega."
 
@@ -831,7 +831,7 @@ msgstr "Kujundus"
 msgid "Close"
 msgstr "Sulge"
 
-#: public/build/extendify-draft-e84f365c9463a5246231.js:1
+#: public/build/extendify-draft-716152fdf43352872442.js:1
 msgid "Submit"
 msgstr "Sisesta"
 
@@ -863,35 +863,35 @@ msgstr "Extendify"
 msgid "%1$s of %2$s"
 msgstr "%1$s %2$s-st"
 
-#: public/build/extendify-launch-1f0326937879251d6ea1.js:5
+#: public/build/extendify-launch-deab5672abece2f9403b.js:5
 msgid "Creating pages with custom content"
 msgstr "Kohandatud sisuga lehtede loomine"
 
-#: public/build/extendify-launch-1f0326937879251d6ea1.js:7
+#: public/build/extendify-launch-deab5672abece2f9403b.js:7
 msgid "Setting up site layout"
 msgstr "Veebilehe paigutuse seadistamine"
 
-#: public/build/extendify-launch-1f0326937879251d6ea1.js:5
+#: public/build/extendify-launch-deab5672abece2f9403b.js:5
 msgid "Professional"
 msgstr "Professionaalne"
 
-#: public/build/extendify-launch-1f0326937879251d6ea1.js:5
+#: public/build/extendify-launch-deab5672abece2f9403b.js:5
 msgid "Friendly"
 msgstr "Sõbralik"
 
-#: public/build/extendify-launch-1f0326937879251d6ea1.js:5
+#: public/build/extendify-launch-deab5672abece2f9403b.js:5
 msgid "Inspirational"
 msgstr "Inspiratsiooniallikas"
 
-#: public/build/extendify-launch-1f0326937879251d6ea1.js:5
+#: public/build/extendify-launch-deab5672abece2f9403b.js:5
 msgid "Informative"
 msgstr "Informatiivne"
 
-#: public/build/extendify-launch-1f0326937879251d6ea1.js:5
+#: public/build/extendify-launch-deab5672abece2f9403b.js:5
 msgid "Persuasive"
 msgstr "Veenev"
 
-#: public/build/extendify-launch-1f0326937879251d6ea1.js:5
+#: public/build/extendify-launch-deab5672abece2f9403b.js:5
 msgid "Skip"
 msgstr "Jäta vahele"
 
@@ -901,241 +901,241 @@ msgid "Launch"
 msgstr "Käivitamine"
 
 #. translators: Launch is the product name. Unless otherwise specified by the glossary, do not translate this name.
-#: public/build/extendify-launch-1f0326937879251d6ea1.js:3
+#: public/build/extendify-launch-deab5672abece2f9403b.js:3
 msgid "Added by Launch"
 msgstr "Lisas Launch"
 
-#: public/build/extendify-launch-1f0326937879251d6ea1.js:3
+#: public/build/extendify-launch-deab5672abece2f9403b.js:3
 msgid "Start over?"
 msgstr "Alusta otsast?"
 
-#: public/build/extendify-launch-1f0326937879251d6ea1.js:3
+#: public/build/extendify-launch-deab5672abece2f9403b.js:3
 msgid "Go through the onboarding process again to create a new site."
 msgstr "Läbi uuesti sissejuhatav protsess, et luua uus veebileht."
 
-#: public/build/extendify-launch-1f0326937879251d6ea1.js:5
+#: public/build/extendify-launch-deab5672abece2f9403b.js:5
 msgid "Exit"
 msgstr "Välju"
 
-#: public/build/extendify-launch-1f0326937879251d6ea1.js:5
+#: public/build/extendify-launch-deab5672abece2f9403b.js:5
 msgid "Processing"
 msgstr "Töötlemine"
 
-#: public/build/extendify-launch-1f0326937879251d6ea1.js:5
+#: public/build/extendify-launch-deab5672abece2f9403b.js:5
 msgid "Continue"
 msgstr "Jätka"
 
 #: public/build/extendify-assist-page-8997bb466c9a43833230.js:7
-#: public/build/extendify-draft-e84f365c9463a5246231.js:7
+#: public/build/extendify-draft-716152fdf43352872442.js:7
 #: public/build/extendify-help-center-09f694b4058ce79a45d5.js:1
 msgid "Ask AI"
 msgstr "Küsi AI-lt"
 
-#: public/build/extendify-draft-e84f365c9463a5246231.js:1
+#: public/build/extendify-draft-716152fdf43352872442.js:1
 msgid "Insert at top"
 msgstr "Lisa ülaossa"
 
-#: public/build/extendify-draft-e84f365c9463a5246231.js:1
+#: public/build/extendify-draft-716152fdf43352872442.js:1
 msgid "Insert after the selected text"
 msgstr "Lisa valitud teksti järele"
 
-#: public/build/extendify-draft-e84f365c9463a5246231.js:1
+#: public/build/extendify-draft-716152fdf43352872442.js:1
 msgid "Insert at bottom"
 msgstr "Lisa alla"
 
-#: public/build/extendify-draft-e84f365c9463a5246231.js:1
+#: public/build/extendify-draft-716152fdf43352872442.js:1
 msgid "A paragraph …"
 msgstr "Üks lõik …"
 
-#: public/build/extendify-draft-e84f365c9463a5246231.js:1
+#: public/build/extendify-draft-716152fdf43352872442.js:1
 msgid "Write a paragraph about"
 msgstr "Kirjuta lõik teemal"
 
-#: public/build/extendify-draft-e84f365c9463a5246231.js:1
+#: public/build/extendify-draft-716152fdf43352872442.js:1
 msgid "Blog post …"
 msgstr "Ajaveebi postitus ..."
 
-#: public/build/extendify-draft-e84f365c9463a5246231.js:1
+#: public/build/extendify-draft-716152fdf43352872442.js:1
 msgid "An informative article …"
 msgstr "Hariv artikkel …"
 
-#: public/build/extendify-draft-e84f365c9463a5246231.js:1
+#: public/build/extendify-draft-716152fdf43352872442.js:1
 msgid "Write an informative article about"
 msgstr "Kirjuta informatiivne artikkel teemal"
 
-#: public/build/extendify-draft-e84f365c9463a5246231.js:1
+#: public/build/extendify-draft-716152fdf43352872442.js:1
 msgid "Headline …"
 msgstr "Pealkiri …"
 
-#: public/build/extendify-draft-e84f365c9463a5246231.js:1
+#: public/build/extendify-draft-716152fdf43352872442.js:1
 msgid "Write a headline for"
 msgstr "Kirjuta pealkiri järgmisele"
 
-#: public/build/extendify-draft-e84f365c9463a5246231.js:1
+#: public/build/extendify-draft-716152fdf43352872442.js:1
 msgid "List …"
 msgstr "Loend …"
 
-#: public/build/extendify-draft-e84f365c9463a5246231.js:1
+#: public/build/extendify-draft-716152fdf43352872442.js:1
 msgid "Write a list of"
 msgstr "Koosta nimekiri"
 
-#: public/build/extendify-draft-e84f365c9463a5246231.js:7
+#: public/build/extendify-draft-716152fdf43352872442.js:7
 msgid "Catalan"
 msgstr "Katalaani"
 
-#: public/build/extendify-draft-e84f365c9463a5246231.js:7
+#: public/build/extendify-draft-716152fdf43352872442.js:7
 msgid "Danish"
 msgstr "Taani"
 
-#: public/build/extendify-draft-e84f365c9463a5246231.js:7
+#: public/build/extendify-draft-716152fdf43352872442.js:7
 msgid "Dutch"
 msgstr "Hollandi"
 
-#: public/build/extendify-draft-e84f365c9463a5246231.js:7
+#: public/build/extendify-draft-716152fdf43352872442.js:7
 msgid "Dutch (Belgium)"
 msgstr "Hollandi (Belgia)"
 
-#: public/build/extendify-draft-e84f365c9463a5246231.js:7
+#: public/build/extendify-draft-716152fdf43352872442.js:7
 msgid "English"
 msgstr "Inglise"
 
-#: public/build/extendify-draft-e84f365c9463a5246231.js:7
+#: public/build/extendify-draft-716152fdf43352872442.js:7
 msgid "Estonian"
 msgstr "Eesti"
 
-#: public/build/extendify-draft-e84f365c9463a5246231.js:7
+#: public/build/extendify-draft-716152fdf43352872442.js:7
 msgid "Finnish"
 msgstr "Soome"
 
-#: public/build/extendify-draft-e84f365c9463a5246231.js:7
+#: public/build/extendify-draft-716152fdf43352872442.js:7
 msgid "French (Belgium)"
 msgstr "Prantsuse (Belgia)"
 
-#: public/build/extendify-draft-e84f365c9463a5246231.js:7
+#: public/build/extendify-draft-716152fdf43352872442.js:7
 msgid "French (France)"
 msgstr "Prantsuse (Prantsusmaa)"
 
-#: public/build/extendify-draft-e84f365c9463a5246231.js:7
+#: public/build/extendify-draft-716152fdf43352872442.js:7
 msgid "German"
 msgstr "Saksa"
 
-#: public/build/extendify-draft-e84f365c9463a5246231.js:7
+#: public/build/extendify-draft-716152fdf43352872442.js:7
 msgid "German (Switzerland)"
 msgstr "Saksa (Šveits)"
 
-#: public/build/extendify-draft-e84f365c9463a5246231.js:7
+#: public/build/extendify-draft-716152fdf43352872442.js:7
 msgid "Indonesian"
 msgstr "Indoneesia"
 
-#: public/build/extendify-draft-e84f365c9463a5246231.js:7
+#: public/build/extendify-draft-716152fdf43352872442.js:7
 msgid "Italian"
 msgstr "Itaalia"
 
-#: public/build/extendify-draft-e84f365c9463a5246231.js:7
+#: public/build/extendify-draft-716152fdf43352872442.js:7
 msgid "Japanese"
 msgstr "Jaapani"
 
-#: public/build/extendify-draft-e84f365c9463a5246231.js:7
+#: public/build/extendify-draft-716152fdf43352872442.js:7
 msgid "Polish"
 msgstr "Poola"
 
-#: public/build/extendify-draft-e84f365c9463a5246231.js:7
+#: public/build/extendify-draft-716152fdf43352872442.js:7
 msgid "Portuguese (Brazil)"
 msgstr "Portugali (Brasiilia)"
 
-#: public/build/extendify-draft-e84f365c9463a5246231.js:7
+#: public/build/extendify-draft-716152fdf43352872442.js:7
 msgid "Portuguese (Portugal)"
 msgstr "Portugali (Portugal)"
 
-#: public/build/extendify-draft-e84f365c9463a5246231.js:7
+#: public/build/extendify-draft-716152fdf43352872442.js:7
 msgid "Spanish (Spain)"
 msgstr "Hispaania (Hispaania)"
 
-#: public/build/extendify-draft-e84f365c9463a5246231.js:7
+#: public/build/extendify-draft-716152fdf43352872442.js:7
 msgid "Swedish"
 msgstr "Rootsi"
 
-#: public/build/extendify-draft-e84f365c9463a5246231.js:7
+#: public/build/extendify-draft-716152fdf43352872442.js:7
 msgid "Ukrainian"
 msgstr "Ukraina"
 
-#: public/build/extendify-draft-e84f365c9463a5246231.js:7
+#: public/build/extendify-draft-716152fdf43352872442.js:7
 msgid "Vietnamese"
 msgstr "Vietnami"
 
 #: public/build/extendify-assist-page-8997bb466c9a43833230.js:7
-#: public/build/extendify-draft-e84f365c9463a5246231.js:7
+#: public/build/extendify-draft-716152fdf43352872442.js:7
 msgid "Translate"
 msgstr "Tõlgi"
 
-#: public/build/extendify-draft-e84f365c9463a5246231.js:7
+#: public/build/extendify-draft-716152fdf43352872442.js:7
 msgid "Translate to..."
 msgstr "Tõlgi keelde..."
 
 #: public/build/extendify-assist-page-8997bb466c9a43833230.js:7
-#: public/build/extendify-draft-e84f365c9463a5246231.js:1
+#: public/build/extendify-draft-716152fdf43352872442.js:1
 msgid "Ask AI to edit"
 msgstr "Palu AI-l muuta"
 
 #: public/build/extendify-assist-page-8997bb466c9a43833230.js:7
-#: public/build/extendify-draft-e84f365c9463a5246231.js:1
+#: public/build/extendify-draft-716152fdf43352872442.js:1
 msgid "Remove selection"
 msgstr "Eemalda valik"
 
-#: public/build/extendify-draft-e84f365c9463a5246231.js:7
+#: public/build/extendify-draft-716152fdf43352872442.js:7
 msgid "Suggested prompts"
 msgstr "Soovitatud vihjed"
 
-#: public/build/extendify-draft-e84f365c9463a5246231.js:7
+#: public/build/extendify-draft-716152fdf43352872442.js:7
 msgid "Custom prompt"
 msgstr "Kohandatud käsklus"
 
-#: public/build/extendify-draft-e84f365c9463a5246231.js:5
+#: public/build/extendify-draft-716152fdf43352872442.js:5
 msgid "You can still explore and find great images on Unsplash until your credits reset."
 msgstr "Saad jätkuvalt uurida ja leida suurepäraseid pilte Unsplashist kuni sinu krediitide lähtestamiseni."
 
-#: public/build/extendify-draft-e84f365c9463a5246231.js:5
+#: public/build/extendify-draft-716152fdf43352872442.js:5
 msgid "Search on Unsplash"
 msgstr "Otsi Unsplashist"
 
-#: public/build/extendify-draft-e84f365c9463a5246231.js:5
+#: public/build/extendify-draft-716152fdf43352872442.js:5
 msgid "Tell AI about the image you would like to create"
 msgstr "Kirjelda tehisintellektile pilti, mida soovid luua"
 
-#: public/build/extendify-draft-e84f365c9463a5246231.js:5
+#: public/build/extendify-draft-716152fdf43352872442.js:5
 msgid "Image Prompt"
 msgstr "Pildi viip"
 
-#: public/build/extendify-draft-e84f365c9463a5246231.js:5
+#: public/build/extendify-draft-716152fdf43352872442.js:5
 msgid "Generating image..."
 msgstr "Pildi loomine..."
 
-#: public/build/extendify-draft-e84f365c9463a5246231.js:5
+#: public/build/extendify-draft-716152fdf43352872442.js:5
 msgid "Generate image"
 msgstr "Loo pilt"
 
-#: public/build/extendify-draft-e84f365c9463a5246231.js:5
+#: public/build/extendify-draft-716152fdf43352872442.js:5
 msgid "Generating your image: "
 msgstr "Sinu pildi loomine:"
 
 #. translators: "Importing image" means the image is being added to the WordPress post editor
-#: public/build/extendify-draft-e84f365c9463a5246231.js:7
+#: public/build/extendify-draft-716152fdf43352872442.js:7
 msgid "Importing image..."
 msgstr "Pildi importimine..."
 
-#: public/build/extendify-draft-e84f365c9463a5246231.js:7
+#: public/build/extendify-draft-716152fdf43352872442.js:7
 msgid "Use this image"
 msgstr "Kasuta seda pilti"
 
-#: public/build/extendify-draft-e84f365c9463a5246231.js:7
+#: public/build/extendify-draft-716152fdf43352872442.js:7
 msgid "Delete image"
 msgstr "Kustuta pilt"
 
-#: public/build/extendify-draft-e84f365c9463a5246231.js:7
+#: public/build/extendify-draft-716152fdf43352872442.js:7
 msgid "Image Description"
 msgstr "Pildi kirjeldus"
 
-#: public/build/extendify-draft-e84f365c9463a5246231.js:7
+#: public/build/extendify-draft-716152fdf43352872442.js:7
 msgid "Your request was rejected as a result of our safety system. Your prompt may contain text that is not allowed by our safety system."
 msgstr "Teie päring lükati tagasi meie turvasüsteemi tõttu. Teie sisestatud tekst võib sisaldada lubamatut sisu meie turvasüsteemi reeglite järgi."
 
@@ -1432,25 +1432,25 @@ msgid "Service offline. Check back later."
 msgstr "Teenindus ei ole hetkel saadaval. Kontrolli hiljem uuesti."
 
 #. translators: %1$s is the number of used credits, %2$s is the total credits
-#: public/build/extendify-draft-e84f365c9463a5246231.js:3
-#: public/build/extendify-draft-e84f365c9463a5246231.js:5
+#: public/build/extendify-draft-716152fdf43352872442.js:3
+#: public/build/extendify-draft-716152fdf43352872442.js:5
 msgid "%1$s of %2$s daily image credits used"
 msgstr "%1$s %2$s-st päevasest pildikrediidi limiidist kasutatud"
 
 #: public/build/extendify-assist-page-8997bb466c9a43833230.js:7
-#: public/build/extendify-draft-e84f365c9463a5246231.js:5
+#: public/build/extendify-draft-716152fdf43352872442.js:5
 msgid "Aspect Ratio"
 msgstr "Kuvasuhe"
 
-#: public/build/extendify-draft-e84f365c9463a5246231.js:5
+#: public/build/extendify-draft-716152fdf43352872442.js:5
 msgid "Square: 1:1"
 msgstr "Ruut: 1:1"
 
-#: public/build/extendify-draft-e84f365c9463a5246231.js:5
+#: public/build/extendify-draft-716152fdf43352872442.js:5
 msgid "Landscape: 4:3"
 msgstr "Rõhtne: 4:3"
 
-#: public/build/extendify-draft-e84f365c9463a5246231.js:5
+#: public/build/extendify-draft-716152fdf43352872442.js:5
 msgid "Portrait: 3:4"
 msgstr "Püstine: 3:4"
 
@@ -1464,7 +1464,7 @@ msgstr "Saadaval ja just sobiv teie saidile"
 msgid "Get another domain for your site."
 msgstr "Hangi oma saidile teine domeen."
 
-#: public/build/extendify-launch-1f0326937879251d6ea1.js:5
+#: public/build/extendify-launch-deab5672abece2f9403b.js:5
 msgid "Header Navigation"
 msgstr "Päise navigeerimine"
 
@@ -1504,52 +1504,52 @@ msgstr "Paigaldan..."
 msgid "Install Now"
 msgstr "Paigalda kohe"
 
-#: public/build/extendify-draft-e84f365c9463a5246231.js:7
+#: public/build/extendify-draft-716152fdf43352872442.js:7
 msgid "AI Image"
 msgstr "AI pilt"
 
-#: public/build/extendify-draft-e84f365c9463a5246231.js:7
+#: public/build/extendify-draft-716152fdf43352872442.js:7
 msgid "Go Back"
 msgstr "Mine tagasi"
 
 #: public/build/extendify-assist-page-8997bb466c9a43833230.js:7
-#: public/build/extendify-draft-e84f365c9463a5246231.js:7
+#: public/build/extendify-draft-716152fdf43352872442.js:7
 msgid "AI Image Generator"
 msgstr "Tehisintellekti pildigeneraator"
 
-#: public/build/extendify-draft-e84f365c9463a5246231.js:7
+#: public/build/extendify-draft-716152fdf43352872442.js:7
 msgid "Use AI to generate custom images based on your description."
 msgstr "Kasuta tehisintellekti, et genereerida kohandatud pilte vastavalt sinu kirjeldusele."
 
-#: public/build/extendify-draft-e84f365c9463a5246231.js:7
+#: public/build/extendify-draft-716152fdf43352872442.js:7
 msgid "Add a prompt"
 msgstr "Lisa käsklus"
 
-#: public/build/extendify-draft-e84f365c9463a5246231.js:7
+#: public/build/extendify-draft-716152fdf43352872442.js:7
 msgid "Discover Stock Photos"
 msgstr "Avasta varufotosid"
 
-#: public/build/extendify-draft-e84f365c9463a5246231.js:7
+#: public/build/extendify-draft-716152fdf43352872442.js:7
 msgid "Search and add free stock photos from Unsplash.com"
 msgstr "Otsi ja lisa tasuta varufotosid saidilt Unsplash.com"
 
-#: public/build/extendify-draft-e84f365c9463a5246231.js:7
+#: public/build/extendify-draft-716152fdf43352872442.js:7
 msgid "Search Unsplash"
 msgstr "Otsi Unsplashist"
 
-#: public/build/extendify-draft-e84f365c9463a5246231.js:7
+#: public/build/extendify-draft-716152fdf43352872442.js:7
 msgid "No images found."
 msgstr "Pilte ei leitud."
 
-#: public/build/extendify-draft-e84f365c9463a5246231.js:7
+#: public/build/extendify-draft-716152fdf43352872442.js:7
 msgid "Unsplash"
 msgstr "Unsplash"
 
-#: public/build/extendify-draft-e84f365c9463a5246231.js:7
+#: public/build/extendify-draft-716152fdf43352872442.js:7
 msgid "Photos from Unsplash"
 msgstr "Unsplashi fotod"
 
-#: public/build/extendify-draft-e84f365c9463a5246231.js:7
+#: public/build/extendify-draft-716152fdf43352872442.js:7
 msgid "Get Personalized Image"
 msgstr "Hangi isikupärastatud pilt"
 
@@ -1557,7 +1557,7 @@ msgstr "Hangi isikupärastatud pilt"
 msgid "Click here to go to your website management dashboard. From there you will be able to create more websites, and manage your account settings."
 msgstr "Kliki siia, et minna oma veebilehe halduspaneelile. Sealt saad luua rohkem veebilehti ja hallata oma konto seadeid."
 
-#: public/build/extendify-launch-1f0326937879251d6ea1.js:5
+#: public/build/extendify-launch-deab5672abece2f9403b.js:5
 msgid "E.g., We are a yoga studio in London with professionally trained instructors with focus on hot yoga for therapeutic purposes."
 msgstr "Näiteks, me oleme Londonis asuv joogastuudio, kus on professionaalselt väljaõppinud juhendajad, kes keskenduvad terapeutilistel eesmärkidel kuumjoogale."
 
@@ -1569,7 +1569,7 @@ msgstr "Ühenda oma domeen"
 msgid "To bring real visitors to your website and to complete the website setup, we recommend you connect your domain in your hosting control panel now."
 msgstr "Selleks, et tuua oma veebilehele päris külastajaid ja lõpetada veebilehe seadistamine, soovitame teil ühendada oma domeen kohe oma majutusteenuse juhtpaneelis."
 
-#: public/build/extendify-launch-1f0326937879251d6ea1.js:5
+#: public/build/extendify-launch-deab5672abece2f9403b.js:5
 msgid "Select your site's tone (optional)"
 msgstr "Vali oma saidi toon (valikuline)"
 
@@ -1681,13 +1681,13 @@ msgstr "Alusta broneeringute vastuvõtmist oma veebilehel, seadistades SimplyBoo
 
 #. translators: This string represents the title of an "About" page on a website that provides information about the website or organization. Please translate it in a way that fits the standard phrasing for an "About" page in the target language, considering the common usage in websites for that language.
 #: public/build/extendify-assist-page-8997bb466c9a43833230.js:9
-#: public/build/extendify-launch-1f0326937879251d6ea1.js:13
+#: public/build/extendify-launch-deab5672abece2f9403b.js:13
 msgid "About"
 msgstr "Meist"
 
 #. translators: This string represents the title of a "Contact" page on a website that gives information for visitors on how to contact the website or organization. Please translate it in a way that fits the standard phrasing for a "Contact" page in the target language, considering the common usage in websites for that language.
 #: public/build/extendify-assist-page-8997bb466c9a43833230.js:23
-#: public/build/extendify-launch-1f0326937879251d6ea1.js:27
+#: public/build/extendify-launch-deab5672abece2f9403b.js:27
 msgid "Contact"
 msgstr "Võta ühendust"
 
@@ -1735,7 +1735,7 @@ msgstr "Kangelane"
 #. translators: This string represents the title of a "Pricing" page on a website that lists the pricing of products or services. Please translate it in a way that fits the standard phrasing for a "Pricing" page in the target language, considering the common usage in websites for that language.
 #: public/build/extendify-assist-page-8997bb466c9a43833230.js:1
 #: public/build/extendify-assist-page-8997bb466c9a43833230.js:53
-#: public/build/extendify-launch-1f0326937879251d6ea1.js:57
+#: public/build/extendify-launch-deab5672abece2f9403b.js:57
 msgid "Pricing"
 msgstr "Hinnakujundus"
 
@@ -1746,7 +1746,7 @@ msgstr "Sotsiaalne tõestus"
 #. translators: This string represents the title of a "Team" page on a website that introduces the team members. Please translate it in a way that fits the standard phrasing for a "Team" page in the target language, considering the common usage in websites for
 #: public/build/extendify-assist-page-8997bb466c9a43833230.js:1
 #: public/build/extendify-assist-page-8997bb466c9a43833230.js:85
-#: public/build/extendify-launch-1f0326937879251d6ea1.js:89
+#: public/build/extendify-launch-deab5672abece2f9403b.js:89
 msgid "Team"
 msgstr "Meeskond"
 
@@ -1986,266 +1986,266 @@ msgstr "Täielik kujundusteek, mis on kohandatud igale saidile, et hõlpsasti li
 msgid "Explore Design Library"
 msgstr "Uuri kujundusteeki"
 
-#: public/build/extendify-draft-e84f365c9463a5246231.js:7
+#: public/build/extendify-draft-716152fdf43352872442.js:7
 msgid "Bulgarian"
 msgstr "Bulgaaria"
 
-#: public/build/extendify-draft-e84f365c9463a5246231.js:7
+#: public/build/extendify-draft-716152fdf43352872442.js:7
 msgid "Czech"
 msgstr "Tšehhi"
 
-#: public/build/extendify-draft-e84f365c9463a5246231.js:7
+#: public/build/extendify-draft-716152fdf43352872442.js:7
 msgid "French (Canada)"
 msgstr "Prantsuse (Kanada)"
 
-#: public/build/extendify-draft-e84f365c9463a5246231.js:7
+#: public/build/extendify-draft-716152fdf43352872442.js:7
 msgid "Hungarian"
 msgstr "Ungari"
 
-#: public/build/extendify-draft-e84f365c9463a5246231.js:7
+#: public/build/extendify-draft-716152fdf43352872442.js:7
 msgid "Norwegian"
 msgstr "Norra"
 
-#: public/build/extendify-draft-e84f365c9463a5246231.js:7
+#: public/build/extendify-draft-716152fdf43352872442.js:7
 msgid "Russian"
 msgstr "Vene"
 
-#: public/build/extendify-draft-e84f365c9463a5246231.js:7
+#: public/build/extendify-draft-716152fdf43352872442.js:7
 msgid "Slovak"
 msgstr "Slovaki"
 
-#: public/build/extendify-draft-e84f365c9463a5246231.js:7
+#: public/build/extendify-draft-716152fdf43352872442.js:7
 msgid "Turkish"
 msgstr "Türgi"
 
 #. translators: This string represents the slug of an "About" page on a website that provides information about the website or organization. Please translate it in a way that fits a slug for an "About" page in the target language, considering the common usage in websites for that language.
 #: public/build/extendify-assist-page-8997bb466c9a43833230.js:11
-#: public/build/extendify-launch-1f0326937879251d6ea1.js:15
+#: public/build/extendify-launch-deab5672abece2f9403b.js:15
 msgid "about"
 msgstr "meist"
 
 #. translators: This string represents the slug of a "Blog" page on a website that shows recent blog posts. Please translate it in a way that fits a slug for a "Blog" page in the target language, considering the common usage in websites for that language.
 #: public/build/extendify-assist-page-8997bb466c9a43833230.js:15
-#: public/build/extendify-launch-1f0326937879251d6ea1.js:19
+#: public/build/extendify-launch-deab5672abece2f9403b.js:19
 msgid "blog"
 msgstr "ajaveeb"
 
 #. translators: This string represents the title of a "Book" page on a website that is meant for booking something. Please translate it in a way that fits the standard phrasing for a "Book" page in the target language, considering the common usage in websites for that language.
 #: public/build/extendify-assist-page-8997bb466c9a43833230.js:17
-#: public/build/extendify-launch-1f0326937879251d6ea1.js:21
+#: public/build/extendify-launch-deab5672abece2f9403b.js:21
 msgid "Book"
 msgstr "Broneeri"
 
 #. translators: This string represents the title of a "Careers" page on a website that is meant for listing available careers. Please translate it in a way that fits the standard phrasing for a "Careers" page in the target language, considering the common usage in websites for that language.
 #: public/build/extendify-assist-page-8997bb466c9a43833230.js:19
-#: public/build/extendify-launch-1f0326937879251d6ea1.js:23
+#: public/build/extendify-launch-deab5672abece2f9403b.js:23
 msgid "Careers"
 msgstr "Karjäär"
 
 #. translators: This string represents the slug of a "Careers" page on a website that is meant for listing available careers. Please translate it in a way that fits a slug for a "Careers" page in the target language, considering the common usage in websites for that language. Make sure to keep the slug lowercase and url-friendly.
 #: public/build/extendify-assist-page-8997bb466c9a43833230.js:21
-#: public/build/extendify-launch-1f0326937879251d6ea1.js:25
+#: public/build/extendify-launch-deab5672abece2f9403b.js:25
 msgid "careers"
 msgstr "karjaar"
 
 #. translators: This string represents the slug of a "Contact" page on a website that gives information for visitors on how to contact the website or organization. Please translate it in a way that fits a slug for a "Contact" page in the target language, considering the common usage in websites for that language. Make sure to keep the slug lowercase and url-friendly.
 #: public/build/extendify-assist-page-8997bb466c9a43833230.js:25
-#: public/build/extendify-launch-1f0326937879251d6ea1.js:29
+#: public/build/extendify-launch-deab5672abece2f9403b.js:29
 msgid "contact"
 msgstr "kontakt"
 
 #. translators: This string represents the slug of an "Events" page on a website that lists events of any kind. Please translate it in a way that fits a slug for an "Events" page in the target language, considering the common usage in websites for that language. Make sure to keep the slug lowercase and url-friendly.
 #: public/build/extendify-assist-page-8997bb466c9a43833230.js:29
-#: public/build/extendify-launch-1f0326937879251d6ea1.js:33
+#: public/build/extendify-launch-deab5672abece2f9403b.js:33
 msgid "events"
 msgstr "sundmused"
 
 #. translators: This string represents the title of a "FAQ" page on a website that gives information related to frequently asked questions. Please translate it in a way that fits the standard phrasing for a "FAQ" page in the target language, considering the common usage in websites for that language.
 #: public/build/extendify-assist-page-8997bb466c9a43833230.js:31
-#: public/build/extendify-launch-1f0326937879251d6ea1.js:35
+#: public/build/extendify-launch-deab5672abece2f9403b.js:35
 msgid "FAQ"
 msgstr "KKK"
 
 #. translators: This string represents the slug of a "FAQ" page on a website that gives information related to frequently asked questions. Please translate it in a way that fits a slug for a "FAQ" page in the target language, considering the common usage in websites for that language. Make sure to keep the slug lowercase and url-friendly.
 #: public/build/extendify-assist-page-8997bb466c9a43833230.js:33
-#: public/build/extendify-launch-1f0326937879251d6ea1.js:37
+#: public/build/extendify-launch-deab5672abece2f9403b.js:37
 msgid "faq"
 msgstr "kkk"
 
 #. translators: This string represents the title of a "Features" page on a website that lists features of a product or service. Please translate it in a way that fits the standard phrasing for a "Features" page in the target language, considering the common usage in websites for that language.
 #: public/build/extendify-assist-page-8997bb466c9a43833230.js:35
-#: public/build/extendify-launch-1f0326937879251d6ea1.js:39
+#: public/build/extendify-launch-deab5672abece2f9403b.js:39
 msgid "Features"
 msgstr "Funktsioonid"
 
 #. translators: This string represents the slug of a "Features" page on a website that lists features of a product or service. Please translate it in a way that fits a slug for a "Features" page in the target language, considering the common usage in websites for that language. Make sure to keep the slug lowercase and url-friendly.
 #: public/build/extendify-assist-page-8997bb466c9a43833230.js:37
-#: public/build/extendify-launch-1f0326937879251d6ea1.js:41
+#: public/build/extendify-launch-deab5672abece2f9403b.js:41
 msgid "features"
 msgstr "omadused"
 
 #. translators: This string represents the title of a "Gallery" page on a website that shows a collection of images. Please translate it in a way that fits the standard phrasing for a "Gallery" page in the target language, considering the common usage in websites for that language.
 #: public/build/extendify-assist-page-8997bb466c9a43833230.js:39
-#: public/build/extendify-launch-1f0326937879251d6ea1.js:43
+#: public/build/extendify-launch-deab5672abece2f9403b.js:43
 msgid "Gallery"
 msgstr "Galerii"
 
 #. translators: This string represents the slug of a "Gallery" page on a website that shows a collection of images. Please translate it in a way that fits a slug for a "Gallery" page in the target language, considering the common usage in websites for that language. Make sure to keep the slug lowercase and url-friendly.
 #: public/build/extendify-assist-page-8997bb466c9a43833230.js:41
-#: public/build/extendify-launch-1f0326937879251d6ea1.js:45
+#: public/build/extendify-launch-deab5672abece2f9403b.js:45
 msgid "gallery"
 msgstr "galerii"
 
 #. translators: This string represents the title of a "Menu" page on a website that lists food or drink items. Please translate it in a way that fits the standard phrasing for a "Menu" page in the target language, considering the common usage in websites for that language.
 #: public/build/extendify-assist-page-8997bb466c9a43833230.js:45
-#: public/build/extendify-launch-1f0326937879251d6ea1.js:49
+#: public/build/extendify-launch-deab5672abece2f9403b.js:49
 msgid "Menu"
 msgstr "Menüü"
 
 #. translators: This string represents the slug of a "Menu" page on a website that lists food or drink items. Please translate it in a way that fits a slug for a "Menu" page in the target language, considering the common usage in websites for that language. Make sure to keep the slug lowercase and url-friendly.
 #: public/build/extendify-assist-page-8997bb466c9a43833230.js:47
-#: public/build/extendify-launch-1f0326937879251d6ea1.js:51
+#: public/build/extendify-launch-deab5672abece2f9403b.js:51
 msgid "menu"
 msgstr "menyy"
 
 #. translators: This string represents the title of a "Portfolio" page on a website that showcases a collection of work. Please translate it in a way that fits the standard phrasing for a "Portfolio" page in the target language, considering the common usage in websites for that language.
 #: public/build/extendify-assist-page-8997bb466c9a43833230.js:49
-#: public/build/extendify-launch-1f0326937879251d6ea1.js:53
+#: public/build/extendify-launch-deab5672abece2f9403b.js:53
 msgid "Portfolio"
 msgstr "Portfoolio"
 
 #. translators: This string represents the slug of a "Portfolio" page on a website that showcases a collection of work. Please translate it in a way that fits a slug for a "Portfolio" page in the target language, considering the common usage in websites for that language. Make sure to keep the slug lowercase and url-friendly.
 #: public/build/extendify-assist-page-8997bb466c9a43833230.js:51
-#: public/build/extendify-launch-1f0326937879251d6ea1.js:55
+#: public/build/extendify-launch-deab5672abece2f9403b.js:55
 msgid "portfolio"
 msgstr "portfoolio"
 
 #. translators: This string represents the slug of a "Pricing" page on a website that lists the pricing of products or services. Please translate it in a way that fits a slug for a "Pricing" page in the target language, considering the common usage in websites for that language. Make sure to keep the slug lowercase and url-friendly.
 #: public/build/extendify-assist-page-8997bb466c9a43833230.js:55
-#: public/build/extendify-launch-1f0326937879251d6ea1.js:59
+#: public/build/extendify-launch-deab5672abece2f9403b.js:59
 msgid "pricing"
 msgstr "hinnakiri"
 
 #. translators: This string represents the title of a "Products" page on a website that lists products. Please translate it in a way that fits the standard phrasing for a "Products" page in the target language, considering the common usage in websites for that language.
 #: public/build/extendify-assist-page-8997bb466c9a43833230.js:57
-#: public/build/extendify-launch-1f0326937879251d6ea1.js:61
+#: public/build/extendify-launch-deab5672abece2f9403b.js:61
 msgid "Products"
 msgstr "Tooted"
 
 #. translators: This string represents the slug of a "Products" page on a website that lists products. Please translate it in a way that fits a slug for a "Products" page in the target language, considering the common usage in websites for that language. Make sure to keep the slug lowercase and url-friendly.
 #: public/build/extendify-assist-page-8997bb466c9a43833230.js:59
-#: public/build/extendify-launch-1f0326937879251d6ea1.js:63
+#: public/build/extendify-launch-deab5672abece2f9403b.js:63
 msgid "products"
 msgstr "tooted"
 
 #. translators: This string represents the title of a "Quote" page on a website that allows visitors to request a quote. Please translate it in a way that fits the standard phrasing for a "Quote" page in the target language, considering the common usage in websites for that language.
 #: public/build/extendify-assist-page-8997bb466c9a43833230.js:61
-#: public/build/extendify-launch-1f0326937879251d6ea1.js:65
+#: public/build/extendify-launch-deab5672abece2f9403b.js:65
 msgid "Quote"
 msgstr "Hinnapäring"
 
 #. translators: This string represents the slug of a "Quote" page on a website that allows visitors to request a quote. Please translate it in a way that fits a slug for a "Quote" page in the target language, considering the common usage in websites for that language. Make sure to keep the slug lowercase and url-friendly.
 #: public/build/extendify-assist-page-8997bb466c9a43833230.js:63
-#: public/build/extendify-launch-1f0326937879251d6ea1.js:67
+#: public/build/extendify-launch-deab5672abece2f9403b.js:67
 msgid "quote"
 msgstr "pakkumine"
 
 #. translators: This string represents the title of a "Reservation" page on a website that allows visitors to make a reservation. Please translate it in a way that fits the standard phrasing for a "Reservation" page in the target language, considering the common usage in websites for that language.
 #: public/build/extendify-assist-page-8997bb466c9a43833230.js:65
-#: public/build/extendify-launch-1f0326937879251d6ea1.js:69
+#: public/build/extendify-launch-deab5672abece2f9403b.js:69
 msgid "Reservation"
 msgstr "Broneering"
 
 #. translators: This string represents the slug of a "Reservation" page on a website that allows visitors to make a reservation. Please translate it in a way that fits a slug for a "Reservation" page in the target language, considering the common usage in websites for that language. Make sure to keep the slug lowercase and url-friendly.
 #: public/build/extendify-assist-page-8997bb466c9a43833230.js:67
-#: public/build/extendify-launch-1f0326937879251d6ea1.js:71
+#: public/build/extendify-launch-deab5672abece2f9403b.js:71
 msgid "reservation"
 msgstr "broneering"
 
 #. translators: This string represents the title of a "Resources" page on a website that provides resources. Please translate it in a way that fits the standard phrasing for a "Resources" page in the target language, considering the common usage in websites for that language.
 #: public/build/extendify-assist-page-8997bb466c9a43833230.js:69
-#: public/build/extendify-launch-1f0326937879251d6ea1.js:73
+#: public/build/extendify-launch-deab5672abece2f9403b.js:73
 msgid "Resources"
 msgstr "Ressursid"
 
 #. translators: This string represents the slug of a "Resources" page on a website that provides resources. Please translate it in a way that fits a slug for a "Resources" page in the target language, considering the common usage in websites for that language. Make sure to keep the slug lowercase and url-friendly.
 #: public/build/extendify-assist-page-8997bb466c9a43833230.js:71
-#: public/build/extendify-launch-1f0326937879251d6ea1.js:75
+#: public/build/extendify-launch-deab5672abece2f9403b.js:75
 msgid "resources"
 msgstr "ressursid"
 
 #. translators: This string represents the title of a "Service Area" page on a website that shows the service area of a business, including a map. Please translate it in a way that fits the standard phrasing for a "Service Area" page in the target language, considering the common usage in websites for that language.
 #: public/build/extendify-assist-page-8997bb466c9a43833230.js:73
-#: public/build/extendify-launch-1f0326937879251d6ea1.js:77
+#: public/build/extendify-launch-deab5672abece2f9403b.js:77
 msgid "Service Area"
 msgstr "Teeninduspiirkond"
 
 #. translators: This string represents the slug of a "Service Area" page on a website that shows the service area of a business, including a map. Please translate it in a way that fits a slug for a "Service Area" page in the target language, considering the common usage in websites for that language. Make sure to keep the slug lowercase and url-friendly.
 #: public/build/extendify-assist-page-8997bb466c9a43833230.js:75
-#: public/build/extendify-launch-1f0326937879251d6ea1.js:79
+#: public/build/extendify-launch-deab5672abece2f9403b.js:79
 msgid "service-area"
 msgstr "teeninduspiirkond"
 
 #. translators: This string represents the title of a "Services" page on a website that lists services. Please translate it in a way that fits the standard phrasing for a "Services" page in the target language, considering the common usage in websites for that language.
 #: public/build/extendify-assist-page-8997bb466c9a43833230.js:77
-#: public/build/extendify-launch-1f0326937879251d6ea1.js:81
+#: public/build/extendify-launch-deab5672abece2f9403b.js:81
 msgid "Services"
 msgstr "Teenused"
 
 #. translators: This string represents the slug of a "Services" page on a website that lists services. Please translate it in a way that fits a slug for a "Services" page in the target language, considering the common usage in websites for that language. Make sure to keep the slug lowercase and url-friendly.
 #: public/build/extendify-assist-page-8997bb466c9a43833230.js:79
-#: public/build/extendify-launch-1f0326937879251d6ea1.js:83
+#: public/build/extendify-launch-deab5672abece2f9403b.js:83
 msgid "services"
 msgstr "teenused"
 
 #. translators: This string represents the title of a "Specials" page on a website that lists special offers. Please translate it in a way that fits the standard phrasing for a "Specials" page in the target language, considering the common usage in websites for that language.
 #: public/build/extendify-assist-page-8997bb466c9a43833230.js:81
-#: public/build/extendify-launch-1f0326937879251d6ea1.js:85
+#: public/build/extendify-launch-deab5672abece2f9403b.js:85
 msgid "Specials"
 msgstr "Eripakkumised"
 
 #. translators: This string represents the slug of a "Specials" page on a website that lists special offers. Please translate it in a way that fits a slug for a "Specials" page in the target language, considering the common usage in websites for that language. Make sure to keep the slug lowercase and url-friendly.
 #: public/build/extendify-assist-page-8997bb466c9a43833230.js:83
-#: public/build/extendify-launch-1f0326937879251d6ea1.js:87
+#: public/build/extendify-launch-deab5672abece2f9403b.js:87
 msgid "specials"
 msgstr "eripakkumised"
 
 #. translators: This string represents the slug of a "Team" page on a website that introduces the team members. Please translate it in a way that fits a slug for a "Team" page in the target language, considering the common usage in websites for that language. Make sure to keep the slug lowercase and url-friendly.
 #: public/build/extendify-assist-page-8997bb466c9a43833230.js:87
-#: public/build/extendify-launch-1f0326937879251d6ea1.js:91
+#: public/build/extendify-launch-deab5672abece2f9403b.js:91
 msgid "team"
 msgstr "meeskond"
 
 #. translators: This string represents the title of a "Testimonials" page on a website that showcases testimonials from customers. Please translate it in a way that fits the standard phrasing for a "Testimonials" page in the target language, considering the common usage in websites for that language.
 #: public/build/extendify-assist-page-8997bb466c9a43833230.js:89
-#: public/build/extendify-launch-1f0326937879251d6ea1.js:93
+#: public/build/extendify-launch-deab5672abece2f9403b.js:93
 msgid "Testimonials"
 msgstr "Kliendiütlused"
 
 #. translators: This string represents the slug of a "Testimonials" page on a website that showcases testimonials from customers. Please translate it in a way that fits a slug for a "Testimonials" page in the target language, considering the common usage in websites for that language. Make sure to keep the slug lowercase and url-friendly.
 #: public/build/extendify-assist-page-8997bb466c9a43833230.js:91
-#: public/build/extendify-launch-1f0326937879251d6ea1.js:95
+#: public/build/extendify-launch-deab5672abece2f9403b.js:95
 msgid "testimonials"
 msgstr "kliendi-tagasiside"
 
-#: public/build/extendify-launch-1f0326937879251d6ea1.js:5
+#: public/build/extendify-launch-deab5672abece2f9403b.js:5
 msgid "Single-Page Website"
 msgstr "Üheleheküljeline veebisait"
 
-#: public/build/extendify-launch-1f0326937879251d6ea1.js:5
+#: public/build/extendify-launch-deab5672abece2f9403b.js:5
 msgid "All content displayed on one scrolling page."
 msgstr "Kogu sisu kuvatakse ühel keritaval lehel."
 
-#: public/build/extendify-launch-1f0326937879251d6ea1.js:5
+#: public/build/extendify-launch-deab5672abece2f9403b.js:5
 msgid "Multi-Page Website"
 msgstr "Mitmeleheküljeline veebisait"
 
-#: public/build/extendify-launch-1f0326937879251d6ea1.js:5
+#: public/build/extendify-launch-deab5672abece2f9403b.js:5
 msgid "Multiple interconnected pages."
 msgstr "Mitmed omavahel seotud lehed."
 
 #: public/build/extendify-assist-page-8997bb466c9a43833230.js:1
-#: public/build/extendify-launch-1f0326937879251d6ea1.js:5
+#: public/build/extendify-launch-deab5672abece2f9403b.js:5
 msgid "Pick Your Site Structure"
 msgstr "Vali oma veebilehe struktuur"
 
@@ -2361,85 +2361,85 @@ msgstr "Nautige klassikalist Prantsuse bistrookööki koos California nüansside
 msgid "Find your dream home or make profitable investments with Pinnacle Properties, Austin's premier real estate agency. Trust our experienced agents for personalized services."
 msgstr "Leia oma unistuste kodu või tee kasumlikke investeeringuid Pinnacle Properties'iga, Austini juhtiva kinnisvarabürooga. Usalda meie kogenud agente isikupärastatud teenuste saamiseks."
 
-#: public/build/extendify-draft-e84f365c9463a5246231.js:7
+#: public/build/extendify-draft-716152fdf43352872442.js:7
 msgid "Greek"
 msgstr "Kreeka keel"
 
-#: public/build/extendify-draft-e84f365c9463a5246231.js:7
+#: public/build/extendify-draft-716152fdf43352872442.js:7
 msgid "Hindi"
 msgstr "Hindi"
 
-#: public/build/extendify-draft-e84f365c9463a5246231.js:7
+#: public/build/extendify-draft-716152fdf43352872442.js:7
 msgid "Arabic"
 msgstr "Araabia"
 
-#: public/build/extendify-draft-e84f365c9463a5246231.js:7
+#: public/build/extendify-draft-716152fdf43352872442.js:7
 msgid "Arabic (Morocco)"
 msgstr "Maroko araabia"
 
-#: public/build/extendify-draft-e84f365c9463a5246231.js:7
+#: public/build/extendify-draft-716152fdf43352872442.js:7
 msgid "English (UK)"
 msgstr "Inglise (UK)"
 
-#: public/build/extendify-draft-e84f365c9463a5246231.js:7
+#: public/build/extendify-draft-716152fdf43352872442.js:7
 msgid "Spanish (Colombia)"
 msgstr "Hispaania (Colombia)"
 
-#: public/build/extendify-draft-e84f365c9463a5246231.js:7
+#: public/build/extendify-draft-716152fdf43352872442.js:7
 msgid "Spanish (Mexico)"
 msgstr "Mehhiko hispaania"
 
-#: public/build/extendify-draft-e84f365c9463a5246231.js:7
+#: public/build/extendify-draft-716152fdf43352872442.js:7
 msgid "Romanian"
 msgstr "Rumeenia keel"
 
-#: public/build/extendify-launch-1f0326937879251d6ea1.js:5
+#: public/build/extendify-launch-deab5672abece2f9403b.js:5
 msgid "Website title"
 msgstr "Veebisaidi pealkiri"
 
-#: public/build/extendify-launch-1f0326937879251d6ea1.js:5
+#: public/build/extendify-launch-deab5672abece2f9403b.js:5
 msgid "Describe your business or website"
 msgstr "Kirjelda oma ettevõtet või veebisaiti"
 
-#: public/build/extendify-launch-1f0326937879251d6ea1.js:5
+#: public/build/extendify-launch-deab5672abece2f9403b.js:5
 msgid "Get Started With AI-Powered Web Creation"
 msgstr "Alusta tehisintellekti abil veebilehe loomist"
 
-#: public/build/extendify-launch-1f0326937879251d6ea1.js:5
+#: public/build/extendify-launch-deab5672abece2f9403b.js:5
 msgid "Share your vision, and we'll craft a website that's perfectly tailored to your needs, ready to launch in no time. Let's begin by learning more about what you're building."
 msgstr "Jaga oma visiooni ja me loome veebisaidi, mis on täiuslikult kohandatud sinu vajadustele ning valmis kiiresti käivitamiseks. Alustame sellest, et saame rohkem teada, mida sa ehitad."
 
 #. translators: Launch is a noun.
-#: public/build/extendify-launch-1f0326937879251d6ea1.js:11
+#: public/build/extendify-launch-deab5672abece2f9403b.js:11
 msgid "Launch - AI-Powered Web Creation"
 msgstr "Käivitus - tehisintellekti abil veebiloome"
 
-#: public/build/extendify-launch-1f0326937879251d6ea1.js:5
+#: public/build/extendify-launch-deab5672abece2f9403b.js:5
 msgid "Customizing Your Experience"
 msgstr "Teie kogemuse kohandamine"
 
-#: public/build/extendify-launch-1f0326937879251d6ea1.js:5
+#: public/build/extendify-launch-deab5672abece2f9403b.js:5
 msgid "Designing Your Options"
 msgstr "Valikute kujundamine"
 
-#: public/build/extendify-launch-1f0326937879251d6ea1.js:5
+#: public/build/extendify-launch-deab5672abece2f9403b.js:5
 msgid "Your browser does not support the video tag."
 msgstr "Sinu veebilehitseja ei toeta videotagi."
 
-#: public/build/extendify-launch-1f0326937879251d6ea1.js:5
+#: public/build/extendify-launch-deab5672abece2f9403b.js:5
 msgid "Please wait while we analyze your inputs and tailor your experience."
 msgstr "Palun oota, kuni analüüsime sinu sisendeid ja kohandame sinu kogemust."
 
-#: public/build/extendify-launch-1f0326937879251d6ea1.js:5
+#: public/build/extendify-launch-deab5672abece2f9403b.js:5
 msgid "Please wait while we build some website options for you to select from."
 msgstr "Palun oodake, kuni loome teile valikuvõimalusi veebisaidi jaoks."
 
-#: public/build/extendify-launch-1f0326937879251d6ea1.js:5
+#: public/build/extendify-launch-deab5672abece2f9403b.js:5
 msgid "Creating blog sample data"
 msgstr "Ajaveebi näidisandmete loomine"
 
 #. translators: "More" here is used for a navigation menu item that contains additional links.
-#: public/build/extendify-launch-1f0326937879251d6ea1.js:9
+#: public/build/extendify-launch-deab5672abece2f9403b.js:9
 msgid "More"
 msgstr "Rohkem"
 
@@ -2449,15 +2449,19 @@ msgid "Add Website Details"
 msgstr "Lisa veebilehe üksikasjad"
 
 #. translators: %s is a post number
-#: public/build/extendify-launch-1f0326937879251d6ea1.js:7
+#: public/build/extendify-launch-deab5672abece2f9403b.js:7
 msgid "Blog Post %s"
 msgstr "Blogipostitus %s"
 
-#: public/build/extendify-launch-1f0326937879251d6ea1.js:7
+#: public/build/extendify-launch-deab5672abece2f9403b.js:7
 msgid "Importing shop sample data"
 msgstr "Poenäidiste andmete importimine"
 
 #. translators: %3$s is the number of old pages
-#: public/build/extendify-launch-1f0326937879251d6ea1.js:5
+#: public/build/extendify-launch-deab5672abece2f9403b.js:5
 msgid "%s pages/posts created in the prior onboarding session will be deleted."
 msgstr "Eelmise sisseelamisprotsessi käigus loodud %s lehte/postitust kustutatakse."
+
+#: public/build/extendify-draft-716152fdf43352872442.js:7
+msgid "Lithuanian"
+msgstr "Leedu keel"

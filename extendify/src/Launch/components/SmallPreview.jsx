@@ -38,7 +38,8 @@ export const SmallPreview = ({ style, onSelect, selected, siteTitle }) => {
 				const content = frame?.contentDocument;
 				if (content) {
 					content.querySelector('[href*=load-styles]')?.remove();
-					content.querySelector('[href*=site-title]').textContent = siteTitle;
+					const siteTitleElement = content.querySelector('[href*=site-title]');
+					if (siteTitleElement) siteTitleElement.textContent = siteTitle;
 				}
 				const stylesToInject = `<style id="ext-tj">
 					${themeJSON[style?.variation?.title]}

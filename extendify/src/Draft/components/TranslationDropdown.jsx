@@ -126,6 +126,11 @@ export const DropdownTranslate = ({
 			languageName: 'Japanese',
 		},
 		{
+			language: __('Lithuanian', 'extendify-local'),
+			code: 'lt_LT',
+			languageName: 'Lithuanian',
+		},
+		{
 			language: __('Norwegian', 'extendify-local'),
 			code: 'nb_NO',
 			languageName: 'Norwegian',

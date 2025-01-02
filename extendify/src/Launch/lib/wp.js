@@ -204,7 +204,8 @@ export const importImage = async (imageUrl, metadata) => {
 
 export const createBlogSampleData = async (siteStrings, siteImages) => {
 	const localizedBlogSampleData =
-		blogSampleData[window.extSharedData?.wpLanguage || 'en_US'];
+		blogSampleData[window.extSharedData?.wpLanguage || 'en_US'] ||
+		blogSampleData['en_US'];
 
 	const categories =
 		(await createWpCategories(localizedBlogSampleData.categories)) || [];
