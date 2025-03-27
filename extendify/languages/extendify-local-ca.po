@@ -2647,15 +2647,15 @@ msgstr "Genera la teva pàgina"
 msgid "When ready, press here to generate your page."
 msgstr "Quan estigueu preparat, premeu aquí per generar la vostra pàgina."
 
-#: public/build/extendify-shared-1d82cc6f89e923938e3b.js:1
+#: public/build/extendify-shared-634d6edc7be3cc539a37.js:1
 msgid "Close ToolTip"
 msgstr "Tanca la informació sobre eines"
 
-#: public/build/extendify-shared-1d82cc6f89e923938e3b.js:1
+#: public/build/extendify-shared-634d6edc7be3cc539a37.js:1
 msgid "Tooltip pointing to the edit page button"
 msgstr "Informació sobre eines que apunta al botó d'editar pàgina"
 
-#: public/build/extendify-shared-1d82cc6f89e923938e3b.js:1
+#: public/build/extendify-shared-634d6edc7be3cc539a37.js:1
 msgid "Welcome to your new site! When you're ready, press here to edit this page."
 msgstr "Benvinguts al vostre nou lloc! Quan estigueu preparats, premeu aquí per editar aquesta pàgina."
 

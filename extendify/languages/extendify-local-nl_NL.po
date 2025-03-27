@@ -2651,15 +2651,15 @@ msgstr "Je pagina genereren"
 msgid "When ready, press here to generate your page."
 msgstr "Als je klaar bent, druk hier om je pagina te genereren."
 
-#: public/build/extendify-shared-1d82cc6f89e923938e3b.js:1
+#: public/build/extendify-shared-634d6edc7be3cc539a37.js:1
 msgid "Close ToolTip"
 msgstr "ToolTip sluiten"
 
-#: public/build/extendify-shared-1d82cc6f89e923938e3b.js:1
+#: public/build/extendify-shared-634d6edc7be3cc539a37.js:1
 msgid "Tooltip pointing to the edit page button"
 msgstr "Tooltip die naar de knop 'Pagina bewerken' wijst"
 
-#: public/build/extendify-shared-1d82cc6f89e923938e3b.js:1
+#: public/build/extendify-shared-634d6edc7be3cc539a37.js:1
 msgid "Welcome to your new site! When you're ready, press here to edit this page."
 msgstr "Welkom op je nieuwe site! Als je klaar bent, druk hier om deze pagina te bewerken."
 

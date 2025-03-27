@@ -2651,15 +2651,15 @@ msgstr "ページを生成"
 msgid "When ready, press here to generate your page."
 msgstr "準備ができたら、ここを押してページを生成してください。"
 
-#: public/build/extendify-shared-1d82cc6f89e923938e3b.js:1
+#: public/build/extendify-shared-634d6edc7be3cc539a37.js:1
 msgid "Close ToolTip"
 msgstr "ツールチップを閉じる"
 
-#: public/build/extendify-shared-1d82cc6f89e923938e3b.js:1
+#: public/build/extendify-shared-634d6edc7be3cc539a37.js:1
 msgid "Tooltip pointing to the edit page button"
 msgstr "編集ページボタンへのツールチップ"
 
-#: public/build/extendify-shared-1d82cc6f89e923938e3b.js:1
+#: public/build/extendify-shared-634d6edc7be3cc539a37.js:1
 msgid "Welcome to your new site! When you're ready, press here to edit this page."
 msgstr "新しいサイトへようこそ ! 準備ができたら、ここを押してこのページを編集してください。"
 

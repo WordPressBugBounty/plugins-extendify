@@ -2647,15 +2647,15 @@ msgstr "Loo oma leht"
 msgid "When ready, press here to generate your page."
 msgstr "Kui valmis, vajuta siia, et leht luua."
 
-#: public/build/extendify-shared-1d82cc6f89e923938e3b.js:1
+#: public/build/extendify-shared-634d6edc7be3cc539a37.js:1
 msgid "Close ToolTip"
 msgstr "Sulge tööriistavihje"
 
-#: public/build/extendify-shared-1d82cc6f89e923938e3b.js:1
+#: public/build/extendify-shared-634d6edc7be3cc539a37.js:1
 msgid "Tooltip pointing to the edit page button"
 msgstr "Hõljuktekst, mis osutab lehe muutmise nupule"
 
-#: public/build/extendify-shared-1d82cc6f89e923938e3b.js:1
+#: public/build/extendify-shared-634d6edc7be3cc539a37.js:1
 msgid "Welcome to your new site! When you're ready, press here to edit this page."
 msgstr "Tere tulemast oma uuele saidile! Kui oled valmis, vajuta siia, et seda lehte muuta."
 

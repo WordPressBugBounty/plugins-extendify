@@ -2645,15 +2645,15 @@ msgstr "Generează pagina ta"
 msgid "When ready, press here to generate your page."
 msgstr "Când ești pregătit, apasă aici pentru a genera pagina."
 
-#: public/build/extendify-shared-1d82cc6f89e923938e3b.js:1
+#: public/build/extendify-shared-634d6edc7be3cc539a37.js:1
 msgid "Close ToolTip"
 msgstr "Închide ToolTip"
 
-#: public/build/extendify-shared-1d82cc6f89e923938e3b.js:1
+#: public/build/extendify-shared-634d6edc7be3cc539a37.js:1
 msgid "Tooltip pointing to the edit page button"
 msgstr "Tooltip indicând butonul de editare a paginii"
 
-#: public/build/extendify-shared-1d82cc6f89e923938e3b.js:1
+#: public/build/extendify-shared-634d6edc7be3cc539a37.js:1
 msgid "Welcome to your new site! When you're ready, press here to edit this page."
 msgstr "Bine ai venit pe noul tău site! Când ești pregătit, apasă aici pentru a edita această pagină."
 

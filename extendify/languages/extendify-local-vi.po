@@ -2647,15 +2647,15 @@ msgstr "Tạo trang của bạn"
 msgid "When ready, press here to generate your page."
 msgstr "Khi sẵn sàng, nhấn vào đây để tạo trang của bạn."
 
-#: public/build/extendify-shared-1d82cc6f89e923938e3b.js:1
+#: public/build/extendify-shared-634d6edc7be3cc539a37.js:1
 msgid "Close ToolTip"
 msgstr "Đóng chú giải công cụ"
 
-#: public/build/extendify-shared-1d82cc6f89e923938e3b.js:1
+#: public/build/extendify-shared-634d6edc7be3cc539a37.js:1
 msgid "Tooltip pointing to the edit page button"
 msgstr "Chú giải chỉ vào nút sửa trang"
 
-#: public/build/extendify-shared-1d82cc6f89e923938e3b.js:1
+#: public/build/extendify-shared-634d6edc7be3cc539a37.js:1
 msgid "Welcome to your new site! When you're ready, press here to edit this page."
 msgstr "Chào mừng bạn đến với trang web mới! Khi bạn sẵn sàng, nhấn vào đây để chỉnh sửa trang này."
 

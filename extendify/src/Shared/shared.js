@@ -59,6 +59,8 @@ const isOnLaunch = () => {
 	const urlParams = new URLSearchParams(window.location.search);
 	const justCompletedLaunch = urlParams.has('extendify-launch-success');
 	if (justCompletedLaunch) {
+		const hasEditButton = document.querySelector('#wp-admin-bar-edit');
+		if (!hasEditButton) return;
 		const currentUrl = new URL(window.location.href);
 		const homeUrl = new URL(window.extSharedData.homeUrl);
 		const isHomePage =

@@ -2647,15 +2647,15 @@ msgstr "Vytvorte svoju stránku"
 msgid "When ready, press here to generate your page."
 msgstr "Keď budete pripravení, stlačte sem na vytvorenie stránky."
 
-#: public/build/extendify-shared-1d82cc6f89e923938e3b.js:1
+#: public/build/extendify-shared-634d6edc7be3cc539a37.js:1
 msgid "Close ToolTip"
 msgstr "Zatvoriť ToolTip"
 
-#: public/build/extendify-shared-1d82cc6f89e923938e3b.js:1
+#: public/build/extendify-shared-634d6edc7be3cc539a37.js:1
 msgid "Tooltip pointing to the edit page button"
 msgstr "Popis tlačidla na úpravu stránky"
 
-#: public/build/extendify-shared-1d82cc6f89e923938e3b.js:1
+#: public/build/extendify-shared-634d6edc7be3cc539a37.js:1
 msgid "Welcome to your new site! When you're ready, press here to edit this page."
 msgstr "Vitajte na vašej novej webovej stránke! Keď budete pripravení, stlačte sem pre úpravu tejto stránky."
 

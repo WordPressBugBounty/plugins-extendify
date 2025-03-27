@@ -2647,15 +2647,15 @@ msgstr "Создайте свою страницу"
 msgid "When ready, press here to generate your page."
 msgstr "Когда будете готовы, нажмите здесь, чтобы создать страницу."
 
-#: public/build/extendify-shared-1d82cc6f89e923938e3b.js:1
+#: public/build/extendify-shared-634d6edc7be3cc539a37.js:1
 msgid "Close ToolTip"
 msgstr "Закрыть подсказку"
 
-#: public/build/extendify-shared-1d82cc6f89e923938e3b.js:1
+#: public/build/extendify-shared-634d6edc7be3cc539a37.js:1
 msgid "Tooltip pointing to the edit page button"
 msgstr "Подсказка, указывающая на кнопку редактирования страницы"
 
-#: public/build/extendify-shared-1d82cc6f89e923938e3b.js:1
+#: public/build/extendify-shared-634d6edc7be3cc539a37.js:1
 msgid "Welcome to your new site! When you're ready, press here to edit this page."
 msgstr "Добро пожаловать на ваш новый сайт! Когда будете готовы, нажмите здесь, чтобы отредактировать эту страницу."
 

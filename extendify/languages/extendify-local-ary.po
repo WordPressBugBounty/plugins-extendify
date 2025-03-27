@@ -2645,15 +2645,15 @@ msgstr "إنشاء صفحتك"
 msgid "When ready, press here to generate your page."
 msgstr "مني تكون واجد، ضغط هنا باش تولد صفحتك"
 
-#: public/build/extendify-shared-1d82cc6f89e923938e3b.js:1
+#: public/build/extendify-shared-634d6edc7be3cc539a37.js:1
 msgid "Close ToolTip"
 msgstr "إغلاق التلميح"
 
-#: public/build/extendify-shared-1d82cc6f89e923938e3b.js:1
+#: public/build/extendify-shared-634d6edc7be3cc539a37.js:1
 msgid "Tooltip pointing to the edit page button"
 msgstr "تلميح يشير لزر تحرير الصفحة"
 
-#: public/build/extendify-shared-1d82cc6f89e923938e3b.js:1
+#: public/build/extendify-shared-634d6edc7be3cc539a37.js:1
 msgid "Welcome to your new site! When you're ready, press here to edit this page."
 msgstr "مرحبا بك في موقعك الجديد! ملي تكون واجد، اضغط هنا لتحرير هاد الصفحة."
 

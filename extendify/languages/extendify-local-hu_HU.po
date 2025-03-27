@@ -2647,15 +2647,15 @@ msgstr "Oldal létrehozása"
 msgid "When ready, press here to generate your page."
 msgstr "Ha kész, nyomja meg itt az oldal létrehozásához."
 
-#: public/build/extendify-shared-1d82cc6f89e923938e3b.js:1
+#: public/build/extendify-shared-634d6edc7be3cc539a37.js:1
 msgid "Close ToolTip"
 msgstr "Eszköztipp bezárása"
 
-#: public/build/extendify-shared-1d82cc6f89e923938e3b.js:1
+#: public/build/extendify-shared-634d6edc7be3cc539a37.js:1
 msgid "Tooltip pointing to the edit page button"
 msgstr "Eszköztipp az oldal szerkesztése gombra mutatva"
 
-#: public/build/extendify-shared-1d82cc6f89e923938e3b.js:1
+#: public/build/extendify-shared-634d6edc7be3cc539a37.js:1
 msgid "Welcome to your new site! When you're ready, press here to edit this page."
 msgstr "Üdvözlünk az új honlapodon! Ha készen állsz, kattints ide az oldal szerkesztéséhez."
 

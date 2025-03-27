@@ -2647,15 +2647,15 @@ msgstr "Hasilkan laman Anda"
 msgid "When ready, press here to generate your page."
 msgstr "Jika siap, tekan di sini untuk membuat halaman Anda."
 
-#: public/build/extendify-shared-1d82cc6f89e923938e3b.js:1
+#: public/build/extendify-shared-634d6edc7be3cc539a37.js:1
 msgid "Close ToolTip"
 msgstr "Tutup ToolTip"
 
-#: public/build/extendify-shared-1d82cc6f89e923938e3b.js:1
+#: public/build/extendify-shared-634d6edc7be3cc539a37.js:1
 msgid "Tooltip pointing to the edit page button"
 msgstr "Tooltip menunjuk ke tombol edit halaman"
 
-#: public/build/extendify-shared-1d82cc6f89e923938e3b.js:1
+#: public/build/extendify-shared-634d6edc7be3cc539a37.js:1
 msgid "Welcome to your new site! When you're ready, press here to edit this page."
 msgstr "Selamat datang di situs baru Anda! Saat Anda siap, tekan di sini untuk mengedit halaman ini."
 

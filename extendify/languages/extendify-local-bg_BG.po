@@ -2645,15 +2645,15 @@ msgstr "Генерирайте вашата страница"
 msgid "When ready, press here to generate your page."
 msgstr "Когато сте готови, натиснете тук, за да генерирате страницата си."
 
-#: public/build/extendify-shared-1d82cc6f89e923938e3b.js:1
+#: public/build/extendify-shared-634d6edc7be3cc539a37.js:1
 msgid "Close ToolTip"
 msgstr "Затваряне на подсказката"
 
-#: public/build/extendify-shared-1d82cc6f89e923938e3b.js:1
+#: public/build/extendify-shared-634d6edc7be3cc539a37.js:1
 msgid "Tooltip pointing to the edit page button"
 msgstr "Подсказка, сочеща бутона за редактиране на страница"
 
-#: public/build/extendify-shared-1d82cc6f89e923938e3b.js:1
+#: public/build/extendify-shared-634d6edc7be3cc539a37.js:1
 msgid "Welcome to your new site! When you're ready, press here to edit this page."
 msgstr "Добре дошли в новия си сайт! Когато сте готови, натиснете тук, за да редактирате тази страница."
 

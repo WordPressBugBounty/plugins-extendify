@@ -2645,15 +2645,15 @@ msgstr "Sugeneruokite savo puslapį"
 msgid "When ready, press here to generate your page."
 msgstr "Kai būsite pasiruošę, spustelėkite čia, kad sukurtumėte puslapį."
 
-#: public/build/extendify-shared-1d82cc6f89e923938e3b.js:1
+#: public/build/extendify-shared-634d6edc7be3cc539a37.js:1
 msgid "Close ToolTip"
 msgstr "Uždaryti užuominą"
 
-#: public/build/extendify-shared-1d82cc6f89e923938e3b.js:1
+#: public/build/extendify-shared-634d6edc7be3cc539a37.js:1
 msgid "Tooltip pointing to the edit page button"
 msgstr "Įrankio patarimas, rodantis į puslapio redagavimo mygtuką"
 
-#: public/build/extendify-shared-1d82cc6f89e923938e3b.js:1
+#: public/build/extendify-shared-634d6edc7be3cc539a37.js:1
 msgid "Welcome to your new site! When you're ready, press here to edit this page."
 msgstr "Sveiki atvykę į savo naują tinklalapį! Kai būsite pasiruošę, paspauskite čia, kad redaguotumėte šį puslapį."
 

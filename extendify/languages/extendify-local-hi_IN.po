@@ -2645,15 +2645,15 @@ msgstr "अपना पृष्ठ बनाएं"
 msgid "When ready, press here to generate your page."
 msgstr "तैयार होने पर, अपना पृष्ठ बनाने के लिए यहाँ दबाएँ।"
 
-#: public/build/extendify-shared-1d82cc6f89e923938e3b.js:1
+#: public/build/extendify-shared-634d6edc7be3cc539a37.js:1
 msgid "Close ToolTip"
 msgstr "टूलटिप बंद करें"
 
-#: public/build/extendify-shared-1d82cc6f89e923938e3b.js:1
+#: public/build/extendify-shared-634d6edc7be3cc539a37.js:1
 msgid "Tooltip pointing to the edit page button"
 msgstr "पृष्ठ संपादित बटन की ओर संकेत करने वाला टूलटिप"
 
-#: public/build/extendify-shared-1d82cc6f89e923938e3b.js:1
+#: public/build/extendify-shared-634d6edc7be3cc539a37.js:1
 msgid "Welcome to your new site! When you're ready, press here to edit this page."
 msgstr "आपकी नई साइट में आपका स्वागत है! जब आप तैयार हों, तो इस पृष्ठ को संपादित करने के लिए यहाँ दबाएँ"
 
