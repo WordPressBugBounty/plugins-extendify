@@ -105,6 +105,13 @@ export const Modal = () => {
 			window.history.replaceState({}, '', pathname + '?' + search.toString());
 			incrementActivity('page-creator-search-param-auto-close');
 		}
+
+		if (search.has('ext-open')) {
+			// Close library
+			window.dispatchEvent(new CustomEvent('extendify::open-library'));
+			search.delete('ext-open');
+			window.history.replaceState({}, '', pathname + '?' + search.toString());
+		}
 	}, [setOpen, incrementActivity]);
 
 	useEffect(() => {

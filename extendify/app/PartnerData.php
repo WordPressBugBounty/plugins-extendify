@@ -65,7 +65,6 @@ class PartnerData
         'allowedPluginsSlugs' => [],
         'requiredPlugins' => [],
         'showLaunch' => false,
-        'hideLaunchObjective' => false,
         'deactivated' => true,
         'launchRedirectWebsite' => false,
     ];
@@ -104,7 +103,6 @@ class PartnerData
         self::$config['requiredPlugins'] = ($data['requiredPlugins'] ?? self::$config['requiredPlugins']);
         self::$config['showAIPageCreation'] = ($data['showAIPageCreation'] ?? self::$config['showAIPageCreation']);
         self::$config['showLaunch'] = ($data['showLaunch'] ?? self::$config['showLaunch']);
-        self::$config['hideLaunchObjective'] = ($data['hideLaunchObjective'] ?? self::$config['hideLaunchObjective']);
         self::$config['deactivated'] = ($data['deactivated'] ?? self::$config['deactivated']);
         self::$config['launchRedirectWebsite'] = ($data['launchRedirectWebsite'] ?? self::$config['launchRedirectWebsite']);
 

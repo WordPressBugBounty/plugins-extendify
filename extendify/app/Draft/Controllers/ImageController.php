@@ -7,6 +7,13 @@ namespace Extendify\Draft\Controllers;
 
 defined('ABSPATH') || die('No direct access.');
 
+// Try to execute set the limit to something that will work for 60s duration.
+// phpcs:ignore WordPress.PHP.NoSilencedErrors, Generic.PHP.NoSilencedErrors.Discouraged
+if (strpos(@ini_get('disable_functions'), 'set_time_limit') === false) {
+    // phpcs:ignore WordPress.PHP.NoSilencedErrors, Generic.PHP.NoSilencedErrors.Discouraged
+    @set_time_limit(60);
+}
+
 use Extendify\Shared\Services\Sanitizer;
 
 /**

@@ -49,7 +49,14 @@ import { usePagesSelectionStore } from '@launch/state/pages-selections';
 import { useUserSelectionStore } from '@launch/state/user-selections';
 import { Logo, Spinner } from '@launch/svg';
 
-const { homeUrl, adminUrl } = window.extSharedData;
+const {
+	homeUrl,
+	adminUrl,
+	partnerLogo,
+	partnerName,
+	installedPlugins = [],
+	requiredPlugins = [],
+} = window.extSharedData;
 
 export const CreatingSite = () => {
 	const [isShowing] = useState(true);
@@ -128,7 +135,7 @@ export const CreatingSite = () => {
 						variation,
 						// We set to null first to reset the field.
 						{ settings: { typography: { fontFamilies: { custom: null } } } },
-						// We add the intalled font families here to activate them.
+						// We add the installed font families here to activate them.
 						{
 							settings: {
 								typography: {
@@ -166,7 +173,6 @@ export const CreatingSite = () => {
 			await updateTemplatePart('extendable/footer', style?.footerCode);
 
 			const goalsPlugins = getGoalsPlugins();
-			const requiredPlugins = window.extSharedData?.requiredPlugins ?? [];
 
 			// Add required plugins to the end of the list to give them lower priority
 			// when filtering out duplicates.
@@ -186,6 +192,7 @@ export const CreatingSite = () => {
 				inform(__('Installing necessary plugins', 'extendify-local'));
 
 				for (const [index, plugin] of sortedPlugins.entries()) {
+					const slug = plugin?.wordpressSlug;
 					informDesc(
 						__(
 							`${index + 1}/${sortedPlugins.length}: ${plugin.name}`,
@@ -193,10 +200,13 @@ export const CreatingSite = () => {
 						),
 					);
 
-					await retryOperation(() => installPlugin(plugin?.wordpressSlug), {
-						maxAttempts: 2,
-					}).catch(console.error);
-					await retryOperation(() => activatePlugin(plugin?.wordpressSlug), {
+					// Don't install if already installed
+					if (!installedPlugins?.some((s) => s.includes(slug))) {
+						await retryOperation(() => installPlugin(slug), {
+							maxAttempts: 2,
+						}).catch(console.error);
+					}
+					await retryOperation(() => activatePlugin(slug), {
 						maxAttempts: 2,
 					}).catch(console.error);
 				}
@@ -353,7 +363,7 @@ export const CreatingSite = () => {
 						rendered: __('Events', 'extendify-local'),
 					},
 					slug: 'events',
-					link: `${window.extSharedData.homeUrl}/events`,
+					link: `${homeUrl}/events`,
 				};
 
 				pluginPages.push(eventsPage);
@@ -436,7 +446,7 @@ export const CreatingSite = () => {
 					'extendify-local',
 				);
 				alert(alertMsg);
-				location.href = window.extSharedData.adminUrl;
+				location.href = adminUrl;
 			}
 			await new Promise((resolve) => setTimeout(resolve, 2000));
 			return doEverything();
@@ -505,12 +515,12 @@ export const CreatingSite = () => {
 			className="flex shrink-0 flex-col justify-between bg-banner-main px-10 py-12 text-banner-text md:h-screen">
 			<div className="max-w-prose">
 				<div className="md:min-h-48">
-					{window.extSharedData?.partnerLogo ? (
+					{partnerLogo ? (
 						<div className="mb-8">
 							<img
 								style={{ maxWidth: '200px' }}
-								src={window.extSharedData.partnerLogo}
-								alt={window.extSharedData?.partnerName ?? ''}
+								src={partnerLogo}
+								alt={partnerName ?? ''}
 							/>
 						</div>
 					) : (

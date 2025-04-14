@@ -98,6 +98,7 @@ class Insights
                 'siteProfile' => \get_option('extendify_site_profile', null),
                 'pluginSearchTerms' => \get_option('extendify_plugin_search_terms', []),
                 'blockSearchTerms' => \get_option('extendify_block_search_terms', []),
+                'phpVersion' => PHP_VERSION,
             ]);
             return $insights;
         });

@@ -169,6 +169,10 @@ class AdminPageRouter
      */
     public function redirectOnce()
     {
+        if (defined('EXTENDIFY_IS_THEME_EXTENDABLE') && !EXTENDIFY_IS_THEME_EXTENDABLE) {
+            return;
+        }
+
         if (\get_option('extendify_launch_loaded', false) || !Config::$showLaunch) {
             return;
         }

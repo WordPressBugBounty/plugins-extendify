@@ -17,8 +17,6 @@ export const state = pageState('Content Gathering', () => ({
 	onRemove: () => {},
 }));
 
-const hideLaunchObjective = window.extSharedData?.hideLaunchObjective || false;
-
 export const SitePrep = () => {
 	const { nextPage } = usePagesStore();
 	const { setSiteProfile, addMany } = useUserSelectionStore();
@@ -33,7 +31,7 @@ export const SitePrep = () => {
 
 	useEffect(() => {
 		if (!goals) return;
-		if (goals && !hideLaunchObjective) {
+		if (goals) {
 			addMany('goals', goals, { clearExisting: true });
 		}
 		let id = setTimeout(nextPage, 1000);

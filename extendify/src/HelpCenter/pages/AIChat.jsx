@@ -92,7 +92,7 @@ export const AIChat = () => {
 				const chunk = decoder.decode(value);
 				setAnswer((v) => {
 					if (v === '...') return chunk;
-					// For bw compatability we remove the json appended to the end
+					// For backward compatibility we remove the json appended to the end
 					return (v + chunk).replace(/\{"id":"[a-zA-Z0-9]+"\}/g, '');
 				});
 			}

@@ -180,9 +180,6 @@ class Admin
                 'showDraft' => isset($partnerData['showDraft']) ? (bool) $partnerData['showDraft'] : false,
                 'showLaunch' => Config::$showLaunch,
                 'apexDomain' => PartnerData::setting('enableApexDomain') ? rawurlencode(ApexDomain::getApexDomain(\get_home_url())) : null,
-                // Preview feature enabled.
-                // phpcs:ignore WordPress.Security.NonceVerification.Recommended
-                'hideLaunchObjective' => isset($_GET['preview']) ? false : (isset($partnerData['hideLaunchObjective']) ? (bool) $partnerData['hideLaunchObjective'] : false),
                 'isLaunchCompleted' => (bool) \esc_attr(\get_option('extendify_onboarding_completed', false)),
             ]),
             'before'

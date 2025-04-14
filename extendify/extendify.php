@@ -5,7 +5,7 @@
  * Plugin URI:        https://extendify.com/?utm_source=wp-plugins&utm_campaign=plugin-uri&utm_medium=wp-dash
  * Author:            Extendify
  * Author URI:        https://extendify.com/?utm_source=wp-plugins&utm_campaign=author-uri&utm_medium=wp-dash
- * Version:           1.18.3
+ * Version:           1.18.4
  * License:           GPL-2.0-or-later
  * License URI:       https://www.gnu.org/licenses/gpl-2.0.html
  * Text Domain:       extendify-local
@@ -47,7 +47,7 @@ if (!class_exists('ExtendifySdk') && !class_exists('Extendify')) :
          */
         public function __invoke()
         {
-            // Allow users to disable the libary. The latter is left in for historical reasons.
+            // Allow users to disable the library. The latter is left in for historical reasons.
             if (!apply_filters('extendify_load_library', true) || !apply_filters('extendifysdk_load_library', true)) {
                 return;
             }

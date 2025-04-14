@@ -42,6 +42,10 @@ if (is_readable(EXTENDIFY_PATH . 'vendor/autoload.php')) {
     require EXTENDIFY_PATH . 'vendor/autoload.php';
 }
 
+if (!defined('EXTENDIFY_IS_THEME_EXTENDABLE')) {
+    define('EXTENDIFY_IS_THEME_EXTENDABLE', get_option('stylesheet') === 'extendable');
+}
+
 // This file should have no dependencies and always load.
 new LibraryFrontend();
 // This file hooks into an external task and should always load.
