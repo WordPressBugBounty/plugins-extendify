@@ -44,13 +44,16 @@ export const SmallPreview = ({
 			const checkOnStyles = () => {
 				if (counter >= 150) return;
 				const now = performance.now();
+				// Don't pass here until we've waited 100ms
 				if (now - lastRun < 100) return requestAnimationFrame(checkOnStyles);
 				lastRun = now;
 				const content = frame?.contentDocument;
 				if (content) {
 					content.querySelector('[href*=load-styles]')?.remove();
 					const siteTitleElement = content.querySelector('[href*=site-title]');
-					if (siteTitleElement) siteTitleElement.textContent = siteTitle;
+					if (siteTitleElement.textContent !== siteTitle) {
+						siteTitleElement.textContent = siteTitle;
+					}
 				}
 				const primaryColor = theme?.find(
 					({ slug }) => slug === 'primary',
@@ -96,7 +99,8 @@ export const SmallPreview = ({
 		container: blockRef.current,
 		ready,
 		onLoad,
-		loadDelay: 2000,
+		// Additional time to wait after we think we are ready
+		loadDelay: 750,
 	});
 	const blocks = useMemo(() => {
 		const links = [

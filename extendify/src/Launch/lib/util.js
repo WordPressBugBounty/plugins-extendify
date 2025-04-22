@@ -27,7 +27,7 @@ function cleanAndBuildUnsplashUrl(url) {
 	imageUrl.searchParams.delete('orientation');
 	imageUrl.searchParams.delete('ixid');
 	imageUrl.searchParams.delete('ixlib');
-	imageUrl.searchParams.append('q', '1');
+	imageUrl.searchParams.append('q', '0');
 	imageUrl.searchParams.append('auto', 'format,compress');
 	imageUrl.searchParams.append('fm', 'avif');
 	return imageUrl.toString();

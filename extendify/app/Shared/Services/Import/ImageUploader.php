@@ -131,7 +131,7 @@ class ImageUploader
         $upload = $this->upload($imageUrl, $imageSha, $fileMimeType);
 
         if ($upload['error']) {
-            return new \WP_Error(2003, __('There was an error while uploading the image.', 'extendify-local'));
+            return new \WP_Error(2003, $upload['error']);
         }
 
         if (!wp_getimagesize($upload['file'])) {
@@ -145,7 +145,7 @@ class ImageUploader
         if (!@filesize($upload['file']) || !wp_getimagesize($upload['file'])) {
 			      // phpcs:ignore WordPress.PHP.NoSilencedErrors, Generic.PHP.NoSilencedErrors.Discouraged
             @unlink($upload['file']);
-            return new \WP_Error(2001, __('File is not a valid image.', 'extendify-local'));
+            return new \WP_Error(2001, 'File is not a valid image.');
         }
 
         return $upload;
@@ -173,7 +173,7 @@ class ImageUploader
         $attachmentId = wp_insert_attachment($attachment, $upload['file']);
 
         if (is_wp_error($attachmentId) || !$attachmentId) {
-            return new \WP_Error(2004, __('There was an error while adding the attachment record in the database.', 'extendify-local'));
+            return new \WP_Error(2004, 'There was an error while adding the attachment record in the database.');
         }
 
         $metadata = wp_generate_attachment_metadata($attachmentId, $upload['file']);

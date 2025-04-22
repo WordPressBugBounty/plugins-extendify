@@ -45,13 +45,15 @@ class ResourceData
      */
     public static function scheduleCache()
     {
-        // phpcs:ignore WordPress.WP.CronInterval -- Verified > 30 days.
-        \add_filter('cron_schedules', function ($schedules) {
-            $schedules['extendify_every_month'] = [
-                'interval' => (30 * DAY_IN_SECONDS), // phpcs:ignore
-                'display' => __('Every month', 'extendify-local'),
-            ];
-            return $schedules;
+        \add_action('init', function () {
+		        // phpcs:ignore WordPress.WP.CronInterval -- Verified > 30 days.
+            \add_filter('cron_schedules', function ($schedules) {
+                $schedules['extendify_every_month'] = [
+                    'interval' => (30 * DAY_IN_SECONDS), // phpcs:ignore
+                    'display' => __('Every month', 'extendify-local'),
+                ];
+                return $schedules;
+            });
         });
 
         if (! \wp_next_scheduled('extendify_cache_data')) {

@@ -340,7 +340,9 @@ export const CreatingSite = () => {
 				// If we installed any plugins above, and a partner has supported plugins
 				// linked to those plugins, we should install them here. For example:
 				// A German specific WooCommerce plugin in case WooCommerce is installed.
-				const partnerPlugins = await getPartnerPlugins('products');
+				const partnerPlugins = await getPartnerPlugins('products').catch(
+					() => null,
+				);
 				if (partnerPlugins) {
 					informDesc(__('Installing supporting plugins', 'extendify-local'));
 					for (const plugin of partnerPlugins) {

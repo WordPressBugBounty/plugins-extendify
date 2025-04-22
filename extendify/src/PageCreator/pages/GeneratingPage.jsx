@@ -49,9 +49,10 @@ export const GeneratingPage = ({ insertPage }) => {
 	}, [loading, page, insertPage, editPost]);
 
 	return (
-		<div className="mx-auto grow overflow-y-auto px-4 py-8 md:p-12 md:px-6 3xl:p-16">
+		<div className="mx-auto flex flex-grow items-center justify-center">
 			<div className="mx-auto flex h-full flex-col justify-center">
 				<VideoPlayer
+					poster={`${window.extSharedData.assetPath}/site-building.webp`}
 					path="https://images.extendify-cdn.com/launch/site-building.webm"
 					className="mx-auto h-auto w-[200px] md:w-[400px]"
 				/>

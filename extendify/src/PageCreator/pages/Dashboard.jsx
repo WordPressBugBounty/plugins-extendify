@@ -50,62 +50,65 @@ export const Dashboard = () => {
 	]);
 
 	return (
-		<div className="mx-auto flex max-w-xl flex-col">
-			<div className="mb-12 grid grid-cols-1 gap-1 text-center">
-				<Title
-					title={__('AI Page Creation', 'extendify-local')}
-					description={__(
-						'Describe the page you want to create, adding key details, and Al will generate a unique, ready-to-use page for you.',
-						'extendify-local',
-					)}
-				/>
-			</div>
-			<div className="grid grid-cols-1 gap-6">
-				<CustomTextarea
-					id="extendify-page-creator-page-description"
-					title={__('Describe Your Page', 'extendify-local')}
-					required={true}
-					className="input-focus h-[220px] w-full max-w-full resize-none border border-gray-600 py-3 pe-6 ps-3 text-base placeholder:italic placeholder:opacity-70"
-					placeholder={__(
-						'E.g., Create an "About Us" page highlighting our story, mission, values and leam overview.',
-						'extendify-local',
-					)}
-					value={pageDescription}
-					onChange={(e) => setPageDescription(e.currentTarget.value)}
-				/>
+		<div className="my-12 flex md:mb-20 md:mt-16">
+			<div className="mx-auto flex max-w-xl flex-col">
+				<div className="mb-12 grid grid-cols-1 gap-1 text-center">
+					<Title
+						title={__('AI Page Creation', 'extendify-local')}
+						description={__(
+							'Describe the page you want to create, adding key details, and Al will generate a unique, ready-to-use page for you.',
+							'extendify-local',
+						)}
+					/>
+				</div>
+				<div className="grid grid-cols-1 gap-6">
+					<CustomTextarea
+						id="extendify-page-creator-page-description"
+						title={__('Describe Your Page', 'extendify-local')}
+						required={true}
+						className="input-focus h-[220px] w-full max-w-full resize-none border border-gray-600 py-3 pe-6 ps-3 text-base placeholder:italic placeholder:opacity-70"
+						placeholder={__(
+							'E.g., Create an "About Us" page highlighting our story, mission, values and leam overview.',
+							'extendify-local',
+						)}
+						value={pageDescription}
+						onChange={(e) => setPageDescription(e.currentTarget.value)}
+					/>
 
-				<CustomTextarea
-					id="extendify-page-creator-site-description"
-					hideEditor={hideEditor}
-					setHideEditor={setHideEditor}
-					title={
-						siteTitle
-							? sprintf(
-									__('Site Description for %s', 'extendify-local'),
-									decodeEntities(siteTitle),
-								)
-							: __('Site Description', 'extendify-local')
-					}
-					className="input-focus h-[220px] w-full max-w-full resize-none border border-gray-600 py-3 pe-6 ps-3 text-base placeholder:italic placeholder:opacity-70"
-					placeholder={__(
-						'This is the site description with all its ups and downs.',
-						'extendify-local',
-					)}
-					value={siteDescription}
-					onChange={(e) => setSiteDescription(e.currentTarget.value)}
-				/>
+					<CustomTextarea
+						id="extendify-page-creator-site-description"
+						hideEditor={hideEditor}
+						setHideEditor={setHideEditor}
+						title={
+							siteTitle
+								? // translators: %s: The site title
+									sprintf(
+										__('Site Description for %s', 'extendify-local'),
+										decodeEntities(siteTitle),
+									)
+								: __('Site Description', 'extendify-local')
+						}
+						className="input-focus h-[220px] w-full max-w-full resize-none border border-gray-600 py-3 pe-6 ps-3 text-base placeholder:italic placeholder:opacity-70"
+						placeholder={__(
+							'This is the site description with all its ups and downs.',
+							'extendify-local',
+						)}
+						value={siteDescription}
+						onChange={(e) => setSiteDescription(e.currentTarget.value)}
+					/>
 
-				<button
-					id="extendify-page-creator-generate-btn"
-					type="button"
-					disabled={disabled}
-					onClick={() => {
-						incrementRegenerationCount();
-						nextPage();
-					}}
-					className="mt-2.5 rounded-sm bg-editor-main px-4 py-2.5 text-sm font-medium text-design-text hover:opacity-90 disabled:cursor-not-allowed disabled:bg-gray-300">
-					{__('Generate Page', 'extendify-local')}
-				</button>
+					<button
+						id="extendify-page-creator-generate-btn"
+						type="button"
+						disabled={disabled}
+						onClick={() => {
+							incrementRegenerationCount();
+							nextPage();
+						}}
+						className="mt-2.5 rounded-sm bg-editor-main px-4 py-2.5 text-sm font-medium text-design-text hover:opacity-90 disabled:cursor-not-allowed disabled:bg-gray-300">
+						{__('Generate Page', 'extendify-local')}
+					</button>
+				</div>
 			</div>
 		</div>
 	);

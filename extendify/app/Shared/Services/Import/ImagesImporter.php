@@ -71,15 +71,17 @@ class ImagesImporter
      */
     public function everyTenMinImportCheck()
     {
-        // Create a custom 10 minutes schedule that we use below.
-        // phpcs:ignore WordPress.WP.CronInterval -- Verified > 10 min.
-        \add_filter('cron_schedules', function ($schedules) {
-            $schedules['extendify_every_ten_minutes'] = [
-                'interval' => (10 * MINUTE_IN_SECONDS),
-                'display' => __('Every 10 minutes', 'extendify-local'),
-            ];
+        \add_action('init', function () {
+            // Create a custom 10 minutes schedule that we use below.
+            // phpcs:ignore WordPress.WP.CronInterval -- Verified > 10 min.
+            \add_filter('cron_schedules', function ($schedules) {
+                $schedules['extendify_every_ten_minutes'] = [
+                    'interval' => (10 * MINUTE_IN_SECONDS),
+                    'display' => __('Every 10 minutes', 'extendify-local'),
+                ];
 
-            return $schedules;
+                return $schedules;
+            });
         });
 
         if (! \wp_next_scheduled('extendify_images_importer_light')) {
