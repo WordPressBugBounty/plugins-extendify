@@ -37,7 +37,7 @@ class Http
     /**
      * The class instance.
      *
-     * @var $instance
+     * @var self
      */
     protected static $instance = null;
 
@@ -120,7 +120,7 @@ class Http
      * @param string $name      - The name of the method to call.
      * @param array  $arguments - The arguments to pass in.
      *
-     * @return mixed
+     * @return self | void
      */
     public static function __callStatic($name, array $arguments)
     {
@@ -130,8 +130,11 @@ class Http
         }
 
         $name = "{$name}Handler";
-        $r = self::$instance;
 
-        return $r->$name(...$arguments);
+        if (is_null(self::$instance)) {
+            self::$instance = new static(new \WP_REST_Request());
+        }
+
+        return self::$instance->$name(...$arguments);
     }
 }

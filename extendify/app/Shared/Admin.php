@@ -44,6 +44,8 @@ class Admin
     {
         \wp_enqueue_media();
 
+        $this->updateUserMeta();
+
         $version = constant('EXTENDIFY_DEVMODE') ? uniqid() : Config::$version;
 
         /**
@@ -169,6 +171,7 @@ class Admin
                 'showAIConsent' => isset($partnerData['showAIConsent']) ? (bool) $partnerData['showAIConsent'] : false,
                 'showChat' => (bool) (PartnerData::setting('showChat') || constant('EXTENDIFY_DEVMODE')),
                 'showAIPageCreation' => (bool) (PartnerData::setting('showAIPageCreation') || constant('EXTENDIFY_DEVMODE')),
+                'showAILogo' => (bool) PartnerData::setting('showAILogo'),
                 'consentTermsHTML' => \wp_kses((html_entity_decode(($partnerData['consentTermsHTML'] ?? '')) ?? ''), $htmlAllowlist),
                 'userGaveConsent' => $userConsent ? (bool) $userConsent : false,
                 'installedPlugins' => array_map('esc_attr', array_keys(\get_plugins())),
@@ -291,5 +294,30 @@ class Admin
         // Get current search term from the url and merge it with existing search terms.
         $searchTerms = \get_option('extendify_block_search_terms', []);
         \update_option('extendify_block_search_terms', array_merge($searchTerms, [$searchTerm]));
+    }
+
+    /**
+     * Updates the user meta to disable the welcome guide from the Gutenberg editor
+     * and close the pattern modal.
+     *
+     * @return void
+     */
+    public function updateUserMeta()
+    {
+        $currentPreferences = get_user_meta(get_current_user_id(), 'wp_persisted_preferences', true);
+        if (!$currentPreferences) {
+            $currentPreferences = [];
+        }
+
+        $postPreferences = array_key_exists('core/edit-post', $currentPreferences) ? $currentPreferences['core/edit-post'] : [];
+        $corePreferences = array_key_exists('core', $currentPreferences) ? $currentPreferences['core'] : [];
+
+        $newPreferences = array_merge($currentPreferences, [
+            'core/edit-post' => array_merge($postPreferences, ['welcomeGuide' => false]),
+            'core' => array_merge($corePreferences, ['enableChoosePatternModal' => false]),
+            '_modified' => wp_date('Y-m-d\TH:i:s.v\Z'),
+        ]);
+
+        update_user_meta(get_current_user_id(), 'wp_persisted_preferences', $newPreferences);
     }
 }

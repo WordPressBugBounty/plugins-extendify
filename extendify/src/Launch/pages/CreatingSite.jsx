@@ -1,12 +1,17 @@
 import { useEffect, useState, useCallback } from '@wordpress/element';
 import { __ } from '@wordpress/i18n';
 import { Transition } from '@headlessui/react';
+import { getPartnerPlugins } from '@shared/api/DataApi';
 import { installPlugin, activatePlugin } from '@shared/api/wp';
 import { pageNames } from '@shared/lib/pages';
 import { deepMerge } from '@shared/lib/utils';
+import {
+	retryOperation,
+	wasPluginInstalled,
+	waitFor200Response,
+} from '@shared/lib/utils';
 import { useAIConsentStore } from '@shared/state/ai-consent';
 import { colord } from 'colord';
-import { getPartnerPlugins } from '@launch/api/DataApi';
 import {
 	updateTemplatePart,
 	addSectionLinksToNav,
@@ -25,17 +30,13 @@ import {
 import { importTemporaryProducts } from '@launch/api/WooCommerce';
 import { PagesSkeleton } from '@launch/components/CreatingSite/PageSkeleton';
 import { useConfetti } from '@launch/hooks/useConfetti';
+import { useSiteLogo } from '@launch/hooks/useSiteLogo';
 import { useWarnOnLeave } from '@launch/hooks/useWarnOnLeave';
 import {
 	updateButtonLinks,
 	updateSinglePageLinksToSections,
 } from '@launch/lib/linkPages';
 import { uploadLogo } from '@launch/lib/logo';
-import {
-	retryOperation,
-	waitFor200Response,
-	wasInstalled,
-} from '@launch/lib/util';
 import {
 	createWpPages,
 	createBlogSampleData,
@@ -91,12 +92,15 @@ export const CreatingSite = () => {
 		window.extOnbData.redirectToWebsite && siteObjective === 'landing-page'
 			? `${homeUrl}?extendify-launch-success`
 			: `${adminUrl}admin.php?page=extendify-assist&extendify-launch-success`;
+	const { loading: logoLoading, logoUrl } = useSiteLogo();
 
 	useWarnOnLeave(warnOnLeaveReady);
 
 	const doEverything = useCallback(async () => {
 		try {
 			const hasBlogGoal = goals?.find((goal) => goal.slug === 'blog');
+
+			await uploadLogo(logoUrl, { forceReplace: true });
 
 			await updateOption('permalink_structure', '/%postname%/');
 			await waitFor200Response();
@@ -324,7 +328,7 @@ export const CreatingSite = () => {
 			let { data: activePlugins } = await getActivePlugins();
 
 			// Add plugin related pages only if plugin is active
-			if (wasInstalled(activePlugins, 'woocommerce')) {
+			if (wasPluginInstalled(activePlugins, 'woocommerce')) {
 				const shopPageId = await getOption('woocommerce_shop_page_id');
 				const shopPage = shopPageId
 					? await getPageById(shopPageId).catch(() => null)
@@ -346,7 +350,7 @@ export const CreatingSite = () => {
 				if (partnerPlugins) {
 					informDesc(__('Installing supporting plugins', 'extendify-local'));
 					for (const plugin of partnerPlugins) {
-						if (!wasInstalled(activePlugins, plugin)) {
+						if (!wasPluginInstalled(activePlugins, plugin)) {
 							const maxAttempts = 2;
 							await retryOperation(() => installPlugin(plugin), {
 								maxAttempts,
@@ -359,7 +363,7 @@ export const CreatingSite = () => {
 				}
 			}
 
-			if (wasInstalled(activePlugins, 'the-events-calendar')) {
+			if (wasPluginInstalled(activePlugins, 'the-events-calendar')) {
 				const eventsPage = {
 					title: {
 						rendered: __('Events', 'extendify-local'),
@@ -371,26 +375,20 @@ export const CreatingSite = () => {
 				pluginPages.push(eventsPage);
 			}
 
-			if (wasInstalled(activePlugins, 'wpforms-lite')) {
+			if (wasPluginInstalled(activePlugins, 'wpforms-lite')) {
 				await updateOption('wpforms_activation_redirect', 'skip');
 			}
 
-			if (wasInstalled(activePlugins, 'all-in-one-seo-pack')) {
+			if (wasPluginInstalled(activePlugins, 'all-in-one-seo-pack')) {
 				await updateOption('aioseo_activation_redirect', 'skip');
 			}
 
-			if (wasInstalled(activePlugins, 'google-analytics-for-wordpress')) {
+			if (wasPluginInstalled(activePlugins, 'google-analytics-for-wordpress')) {
 				await updateOption(
 					'_transient__monsterinsights_activation_redirect',
 					null,
 				);
 			}
-
-			// Upload Logo
-			await uploadLogo(
-				'https://images.extendify-cdn.com/demo-content/logos/extendify-demo-logo.png',
-			);
-			await waitFor200Response();
 
 			const pagesWithLinksUpdated =
 				siteStructure === 'single-page'
@@ -470,16 +468,18 @@ export const CreatingSite = () => {
 		setUserGaveConsent,
 		siteObjective,
 		CTALink,
+		logoUrl,
 	]);
 
 	useEffect(() => {
+		if (logoLoading) return;
 		doEverything().then(async () => {
 			setPage(0);
 			// This will trigger the post launch php functions.
 			await postLaunchFunctions();
 			window.location.replace(redirectUrl);
 		});
-	}, [doEverything, setPage, redirectUrl]);
+	}, [doEverything, setPage, redirectUrl, logoLoading]);
 
 	useEffect(() => {
 		const documentStyles = window.getComputedStyle(document.body);

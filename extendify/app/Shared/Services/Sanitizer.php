@@ -75,6 +75,25 @@ class Sanitizer
     }
 
     /**
+     * This function will sanitize a text field that may contain
+     * the <strong>, <em> and <del> HTML tags, allowing the tags in
+     * the final result.
+     *
+     * @param string $text - The string we need to sanitize.
+     * @return string
+     */
+    public static function sanitizeTextWithFormattingTags($text)
+    {
+        $allowedTags = [
+            'strong'  => [],
+            'em'      => [],
+            'del'     => [],
+        ];
+
+        return \wp_kses($text, $allowedTags);
+    }
+
+    /**
      * This function will sanitize a textarea field.
      *
      * @param string $text - The strings we need to sanitize.

@@ -59,7 +59,7 @@ class WPForms
 
         // If we didn't get the form, send back an error to retry.
         if (!$formId) {
-            return new \WP_Error('form_error', 'Could not create form');
+            return new \WP_Error('form_error', 'Could not create wpforms form');
         }
 
         // Replace {"formId": "1234"} with the actual form ID.

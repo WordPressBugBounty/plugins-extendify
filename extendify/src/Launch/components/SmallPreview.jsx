@@ -141,7 +141,7 @@ export const SmallPreview = ({
 			)
 			.replace(
 				/<!-- wp:site-logo.*\/-->/g,
-				'<!-- wp:paragraph {"className":"custom-logo"} --><p class="custom-logo" style="display:flex; align-items: center;"><img alt="" class="custom-logo" style="height: 32px;" src="https://images.extendify-cdn.com/demo-content/logos/extendify-demo-logo.png"></p ><!-- /wp:paragraph -->',
+				'<!-- wp:paragraph {"className":"custom-logo"} --><p class="custom-logo" style="display:flex; align-items: center;"><img alt="" class="custom-logo" style="height: 32px;" src="https://images.extendify-cdn.com/demo-content/logos/ext-custom-logo-default.webp"></p ><!-- /wp:paragraph -->',
 			);
 		return rawHandler({ HTML: lowerImageQuality(code) });
 	}, [style, showNav]);

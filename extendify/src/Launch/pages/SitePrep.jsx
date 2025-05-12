@@ -4,6 +4,7 @@ import { updateOption } from '@launch/api/WPApi';
 import { Title } from '@launch/components/Title';
 import { VideoPlayer } from '@launch/components/VideoPlayer';
 import { useGoals } from '@launch/hooks/useGoals';
+import { useSiteLogo } from '@launch/hooks/useSiteLogo';
 import { useSiteProfile } from '@launch/hooks/useSiteProfile';
 import { PageLayout } from '@launch/layouts/PageLayout';
 import { usePagesStore } from '@launch/state/Pages';
@@ -22,6 +23,7 @@ export const SitePrep = () => {
 	const { setSiteProfile, addMany } = useUserSelectionStore();
 	const { siteProfile } = useSiteProfile();
 	const { goals } = useGoals();
+	useSiteLogo();
 
 	useEffect(() => {
 		if (!siteProfile) return;

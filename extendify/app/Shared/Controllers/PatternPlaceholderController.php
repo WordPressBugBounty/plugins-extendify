@@ -33,6 +33,7 @@ class PatternPlaceholderController
     public static function processPlaceholders($request)
     {
         $patterns = $request->get_param('patterns');
+
         $patterns = array_map(function ($pattern) {
             $newCode = ($pattern['patternReplacementCode'] ?? null);
             $pluginDependency = ($pattern['pluginDependency'] ?? null);

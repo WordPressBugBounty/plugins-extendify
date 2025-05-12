@@ -14,7 +14,6 @@ use Extendify\Shared\Services\Sanitizer;
  */
 class PartnerData
 {
-
     /**
      * The partner id
      *
@@ -67,6 +66,13 @@ class PartnerData
         'showLaunch' => false,
         'deactivated' => true,
         'launchRedirectWebsite' => false,
+        'showAILogo' => false,
+        'showProductRecommendations' => false,
+        'productRecommendations' => [
+            'showPartnerBranding' => false,
+            'disabledProducts' => [],
+            'customProducts' => [],
+        ],
     ];
 
     // phpcs:disable Generic.Metrics.CyclomaticComplexity.MaxExceeded
@@ -105,6 +111,13 @@ class PartnerData
         self::$config['showLaunch'] = ($data['showLaunch'] ?? self::$config['showLaunch']);
         self::$config['deactivated'] = ($data['deactivated'] ?? self::$config['deactivated']);
         self::$config['launchRedirectWebsite'] = ($data['launchRedirectWebsite'] ?? self::$config['launchRedirectWebsite']);
+        self::$config['showAILogo'] = ($data['showAILogo'] ?? self::$config['showAILogo']);
+        self::$config['showProductRecommendations'] = ($data['showProductRecommendations'] ?? self::$config['showProductRecommendations']);
+        self::$config['productRecommendations'] = [
+            'showPartnerBranding' => ($data['productRecommendationShowPartnerBranding'] ?? self::$config['productRecommendations']['showPartnerBranding']),
+            'disabledProducts' => ($data['productRecommendationDisabledSlugs'] ?? self::$config['productRecommendations']['disabledProducts']),
+            'customProducts' => ($data['productRecommendationCustomSlugs'] ?? self::$config['productRecommendations']['customProducts']),
+        ];
 
         // Add the job hook to fetch the partner data.
         \add_action('extendify_fetch_partner_data', [self::class, 'fetchPartnerData']);
@@ -231,7 +244,6 @@ class PartnerData
 
         return $cssVariables;
     }
-
 
     /**
      * Retrieves the value of a setting.

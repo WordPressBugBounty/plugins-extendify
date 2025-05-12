@@ -3,7 +3,7 @@ import { store as editPostStore } from '@wordpress/edit-post';
 import { store as editorStore } from '@wordpress/editor';
 import { useLayoutEffect, useEffect, useRef } from '@wordpress/element';
 import { __ } from '@wordpress/i18n';
-import { Dialog } from '@headlessui/react';
+import { Dialog, DialogTitle } from '@headlessui/react';
 import { Topbar } from '@page-creator/components/topbar/Topbar';
 import { MainPage } from '@page-creator/pages/MainPage';
 import { useGlobalsStore } from '@page-creator/state/global';
@@ -53,6 +53,7 @@ export const Modal = () => {
 
 			// Insert the blocks into the editor
 			await insertBlocks(blocks);
+
 			// Update the post title
 			dispatch('core/editor').editPost({ title });
 
@@ -162,9 +163,9 @@ export const Modal = () => {
 					exit={{ y: 0, opacity: 0 }}
 					transition={{ duration: 0.3 }}
 					className="relative mx-auto h-full max-h-full w-full max-w-4xl rounded-lg bg-white shadow-2xl sm:flex sm:overflow-hidden md:h-auto">
-					<Dialog.Title className="sr-only">
+					<DialogTitle className="sr-only">
 						{__('AI Page Creator', 'extendify-local')}
-					</Dialog.Title>
+					</DialogTitle>
 
 					<div className="relative flex w-full flex-col bg-white">
 						<Topbar
