@@ -137,6 +137,7 @@ export const getPageImages = async ({ pageProfile }) => {
 		aiDescription,
 		aiKeywords,
 		...extraBody,
+		source: 'page-creator',
 	});
 
 	if (siteTitle) search.append('title', siteTitle);

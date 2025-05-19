@@ -31,6 +31,7 @@ class DataController
 
         return new \WP_REST_Response($response);
     }
+
     /**
      * Just here to check for 200 (vs server rate limting)
      *

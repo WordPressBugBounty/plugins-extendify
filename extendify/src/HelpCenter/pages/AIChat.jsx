@@ -12,7 +12,6 @@ import { Answer } from '@help-center/components/ai-chat/Answer';
 import { History } from '@help-center/components/ai-chat/History';
 import { Nav } from '@help-center/components/ai-chat/Nav';
 import { Question } from '@help-center/components/ai-chat/Question';
-import { Support } from '@help-center/components/ai-chat/Support';
 import { getAnswer } from '@help-center/lib/api';
 import { useAIChatStore } from '@help-center/state/ai-chat';
 
@@ -131,7 +130,6 @@ export const AIChat = () => {
 				<div className="flex flex-grow items-center bg-design-main p-6 text-design-text">
 					<Question onSubmit={handleSubmit} />
 				</div>
-				<Support height={'h-11'} />
 			</section>
 			<AnimatePresence>
 				{showHistory && (

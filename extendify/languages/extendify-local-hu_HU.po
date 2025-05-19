@@ -46,7 +46,7 @@ msgstr "Indítás"
 #: app/AdminPageRouter.php:38
 #: app/AdminPageRouter.php:62
 #: public/build/extendify-assist-page-c5c80c3680e1d9982ae1.js:8
-#: public/build/extendify-help-center-edc3cf6064e22874a408.js:3
+#: public/build/extendify-help-center-f798a28b323c6822eff1.js:3
 msgid "Site Assistant"
 msgstr "Honlap Asszisztens"
 
@@ -58,7 +58,7 @@ msgstr "Oldal nem található"
 msgid "Extendify Library User Settings"
 msgstr "Extendify könyvtár felhasználói beállításai"
 
-#: public/build/extendify-help-center-edc3cf6064e22874a408.js:3
+#: public/build/extendify-help-center-f798a28b323c6822eff1.js:3
 msgid "View Site"
 msgstr "Webhely megtekintése"
 
@@ -75,12 +75,12 @@ msgid "Remove image"
 msgstr "Kép eltávolítása"
 
 #: public/build/extendify-assist-page-c5c80c3680e1d9982ae1.js:1
-#: public/build/extendify-help-center-edc3cf6064e22874a408.js:5
+#: public/build/extendify-help-center-f798a28b323c6822eff1.js:5
 msgid "Done"
 msgstr "Elkészült"
 
 #: public/build/extendify-assist-page-c5c80c3680e1d9982ae1.js:1
-#: public/build/extendify-help-center-edc3cf6064e22874a408.js:3
+#: public/build/extendify-help-center-f798a28b323c6822eff1.js:3
 msgid "Close Modal"
 msgstr "Modális ablak bezárása"
 
@@ -114,7 +114,7 @@ msgid "Select Site Design"
 msgstr "Weboldal dizájn kiválasztása"
 
 #: public/build/extendify-assist-page-c5c80c3680e1d9982ae1.js:1
-#: public/build/extendify-help-center-edc3cf6064e22874a408.js:3
+#: public/build/extendify-help-center-f798a28b323c6822eff1.js:3
 msgid "Pages"
 msgstr "Oldalak"
 
@@ -143,12 +143,12 @@ msgid "Add site description"
 msgstr "Weboldal leírás hozzáadása"
 
 #: public/build/extendify-assist-page-c5c80c3680e1d9982ae1.js:1
-#: public/build/extendify-launch-e746634b7a75fc72428d.js:5
+#: public/build/extendify-launch-bebdb5c5f047f197cead.js:5
 msgid "Loading..."
 msgstr "Betöltés..."
 
 #: public/build/extendify-assist-page-c5c80c3680e1d9982ae1.js:1
-#: public/build/extendify-help-center-edc3cf6064e22874a408.js:3
+#: public/build/extendify-help-center-f798a28b323c6822eff1.js:3
 msgid "Site description"
 msgstr "Honlap leírása"
 
@@ -221,7 +221,7 @@ msgid "Reset site"
 msgstr "Webhely alaphelyzetbe állítása"
 
 #: public/build/extendify-assist-page-c5c80c3680e1d9982ae1.js:3
-#: public/build/extendify-help-center-edc3cf6064e22874a408.js:3
+#: public/build/extendify-help-center-f798a28b323c6822eff1.js:3
 msgid "Quick Links"
 msgstr "Gyorslinkek"
 
@@ -256,7 +256,7 @@ msgid "Install Now"
 msgstr "Telepítés azonnal"
 
 #: public/build/extendify-assist-page-c5c80c3680e1d9982ae1.js:4
-#: public/build/extendify-help-center-edc3cf6064e22874a408.js:3
+#: public/build/extendify-help-center-f798a28b323c6822eff1.js:3
 msgid "Website Tools & Plugins"
 msgstr "Weboldal eszközök & Bővítmények"
 
@@ -484,7 +484,7 @@ msgid "Ensure your website is on-brand by adding your site icon."
 msgstr "Győződjön meg arról, hogy weboldala megfelel az ön márkájának azzal, hogy hozzáadja az oldal ikont."
 
 #: public/build/extendify-assist-page-c5c80c3680e1d9982ae1.js:8
-#: public/build/extendify-help-center-edc3cf6064e22874a408.js:3
+#: public/build/extendify-help-center-f798a28b323c6822eff1.js:3
 msgid "Dashboard"
 msgstr "Vezérlőpult"
 
@@ -496,1102 +496,1102 @@ msgstr "Honlap megtekintése"
 msgid "Skip to Assist"
 msgstr "Ugrás a segítséghez"
 
-#: public/build/extendify-draft-87746d114655f7991e60.js:1
+#: public/build/extendify-draft-3914d1b6ca048d852791.js:1
 msgid "A paragraph …"
 msgstr "Egy bekezdés …"
 
-#: public/build/extendify-draft-87746d114655f7991e60.js:1
+#: public/build/extendify-draft-3914d1b6ca048d852791.js:1
 msgid "Write a paragraph about"
 msgstr "Írjon egy bekezdést a következőről"
 
-#: public/build/extendify-draft-87746d114655f7991e60.js:1
+#: public/build/extendify-draft-3914d1b6ca048d852791.js:1
 msgid "Blog post …"
 msgstr "Blogbejegyzés …"
 
-#: public/build/extendify-draft-87746d114655f7991e60.js:1
+#: public/build/extendify-draft-3914d1b6ca048d852791.js:1
 msgid "Write a blog post about"
 msgstr "Írjon blogbejegyzést a következő témában"
 
-#: public/build/extendify-draft-87746d114655f7991e60.js:1
+#: public/build/extendify-draft-3914d1b6ca048d852791.js:1
 msgid "An informative article …"
 msgstr "Egy informatív cikk …"
 
-#: public/build/extendify-draft-87746d114655f7991e60.js:1
+#: public/build/extendify-draft-3914d1b6ca048d852791.js:1
 msgid "Write an informative article about"
 msgstr "Írjon tájékoztató cikket a következőről"
 
-#: public/build/extendify-draft-87746d114655f7991e60.js:1
+#: public/build/extendify-draft-3914d1b6ca048d852791.js:1
 msgid "Headline …"
 msgstr "Főcím …"
 
-#: public/build/extendify-draft-87746d114655f7991e60.js:1
+#: public/build/extendify-draft-3914d1b6ca048d852791.js:1
 msgid "Write a headline for"
 msgstr "Írjon címsort a következőhöz"
 
-#: public/build/extendify-draft-87746d114655f7991e60.js:1
+#: public/build/extendify-draft-3914d1b6ca048d852791.js:1
 msgid "List …"
 msgstr "Lista …"
 
-#: public/build/extendify-draft-87746d114655f7991e60.js:1
+#: public/build/extendify-draft-3914d1b6ca048d852791.js:1
 msgid "Write a list of"
 msgstr "Írjon egy listát a következőkről"
 
 #: public/build/extendify-assist-page-c5c80c3680e1d9982ae1.js:8
-#: public/build/extendify-draft-87746d114655f7991e60.js:1
-#: public/build/extendify-draft-87746d114655f7991e60.js:7
+#: public/build/extendify-draft-3914d1b6ca048d852791.js:1
+#: public/build/extendify-draft-3914d1b6ca048d852791.js:7
 msgid "Improve writing"
 msgstr "Fejleszd az íráskészséged"
 
-#: public/build/extendify-draft-87746d114655f7991e60.js:1
-#: public/build/extendify-draft-87746d114655f7991e60.js:7
+#: public/build/extendify-draft-3914d1b6ca048d852791.js:1
+#: public/build/extendify-draft-3914d1b6ca048d852791.js:7
 msgid "Fix spelling & grammar"
 msgstr "Helyesírás és nyelvtan javítása"
 
 #: public/build/extendify-assist-page-c5c80c3680e1d9982ae1.js:8
-#: public/build/extendify-draft-87746d114655f7991e60.js:1
-#: public/build/extendify-draft-87746d114655f7991e60.js:7
+#: public/build/extendify-draft-3914d1b6ca048d852791.js:1
+#: public/build/extendify-draft-3914d1b6ca048d852791.js:7
 msgid "Simplify language"
 msgstr "Egyszerűsítse a nyelvet"
 
 #: public/build/extendify-assist-page-c5c80c3680e1d9982ae1.js:8
-#: public/build/extendify-draft-87746d114655f7991e60.js:1
-#: public/build/extendify-draft-87746d114655f7991e60.js:7
+#: public/build/extendify-draft-3914d1b6ca048d852791.js:1
+#: public/build/extendify-draft-3914d1b6ca048d852791.js:7
 msgid "Make shorter"
 msgstr "Rövidítés"
 
 #: public/build/extendify-assist-page-c5c80c3680e1d9982ae1.js:8
-#: public/build/extendify-draft-87746d114655f7991e60.js:1
-#: public/build/extendify-draft-87746d114655f7991e60.js:7
+#: public/build/extendify-draft-3914d1b6ca048d852791.js:1
+#: public/build/extendify-draft-3914d1b6ca048d852791.js:7
 msgid "Make longer"
 msgstr "Hosszabbítás"
 
-#: public/build/extendify-draft-87746d114655f7991e60.js:1
+#: public/build/extendify-draft-3914d1b6ca048d852791.js:1
 msgid "AI is writing..."
 msgstr "Az AI ír..."
 
 #: public/build/extendify-assist-page-c5c80c3680e1d9982ae1.js:8
-#: public/build/extendify-draft-87746d114655f7991e60.js:1
+#: public/build/extendify-draft-3914d1b6ca048d852791.js:1
 msgid "Ask AI to edit"
 msgstr "AI segítségével szerkesztés"
 
-#: public/build/extendify-draft-87746d114655f7991e60.js:1
+#: public/build/extendify-draft-3914d1b6ca048d852791.js:1
 msgid "Ask AI to generate text"
 msgstr "Kérje meg az AI-t szöveg generálására"
 
-#: public/build/extendify-draft-87746d114655f7991e60.js:1
+#: public/build/extendify-draft-3914d1b6ca048d852791.js:1
 msgid "Submit"
 msgstr "Beküldés"
 
-#: public/build/extendify-draft-87746d114655f7991e60.js:1
+#: public/build/extendify-draft-3914d1b6ca048d852791.js:1
 msgid "Replace selected block text"
 msgstr "Kijelölt blokkszöveg cseréje"
 
-#: public/build/extendify-draft-87746d114655f7991e60.js:1
+#: public/build/extendify-draft-3914d1b6ca048d852791.js:1
 msgid "Insert at top"
 msgstr "Beszúrás a tetejére"
 
-#: public/build/extendify-draft-87746d114655f7991e60.js:1
+#: public/build/extendify-draft-3914d1b6ca048d852791.js:1
 msgid "Insert after the selected text"
 msgstr "Beszúrás a kijelölt szöveg után"
 
-#: public/build/extendify-draft-87746d114655f7991e60.js:1
+#: public/build/extendify-draft-3914d1b6ca048d852791.js:1
 msgid "Insert at bottom"
 msgstr "Beszúrás alulra"
 
-#: public/build/extendify-draft-87746d114655f7991e60.js:1
+#: public/build/extendify-draft-3914d1b6ca048d852791.js:1
 msgid "Try again"
 msgstr "Próbálja újra"
 
-#: public/build/extendify-draft-87746d114655f7991e60.js:1
+#: public/build/extendify-draft-3914d1b6ca048d852791.js:1
 msgid "Discard"
 msgstr "Elvetés"
 
 #: public/build/extendify-assist-page-c5c80c3680e1d9982ae1.js:8
-#: public/build/extendify-draft-87746d114655f7991e60.js:1
+#: public/build/extendify-draft-3914d1b6ca048d852791.js:1
 msgid "Remove selection"
 msgstr "Kijelölés eltávolítása"
 
 #. translators: %1$s is the number of used credits, %2$s is the total credits
-#: public/build/extendify-draft-87746d114655f7991e60.js:3
-#: public/build/extendify-draft-87746d114655f7991e60.js:5
+#: public/build/extendify-draft-3914d1b6ca048d852791.js:3
+#: public/build/extendify-draft-3914d1b6ca048d852791.js:5
 #, js-format
 msgid "%1$s of %2$s daily image credits used"
 msgstr "A napi képkreditek %1$s/%2$s felhasználva"
 
-#: public/build/extendify-draft-87746d114655f7991e60.js:5
+#: public/build/extendify-draft-3914d1b6ca048d852791.js:5
 msgid "You can still explore and find great images on Unsplash until your credits reset."
 msgstr "A kreditek visszaállításáig továbbra is böngészhet és találhat szép képeket az Unsplash oldalon."
 
-#: public/build/extendify-draft-87746d114655f7991e60.js:5
+#: public/build/extendify-draft-3914d1b6ca048d852791.js:5
 msgid "Search on Unsplash"
 msgstr "Keresés az Unsplash oldalon"
 
-#: public/build/extendify-draft-87746d114655f7991e60.js:5
+#: public/build/extendify-draft-3914d1b6ca048d852791.js:5
 msgid "Tell AI about the image you would like to create"
 msgstr "Mondja el az AI-nak, milyen képet szeretne létrehozni"
 
-#: public/build/extendify-draft-87746d114655f7991e60.js:5
+#: public/build/extendify-draft-3914d1b6ca048d852791.js:5
 msgid "Image Prompt"
 msgstr "Kép felhívás"
 
 #: public/build/extendify-assist-page-c5c80c3680e1d9982ae1.js:8
-#: public/build/extendify-draft-87746d114655f7991e60.js:5
+#: public/build/extendify-draft-3914d1b6ca048d852791.js:5
 msgid "Aspect Ratio"
 msgstr "Képarány"
 
-#: public/build/extendify-draft-87746d114655f7991e60.js:5
+#: public/build/extendify-draft-3914d1b6ca048d852791.js:5
 msgid "Square: 1:1"
 msgstr "Négyzet: 1:1"
 
-#: public/build/extendify-draft-87746d114655f7991e60.js:5
+#: public/build/extendify-draft-3914d1b6ca048d852791.js:5
 msgid "Landscape: 4:3"
 msgstr "Fekvő: 4:3"
 
-#: public/build/extendify-draft-87746d114655f7991e60.js:5
+#: public/build/extendify-draft-3914d1b6ca048d852791.js:5
 msgid "Portrait: 3:4"
 msgstr "Álló: 3:4"
 
-#: public/build/extendify-draft-87746d114655f7991e60.js:5
+#: public/build/extendify-draft-3914d1b6ca048d852791.js:5
 msgid "Generating image..."
 msgstr "Kép létrehozása..."
 
-#: public/build/extendify-draft-87746d114655f7991e60.js:5
+#: public/build/extendify-draft-3914d1b6ca048d852791.js:5
 msgid "Generate image"
 msgstr "Kép létrehozása"
 
-#: public/build/extendify-draft-87746d114655f7991e60.js:5
+#: public/build/extendify-draft-3914d1b6ca048d852791.js:5
 msgid "Generating your image: "
 msgstr "Kép létrehozása:"
 
 #. translators: "Importing image" means the image is being added to the WordPress post editor
-#: public/build/extendify-draft-87746d114655f7991e60.js:7
+#: public/build/extendify-draft-3914d1b6ca048d852791.js:7
 msgid "Importing image..."
 msgstr "Kép importálása..."
 
-#: public/build/extendify-draft-87746d114655f7991e60.js:7
+#: public/build/extendify-draft-3914d1b6ca048d852791.js:7
 msgid "Use this image"
 msgstr "Használja ezt a képet"
 
-#: public/build/extendify-draft-87746d114655f7991e60.js:7
+#: public/build/extendify-draft-3914d1b6ca048d852791.js:7
 msgid "Delete image"
 msgstr "Kép törlése"
 
-#: public/build/extendify-draft-87746d114655f7991e60.js:7
+#: public/build/extendify-draft-3914d1b6ca048d852791.js:7
 msgid "AI Image"
 msgstr "AI kép"
 
-#: public/build/extendify-draft-87746d114655f7991e60.js:7
+#: public/build/extendify-draft-3914d1b6ca048d852791.js:7
 msgid "Go Back"
 msgstr "Menj vissza"
 
 #: public/build/extendify-assist-page-c5c80c3680e1d9982ae1.js:8
-#: public/build/extendify-draft-87746d114655f7991e60.js:7
+#: public/build/extendify-draft-3914d1b6ca048d852791.js:7
 msgid "AI Image Generator"
 msgstr "AI Képgenerátor"
 
-#: public/build/extendify-draft-87746d114655f7991e60.js:7
+#: public/build/extendify-draft-3914d1b6ca048d852791.js:7
 msgid "Image Description"
 msgstr "Képleírás"
 
-#: public/build/extendify-draft-87746d114655f7991e60.js:7
+#: public/build/extendify-draft-3914d1b6ca048d852791.js:7
 msgid "Your request was rejected as a result of our safety system. Your prompt may contain text that is not allowed by our safety system."
 msgstr "Kérésedet a biztonsági rendszerünk elutasította. A felszólításod olyan szöveget tartalmazhat, amelyet a biztonsági rendszerünk nem engedélyez."
 
-#: public/build/extendify-draft-87746d114655f7991e60.js:7
+#: public/build/extendify-draft-3914d1b6ca048d852791.js:7
 msgid "Service temporarily unavailable"
 msgstr "A szolgáltatás ideiglenesen nem elérhető."
 
 #. translators: This string represents the title of an "Home" page on a website. Please translate it in a way that fits the standard phrasing for a "Home" page in the target language, considering the common usage in websites for that language.
-#: public/build/extendify-common-f70184b9c19c89de026a.js:39
-#: public/build/extendify-draft-87746d114655f7991e60.js:7
+#: public/build/extendify-common-b5b1e7ce5120f18ba20b.js:39
+#: public/build/extendify-draft-3914d1b6ca048d852791.js:7
 msgid "Home"
 msgstr "Főoldal"
 
-#: public/build/extendify-draft-87746d114655f7991e60.js:7
+#: public/build/extendify-draft-3914d1b6ca048d852791.js:7
 msgid "Use AI to generate custom images based on your description."
 msgstr "AI használata egyéni képek generálásához a leírás alapján."
 
-#: public/build/extendify-draft-87746d114655f7991e60.js:7
+#: public/build/extendify-draft-3914d1b6ca048d852791.js:7
 msgid "Add a prompt"
 msgstr "Felszólítás hozzáadása"
 
-#: public/build/extendify-draft-87746d114655f7991e60.js:7
+#: public/build/extendify-draft-3914d1b6ca048d852791.js:7
 msgid "Discover Stock Photos"
 msgstr "Fedezze fel a készletfotókat"
 
-#: public/build/extendify-draft-87746d114655f7991e60.js:7
+#: public/build/extendify-draft-3914d1b6ca048d852791.js:7
 msgid "Search and add free stock photos from Unsplash.com"
 msgstr "Keressen és adjon hozzá ingyenes stock fotókat az Unsplash.com-ról"
 
-#: public/build/extendify-draft-87746d114655f7991e60.js:7
+#: public/build/extendify-draft-3914d1b6ca048d852791.js:7
 msgid "Search Unsplash"
 msgstr "Unsplash keresése"
 
-#: public/build/extendify-draft-87746d114655f7991e60.js:7
+#: public/build/extendify-draft-3914d1b6ca048d852791.js:7
 msgid "No images found."
 msgstr "Nem találhatóak képek."
 
-#: public/build/extendify-draft-87746d114655f7991e60.js:7
+#: public/build/extendify-draft-3914d1b6ca048d852791.js:7
 msgid "Unsplash"
 msgstr "Unsplash"
 
-#: public/build/extendify-draft-87746d114655f7991e60.js:7
+#: public/build/extendify-draft-3914d1b6ca048d852791.js:7
 msgid "Photos from Unsplash"
 msgstr "Unsplash fotói"
 
-#: public/build/extendify-draft-87746d114655f7991e60.js:1
-#: public/build/extendify-help-center-edc3cf6064e22874a408.js:3
+#: public/build/extendify-draft-3914d1b6ca048d852791.js:1
+#: public/build/extendify-help-center-f798a28b323c6822eff1.js:3
+#: public/build/extendify-launch-bebdb5c5f047f197cead.js:5
 msgid "Terms of Use"
 msgstr "Felhasználási feltételek"
 
-#: public/build/extendify-draft-87746d114655f7991e60.js:1
-#: public/build/extendify-help-center-edc3cf6064e22874a408.js:3
+#: public/build/extendify-draft-3914d1b6ca048d852791.js:1
+#: public/build/extendify-help-center-f798a28b323c6822eff1.js:3
 msgid "Accept"
 msgstr "Elfogadás"
 
-#: public/build/extendify-draft-87746d114655f7991e60.js:7
+#: public/build/extendify-draft-3914d1b6ca048d852791.js:7
 msgid "Suggested prompts"
 msgstr "Ajánlott felszólítások"
 
-#: public/build/extendify-draft-87746d114655f7991e60.js:7
+#: public/build/extendify-draft-3914d1b6ca048d852791.js:7
 msgid "Get Personalized Image"
 msgstr "Személyre szabott kép beszerzése"
 
-#: public/build/extendify-draft-87746d114655f7991e60.js:7
+#: public/build/extendify-draft-3914d1b6ca048d852791.js:7
 msgid "Catalan"
 msgstr "katalán"
 
-#: public/build/extendify-draft-87746d114655f7991e60.js:7
+#: public/build/extendify-draft-3914d1b6ca048d852791.js:7
 msgid "Danish"
 msgstr "dán"
 
-#: public/build/extendify-draft-87746d114655f7991e60.js:7
+#: public/build/extendify-draft-3914d1b6ca048d852791.js:7
 msgid "Dutch"
 msgstr "holland"
 
-#: public/build/extendify-draft-87746d114655f7991e60.js:7
+#: public/build/extendify-draft-3914d1b6ca048d852791.js:7
 msgid "Dutch (Belgium)"
 msgstr "holland (Belgium)"
 
-#: public/build/extendify-draft-87746d114655f7991e60.js:7
+#: public/build/extendify-draft-3914d1b6ca048d852791.js:7
 msgid "English"
 msgstr "Angol"
 
-#: public/build/extendify-draft-87746d114655f7991e60.js:7
+#: public/build/extendify-draft-3914d1b6ca048d852791.js:7
 msgid "Estonian"
 msgstr "észt"
 
-#: public/build/extendify-draft-87746d114655f7991e60.js:7
+#: public/build/extendify-draft-3914d1b6ca048d852791.js:7
 msgid "Finnish"
 msgstr "finn"
 
-#: public/build/extendify-draft-87746d114655f7991e60.js:7
+#: public/build/extendify-draft-3914d1b6ca048d852791.js:7
 msgid "French (Belgium)"
 msgstr "francia (Belgium)"
 
-#: public/build/extendify-draft-87746d114655f7991e60.js:7
+#: public/build/extendify-draft-3914d1b6ca048d852791.js:7
 msgid "French (France)"
 msgstr "Francia (Franciaország)"
 
-#: public/build/extendify-draft-87746d114655f7991e60.js:7
+#: public/build/extendify-draft-3914d1b6ca048d852791.js:7
 msgid "German"
 msgstr "német"
 
-#: public/build/extendify-draft-87746d114655f7991e60.js:7
+#: public/build/extendify-draft-3914d1b6ca048d852791.js:7
 msgid "German (Switzerland)"
 msgstr "Német (Svájc)"
 
-#: public/build/extendify-draft-87746d114655f7991e60.js:7
+#: public/build/extendify-draft-3914d1b6ca048d852791.js:7
 msgid "Indonesian"
 msgstr "indonéz"
 
-#: public/build/extendify-draft-87746d114655f7991e60.js:7
+#: public/build/extendify-draft-3914d1b6ca048d852791.js:7
 msgid "Italian"
 msgstr "olasz"
 
-#: public/build/extendify-draft-87746d114655f7991e60.js:7
+#: public/build/extendify-draft-3914d1b6ca048d852791.js:7
 msgid "Japanese"
 msgstr "japán"
 
-#: public/build/extendify-draft-87746d114655f7991e60.js:7
+#: public/build/extendify-draft-3914d1b6ca048d852791.js:7
 msgid "Polish"
 msgstr "lengyel"
 
-#: public/build/extendify-draft-87746d114655f7991e60.js:7
+#: public/build/extendify-draft-3914d1b6ca048d852791.js:7
 msgid "Portuguese (Brazil)"
 msgstr "portugál (Brazília)"
 
-#: public/build/extendify-draft-87746d114655f7991e60.js:7
+#: public/build/extendify-draft-3914d1b6ca048d852791.js:7
 msgid "Portuguese (Portugal)"
 msgstr "portugál (Portugália)"
 
-#: public/build/extendify-draft-87746d114655f7991e60.js:7
+#: public/build/extendify-draft-3914d1b6ca048d852791.js:7
 msgid "Spanish (Spain)"
 msgstr "Spanyol (Spanyolország)"
 
-#: public/build/extendify-draft-87746d114655f7991e60.js:7
+#: public/build/extendify-draft-3914d1b6ca048d852791.js:7
 msgid "Swedish"
 msgstr "svéd"
 
-#: public/build/extendify-draft-87746d114655f7991e60.js:7
+#: public/build/extendify-draft-3914d1b6ca048d852791.js:7
 msgid "Ukrainian"
 msgstr "ukrán"
 
-#: public/build/extendify-draft-87746d114655f7991e60.js:7
+#: public/build/extendify-draft-3914d1b6ca048d852791.js:7
 msgid "Vietnamese"
 msgstr "vietnámi"
 
 #: public/build/extendify-assist-page-c5c80c3680e1d9982ae1.js:8
-#: public/build/extendify-draft-87746d114655f7991e60.js:7
+#: public/build/extendify-draft-3914d1b6ca048d852791.js:7
 msgid "Translate"
 msgstr "Fordítás"
 
-#: public/build/extendify-draft-87746d114655f7991e60.js:7
+#: public/build/extendify-draft-3914d1b6ca048d852791.js:7
 msgid "Translate to..."
 msgstr "Fordítsd le..."
 
 #: public/build/extendify-assist-page-c5c80c3680e1d9982ae1.js:8
-#: public/build/extendify-draft-87746d114655f7991e60.js:7
-#: public/build/extendify-help-center-edc3cf6064e22874a408.js:3
+#: public/build/extendify-draft-3914d1b6ca048d852791.js:7
+#: public/build/extendify-help-center-f798a28b323c6822eff1.js:3
 msgid "Ask AI"
 msgstr "Kérdezze meg az AI-t"
 
-#: public/build/extendify-draft-87746d114655f7991e60.js:7
+#: public/build/extendify-draft-3914d1b6ca048d852791.js:7
 msgid "Custom prompt"
 msgstr "Egyéni felszólítás"
 
 #: public/build/extendify-assist-page-c5c80c3680e1d9982ae1.js:8
-#: public/build/extendify-draft-87746d114655f7991e60.js:7
+#: public/build/extendify-draft-3914d1b6ca048d852791.js:7
 msgid "AI Tools"
 msgstr "AI eszközök"
 
-#: public/build/extendify-help-center-edc3cf6064e22874a408.js:1
+#: public/build/extendify-help-center-f798a28b323c6822eff1.js:1
 msgid "Please try again."
 msgstr "Kérjük, próbálja meg újra."
 
-#: public/build/extendify-help-center-edc3cf6064e22874a408.js:1
+#: public/build/extendify-help-center-f798a28b323c6822eff1.js:1
 msgid "Remove rating"
 msgstr "Értékelés eltávolítása"
 
-#: public/build/extendify-help-center-edc3cf6064e22874a408.js:1
+#: public/build/extendify-help-center-f798a28b323c6822eff1.js:1
 msgid "Rate that this answer was helpful"
 msgstr "Értékelje, hogy ez a válasz hasznos volt-e"
 
-#: public/build/extendify-help-center-edc3cf6064e22874a408.js:1
+#: public/build/extendify-help-center-f798a28b323c6822eff1.js:1
 msgid "Rate that this answer was not helpful"
 msgstr "Értékelje, hogy ez a válasz nem volt hasznos"
 
-#: public/build/extendify-help-center-edc3cf6064e22874a408.js:1
+#: public/build/extendify-help-center-f798a28b323c6822eff1.js:1
 msgid "Oops! We were unable to send your question."
 msgstr "Hoppá! Nem sikerült elküldeni a kérdését."
 
-#: public/build/extendify-help-center-edc3cf6064e22874a408.js:1
+#: public/build/extendify-help-center-f798a28b323c6822eff1.js:1
 msgid "Ask Another Question"
 msgstr "Tegyen fel egy újabb kérdést"
 
-#: public/build/extendify-help-center-edc3cf6064e22874a408.js:1
+#: public/build/extendify-help-center-f798a28b323c6822eff1.js:1
 msgid "Chat History"
 msgstr "Csevegési előzmények"
 
-#: public/build/extendify-help-center-edc3cf6064e22874a408.js:1
+#: public/build/extendify-help-center-f798a28b323c6822eff1.js:1
 msgid "Close history"
 msgstr "Előzmények bezárása"
 
-#: public/build/extendify-help-center-edc3cf6064e22874a408.js:1
+#: public/build/extendify-help-center-f798a28b323c6822eff1.js:1
 msgid "Remove from history"
 msgstr "Eltávolítás az előzményekből"
 
-#: public/build/extendify-help-center-edc3cf6064e22874a408.js:1
+#: public/build/extendify-help-center-f798a28b323c6822eff1.js:1
 msgid "Beginner"
 msgstr "Kezdő"
 
-#: public/build/extendify-help-center-edc3cf6064e22874a408.js:1
+#: public/build/extendify-help-center-f798a28b323c6822eff1.js:1
 msgid "Intermediate"
 msgstr "Középhaladó"
 
-#: public/build/extendify-help-center-edc3cf6064e22874a408.js:1
+#: public/build/extendify-help-center-f798a28b323c6822eff1.js:1
 msgid "Advanced"
 msgstr "Haladó"
 
-#: public/build/extendify-help-center-edc3cf6064e22874a408.js:1
+#: public/build/extendify-help-center-f798a28b323c6822eff1.js:1
 msgid "Toggle menu"
 msgstr "Menü váltása"
 
-#: public/build/extendify-help-center-edc3cf6064e22874a408.js:1
+#: public/build/extendify-help-center-f798a28b323c6822eff1.js:1
 msgid "WordPress Comfort Level"
 msgstr "WordPress komfortszint"
 
 #. translators: %d: number of chat history items
-#: public/build/extendify-help-center-edc3cf6064e22874a408.js:3
+#: public/build/extendify-help-center-f798a28b323c6822eff1.js:3
 #, js-format
 msgid "Chat History (%d)"
 msgstr "Csevegési előzmények (%d)"
 
 #: public/build/extendify-assist-page-c5c80c3680e1d9982ae1.js:8
-#: public/build/extendify-help-center-edc3cf6064e22874a408.js:3
+#: public/build/extendify-help-center-f798a28b323c6822eff1.js:3
 msgid "Hi there!"
 msgstr "Szia!"
 
 #: public/build/extendify-assist-page-c5c80c3680e1d9982ae1.js:8
-#: public/build/extendify-help-center-edc3cf6064e22874a408.js:3
+#: public/build/extendify-help-center-f798a28b323c6822eff1.js:3
 msgid "Ask me any questions about WordPress."
 msgstr "Tegyen fel bármilyen kérdést a WordPress-szel kapcsolatban."
 
-#: public/build/extendify-help-center-edc3cf6064e22874a408.js:3
+#: public/build/extendify-help-center-f798a28b323c6822eff1.js:3
 msgid "Ask your WordPress question…"
 msgstr "Tedd fel a WordPress-szel kapcsolatos kérdésed…"
 
 #: public/build/extendify-assist-page-c5c80c3680e1d9982ae1.js:8
-#: public/build/extendify-help-center-edc3cf6064e22874a408.js:3
 msgid "For other questions, visit our support page."
 msgstr "Egyéb kérdések esetén látogassa meg a támogatási oldalunkat."
 
 #: public/build/extendify-assist-page-c5c80c3680e1d9982ae1.js:8
-#: public/build/extendify-help-center-edc3cf6064e22874a408.js:3
+#: public/build/extendify-help-center-f798a28b323c6822eff1.js:3
 msgid "Got questions? Ask our AI chatbot"
 msgstr "Van kérdése? Kérdezze meg az AI chatrobotunkat"
 
 #: public/build/extendify-assist-page-c5c80c3680e1d9982ae1.js:8
-#: public/build/extendify-help-center-edc3cf6064e22874a408.js:3
+#: public/build/extendify-help-center-f798a28b323c6822eff1.js:3
 msgid "AI Chatbot"
 msgstr "AI Chatbot"
 
-#: public/build/extendify-help-center-edc3cf6064e22874a408.js:3
+#: public/build/extendify-help-center-f798a28b323c6822eff1.js:3
 msgid "There was an error loading this article"
 msgstr "Hiba történt a cikk betöltésekor."
 
-#: public/build/extendify-help-center-edc3cf6064e22874a408.js:3
+#: public/build/extendify-help-center-f798a28b323c6822eff1.js:3
 msgid "Search for articles"
 msgstr "Cikkek keresése"
 
 #: public/build/extendify-assist-page-c5c80c3680e1d9982ae1.js:8
-#: public/build/extendify-help-center-edc3cf6064e22874a408.js:3
+#: public/build/extendify-help-center-f798a28b323c6822eff1.js:3
 msgid "What do you need help with?"
 msgstr "Miben segíthetünk?"
 
-#: public/build/extendify-help-center-edc3cf6064e22874a408.js:3
+#: public/build/extendify-help-center-f798a28b323c6822eff1.js:3
 msgid "Knowledge Base"
 msgstr "Tudásbázis"
 
-#: public/build/extendify-help-center-edc3cf6064e22874a408.js:3
+#: public/build/extendify-help-center-f798a28b323c6822eff1.js:3
 msgid "Searching..."
 msgstr "Keresés..."
 
-#: public/build/extendify-help-center-edc3cf6064e22874a408.js:3
+#: public/build/extendify-help-center-f798a28b323c6822eff1.js:3
 msgid "Search results"
 msgstr "Keresési találatok"
 
-#: public/build/extendify-help-center-edc3cf6064e22874a408.js:3
+#: public/build/extendify-help-center-f798a28b323c6822eff1.js:3
 msgid "Search the knowledge base"
 msgstr "Tudásbázis keresése"
 
 #: public/build/extendify-assist-page-c5c80c3680e1d9982ae1.js:8
-#: public/build/extendify-help-center-edc3cf6064e22874a408.js:3
+#: public/build/extendify-help-center-f798a28b323c6822eff1.js:3
 #: public/build/extendify-library-bab99ae27a788a75a169.js:1
 msgid "Design Library"
 msgstr "Tervezői könyvtár"
 
-#: public/build/extendify-help-center-edc3cf6064e22874a408.js:3
+#: public/build/extendify-help-center-f798a28b323c6822eff1.js:3
 msgid "Open the Pattern Library"
 msgstr "Nyissa meg a Mintakönyvtárat"
 
-#: public/build/extendify-help-center-edc3cf6064e22874a408.js:3
+#: public/build/extendify-help-center-f798a28b323c6822eff1.js:3
 msgid "The Extendify pattern library can be opened by clicking the button to the left."
 msgstr "Az Extendify mintakönyvtár megnyitásához kattintson a bal oldali gombra."
 
-#: public/build/extendify-help-center-edc3cf6064e22874a408.js:3
+#: public/build/extendify-help-center-f798a28b323c6822eff1.js:3
 msgid "Filter Patterns"
 msgstr "Minták szűrése"
 
-#: public/build/extendify-help-center-edc3cf6064e22874a408.js:3
+#: public/build/extendify-help-center-f798a28b323c6822eff1.js:3
 msgid "Click on any pattern category to refine the selection."
 msgstr "Kattintson bármelyik mintakategóriára a kiválasztás pontosításához."
 
-#: public/build/extendify-help-center-edc3cf6064e22874a408.js:3
+#: public/build/extendify-help-center-f798a28b323c6822eff1.js:3
 msgid "Select a Pattern"
 msgstr "Minta kiválasztása"
 
-#: public/build/extendify-help-center-edc3cf6064e22874a408.js:3
+#: public/build/extendify-help-center-f798a28b323c6822eff1.js:3
 msgid "Simply select any pattern you wish to insert into a page by clicking on it."
 msgstr "Egyszerűen kattintson arra a mintára, amelyet be szeretne szúrni egy oldalba."
 
-#: public/build/extendify-help-center-edc3cf6064e22874a408.js:3
+#: public/build/extendify-help-center-f798a28b323c6822eff1.js:3
 msgid "View the Inserted Pattern"
 msgstr "Beszúrt minta megtekintése"
 
-#: public/build/extendify-help-center-edc3cf6064e22874a408.js:3
+#: public/build/extendify-help-center-f798a28b323c6822eff1.js:3
 msgid "The selected pattern has been inserted into the page."
 msgstr "A kiválasztott minta beillesztésre került az oldalba."
 
 #: public/build/extendify-assist-page-c5c80c3680e1d9982ae1.js:8
-#: public/build/extendify-help-center-edc3cf6064e22874a408.js:3
+#: public/build/extendify-help-center-f798a28b323c6822eff1.js:3
 msgid "Page editor"
 msgstr "Oldalszerkesztő"
 
-#: public/build/extendify-help-center-edc3cf6064e22874a408.js:3
+#: public/build/extendify-help-center-f798a28b323c6822eff1.js:3
 msgid "Add a Block"
 msgstr "Blokk hozzáadása"
 
-#: public/build/extendify-help-center-edc3cf6064e22874a408.js:3
+#: public/build/extendify-help-center-f798a28b323c6822eff1.js:3
 msgid "Click the plus to open the block inserter."
 msgstr "Kattints a pluszra a blokk beillesztő megnyitásához."
 
-#: public/build/extendify-help-center-edc3cf6064e22874a408.js:3
+#: public/build/extendify-help-center-f798a28b323c6822eff1.js:3
 msgid "Block Inserter"
 msgstr "Blokk beillesztő"
 
-#: public/build/extendify-help-center-edc3cf6064e22874a408.js:3
+#: public/build/extendify-help-center-f798a28b323c6822eff1.js:3
 msgid "Add a block by clicking or dragging it onto the page."
 msgstr "Adjon hozzá egy blokkot kattintással vagy húzással az oldalra."
 
-#: public/build/extendify-help-center-edc3cf6064e22874a408.js:3
+#: public/build/extendify-help-center-f798a28b323c6822eff1.js:3
 msgid "Page Title"
 msgstr "Oldal címe"
 
-#: public/build/extendify-help-center-edc3cf6064e22874a408.js:3
+#: public/build/extendify-help-center-f798a28b323c6822eff1.js:3
 msgid "Edit the page title by clicking it. Note: The title may or may not show up on the published page, depending on the page template used."
 msgstr "Kattintással szerkesztheti az oldal címsorát. Megjegyzés: A címsor megjelenhet vagy nem jelenhet meg a közzétett oldalon, attól függően, hogy milyen sablont használunk."
 
-#: public/build/extendify-help-center-edc3cf6064e22874a408.js:3
+#: public/build/extendify-help-center-f798a28b323c6822eff1.js:3
 msgid "Blocks"
 msgstr "Blokkok"
 
-#: public/build/extendify-help-center-edc3cf6064e22874a408.js:3
+#: public/build/extendify-help-center-f798a28b323c6822eff1.js:3
 msgid "Each block will show up on the page and can be edited by clicking on it."
 msgstr "Minden blokk megjelenik az oldalon, és rákattintva szerkeszthető."
 
-#: public/build/extendify-help-center-edc3cf6064e22874a408.js:3
+#: public/build/extendify-help-center-f798a28b323c6822eff1.js:3
 msgid "This is a sample paragraph block. It can be several sentences long and will span multiple rows. You can add as many blocks as you'd like to the page."
 msgstr "Ez egy minta bekezdés blokk. Lehet több mondatból álló és több soron átívelő. Tetszőleges számú blokkot adhatsz hozzá az oldalhoz."
 
-#: public/build/extendify-help-center-edc3cf6064e22874a408.js:3
+#: public/build/extendify-help-center-f798a28b323c6822eff1.js:3
 msgid "Page and Block Settings"
 msgstr "Oldal- és blokkbeállítások"
 
-#: public/build/extendify-help-center-edc3cf6064e22874a408.js:3
+#: public/build/extendify-help-center-f798a28b323c6822eff1.js:3
 msgid "Select either page or block to change the settings for the entire page or the block that is selected."
 msgstr "Válassz az oldal vagy a blokk közül a beállítások megváltoztatásához az egész oldalon, vagy a kiválasztott blokkon."
 
-#: public/build/extendify-help-center-edc3cf6064e22874a408.js:3
+#: public/build/extendify-help-center-f798a28b323c6822eff1.js:3
 msgid "Preview"
 msgstr "Előnézet"
 
-#: public/build/extendify-help-center-edc3cf6064e22874a408.js:3
+#: public/build/extendify-help-center-f798a28b323c6822eff1.js:3
 msgid "Click preview to view how your changes look on the front end of your site."
 msgstr "Kattintson az előnézetre, hogy megtekintse, hogyan néznek ki a változtatásai a webhely front endjén."
 
-#: public/build/extendify-help-center-edc3cf6064e22874a408.js:3
+#: public/build/extendify-help-center-f798a28b323c6822eff1.js:3
 msgid "Publish or Save"
 msgstr "Közzététel vagy Mentés"
 
-#: public/build/extendify-help-center-edc3cf6064e22874a408.js:3
+#: public/build/extendify-help-center-f798a28b323c6822eff1.js:3
 msgid "Click publish or update to save the changes you have made to the page and make them live on the site."
 msgstr "Kattintson a Közzététel vagy Frissítés gombra, hogy mentse az oldalon végrehajtott módosításokat, és élőben is megjelenjenek a weboldalon."
 
 #: public/build/extendify-assist-page-c5c80c3680e1d9982ae1.js:8
-#: public/build/extendify-help-center-edc3cf6064e22874a408.js:3
+#: public/build/extendify-help-center-f798a28b323c6822eff1.js:3
 msgid "Installing a plugin"
 msgstr "Bővítmény telepítése"
 
-#: public/build/extendify-help-center-edc3cf6064e22874a408.js:3
+#: public/build/extendify-help-center-f798a28b323c6822eff1.js:3
 msgid "Add New plugin menu"
 msgstr "Új bővítmény menü hozzáadása"
 
-#: public/build/extendify-help-center-edc3cf6064e22874a408.js:3
+#: public/build/extendify-help-center-f798a28b323c6822eff1.js:3
 msgid "Click here to access the Add Plugins page."
 msgstr "Kattintson ide a Bővítmények hozzáadása oldal eléréséhez."
 
-#: public/build/extendify-help-center-edc3cf6064e22874a408.js:3
+#: public/build/extendify-help-center-f798a28b323c6822eff1.js:3
 msgid "Search"
 msgstr "Keresés"
 
-#: public/build/extendify-help-center-edc3cf6064e22874a408.js:3
+#: public/build/extendify-help-center-f798a28b323c6822eff1.js:3
 msgid "Search for a plugin by name or functionality."
 msgstr "Keressen bővítményt név vagy funkció alapján."
 
-#: public/build/extendify-help-center-edc3cf6064e22874a408.js:3
+#: public/build/extendify-help-center-f798a28b323c6822eff1.js:3
 msgid "Plugin details"
 msgstr "Bővítmény részletek"
 
-#: public/build/extendify-help-center-edc3cf6064e22874a408.js:3
+#: public/build/extendify-help-center-f798a28b323c6822eff1.js:3
 msgid "See important information about each plugin."
 msgstr "Tekintse meg minden bővítményről a fontos információkat."
 
-#: public/build/extendify-help-center-edc3cf6064e22874a408.js:3
+#: public/build/extendify-help-center-f798a28b323c6822eff1.js:3
 msgid "Install now"
 msgstr "Telepítés most"
 
-#: public/build/extendify-help-center-edc3cf6064e22874a408.js:3
+#: public/build/extendify-help-center-f798a28b323c6822eff1.js:3
 msgid "Install the plugin. Then, press this button again to activate the plugin."
 msgstr "Telepítse a bővítményt. Ezután nyomja meg újra ezt a gombot a bővítmény bekapcsolásához."
 
-#: public/build/extendify-help-center-edc3cf6064e22874a408.js:3
+#: public/build/extendify-help-center-f798a28b323c6822eff1.js:3
 msgid "Upload Plugin"
 msgstr "Bővítmény feltöltése"
 
-#: public/build/extendify-help-center-edc3cf6064e22874a408.js:3
+#: public/build/extendify-help-center-f798a28b323c6822eff1.js:3
 msgid "If you have a plugin from an external source, you can upload it directly here."
 msgstr "Ha rendelkezik külső forrásból származó bővítménnyel, itt közvetlenül feltöltheti."
 
 #: public/build/extendify-assist-page-c5c80c3680e1d9982ae1.js:8
-#: public/build/extendify-help-center-edc3cf6064e22874a408.js:3
+#: public/build/extendify-help-center-f798a28b323c6822eff1.js:3
 msgid "Plugin management"
 msgstr "Bővítmény kezelés"
 
-#: public/build/extendify-help-center-edc3cf6064e22874a408.js:3
+#: public/build/extendify-help-center-f798a28b323c6822eff1.js:3
 msgid "Installed Plugins menu"
 msgstr "Telepített bővítmények menü"
 
-#: public/build/extendify-help-center-edc3cf6064e22874a408.js:3
+#: public/build/extendify-help-center-f798a28b323c6822eff1.js:3
 msgid "Click this menu to see and manage the plugins you have installed."
 msgstr "Kattintson erre a menüre, hogy megtekinthesse és kezelhesse a telepített bővítményeit."
 
-#: public/build/extendify-help-center-edc3cf6064e22874a408.js:3
+#: public/build/extendify-help-center-f798a28b323c6822eff1.js:3
 msgid "Installed plugins"
 msgstr "Telepített bővítmények"
 
-#: public/build/extendify-help-center-edc3cf6064e22874a408.js:3
+#: public/build/extendify-help-center-f798a28b323c6822eff1.js:3
 msgid "See all plugins installed on your site. This includes plugins that are active and deactivated."
 msgstr "Tekintse meg az Ön weboldalán telepített összes bővítményt. Ide tartoznak az aktív és a kikapcsolt bővítmények is."
 
-#: public/build/extendify-help-center-edc3cf6064e22874a408.js:3
+#: public/build/extendify-help-center-f798a28b323c6822eff1.js:3
 msgid "Deactivate/activate option"
 msgstr "Kikapcsolás/bekapcsolás opció"
 
-#: public/build/extendify-help-center-edc3cf6064e22874a408.js:3
+#: public/build/extendify-help-center-f798a28b323c6822eff1.js:3
 msgid "Under each plugin you can activate or deactivate it."
 msgstr "Minden bővítmény alatt lehetőség van a bekapcsolására vagy kikapcsolására."
 
-#: public/build/extendify-help-center-edc3cf6064e22874a408.js:3
+#: public/build/extendify-help-center-f798a28b323c6822eff1.js:3
 msgid "Add another"
 msgstr "Új hozzáadása"
 
-#: public/build/extendify-help-center-edc3cf6064e22874a408.js:3
+#: public/build/extendify-help-center-f798a28b323c6822eff1.js:3
 msgid "Click here to add another plugin to your site."
 msgstr "Kattintson ide egy újabb bővítmény hozzáadásához az oldalhoz."
 
-#: public/build/extendify-help-center-edc3cf6064e22874a408.js:3
+#: public/build/extendify-help-center-f798a28b323c6822eff1.js:3
 msgid "Tasks"
 msgstr "Feladatok"
 
-#: public/build/extendify-help-center-edc3cf6064e22874a408.js:3
+#: public/build/extendify-help-center-f798a28b323c6822eff1.js:3
 msgid "Now that you've created your starter site, make it your own with these follow up tasks."
 msgstr "Most, hogy létrehozta az alap webhelyét, tegye azzá sajátjává ezekkel a következő feladatokkal."
 
-#: public/build/extendify-help-center-edc3cf6064e22874a408.js:3
+#: public/build/extendify-help-center-f798a28b323c6822eff1.js:3
 msgid "Easily access some of the most common items in WordPress with these quick links."
 msgstr "Ezekkel a gyorshivatkozásokkal könnyedén elérheti a WordPress leggyakoribb elemeit."
 
-#: public/build/extendify-help-center-edc3cf6064e22874a408.js:3
+#: public/build/extendify-help-center-f798a28b323c6822eff1.js:3
 msgid "See our personalized recommendations for you that will help you accomplish your goals."
 msgstr "Tekintse meg személyre szabott ajánlatainkat, amelyek segítenek elérni céljait."
 
 #: public/build/extendify-assist-page-c5c80c3680e1d9982ae1.js:8
-#: public/build/extendify-help-center-edc3cf6064e22874a408.js:3
+#: public/build/extendify-help-center-f798a28b323c6822eff1.js:3
 msgid "Help Center"
 msgstr "Súgóközpont"
 
-#: public/build/extendify-help-center-edc3cf6064e22874a408.js:3
+#: public/build/extendify-help-center-f798a28b323c6822eff1.js:3
 msgid "You can always access the help center by clicking this button."
 msgstr "A súgóközpont mindig elérhető, ha erre a gombra kattint."
 
-#: public/build/extendify-help-center-edc3cf6064e22874a408.js:3
+#: public/build/extendify-help-center-f798a28b323c6822eff1.js:3
 msgid "Visit your site"
 msgstr "Látogassa meg a honlapját"
 
-#: public/build/extendify-help-center-edc3cf6064e22874a408.js:3
+#: public/build/extendify-help-center-f798a28b323c6822eff1.js:3
 msgid "You can always visit your site by clicking this button."
 msgstr "A honlapját mindig megtekintheti, ha erre a gombra kattint."
 
-#: public/build/extendify-help-center-edc3cf6064e22874a408.js:3
+#: public/build/extendify-help-center-f798a28b323c6822eff1.js:3
 msgid "Come back to the Site Assistant any time by clicking the menu item."
 msgstr "A menüelemre kattintva bármikor visszatérhet a Webhelyasszisztenshez."
 
 #: public/build/extendify-assist-page-c5c80c3680e1d9982ae1.js:8
-#: public/build/extendify-help-center-edc3cf6064e22874a408.js:3
+#: public/build/extendify-help-center-f798a28b323c6822eff1.js:3
 msgid "Users screen"
 msgstr "Felhasználók képernyője"
 
-#: public/build/extendify-help-center-edc3cf6064e22874a408.js:3
+#: public/build/extendify-help-center-f798a28b323c6822eff1.js:3
 msgid "All Users menu"
 msgstr "Összes felhasználó menüje"
 
-#: public/build/extendify-help-center-edc3cf6064e22874a408.js:3
+#: public/build/extendify-help-center-f798a28b323c6822eff1.js:3
 msgid "Click here to view and manage the users on your site."
 msgstr "Kattintson ide a webhely felhasználóinak megtekintéséhez és kezeléséhez."
 
-#: public/build/extendify-help-center-edc3cf6064e22874a408.js:3
+#: public/build/extendify-help-center-f798a28b323c6822eff1.js:3
 msgid "Users"
 msgstr "Felhasználók"
 
-#: public/build/extendify-help-center-edc3cf6064e22874a408.js:3
+#: public/build/extendify-help-center-f798a28b323c6822eff1.js:3
 msgid "See all of your users, including admin users in this table."
 msgstr "Ebben a táblázatban megtekintheti az összes felhasználóját, beleértve a rendszergazdákat is."
 
-#: public/build/extendify-help-center-edc3cf6064e22874a408.js:3
+#: public/build/extendify-help-center-f798a28b323c6822eff1.js:3
 msgid "Edit user information"
 msgstr "Felhasználói információk szerkesztése"
 
-#: public/build/extendify-help-center-edc3cf6064e22874a408.js:3
+#: public/build/extendify-help-center-f798a28b323c6822eff1.js:3
 msgid "Click the edit button to change the user's role, manage their account, or change their profile information."
 msgstr "Kattintson a szerkesztés gombra a felhasználó szerepkörének megváltoztatásához, fiókjának kezeléséhez vagy profilinformációinak módosításához."
 
-#: public/build/extendify-help-center-edc3cf6064e22874a408.js:3
+#: public/build/extendify-help-center-f798a28b323c6822eff1.js:3
 msgid "Search for users"
 msgstr "Felhasználók keresése"
 
-#: public/build/extendify-help-center-edc3cf6064e22874a408.js:3
+#: public/build/extendify-help-center-f798a28b323c6822eff1.js:3
 msgid "Use the search bar to find a particular user."
 msgstr "Használja a keresősávot egy adott felhasználó megtalálásához."
 
-#: public/build/extendify-help-center-edc3cf6064e22874a408.js:3
+#: public/build/extendify-help-center-f798a28b323c6822eff1.js:3
 msgid "Add a new user"
 msgstr "Új felhasználó hozzáadása"
 
-#: public/build/extendify-help-center-edc3cf6064e22874a408.js:3
+#: public/build/extendify-help-center-f798a28b323c6822eff1.js:3
 msgid "Click the Add New button to add a new user to your site."
 msgstr "Kattintson az \"Új hozzáadása\" gombra, hogy új felhasználót adjon hozzá az oldalhoz."
 
 #: public/build/extendify-assist-page-c5c80c3680e1d9982ae1.js:8
-#: public/build/extendify-help-center-edc3cf6064e22874a408.js:3
+#: public/build/extendify-help-center-f798a28b323c6822eff1.js:3
 msgid "Getting started with WordPress"
 msgstr "Első lépések a WordPress használatához"
 
-#: public/build/extendify-help-center-edc3cf6064e22874a408.js:3
+#: public/build/extendify-help-center-f798a28b323c6822eff1.js:3
 msgid "At any time, you can view your site (from a visitor's perspective) from the top admin bar under your site's name."
 msgstr "Bármikor megtekintheti webhelyét (egy látogató szemszögéből) az adminisztrációs felső sávon keresztül, a webhely neve alatt."
 
-#: public/build/extendify-help-center-edc3cf6064e22874a408.js:3
+#: public/build/extendify-help-center-f798a28b323c6822eff1.js:3
 msgid "Access the Site Assistant at any time."
 msgstr "Bármikor hozzáférhet a Webhelyasszisztenshez."
 
-#: public/build/extendify-help-center-edc3cf6064e22874a408.js:3
+#: public/build/extendify-help-center-f798a28b323c6822eff1.js:3
 msgid "Click here to go to your website management dashboard. From there you will be able to create more websites, and manage your account settings."
 msgstr "Kattintson ide a webhelykezelő irányítópultjához való továbblépéshez. Innen további webhelyeket hozhat létre és kezelheti fiókbeállításait."
 
-#: public/build/extendify-help-center-edc3cf6064e22874a408.js:3
+#: public/build/extendify-help-center-f798a28b323c6822eff1.js:3
 msgid "The default WordPress dashboard will have some overall site metrics and modules added from certain plugins."
 msgstr "Az alapértelmezett WordPress irányítópult tartalmaz néhány általános oldalstatisztikát és bizonyos bővítmények által hozzáadott modulokat."
 
-#: public/build/extendify-help-center-edc3cf6064e22874a408.js:3
+#: public/build/extendify-help-center-f798a28b323c6822eff1.js:3
 msgid "Posts"
 msgstr "Bejegyzések"
 
-#: public/build/extendify-help-center-edc3cf6064e22874a408.js:3
+#: public/build/extendify-help-center-f798a28b323c6822eff1.js:3
 msgid "Manage and create blog posts."
 msgstr "Blogbejegyzések kezelése és létrehozása."
 
-#: public/build/extendify-help-center-edc3cf6064e22874a408.js:3
+#: public/build/extendify-help-center-f798a28b323c6822eff1.js:3
 msgid "Media"
 msgstr "Média"
 
-#: public/build/extendify-help-center-edc3cf6064e22874a408.js:3
+#: public/build/extendify-help-center-f798a28b323c6822eff1.js:3
 msgid "Add, edit, or remove images and other media from your library. When you upload an image to be used on your site, it will be added to the library."
 msgstr "Képek és egyéb médiatartalmak hozzáadása, szerkesztése vagy eltávolítása a könyvtárból. Amikor egy képet feltölt a weboldalára, az hozzáadódik a könyvtárhoz."
 
-#: public/build/extendify-help-center-edc3cf6064e22874a408.js:3
+#: public/build/extendify-help-center-f798a28b323c6822eff1.js:3
 msgid "Use the pages menu to add, delete, or edit the pages on your site."
 msgstr "Az oldalak menüjében hozzáadhat, törölhet vagy szerkeszthet oldalakat a webhelyén."
 
-#: public/build/extendify-help-center-edc3cf6064e22874a408.js:3
+#: public/build/extendify-help-center-f798a28b323c6822eff1.js:3
 msgid "Comments"
 msgstr "Hozzászólások"
 
-#: public/build/extendify-help-center-edc3cf6064e22874a408.js:3
+#: public/build/extendify-help-center-f798a28b323c6822eff1.js:3
 msgid "If you have commenting enabled on your posts, you can manage those comments here."
 msgstr "Ha engedélyezte a hozzászólásokat a bejegyzésein, itt kezelheti azokat."
 
-#: public/build/extendify-help-center-edc3cf6064e22874a408.js:3
+#: public/build/extendify-help-center-f798a28b323c6822eff1.js:3
 msgid "Appearance"
 msgstr "Megjelenés"
 
-#: public/build/extendify-help-center-edc3cf6064e22874a408.js:3
+#: public/build/extendify-help-center-f798a28b323c6822eff1.js:3
 msgid "Manage your theme and access the Site Editor from the Appearance menu. The Site Editor is where you can make global changes to your site (such as the menu, header/footer, and styles)."
 msgstr "Kezelje a sablonját, és a Megjelenés menüből érje el a Webhelyszerkesztőt. A Webhelyszerkesztő az a hely, ahol globális változtatásokat hajthat végre a webhelyén (például a menü, fejléc/lábléc és a stílusok tekintetében)."
 
-#: public/build/extendify-help-center-edc3cf6064e22874a408.js:3
+#: public/build/extendify-help-center-f798a28b323c6822eff1.js:3
 msgid "Plugins"
 msgstr "Bővítmények"
 
-#: public/build/extendify-help-center-edc3cf6064e22874a408.js:3
+#: public/build/extendify-help-center-f798a28b323c6822eff1.js:3
 msgid "Add or manage the plugins on your site."
 msgstr "Bővítmények hozzáadása vagy kezelése a webhelyeden."
 
-#: public/build/extendify-help-center-edc3cf6064e22874a408.js:3
+#: public/build/extendify-help-center-f798a28b323c6822eff1.js:3
 msgid "Add or manage users on your site, both admin users and others."
 msgstr "Felhasználók hozzáadása vagy kezelése a webhelyen, beleértve a rendszergazdákat és más felhasználókat is."
 
-#: public/build/extendify-help-center-edc3cf6064e22874a408.js:3
+#: public/build/extendify-help-center-f798a28b323c6822eff1.js:3
 msgid "Tools"
 msgstr "Eszközök"
 
-#: public/build/extendify-help-center-edc3cf6064e22874a408.js:3
+#: public/build/extendify-help-center-f798a28b323c6822eff1.js:3
 msgid "Import/export post data, check site health, and edit theme or plugin files directly in the WordPress admin."
 msgstr "Importálja/exportálja a bejegyzés adatait, ellenőrizze a webhely egészségét, és közvetlenül a WordPress rendszergazdában szerkessze a sablon vagy bővítmény fájlokat."
 
-#: public/build/extendify-help-center-edc3cf6064e22874a408.js:3
+#: public/build/extendify-help-center-f798a28b323c6822eff1.js:3
 msgid "Settings"
 msgstr "Beállítások"
 
-#: public/build/extendify-help-center-edc3cf6064e22874a408.js:3
+#: public/build/extendify-help-center-f798a28b323c6822eff1.js:3
 msgid "Advanced settings for your site and for certain plugins."
 msgstr "Haladó beállítások az oldaladhoz és bizonyos bővítményekhez."
 
-#: public/build/extendify-help-center-edc3cf6064e22874a408.js:3
+#: public/build/extendify-help-center-f798a28b323c6822eff1.js:3
 msgid "Collapse menu"
 msgstr "Menü összecsukása"
 
-#: public/build/extendify-help-center-edc3cf6064e22874a408.js:3
+#: public/build/extendify-help-center-f798a28b323c6822eff1.js:3
 msgid "Use this toggle to collapse or expand the sidebar menu."
 msgstr "Ezzel a kapcsolóval összecsukhatja vagy kibonthatja az oldalsáv menüt."
 
-#: public/build/extendify-help-center-edc3cf6064e22874a408.js:3
+#: public/build/extendify-help-center-f798a28b323c6822eff1.js:3
 msgid "User"
 msgstr "Felhasználó"
 
-#: public/build/extendify-help-center-edc3cf6064e22874a408.js:3
+#: public/build/extendify-help-center-f798a28b323c6822eff1.js:3
 msgid "Manage your profile or log out of your account here."
 msgstr "Itt kezelheti a profilját vagy kijelentkezhet a fiókjából."
 
 #: public/build/extendify-assist-page-c5c80c3680e1d9982ae1.js:8
-#: public/build/extendify-help-center-edc3cf6064e22874a408.js:3
+#: public/build/extendify-help-center-f798a28b323c6822eff1.js:3
 msgid "Tours"
 msgstr "Túrák"
 
 #: public/build/extendify-assist-page-c5c80c3680e1d9982ae1.js:8
-#: public/build/extendify-help-center-edc3cf6064e22874a408.js:3
+#: public/build/extendify-help-center-f798a28b323c6822eff1.js:3
 msgid "Learn more about your WordPress admin"
 msgstr "Tudj meg többet a WordPress rendszergazdádról"
 
 #: public/build/extendify-assist-page-c5c80c3680e1d9982ae1.js:8
-#: public/build/extendify-help-center-edc3cf6064e22874a408.js:3
+#: public/build/extendify-help-center-f798a28b323c6822eff1.js:3
 msgid "Tour this page"
 msgstr "Ismerkedjen meg ezzel az oldallal"
 
-#: public/build/extendify-help-center-edc3cf6064e22874a408.js:3
+#: public/build/extendify-help-center-f798a28b323c6822eff1.js:3
 msgid "Show Help Center"
 msgstr "Súgóközpont megjelenítése"
 
-#: public/build/extendify-help-center-edc3cf6064e22874a408.js:3
+#: public/build/extendify-help-center-f798a28b323c6822eff1.js:3
 msgid "Minimize Help Center"
 msgstr "Súgóközpont összecsukása"
 
-#: public/build/extendify-help-center-edc3cf6064e22874a408.js:3
+#: public/build/extendify-help-center-f798a28b323c6822eff1.js:3
 msgid "close"
 msgstr "bezár"
 
-#: public/build/extendify-help-center-edc3cf6064e22874a408.js:3
+#: public/build/extendify-help-center-f798a28b323c6822eff1.js:3
 msgid "Go back"
 msgstr "Menj vissza"
 
-#: public/build/extendify-help-center-edc3cf6064e22874a408.js:3
+#: public/build/extendify-help-center-f798a28b323c6822eff1.js:3
 msgid "Extendify Help Center"
 msgstr "Extendify Súgóközpont"
 
-#: public/build/extendify-help-center-edc3cf6064e22874a408.js:3
+#: public/build/extendify-help-center-f798a28b323c6822eff1.js:3
 msgid "Tour"
 msgstr "Túra"
 
-#: public/build/extendify-help-center-edc3cf6064e22874a408.js:3
-#: public/build/extendify-launch-e746634b7a75fc72428d.js:5
+#: public/build/extendify-help-center-f798a28b323c6822eff1.js:3
+#: public/build/extendify-launch-bebdb5c5f047f197cead.js:5
 msgid "Back"
 msgstr "Vissza"
 
-#: public/build/extendify-help-center-edc3cf6064e22874a408.js:3
+#: public/build/extendify-help-center-f798a28b323c6822eff1.js:3
 msgid "Tour Steps"
 msgstr "Túra lépései"
 
 #. translators: %1$s is the current step, %2$s is the total number of steps
-#: public/build/extendify-help-center-edc3cf6064e22874a408.js:5
+#: public/build/extendify-help-center-f798a28b323c6822eff1.js:5
 #, js-format
 msgid "%1$s of %2$s"
 msgstr "%1$s / %2$s"
 
-#: public/build/extendify-help-center-edc3cf6064e22874a408.js:5
-#: public/build/extendify-launch-e746634b7a75fc72428d.js:5
+#: public/build/extendify-help-center-f798a28b323c6822eff1.js:5
+#: public/build/extendify-launch-bebdb5c5f047f197cead.js:5
 msgid "Next"
 msgstr "Következő"
 
 #: public/build/extendify-assist-page-c5c80c3680e1d9982ae1.js:8
-#: public/build/extendify-help-center-edc3cf6064e22874a408.js:5
+#: public/build/extendify-help-center-f798a28b323c6822eff1.js:5
 msgid "Help"
 msgstr "Segítség"
 
 #. translators: Launch is the product name. Unless otherwise specified by the glossary, do not translate this name.
-#: public/build/extendify-launch-e746634b7a75fc72428d.js:3
+#: public/build/extendify-launch-bebdb5c5f047f197cead.js:3
 msgid "Added by Launch"
 msgstr "Hozzáadta a Launch"
 
-#: public/build/extendify-launch-e746634b7a75fc72428d.js:3
+#: public/build/extendify-launch-bebdb5c5f047f197cead.js:3
 msgid "Start over?"
 msgstr "Újrakezdi?"
 
-#: public/build/extendify-launch-e746634b7a75fc72428d.js:3
+#: public/build/extendify-launch-bebdb5c5f047f197cead.js:3
 msgid "Go through the onboarding process again to create a new site."
 msgstr "Menjen végig újra a bevezető folyamaton egy új honlap létrehozásához."
 
-#: public/build/extendify-launch-e746634b7a75fc72428d.js:5
+#: public/build/extendify-launch-bebdb5c5f047f197cead.js:5
 msgid "Exit"
 msgstr "Kilépés"
 
-#: public/build/extendify-launch-e746634b7a75fc72428d.js:5
+#: public/build/extendify-launch-bebdb5c5f047f197cead.js:5
 msgid "Processing"
 msgstr "Feldolgozás"
 
-#: public/build/extendify-launch-e746634b7a75fc72428d.js:5
+#: public/build/extendify-launch-bebdb5c5f047f197cead.js:5
 msgid "Continue"
 msgstr "Folytatás"
 
-#: public/build/extendify-launch-e746634b7a75fc72428d.js:5
-#: public/build/extendify-page-creator-7e18596cfed43dc45d9d.js:3
+#: public/build/extendify-launch-bebdb5c5f047f197cead.js:5
+#: public/build/extendify-page-creator-7412f6aa17eae9a59f0a.js:3
 msgid "Just a moment, this is taking longer than expected."
 msgstr "Csak egy pillanat, ez több időt vesz igénybe, mint vártuk."
 
-#: public/build/extendify-launch-e746634b7a75fc72428d.js:5
+#: public/build/extendify-launch-bebdb5c5f047f197cead.js:7
 msgid "E.g., We are a yoga studio in London with professionally trained instructors with focus on hot yoga for therapeutic purposes."
 msgstr "Például: Egy londoni jóga stúdió vagyunk, ahol professzionálisan képzett oktatók tartanak órákat, különös tekintettel a terápiás célú hot yogára."
 
-#: public/build/extendify-launch-e746634b7a75fc72428d.js:5
+#: public/build/extendify-launch-bebdb5c5f047f197cead.js:7
 msgid "Professional"
 msgstr "Szakmai"
 
-#: public/build/extendify-launch-e746634b7a75fc72428d.js:5
+#: public/build/extendify-launch-bebdb5c5f047f197cead.js:7
 msgid "Friendly"
 msgstr "Barátságos"
 
-#: public/build/extendify-launch-e746634b7a75fc72428d.js:5
+#: public/build/extendify-launch-bebdb5c5f047f197cead.js:7
 msgid "Inspirational"
 msgstr "Inspiráló"
 
-#: public/build/extendify-launch-e746634b7a75fc72428d.js:5
+#: public/build/extendify-launch-bebdb5c5f047f197cead.js:7
 msgid "Informative"
 msgstr "Tájékoztató"
 
-#: public/build/extendify-launch-e746634b7a75fc72428d.js:5
+#: public/build/extendify-launch-bebdb5c5f047f197cead.js:7
 msgid "Persuasive"
 msgstr "Meggyőző"
 
-#: public/build/extendify-launch-e746634b7a75fc72428d.js:5
+#: public/build/extendify-launch-bebdb5c5f047f197cead.js:5
 msgid "Exit Launch"
 msgstr "Kilépés az indításból"
 
-#: public/build/extendify-launch-e746634b7a75fc72428d.js:5
+#: public/build/extendify-launch-bebdb5c5f047f197cead.js:5
 msgid "Skip"
 msgstr "Átugrás"
 
-#: public/build/extendify-launch-e746634b7a75fc72428d.js:5
+#: public/build/extendify-launch-bebdb5c5f047f197cead.js:5
 msgid "Press to select"
 msgstr "Nyomja meg a kiválasztáshoz"
 
-#: public/build/extendify-launch-e746634b7a75fc72428d.js:5
+#: public/build/extendify-launch-bebdb5c5f047f197cead.js:7
 msgid "Enter your website name"
 msgstr "Adja meg a weboldal nevét"
 
-#: public/build/extendify-launch-e746634b7a75fc72428d.js:5
+#: public/build/extendify-launch-bebdb5c5f047f197cead.js:7
 msgid "Pick a design for your website"
 msgstr "Válasszon egy tervezetet a weboldalához"
 
-#: public/build/extendify-launch-e746634b7a75fc72428d.js:5
+#: public/build/extendify-launch-bebdb5c5f047f197cead.js:7
 msgid "You can personalize this later."
 msgstr "Ezt később személyre szabhatja."
 
-#: public/build/extendify-launch-e746634b7a75fc72428d.js:5
+#: public/build/extendify-launch-bebdb5c5f047f197cead.js:5
 msgid "Home page"
 msgstr "Főoldal"
 
-#: public/build/extendify-launch-e746634b7a75fc72428d.js:5
+#: public/build/extendify-launch-bebdb5c5f047f197cead.js:5
 msgid "Pick the pages to add to your website"
 msgstr "Válassza ki azokat az oldalakat, amelyeket hozzá szeretne adni a weboldalához"
 
-#: public/build/extendify-launch-e746634b7a75fc72428d.js:5
+#: public/build/extendify-launch-bebdb5c5f047f197cead.js:5
 msgid "We already selected the most common pages for your type of website."
 msgstr "Már kiválasztottuk a leggyakoribb oldalakat a weboldalad típusához."
 
-#: public/build/extendify-launch-e746634b7a75fc72428d.js:5
+#: public/build/extendify-launch-bebdb5c5f047f197cead.js:5
 msgid "View more pages"
 msgstr "További oldalak megtekintése"
 
-#: public/build/extendify-launch-e746634b7a75fc72428d.js:5
+#: public/build/extendify-launch-bebdb5c5f047f197cead.js:7
 msgid "Applying your website styles"
 msgstr "A webhely stílusainak alkalmazása"
 
-#: public/build/extendify-launch-e746634b7a75fc72428d.js:5
+#: public/build/extendify-launch-bebdb5c5f047f197cead.js:7
 msgid "Creating a beautiful website"
 msgstr "Gyönyörű weboldal készítése"
 
-#: public/build/extendify-launch-e746634b7a75fc72428d.js:5
+#: public/build/extendify-launch-bebdb5c5f047f197cead.js:7
 msgid "Installing necessary plugins"
 msgstr "Szükséges bővítmények telepítése"
 
-#: public/build/extendify-launch-e746634b7a75fc72428d.js:5
+#: public/build/extendify-launch-bebdb5c5f047f197cead.js:7
 msgid "Populating data"
 msgstr "Adatok feltöltése"
 
-#: public/build/extendify-launch-e746634b7a75fc72428d.js:5
+#: public/build/extendify-launch-bebdb5c5f047f197cead.js:7
 msgid "Personalizing your experience"
 msgstr "Az élmény személyre szabása"
 
-#: public/build/extendify-launch-e746634b7a75fc72428d.js:5
+#: public/build/extendify-launch-bebdb5c5f047f197cead.js:7
 msgid "Adding page content"
 msgstr "Oldaltartalom hozzáadása"
 
-#: public/build/extendify-launch-e746634b7a75fc72428d.js:5
+#: public/build/extendify-launch-bebdb5c5f047f197cead.js:7
 msgid "Starting off with a full website"
 msgstr "Egy teljes weboldallal kezdünk"
 
 #. translators: This string represents the title of a "Blog" page on a website that shows recent blog posts. Please translate it in a way that fits the standard phrasing for a "Blog" page in the target language, considering the common usage in websites for that language.
-#: public/build/extendify-common-f70184b9c19c89de026a.js:7
-#: public/build/extendify-launch-e746634b7a75fc72428d.js:5
+#: public/build/extendify-common-b5b1e7ce5120f18ba20b.js:7
+#: public/build/extendify-launch-bebdb5c5f047f197cead.js:5
 msgid "Blog"
 msgstr "Blog"
 
-#: public/build/extendify-launch-e746634b7a75fc72428d.js:5
+#: public/build/extendify-launch-bebdb5c5f047f197cead.js:7
 msgid "Creating pages with custom content"
 msgstr "Egyéni tartalmú oldalak létrehozása"
 
-#: public/build/extendify-launch-e746634b7a75fc72428d.js:7
+#: public/build/extendify-launch-bebdb5c5f047f197cead.js:9
 msgid "Setting up site layout"
 msgstr "Webhely elrendezésének beállítása"
 
 #. translators: This string represents the title of an "Events" page on a website that lists events of any kind. Please translate it in a way that fits the standard phrasing for an "Events" page in the target language, considering the common usage in websites for that language.
-#: public/build/extendify-common-f70184b9c19c89de026a.js:23
-#: public/build/extendify-launch-e746634b7a75fc72428d.js:7
+#: public/build/extendify-common-b5b1e7ce5120f18ba20b.js:23
+#: public/build/extendify-launch-bebdb5c5f047f197cead.js:9
 msgid "Events"
 msgstr "Események"
 
-#: public/build/extendify-launch-e746634b7a75fc72428d.js:5
+#: public/build/extendify-launch-bebdb5c5f047f197cead.js:7
 msgid "Header Navigation"
 msgstr "Fejléc navigáció"
 
-#: public/build/extendify-launch-e746634b7a75fc72428d.js:9
+#: public/build/extendify-launch-bebdb5c5f047f197cead.js:11
 msgid "Setting up your Site Assistant"
 msgstr "Az Oldalsegéd beállítása"
 
-#: public/build/extendify-launch-e746634b7a75fc72428d.js:9
+#: public/build/extendify-launch-bebdb5c5f047f197cead.js:11
 msgid "Helping you to succeed"
 msgstr "Segítünk a sikerben"
 
-#: public/build/extendify-launch-e746634b7a75fc72428d.js:9
+#: public/build/extendify-launch-bebdb5c5f047f197cead.js:11
 msgid "Your website has been created!"
 msgstr "A weboldal létrehozása megtörtént!"
 
-#: public/build/extendify-launch-e746634b7a75fc72428d.js:9
+#: public/build/extendify-launch-bebdb5c5f047f197cead.js:11
 msgid "Redirecting in 3, 2, 1..."
 msgstr "Átirányítás 3, 2, 1..."
 
-#: public/build/extendify-launch-e746634b7a75fc72428d.js:9
+#: public/build/extendify-launch-bebdb5c5f047f197cead.js:11
 msgid "We encountered a server error we cannot recover from. Please reload the page and try again."
 msgstr "Olyan szerverhibába ütköztünk, amelyből nem tudunk helyreállni. Kérjük, frissítse az oldalt és próbálkozzon újra."
 
-#: public/build/extendify-launch-e746634b7a75fc72428d.js:9
+#: public/build/extendify-launch-bebdb5c5f047f197cead.js:11
 msgid "One more thing before we start."
 msgstr "Még egy dolog, mielőtt elkezdjük."
 
-#: public/build/extendify-launch-e746634b7a75fc72428d.js:9
+#: public/build/extendify-launch-bebdb5c5f047f197cead.js:11
 msgid "Hey there, Launch is powered by Extendable and is required to proceed. You can install it from the link below and start over once activated."
 msgstr "Szia, a Launch az Extendable által működtetett és a folytatáshoz szükséges. Telepítheted az alábbi linkről, és az aktiválás után kezdheted előröl."
 
-#: public/build/extendify-launch-e746634b7a75fc72428d.js:9
+#: public/build/extendify-launch-bebdb5c5f047f197cead.js:11
 msgid "Take me there"
 msgstr "Vigyél oda"
 
@@ -1625,20 +1625,20 @@ msgid "Fetching..."
 msgstr "Lekérés..."
 
 #: public/build/extendify-library-bab99ae27a788a75a169.js:1
-#: public/build/extendify-page-creator-7e18596cfed43dc45d9d.js:1
+#: public/build/extendify-page-creator-7412f6aa17eae9a59f0a.js:1
 msgid "Close"
 msgstr "Bezár"
 
 #. translators: %s: Extendify Library term
 #. translators: %s: Extendify AI Page creator term
 #: public/build/extendify-library-bab99ae27a788a75a169.js:3
-#: public/build/extendify-page-creator-7e18596cfed43dc45d9d.js:3
+#: public/build/extendify-page-creator-7412f6aa17eae9a59f0a.js:3
 #, js-format
 msgid "Toggle %s on new pages"
 msgstr "%s bekapcsolása az új oldalakon"
 
 #: public/build/extendify-library-bab99ae27a788a75a169.js:3
-#: public/build/extendify-page-creator-7e18596cfed43dc45d9d.js:3
+#: public/build/extendify-page-creator-7412f6aa17eae9a59f0a.js:3
 msgid "Open for new pages"
 msgstr "Nyitva az új oldalak számára"
 
@@ -1671,12 +1671,12 @@ msgid "Start getting bookings from your website by configuring the SimplyBook.me
 msgstr "Kezdjen foglalásokat fogadni a weboldalán a SimplyBook.me bővítmény beállításával."
 
 #. translators: This string represents the title of an "About" page on a website that provides information about the website or organization. Please translate it in a way that fits the standard phrasing for an "About" page in the target language, considering the common usage in websites for that language.
-#: public/build/extendify-common-f70184b9c19c89de026a.js:3
+#: public/build/extendify-common-b5b1e7ce5120f18ba20b.js:3
 msgid "About"
 msgstr "Rólunk"
 
 #. translators: This string represents the title of a "Contact" page on a website that gives information for visitors on how to contact the website or organization. Please translate it in a way that fits the standard phrasing for a "Contact" page in the target language, considering the common usage in websites for that language.
-#: public/build/extendify-common-f70184b9c19c89de026a.js:19
+#: public/build/extendify-common-b5b1e7ce5120f18ba20b.js:19
 msgid "Contact"
 msgstr "Kapcsolatfelvétel"
 
@@ -1723,7 +1723,7 @@ msgstr "Hős"
 
 #. translators: This string represents the title of a "Pricing" page on a website that lists the pricing of products or services. Please translate it in a way that fits the standard phrasing for a "Pricing" page in the target language, considering the common usage in websites for that language.
 #: public/build/extendify-assist-page-c5c80c3680e1d9982ae1.js:1
-#: public/build/extendify-common-f70184b9c19c89de026a.js:49
+#: public/build/extendify-common-b5b1e7ce5120f18ba20b.js:49
 msgid "Pricing"
 msgstr "Árazás"
 
@@ -1733,7 +1733,7 @@ msgstr "Szociális bizonyíték"
 
 #. translators: This string represents the title of a "Team" page on a website that introduces the team members. Please translate it in a way that fits the standard phrasing for a "Team" page in the target language, considering the common usage in websites for
 #: public/build/extendify-assist-page-c5c80c3680e1d9982ae1.js:1
-#: public/build/extendify-common-f70184b9c19c89de026a.js:81
+#: public/build/extendify-common-b5b1e7ce5120f18ba20b.js:81
 msgid "Team"
 msgstr "Csapat"
 
@@ -1973,226 +1973,226 @@ msgstr "Teljes tervezési könyvtár, minden webhelyre szabva, hogy könnyedén 
 msgid "Explore Design Library"
 msgstr "Design könyvtár felfedezése"
 
-#: public/build/extendify-draft-87746d114655f7991e60.js:7
+#: public/build/extendify-draft-3914d1b6ca048d852791.js:7
 msgid "Bulgarian"
 msgstr "bolgár"
 
-#: public/build/extendify-draft-87746d114655f7991e60.js:7
+#: public/build/extendify-draft-3914d1b6ca048d852791.js:7
 msgid "Czech"
 msgstr "cseh"
 
-#: public/build/extendify-draft-87746d114655f7991e60.js:7
+#: public/build/extendify-draft-3914d1b6ca048d852791.js:7
 msgid "French (Canada)"
 msgstr "Francia (Kanada)"
 
-#: public/build/extendify-draft-87746d114655f7991e60.js:7
+#: public/build/extendify-draft-3914d1b6ca048d852791.js:7
 msgid "Hungarian"
 msgstr "magyar"
 
-#: public/build/extendify-draft-87746d114655f7991e60.js:7
+#: public/build/extendify-draft-3914d1b6ca048d852791.js:7
 msgid "Norwegian"
 msgstr "norvég"
 
-#: public/build/extendify-draft-87746d114655f7991e60.js:7
+#: public/build/extendify-draft-3914d1b6ca048d852791.js:7
 msgid "Russian"
 msgstr "orosz"
 
-#: public/build/extendify-draft-87746d114655f7991e60.js:7
+#: public/build/extendify-draft-3914d1b6ca048d852791.js:7
 msgid "Slovak"
 msgstr "szlovák"
 
-#: public/build/extendify-draft-87746d114655f7991e60.js:7
+#: public/build/extendify-draft-3914d1b6ca048d852791.js:7
 msgid "Turkish"
 msgstr "török"
 
 #. translators: This string represents the slug of an "About" page on a website that provides information about the website or organization. Please translate it in a way that fits a slug for an "About" page in the target language, considering the common usage in websites for that language.
-#: public/build/extendify-common-f70184b9c19c89de026a.js:5
+#: public/build/extendify-common-b5b1e7ce5120f18ba20b.js:5
 msgid "about"
 msgstr "rolunk"
 
 #. translators: This string represents the slug of a "Blog" page on a website that shows recent blog posts. Please translate it in a way that fits a slug for a "Blog" page in the target language, considering the common usage in websites for that language.
-#: public/build/extendify-common-f70184b9c19c89de026a.js:9
+#: public/build/extendify-common-b5b1e7ce5120f18ba20b.js:9
 msgid "blog"
 msgstr "blog"
 
 #. translators: This string represents the title of a "Careers" page on a website that is meant for listing available careers. Please translate it in a way that fits the standard phrasing for a "Careers" page in the target language, considering the common usage in websites for that language.
-#: public/build/extendify-common-f70184b9c19c89de026a.js:15
+#: public/build/extendify-common-b5b1e7ce5120f18ba20b.js:15
 msgid "Careers"
 msgstr "Karrier"
 
 #. translators: This string represents the slug of a "Careers" page on a website that is meant for listing available careers. Please translate it in a way that fits a slug for a "Careers" page in the target language, considering the common usage in websites for that language. Make sure to keep the slug lowercase and url-friendly.
-#: public/build/extendify-common-f70184b9c19c89de026a.js:17
+#: public/build/extendify-common-b5b1e7ce5120f18ba20b.js:17
 msgid "careers"
 msgstr "karrier"
 
 #. translators: This string represents the slug of a "Contact" page on a website that gives information for visitors on how to contact the website or organization. Please translate it in a way that fits a slug for a "Contact" page in the target language, considering the common usage in websites for that language. Make sure to keep the slug lowercase and url-friendly.
-#: public/build/extendify-common-f70184b9c19c89de026a.js:21
+#: public/build/extendify-common-b5b1e7ce5120f18ba20b.js:21
 msgid "contact"
 msgstr "kapcsolat"
 
 #. translators: This string represents the slug of an "Events" page on a website that lists events of any kind. Please translate it in a way that fits a slug for an "Events" page in the target language, considering the common usage in websites for that language. Make sure to keep the slug lowercase and url-friendly.
-#: public/build/extendify-common-f70184b9c19c89de026a.js:25
+#: public/build/extendify-common-b5b1e7ce5120f18ba20b.js:25
 msgid "events"
 msgstr "esemenyek"
 
 #. translators: This string represents the title of a "FAQ" page on a website that gives information related to frequently asked questions. Please translate it in a way that fits the standard phrasing for a "FAQ" page in the target language, considering the common usage in websites for that language.
-#: public/build/extendify-common-f70184b9c19c89de026a.js:27
+#: public/build/extendify-common-b5b1e7ce5120f18ba20b.js:27
 msgid "FAQ"
 msgstr "GYIK (Gyakran Ismételt Kérdések)"
 
 #. translators: This string represents the slug of a "FAQ" page on a website that gives information related to frequently asked questions. Please translate it in a way that fits a slug for a "FAQ" page in the target language, considering the common usage in websites for that language. Make sure to keep the slug lowercase and url-friendly.
-#: public/build/extendify-common-f70184b9c19c89de026a.js:29
+#: public/build/extendify-common-b5b1e7ce5120f18ba20b.js:29
 msgid "faq"
 msgstr "gyakori-kerdesek"
 
 #. translators: This string represents the title of a "Features" page on a website that lists features of a product or service. Please translate it in a way that fits the standard phrasing for a "Features" page in the target language, considering the common usage in websites for that language.
-#: public/build/extendify-common-f70184b9c19c89de026a.js:31
+#: public/build/extendify-common-b5b1e7ce5120f18ba20b.js:31
 msgid "Features"
 msgstr "Funkciók"
 
 #. translators: This string represents the slug of a "Features" page on a website that lists features of a product or service. Please translate it in a way that fits a slug for a "Features" page in the target language, considering the common usage in websites for that language. Make sure to keep the slug lowercase and url-friendly.
-#: public/build/extendify-common-f70184b9c19c89de026a.js:33
+#: public/build/extendify-common-b5b1e7ce5120f18ba20b.js:33
 msgid "features"
 msgstr "funkciok"
 
 #. translators: This string represents the title of a "Gallery" page on a website that shows a collection of images. Please translate it in a way that fits the standard phrasing for a "Gallery" page in the target language, considering the common usage in websites for that language.
-#: public/build/extendify-common-f70184b9c19c89de026a.js:35
+#: public/build/extendify-common-b5b1e7ce5120f18ba20b.js:35
 msgid "Gallery"
 msgstr "Galéria"
 
 #. translators: This string represents the slug of a "Gallery" page on a website that shows a collection of images. Please translate it in a way that fits a slug for a "Gallery" page in the target language, considering the common usage in websites for that language. Make sure to keep the slug lowercase and url-friendly.
-#: public/build/extendify-common-f70184b9c19c89de026a.js:37
+#: public/build/extendify-common-b5b1e7ce5120f18ba20b.js:37
 msgid "gallery"
 msgstr "galeria"
 
 #. translators: This string represents the title of a "Menu" page on a website that lists food or drink items. Please translate it in a way that fits the standard phrasing for a "Menu" page in the target language, considering the common usage in websites for that language.
-#: public/build/extendify-common-f70184b9c19c89de026a.js:41
+#: public/build/extendify-common-b5b1e7ce5120f18ba20b.js:41
 msgid "Menu"
 msgstr "Étlap"
 
 #. translators: This string represents the slug of a "Menu" page on a website that lists food or drink items. Please translate it in a way that fits a slug for a "Menu" page in the target language, considering the common usage in websites for that language. Make sure to keep the slug lowercase and url-friendly.
-#: public/build/extendify-common-f70184b9c19c89de026a.js:43
+#: public/build/extendify-common-b5b1e7ce5120f18ba20b.js:43
 msgid "menu"
 msgstr "etlap"
 
 #. translators: This string represents the title of a "Portfolio" page on a website that showcases a collection of work. Please translate it in a way that fits the standard phrasing for a "Portfolio" page in the target language, considering the common usage in websites for that language.
-#: public/build/extendify-common-f70184b9c19c89de026a.js:45
+#: public/build/extendify-common-b5b1e7ce5120f18ba20b.js:45
 msgid "Portfolio"
 msgstr "Portfólió"
 
 #. translators: This string represents the slug of a "Portfolio" page on a website that showcases a collection of work. Please translate it in a way that fits a slug for a "Portfolio" page in the target language, considering the common usage in websites for that language. Make sure to keep the slug lowercase and url-friendly.
-#: public/build/extendify-common-f70184b9c19c89de026a.js:47
+#: public/build/extendify-common-b5b1e7ce5120f18ba20b.js:47
 msgid "portfolio"
 msgstr "portfolio"
 
 #. translators: This string represents the slug of a "Pricing" page on a website that lists the pricing of products or services. Please translate it in a way that fits a slug for a "Pricing" page in the target language, considering the common usage in websites for that language. Make sure to keep the slug lowercase and url-friendly.
-#: public/build/extendify-common-f70184b9c19c89de026a.js:51
+#: public/build/extendify-common-b5b1e7ce5120f18ba20b.js:51
 msgid "pricing"
 msgstr "arak"
 
 #. translators: This string represents the title of a "Products" page on a website that lists products. Please translate it in a way that fits the standard phrasing for a "Products" page in the target language, considering the common usage in websites for that language.
-#: public/build/extendify-common-f70184b9c19c89de026a.js:53
+#: public/build/extendify-common-b5b1e7ce5120f18ba20b.js:53
 msgid "Products"
 msgstr "Termékek"
 
 #. translators: This string represents the slug of a "Products" page on a website that lists products. Please translate it in a way that fits a slug for a "Products" page in the target language, considering the common usage in websites for that language. Make sure to keep the slug lowercase and url-friendly.
-#: public/build/extendify-common-f70184b9c19c89de026a.js:55
+#: public/build/extendify-common-b5b1e7ce5120f18ba20b.js:55
 msgid "products"
 msgstr "termekek"
 
 #. translators: This string represents the title of a "Quote" page on a website that allows visitors to request a quote. Please translate it in a way that fits the standard phrasing for a "Quote" page in the target language, considering the common usage in websites for that language.
-#: public/build/extendify-common-f70184b9c19c89de026a.js:57
+#: public/build/extendify-common-b5b1e7ce5120f18ba20b.js:57
 msgid "Quote"
 msgstr "Ajánlatkérés"
 
 #. translators: This string represents the slug of a "Quote" page on a website that allows visitors to request a quote. Please translate it in a way that fits a slug for a "Quote" page in the target language, considering the common usage in websites for that language. Make sure to keep the slug lowercase and url-friendly.
-#: public/build/extendify-common-f70184b9c19c89de026a.js:59
+#: public/build/extendify-common-b5b1e7ce5120f18ba20b.js:59
 msgid "quote"
 msgstr "ajanlatkeres"
 
 #. translators: This string represents the title of a "Reservation" page on a website that allows visitors to make a reservation. Please translate it in a way that fits the standard phrasing for a "Reservation" page in the target language, considering the common usage in websites for that language.
-#: public/build/extendify-common-f70184b9c19c89de026a.js:61
+#: public/build/extendify-common-b5b1e7ce5120f18ba20b.js:61
 msgid "Reservation"
 msgstr "Foglalás"
 
 #. translators: This string represents the slug of a "Reservation" page on a website that allows visitors to make a reservation. Please translate it in a way that fits a slug for a "Reservation" page in the target language, considering the common usage in websites for that language. Make sure to keep the slug lowercase and url-friendly.
-#: public/build/extendify-common-f70184b9c19c89de026a.js:63
+#: public/build/extendify-common-b5b1e7ce5120f18ba20b.js:63
 msgid "reservation"
 msgstr "foglalas"
 
 #. translators: This string represents the title of a "Resources" page on a website that provides resources. Please translate it in a way that fits the standard phrasing for a "Resources" page in the target language, considering the common usage in websites for that language.
-#: public/build/extendify-common-f70184b9c19c89de026a.js:65
+#: public/build/extendify-common-b5b1e7ce5120f18ba20b.js:65
 msgid "Resources"
 msgstr "Erőforrások"
 
 #. translators: This string represents the slug of a "Resources" page on a website that provides resources. Please translate it in a way that fits a slug for a "Resources" page in the target language, considering the common usage in websites for that language. Make sure to keep the slug lowercase and url-friendly.
-#: public/build/extendify-common-f70184b9c19c89de026a.js:67
+#: public/build/extendify-common-b5b1e7ce5120f18ba20b.js:67
 msgid "resources"
 msgstr "eroforrasok"
 
 #. translators: This string represents the title of a "Service Area" page on a website that shows the service area of a business, including a map. Please translate it in a way that fits the standard phrasing for a "Service Area" page in the target language, considering the common usage in websites for that language.
-#: public/build/extendify-common-f70184b9c19c89de026a.js:69
+#: public/build/extendify-common-b5b1e7ce5120f18ba20b.js:69
 msgid "Service Area"
 msgstr "Szolgáltatási terület"
 
 #. translators: This string represents the slug of a "Service Area" page on a website that shows the service area of a business, including a map. Please translate it in a way that fits a slug for a "Service Area" page in the target language, considering the common usage in websites for that language. Make sure to keep the slug lowercase and url-friendly.
-#: public/build/extendify-common-f70184b9c19c89de026a.js:71
+#: public/build/extendify-common-b5b1e7ce5120f18ba20b.js:71
 msgid "service-area"
 msgstr "szolgaltatasi-terulet"
 
 #. translators: This string represents the title of a "Services" page on a website that lists services. Please translate it in a way that fits the standard phrasing for a "Services" page in the target language, considering the common usage in websites for that language.
-#: public/build/extendify-common-f70184b9c19c89de026a.js:73
+#: public/build/extendify-common-b5b1e7ce5120f18ba20b.js:73
 msgid "Services"
 msgstr "Szolgáltatások"
 
 #. translators: This string represents the slug of a "Services" page on a website that lists services. Please translate it in a way that fits a slug for a "Services" page in the target language, considering the common usage in websites for that language. Make sure to keep the slug lowercase and url-friendly.
-#: public/build/extendify-common-f70184b9c19c89de026a.js:75
+#: public/build/extendify-common-b5b1e7ce5120f18ba20b.js:75
 msgid "services"
 msgstr "szolgaltatasok"
 
 #. translators: This string represents the title of a "Specials" page on a website that lists special offers. Please translate it in a way that fits the standard phrasing for a "Specials" page in the target language, considering the common usage in websites for that language.
-#: public/build/extendify-common-f70184b9c19c89de026a.js:77
+#: public/build/extendify-common-b5b1e7ce5120f18ba20b.js:77
 msgid "Specials"
 msgstr "Akciók"
 
 #. translators: This string represents the slug of a "Specials" page on a website that lists special offers. Please translate it in a way that fits a slug for a "Specials" page in the target language, considering the common usage in websites for that language. Make sure to keep the slug lowercase and url-friendly.
-#: public/build/extendify-common-f70184b9c19c89de026a.js:79
+#: public/build/extendify-common-b5b1e7ce5120f18ba20b.js:79
 msgid "specials"
 msgstr "akciok"
 
 #. translators: This string represents the slug of a "Team" page on a website that introduces the team members. Please translate it in a way that fits a slug for a "Team" page in the target language, considering the common usage in websites for that language. Make sure to keep the slug lowercase and url-friendly.
-#: public/build/extendify-common-f70184b9c19c89de026a.js:83
+#: public/build/extendify-common-b5b1e7ce5120f18ba20b.js:83
 msgid "team"
 msgstr "csapat"
 
 #. translators: This string represents the title of a "Testimonials" page on a website that showcases testimonials from customers. Please translate it in a way that fits the standard phrasing for a "Testimonials" page in the target language, considering the common usage in websites for that language.
-#: public/build/extendify-common-f70184b9c19c89de026a.js:85
+#: public/build/extendify-common-b5b1e7ce5120f18ba20b.js:85
 msgid "Testimonials"
 msgstr "Vélemények"
 
 #. translators: This string represents the slug of a "Testimonials" page on a website that showcases testimonials from customers. Please translate it in a way that fits a slug for a "Testimonials" page in the target language, considering the common usage in websites for that language. Make sure to keep the slug lowercase and url-friendly.
-#: public/build/extendify-common-f70184b9c19c89de026a.js:87
+#: public/build/extendify-common-b5b1e7ce5120f18ba20b.js:87
 msgid "testimonials"
 msgstr "velemenyek"
 
-#: public/build/extendify-launch-e746634b7a75fc72428d.js:5
+#: public/build/extendify-launch-bebdb5c5f047f197cead.js:5
 msgid "Single-Page Website"
 msgstr "Egyoldalas weboldal"
 
-#: public/build/extendify-launch-e746634b7a75fc72428d.js:5
+#: public/build/extendify-launch-bebdb5c5f047f197cead.js:5
 msgid "All content displayed on one scrolling page."
 msgstr "Az összes tartalom egy görgethető oldalon jelenik meg."
 
-#: public/build/extendify-launch-e746634b7a75fc72428d.js:5
+#: public/build/extendify-launch-bebdb5c5f047f197cead.js:5
 msgid "Multi-Page Website"
 msgstr "Többoldalas weboldal"
 
-#: public/build/extendify-launch-e746634b7a75fc72428d.js:5
+#: public/build/extendify-launch-bebdb5c5f047f197cead.js:5
 msgid "Multiple interconnected pages."
 msgstr "Több összekapcsolt oldal."
 
 #: public/build/extendify-assist-page-c5c80c3680e1d9982ae1.js:1
-#: public/build/extendify-launch-e746634b7a75fc72428d.js:5
+#: public/build/extendify-launch-bebdb5c5f047f197cead.js:5
 msgid "Pick Your Site Structure"
 msgstr "Válassza ki weboldala szerkezetét"
 
@@ -2308,69 +2308,69 @@ msgstr "Élvezze a klasszikus francia bisztró konyhát kaliforniai csavarral a 
 msgid "Find your dream home or make profitable investments with Pinnacle Properties, Austin's premier real estate agency. Trust our experienced agents for personalized services."
 msgstr "Találja meg álmai otthonát vagy fektessen be nyereségesen a Pinnacle Properties segítségével, Austin vezető ingatlanügynökségével. Bízzon tapasztalt ügynökeink személyre szabott szolgáltatásaiban."
 
-#: public/build/extendify-draft-87746d114655f7991e60.js:7
+#: public/build/extendify-draft-3914d1b6ca048d852791.js:7
 msgid "Greek"
 msgstr "görög"
 
-#: public/build/extendify-draft-87746d114655f7991e60.js:7
+#: public/build/extendify-draft-3914d1b6ca048d852791.js:7
 msgid "Hindi"
 msgstr "hindi"
 
-#: public/build/extendify-draft-87746d114655f7991e60.js:7
+#: public/build/extendify-draft-3914d1b6ca048d852791.js:7
 msgid "Arabic"
 msgstr "arab"
 
-#: public/build/extendify-draft-87746d114655f7991e60.js:7
+#: public/build/extendify-draft-3914d1b6ca048d852791.js:7
 msgid "Arabic (Morocco)"
 msgstr "arab (Marokkó)"
 
-#: public/build/extendify-draft-87746d114655f7991e60.js:7
+#: public/build/extendify-draft-3914d1b6ca048d852791.js:7
 msgid "English (UK)"
 msgstr "angol (Egyesült Királyság)"
 
-#: public/build/extendify-draft-87746d114655f7991e60.js:7
+#: public/build/extendify-draft-3914d1b6ca048d852791.js:7
 msgid "Spanish (Colombia)"
 msgstr "spanyol (Kolumbia)"
 
-#: public/build/extendify-draft-87746d114655f7991e60.js:7
+#: public/build/extendify-draft-3914d1b6ca048d852791.js:7
 msgid "Spanish (Mexico)"
 msgstr "spanyol (Mexikó)"
 
-#: public/build/extendify-draft-87746d114655f7991e60.js:7
+#: public/build/extendify-draft-3914d1b6ca048d852791.js:7
 msgid "Romanian"
 msgstr "román"
 
-#: public/build/extendify-launch-e746634b7a75fc72428d.js:5
+#: public/build/extendify-launch-bebdb5c5f047f197cead.js:7
 msgid "Share your vision, and we'll craft a website that's perfectly tailored to your needs, ready to launch in no time. Let's begin by learning more about what you're building."
 msgstr "Ossza meg elképzeléseit, és mi elkészítjük az Ön igényeire szabott weboldalt, amely hamarosan indulásra kész lesz. Kezdjük azzal, hogy többet megtudunk arról, amit épít."
 
 #. translators: Launch is a noun.
-#: public/build/extendify-launch-e746634b7a75fc72428d.js:11
+#: public/build/extendify-launch-bebdb5c5f047f197cead.js:13
 msgid "Launch - AI-Powered Web Creation"
 msgstr "Indítás - Mesterséges intelligencia által vezérelt weboldalkészítés"
 
-#: public/build/extendify-launch-e746634b7a75fc72428d.js:5
+#: public/build/extendify-launch-bebdb5c5f047f197cead.js:7
 msgid "Customizing Your Experience"
 msgstr "Az élmény testreszabása"
 
-#: public/build/extendify-launch-e746634b7a75fc72428d.js:5
+#: public/build/extendify-launch-bebdb5c5f047f197cead.js:7
 msgid "Designing Your Options"
 msgstr "Beállítások tervezése"
 
-#: public/build/extendify-launch-e746634b7a75fc72428d.js:5
+#: public/build/extendify-launch-bebdb5c5f047f197cead.js:7
 msgid "Please wait while we analyze your inputs and tailor your experience."
 msgstr "Kérem, várjon, amíg elemezzük a bevitt adatokat és személyre szabjuk az élményt."
 
-#: public/build/extendify-launch-e746634b7a75fc72428d.js:5
+#: public/build/extendify-launch-bebdb5c5f047f197cead.js:7
 msgid "Please wait while we build some website options for you to select from."
 msgstr "Kérem, várjon, amíg létrehozunk néhány webhely beállítást, amelyek közül választhat."
 
-#: public/build/extendify-launch-e746634b7a75fc72428d.js:5
+#: public/build/extendify-launch-bebdb5c5f047f197cead.js:7
 msgid "Creating blog sample data"
 msgstr "Blog mintaadatok létrehozása"
 
 #. translators: "More" here is used for a navigation menu item that contains additional links.
-#: public/build/extendify-launch-e746634b7a75fc72428d.js:9
+#: public/build/extendify-launch-bebdb5c5f047f197cead.js:11
 msgid "More"
 msgstr "Továbbiak"
 
@@ -2380,44 +2380,44 @@ msgid "Add Website Details"
 msgstr "Webhely részleteinek hozzáadása"
 
 #. translators: %s is a post number
-#: public/build/extendify-launch-e746634b7a75fc72428d.js:7
+#: public/build/extendify-launch-bebdb5c5f047f197cead.js:9
 #, js-format
 msgid "Blog Post %s"
 msgstr "Blogbejegyzés %s"
 
-#: public/build/extendify-launch-e746634b7a75fc72428d.js:7
+#: public/build/extendify-launch-bebdb5c5f047f197cead.js:9
 msgid "Importing shop sample data"
 msgstr "Bolt mintaadatok importálása"
 
 #. translators: %3$s is the number of old pages
-#: public/build/extendify-launch-e746634b7a75fc72428d.js:5
+#: public/build/extendify-launch-bebdb5c5f047f197cead.js:5
 #, js-format
 msgid "%s pages/posts created in the prior onboarding session will be deleted."
 msgstr "A korábbi bevezetési munkamenetben létrehozott %s oldal/bejegyzés törlésre kerül."
 
-#: public/build/extendify-draft-87746d114655f7991e60.js:7
+#: public/build/extendify-draft-3914d1b6ca048d852791.js:7
 msgid "Lithuanian"
 msgstr "litván"
 
 #. translators: This string represents the title of a "Book" page on a website that is meant for booking something. Please translate it in a way that fits the standard phrasing for a "Book" page in the target language, considering the common usage in websites for that language.
-#: public/build/extendify-common-f70184b9c19c89de026a.js:11
+#: public/build/extendify-common-b5b1e7ce5120f18ba20b.js:11
 msgid "Book Now"
 msgstr "Foglalás most"
 
 #. translators: This string represents the slug of a "Book" page on a website that is meant for booking something. Please translate it in a way that fits a slug for a "Book" page in the target language, considering the common usage in websites for that language. Make sure to keep the slug lowercase and url-friendly.
-#: public/build/extendify-common-f70184b9c19c89de026a.js:13
+#: public/build/extendify-common-b5b1e7ce5120f18ba20b.js:13
 msgid "book-now"
 msgstr "foglalj-most"
 
-#: public/build/extendify-launch-e746634b7a75fc72428d.js:5
+#: public/build/extendify-launch-bebdb5c5f047f197cead.js:7
 msgid "Select your site's tone"
 msgstr "Válassza ki webhelye hangvételét"
 
-#: public/build/extendify-launch-e746634b7a75fc72428d.js:5
+#: public/build/extendify-launch-bebdb5c5f047f197cead.js:7
 msgid "Website title (required)"
 msgstr "Weboldal címe (kötelező)"
 
-#: public/build/extendify-launch-e746634b7a75fc72428d.js:7
+#: public/build/extendify-launch-bebdb5c5f047f197cead.js:9
 msgid "Hello World Featured Image"
 msgstr "Hello World kiemelt kép"
 
@@ -2425,202 +2425,202 @@ msgstr "Hello World kiemelt kép"
 msgid "Extendify Page Creator User Settings"
 msgstr "Extendify oldal készítő felhasználói beállítások"
 
-#: public/build/extendify-page-creator-7e18596cfed43dc45d9d.js:1
+#: public/build/extendify-page-creator-7412f6aa17eae9a59f0a.js:1
 msgid "Confirmation"
 msgstr "Megerősítés"
 
-#: public/build/extendify-page-creator-7e18596cfed43dc45d9d.js:1
+#: public/build/extendify-page-creator-7412f6aa17eae9a59f0a.js:1
 msgid "Do you want to replace existing content or create a new page?"
 msgstr "Létező tartalmat szeretne lecserélni, vagy új oldalt létrehozni?"
 
-#: public/build/extendify-page-creator-7e18596cfed43dc45d9d.js:1
+#: public/build/extendify-page-creator-7412f6aa17eae9a59f0a.js:1
 msgid "Delete existing content"
 msgstr "Meglévő tartalom törlése"
 
-#: public/build/extendify-page-creator-7e18596cfed43dc45d9d.js:1
+#: public/build/extendify-page-creator-7412f6aa17eae9a59f0a.js:1
 msgid "Create a new page"
 msgstr "Új oldal létrehozása"
 
-#: public/build/extendify-help-center-edc3cf6064e22874a408.js:3
-#: public/build/extendify-page-creator-7e18596cfed43dc45d9d.js:1
+#: public/build/extendify-help-center-f798a28b323c6822eff1.js:3
+#: public/build/extendify-page-creator-7412f6aa17eae9a59f0a.js:1
 msgid "AI Page Generator"
 msgstr "AI oldal generátor"
 
-#: public/build/extendify-page-creator-7e18596cfed43dc45d9d.js:3
+#: public/build/extendify-page-creator-7412f6aa17eae9a59f0a.js:3
 msgid "Edit"
 msgstr "Szerkesztés"
 
-#: public/build/extendify-page-creator-7e18596cfed43dc45d9d.js:3
+#: public/build/extendify-page-creator-7412f6aa17eae9a59f0a.js:3
 msgid "Clear"
 msgstr "Törlés"
 
-#: public/build/extendify-page-creator-7e18596cfed43dc45d9d.js:3
+#: public/build/extendify-page-creator-7412f6aa17eae9a59f0a.js:3
 msgid "Generating AI page profile..."
 msgstr "AI oldalprofil generálása..."
 
-#: public/build/extendify-page-creator-7e18596cfed43dc45d9d.js:3
+#: public/build/extendify-page-creator-7412f6aa17eae9a59f0a.js:3
 msgid "AI Page Creation"
 msgstr "AI oldal létrehozás"
 
-#: public/build/extendify-page-creator-7e18596cfed43dc45d9d.js:3
+#: public/build/extendify-page-creator-7412f6aa17eae9a59f0a.js:3
 msgid "Describe the page you want to create, adding key details, and Al will generate a unique, ready-to-use page for you."
 msgstr "Írja le a létrehozni kívánt oldalt, adja hozzá a kulcsfontosságú részleteket, és az Al egy egyedi, használatra kész oldalt generál önnek."
 
-#: public/build/extendify-page-creator-7e18596cfed43dc45d9d.js:3
+#: public/build/extendify-page-creator-7412f6aa17eae9a59f0a.js:3
 msgid "Describe Your Page"
 msgstr "Írd le az oldaladat"
 
-#: public/build/extendify-page-creator-7e18596cfed43dc45d9d.js:3
+#: public/build/extendify-page-creator-7412f6aa17eae9a59f0a.js:3
 msgid "E.g., Create an \"About Us\" page highlighting our story, mission, values and leam overview."
 msgstr "Például hozzon létre egy \"Rólunk\" oldalt, amely kiemeli történetünket, küldetésünket, értékeinket és a csapat áttekintését."
 
 #. translators: %s: The site title
-#: public/build/extendify-page-creator-7e18596cfed43dc45d9d.js:5
+#: public/build/extendify-page-creator-7412f6aa17eae9a59f0a.js:5
 #, js-format
 msgid "Site Description for %s"
 msgstr "Honlap leírása: %s számára"
 
-#: public/build/extendify-page-creator-7e18596cfed43dc45d9d.js:5
+#: public/build/extendify-page-creator-7412f6aa17eae9a59f0a.js:5
 msgid "Site Description"
 msgstr "Honlap leírása"
 
-#: public/build/extendify-page-creator-7e18596cfed43dc45d9d.js:5
+#: public/build/extendify-page-creator-7412f6aa17eae9a59f0a.js:5
 msgid "This is the site description with all its ups and downs."
 msgstr "Ez a webhely leírása minden előnyével és hátrányával."
 
-#: public/build/extendify-page-creator-7e18596cfed43dc45d9d.js:5
+#: public/build/extendify-page-creator-7412f6aa17eae9a59f0a.js:5
 msgid "Generate Page"
 msgstr "Oldal generálása"
 
-#: public/build/extendify-page-creator-7e18596cfed43dc45d9d.js:5
+#: public/build/extendify-page-creator-7412f6aa17eae9a59f0a.js:5
 msgid "Finding images..."
 msgstr "Képek keresése..."
 
-#: public/build/extendify-page-creator-7e18596cfed43dc45d9d.js:5
+#: public/build/extendify-page-creator-7412f6aa17eae9a59f0a.js:5
 msgid "Creating a custom layout..."
 msgstr "Egyéni elrendezés létrehozása..."
 
-#: public/build/extendify-page-creator-7e18596cfed43dc45d9d.js:5
+#: public/build/extendify-page-creator-7412f6aa17eae9a59f0a.js:5
 msgid "Writing custom content..."
 msgstr "Egyéni tartalom írása..."
 
-#: public/build/extendify-page-creator-7e18596cfed43dc45d9d.js:5
+#: public/build/extendify-page-creator-7412f6aa17eae9a59f0a.js:5
 msgid "Close AI Page Creator"
 msgstr "AI oldal készítő bezárása"
 
-#: public/build/extendify-page-creator-7e18596cfed43dc45d9d.js:5
+#: public/build/extendify-page-creator-7412f6aa17eae9a59f0a.js:5
 msgid "AI Page Creator"
 msgstr "AI oldal készítő"
 
-#: public/build/extendify-page-creator-7e18596cfed43dc45d9d.js:5
+#: public/build/extendify-page-creator-7412f6aa17eae9a59f0a.js:5
 msgid "Page added"
 msgstr "Oldal hozzáadva"
 
-#: public/build/extendify-page-creator-7e18596cfed43dc45d9d.js:5
+#: public/build/extendify-page-creator-7412f6aa17eae9a59f0a.js:5
 msgid "Failed to add page"
 msgstr "Az oldal hozzáadása nem sikerült"
 
-#: public/build/extendify-launch-e746634b7a75fc72428d.js:5
+#: public/build/extendify-launch-bebdb5c5f047f197cead.js:5
 msgid "Business"
 msgstr "Üzlet"
 
-#: public/build/extendify-launch-e746634b7a75fc72428d.js:5
+#: public/build/extendify-launch-bebdb5c5f047f197cead.js:5
 msgid "eCommerce"
 msgstr "e-kereskedelem"
 
-#: public/build/extendify-launch-e746634b7a75fc72428d.js:5
+#: public/build/extendify-launch-bebdb5c5f047f197cead.js:5
 msgid "Landing Page"
 msgstr "Landoló oldal"
 
-#: public/build/extendify-launch-e746634b7a75fc72428d.js:5
+#: public/build/extendify-launch-bebdb5c5f047f197cead.js:5
 msgid "Other"
 msgstr "Egyéb"
 
-#: public/build/extendify-launch-e746634b7a75fc72428d.js:5
+#: public/build/extendify-launch-bebdb5c5f047f197cead.js:7
 msgid "Landing Page title (required)"
 msgstr "Landing oldal címe (kötelező)"
 
-#: public/build/extendify-launch-e746634b7a75fc72428d.js:5
+#: public/build/extendify-launch-bebdb5c5f047f197cead.js:7
 msgid "E.g., We are an online store specializing in eco-friendly home goods, offering sustainably sourced products to help you live a greener lifestyle."
 msgstr "Például: Online áruház vagyunk, amely környezetbarát háztartási termékekre specializálódott, fenntartható forrásból származó termékeket kínálva, hogy zöldebb életmódot élhessen."
 
-#: public/build/extendify-launch-e746634b7a75fc72428d.js:5
+#: public/build/extendify-launch-bebdb5c5f047f197cead.js:7
 msgid "E.g., A personal finance blog sharing expert tips on budgeting, investing, and achieving financial freedom for young professionals."
 msgstr "Például: Egy személyes pénzügyi blog, amely szakértői tippeket oszt meg a költségvetésről, befektetésről és a pénzügyi szabadság eléréséről fiatal szakemberek számára."
 
-#: public/build/extendify-launch-e746634b7a75fc72428d.js:5
+#: public/build/extendify-launch-bebdb5c5f047f197cead.js:7
 msgid "E.g., A free ebook packed with actionable productivity tips and strategies to help you stay focused, manage your time effectively, and achieve your goals."
 msgstr "Például egy ingyenes eKönyv, tele gyakorlati termelékenységi tippekkel és stratégiákkal, amelyek segítenek a fókuszálásban, az idő hatékony kezelésében és a célok elérésében."
 
-#: public/build/extendify-launch-e746634b7a75fc72428d.js:5
+#: public/build/extendify-launch-bebdb5c5f047f197cead.js:7
 msgid "E.g., A personal photography portfolio featuring a collection of landscape, portrait, and street photography, capturing moments from around the world."
 msgstr "Például: Egy személyes fotóportfólió, amely tájképeket, portrékat és utcai fotókat tartalmaz, pillanatokat örökítve meg a világ minden tájáról."
 
-#: public/build/extendify-launch-e746634b7a75fc72428d.js:5
+#: public/build/extendify-launch-bebdb5c5f047f197cead.js:7
 msgid "Describe your business"
 msgstr "Írja le vállalkozását"
 
-#: public/build/extendify-launch-e746634b7a75fc72428d.js:5
+#: public/build/extendify-launch-bebdb5c5f047f197cead.js:7
 msgid "Describe your eCommerce website"
 msgstr "Írja le e-kereskedelmi weboldalát"
 
-#: public/build/extendify-launch-e746634b7a75fc72428d.js:5
+#: public/build/extendify-launch-bebdb5c5f047f197cead.js:7
 msgid "Describe your blog"
 msgstr "Írd le a blogodat"
 
-#: public/build/extendify-launch-e746634b7a75fc72428d.js:5
+#: public/build/extendify-launch-bebdb5c5f047f197cead.js:7
 msgid "Describe your Landing Page"
 msgstr "Írja le a landolóoldalát"
 
-#: public/build/extendify-launch-e746634b7a75fc72428d.js:5
+#: public/build/extendify-launch-bebdb5c5f047f197cead.js:7
 msgid "Describe your website"
 msgstr "Írja le a webhelyét"
 
-#: public/build/extendify-launch-e746634b7a75fc72428d.js:5
+#: public/build/extendify-launch-bebdb5c5f047f197cead.js:7
 msgid "Call-To-Action Link"
 msgstr "Cselekvésre ösztönző hivatkozás"
 
-#: public/build/extendify-launch-e746634b7a75fc72428d.js:5
+#: public/build/extendify-launch-bebdb5c5f047f197cead.js:7
 msgid "This link will be used in all Call-to-Action buttons, directing visitors to your chosen destination."
 msgstr "Ez a link minden cselekvésre ösztönző gombban használatos lesz, a látogatókat az Ön által választott célhoz irányítva."
 
-#: public/build/extendify-launch-e746634b7a75fc72428d.js:5
+#: public/build/extendify-launch-bebdb5c5f047f197cead.js:7
 msgid "What type of website are you creating?"
 msgstr "Milyen típusú honlapot hoz létre?"
 
-#: public/build/extendify-launch-e746634b7a75fc72428d.js:5
+#: public/build/extendify-launch-bebdb5c5f047f197cead.js:7
 msgid "Tell Us About Your Landing Page"
 msgstr "Meséljen a céloldaláról"
 
-#: public/build/extendify-launch-e746634b7a75fc72428d.js:5
+#: public/build/extendify-launch-bebdb5c5f047f197cead.js:7
 msgid "Tell Us About Your Website"
 msgstr "Meséljen a webhelyéről"
 
-#: public/build/extendify-launch-e746634b7a75fc72428d.js:5
+#: public/build/extendify-launch-bebdb5c5f047f197cead.js:7
 msgid "Share your vision, and we'll craft a landing page that's perfectly tailored to your needs, ready to launch in no time. Let's begin by learning more about what you're building."
 msgstr "Ossza meg elképzeléseit, és mi elkészítünk egy céloldalt, amely tökéletesen megfelel az igényeinek, és pillanatok alatt elindítható. Kezdjük azzal, hogy többet megtudunk arról, mit épít."
 
-#: public/build/extendify-help-center-edc3cf6064e22874a408.js:3
+#: public/build/extendify-help-center-f798a28b323c6822eff1.js:3
 msgid "Press here to get started with your AI Page Generator."
 msgstr "Nyomja meg itt az AI Oldalgenerátor indításához."
 
-#: public/build/extendify-help-center-edc3cf6064e22874a408.js:3
+#: public/build/extendify-help-center-f798a28b323c6822eff1.js:3
 msgid "Page description"
 msgstr "Oldal leírása"
 
-#: public/build/extendify-help-center-edc3cf6064e22874a408.js:3
+#: public/build/extendify-help-center-f798a28b323c6822eff1.js:3
 msgid "Write a description of the page you want to create. Be as detailed as you like. We will create a page based on this description."
 msgstr "Írj leírást a létrehozni kívánt oldalról. Légy olyan részletes, amennyire szeretnél. Az oldal a leírás alapján készül el."
 
-#: public/build/extendify-help-center-edc3cf6064e22874a408.js:3
+#: public/build/extendify-help-center-f798a28b323c6822eff1.js:3
 msgid "If needed, update your site description here. We use this to add additional context about your website."
 msgstr "Ha szükséges, itt frissítheti a honlap leírását. Ezt a weboldal további kontextusának megadására használjuk."
 
-#: public/build/extendify-help-center-edc3cf6064e22874a408.js:3
+#: public/build/extendify-help-center-f798a28b323c6822eff1.js:3
 msgid "Generate your page"
 msgstr "Oldal létrehozása"
 
-#: public/build/extendify-help-center-edc3cf6064e22874a408.js:3
+#: public/build/extendify-help-center-f798a28b323c6822eff1.js:3
 msgid "When ready, press here to generate your page."
 msgstr "Ha kész, nyomja meg itt az oldal létrehozásához."
 
@@ -2636,7 +2636,7 @@ msgstr "Eszköztipp az oldal szerkesztése gombra mutatva"
 msgid "Welcome to your new site! When you're ready, press here to edit this page."
 msgstr "Üdvözlünk az új honlapodon! Ha készen állsz, kattints ide az oldal szerkesztéséhez."
 
-#: public/build/extendify-launch-e746634b7a75fc72428d.js:7
+#: public/build/extendify-launch-bebdb5c5f047f197cead.js:9
 msgid "Installing supporting plugins"
 msgstr "Támogató bővítmények telepítése"
 
@@ -2656,13 +2656,23 @@ msgstr "A bővítmény telepítése nem sikerült"
 msgid "Failed to activate the plugin"
 msgstr "Nem sikerült bekapcsolni a bővítményt"
 
-#: public/build/extendify-page-creator-7e18596cfed43dc45d9d.js:5
+#: public/build/extendify-page-creator-7412f6aa17eae9a59f0a.js:5
 msgid "Allow plugins to be installed for advanced page features"
 msgstr "Engedélyezze bővítmények telepítését speciális oldal funkciókhoz"
 
-#: public/build/extendify-page-creator-7e18596cfed43dc45d9d.js:5
+#: public/build/extendify-page-creator-7412f6aa17eae9a59f0a.js:5
 msgid "Processing patterns and installing required plugins..."
 msgstr "Minták feldolgozása és szükséges bővítmények telepítése..."
+
+#: public/build/extendify-launch-bebdb5c5f047f197cead.js:5
+msgid "Privacy Policy"
+msgstr "Adatvédelmi irányelvek"
+
+#. translators: %1$s and %2$s are links
+#: public/build/extendify-launch-bebdb5c5f047f197cead.js:7
+#, js-format
+msgid "By using AI features, you agree to the OpenAI %1$s and %2$s."
+msgstr "Az MI funkciók használatával elfogadja az OpenAI %1$s és %2$s."
 
 #. translators: %s is a name
 #: public/build/extendify-recommendations-60c6100aa31975b3ed52.js:3

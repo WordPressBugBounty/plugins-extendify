@@ -197,7 +197,7 @@ class PartnerData
 
         $sanitizedData = array_merge(
             Sanitizer::sanitizeUnknown($result['data']),
-            ['consentTermsHTML' => \sanitize_text_field(htmlentities(($result['data']['consentTermsHTML'] ?? '')))]
+            ['consentTermsCustom' => \sanitize_text_field(htmlentities(($result['data']['consentTermsCustom'] ?? '')))]
         );
 
         // Merge before persisting as this data is accessed directly elsewhere.

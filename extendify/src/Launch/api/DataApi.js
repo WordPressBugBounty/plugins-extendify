@@ -251,6 +251,7 @@ export const getSiteImages = async (siteProfile) => {
 		aiDescription,
 		aiKeywords,
 		...extraBody,
+		source: 'launch',
 	});
 	if (siteInformation?.title) search.append('title', siteInformation.title);
 	const url = `${IMAGES_HOST}/api/search?${search}`;

@@ -99,6 +99,7 @@ class Insights
                 'pluginSearchTerms' => \get_option('extendify_plugin_search_terms', []),
                 'blockSearchTerms' => \get_option('extendify_block_search_terms', []),
                 'phpVersion' => PHP_VERSION,
+                'themeSearchTerms' => \get_option('extendify_theme_search_terms', []),
             ]);
             return $insights;
         });

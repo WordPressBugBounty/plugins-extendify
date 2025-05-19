@@ -1,3 +1,4 @@
+import { select, dispatch } from '@wordpress/data';
 import { useEffect, useState, useCallback } from '@wordpress/element';
 import { __ } from '@wordpress/i18n';
 import { Transition } from '@headlessui/react';
@@ -418,6 +419,21 @@ export const CreatingSite = () => {
 						pluginPages,
 					);
 				}
+			}
+
+			await waitFor200Response();
+
+			const renderingModes =
+				select('core/preferences').get('core', 'renderingModes') || {};
+
+			if (renderingModes?.extendable?.page !== 'template-locked') {
+				dispatch('core/preferences').set('core', 'renderingModes', {
+					...renderingModes,
+					extendable: {
+						...(renderingModes.extendable || {}),
+						page: 'template-locked',
+					},
+				});
 			}
 
 			inform(__('Setting up your Site Assistant', 'extendify-local'));

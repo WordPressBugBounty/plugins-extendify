@@ -5,7 +5,7 @@
  * Plugin URI:        https://extendify.com/?utm_source=wp-plugins&utm_campaign=plugin-uri&utm_medium=wp-dash
  * Author:            Extendify
  * Author URI:        https://extendify.com/?utm_source=wp-plugins&utm_campaign=author-uri&utm_medium=wp-dash
- * Version:           1.19.0
+ * Version:           1.19.1
  * Requires at least: 6.0
  * Requires PHP:      7.0
  * License:           GPL-2.0-or-later
@@ -25,6 +25,8 @@
  */
 
 defined('ABSPATH') || exit;
+
+use Extendify\PartnerData;
 
 /** ExtendifySdk is the previous class name used */
 if (!class_exists('ExtendifySdk') && !class_exists('Extendify')) :
@@ -79,6 +81,21 @@ if (!class_exists('ExtendifySdk') && !class_exists('Extendify')) :
             \delete_transient('extendify_recommendations');
             \delete_transient('extendify_domains');
             \delete_transient('extendify_supportArticles');
+        }
+
+        // Delete the partner transient so we can fetch new data when the locale is switched.
+        if (($option === 'WPLANG') && get_transient('extendify_partner_data_cache_check')) {
+            delete_transient('extendify_partner_data_cache_check');
+            PartnerData::getPartnerData();
+        }
+    });
+
+    // Delete the partner transient so we can fetch new data when the locale is switched via WP-CLI.
+    add_action('cli_init', function () {
+        $command = sanitize_text_field(wp_unslash(($_SERVER['argv'][1] ?? '')));
+        if ($command === 'language' && get_transient('extendify_partner_data_cache_check')) {
+            delete_transient('extendify_partner_data_cache_check');
+            PartnerData::getPartnerData();
         }
     });
 

@@ -30,8 +30,9 @@ class Admin
         \add_action('init', [$this, 'addExtraMetaFields']);
         \add_action('admin_enqueue_scripts', [$this, 'loadGlobalScripts']);
         \add_action('wp_enqueue_scripts', [$this, 'loadGlobalScripts']);
-        \add_action('admin_init', [$this, 'recordPluginsSearchTerms'], 9);
+        \add_action('wp_ajax_search-install-plugins', [$this, 'recordPluginsSearchTerms'], -1);
         \add_action('rest_api_init', [$this, 'recordBlocksSearchTerms']);
+        \add_action('wp_ajax_query-themes', [$this, 'recordThemesSearchTerms'], -1);
     }
 
     // phpcs:disable Generic.Metrics.CyclomaticComplexity.TooHigh
@@ -172,7 +173,7 @@ class Admin
                 'showChat' => (bool) (PartnerData::setting('showChat') || constant('EXTENDIFY_DEVMODE')),
                 'showAIPageCreation' => (bool) (PartnerData::setting('showAIPageCreation') || constant('EXTENDIFY_DEVMODE')),
                 'showAILogo' => (bool) PartnerData::setting('showAILogo'),
-                'consentTermsHTML' => \wp_kses((html_entity_decode(($partnerData['consentTermsHTML'] ?? '')) ?? ''), $htmlAllowlist),
+                'consentTermsCustom' => \wp_kses((html_entity_decode(($partnerData['consentTermsCustom'] ?? '')) ?? ''), $htmlAllowlist),
                 'userGaveConsent' => $userConsent ? (bool) $userConsent : false,
                 'installedPlugins' => array_map('esc_attr', array_keys(\get_plugins())),
                 'activePlugins' => array_map('esc_attr', array_values(\get_option('active_plugins', []))),
@@ -236,25 +237,17 @@ class Admin
      */
     public function recordPluginsSearchTerms()
     {
-        // Exits early if it is not an Ajax request, has no payload or invalid nonce.
-        if (!\wp_doing_ajax() || empty($_POST)) {
+        // phpcs:ignore WordPress.Security.ValidatedSanitizedInput.InputNotSanitized, WordPress.Security.ValidatedSanitizedInput.MissingUnslash, WordPress.Security.NonceVerification.Missing
+        $searchTerm = isset($_POST['s']) ? \sanitize_text_field(\wp_unslash(urldecode($_POST['s']))) : '';
+        if (empty($searchTerm)) {
             return;
         }
 
-        if (array_key_exists('action', $_POST) && $_POST['action'] === 'updates' && !\check_ajax_referer('updates', '_ajax_nonce')) {
-            return;
-        }
-
-        $action = isset($_POST['action']) ? \sanitize_text_field(\wp_unslash($_POST['action'])) : '';
-        $searchTerm = isset($_POST['s']) ? \sanitize_text_field(\wp_unslash($_POST['s'])) : '';
-        // Exits early if it is not the right action or search is empty.
-        if (empty($action) || $action !== 'search-install-plugins' || empty($searchTerm)) {
-            return;
-        }
-
-        // Merges search term with existing search terms and stores it in the database.
         $searchTerms = \get_option('extendify_plugin_search_terms', []);
-        \update_option('extendify_plugin_search_terms', array_merge($searchTerms, [$searchTerm]));
+        $searchTerms[] = $searchTerm;
+        $searchTerms = array_unique($searchTerms);
+
+        \update_option('extendify_plugin_search_terms', $searchTerms);
     }
 
     /**
@@ -319,5 +312,29 @@ class Admin
         ]);
 
         update_user_meta(get_current_user_id(), 'wp_persisted_preferences', $newPreferences);
+    }
+
+    /**
+     * Records search terms used when browsing themes in the admin interface.
+     *
+     * This method listens for the 'query-themes' AJAX action, extracts the search term
+     * from the request, and stores it in the 'extendify_theme_search_terms' option.
+     * Duplicate terms are filtered out.
+     *
+     * @return void
+     */
+    public function recordThemesSearchTerms()
+    {
+        // phpcs:ignore WordPress.Security.ValidatedSanitizedInput.InputNotSanitized, WordPress.Security.ValidatedSanitizedInput.MissingUnslash, WordPress.Security.NonceVerification.Missing
+        $searchTerm = \sanitize_text_field(\wp_unslash(urldecode(($_POST['request']['search'] ?? ''))));
+        if (empty($searchTerm)) {
+            return;
+        }
+
+        $searchTerms = \get_option('extendify_theme_search_terms', []);
+        $searchTerms[] = $searchTerm;
+        $searchTerms = array_unique($searchTerms);
+
+        \update_option('extendify_theme_search_terms', $searchTerms);
     }
 }
