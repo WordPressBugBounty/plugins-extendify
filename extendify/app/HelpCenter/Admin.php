@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Help Center Script loader.
  */
@@ -16,6 +17,7 @@ use Extendify\PartnerData;
 /**
  * This class handles any file loading for the admin area.
  */
+
 class Admin
 {
     /**
@@ -82,6 +84,5 @@ class Admin
             Config::$version,
             'all'
         );
-
     }
 }

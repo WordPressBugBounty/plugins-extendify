@@ -1,4 +1,5 @@
 <?php
+
 /**
  * The Sanitizer class
  */
@@ -10,6 +11,7 @@ defined('ABSPATH') || die('No direct access.');
 /**
  * Class for sanitizing various data types.
  */
+
 class Sanitizer
 {
     /**

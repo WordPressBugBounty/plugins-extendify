@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Data Controller
  */
@@ -13,9 +14,9 @@ defined('ABSPATH') || die('No direct access.');
 /**
  * The controller for handling general data
  */
+
 class DataController
 {
-
     /**
      * Get Partner Plugins information.
      *

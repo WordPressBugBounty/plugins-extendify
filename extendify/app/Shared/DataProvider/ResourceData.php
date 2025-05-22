@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Cache data.
  */
@@ -15,6 +16,7 @@ use Extendify\Shared\Services\Sanitizer;
 /**
  * The cache data class.
  */
+
 class ResourceData
 {
     /**
@@ -92,7 +94,6 @@ class ResourceData
             $data = DomainsSuggestionController::fetchDomainSuggestions()->get_data();
             set_transient('extendify_domains', Sanitizer::sanitizeArray($data));
         });
-
     }
 
     /**
@@ -167,6 +168,10 @@ class ResourceData
     protected function cacheData($functionName, $data)
     {
         // The scheduler runs monthly, one day before the cache expires.
-        set_transient('extendify_' . $functionName, Sanitizer::sanitizeArray($data), (DAY_IN_SECONDS + MONTH_IN_SECONDS));
+        set_transient(
+            'extendify_' . $functionName,
+            Sanitizer::sanitizeArray($data),
+            (DAY_IN_SECONDS + MONTH_IN_SECONDS)
+        );
     }
 }

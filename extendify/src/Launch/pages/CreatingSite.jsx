@@ -1,4 +1,4 @@
-import { select, dispatch } from '@wordpress/data';
+import { dispatch, select } from '@wordpress/data';
 import { useEffect, useState, useCallback } from '@wordpress/element';
 import { __ } from '@wordpress/i18n';
 import { Transition } from '@headlessui/react';

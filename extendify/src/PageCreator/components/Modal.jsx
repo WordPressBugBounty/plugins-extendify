@@ -21,6 +21,20 @@ export const Modal = () => {
 	const { resetBlocks } = dispatch('core/block-editor');
 	const { closeGeneralSidebar } = useDispatch(editPostStore);
 
+	const renderingModes = useSelect(
+		(s) => s('core/preferences').get('core', 'renderingModes') || {},
+		[],
+	);
+	const isTemplateShown =
+		renderingModes?.extendable?.page === 'template-locked';
+	const { set: setPreference } = useDispatch('core/preferences');
+
+	const setRenderingMode = (mode) =>
+		setPreference('core', 'renderingModes', {
+			...renderingModes,
+			extendable: { ...(renderingModes.extendable || {}), page: mode },
+		});
+
 	const { createNotice } = dispatch('core/notices');
 	const once = useRef(false);
 	const onClose = () => {
@@ -45,11 +59,15 @@ export const Modal = () => {
 	const insertPage = async (blocks, title) => {
 		// Close sidebar
 		closeGeneralSidebar();
+
 		try {
-			if (!postAttribute.isEmptyPost) {
-				// Delete the blocks before we insert our own.
-				resetBlocks([]);
+			if (isTemplateShown) {
+				setRenderingMode('post-only');
+				// Use raf for a re-render
+				await new Promise((resolve) => requestAnimationFrame(resolve));
 			}
+			// Delete the blocks before we insert our own.
+			if (!postAttribute.isEmptyPost) resetBlocks([]);
 
 			// Insert the blocks into the editor
 			await insertBlocks(blocks);
@@ -73,7 +91,8 @@ export const Modal = () => {
 				type: 'snackbar',
 			});
 		} finally {
-			// setProgress('');
+			// Set back to the previous rendering mode
+			if (isTemplateShown) setRenderingMode('template-locked');
 		}
 	};
 

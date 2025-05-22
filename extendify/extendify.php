@@ -1,11 +1,13 @@
 <?php
+
+// phpcs:disable Generic.Files.LineLength.TooLong
 /**
  * Plugin Name:       Extendify WordPress Onboarding and AI Assistant
  * Description:       AI-powered WordPress assistant for onboarding and ongoing editing offered exclusively through select WordPress hosting providers.
  * Plugin URI:        https://extendify.com/?utm_source=wp-plugins&utm_campaign=plugin-uri&utm_medium=wp-dash
  * Author:            Extendify
  * Author URI:        https://extendify.com/?utm_source=wp-plugins&utm_campaign=author-uri&utm_medium=wp-dash
- * Version:           1.19.1
+ * Version:           1.19.2
  * Requires at least: 6.0
  * Requires PHP:      7.0
  * License:           GPL-2.0-or-later
@@ -23,6 +25,7 @@
  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
  * GNU General Public License for more details.
  */
+// phpcs:enable Generic.Files.LineLength.TooLong
 
 defined('ABSPATH') || exit;
 
@@ -34,7 +37,7 @@ if (!class_exists('ExtendifySdk') && !class_exists('Extendify')) :
     /**
      * The Extendify Library
      */
-    // phpcs:ignore Squiz.Classes.ClassFileName.NoMatch,Squiz.Commenting.ClassComment.Missing,PEAR.Commenting.ClassComment.Missing
+    // phpcs:ignore PSR1.Classes.ClassDeclaration.MissingNamespace
     final class Extendify
     {
         /**
@@ -68,7 +71,6 @@ if (!class_exists('ExtendifySdk') && !class_exists('Extendify')) :
                 }
             }
         }
-        // phpcs:ignore Squiz.Classes.ClassDeclaration.SpaceBeforeCloseBrace
     }
 
     add_action('plugins_loaded', function () {

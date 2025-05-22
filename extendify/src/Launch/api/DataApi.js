@@ -162,8 +162,6 @@ export const generateCustomPatterns = async (page, userState, siteProfile) => {
 };
 
 export const getLinkSuggestions = async (pageContent, availablePages) => {
-	const abort = new AbortController();
-	const timeout = setTimeout(() => abort.abort(), 15000);
 	const { siteType } = useUserSelectionStore.getState();
 	try {
 		const res = await fetch(`${AI_HOST}/api/link-pages`, {
@@ -175,15 +173,12 @@ export const getLinkSuggestions = async (pageContent, availablePages) => {
 				pageContent,
 				availablePages,
 			}),
-			signal: abort.signal,
 		});
 		if (!res.ok) throw new Error('Bad response from server');
 		return await res.json();
 	} catch (error) {
 		// fail gracefully
 		return {};
-	} finally {
-		clearTimeout(timeout);
 	}
 };
 

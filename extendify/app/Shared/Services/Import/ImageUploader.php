@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Image uploader class
  */
@@ -10,6 +11,7 @@ defined('ABSPATH') || die('No direct access.');
 /**
  * This class responsible for uploading the image.
  */
+
 class ImageUploader
 {
     /**
@@ -100,7 +102,11 @@ class ImageUploader
             $params['auto'] = 'auto,compress';
             $params['q'] = 70;
 
-            $imageUrl = $parsedUrl['scheme'] . '://' . $parsedUrl['host'] . $parsedUrl['path'] . '?' . http_build_query($params);
+            $imageUrl = $parsedUrl['scheme'] . '://'
+            . $parsedUrl['host']
+            . $parsedUrl['path']
+            . '?'
+            . http_build_query($params);
         }//end if
 
         $imageSha = sha1($image);

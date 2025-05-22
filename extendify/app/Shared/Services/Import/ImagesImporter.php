@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Import\Images
  */
@@ -11,6 +12,7 @@ defined('ABSPATH') || die('No direct access.');
  * This class will import external images added to WordPress posts,
  * using our Extendify library.
  */
+
 class ImagesImporter
 {
     /**
@@ -87,7 +89,9 @@ class ImagesImporter
         if (! \wp_next_scheduled('extendify_images_importer_light')) {
             \wp_schedule_event(
                 // phpcs:ignore WordPress.DateTime.CurrentTimeTimestamp
-                time(), 'extendify_every_ten_minutes', 'extendify_images_importer_light'
+                time(),
+                'extendify_every_ten_minutes',
+                'extendify_images_importer_light'
             );
         }
 

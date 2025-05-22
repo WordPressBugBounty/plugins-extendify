@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Admin.
  */
@@ -15,6 +16,7 @@ use Extendify\Shared\Services\Escaper;
 /**
  * This class handles any file loading for the admin area.
  */
+
 class Admin
 {
     /**
@@ -137,7 +139,9 @@ class Admin
             'window.extRecommendationsData = ' . \wp_json_encode(
                 [
                     'products' => Escaper::recursiveEscAttr($this->getProductsData()),
-                    'showPartnerBranding' => (bool) \esc_attr(PartnerData::setting('productRecommendations')['showPartnerBranding']),
+                    'showPartnerBranding' => (bool) \esc_attr(
+                        PartnerData::setting('productRecommendations')['showPartnerBranding']
+                    ),
                 ]
             ),
             'before'

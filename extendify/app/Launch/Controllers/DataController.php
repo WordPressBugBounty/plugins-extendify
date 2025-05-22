@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Data Controller
  */
@@ -12,6 +13,7 @@ use Extendify\Http;
 /**
  * The controller for handling general data
  */
+
 class DataController
 {
     /**

@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Bootstrap the application
  */
@@ -155,6 +156,7 @@ add_filter('load_textdomain_mofile', function ($mofile, $domain) {
  * @param string $filepath The original .mo or .json translation file path.
  * @return string The fallback file path if it exists, or the original one.
  */
+
 function extendifyResolveFallbackLocaleFile($filepath)
 {
     if (str_contains($filepath, '-es_') && !file_exists($filepath)) {

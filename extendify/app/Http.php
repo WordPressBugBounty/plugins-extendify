@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Helper class for making http requests
  * This is legacy code and currently only used for Launch goals
@@ -11,6 +12,7 @@ defined('ABSPATH') || die('No direct access.');
 /**
  * Controller for http communication
  */
+
 class Http
 {
     /**

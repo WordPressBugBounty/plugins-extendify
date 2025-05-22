@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Help Center Script loader.
  */
@@ -18,6 +19,7 @@ use Extendify\SiteSettings;
 /**
  * This class handles any file loading for the admin area.
  */
+
 class Admin
 {
     /**
@@ -171,9 +173,12 @@ class Admin
                 'resourceData' => \wp_json_encode((new ResourceData())->getData()),
                 'showAIConsent' => isset($partnerData['showAIConsent']) ? (bool) $partnerData['showAIConsent'] : false,
                 'showChat' => (bool) (PartnerData::setting('showChat') || constant('EXTENDIFY_DEVMODE')),
-                'showAIPageCreation' => (bool) (PartnerData::setting('showAIPageCreation') || constant('EXTENDIFY_DEVMODE')),
+                'showAIPageCreation' => (bool) (
+                    PartnerData::setting('showAIPageCreation') || constant('EXTENDIFY_DEVMODE')
+                ),
                 'showAILogo' => (bool) PartnerData::setting('showAILogo'),
-                'consentTermsCustom' => \wp_kses((html_entity_decode(($partnerData['consentTermsCustom'] ?? '')) ?? ''), $htmlAllowlist),
+                'consentTermsCustom' => \wp_kses((html_entity_decode(($partnerData['consentTermsCustom'] ?? ''))
+                    ?? ''), $htmlAllowlist),
                 'userGaveConsent' => $userConsent ? (bool) $userConsent : false,
                 'installedPlugins' => array_map('esc_attr', array_keys(\get_plugins())),
                 'activePlugins' => array_map('esc_attr', array_values(\get_option('active_plugins', []))),
@@ -183,14 +188,20 @@ class Admin
                 'activity' => \wp_json_encode(\get_option('extendify_shared_activity', null)),
                 'showDraft' => isset($partnerData['showDraft']) ? (bool) $partnerData['showDraft'] : false,
                 'showLaunch' => Config::$showLaunch,
-                'apexDomain' => PartnerData::setting('enableApexDomain') ? rawurlencode(ApexDomain::getApexDomain(\get_home_url())) : null,
+                'apexDomain' => PartnerData::setting('enableApexDomain')
+                    ? rawurlencode(ApexDomain::getApexDomain(\get_home_url()))
+                    : null,
                 'isLaunchCompleted' => (bool) \esc_attr(\get_option('extendify_onboarding_completed', false)),
             ]),
             'before'
         );
 
         \wp_set_script_translations('extendify-common', 'extendify-local', EXTENDIFY_PATH . 'languages/js');
-        \wp_set_script_translations(Config::$slug . '-shared-scripts', 'extendify-local', EXTENDIFY_PATH . 'languages/js');
+        \wp_set_script_translations(
+            Config::$slug . '-shared-scripts',
+            'extendify-local',
+            EXTENDIFY_PATH . 'languages/js'
+        );
 
         \wp_enqueue_style(
             Config::$slug . '-shared-common-styles',
@@ -270,14 +281,12 @@ class Admin
 
         $wp = $GLOBALS['wp'];
 
-        // phpcs:ignore Squiz.NamingConventions.ValidVariableName.MemberNotCamelCaps
         $restRoute = ($wp->query_vars['rest_route'] ?? '');
         // Exits early if it's not the blocks search route.
         if ($restRoute !== '/wp/v2/block-directory/search') {
             return;
         }
 
-        // phpcs:ignore Squiz.NamingConventions.ValidVariableName.MemberNotCamelCaps
         $searchTerm = \sanitize_text_field(\wp_unslash(($wp->query_vars['term'] ?? '')));
         // Exits early if the search term is empty or is not user input.
         if (empty($searchTerm) || str_starts_with($searchTerm, 'block:')) {
@@ -302,7 +311,9 @@ class Admin
             $currentPreferences = [];
         }
 
-        $postPreferences = array_key_exists('core/edit-post', $currentPreferences) ? $currentPreferences['core/edit-post'] : [];
+        $postPreferences = array_key_exists('core/edit-post', $currentPreferences)
+            ? $currentPreferences['core/edit-post']
+            : [];
         $corePreferences = array_key_exists('core', $currentPreferences) ? $currentPreferences['core'] : [];
 
         $newPreferences = array_merge($currentPreferences, [
