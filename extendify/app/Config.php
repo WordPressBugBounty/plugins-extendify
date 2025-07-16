@@ -87,6 +87,13 @@ class Config
     public static $launchCompleted = false;
 
     /**
+     * Whether to enable preview features or not.
+     *
+     * @var boolean
+     */
+    public static $enablePreviewFeatures = false;
+
+    /**
      * Process the readme file to get version and name
      *
      * @return void
@@ -109,6 +116,22 @@ class Config
 
         if (!get_option('extendify_first_installed_version')) {
             update_option('extendify_first_installed_version', Sanitizer::sanitizeText(self::$version));
+        }
+
+        // Check the url for the extendify-preview parameter.
+        // If it is set to false, we disable preview features, if it is set to true, we enable preview features.
+        // phpcs:ignore WordPress.Security.NonceVerification
+        if (isset($_GET['extendify-preview'])) {
+            // phpcs:ignore WordPress.Security.NonceVerification
+            self::$enablePreviewFeatures = $_GET['extendify-preview'] === 'false'
+            // phpcs:ignore WordPress.Security.NonceVerification
+            ? filter_var(\wp_unslash($_GET['extendify-preview']), FILTER_VALIDATE_BOOLEAN)
+            : true;
+
+            update_option('extendify_enable_preview_features', self::$enablePreviewFeatures);
+        } else {
+            // If it is not set, we use the value from the database, default is false.
+            self::$enablePreviewFeatures = (bool) get_option('extendify_enable_preview_features', false);
         }
 
         // An easy way to check if we are in dev mode is to look for a dev specific file.

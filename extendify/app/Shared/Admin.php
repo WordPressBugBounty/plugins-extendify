@@ -14,6 +14,7 @@ use Extendify\Shared\Controllers\UserSelectionController;
 use Extendify\Shared\DataProvider\ResourceData;
 use Extendify\Shared\Services\ApexDomain\ApexDomain;
 use Extendify\Shared\Services\Escaper;
+use Extendify\Shared\Services\PluginDependencies\SimplyBook;
 use Extendify\SiteSettings;
 
 /**
@@ -35,6 +36,8 @@ class Admin
         \add_action('wp_ajax_search-install-plugins', [$this, 'recordPluginsSearchTerms'], -1);
         \add_action('rest_api_init', [$this, 'recordBlocksSearchTerms']);
         \add_action('wp_ajax_query-themes', [$this, 'recordThemesSearchTerms'], -1);
+
+        \add_action('simplybook_activation', [SimplyBook::class, 'getIndustryCode'], 10, 0);
     }
 
     // phpcs:disable Generic.Metrics.CyclomaticComplexity.TooHigh
@@ -192,6 +195,9 @@ class Admin
                     ? rawurlencode(ApexDomain::getApexDomain(\get_home_url()))
                     : null,
                 'isLaunchCompleted' => (bool) \esc_attr(\get_option('extendify_onboarding_completed', false)),
+                'showSiteQuestions' => (bool) (
+                    PartnerData::setting('showLaunchQuestions') || Config::$enablePreviewFeatures
+                ),
             ]),
             'before'
         );

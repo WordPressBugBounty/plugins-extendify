@@ -24,6 +24,11 @@ const initialState = {
 	goals: [],
 	siteObjective: undefined,
 	CTALink: undefined,
+	siteQA: {
+		showHidden: false,
+		questions: [],
+	},
+	attempt: 1,
 };
 
 const incoming = safeParseJson(window.extSharedData.userData.userSelectionData);
@@ -104,8 +109,43 @@ const state = (set, get) => ({
 		}
 		get().add(type, item);
 	},
-	resetState: () => set(initialState),
+	resetState: () =>
+		set((state) => ({ ...initialState, attempt: state?.attempt + 1 })),
 	setVariation: (variation) => set({ variation }),
+	setSiteQuestions: (questions) => set({ siteQA: questions }),
+	setSiteQuestionAnswer: (
+		questionId,
+		answer,
+		{ isExtraField = false, extraFieldKey = null } = {},
+	) => {
+		set((state) => {
+			const { siteQA } = state;
+
+			const questions = siteQA?.questions.map((q) => {
+				if (q.id !== questionId) return q;
+
+				if (!isExtraField) {
+					return { ...q, answerUser: answer };
+				}
+
+				// isExtraField === true
+				const updatedExtraFields = q.extraFields?.map((ef) =>
+					ef.key === extraFieldKey ? { ...ef, answer } : ef,
+				);
+
+				return { ...q, extraFields: updatedExtraFields };
+			});
+
+			return {
+				siteQA: {
+					...siteQA,
+					questions,
+				},
+			};
+		});
+	},
+	setShowHiddenQuestions: (showHidden) =>
+		set({ siteQA: { ...get().siteQA, showHidden } }),
 });
 
 const path = '/extendify/v1/shared/user-selections-data';

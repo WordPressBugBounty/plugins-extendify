@@ -6,7 +6,7 @@ import { useSiteStrings } from '@launch/hooks/useSiteStrings';
 import { useSiteStyles } from '@launch/hooks/useSiteStyles';
 import { useUserSelectionStore } from '@launch/state/user-selections';
 
-export const useHomeLayouts = () => {
+export const useHomeLayouts = ({ disableFetch = false } = {}) => {
 	const { siteType, siteStructure, goals, siteObjective } =
 		useUserSelectionStore();
 	const { siteStrings } = useSiteStrings();
@@ -19,7 +19,8 @@ export const useHomeLayouts = () => {
 		!siteProfile ||
 		!siteStrings ||
 		!siteImages ||
-		!siteStyles;
+		!siteStyles ||
+		disableFetch;
 
 	const params = {
 		key: 'home-layouts',

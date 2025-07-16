@@ -35,6 +35,7 @@ class DataController
                     'site_profile' => $request->get_param('site_profile'),
                     'site_objective' => $request->get_param('site_objective'),
                     'site_id' => $request->get_param('site_id'),
+                    'launch_questions' => $request->get_param('launch_questions'),
                 ],
             ],
             $request

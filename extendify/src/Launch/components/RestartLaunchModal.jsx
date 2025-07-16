@@ -13,6 +13,8 @@ export const RestartLaunchModal = ({ setPage }) => {
 		window.extOnbData.resetSiteInformation.navigationsIds ?? [];
 	const templatePartsIds =
 		window.extOnbData.resetSiteInformation.templatePartsIds ?? [];
+	const pageWithTitleTemplateId =
+		window.extOnbData.resetSiteInformation.pageWithTitleTemplateId ?? '';
 	const globalStylesPostID = window.extSharedData.globalStylesPostID;
 
 	const { resetState } = useUserSelectionStore();
@@ -79,6 +81,15 @@ export const RestartLaunchModal = ({ setPage }) => {
 					responseError,
 				);
 			}
+		}
+
+		try {
+			await apiFetch({
+				path: `/wp/v2/templates/${pageWithTitleTemplateId}?force=true`,
+				method: 'DELETE',
+			});
+		} catch (responseError) {
+			console.warn('Failed to delete page-with-title template:', responseError);
 		}
 
 		// Reset global styles

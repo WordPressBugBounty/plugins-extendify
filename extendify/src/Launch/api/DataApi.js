@@ -24,7 +24,7 @@ const extraBody = {
 
 const fetchTemplates = async (type, siteType, otherData = {}) => {
 	const { showLocalizedCopy, allowedPlugins } = window.extSharedData;
-	const { goals, getGoalsPlugins } = useUserSelectionStore.getState();
+	const { goals, getGoalsPlugins, siteQA } = useUserSelectionStore.getState();
 	const plugins = getGoalsPlugins();
 	const otherDataProcessed = Object.entries(otherData).reduce(
 		(result, [key, value]) => {
@@ -44,6 +44,12 @@ const fetchTemplates = async (type, siteType, otherData = {}) => {
 			...extraBody,
 			siteType: siteType?.slug,
 			goals: JSON.stringify(goals?.length ? goals : []),
+			siteQuestions: Array.isArray(siteQA?.questions)
+				? siteQA.questions.map((q) => ({
+						question: q?.question,
+						answer: q?.answerUser ?? q?.answerAI,
+					}))
+				: [],
 			plugins: JSON.stringify(plugins?.length ? plugins : []),
 			showLocalizedCopy: !!showLocalizedCopy,
 			allowedPlugins: JSON.stringify(allowedPlugins ?? []),
@@ -130,6 +136,13 @@ export const getGoals = async ({
 	siteProfile,
 	siteObjective,
 }) => {
+	const rawQuestions = useUserSelectionStore.getState().siteQA?.questions || [];
+
+	const questions = rawQuestions.map(({ question, answerAI, answerUser }) => ({
+		question,
+		answer: answerUser || answerAI || null,
+	}));
+
 	const goals = await api.get('launch/goals', {
 		params: {
 			title,
@@ -137,6 +150,7 @@ export const getGoals = async ({
 			site_profile: siteProfile,
 			site_objective: siteObjective,
 			site_id: window.extSharedData.siteId,
+			launch_questions: questions,
 		},
 	});
 	if (!goals?.data?.length) {
@@ -335,6 +349,37 @@ export const getSiteLogo = async (objectName) => {
 	try {
 		const data = await response.json();
 		return data?.logoUrl ?? fallback;
+	} catch (error) {
+		return fallback;
+	}
+};
+
+export const getSiteQuestions = async ({ siteProfile }) => {
+	const url = `${AI_HOST}/api/site-questions`;
+	const method = 'POST';
+	const headers = { 'Content-Type': 'application/json' };
+	const fallback = { questions: [] };
+
+	if (!siteProfile) {
+		return fallback;
+	}
+
+	const { wpLanguage } = window.extSharedData;
+	const body = JSON.stringify({ ...siteProfile, wpLanguage });
+
+	let response;
+	try {
+		response = await fetch(url, { method, headers, body });
+		if (!response.ok) throw new Error('Bad response from server');
+	} catch (error) {
+		response = await fetch(url, { method, headers, body });
+	}
+
+	if (!response.ok) return fallback;
+
+	try {
+		const data = await response.json();
+		return data?.questions ?? fallback;
 	} catch (error) {
 		return fallback;
 	}

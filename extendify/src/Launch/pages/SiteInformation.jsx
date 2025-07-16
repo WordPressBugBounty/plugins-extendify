@@ -55,6 +55,8 @@ export const SiteInformation = () => {
 				setCTALink(callToActionLink);
 			}
 			state.setState({ ready: !!title.length });
+			setSiteProfile(undefined); // this also resets SOME state
+			updateOption('extendify_site_profile', null);
 		}, 1000);
 		return () => clearTimeout(timer);
 	}, [
@@ -65,12 +67,8 @@ export const SiteInformation = () => {
 		isLandingPage,
 		setCTALink,
 		callToActionLink,
+		setSiteProfile,
 	]);
-
-	useEffect(() => {
-		setSiteProfile(undefined); // this also resets SOME state
-		updateOption('extendify_site_profile', null);
-	}, [setSiteProfile, description, title]);
 
 	const pageTitle = isLandingPage
 		? __('Tell Us About Your Landing Page', 'extendify-local')

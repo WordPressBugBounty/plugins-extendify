@@ -6,6 +6,7 @@ import { VideoPlayer } from '@launch/components/VideoPlayer';
 import { useGoals } from '@launch/hooks/useGoals';
 import { useSiteLogo } from '@launch/hooks/useSiteLogo';
 import { useSiteProfile } from '@launch/hooks/useSiteProfile';
+import { useSiteQuestions } from '@launch/hooks/useSiteQuestions';
 import { PageLayout } from '@launch/layouts/PageLayout';
 import { usePagesStore } from '@launch/state/Pages';
 import { pageState } from '@launch/state/factory';
@@ -19,11 +20,17 @@ export const state = pageState('Content Gathering', () => ({
 }));
 
 export const SitePrep = () => {
+	const showSiteQuestions = window.extSharedData?.showSiteQuestions ?? false;
 	const { nextPage } = usePagesStore();
-	const { setSiteProfile, addMany } = useUserSelectionStore();
+	const { setSiteProfile, addMany, setSiteQuestions } = useUserSelectionStore();
 	const { siteProfile } = useSiteProfile();
-	const { goals } = useGoals();
+	const { goals } = useGoals({
+		disableFetch: showSiteQuestions,
+	});
 	useSiteLogo();
+	const { questions } = useSiteQuestions({
+		disableFetch: !showSiteQuestions,
+	});
 
 	useEffect(() => {
 		if (!siteProfile) return;
@@ -32,13 +39,39 @@ export const SitePrep = () => {
 	}, [siteProfile, setSiteProfile]);
 
 	useEffect(() => {
-		if (!goals) return;
-		if (goals) {
+		let id;
+
+		if (goals && !showSiteQuestions) {
 			addMany('goals', goals, { clearExisting: true });
+			id = setTimeout(nextPage, 1000);
 		}
-		let id = setTimeout(nextPage, 1000);
+
+		if (questions && showSiteQuestions) {
+			const visible = (questions?.visible || []).map((q) => ({
+				...q,
+				group: 'visible',
+			}));
+			const hidden = (questions?.hidden || []).map((q) => ({
+				...q,
+				group: 'hidden',
+			}));
+			const allQuestions = [...visible, ...hidden];
+			setSiteQuestions({
+				showHidden: false,
+				questions: allQuestions,
+			});
+			id = setTimeout(nextPage, 1000);
+		}
+
 		return () => clearTimeout(id);
-	}, [goals, nextPage, addMany]);
+	}, [
+		goals,
+		nextPage,
+		addMany,
+		questions,
+		setSiteQuestions,
+		showSiteQuestions,
+	]);
 
 	return (
 		<PageLayout>

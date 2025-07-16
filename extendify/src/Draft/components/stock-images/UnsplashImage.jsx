@@ -82,8 +82,7 @@ export const UnsplashImage = ({
 								'group-focus-within:opacity-100 group-hover:opacity-100':
 									!isInsertingImage,
 							},
-						)}
-						rel="noopener noreferrer">{`${image.user?.name}`}</a>
+						)}>{`${image.user?.name}`}</a>
 				) : null}
 			</div>
 		</motion.div>

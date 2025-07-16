@@ -75,6 +75,8 @@ class PartnerData
             'disabledProducts' => [],
             'customProducts' => [],
         ],
+        'license' => 'active',
+        'showLaunchQuestions' => false,
     ];
 
     // phpcs:disable Generic.Metrics.CyclomaticComplexity.MaxExceeded
@@ -131,6 +133,8 @@ class PartnerData
             'customProducts' => ($data['productRecommendationCustomSlugs']
                 ?? self::$config['productRecommendations']['customProducts']),
         ];
+        self::$config['license'] = ($data['license'] ?? self::$config['license']);
+        self::$config['showLaunchQuestions'] = ($data['showLaunchQuestions'] ?? self::$config['showLaunchQuestions']);
 
         // Add the job hook to fetch the partner data.
         \add_action('extendify_fetch_partner_data', [self::class, 'fetchPartnerData']);

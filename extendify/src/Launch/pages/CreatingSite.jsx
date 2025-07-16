@@ -2,7 +2,7 @@ import { dispatch, select } from '@wordpress/data';
 import { useEffect, useState, useCallback } from '@wordpress/element';
 import { __ } from '@wordpress/i18n';
 import { Transition } from '@headlessui/react';
-import { getPartnerPlugins } from '@shared/api/DataApi';
+import { getPartnerPlugins, recordPluginActivity } from '@shared/api/DataApi';
 import { installPlugin, activatePlugin } from '@shared/api/wp';
 import { pageNames } from '@shared/lib/pages';
 import { deepMerge } from '@shared/lib/utils';
@@ -18,7 +18,6 @@ import {
 	addSectionLinksToNav,
 	addPageLinksToNav,
 	updateOption,
-	updatePattern,
 	getOption,
 	getPageById,
 	getActivePlugins,
@@ -27,6 +26,7 @@ import {
 	createNavigation,
 	updateNavAttributes,
 	installFontFamilies,
+	updatePageTitlePattern,
 } from '@launch/api/WPApi';
 import { importTemporaryProducts } from '@launch/api/WooCommerce';
 import { PagesSkeleton } from '@launch/components/CreatingSite/PageSkeleton';
@@ -210,7 +210,10 @@ export const CreatingSite = () => {
 						await retryOperation(() => installPlugin(slug), {
 							maxAttempts: 2,
 						}).catch(console.error);
+
+						recordPluginActivity({ slug, source: 'launch' });
 					}
+
 					await retryOperation(() => activatePlugin(slug), {
 						maxAttempts: 2,
 					}).catch(console.error);
@@ -258,8 +261,28 @@ export const CreatingSite = () => {
 				);
 			}
 
+			const pagesWithoutPageTitlePattern = pages.map((page) => ({
+				...page,
+				patterns: page.patterns.filter(
+					(p) => !p.patternTypes?.includes('page-title'),
+				),
+			}));
+
+			// Update the page-with-title template with the selected page-title pattern
+			const firstPageTitlePattern = pages?.[0]?.patterns?.find((p) =>
+				p.patternTypes?.includes('page-title'),
+			);
+
+			const hasPageWithTitleTemplate = firstPageTitlePattern
+				? await updatePageTitlePattern(firstPageTitlePattern.code)
+				: false;
+
+			const pagesToUse = hasPageWithTitleTemplate
+				? pagesWithoutPageTitlePattern
+				: pages;
+
 			const pagesToCreate = [
-				...pages,
+				...pagesToUse,
 				homePage,
 				hasBlogGoal ? blogPage : null,
 			].filter(Boolean);
@@ -273,13 +296,6 @@ export const CreatingSite = () => {
 				};
 				pagesWithReplacedPatterns.push(updatedPage);
 			}
-
-			// Stash the page-title pattern for use in ai page creator
-			const firstPattern = pagesWithReplacedPatterns?.[0]?.patterns?.[0];
-			const pageTitle = firstPattern?.patternTypes?.includes('page-title')
-				? (firstPattern?.code ?? null)
-				: null;
-			await updatePattern('launch_page_title_pattern', pageTitle);
 
 			const pagesWithCustomContent = await generateCustomPageContent(
 				pagesWithReplacedPatterns,
@@ -348,6 +364,7 @@ export const CreatingSite = () => {
 				const partnerPlugins = await getPartnerPlugins('products').catch(
 					() => null,
 				);
+
 				if (partnerPlugins) {
 					informDesc(__('Installing supporting plugins', 'extendify-local'));
 					for (const plugin of partnerPlugins) {
@@ -356,6 +373,12 @@ export const CreatingSite = () => {
 							await retryOperation(() => installPlugin(plugin), {
 								maxAttempts,
 							}).catch(console.error);
+
+							recordPluginActivity({
+								slug: plugin,
+								source: 'launch',
+							});
+
 							await retryOperation(() => activatePlugin(plugin), {
 								maxAttempts,
 							}).catch(console.error);

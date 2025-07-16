@@ -71,7 +71,6 @@ export const SecondaryDomainBanner = () => {
 									});
 								}}
 								target="_blank"
-								rel="noreferrer"
 								className="inline-flex h-10 cursor-pointer items-center rounded-sm bg-design-main px-4 text-sm text-design-text no-underline hover:opacity-90">
 								{__('Secure a domain', 'extendify-local')}
 							</a>

@@ -3,7 +3,7 @@ import { getGoals } from '@launch/api/DataApi';
 import { useSiteProfile } from '@launch/hooks/useSiteProfile';
 import { useUserSelectionStore } from '@launch/state/user-selections';
 
-export const useGoals = () => {
+export const useGoals = ({ disableFetch = false } = {}) => {
 	const { siteInformation, siteObjective } = useUserSelectionStore();
 	const { loading, siteProfile } = useSiteProfile();
 	const params = {
@@ -12,7 +12,10 @@ export const useGoals = () => {
 		title: siteInformation?.title,
 		siteObjective,
 	};
-	const { data, error } = useSWRImmutable(loading ? null : params, getGoals);
+	const { data, error } = useSWRImmutable(
+		loading || disableFetch ? null : params,
+		getGoals,
+	);
 
 	return { goals: data, error, loading: !data && !error };
 };

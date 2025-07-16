@@ -2,6 +2,7 @@ import { useEffect } from '@wordpress/element';
 import { __ } from '@wordpress/i18n';
 import { Title } from '@launch/components/Title';
 import { VideoPlayer } from '@launch/components/VideoPlayer';
+import { useGoals } from '@launch/hooks/useGoals';
 import { useHomeLayouts } from '@launch/hooks/useHomeLayouts';
 import { useSiteImages } from '@launch/hooks/useSiteImages';
 import { useSiteStrings } from '@launch/hooks/useSiteStrings';
@@ -18,11 +19,24 @@ export const state = pageState('Content Gathering', () => ({
 }));
 
 export const ContentGathering = () => {
+	const showSiteQuestions = window.extSharedData?.showSiteQuestions ?? false;
+	const { loading: loadingGoals, goals } = useGoals({
+		disableFetch: !showSiteQuestions,
+	});
+
+	const waitForGoals = showSiteQuestions && loadingGoals;
 	const { nextPage } = usePagesStore();
-	const { setSiteStrings, setSiteImages } = useUserSelectionStore();
+	const { setSiteStrings, setSiteImages, addMany } = useUserSelectionStore();
 	const { siteStrings } = useSiteStrings();
 	const { siteImages } = useSiteImages();
-	const { homeLayouts } = useHomeLayouts();
+	const { homeLayouts } = useHomeLayouts({
+		disableFetch: waitForGoals,
+	});
+
+	useEffect(() => {
+		if (!goals) return;
+		addMany('goals', goals, { clearExisting: true });
+	}, [addMany, goals]);
 
 	useEffect(() => {
 		if (!siteStrings) return;

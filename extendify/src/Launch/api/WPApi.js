@@ -1,4 +1,5 @@
 import apiFetch from '@wordpress/api-fetch';
+import { createBlock, parse, serialize } from '@wordpress/blocks';
 import { __ } from '@wordpress/i18n';
 import { addQueryArgs } from '@wordpress/url';
 import { pageNames } from '@shared/lib/pages';
@@ -89,6 +90,89 @@ const allowedFooters = [
 	'footer-social-icons',
 	'footer-with-center-logo-and-menu',
 ];
+
+// finds the core/heading in the pattern and replaces it with a core/post-title block
+const transformHeadingToPostTitle = (rawHTML) => {
+	let done = false;
+
+	const walk = (block) => {
+		if (done) return block;
+
+		if (block.name === 'core/heading') {
+			done = true;
+			const attrs = {
+				level: block.attributes.level,
+				textAlign: block.attributes.textAlign,
+				textColor: block.attributes.textColor,
+				backgroundColor: block.attributes.backgroundColor,
+				isLink: block.attributes.isLink,
+				linkTarget: block.attributes.linkTarget,
+				rel: block.attributes.rel,
+			};
+
+			if (block.attributes.fontSize) {
+				attrs.fontSize = block.attributes.fontSize;
+			}
+
+			const customSize = block.attributes.style?.typography?.fontSize;
+			const linkStyle = block.attributes.style?.elements?.link;
+
+			if (customSize || linkStyle) {
+				attrs.style = {};
+
+				if (customSize) {
+					attrs.style.typography = { fontSize: customSize };
+				}
+				if (linkStyle) {
+					attrs.style.elements = { link: linkStyle };
+				}
+			}
+
+			return createBlock('core/post-title', attrs);
+		}
+
+		if (block.innerBlocks?.length) {
+			block.innerBlocks = block.innerBlocks.map(walk);
+		}
+		return block;
+	};
+
+	return serialize(parse(rawHTML).map(walk));
+};
+
+// Replace the page-title pattern in “page-with-title” template with the incoming page-title pattern
+export const updatePageTitlePattern = async (pageTitlePattern) => {
+	const updatedPattern = transformHeadingToPostTitle(pageTitlePattern);
+
+	const templateContent = `
+		<!-- wp:template-part {"slug":"header","tagName":"header"} /-->
+		<!-- wp:group {"tagName":"main","style":{"spacing":{"margin":{"top":"0px","bottom":"0px"},"blockGap":"0"}}} -->
+		<main class="wp-block-group" style="margin-top:0px;margin-bottom:0px">
+			${updatedPattern}
+			<!-- wp:post-content {"layout":{"type":"constrained"}} /-->
+		</main>
+		<!-- /wp:group -->
+		<!-- wp:template-part {"slug":"footer","tagName":"footer"} /-->
+		`;
+
+	try {
+		await apiFetch({
+			path: '/wp/v2/templates/extendable/page-with-title',
+			method: 'POST',
+			data: {
+				slug: 'page-with-title',
+				theme: 'extendable',
+				type: 'wp_template',
+				status: 'publish',
+				description: __('Added by Launch', 'extendify-local'),
+				content: templateContent,
+			},
+		});
+		return true;
+	} catch {
+		return false;
+	}
+};
 
 export const getHeadersAndFooters = async () => {
 	let patterns = await getTemplateParts();

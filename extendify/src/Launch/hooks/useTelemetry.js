@@ -14,6 +14,8 @@ export const useTelemetry = () => {
 		variation,
 		siteProfile,
 		siteObjective,
+		siteQA,
+		attempt,
 	} = useUserSelectionStore();
 	const { pages: selectedPages, style: selectedStyle } =
 		usePagesSelectionStore();
@@ -74,6 +76,7 @@ export const useTelemetry = () => {
 				running.current = false;
 				controller.abort();
 			}, 900);
+
 			fetch(`${INSIGHTS_HOST}/api/v1/launch`, {
 				method: 'POST',
 				headers: {
@@ -105,6 +108,24 @@ export const useTelemetry = () => {
 					hostPartner: window.extSharedData?.partnerId,
 					language: window.extSharedData?.wpLanguage,
 					siteURL: window.extSharedData?.homeUrl,
+					siteQuestions: siteQA?.questions.map((q) => ({
+						id: q?.id,
+						question: q?.question,
+						answerUser: q?.answerUser || null,
+						answerAI: q?.answerAI || null,
+						group: q?.group || null,
+						extraFields: q?.extraFields
+							? q?.extraFields.map((ef) => ({
+									question: ef?.id,
+									answer: ef?.answer || null,
+								}))
+							: null,
+					})),
+					showHiddenQuestions: Boolean(siteQA?.showHidden),
+					attempt,
+					enabledFeatures: window.extSharedData?.showSiteQuestions
+						? ['site-questions']
+						: [],
 				}),
 			})
 				.catch(() => undefined)
@@ -131,5 +152,7 @@ export const useTelemetry = () => {
 		siteObjective,
 		variation,
 		preselectedPages,
+		siteQA,
+		attempt,
 	]);
 };
