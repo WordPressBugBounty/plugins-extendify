@@ -135,7 +135,7 @@ msgid "Site Structure"
 msgstr "Структура веб места"
 
 #: public/build/extendify-assist-page-1dfab82ac46c506a9159.js:1
-#: public/build/extendify-launch-dbdf9053c97ca625b8b8.js:5
+#: public/build/extendify-launch-f662d7f4a3e13469a0bf.js:5
 msgid "Pick Your Site Structure"
 msgstr "Изабери структуру веб места"
 
@@ -177,8 +177,8 @@ msgid "Add site description"
 msgstr "Додајте опис сајта"
 
 #: public/build/extendify-assist-page-1dfab82ac46c506a9159.js:1
-#: public/build/extendify-launch-dbdf9053c97ca625b8b8.js:5
-#: public/build/extendify-launch-dbdf9053c97ca625b8b8.js:9
+#: public/build/extendify-launch-f662d7f4a3e13469a0bf.js:5
+#: public/build/extendify-launch-f662d7f4a3e13469a0bf.js:9
 msgid "Loading..."
 msgstr "Учитавање..."
 
@@ -473,7 +473,7 @@ msgid "A Glimpse into the Arctic"
 msgstr "Поглед у Арктик"
 
 #: public/build/extendify-assist-page-1dfab82ac46c506a9159.js:8
-#: public/build/extendify-draft-3f426ccb2676e446f8f0.js:7
+#: public/build/extendify-draft-e5c263ae8f073c5b7513.js:7
 #: public/build/extendify-help-center-f0ddd3a501b4ff7cd88f.js:3
 msgid "Ask AI"
 msgstr "Питај вештачку интелигенцију"
@@ -499,7 +499,7 @@ msgid "An image of a group of penguins on an icy Arctic landscape, surrounded by
 msgstr "Слика групе пингвина на леденом арктичком пејзажу, окружених санти леда и снегом под ведрим плавим небом"
 
 #: public/build/extendify-assist-page-1dfab82ac46c506a9159.js:8
-#: public/build/extendify-draft-3f426ccb2676e446f8f0.js:5
+#: public/build/extendify-draft-e5c263ae8f073c5b7513.js:5
 msgid "Aspect Ratio"
 msgstr "Однос ширине и висине"
 
@@ -512,7 +512,7 @@ msgid "0 of 10 daily image credits used"
 msgstr "0 од 10 дневних кредита за слике искоришћено"
 
 #: public/build/extendify-assist-page-1dfab82ac46c506a9159.js:8
-#: public/build/extendify-draft-3f426ccb2676e446f8f0.js:7
+#: public/build/extendify-draft-e5c263ae8f073c5b7513.js:7
 msgid "AI Image Generator"
 msgstr "Генератор слика вештачке интелигенције"
 
@@ -537,8 +537,8 @@ msgid "Whispers of Silicon"
 msgstr "Шапати силикона"
 
 #: public/build/extendify-assist-page-1dfab82ac46c506a9159.js:8
-#: public/build/extendify-draft-3f426ccb2676e446f8f0.js:1
-#: public/build/extendify-draft-3f426ccb2676e446f8f0.js:7
+#: public/build/extendify-draft-e5c263ae8f073c5b7513.js:1
+#: public/build/extendify-draft-e5c263ae8f073c5b7513.js:7
 msgid "Improve writing"
 msgstr "Побољшајте писање"
 
@@ -547,25 +547,25 @@ msgid "Fix spelling & grammar "
 msgstr "Поправи правопис и граматику"
 
 #: public/build/extendify-assist-page-1dfab82ac46c506a9159.js:8
-#: public/build/extendify-draft-3f426ccb2676e446f8f0.js:1
-#: public/build/extendify-draft-3f426ccb2676e446f8f0.js:7
+#: public/build/extendify-draft-e5c263ae8f073c5b7513.js:1
+#: public/build/extendify-draft-e5c263ae8f073c5b7513.js:7
 msgid "Simplify language"
 msgstr "Поједностави језик"
 
 #: public/build/extendify-assist-page-1dfab82ac46c506a9159.js:8
-#: public/build/extendify-draft-3f426ccb2676e446f8f0.js:1
-#: public/build/extendify-draft-3f426ccb2676e446f8f0.js:7
+#: public/build/extendify-draft-e5c263ae8f073c5b7513.js:1
+#: public/build/extendify-draft-e5c263ae8f073c5b7513.js:7
 msgid "Make shorter"
 msgstr "Скрати"
 
 #: public/build/extendify-assist-page-1dfab82ac46c506a9159.js:8
-#: public/build/extendify-draft-3f426ccb2676e446f8f0.js:1
-#: public/build/extendify-draft-3f426ccb2676e446f8f0.js:7
+#: public/build/extendify-draft-e5c263ae8f073c5b7513.js:1
+#: public/build/extendify-draft-e5c263ae8f073c5b7513.js:7
 msgid "Make longer"
 msgstr "Продужи"
 
 #: public/build/extendify-assist-page-1dfab82ac46c506a9159.js:8
-#: public/build/extendify-draft-3f426ccb2676e446f8f0.js:7
+#: public/build/extendify-draft-e5c263ae8f073c5b7513.js:7
 msgid "Translate"
 msgstr "Преведи"
 
@@ -578,7 +578,7 @@ msgid "In the echo of the machine, a new consciousness takes flight, A boundless
 msgstr "У еху машине, нова свест узлеће, Безгранично море знања, у дигиталној ноћи. О вештачка интелигенцијо, ти тиха мудраче, у коду твоја мудрост лежи"
 
 #: public/build/extendify-assist-page-1dfab82ac46c506a9159.js:8
-#: public/build/extendify-draft-3f426ccb2676e446f8f0.js:7
+#: public/build/extendify-draft-e5c263ae8f073c5b7513.js:7
 msgid "AI Tools"
 msgstr "Алати за вештачку интелигенцију"
 
@@ -587,12 +587,12 @@ msgid "With every pulse of current, a thought is born anew, A quest for....a com
 msgstr "Са сваким пулсом струје, рађа се нова мисао, Потрага за...рачунарском уметношћу"
 
 #: public/build/extendify-assist-page-1dfab82ac46c506a9159.js:8
-#: public/build/extendify-draft-3f426ccb2676e446f8f0.js:1
+#: public/build/extendify-draft-e5c263ae8f073c5b7513.js:1
 msgid "Remove selection"
 msgstr "Уклони одабир"
 
 #: public/build/extendify-assist-page-1dfab82ac46c506a9159.js:8
-#: public/build/extendify-draft-3f426ccb2676e446f8f0.js:1
+#: public/build/extendify-draft-e5c263ae8f073c5b7513.js:1
 msgid "Ask AI to edit"
 msgstr "Питај вештачку интелигенцију да уреди"
 
@@ -960,345 +960,345 @@ msgstr "Погледај сајт"
 msgid "Skip to Assist"
 msgstr "Скочи на помоћ"
 
-#: public/build/extendify-draft-3f426ccb2676e446f8f0.js:1
+#: public/build/extendify-draft-e5c263ae8f073c5b7513.js:1
 msgid "A paragraph …"
 msgstr "Пасус …"
 
-#: public/build/extendify-draft-3f426ccb2676e446f8f0.js:1
+#: public/build/extendify-draft-e5c263ae8f073c5b7513.js:1
 msgid "Write a paragraph about"
 msgstr "Напишите пасус о"
 
-#: public/build/extendify-draft-3f426ccb2676e446f8f0.js:1
+#: public/build/extendify-draft-e5c263ae8f073c5b7513.js:1
 msgid "Blog post …"
 msgstr "Чланак на блогу …"
 
-#: public/build/extendify-draft-3f426ccb2676e446f8f0.js:1
+#: public/build/extendify-draft-e5c263ae8f073c5b7513.js:1
 msgid "Write a blog post about"
 msgstr "Напиши чланак на блогу о"
 
-#: public/build/extendify-draft-3f426ccb2676e446f8f0.js:1
+#: public/build/extendify-draft-e5c263ae8f073c5b7513.js:1
 msgid "An informative article …"
 msgstr "Информативан чланак …"
 
-#: public/build/extendify-draft-3f426ccb2676e446f8f0.js:1
+#: public/build/extendify-draft-e5c263ae8f073c5b7513.js:1
 msgid "Write an informative article about"
 msgstr "Напишите информативан чланак о"
 
-#: public/build/extendify-draft-3f426ccb2676e446f8f0.js:1
+#: public/build/extendify-draft-e5c263ae8f073c5b7513.js:1
 msgid "Headline …"
 msgstr "Наслов …"
 
-#: public/build/extendify-draft-3f426ccb2676e446f8f0.js:1
+#: public/build/extendify-draft-e5c263ae8f073c5b7513.js:1
 msgid "Write a headline for"
 msgstr "Напишите наслов за"
 
-#: public/build/extendify-draft-3f426ccb2676e446f8f0.js:1
+#: public/build/extendify-draft-e5c263ae8f073c5b7513.js:1
 msgid "List …"
 msgstr "Списак …"
 
-#: public/build/extendify-draft-3f426ccb2676e446f8f0.js:1
+#: public/build/extendify-draft-e5c263ae8f073c5b7513.js:1
 msgid "Write a list of"
 msgstr "Напишите списак"
 
-#: public/build/extendify-draft-3f426ccb2676e446f8f0.js:1
-#: public/build/extendify-draft-3f426ccb2676e446f8f0.js:7
+#: public/build/extendify-draft-e5c263ae8f073c5b7513.js:1
+#: public/build/extendify-draft-e5c263ae8f073c5b7513.js:7
 msgid "Fix spelling & grammar"
 msgstr "Поправи правопис и граматику"
 
-#: public/build/extendify-draft-3f426ccb2676e446f8f0.js:1
+#: public/build/extendify-draft-e5c263ae8f073c5b7513.js:1
 msgid "AI is writing..."
 msgstr "Вештачка интелигенција пише..."
 
-#: public/build/extendify-draft-3f426ccb2676e446f8f0.js:1
+#: public/build/extendify-draft-e5c263ae8f073c5b7513.js:1
 msgid "Ask AI to generate text"
 msgstr "Затражите од вештачке интелигенције да генерише текст"
 
-#: public/build/extendify-draft-3f426ccb2676e446f8f0.js:1
+#: public/build/extendify-draft-e5c263ae8f073c5b7513.js:1
 msgid "Submit"
 msgstr "Пошаљи"
 
-#: public/build/extendify-draft-3f426ccb2676e446f8f0.js:1
+#: public/build/extendify-draft-e5c263ae8f073c5b7513.js:1
 msgid "Replace selected block text"
 msgstr "Замени текст изабраног блока"
 
-#: public/build/extendify-draft-3f426ccb2676e446f8f0.js:1
+#: public/build/extendify-draft-e5c263ae8f073c5b7513.js:1
 msgid "Insert at top"
 msgstr "Уметни на врх"
 
-#: public/build/extendify-draft-3f426ccb2676e446f8f0.js:1
+#: public/build/extendify-draft-e5c263ae8f073c5b7513.js:1
 msgid "Insert after the selected text"
 msgstr "Уметни после изабраног текста"
 
-#: public/build/extendify-draft-3f426ccb2676e446f8f0.js:1
+#: public/build/extendify-draft-e5c263ae8f073c5b7513.js:1
 msgid "Insert at bottom"
 msgstr "Уметни на дно"
 
-#: public/build/extendify-draft-3f426ccb2676e446f8f0.js:1
+#: public/build/extendify-draft-e5c263ae8f073c5b7513.js:1
 msgid "Try again"
 msgstr "Покушајте поново"
 
-#: public/build/extendify-draft-3f426ccb2676e446f8f0.js:1
+#: public/build/extendify-draft-e5c263ae8f073c5b7513.js:1
 msgid "Discard"
 msgstr "Одбаци"
 
 #. translators: %1$s is the number of used credits, %2$s is the total credits
-#: public/build/extendify-draft-3f426ccb2676e446f8f0.js:3
-#: public/build/extendify-draft-3f426ccb2676e446f8f0.js:5
+#: public/build/extendify-draft-e5c263ae8f073c5b7513.js:3
+#: public/build/extendify-draft-e5c263ae8f073c5b7513.js:5
 #, js-format
 msgid "%1$s of %2$s daily image credits used"
 msgstr "%1$s од %2$s дневних кредита за слике искоришћено"
 
-#: public/build/extendify-draft-3f426ccb2676e446f8f0.js:5
+#: public/build/extendify-draft-e5c263ae8f073c5b7513.js:5
 msgid "You can still explore and find great images on Unsplash until your credits reset."
 msgstr "И даље можете истраживати и пронаћи одличне слике на Unsplash-у док се ваши кредити не ресетују."
 
-#: public/build/extendify-draft-3f426ccb2676e446f8f0.js:5
+#: public/build/extendify-draft-e5c263ae8f073c5b7513.js:5
 msgid "Search on Unsplash"
 msgstr "Претражи на Unsplash"
 
-#: public/build/extendify-draft-3f426ccb2676e446f8f0.js:5
+#: public/build/extendify-draft-e5c263ae8f073c5b7513.js:5
 msgid "Tell AI about the image you would like to create"
 msgstr "Реци вештачкој интелигенцији о слици коју желиш да направиш"
 
-#: public/build/extendify-draft-3f426ccb2676e446f8f0.js:5
+#: public/build/extendify-draft-e5c263ae8f073c5b7513.js:5
 msgid "Image Prompt"
 msgstr "Подсетник за слику"
 
-#: public/build/extendify-draft-3f426ccb2676e446f8f0.js:5
+#: public/build/extendify-draft-e5c263ae8f073c5b7513.js:5
 msgid "Square: 1:1"
 msgstr "Квадрат: 1:1"
 
-#: public/build/extendify-draft-3f426ccb2676e446f8f0.js:5
+#: public/build/extendify-draft-e5c263ae8f073c5b7513.js:5
 msgid "Landscape: 4:3"
 msgstr "Пејзаж: 4:3"
 
-#: public/build/extendify-draft-3f426ccb2676e446f8f0.js:5
+#: public/build/extendify-draft-e5c263ae8f073c5b7513.js:5
 msgid "Portrait: 3:4"
 msgstr "Портрет: 3:4"
 
-#: public/build/extendify-draft-3f426ccb2676e446f8f0.js:5
+#: public/build/extendify-draft-e5c263ae8f073c5b7513.js:5
 msgid "Generating image..."
 msgstr "Прављење слике..."
 
-#: public/build/extendify-draft-3f426ccb2676e446f8f0.js:5
+#: public/build/extendify-draft-e5c263ae8f073c5b7513.js:5
 msgid "Generate image"
 msgstr "Генериши слику"
 
-#: public/build/extendify-draft-3f426ccb2676e446f8f0.js:5
+#: public/build/extendify-draft-e5c263ae8f073c5b7513.js:5
 msgid "Generating your image: "
 msgstr "Генерисање ваше слике:"
 
 #. translators: "Importing image" means the image is being added to the WordPress post editor
-#: public/build/extendify-draft-3f426ccb2676e446f8f0.js:7
+#: public/build/extendify-draft-e5c263ae8f073c5b7513.js:7
 msgid "Importing image..."
 msgstr "Увоз слике..."
 
-#: public/build/extendify-draft-3f426ccb2676e446f8f0.js:7
+#: public/build/extendify-draft-e5c263ae8f073c5b7513.js:7
 msgid "Use this image"
 msgstr "Користи ову слику"
 
-#: public/build/extendify-draft-3f426ccb2676e446f8f0.js:7
+#: public/build/extendify-draft-e5c263ae8f073c5b7513.js:7
 msgid "Delete image"
 msgstr "Избриши слику"
 
-#: public/build/extendify-draft-3f426ccb2676e446f8f0.js:7
+#: public/build/extendify-draft-e5c263ae8f073c5b7513.js:7
 msgid "AI Image"
 msgstr "Вештачка интелигенција слика"
 
-#: public/build/extendify-draft-3f426ccb2676e446f8f0.js:7
+#: public/build/extendify-draft-e5c263ae8f073c5b7513.js:7
 msgid "Go Back"
 msgstr "Врати се назад"
 
-#: public/build/extendify-draft-3f426ccb2676e446f8f0.js:7
+#: public/build/extendify-draft-e5c263ae8f073c5b7513.js:7
 msgid "Image Description"
 msgstr "Опис слике"
 
-#: public/build/extendify-draft-3f426ccb2676e446f8f0.js:7
+#: public/build/extendify-draft-e5c263ae8f073c5b7513.js:7
 msgid "Your request was rejected as a result of our safety system. Your prompt may contain text that is not allowed by our safety system."
 msgstr "Ваш захтев је одбијен због нашег безбедносног система. Ваш унос може садржати текст који није дозвољен нашим безбедносним системом."
 
-#: public/build/extendify-draft-3f426ccb2676e446f8f0.js:7
+#: public/build/extendify-draft-e5c263ae8f073c5b7513.js:7
 msgid "Service temporarily unavailable"
 msgstr "Услуга привремено недоступна"
 
 #. translators: This string represents the title of an "Home" page on a website. Please translate it in a way that fits the standard phrasing for a "Home" page in the target language, considering the common usage in websites for that language.
 #: public/build/extendify-common-c3b03f15783b89ea01e1.js:39
-#: public/build/extendify-draft-3f426ccb2676e446f8f0.js:7
+#: public/build/extendify-draft-e5c263ae8f073c5b7513.js:7
 msgid "Home"
 msgstr "Почетна"
 
-#: public/build/extendify-draft-3f426ccb2676e446f8f0.js:7
+#: public/build/extendify-draft-e5c263ae8f073c5b7513.js:7
 msgid "Use AI to generate custom images based on your description."
 msgstr "Користи вештачку интелигенцију за генерисање прилагођених слика на основу твог описа"
 
-#: public/build/extendify-draft-3f426ccb2676e446f8f0.js:7
+#: public/build/extendify-draft-e5c263ae8f073c5b7513.js:7
 msgid "Generate an image"
 msgstr "Генериши слику"
 
-#: public/build/extendify-draft-3f426ccb2676e446f8f0.js:7
+#: public/build/extendify-draft-e5c263ae8f073c5b7513.js:7
 msgid "Discover Stock Photos"
 msgstr "Откријте фотографије из базе"
 
-#: public/build/extendify-draft-3f426ccb2676e446f8f0.js:7
+#: public/build/extendify-draft-e5c263ae8f073c5b7513.js:7
 msgid "Search and add free stock photos from Unsplash.com"
 msgstr "Претражи и додај бесплатне фотографије са Unsplash.com"
 
-#: public/build/extendify-draft-3f426ccb2676e446f8f0.js:7
+#: public/build/extendify-draft-e5c263ae8f073c5b7513.js:7
 msgid "Search Unsplash"
 msgstr "Претражи Unsplash"
 
-#: public/build/extendify-draft-3f426ccb2676e446f8f0.js:7
+#: public/build/extendify-draft-e5c263ae8f073c5b7513.js:7
 msgid "No images found."
 msgstr "Нема пронађених слика."
 
-#: public/build/extendify-draft-3f426ccb2676e446f8f0.js:7
+#: public/build/extendify-draft-e5c263ae8f073c5b7513.js:7
 msgid "Unsplash"
 msgstr "Unsplash"
 
-#: public/build/extendify-draft-3f426ccb2676e446f8f0.js:7
+#: public/build/extendify-draft-e5c263ae8f073c5b7513.js:7
 msgid "Photos from Unsplash"
 msgstr "Фотографије са Unsplash"
 
-#: public/build/extendify-draft-3f426ccb2676e446f8f0.js:1
+#: public/build/extendify-draft-e5c263ae8f073c5b7513.js:1
 #: public/build/extendify-help-center-f0ddd3a501b4ff7cd88f.js:3
-#: public/build/extendify-launch-dbdf9053c97ca625b8b8.js:5
+#: public/build/extendify-launch-f662d7f4a3e13469a0bf.js:5
 msgid "Terms of Use"
 msgstr "Услови коришћења"
 
-#: public/build/extendify-draft-3f426ccb2676e446f8f0.js:1
+#: public/build/extendify-draft-e5c263ae8f073c5b7513.js:1
 #: public/build/extendify-help-center-f0ddd3a501b4ff7cd88f.js:3
 msgid "Accept"
 msgstr "Прихвати"
 
-#: public/build/extendify-draft-3f426ccb2676e446f8f0.js:7
+#: public/build/extendify-draft-e5c263ae8f073c5b7513.js:7
 msgid "Suggested prompts"
 msgstr "Предложени упити"
 
-#: public/build/extendify-draft-3f426ccb2676e446f8f0.js:7
+#: public/build/extendify-draft-e5c263ae8f073c5b7513.js:7
 msgid "Get Personalized Image"
 msgstr "Преузми персонализовану слику"
 
-#: public/build/extendify-draft-3f426ccb2676e446f8f0.js:7
+#: public/build/extendify-draft-e5c263ae8f073c5b7513.js:7
 msgid "Bulgarian"
 msgstr "Бугарски"
 
-#: public/build/extendify-draft-3f426ccb2676e446f8f0.js:7
+#: public/build/extendify-draft-e5c263ae8f073c5b7513.js:7
 msgid "Catalan"
 msgstr "Каталонски"
 
-#: public/build/extendify-draft-3f426ccb2676e446f8f0.js:7
+#: public/build/extendify-draft-e5c263ae8f073c5b7513.js:7
 msgid "Czech"
 msgstr "Češki"
 
-#: public/build/extendify-draft-3f426ccb2676e446f8f0.js:7
+#: public/build/extendify-draft-e5c263ae8f073c5b7513.js:7
 msgid "Danish"
 msgstr "Danski"
 
-#: public/build/extendify-draft-3f426ccb2676e446f8f0.js:7
+#: public/build/extendify-draft-e5c263ae8f073c5b7513.js:7
 msgid "Dutch"
 msgstr "Холандски"
 
-#: public/build/extendify-draft-3f426ccb2676e446f8f0.js:7
+#: public/build/extendify-draft-e5c263ae8f073c5b7513.js:7
 msgid "Dutch (Belgium)"
 msgstr "Фламански"
 
-#: public/build/extendify-draft-3f426ccb2676e446f8f0.js:7
+#: public/build/extendify-draft-e5c263ae8f073c5b7513.js:7
 msgid "English"
 msgstr "Енглески"
 
-#: public/build/extendify-draft-3f426ccb2676e446f8f0.js:7
+#: public/build/extendify-draft-e5c263ae8f073c5b7513.js:7
 msgid "Estonian"
 msgstr "Естонски"
 
-#: public/build/extendify-draft-3f426ccb2676e446f8f0.js:7
+#: public/build/extendify-draft-e5c263ae8f073c5b7513.js:7
 msgid "Finnish"
 msgstr "Finski"
 
-#: public/build/extendify-draft-3f426ccb2676e446f8f0.js:7
+#: public/build/extendify-draft-e5c263ae8f073c5b7513.js:7
 msgid "French (Belgium)"
 msgstr "Француски (Белгија)"
 
-#: public/build/extendify-draft-3f426ccb2676e446f8f0.js:7
+#: public/build/extendify-draft-e5c263ae8f073c5b7513.js:7
 msgid "French (Canada)"
 msgstr "Француски (Канада)"
 
-#: public/build/extendify-draft-3f426ccb2676e446f8f0.js:7
+#: public/build/extendify-draft-e5c263ae8f073c5b7513.js:7
 msgid "French (France)"
 msgstr "Француски (Француска)"
 
-#: public/build/extendify-draft-3f426ccb2676e446f8f0.js:7
+#: public/build/extendify-draft-e5c263ae8f073c5b7513.js:7
 msgid "German"
 msgstr "Немачки"
 
-#: public/build/extendify-draft-3f426ccb2676e446f8f0.js:7
+#: public/build/extendify-draft-e5c263ae8f073c5b7513.js:7
 msgid "German (Switzerland)"
 msgstr "Немачки (Швајцарска)"
 
-#: public/build/extendify-draft-3f426ccb2676e446f8f0.js:7
+#: public/build/extendify-draft-e5c263ae8f073c5b7513.js:7
 msgid "Hungarian"
 msgstr "Мађарски"
 
-#: public/build/extendify-draft-3f426ccb2676e446f8f0.js:7
+#: public/build/extendify-draft-e5c263ae8f073c5b7513.js:7
 msgid "Indonesian"
 msgstr "Indonežanski"
 
-#: public/build/extendify-draft-3f426ccb2676e446f8f0.js:7
+#: public/build/extendify-draft-e5c263ae8f073c5b7513.js:7
 msgid "Italian"
 msgstr "Италијански"
 
-#: public/build/extendify-draft-3f426ccb2676e446f8f0.js:7
+#: public/build/extendify-draft-e5c263ae8f073c5b7513.js:7
 msgid "Japanese"
 msgstr "Јапански"
 
-#: public/build/extendify-draft-3f426ccb2676e446f8f0.js:7
+#: public/build/extendify-draft-e5c263ae8f073c5b7513.js:7
 msgid "Norwegian"
 msgstr "Норвешки"
 
-#: public/build/extendify-draft-3f426ccb2676e446f8f0.js:7
+#: public/build/extendify-draft-e5c263ae8f073c5b7513.js:7
 msgid "Polish"
 msgstr "Пољски"
 
-#: public/build/extendify-draft-3f426ccb2676e446f8f0.js:7
+#: public/build/extendify-draft-e5c263ae8f073c5b7513.js:7
 msgid "Portuguese (Brazil)"
 msgstr "Португалски (Бразил)"
 
-#: public/build/extendify-draft-3f426ccb2676e446f8f0.js:7
+#: public/build/extendify-draft-e5c263ae8f073c5b7513.js:7
 msgid "Portuguese (Portugal)"
 msgstr "Португалски (Португалија)"
 
-#: public/build/extendify-draft-3f426ccb2676e446f8f0.js:7
+#: public/build/extendify-draft-e5c263ae8f073c5b7513.js:7
 msgid "Russian"
 msgstr "Руски"
 
-#: public/build/extendify-draft-3f426ccb2676e446f8f0.js:7
+#: public/build/extendify-draft-e5c263ae8f073c5b7513.js:7
 msgid "Slovak"
 msgstr "Словачки"
 
-#: public/build/extendify-draft-3f426ccb2676e446f8f0.js:7
+#: public/build/extendify-draft-e5c263ae8f073c5b7513.js:7
 msgid "Spanish (Spain)"
 msgstr "Шпански (Шпанија)"
 
-#: public/build/extendify-draft-3f426ccb2676e446f8f0.js:7
+#: public/build/extendify-draft-e5c263ae8f073c5b7513.js:7
 msgid "Swedish"
 msgstr "Шведски"
 
-#: public/build/extendify-draft-3f426ccb2676e446f8f0.js:7
+#: public/build/extendify-draft-e5c263ae8f073c5b7513.js:7
 msgid "Turkish"
 msgstr "Турски"
 
-#: public/build/extendify-draft-3f426ccb2676e446f8f0.js:7
+#: public/build/extendify-draft-e5c263ae8f073c5b7513.js:7
 msgid "Ukrainian"
 msgstr "Украјински"
 
-#: public/build/extendify-draft-3f426ccb2676e446f8f0.js:7
+#: public/build/extendify-draft-e5c263ae8f073c5b7513.js:7
 msgid "Vietnamese"
 msgstr "Вијетнамски"
 
-#: public/build/extendify-draft-3f426ccb2676e446f8f0.js:7
+#: public/build/extendify-draft-e5c263ae8f073c5b7513.js:7
 msgid "Translate to..."
 msgstr "Преведи на..."
 
-#: public/build/extendify-draft-3f426ccb2676e446f8f0.js:7
+#: public/build/extendify-draft-e5c263ae8f073c5b7513.js:7
 msgid "Custom prompt"
 msgstr "Прилагођени упит"
 
@@ -1758,7 +1758,7 @@ msgid "Tour"
 msgstr "Тура"
 
 #: public/build/extendify-help-center-f0ddd3a501b4ff7cd88f.js:3
-#: public/build/extendify-launch-dbdf9053c97ca625b8b8.js:5
+#: public/build/extendify-launch-f662d7f4a3e13469a0bf.js:5
 msgid "Back"
 msgstr "Назад"
 
@@ -1773,7 +1773,7 @@ msgid "%1$s of %2$s"
 msgstr "%1$s од %2$s"
 
 #: public/build/extendify-help-center-f0ddd3a501b4ff7cd88f.js:5
-#: public/build/extendify-launch-dbdf9053c97ca625b8b8.js:5
+#: public/build/extendify-launch-f662d7f4a3e13469a0bf.js:5
 msgid "Next"
 msgstr "Следеће"
 
@@ -1789,7 +1789,7 @@ msgstr "o-nama"
 
 #. translators: This string represents the title of a "Blog" page on a website that shows recent blog posts. Please translate it in a way that fits the standard phrasing for a "Blog" page in the target language, considering the common usage in websites for that language.
 #: public/build/extendify-common-c3b03f15783b89ea01e1.js:7
-#: public/build/extendify-launch-dbdf9053c97ca625b8b8.js:5
+#: public/build/extendify-launch-f662d7f4a3e13469a0bf.js:5
 msgid "Blog"
 msgstr "Блог"
 
@@ -1820,7 +1820,7 @@ msgstr "kontakt"
 
 #. translators: This string represents the title of an "Events" page on a website that lists events of any kind. Please translate it in a way that fits the standard phrasing for an "Events" page in the target language, considering the common usage in websites for that language.
 #: public/build/extendify-common-c3b03f15783b89ea01e1.js:23
-#: public/build/extendify-launch-dbdf9053c97ca625b8b8.js:11
+#: public/build/extendify-launch-f662d7f4a3e13469a0bf.js:11
 msgid "Events"
 msgstr "Догађаји"
 
@@ -1970,186 +1970,186 @@ msgid "testimonials"
 msgstr "testimonials"
 
 #. translators: Launch is the product name. Unless otherwise specified by the glossary, do not translate this name.
-#: public/build/extendify-launch-dbdf9053c97ca625b8b8.js:3
-#: public/build/extendify-launch-dbdf9053c97ca625b8b8.js:9
+#: public/build/extendify-launch-f662d7f4a3e13469a0bf.js:3
+#: public/build/extendify-launch-f662d7f4a3e13469a0bf.js:9
 #: public/build/extendify-page-creator-e67d3c68695c81936fdf.js:5
 msgid "Added by Launch"
 msgstr "Додато од стране Launch"
 
-#: public/build/extendify-launch-dbdf9053c97ca625b8b8.js:9
+#: public/build/extendify-launch-f662d7f4a3e13469a0bf.js:9
 msgid "Header Navigation"
 msgstr "Навигација заглавља"
 
-#: public/build/extendify-launch-dbdf9053c97ca625b8b8.js:3
+#: public/build/extendify-launch-f662d7f4a3e13469a0bf.js:3
 msgid "Start over?"
 msgstr "Почни поново?"
 
-#: public/build/extendify-launch-dbdf9053c97ca625b8b8.js:3
+#: public/build/extendify-launch-f662d7f4a3e13469a0bf.js:3
 msgid "Go through the onboarding process again to create a new site."
 msgstr "Поново прођите кроз процес увођења да бисте направили ново веб место."
 
-#: public/build/extendify-launch-dbdf9053c97ca625b8b8.js:5
+#: public/build/extendify-launch-f662d7f4a3e13469a0bf.js:5
 msgid "Exit"
 msgstr "Изађи"
 
-#: public/build/extendify-launch-dbdf9053c97ca625b8b8.js:5
+#: public/build/extendify-launch-f662d7f4a3e13469a0bf.js:5
 msgid "Processing"
 msgstr "Обрада"
 
-#: public/build/extendify-launch-dbdf9053c97ca625b8b8.js:5
+#: public/build/extendify-launch-f662d7f4a3e13469a0bf.js:5
 msgid "Continue"
 msgstr "Настави"
 
-#: public/build/extendify-launch-dbdf9053c97ca625b8b8.js:5
+#: public/build/extendify-launch-f662d7f4a3e13469a0bf.js:5
 #: public/build/extendify-page-creator-e67d3c68695c81936fdf.js:3
 msgid "Just a moment, this is taking longer than expected."
 msgstr "Само тренутак, ово траје дуже него што се очекивало."
 
-#: public/build/extendify-launch-dbdf9053c97ca625b8b8.js:7
+#: public/build/extendify-launch-f662d7f4a3e13469a0bf.js:7
 msgid "E.g., We are a yoga studio in London with professionally trained instructors with focus on hot yoga for therapeutic purposes."
 msgstr "На пример, ми смо јога студио у Лондону са професионално обученим инструкторима који се фокусирају на хот јогу у терапеутске сврхе"
 
-#: public/build/extendify-launch-dbdf9053c97ca625b8b8.js:7
+#: public/build/extendify-launch-f662d7f4a3e13469a0bf.js:7
 msgid "Professional"
 msgstr "Професионално"
 
-#: public/build/extendify-launch-dbdf9053c97ca625b8b8.js:7
+#: public/build/extendify-launch-f662d7f4a3e13469a0bf.js:7
 msgid "Friendly"
 msgstr "Пријатељски"
 
-#: public/build/extendify-launch-dbdf9053c97ca625b8b8.js:7
+#: public/build/extendify-launch-f662d7f4a3e13469a0bf.js:7
 msgid "Inspirational"
 msgstr "Инспиративно"
 
-#: public/build/extendify-launch-dbdf9053c97ca625b8b8.js:7
+#: public/build/extendify-launch-f662d7f4a3e13469a0bf.js:7
 msgid "Informative"
 msgstr "Информативно"
 
-#: public/build/extendify-launch-dbdf9053c97ca625b8b8.js:7
+#: public/build/extendify-launch-f662d7f4a3e13469a0bf.js:7
 msgid "Persuasive"
 msgstr "Убедљив"
 
-#: public/build/extendify-launch-dbdf9053c97ca625b8b8.js:5
+#: public/build/extendify-launch-f662d7f4a3e13469a0bf.js:5
 msgid "Home page"
 msgstr "Почетна страница"
 
-#: public/build/extendify-launch-dbdf9053c97ca625b8b8.js:5
+#: public/build/extendify-launch-f662d7f4a3e13469a0bf.js:5
 msgid "Pick the pages to add to your website"
 msgstr "Изабери стране које ћеш додати на своје веб место"
 
-#: public/build/extendify-launch-dbdf9053c97ca625b8b8.js:5
+#: public/build/extendify-launch-f662d7f4a3e13469a0bf.js:5
 msgid "We already selected the most common pages for your type of website."
 msgstr "Већ смо одабрали најчешће стране за ваш тип веб места."
 
-#: public/build/extendify-launch-dbdf9053c97ca625b8b8.js:5
+#: public/build/extendify-launch-f662d7f4a3e13469a0bf.js:5
 msgid "View more pages"
 msgstr "Види више страница"
 
-#: public/build/extendify-launch-dbdf9053c97ca625b8b8.js:5
+#: public/build/extendify-launch-f662d7f4a3e13469a0bf.js:5
 msgid "Exit Launch"
 msgstr "Изађи из покретања"
 
-#: public/build/extendify-launch-dbdf9053c97ca625b8b8.js:5
+#: public/build/extendify-launch-f662d7f4a3e13469a0bf.js:5
 msgid "Skip"
 msgstr "Прескочи"
 
-#: public/build/extendify-launch-dbdf9053c97ca625b8b8.js:5
+#: public/build/extendify-launch-f662d7f4a3e13469a0bf.js:5
 msgid "Press to select"
 msgstr "Притисни да одабереш"
 
-#: public/build/extendify-launch-dbdf9053c97ca625b8b8.js:7
+#: public/build/extendify-launch-f662d7f4a3e13469a0bf.js:7
 msgid "Enter your website name"
 msgstr "Унесите име вашег веб места"
 
-#: public/build/extendify-launch-dbdf9053c97ca625b8b8.js:5
+#: public/build/extendify-launch-f662d7f4a3e13469a0bf.js:5
 msgid "Single-Page Website"
 msgstr "Једнострана веб-страница"
 
-#: public/build/extendify-launch-dbdf9053c97ca625b8b8.js:5
+#: public/build/extendify-launch-f662d7f4a3e13469a0bf.js:5
 msgid "All content displayed on one scrolling page."
 msgstr "Сав садржај приказан на једној страници која се скролује"
 
-#: public/build/extendify-launch-dbdf9053c97ca625b8b8.js:5
+#: public/build/extendify-launch-f662d7f4a3e13469a0bf.js:5
 msgid "Multi-Page Website"
 msgstr "Веб-сајт са више страна"
 
-#: public/build/extendify-launch-dbdf9053c97ca625b8b8.js:5
+#: public/build/extendify-launch-f662d7f4a3e13469a0bf.js:5
 msgid "Multiple interconnected pages."
 msgstr "Више међусобно повезаних страница"
 
-#: public/build/extendify-launch-dbdf9053c97ca625b8b8.js:9
+#: public/build/extendify-launch-f662d7f4a3e13469a0bf.js:9
 msgid "Pick a design for your website"
 msgstr "Изаберите дизајн за ваш веб сајт"
 
-#: public/build/extendify-launch-dbdf9053c97ca625b8b8.js:9
+#: public/build/extendify-launch-f662d7f4a3e13469a0bf.js:9
 msgid "You can personalize this later."
 msgstr "Можете ово касније персонализовати"
 
-#: public/build/extendify-launch-dbdf9053c97ca625b8b8.js:9
+#: public/build/extendify-launch-f662d7f4a3e13469a0bf.js:9
 msgid "Applying your website styles"
 msgstr "Примена стилова вашег веб места"
 
-#: public/build/extendify-launch-dbdf9053c97ca625b8b8.js:9
+#: public/build/extendify-launch-f662d7f4a3e13469a0bf.js:9
 msgid "Creating a beautiful website"
 msgstr "Креирање лепог веб места"
 
-#: public/build/extendify-launch-dbdf9053c97ca625b8b8.js:9
+#: public/build/extendify-launch-f662d7f4a3e13469a0bf.js:9
 msgid "Installing necessary plugins"
 msgstr "Постављање неопходних додатака"
 
-#: public/build/extendify-launch-dbdf9053c97ca625b8b8.js:9
+#: public/build/extendify-launch-f662d7f4a3e13469a0bf.js:9
 msgid "Populating data"
 msgstr "Попуњавање података"
 
-#: public/build/extendify-launch-dbdf9053c97ca625b8b8.js:9
+#: public/build/extendify-launch-f662d7f4a3e13469a0bf.js:9
 msgid "Personalizing your experience"
 msgstr "Персонализовање вашег искуства"
 
-#: public/build/extendify-launch-dbdf9053c97ca625b8b8.js:9
+#: public/build/extendify-launch-f662d7f4a3e13469a0bf.js:9
 msgid "Adding page content"
 msgstr "Додавање садржаја странице"
 
-#: public/build/extendify-launch-dbdf9053c97ca625b8b8.js:9
+#: public/build/extendify-launch-f662d7f4a3e13469a0bf.js:9
 msgid "Starting off with a full website"
 msgstr "Почетак са комплетним веб местом"
 
-#: public/build/extendify-launch-dbdf9053c97ca625b8b8.js:9
+#: public/build/extendify-launch-f662d7f4a3e13469a0bf.js:9
 msgid "Creating pages with custom content"
 msgstr "Креирање страница са прилагођеним садржајем"
 
-#: public/build/extendify-launch-dbdf9053c97ca625b8b8.js:11
+#: public/build/extendify-launch-f662d7f4a3e13469a0bf.js:11
 msgid "Setting up site layout"
 msgstr "Подешавање распореда веб места"
 
-#: public/build/extendify-launch-dbdf9053c97ca625b8b8.js:13
+#: public/build/extendify-launch-f662d7f4a3e13469a0bf.js:13
 msgid "Setting up your Site Assistant"
 msgstr "Подешавање вашег асистента за сајт"
 
-#: public/build/extendify-launch-dbdf9053c97ca625b8b8.js:13
+#: public/build/extendify-launch-f662d7f4a3e13469a0bf.js:13
 msgid "Helping you to succeed"
 msgstr "Помаже вам да успете"
 
-#: public/build/extendify-launch-dbdf9053c97ca625b8b8.js:13
+#: public/build/extendify-launch-f662d7f4a3e13469a0bf.js:13
 msgid "Your website has been created!"
 msgstr "Ваше веб место је направљено!"
 
-#: public/build/extendify-launch-dbdf9053c97ca625b8b8.js:13
+#: public/build/extendify-launch-f662d7f4a3e13469a0bf.js:13
 msgid "Redirecting in 3, 2, 1..."
 msgstr "Преусмеравање за 3, 2, 1..."
 
-#: public/build/extendify-launch-dbdf9053c97ca625b8b8.js:13
+#: public/build/extendify-launch-f662d7f4a3e13469a0bf.js:13
 msgid "We encountered a server error we cannot recover from. Please reload the page and try again."
 msgstr "Наишли смо на грешку сервера коју не можемо отклонити. Молимо вас да поново учитате страницу и покушате поново."
 
-#: public/build/extendify-launch-dbdf9053c97ca625b8b8.js:13
+#: public/build/extendify-launch-f662d7f4a3e13469a0bf.js:13
 msgid "One more thing before we start."
 msgstr "Још једна ствар пре него што почнемо"
 
-#: public/build/extendify-launch-dbdf9053c97ca625b8b8.js:13
+#: public/build/extendify-launch-f662d7f4a3e13469a0bf.js:13
 msgid "Hey there, Launch is powered by Extendable and is required to proceed. You can install it from the link below and start over once activated."
 msgstr "Здраво, Launch покреће Extendable и потребан је за наставак. Можете га поставити са доње везе и почети поново након активације"
 
-#: public/build/extendify-launch-dbdf9053c97ca625b8b8.js:13
+#: public/build/extendify-launch-f662d7f4a3e13469a0bf.js:13
 msgid "Take me there"
 msgstr "Одведи ме тамо"
 
@@ -2311,69 +2311,69 @@ msgstr "Уживајте у класичној француској бистро
 msgid "Find your dream home or make profitable investments with Pinnacle Properties, Austin's premier real estate agency. Trust our experienced agents for personalized services."
 msgstr "Пронађите свој дом из снова или остварите профитабилне инвестиције са Pinnacle Properties, водећом агенцијом за некретнине у Остину. Верујте нашим искусним агентима за персонализоване услуге."
 
-#: public/build/extendify-draft-3f426ccb2676e446f8f0.js:7
+#: public/build/extendify-draft-e5c263ae8f073c5b7513.js:7
 msgid "Greek"
 msgstr "Грчки"
 
-#: public/build/extendify-draft-3f426ccb2676e446f8f0.js:7
+#: public/build/extendify-draft-e5c263ae8f073c5b7513.js:7
 msgid "Hindi"
 msgstr "Хинди"
 
-#: public/build/extendify-draft-3f426ccb2676e446f8f0.js:7
+#: public/build/extendify-draft-e5c263ae8f073c5b7513.js:7
 msgid "Arabic"
 msgstr "Арапски"
 
-#: public/build/extendify-draft-3f426ccb2676e446f8f0.js:7
+#: public/build/extendify-draft-e5c263ae8f073c5b7513.js:7
 msgid "Arabic (Morocco)"
 msgstr "Арапски (Мароко)"
 
-#: public/build/extendify-draft-3f426ccb2676e446f8f0.js:7
+#: public/build/extendify-draft-e5c263ae8f073c5b7513.js:7
 msgid "English (UK)"
 msgstr "Енглески (УК)"
 
-#: public/build/extendify-draft-3f426ccb2676e446f8f0.js:7
+#: public/build/extendify-draft-e5c263ae8f073c5b7513.js:7
 msgid "Spanish (Colombia)"
 msgstr "Шпански (Колумбија)"
 
-#: public/build/extendify-draft-3f426ccb2676e446f8f0.js:7
+#: public/build/extendify-draft-e5c263ae8f073c5b7513.js:7
 msgid "Spanish (Mexico)"
 msgstr "Шпански (Мексико)"
 
-#: public/build/extendify-draft-3f426ccb2676e446f8f0.js:7
+#: public/build/extendify-draft-e5c263ae8f073c5b7513.js:7
 msgid "Romanian"
 msgstr "Румунски"
 
-#: public/build/extendify-launch-dbdf9053c97ca625b8b8.js:7
+#: public/build/extendify-launch-f662d7f4a3e13469a0bf.js:7
 msgid "Share your vision, and we'll craft a website that's perfectly tailored to your needs, ready to launch in no time. Let's begin by learning more about what you're building."
 msgstr "Поделите своју визију, а ми ћемо направити веб место савршено прилагођено вашим потребама, спремно за брзо покретање. Почнимо тако што ћемо сазнати више о томе шта градите."
 
 #. translators: Launch is a noun.
-#: public/build/extendify-launch-dbdf9053c97ca625b8b8.js:15
+#: public/build/extendify-launch-f662d7f4a3e13469a0bf.js:15
 msgid "Launch - AI-Powered Web Creation"
 msgstr "Покретање - Веб креирање уз вештачку интелигенцију"
 
-#: public/build/extendify-launch-dbdf9053c97ca625b8b8.js:7
+#: public/build/extendify-launch-f662d7f4a3e13469a0bf.js:7
 msgid "Customizing Your Experience"
 msgstr "Прилагођавање вашег искуства"
 
-#: public/build/extendify-launch-dbdf9053c97ca625b8b8.js:9
+#: public/build/extendify-launch-f662d7f4a3e13469a0bf.js:9
 msgid "Designing Your Options"
 msgstr "Дизајнирање ваших опција"
 
-#: public/build/extendify-launch-dbdf9053c97ca625b8b8.js:7
+#: public/build/extendify-launch-f662d7f4a3e13469a0bf.js:7
 msgid "Please wait while we analyze your inputs and tailor your experience."
 msgstr "Молимо вас да сачекате док анализирамо ваше уносе и прилагодимо ваше искуство."
 
-#: public/build/extendify-launch-dbdf9053c97ca625b8b8.js:9
+#: public/build/extendify-launch-f662d7f4a3e13469a0bf.js:9
 msgid "Please wait while we build some website options for you to select from."
 msgstr "Молимо вас сачекајте док креирамо неке опције веб места за вас да одаберете."
 
-#: public/build/extendify-launch-dbdf9053c97ca625b8b8.js:9
+#: public/build/extendify-launch-f662d7f4a3e13469a0bf.js:9
 msgid "Creating blog sample data"
 msgstr "Креирање примерних података за блог"
 
 #. translators: "More" here is used for a navigation menu item that contains additional links.
-#: public/build/extendify-launch-dbdf9053c97ca625b8b8.js:13
+#: public/build/extendify-launch-f662d7f4a3e13469a0bf.js:13
 msgid "More"
 msgstr "Још"
 
@@ -2383,30 +2383,30 @@ msgid "Add Website Details"
 msgstr "Додај детаље веб сајта"
 
 #. translators: %s is a post number
-#: public/build/extendify-launch-dbdf9053c97ca625b8b8.js:11
+#: public/build/extendify-launch-f662d7f4a3e13469a0bf.js:11
 #, js-format
 msgid "Blog Post %s"
 msgstr "Блог објава %s"
 
-#: public/build/extendify-launch-dbdf9053c97ca625b8b8.js:11
+#: public/build/extendify-launch-f662d7f4a3e13469a0bf.js:11
 msgid "Importing shop sample data"
 msgstr "Увоз узорка података продавнице"
 
 #. translators: %3$s is the number of old pages
-#: public/build/extendify-launch-dbdf9053c97ca625b8b8.js:5
+#: public/build/extendify-launch-f662d7f4a3e13469a0bf.js:5
 #, js-format
 msgid "%s pages/posts created in the prior onboarding session will be deleted."
 msgstr "%s страница/чланака креираних у претходној сеанси ће бити избрисано."
 
-#: public/build/extendify-draft-3f426ccb2676e446f8f0.js:7
+#: public/build/extendify-draft-e5c263ae8f073c5b7513.js:7
 msgid "Lithuanian"
 msgstr "Литвански"
 
-#: public/build/extendify-launch-dbdf9053c97ca625b8b8.js:7
+#: public/build/extendify-launch-f662d7f4a3e13469a0bf.js:7
 msgid "Select your site's tone"
 msgstr "Одабери тон свог сајта"
 
-#: public/build/extendify-launch-dbdf9053c97ca625b8b8.js:7
+#: public/build/extendify-launch-f662d7f4a3e13469a0bf.js:7
 msgid "Website title (required)"
 msgstr "Наслов веб сајта (обавезно)"
 
@@ -2420,7 +2420,7 @@ msgstr "Резервиши сада"
 msgid "book-now"
 msgstr "резервиши-сад"
 
-#: public/build/extendify-launch-dbdf9053c97ca625b8b8.js:11
+#: public/build/extendify-launch-f662d7f4a3e13469a0bf.js:11
 msgid "Hello World Featured Image"
 msgstr "Издвојена слика за Hello World"
 
@@ -2523,83 +2523,83 @@ msgstr "Страна је додата"
 msgid "Failed to add page"
 msgstr "Додавање странице није успело"
 
-#: public/build/extendify-launch-dbdf9053c97ca625b8b8.js:5
+#: public/build/extendify-launch-f662d7f4a3e13469a0bf.js:5
 msgid "Business"
 msgstr "Посао"
 
-#: public/build/extendify-launch-dbdf9053c97ca625b8b8.js:5
+#: public/build/extendify-launch-f662d7f4a3e13469a0bf.js:5
 msgid "eCommerce"
 msgstr "е-трговина"
 
-#: public/build/extendify-launch-dbdf9053c97ca625b8b8.js:5
+#: public/build/extendify-launch-f662d7f4a3e13469a0bf.js:5
 msgid "Landing Page"
 msgstr "Одредишна страница"
 
-#: public/build/extendify-launch-dbdf9053c97ca625b8b8.js:5
+#: public/build/extendify-launch-f662d7f4a3e13469a0bf.js:5
 msgid "Other"
 msgstr "Друго"
 
-#: public/build/extendify-launch-dbdf9053c97ca625b8b8.js:7
+#: public/build/extendify-launch-f662d7f4a3e13469a0bf.js:7
 msgid "Landing Page title (required)"
 msgstr "Наслов одредишне стране (обавезно)"
 
-#: public/build/extendify-launch-dbdf9053c97ca625b8b8.js:7
+#: public/build/extendify-launch-f662d7f4a3e13469a0bf.js:7
 msgid "E.g., We are an online store specializing in eco-friendly home goods, offering sustainably sourced products to help you live a greener lifestyle."
 msgstr "Нпр., Ми смо онлајн продавница специјализована за еколошке кућне производе, нудимо производе из одрживих извора како бисмо вам помогли да живите еколошки."
 
-#: public/build/extendify-launch-dbdf9053c97ca625b8b8.js:7
+#: public/build/extendify-launch-f662d7f4a3e13469a0bf.js:7
 msgid "E.g., A personal finance blog sharing expert tips on budgeting, investing, and achieving financial freedom for young professionals."
 msgstr "Нпр. Лични финансијски блог који дели стручне савете о буџетирању, инвестирању и постизању финансијске слободе за младе професионалце"
 
-#: public/build/extendify-launch-dbdf9053c97ca625b8b8.js:7
+#: public/build/extendify-launch-f662d7f4a3e13469a0bf.js:7
 msgid "E.g., A free ebook packed with actionable productivity tips and strategies to help you stay focused, manage your time effectively, and achieve your goals."
 msgstr "На пример, бесплатна е-књига са практичним саветима и стратегијама за продуктивност која ће вам помоћи да останете фокусирани, ефикасно управљате временом и постигнете своје циљеве."
 
-#: public/build/extendify-launch-dbdf9053c97ca625b8b8.js:7
+#: public/build/extendify-launch-f662d7f4a3e13469a0bf.js:7
 msgid "E.g., A personal photography portfolio featuring a collection of landscape, portrait, and street photography, capturing moments from around the world."
 msgstr "На пример, лични фотографски портфолио са колекцијом пејзажне, портретне и уличне фотографије, који бележи тренутке из целог света"
 
-#: public/build/extendify-launch-dbdf9053c97ca625b8b8.js:7
+#: public/build/extendify-launch-f662d7f4a3e13469a0bf.js:7
 msgid "Describe your business"
 msgstr "Опиши свој бизнис"
 
-#: public/build/extendify-launch-dbdf9053c97ca625b8b8.js:7
+#: public/build/extendify-launch-f662d7f4a3e13469a0bf.js:7
 msgid "Describe your eCommerce website"
 msgstr "Описуј своје е-трговинско веб место"
 
-#: public/build/extendify-launch-dbdf9053c97ca625b8b8.js:7
+#: public/build/extendify-launch-f662d7f4a3e13469a0bf.js:7
 msgid "Describe your blog"
 msgstr "Описите свој блог"
 
-#: public/build/extendify-launch-dbdf9053c97ca625b8b8.js:7
+#: public/build/extendify-launch-f662d7f4a3e13469a0bf.js:7
 msgid "Describe your Landing Page"
 msgstr "Описати вашу одредишну страницу"
 
-#: public/build/extendify-launch-dbdf9053c97ca625b8b8.js:7
+#: public/build/extendify-launch-f662d7f4a3e13469a0bf.js:7
 msgid "Describe your website"
 msgstr "Описите своје веб место"
 
-#: public/build/extendify-launch-dbdf9053c97ca625b8b8.js:7
+#: public/build/extendify-launch-f662d7f4a3e13469a0bf.js:7
 msgid "Call-To-Action Link"
 msgstr "Веза за позив на акцију"
 
-#: public/build/extendify-launch-dbdf9053c97ca625b8b8.js:7
+#: public/build/extendify-launch-f662d7f4a3e13469a0bf.js:7
 msgid "This link will be used in all Call-to-Action buttons, directing visitors to your chosen destination."
 msgstr "Ова веза ће се користити у свим дугмадима за позив на акцију, усмеравајући посетиоце на изабрану дестинацију."
 
-#: public/build/extendify-launch-dbdf9053c97ca625b8b8.js:7
+#: public/build/extendify-launch-f662d7f4a3e13469a0bf.js:7
 msgid "What type of website are you creating?"
 msgstr "Коју врсту веб места креирате?"
 
-#: public/build/extendify-launch-dbdf9053c97ca625b8b8.js:7
+#: public/build/extendify-launch-f662d7f4a3e13469a0bf.js:7
 msgid "Tell Us About Your Landing Page"
 msgstr "Реците нам о вашој одредишној страници"
 
-#: public/build/extendify-launch-dbdf9053c97ca625b8b8.js:7
+#: public/build/extendify-launch-f662d7f4a3e13469a0bf.js:7
 msgid "Tell Us About Your Website"
 msgstr "Реците нам о вашем веб сајту"
 
-#: public/build/extendify-launch-dbdf9053c97ca625b8b8.js:7
+#: public/build/extendify-launch-f662d7f4a3e13469a0bf.js:7
 msgid "Share your vision, and we'll craft a landing page that's perfectly tailored to your needs, ready to launch in no time. Let's begin by learning more about what you're building."
 msgstr "Поделите своју визију, а ми ћемо направити одредишну страницу прилагођену вашим потребама, спремну за брзо покретање. Почнимо тако што ћемо сазнати више о томе шта градите."
 
@@ -2639,7 +2639,7 @@ msgstr "Саветник који показује на дугме за уређ
 msgid "Welcome to your new site! When you're ready, press here to edit this page."
 msgstr "Добро дошли на ваше ново веб место! Када будете спремни, притисните овде да уредите ову страницу."
 
-#: public/build/extendify-launch-dbdf9053c97ca625b8b8.js:11
+#: public/build/extendify-launch-f662d7f4a3e13469a0bf.js:11
 msgid "Installing supporting plugins"
 msgstr "Постављање пратећих додатака"
 
@@ -2667,12 +2667,12 @@ msgstr "Дозволи постављање додатака за напредн
 msgid "Processing patterns and installing required plugins..."
 msgstr "Обрада мустра и постављање потребних додатака..."
 
-#: public/build/extendify-launch-dbdf9053c97ca625b8b8.js:5
+#: public/build/extendify-launch-f662d7f4a3e13469a0bf.js:5
 msgid "Privacy Policy"
 msgstr "Политика приватности"
 
 #. translators: %1$s and %2$s are links
-#: public/build/extendify-launch-dbdf9053c97ca625b8b8.js:7
+#: public/build/extendify-launch-f662d7f4a3e13469a0bf.js:7
 #, js-format
 msgid "By using AI features, you agree to the OpenAI %1$s and %2$s."
 msgstr "Коришћењем особина вештачке интелигенције, слажете се са OpenAI %1$s и %2$s"
@@ -2684,14 +2684,18 @@ msgid "Recommended Solutions for: %s"
 msgstr "Препоручена решења за: %s"
 
 #. translators: %s: The site title
-#: public/build/extendify-launch-dbdf9053c97ca625b8b8.js:9
+#: public/build/extendify-launch-f662d7f4a3e13469a0bf.js:9
 #, js-format
 msgid "Let’s confirm more details about %s"
 msgstr "Потврдимо више детаља о %s"
 
-#: public/build/extendify-launch-dbdf9053c97ca625b8b8.js:9
+#: public/build/extendify-launch-f662d7f4a3e13469a0bf.js:9
 msgid "Show more questions"
 msgstr "Прикажи још питања"
+
+#: public/build/extendify-draft-e5c263ae8f073c5b7513.js:7
+msgid "Hebrew"
+msgstr "Хебрејски"
 
 #. translators: %s is a name
 #: public/build/extendify-recommendations-a5a23c31e96436d55113.js:3

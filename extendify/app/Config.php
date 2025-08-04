@@ -87,10 +87,12 @@ class Config
     public static $launchCompleted = false;
 
     /**
-     * Whether to enable preview features or not.
+     * Enabled preview features.
      *
-     * @var boolean
+     * @var array
      */
+    public static $previewFeatures = [];
+
     public static $enablePreviewFeatures = false;
 
     /**
@@ -118,21 +120,9 @@ class Config
             update_option('extendify_first_installed_version', Sanitizer::sanitizeText(self::$version));
         }
 
-        // Check the url for the extendify-preview parameter.
-        // If it is set to false, we disable preview features, if it is set to true, we enable preview features.
+        // Set up the Preview features
         // phpcs:ignore WordPress.Security.NonceVerification
-        if (isset($_GET['extendify-preview'])) {
-            // phpcs:ignore WordPress.Security.NonceVerification
-            self::$enablePreviewFeatures = $_GET['extendify-preview'] === 'false'
-            // phpcs:ignore WordPress.Security.NonceVerification
-            ? filter_var(\wp_unslash($_GET['extendify-preview']), FILTER_VALIDATE_BOOLEAN)
-            : true;
-
-            update_option('extendify_enable_preview_features', self::$enablePreviewFeatures);
-        } else {
-            // If it is not set, we use the value from the database, default is false.
-            self::$enablePreviewFeatures = (bool) get_option('extendify_enable_preview_features', false);
-        }
+        self::previewFeatures($_GET);
 
         // An easy way to check if we are in dev mode is to look for a dev specific file.
         $isDev = is_readable(EXTENDIFY_PATH . '.devbuild');
@@ -140,5 +130,57 @@ class Config
         self::$environment = $isDev ? 'DEVELOPMENT' : 'PRODUCTION';
         self::$launchCompleted = (bool) get_option('extendify_onboarding_completed', false);
         self::$showLaunch = $isDev ? true : ((bool) ($partnerData['showLaunch'] ?? false));
+    }
+
+    /**
+     * Retrieves the value of a preview setting.
+     *
+     * This method first checks if the preview setting exists as a static property of the class.
+     * If it does, it returns the value of that property. Otherwise, it looks for the
+     * preview setting in the saved setting and returns its value if found.
+     *
+     * @param string $previewKey The key of the preview setting to retrieve.
+     *
+     * @return boolean The value of the setting if found or false if not found.
+     */
+    public static function preview(string $previewKey)
+    {
+        if (property_exists(self::class, $previewKey)) {
+            return self::$previewFeatures[$previewKey];
+        }
+
+        $previewFeatures = get_option('extendify_enable_preview_features_v1', []);
+
+        return (bool) ($previewFeatures[$previewKey] ?? false);
+    }
+
+
+    /**
+     * Processes preview features from URL parameters and enables them.
+     *
+     * This method checks for 'extendify-preview' parameters in the GET request
+     * and enables the specified preview features. It supports both single feature
+     * format (extendify-preview=feature1) and array format (extendify-preview[]=feature1).
+     * All specified features are enabled and saved to the database.
+     *
+     * @param array $getParams The GET parameters that may contain 'extendify-preview' settings.
+     *
+     * @return void
+     */
+    protected static function previewFeatures(array $getParams = [])
+    {
+        if (!isset($getParams['extendify-preview'])) {
+            return;
+        }
+
+        $previewParam = $getParams['extendify-preview'];
+        $features = is_array($previewParam) ? $previewParam : [$previewParam];
+        self::$previewFeatures = get_option('extendify_enable_preview_features_v1', []);
+
+        foreach ($features as $feature) {
+            self::$previewFeatures[$feature] = true;
+        }
+
+        update_option('extendify_enable_preview_features_v1', Sanitizer::sanitizeArray(self::$previewFeatures));
     }
 }

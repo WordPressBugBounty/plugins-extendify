@@ -196,7 +196,7 @@ class Admin
                     : null,
                 'isLaunchCompleted' => (bool) \esc_attr(\get_option('extendify_onboarding_completed', false)),
                 'showSiteQuestions' => (bool) (
-                    PartnerData::setting('showLaunchQuestions') || Config::$enablePreviewFeatures
+                    PartnerData::setting('showLaunchQuestions') || Config::preview('launch-questions')
                 ),
             ]),
             'before'
