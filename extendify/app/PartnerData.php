@@ -63,8 +63,6 @@ class PartnerData
         'enableImageImports-1-14-6' => false,
         'disableLibraryAutoOpen' => false,
         'enableApexDomain' => false,
-        'allowedPluginsSlugs' => [],
-        'requiredPlugins' => [],
         'showLaunch' => false,
         'deactivated' => true,
         'launchRedirectWebsite' => false,
@@ -76,6 +74,8 @@ class PartnerData
             'customProducts' => [],
         ],
         'license' => 'active',
+        'showAIAgents' => false,
+        'showImprint' => [],
         'showLaunchQuestions' => false,
     ];
 
@@ -115,8 +115,6 @@ class PartnerData
             'secondaryColor' => ($data['secondaryColor'] ?? ($data['backgroundColor'] ?? null)),
             'secondaryColorText' => '#ffffff',
         ];
-        self::$config['allowedPluginsSlugs'] = ($data['allowedPluginsSlugs'] ?? self::$config['allowedPluginsSlugs']);
-        self::$config['requiredPlugins'] = ($data['requiredPlugins'] ?? self::$config['requiredPlugins']);
         self::$config['showAIPageCreation'] = ($data['showAIPageCreation'] ?? self::$config['showAIPageCreation']);
         self::$config['showLaunch'] = ($data['showLaunch'] ?? self::$config['showLaunch']);
         self::$config['deactivated'] = ($data['deactivated'] ?? self::$config['deactivated']);
@@ -134,7 +132,9 @@ class PartnerData
                 ?? self::$config['productRecommendations']['customProducts']),
         ];
         self::$config['license'] = ($data['license'] ?? self::$config['license']);
+        self::$config['showImprint'] = ($data['showImprint'] ?? self::$config['showImprint']);
         self::$config['showLaunchQuestions'] = ($data['showLaunchQuestions'] ?? self::$config['showLaunchQuestions']);
+        self::$config['showAIAgents'] = ($data['showAIAgents'] ?? self::$config['showAIAgents']);
 
         // Add the job hook to fetch the partner data.
         \add_action('extendify_fetch_partner_data', [self::class, 'fetchPartnerData']);

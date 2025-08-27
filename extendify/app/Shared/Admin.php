@@ -168,8 +168,6 @@ class Admin
                 'partnerLogo' => \esc_attr(PartnerData::$logo),
                 'partnerId' => \esc_attr(PartnerData::$id),
                 'partnerName' => \esc_attr(PartnerData::$name),
-                'allowedPlugins' => array_map('esc_attr', PartnerData::setting('allowedPluginsSlugs')),
-                'requiredPlugins' => Escaper::recursiveEscAttr(PartnerData::setting('requiredPlugins')),
                 'userData' => [
                     'userSelectionData' => \wp_json_encode((UserSelectionController::get()->get_data() ?? [])),
                 ],
@@ -180,6 +178,7 @@ class Admin
                     PartnerData::setting('showAIPageCreation') || constant('EXTENDIFY_DEVMODE')
                 ),
                 'showAILogo' => (bool) PartnerData::setting('showAILogo'),
+                'showImprint' => array_map('esc_attr', (array) PartnerData::setting('showImprint')),
                 'consentTermsCustom' => \wp_kses((html_entity_decode(($partnerData['consentTermsCustom'] ?? ''))
                     ?? ''), $htmlAllowlist),
                 'userGaveConsent' => $userConsent ? (bool) $userConsent : false,
@@ -191,6 +190,7 @@ class Admin
                 'activity' => \wp_json_encode(\get_option('extendify_shared_activity', null)),
                 'showDraft' => isset($partnerData['showDraft']) ? (bool) $partnerData['showDraft'] : false,
                 'showLaunch' => Config::$showLaunch,
+                'phpVersion' => \esc_attr(PHP_VERSION),
                 'apexDomain' => PartnerData::setting('enableApexDomain')
                     ? rawurlencode(ApexDomain::getApexDomain(\get_home_url()))
                     : null,

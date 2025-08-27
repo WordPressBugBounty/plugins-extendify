@@ -46,13 +46,17 @@ export const createCategory = (CategoryData) =>
 
 export const createTag = (tagData) => api.post(`${wpRoot}wp/v2/tags`, tagData);
 
-export const createNavigation = async (content = '') => {
+export const createNavigation = async (
+	content = '',
+	title = __('Header Navigation', 'extendify-local'),
+	slug = 'site-navigation',
+) => {
 	const payload = await apiFetch({
 		path: 'extendify/v1/launch/create-navigation',
 		method: 'POST',
 		data: {
-			title: __('Header Navigation', 'extendify-local'),
-			slug: 'site-navigation',
+			title,
+			slug,
 			content,
 		},
 	});
@@ -89,6 +93,10 @@ const allowedFooters = [
 	'footer',
 	'footer-social-icons',
 	'footer-with-center-logo-and-menu',
+];
+const allowedNavFooters = [
+	'footer-with-nav',
+	'footer-with-center-logo-social-nav',
 ];
 
 // finds the core/heading in the pattern and replaces it with a core/post-title block
@@ -174,11 +182,24 @@ export const updatePageTitlePattern = async (pageTitlePattern) => {
 	}
 };
 
-export const getHeadersAndFooters = async () => {
+export const getHeadersAndFooters = async (hasFooterNav = false) => {
 	let patterns = await getTemplateParts();
 	patterns = patterns?.filter((p) => p.theme === 'extendable');
 	const headers = patterns?.filter((p) => allowedHeaders.includes(p?.slug));
-	const footers = patterns?.filter((p) => allowedFooters.includes(p?.slug));
+
+	let footerSlugsToUse = allowedFooters;
+
+	if (hasFooterNav) {
+		const navFooters = patterns?.filter((p) =>
+			allowedNavFooters.includes(p?.slug),
+		);
+		// Use navFooters only if any are found; otherwise fall back to allowedFooters
+		if (navFooters.length > 0) {
+			footerSlugsToUse = allowedNavFooters;
+		}
+	}
+
+	const footers = patterns?.filter((p) => footerSlugsToUse.includes(p?.slug));
 	return { headers, footers };
 };
 
@@ -201,14 +222,10 @@ export const getThemeVariations = async () => {
 		return combinedKeys.has('color') && combinedKeys.has('typography');
 	});
 
-	// Adds slug to match with color palettes from airtable
+	// Use slug from theme if available, otherwise generate one from the title
 	const variationsWithSlugs = mainStyleVariations.map((variation) => {
-		const slug =
-			// The Fusion Sky variation is misspelled in Extendable, so it needs a special case.
-			variation.title === 'FusionSky'
-				? 'fusion-sky'
-				: variation.title.toLowerCase().trim().replace(/\s+/, '-');
-
+		if (variation.slug) return variation;
+		const slug = variation.title.toLowerCase().trim().replace(/\s+/, '-');
 		return { ...variation, slug };
 	});
 

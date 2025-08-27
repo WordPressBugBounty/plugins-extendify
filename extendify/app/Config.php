@@ -122,7 +122,7 @@ class Config
 
         // Set up the Preview features
         // phpcs:ignore WordPress.Security.NonceVerification
-        self::previewFeatures($_GET);
+        self::handlePreviewUrlOptIn($_GET);
 
         // An easy way to check if we are in dev mode is to look for a dev specific file.
         $isDev = is_readable(EXTENDIFY_PATH . '.devbuild');
@@ -145,12 +145,15 @@ class Config
      */
     public static function preview(string $previewKey)
     {
+        if (self::$environment === 'DEVELOPMENT') {
+            return true;
+        }
+
         if (property_exists(self::class, $previewKey)) {
             return self::$previewFeatures[$previewKey];
         }
 
         $previewFeatures = get_option('extendify_enable_preview_features_v1', []);
-
         return (bool) ($previewFeatures[$previewKey] ?? false);
     }
 
@@ -167,7 +170,7 @@ class Config
      *
      * @return void
      */
-    protected static function previewFeatures(array $getParams = [])
+    protected static function handlePreviewUrlOptIn(array $getParams = [])
     {
         if (!isset($getParams['extendify-preview'])) {
             return;

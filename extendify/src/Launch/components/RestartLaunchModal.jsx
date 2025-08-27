@@ -210,7 +210,7 @@ const NavigationButton = forwardRef((props, ref) => {
 			className={classnames(
 				'button-focus flex items-center rounded border px-6 py-3 leading-6',
 				{
-					'cursor-not-allowed opacity-50': props.disabled,
+					'opacity-50': props.disabled,
 				},
 				props.className,
 			)}

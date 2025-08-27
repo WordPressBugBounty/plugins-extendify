@@ -36,7 +36,7 @@ export const Questionnaire = ({ questions = [], onAnswerChange }) => {
 										selected === answer?.id
 											? 'border-2 border-design-main font-medium text-design-main before:absolute before:inset-0 before:bg-design-main before:opacity-[0.06] before:content-[""]'
 											: 'border border-gray-200 bg-white font-normal',
-										'relative flex w-full max-w-full cursor-pointer items-center gap-2 rounded-md px-3 py-3 text-left text-sm transition-colors duration-150 focus:outline-none md:max-w-[291px]',
+										'relative flex w-full max-w-full items-center gap-2 rounded-md px-3 py-3 text-left text-sm transition-colors duration-150 focus:outline-none md:max-w-[291px]',
 									].join(' ')}>
 									<QuestionIcon id={answer?.iconId} />
 									{answer?.translatedLabel || answer?.label}

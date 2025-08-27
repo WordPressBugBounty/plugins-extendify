@@ -46,8 +46,13 @@ export const PageControl = () => {
 		replaceHistory,
 		addPreselectedPage,
 	} = usePagesStore();
-	const { siteStructure, siteObjective, setSiteObjective, setSiteStructure } =
-		useUserSelectionStore();
+	const {
+		siteStructure,
+		siteObjective,
+		setSiteObjective,
+		setSiteStructure,
+		setUrlParameters,
+	} = useUserSelectionStore();
 
 	const siteObjectiveParam = getUrlParameter('objective', false);
 	const siteStructureParam = getUrlParameter('structure', false);
@@ -55,6 +60,11 @@ export const PageControl = () => {
 	const showSiteQuestions = window.extSharedData?.showSiteQuestions ?? false;
 
 	useLayoutEffect(() => {
+		setUrlParameters({
+			objective: siteObjectiveParam,
+			structure: siteStructureParam,
+		});
+
 		// If we later add more structures, consider having predefined paths
 		if (siteStructure === 'multi-page') {
 			addPage('page-select', PagesPageData, 'layout');
@@ -101,6 +111,7 @@ export const PageControl = () => {
 		siteStructureParam,
 		addPreselectedPage,
 		showSiteQuestions,
+		setUrlParameters,
 	]);
 
 	useEffect(() => {

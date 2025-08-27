@@ -54,7 +54,7 @@ export const UnsplashImage = ({
 				<button
 					type="button"
 					className={classNames('relative block border-0 p-0', {
-						'cursor-pointer bg-transparent': !isInsertingImage,
+						'bg-transparent': !isInsertingImage,
 						'bg-black': isInsertingImage,
 					})}
 					onClick={() => onClick(image)}

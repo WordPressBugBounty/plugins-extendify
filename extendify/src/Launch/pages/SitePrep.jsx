@@ -3,8 +3,8 @@ import { __ } from '@wordpress/i18n';
 import { updateOption } from '@launch/api/WPApi';
 import { Title } from '@launch/components/Title';
 import { VideoPlayer } from '@launch/components/VideoPlayer';
-import { useGoals } from '@launch/hooks/useGoals';
 import { useSiteLogo } from '@launch/hooks/useSiteLogo';
+import { useSitePlugins } from '@launch/hooks/useSitePlugins';
 import { useSiteProfile } from '@launch/hooks/useSiteProfile';
 import { useSiteQuestions } from '@launch/hooks/useSiteQuestions';
 import { PageLayout } from '@launch/layouts/PageLayout';
@@ -24,12 +24,12 @@ export const SitePrep = () => {
 	const { nextPage } = usePagesStore();
 	const { setSiteProfile, addMany, setSiteQuestions } = useUserSelectionStore();
 	const { siteProfile } = useSiteProfile();
-	const { goals } = useGoals({
-		disableFetch: showSiteQuestions,
-	});
 	useSiteLogo();
 	const { questions } = useSiteQuestions({
 		disableFetch: !showSiteQuestions,
+	});
+	const { sitePlugins } = useSitePlugins({
+		disableFetch: showSiteQuestions,
 	});
 
 	useEffect(() => {
@@ -41,8 +41,8 @@ export const SitePrep = () => {
 	useEffect(() => {
 		let id;
 
-		if (goals && !showSiteQuestions) {
-			addMany('goals', goals, { clearExisting: true });
+		if (sitePlugins && !showSiteQuestions) {
+			addMany('sitePlugins', sitePlugins, { clearExisting: true });
 			id = setTimeout(nextPage, 1000);
 		}
 
@@ -65,12 +65,12 @@ export const SitePrep = () => {
 
 		return () => clearTimeout(id);
 	}, [
-		goals,
 		nextPage,
 		addMany,
 		questions,
 		setSiteQuestions,
 		showSiteQuestions,
+		sitePlugins,
 	]);
 
 	return (

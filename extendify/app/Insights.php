@@ -111,6 +111,7 @@ class Insights
                 'lastUpdatedPage' => $this->getLastUpdatedPost('page'),
                 'lastUpdatedPost' => $this->getLastUpdatedPost('post'),
                 'lastLoginAdmin' => $this->getLastAdminLogin(),
+                'hasImprint' => $this->hasImprint(),
             ]);
             return $insights;
         });
@@ -185,5 +186,24 @@ class Insights
             return get_user_meta($admins[0]->ID, 'extendify_last_login', true);
         }
         return null;
+    }
+
+    /**
+     * Check if the site has an imprint based on the site profile and language settings
+     *
+     * @return bool True if the site has an imprint, false otherwise
+     */
+    protected function hasImprint()
+    {
+        $siteProfile = \get_option('extendify_site_profile', []);
+        if (empty($siteProfile)) {
+            return false;
+        }
+
+        $imprintLanguages = array_filter(PartnerData::setting('showImprint') ?? [], function ($value) {
+            return $value === get_locale();
+        });
+
+        return !empty($imprintLanguages) && strtolower($siteProfile['aiSiteCategory']) === 'business';
     }
 }

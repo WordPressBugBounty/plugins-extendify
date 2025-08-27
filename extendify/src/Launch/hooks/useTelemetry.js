@@ -8,18 +8,17 @@ import { useUserSelectionStore } from '@launch/state/user-selections';
 // Dev note: This entire section is opt-in only when partnerID is set as a constant
 export const useTelemetry = () => {
 	const {
-		goals,
-		getGoalsPlugins,
+		sitePlugins,
 		siteStructure,
 		variation,
 		siteProfile,
 		siteObjective,
 		siteQA,
 		attempt,
+		urlParameters,
 	} = useUserSelectionStore();
 	const { pages: selectedPages, style: selectedStyle } =
 		usePagesSelectionStore();
-	const selectedPlugins = getGoalsPlugins();
 	const { generating } = useGlobalStore();
 	const { pages, currentPageIndex, preselectedPages } = usePagesStore();
 	const [stepProgress, setStepProgress] = useState([]);
@@ -93,7 +92,7 @@ export const useTelemetry = () => {
 					siteStructure,
 					siteObjective,
 					pages: selectedPages?.map((p) => p.slug),
-					goals: goals?.map((g) => g.slug),
+					sitePlugins: sitePlugins?.map((p) => p?.name),
 					lastCompletedStep: stepProgress?.at(-1),
 					progress: stepProgress,
 					preSelect: [...preselectedPages],
@@ -126,6 +125,11 @@ export const useTelemetry = () => {
 					enabledFeatures: window.extSharedData?.showSiteQuestions
 						? ['site-questions']
 						: [],
+					urlParameters: Object.fromEntries(
+						Object.entries(urlParameters).filter(
+							([_, value]) => value !== null && value !== '',
+						),
+					),
 				}),
 			})
 				.catch(() => undefined)
@@ -139,13 +143,12 @@ export const useTelemetry = () => {
 		};
 	}, [
 		selectedPages,
-		selectedPlugins,
 		selectedStyle,
 		pages,
 		stepProgress,
 		viewedStyles,
 		currentPageIndex,
-		goals,
+		sitePlugins,
 		siteProfile?.aiSiteType,
 		siteProfile?.aiSiteCategory,
 		siteStructure,
@@ -154,5 +157,6 @@ export const useTelemetry = () => {
 		preselectedPages,
 		siteQA,
 		attempt,
+		urlParameters,
 	]);
 };
