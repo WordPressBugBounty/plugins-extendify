@@ -1,6 +1,6 @@
 import { __ } from '@wordpress/i18n';
 import '@shared/app.css';
-import { ToolTip } from '@shared/components/Tooltip';
+import { ToolTip } from '@shared/components/ToolTip';
 
 export const EditPageToolTip = () => {
 	return (

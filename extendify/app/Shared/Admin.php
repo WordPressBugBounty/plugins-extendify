@@ -194,10 +194,11 @@ class Admin
                 'apexDomain' => PartnerData::setting('enableApexDomain')
                     ? rawurlencode(ApexDomain::getApexDomain(\get_home_url()))
                     : null,
-                'isLaunchCompleted' => (bool) \esc_attr(\get_option('extendify_onboarding_completed', false)),
+                'launchCompletedAt' => \esc_attr(\get_option('extendify_onboarding_completed', false)),
                 'showSiteQuestions' => (bool) (
                     PartnerData::setting('showLaunchQuestions') || Config::preview('launch-questions')
                 ),
+                'showAIAgents' => (bool) (PartnerData::setting('showAIAgents') || Config::preview('ai-agent')),
             ]),
             'before'
         );

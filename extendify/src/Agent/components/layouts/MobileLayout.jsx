@@ -9,10 +9,7 @@ import { useGlobalStore } from '@agent/state/global';
 export const MobileLayout = ({ children }) => {
 	const mountNode = usePortal('extendify-agent-mount');
 	const { open, setOpen } = useGlobalStore();
-	const closeAgent = () => {
-		setOpen(false);
-		window.dispatchEvent(new CustomEvent('extendify-agent:closed-button'));
-	};
+	const closeAgent = () => setOpen(false);
 
 	useEffect(() => {
 		if (!mountNode || !open) return;
