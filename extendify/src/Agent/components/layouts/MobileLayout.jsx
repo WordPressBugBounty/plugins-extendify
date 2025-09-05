@@ -21,7 +21,7 @@ export const MobileLayout = ({ children }) => {
 	if (!mountNode || !open) return null;
 
 	return createPortal(
-		<div className="fixed inset-0 z-high flex items-center justify-center">
+		<div className="fixed inset-0 z-max-1 flex items-center justify-center">
 			<div className="pointer-events-none absolute inset-0 bg-black/70" />
 			<AnimatePresence>
 				<motion.div

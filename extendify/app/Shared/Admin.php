@@ -199,6 +199,8 @@ class Admin
                     PartnerData::setting('showLaunchQuestions') || Config::preview('launch-questions')
                 ),
                 'showAIAgents' => (bool) (PartnerData::setting('showAIAgents') || Config::preview('ai-agent')),
+                'pluginGroupId' => Escaper::recursiveEscAttr(PartnerData::setting('pluginGroupId')),
+                'requiredPlugins' => Escaper::recursiveEscAttr(PartnerData::setting('requiredPlugins')),
             ]),
             'before'
         );

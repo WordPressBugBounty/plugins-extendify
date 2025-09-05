@@ -34,7 +34,7 @@ export const WelcomeScreen = () => {
 				</div>
 			</div>
 			<div className="relative my-2 flex flex-col gap-0.5 p-2">
-				<ChatSuggestions show={true} />
+				<ChatSuggestions />
 			</div>
 		</div>
 	);

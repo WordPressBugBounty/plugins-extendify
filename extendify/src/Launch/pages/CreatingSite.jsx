@@ -95,7 +95,7 @@ export const CreatingSite = () => {
 		// on landing pages for some users, we redirect to home_url
 		(window.extOnbData?.redirectToWebsite &&
 			siteObjective === 'landing-page') ||
-		window.extOnbData?.showAIAgents
+		window.extSharedData?.showAIAgents
 			? `${homeUrl}?extendify-launch-success`
 			: `${adminUrl}admin.php?page=extendify-assist&extendify-launch-success`;
 
@@ -103,12 +103,12 @@ export const CreatingSite = () => {
 
 	const doEverything = useCallback(async () => {
 		try {
-			const blogQuestion = siteQA?.questions.find(
+			const blogQuestion = siteQA?.questions?.find(
 				(question) => question.id === 'blog',
 			);
 			const hasBlogGoal = blogQuestion
 				? (blogQuestion?.answerUser ?? blogQuestion?.answerAI) === 'yes'
-				: false;
+				: siteObjective === 'blog' || false;
 			const needsImprintPage = Array.isArray(showImprint)
 				? showImprint.includes(wpLanguage ?? '') &&
 					siteProfile?.aiSiteCategory === 'Business'
