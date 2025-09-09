@@ -195,6 +195,15 @@ class Admin
                 'message' => __('What tours are available?', 'extendify-local'),
             ]
         ];
+
+        if ($abilities['canEditSettings']) {
+            $suggestions[] = [
+                'icon' => 'edit',
+                'message' => __('I want to change my site title', 'extendify-local'),
+                "feature" => true,
+            ];
+        }
+
         // If they have theme variations, suggest they can change the theme styling.
         if ($context['hasThemeVariations']) {
             $suggestions[] = [
@@ -204,7 +213,7 @@ class Admin
             ];
         }
 
-        if ($context['postId'] && $abilities['canEditPost']) {
+        if ($context['postId'] && $abilities['canEditPost'] && $context['usingBlockEditor']) {
             $suggestions[] = [
                 'icon' => 'edit',
                 'message' => __('Edit text on this page', 'extendify-local'),

@@ -55,7 +55,7 @@ export const Agent = () => {
 		setCanType(true);
 		agentWorking.current = false;
 		setWaitingOnToolOrUser(false);
-		setBlock(null);
+		block && setBlock(null);
 		window.dispatchEvent(new Event('extendify-agent:remove-block-highlight'));
 		const c = Array.from(
 			document.querySelectorAll(
@@ -64,7 +64,7 @@ export const Agent = () => {
 		)?.at(-1);
 		c?.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
 		c?.scrollBy({ top: -5, behavior: 'smooth' });
-	}, [setBlock]);
+	}, [setBlock, block]);
 
 	const findAgent = useCallback(
 		async (options = {}) => {

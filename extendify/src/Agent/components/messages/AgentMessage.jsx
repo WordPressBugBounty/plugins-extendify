@@ -4,9 +4,9 @@ import { __ } from '@wordpress/i18n';
 import { Icon, pencil, styles, lifesaver } from '@wordpress/icons';
 import ReactMarkdown from 'react-markdown';
 import { AnimateChunks } from '@agent/components/messages/AnimateChunks';
-import { SingleTour } from '@agent/components/workflows/static/ToursList';
 import { magic } from '@agent/icons';
 import tours from '@agent/tours/tours';
+import { SingleTour } from '@agent/workflows/misc/components/ToursList';
 
 const availableTours = Object.values(tours);
 
