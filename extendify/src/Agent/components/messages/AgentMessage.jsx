@@ -58,6 +58,12 @@ export const AgentMessage = ({ message, animate }) => {
 		? [decodeEntities(content)]
 		: decodeEntities(content).split(/\n{2,}/);
 
+	// Check if the pageSuggestion matches any key in agentSuggestions
+	const agentSuggestionKey = Object.keys(agentSuggestions).find((k) =>
+		pageSuggestion?.startsWith(k),
+	);
+	const agentSuggestion = agentSuggestions[agentSuggestionKey] || {};
+
 	return (
 		<div
 			data-agent-message-role={role}
@@ -85,18 +91,18 @@ export const AgentMessage = ({ message, animate }) => {
 						<ReactMarkdown>{decodeEntities(content)}</ReactMarkdown>
 					)}
 				</div>
-				{agentSuggestions[pageSuggestion] ? (
+				{agentSuggestion?.label ? (
 					<div>
 						<a
 							href={`${window.extSharedData.adminUrl}${pageSuggestion}`}
 							className="rounded border border-design-main bg-design-main p-2 text-sm text-white no-underline hover:opacity-90">
-							{agentSuggestions[pageSuggestion].label}
+							{agentSuggestion.label}
 						</a>
 					</div>
 				) : null}
-				{agentSuggestions[pageSuggestion]?.tour && (
+				{agentSuggestion?.tour && (
 					<div>
-						<SingleTour tour={agentSuggestions[pageSuggestion].tour} />
+						<SingleTour tour={agentSuggestion.tour} />
 					</div>
 				)}
 			</div>

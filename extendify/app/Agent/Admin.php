@@ -103,7 +103,7 @@ class Admin
                 'abilities' => $abilities,
                 // List of suggestions the AI can make for this user.
                 // For example, we could check whether they need to set up a specific plugin.
-                'suggestions' => Escaper::recursiveEscAttr($this->getSuggestions($context, $abilities)),
+                'suggestions' => $this->getSuggestions($context, $abilities),
                 'chatHistory' => Escaper::recursiveEscAttr(ChatHistoryController::getChatHistory()),
                 'workflowHistory' => Escaper::recursiveEscAttr(WorkflowHistoryController::getWorkflowHistory()),
                 'userData' => [

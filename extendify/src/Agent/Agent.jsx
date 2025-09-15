@@ -87,11 +87,7 @@ export const Agent = () => {
 			if (!response) return;
 
 			const { workflow: wf, reply } = response;
-			if (wf?.id) {
-				setWorkflow(wf);
-				const data = { status: 'started', agent: wf.agent };
-				addMessage('workflow', data);
-			}
+			if (wf?.id) setWorkflow(wf);
 			if (reply) {
 				const data = { role: 'assistant', content: reply, agent: wf?.agent };
 				addMessage('message', data);
@@ -325,8 +321,6 @@ export const Agent = () => {
 				const currentWorkflowId = workflow.id;
 				setWorkflow(null);
 				cleanup();
-				addMessage('workflow', { status: 'handoff', answerId });
-				await new Promise((resolve) => setTimeout(resolve, 1000));
 				await findAgent({ handoff: currentWorkflowId });
 				return;
 			}
