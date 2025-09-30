@@ -1,5 +1,12 @@
 import { useEffect, useState } from '@wordpress/element';
-import { styles, edit, help, chevronRight, video } from '@wordpress/icons';
+import {
+	styles,
+	edit,
+	help,
+	chevronRight,
+	video,
+	typography,
+} from '@wordpress/icons';
 import { sparkle } from '@agent/icons';
 import { useTourStore } from '@agent/state/tours';
 import tours from '@agent/tours/tours';
@@ -22,6 +29,7 @@ const icons = {
 	help,
 	video,
 	sparkle,
+	typography,
 };
 
 const featured = suggestions.filter((s) => !!s?.feature);

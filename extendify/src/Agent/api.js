@@ -20,17 +20,34 @@ const extraBody = {
 	),
 };
 
+const extra = {
+	userAgent: window?.navigator?.userAgent,
+	vendor: window?.navigator?.vendor || 'unknown',
+	platform:
+		window?.navigator?.userAgentData?.platform ||
+		window?.navigator?.platform ||
+		'unknown',
+	mobile: window?.navigator?.userAgentData?.mobile,
+	width: window.innerWidth,
+	height: window.innerHeight,
+	screenHeight: window.screen.height,
+	screenWidth: window.screen.width,
+	orientation: window.screen.orientation?.type,
+	touchSupport: 'ontouchstart' in window || navigator.maxTouchPoints > 0,
+};
+
 export const pickWorkflow = async ({ workflows, options }) => {
 	const { failedWorkflows, context } = window.extAgentData;
 	const failed = failedWorkflows ?? new Set();
 	const filteredWorkflows = workflows.filter((wf) => !failed.has(wf.id));
 
-	const pastWorkflows = useWorkflowStore.getState().workflowHistory;
-	const messages = useChatStore.getState().getMessagesForChat();
+	const { workflowHistory: pastWorkflows, block } = useWorkflowStore.getState();
+	const messages = useChatStore.getState().getMessagesForAI();
 
 	const response = await fetch(`${AI_HOST}/api/agent/find-agent`, {
 		method: 'POST',
 		headers: { 'Content-Type': 'application/json' },
+		signal: options?.signal,
 		body: JSON.stringify({
 			...extraBody,
 			workflows: filteredWorkflows,
@@ -43,11 +60,21 @@ export const pickWorkflow = async ({ workflows, options }) => {
 			context,
 			agentContext: window.extAgentData.agentContext,
 			messages: messages.slice(-5),
+			hasBlock: Boolean(block), // todo: remove this
+			blockDetails: block,
 			...options,
+			extra,
 		}),
-	}).catch((error) => digest({ caller: 'pick-workflow', error }));
+	});
 
 	if (!response.ok) {
+		digest({
+			caller: 'pick-workflow',
+			error: {
+				name: response.statusText,
+				messages: response.statusMessage,
+			},
+		});
 		const error = new Error('Bad response from server');
 		error.response = response;
 		throw error;
@@ -55,11 +82,12 @@ export const pickWorkflow = async ({ workflows, options }) => {
 	return await response.json();
 };
 
-export const handleWorkflow = async ({ workflow, workflowData }) => {
-	const messages = useChatStore.getState().getMessagesForChat();
+export const handleWorkflow = async ({ workflow, workflowData, options }) => {
+	const messages = useChatStore.getState().getMessagesForAI();
 	const response = await fetch(`${AI_HOST}/api/agent/handle-workflow`, {
 		method: 'POST',
 		headers: { 'Content-Type': 'application/json' },
+		signal: options?.signal,
 		body: JSON.stringify({
 			...extraBody,
 			workflow,
@@ -67,6 +95,7 @@ export const handleWorkflow = async ({ workflow, workflowData }) => {
 			messages: messages,
 			context: window.extAgentData.context,
 			agentContext: window.extAgentData.agentContext,
+			extra,
 		}),
 	}).catch((error) => {
 		throw error;

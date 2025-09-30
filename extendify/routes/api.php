@@ -89,6 +89,7 @@ use Extendify\Shared\Controllers\DataController as SharedDataController;
 
         // Agent.
         ApiRouter::get('/agent/theme-variations', [AgentWPController::class, 'getVariations']);
+        ApiRouter::get('/agent/theme-fonts-variations', [AgentWPController::class, 'getFontsVariations']);
         ApiRouter::get('/agent/get-block-code', [AgentWPController::class, 'getBlockCode']);
         ApiRouter::post('/agent/get-block-html', [AgentWPController::class, 'getBlockHtml']);
         ApiRouter::get('/agent/chat-events', [AgentChatController::class, 'get']);

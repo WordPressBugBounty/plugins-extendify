@@ -12,6 +12,7 @@ export const StatusMessage = ({ status, animate }) => {
 		'tool-completed': label || __('Analyzing...', 'extendify-local'),
 		'tool-canceled': label || __('Canceled', 'extendify-local'),
 		'workflow-tool-canceled': label || __('Canceled', 'extendify-local'),
+		'workflow-canceled': label || __('Canceled', 'extendify-local'),
 		'credits-exhausted': __('Usage limit reached', 'extendify-local'),
 		'credits-restored': __('Usage limit restored', 'extendify-local'),
 	};

@@ -29,7 +29,12 @@ export const useGlobalStore = create()(
 				queueTourForRedirect: (tour) => set({ queuedTour: tour }),
 				clearQueuedTour: () => set({ queuedTour: null }),
 				setOpen: (open) => {
-					if (!open) get().resetPosition();
+					if (!open) {
+						get().resetPosition();
+						window.dispatchEvent(
+							new CustomEvent('extendify-agent:cancel-workflow'),
+						);
+					}
 					set({ open });
 				},
 				setShowSuggestions: (show) => set({ showSuggestions: show }),
