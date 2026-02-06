@@ -74,7 +74,7 @@ export const ChatInput = ({ disabled, handleSubmit }) => {
 		(e) => {
 			e?.preventDefault();
 			if (!input.trim()) return;
-			handleSubmit(input);
+			handleSubmit(input.trim());
 			setHistory((prev) => {
 				// avoid duplicates
 				if (prev?.at(-1) === input) return prev;

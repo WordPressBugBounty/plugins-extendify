@@ -17,11 +17,13 @@ const Error = () => (
 				{__('Component not available', 'extendify-local')}
 			</div>
 			<div className="">
-				{__(
+				{
 					// translators: This is for when a component doesn't exist
-					'It may have been removed or is not available for your account.',
-					'extendify-local',
-				)}
+					__(
+						'It may have been removed or is not available for your account.',
+						'extendify-local',
+					)
+				}
 			</div>
 		</div>
 	</ErrorMessage>

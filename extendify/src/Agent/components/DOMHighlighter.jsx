@@ -1,3 +1,4 @@
+import apiFetch from '@wordpress/api-fetch';
 import { Tooltip } from '@wordpress/components';
 import {
 	createPortal,
@@ -26,7 +27,8 @@ export const DOMHighlighter = ({ busy = false }) => {
 	const mountNode = usePortal('extendify-agent-dom-mount');
 	const raf = useRef(null);
 	const el = useRef(null);
-	const { getWorkflowsByFeature, block, setBlock } = useWorkflowStore();
+	const { getWorkflowsByFeature, block, setBlock, setBlockCode } =
+		useWorkflowStore();
 	const enabled = getWorkflowsByFeature({ requires: ['block'] })?.length > 0;
 
 	const clearBlock = useCallback(() => {
@@ -38,6 +40,30 @@ export const DOMHighlighter = ({ busy = false }) => {
 			.querySelector(`[${SELECTED_ATTR}]`)
 			?.removeAttribute(SELECTED_ATTR);
 	}, [setBlock, setRect]);
+
+	useEffect(() => {
+		if (!block?.id) return;
+		const ac = new AbortController();
+		const postId = window.extAgentData?.context?.postId;
+		if (!postId) return;
+		const q = new URLSearchParams({
+			postId: String(postId),
+			blockId: String(block.id),
+		}).toString();
+		const isAlive = { current: true };
+		(async () => {
+			const res = await apiFetch({
+				path: `/extendify/v1/agent/get-block-code?${q}`,
+				signal: ac.signal,
+			}).catch(() => ({})); // Agent will get it later if fails
+			if (!res.block || !isAlive.current || ac.signal.aborted) return;
+			setBlockCode(res.block);
+		})();
+		return () => {
+			ac.abort();
+			isAlive.current = false;
+		};
+	}, [setBlockCode, block]);
 
 	useEffect(() => {
 		const handle = () => {
@@ -77,8 +103,8 @@ export const DOMHighlighter = ({ busy = false }) => {
 					match.querySelectorAll(selector),
 				).filter((el) => !ignored.some((c) => el.classList.contains(c))).length;
 
-				// Keep complexity low for now
-				if (innerBlockCount > 20) return setRect(null);
+				// Manage pattern complexity
+				if (innerBlockCount > 50) return setRect(null);
 
 				el.current = match;
 				const r = match.getBoundingClientRect();

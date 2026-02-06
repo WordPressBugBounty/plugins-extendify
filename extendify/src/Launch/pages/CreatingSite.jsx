@@ -47,6 +47,7 @@ import {
 	updateGlobalStyleVariant,
 	setHelloWorldFeaturedImage,
 	addImprintPage,
+	updateNaturalVibeStyles,
 } from '@launch/lib/wp';
 import { usePagesStore } from '@launch/state/Pages';
 import { usePagesSelectionStore } from '@launch/state/pages-selections';
@@ -54,15 +55,8 @@ import { useUserSelectionStore } from '@launch/state/user-selections';
 import { Logo, Spinner } from '@launch/svg';
 import { buildRecommendedPagesParams } from '@launch/utils/buildRecommendedPagesParams';
 
-const {
-	homeUrl,
-	adminUrl,
-	partnerLogo,
-	partnerName,
-	installedPlugins = [],
-	showImprint,
-	wpLanguage,
-} = window.extSharedData;
+const { homeUrl, adminUrl, partnerLogo, partnerName, showImprint, wpLanguage } =
+	window.extSharedData;
 
 export const CreatingSite = () => {
 	const [isShowing] = useState(true);
@@ -189,6 +183,21 @@ export const CreatingSite = () => {
 				await updateGlobalStyleVariant(variation);
 			}
 
+			await waitFor200Response();
+
+			const selectedVibe = style?.siteStyle?.vibe;
+			if (selectedVibe && selectedVibe !== 'natural-1') {
+				inform(
+					// translators: "site style" refers to the structural aesthetic style for the site.
+					__('Applying site style', 'extendify-local'),
+				);
+				informDesc(
+					// translators: "site style" refers to the structural aesthetic style for the site.
+					__('Customizing your site style', 'extendify-local'),
+				);
+				await updateNaturalVibeStyles(selectedVibe);
+			}
+
 			const navigationId = await createNavigation();
 
 			let headerCode = updateNavAttributes(style?.headerCode, {
@@ -224,47 +233,6 @@ export const CreatingSite = () => {
 
 			await waitFor200Response();
 			await updateTemplatePart('extendable/footer', footerCode);
-
-			// Add required plugins to the end of the list to give them lower priority
-			// when filtering out duplicates.
-			const sortedPlugins = [...sitePlugins]
-				// Remove duplicates
-				.reduce((acc, plugin) => {
-					const found = acc.find(
-						({ wordpressSlug: s }) => s === plugin.wordpressSlug,
-					);
-					return found ? acc : [...acc, plugin];
-				}, [])
-				// We add give to the front. See here why:
-				// https://github.com/extendify/company-product/issues/713
-				.sort(({ wordpressSlug }) => (wordpressSlug === 'give' ? -1 : 1));
-
-			if (sortedPlugins?.length) {
-				inform(__('Installing necessary plugins', 'extendify-local'));
-
-				for (const [index, plugin] of sortedPlugins.entries()) {
-					const slug = plugin?.wordpressSlug;
-					informDesc(
-						__(
-							`${index + 1}/${sortedPlugins.length}: ${plugin.name}`,
-							'extendify-local',
-						),
-					);
-
-					// Don't install if already installed
-					if (!installedPlugins?.some((s) => s.includes(slug))) {
-						await retryOperation(() => installPlugin(slug), {
-							maxAttempts: 2,
-						}).catch(console.error);
-
-						recordPluginActivity({ slug, source: 'launch' });
-					}
-
-					await retryOperation(() => activatePlugin(slug), {
-						maxAttempts: 2,
-					}).catch(console.error);
-				}
-			}
 
 			inform(__('Populating data', 'extendify-local'));
 			informDesc(__('Personalizing your experience', 'extendify-local'));
@@ -341,6 +309,50 @@ export const CreatingSite = () => {
 					patterns: await replacePlaceholderPatterns(page.patterns),
 				};
 				pagesWithReplacedPatterns.push(updatedPage);
+			}
+
+			// Add required plugins to the end of the list to give them lower priority
+			// when filtering out duplicates.
+			const sortedPlugins = [...sitePlugins]
+				// Remove duplicates
+				.reduce((acc, plugin) => {
+					const found = acc.find(
+						({ wordpressSlug: s }) => s === plugin.wordpressSlug,
+					);
+					return found ? acc : [...acc, plugin];
+				}, [])
+				// We add give to the front. See here why:
+				// https://github.com/extendify/company-product/issues/713
+				.sort(({ wordpressSlug }) => (wordpressSlug === 'give' ? -1 : 1));
+
+			if (sortedPlugins?.length) {
+				inform(__('Installing necessary plugins', 'extendify-local'));
+
+				// Fetch active plugins after installing plugins
+				let { data: activePlugins } = await getActivePlugins();
+
+				for (const [index, plugin] of sortedPlugins.entries()) {
+					const slug = plugin?.wordpressSlug;
+					informDesc(
+						__(
+							`${index + 1}/${sortedPlugins.length}: ${plugin.name}`,
+							'extendify-local',
+						),
+					);
+
+					// Don't install if already installed
+					if (!wasPluginInstalled(activePlugins, slug)) {
+						await retryOperation(() => installPlugin(slug), {
+							maxAttempts: 2,
+						}).catch(console.error);
+
+						recordPluginActivity({ slug, source: 'launch' });
+					}
+
+					await retryOperation(() => activatePlugin(slug), {
+						maxAttempts: 2,
+					}).catch(console.error);
+				}
 			}
 
 			const pagesWithCustomContent = await generateCustomPageContent(

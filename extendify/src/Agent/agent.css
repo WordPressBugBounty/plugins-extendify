@@ -144,8 +144,20 @@ body.extendify-agent-mobile-btn-open
 .extendify-agent-highlighter-mode.extendify-agent-busy {
 	cursor: not-allowed !important;
 }
+/* Ignore button block if inside buttons and only one button */
+.extendify-agent-highlighter-mode
+	.wp-block-buttons:has(> .wp-block-button):not(
+		:has(> .wp-block-button:nth-of-type(2))
+	)
+	> .wp-block-button {
+	pointer-events: none !important;
+}
 
+.extendify-agent-highlighter-mode .wp-block-spacer {
+	pointer-events: none !important;
+}
 .extendify-agent-highlighter-mode a,
+.extendify-agent-highlighter-mode .wp-lightbox-container img,
 .extendify-agent-highlighter-mode button,
 .extendify-agent-highlighter-mode [role="button"],
 .extendify-agent-highlighter-mode [role="link"] {

@@ -22,6 +22,14 @@ const state = (set, get) => ({
 							)
 						),
 				)
+				// Remove duplicate assistant messages (often during retry)
+				.reduce((acc, message) => {
+					const last = acc.at(-1);
+					const isAssistant = message.details?.role === 'assistant';
+					const lastIsAssistant = last?.details?.role === 'assistant';
+					if (isAssistant && lastIsAssistant) return acc;
+					return [...acc, message];
+				}, [])
 				.toReversed()
 		: [],
 
@@ -74,6 +82,13 @@ const state = (set, get) => ({
 			};
 		});
 		return id;
+	},
+	// pop messages all the way back to the last agent message
+	popMessage: () => {
+		set((state) => ({
+			messages: state.messages?.slice(0, -1) || [],
+			messagesRaw: state.messagesRaw?.slice(0, -1) || [],
+		}));
 	},
 	clearMessages: () => set({ messages: [] }),
 });

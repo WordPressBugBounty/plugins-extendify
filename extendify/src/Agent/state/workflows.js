@@ -7,7 +7,10 @@ import { workflows } from '@agent/workflows/workflows';
 const state = (set, get) => ({
 	workflow: null,
 	block: null, // data-extendify-agent-block-id + details about the block
-	setBlock: (block) => set({ block }),
+	setBlock: (block) => set({ block, blockCode: null }),
+	// Used as "previousContent" in workflows that need it
+	blockCode: null,
+	setBlockCode: (blockCode) => set({ blockCode }),
 	domToolEnabled: false,
 	setDomToolEnabled: (enabled) => {
 		if (get().block) return; // can't disable if a block is set
@@ -45,7 +48,7 @@ const state = (set, get) => ({
 	},
 	workflowData: null,
 	// This is the history of the results
-	// { answerId: '', summary: '', canceled: false,  reason: '', error: false, completed: false, whenFinishedTool: null }[]
+	// { answerId: '', canceled: false,  reason: '', error: false, completed: false, whenFinishedTool: null }[]
 	workflowHistory: window.extAgentData?.workflowHistory || [],
 	// Data for the tool component that shows up at the end of a workflow
 	whenFinishedToolProps: null,
@@ -68,20 +71,36 @@ const state = (set, get) => ({
 					}),
 				);
 			},
+			onRetry: () => {
+				// Remove whenfinishedToolProps from the store
+				set({ whenFinishedToolProps: null });
+				window.dispatchEvent(
+					new CustomEvent('extendify-agent:workflow-retry', {
+						detail: { whenFinishedToolProps },
+					}),
+				);
+			},
 		};
 	},
-	addWorkflowResult: async (data) => {
-		set((state) => {
-			const max = Math.max(0, state.workflowHistory.length - 10);
-			return {
-				workflowHistory: [data, ...state.workflowHistory.toSpliced(0, max)],
-			};
-		});
+	addWorkflowResult: (data) => {
+		if (data.status === 'completed') {
+			set((state) => {
+				const max = Math.max(0, state.workflowHistory.length - 10);
+				return {
+					workflowHistory: [data, ...state.workflowHistory.toSpliced(0, max)],
+				};
+			});
+		}
 		const workflowId = get().workflow?.id;
 		if (!workflowId) return;
 		// Persist it to the server
 		const path = '/extendify/v1/agent/workflows';
-		await apiFetch({ method: 'POST', path, data: { workflowId, ...data } });
+		apiFetch({
+			method: 'POST',
+			keepalive: true,
+			path,
+			data: { workflowId, ...data },
+		});
 	},
 	mergeWorkflowData: (data) => {
 		set((state) => {
@@ -96,7 +115,11 @@ const state = (set, get) => ({
 			workflow: workflow
 				? { ...workflow, startingPage: window.location.href }
 				: null,
-			workflowData: null,
+			// If a block is selected, add it to the workflow data
+			// previousContent is named this way for legacy reasons
+			workflowData: get().blockCode
+				? { previousContent: get().blockCode }
+				: null,
 			whenFinishedToolProps: null,
 		}),
 	setWhenFinishedToolProps: (whenFinishedToolProps) =>
@@ -108,7 +131,7 @@ export const useWorkflowStore = create()(
 		name: `extendify-agent-workflows-${window.extSharedData.siteId}`,
 		partialize: (state) => {
 			// eslint-disable-next-line
-			const { block, ...rest } = state;
+			const { block, workflowHistory, ...rest } = state;
 			return { ...rest };
 		},
 	}),

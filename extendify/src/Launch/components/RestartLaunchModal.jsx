@@ -153,7 +153,7 @@ export const RestartLaunchModal = ({ setPage }) => {
 								<div className="relative max-w-screen-sm px-8 py-0 text-left font-normal rtl:text-right">
 									<p className="m-0 mb-2 p-0 text-base">
 										{__(
-											'Go through the onboarding process again to create a new site.',
+											'Go through the AI website creation process again to create a new site.',
 											'extendify-local',
 										)}
 									</p>
@@ -184,7 +184,7 @@ export const RestartLaunchModal = ({ setPage }) => {
 										className="border-design-main bg-design-main text-design-text"
 										data-test="modal-continue-button">
 										{!processing ? (
-											__('Continue', 'extendify-local')
+											__('Delete and start over', 'extendify-local')
 										) : (
 											<div className="flex items-center justify-center">
 												<Spinner />

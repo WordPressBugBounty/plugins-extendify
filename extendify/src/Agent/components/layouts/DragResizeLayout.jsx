@@ -12,6 +12,7 @@ import { useDraggable } from '@agent/hooks/useDraggable';
 import { usePortal } from '@agent/hooks/usePortal';
 import { useResizable } from '@agent/hooks/useResizable';
 import { useGlobalStore } from '@agent/state/global';
+import { usePositionStore } from '@agent/state/position';
 
 // TODO: some of the bound checking isn't working that well.
 // For example, the user shrinks the height of the browser.
@@ -21,16 +22,8 @@ import { useGlobalStore } from '@agent/state/global';
 export const DragResizeLayout = ({ children }) => {
 	const [el, setEl] = useState(null);
 	const mountNode = usePortal('extendify-agent-mount');
-	const {
-		open,
-		x: top,
-		y: left,
-		width,
-		height,
-		setOpen,
-		setSize,
-		setPosition,
-	} = useGlobalStore();
+	const { open, setOpen } = useGlobalStore();
+
 	// So it will re-render the hooks when mounted
 	const ref = useCallback(
 		(node) => requestAnimationFrame(() => setEl(node)),
@@ -39,22 +32,20 @@ export const DragResizeLayout = ({ children }) => {
 	useDraggable({
 		el,
 		open,
-		initialPosition: { x: top, y: left },
+		initialPosition: usePositionStore.getState(),
 		onDragEnd: (x, y) => {
-			setPosition(x, y);
+			usePositionStore.getState().setPosition(x, y);
 			window.dispatchEvent(
-				new CustomEvent('extendify-agent:drag-end', {
-					detail: { x, y },
-				}),
+				new CustomEvent('extendify-agent:drag-end', { detail: { x, y } }),
 			);
 		},
 	});
 	useResizable({
 		el,
 		open,
-		initialSize: { width, height },
+		initialSize: usePositionStore.getState(),
 		onResizeEnd: (width, height) => {
-			setSize(width, height);
+			usePositionStore.setState({ width, height });
 			window.dispatchEvent(
 				new CustomEvent('extendify-agent:resize-end', {
 					detail: { width, height },
@@ -90,7 +81,6 @@ export const DragResizeLayout = ({ children }) => {
 				exit={{ y: 0, opacity: 0 }}
 				transition={{ duration: 0.4, delay: 0.1 }}
 				className="fixed bottom-0 right-0 z-higher flex max-h-full max-w-full flex-col rounded-lg border border-solid border-gray-300 bg-white shadow-2xl-flipped rtl:left-0 rtl:right-auto"
-				style={{ top, left, width, height }}
 				ref={ref}>
 				<>
 					<div className="group flex shrink-0 items-center justify-between overflow-hidden rounded-t-[calc(0.5rem-1px)] bg-banner-main text-banner-text">

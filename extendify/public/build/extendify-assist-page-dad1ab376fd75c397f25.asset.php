@@ -1,0 +1,1 @@
+<?php return array('dependencies' => array('react', 'react-dom', 'react-jsx-runtime', 'wp-api-fetch', 'wp-blob', 'wp-components', 'wp-core-data', 'wp-data', 'wp-element', 'wp-hooks', 'wp-html-entities', 'wp-i18n', 'wp-media-utils', 'wp-primitives', 'wp-url'), 'version' => '9640f9f8b6484b596014', 'handle' => 'undefined-extendify-assist-page-dad1ab376fd75c397f25');

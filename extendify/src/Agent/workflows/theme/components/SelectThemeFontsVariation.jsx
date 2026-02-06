@@ -1,25 +1,28 @@
 import { Tooltip } from '@wordpress/components';
-import { useMemo, useState } from '@wordpress/element';
+import { useMemo, useState, useEffect } from '@wordpress/element';
 import { __ } from '@wordpress/i18n';
-import { ErrorMessage } from '@agent/components/ErrorMessage';
 import { useFontVariationOverride } from '@agent/hooks/useFontVariationOverride';
 import { useThemeFontsVariations } from '@agent/hooks/useThemeFontsVariations';
+import { useChatStore } from '@agent/state/chat';
 
 export const SelectThemeFontsVariation = ({ onConfirm, onCancel }) => {
 	const [css, setCss] = useState('');
 	const [selected, setSelected] = useState(null);
-	const { undoChange } = useFontVariationOverride({ css });
+	const [duotoneTheme, setDuotoneTheme] = useState(null);
+	const { undoChange } = useFontVariationOverride({ css, duotoneTheme });
 	const { variations, isLoading } = useThemeFontsVariations();
 	const noVariations = !variations || variations.length === 0;
 	const shuffled = useMemo(
 		() => (variations ? variations.sort(() => Math.random() - 0.5) : []),
 		[variations],
 	);
+	const { addMessage, messages } = useChatStore();
 
 	const handleConfirm = () => {
 		if (!selected) return;
 		onConfirm({
 			data: { variation: variations.find((v) => v.title === selected) },
+			shouldRefreshPage: true,
 		});
 	};
 
@@ -27,6 +30,20 @@ export const SelectThemeFontsVariation = ({ onConfirm, onCancel }) => {
 		undoChange();
 		onCancel();
 	};
+
+	useEffect(() => {
+		if (isLoading || !noVariations) return;
+		const timer = setTimeout(() => onCancel(), 100);
+		// translators: A chat message shown to the user
+		const content = __(
+			'We were unable to find any variations for your theme',
+			'extendify-local',
+		);
+		const last = messages.at(-1)?.details?.content;
+		if (content === last) return () => clearTimeout(timer);
+		addMessage('message', { role: 'assistant', content, error: true });
+		return () => clearTimeout(timer);
+	}, [addMessage, onCancel, noVariations, messages, isLoading]);
 
 	if (isLoading) {
 		return (
@@ -36,30 +53,16 @@ export const SelectThemeFontsVariation = ({ onConfirm, onCancel }) => {
 		);
 	}
 
-	if (noVariations) {
-		return (
-			<ErrorMessage>
-				<div className="font-semibold">
-					{__('No font variations found', 'extendify-local')}
-				</div>
-				<div className="">
-					{__(
-						'We were unable to find any variations for your theme.',
-						'extendify-local',
-					)}
-				</div>
-			</ErrorMessage>
-		);
-	}
+	if (noVariations) return null;
 
 	return (
 		<div className="mb-4 ml-10 mr-2 flex flex-col rounded-lg border border-gray-300 bg-gray-50 rtl:ml-2 rtl:mr-10">
 			<div className="rounded-lg border-b border-gray-300 bg-white">
 				<div className="grid grid-cols-2 gap-2 p-3">
-					{shuffled?.slice(0, 10)?.map(({ title, css, styles }) => (
+					{shuffled?.slice(0, 10)?.map(({ title, css, styles, settings }) => (
 						<Tooltip key={title} text={title} placement="top">
 							<button
-								aria-selected={selected === title}
+								aria-label={title}
 								type="button"
 								style={{ fontFamily: getFont(styles)?.normal }}
 								className={`relative flex w-full items-center justify-center overflow-hidden rounded-lg border border-gray-300 bg-none p-2 text-center text-sm ${
@@ -68,6 +71,7 @@ export const SelectThemeFontsVariation = ({ onConfirm, onCancel }) => {
 								onClick={() => {
 									setSelected(title);
 									setCss(css);
+									setDuotoneTheme(settings?.color?.duotone?.theme);
 								}}>
 								<div className="max-w-fit content-stretch items-center justify-center rounded-lg text-2xl rtl:space-x-reverse">
 									<span style={{ fontFamily: getFont(styles)?.heading }}>
@@ -80,7 +84,7 @@ export const SelectThemeFontsVariation = ({ onConfirm, onCancel }) => {
 					))}
 				</div>
 			</div>
-			<div className="flex items-center justify-start gap-2 p-3">
+			<div className="flex justify-start gap-2 p-3">
 				<button
 					type="button"
 					className="w-full rounded border border-gray-300 bg-white p-2 text-sm text-gray-700"

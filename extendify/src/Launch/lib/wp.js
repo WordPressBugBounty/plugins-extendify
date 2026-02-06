@@ -18,6 +18,8 @@ import {
 	createPost,
 	createCategory,
 	createTag,
+	getThemeGlobalStyles,
+	updateGlobalStyles,
 } from '@launch/api/WPApi';
 import { addIdAttributeToBlock } from '@launch/lib/blocks';
 
@@ -79,7 +81,7 @@ export const createWpPages = async (pages, { stickyNav }) => {
 		const seenPatternTypes = new Set();
 		// Loop over every
 		for (const [i, pattern] of blocks.entries()) {
-			const patternType = page.patterns[i].patternTypes?.[0];
+			const patternType = page.patterns[i]?.patternTypes?.[0];
 			const serializedBlock = serialize(pattern);
 			// Get the translated slug
 			const { slug } =
@@ -102,12 +104,11 @@ export const createWpPages = async (pages, { stickyNav }) => {
 			title: page.name,
 			status: 'publish',
 			content: content.join(''),
-			template:
-				page.slug === 'home'
+			template: stickyNav
+				? 'no-title-sticky-header'
+				: page.slug === 'home'
 					? 'no-title'
-					: stickyNav
-						? 'no-title-sticky-header'
-						: 'page-with-title',
+					: 'page-with-title',
 			meta: { made_with_extendify_launch: true },
 		};
 		let newPage;
@@ -388,5 +389,90 @@ export const addImprintPage = async (siteStyle) => {
 	} catch (error) {
 		console.error('Failed to add imprint page:', error);
 		return null;
+	}
+};
+
+/**
+ * Updates natural-1 block style variations with selected vibe styles
+ * @param {string} selectedVibe - The vibe to apply (e.g., 'organic-1', 'bold-1')
+ */
+export const updateNaturalVibeStyles = async (selectedVibe) => {
+	if (
+		!selectedVibe ||
+		typeof selectedVibe !== 'string' ||
+		selectedVibe.trim() === '' ||
+		selectedVibe === 'natural-1'
+	) {
+		return;
+	}
+
+	const generateSourceStyleName = (naturalStyleName, targetVibe) =>
+		naturalStyleName.replace('--natural-1--', `--${targetVibe}--`);
+
+	const processBlockVariations = (variations, targetVibe) =>
+		Object.fromEntries(
+			Object.entries(variations).map(([styleName, styleProperties]) => {
+				if (!styleName.includes('--natural-1--')) {
+					return [styleName, { ...styleProperties }];
+				}
+
+				const sourceStyleName = generateSourceStyleName(styleName, targetVibe);
+				const sourceStyle = variations[sourceStyleName];
+
+				return [
+					styleName,
+					sourceStyle ? { ...sourceStyle } : { ...styleProperties },
+				];
+			}),
+		);
+
+	try {
+		const globalStylesPostID = window.extSharedData?.globalStylesPostID;
+
+		if (!globalStylesPostID) {
+			throw new Error('Global styles post ID not found');
+		}
+
+		// Fetch theme styles
+		const { styles: themeStyles } = await getThemeGlobalStyles();
+
+		if (!themeStyles?.blocks) {
+			throw new Error('No block styles found in theme global styles');
+		}
+
+		// Process blocks with variations
+		const updatedBlocks = Object.fromEntries(
+			Object.entries(themeStyles.blocks).map(([blockName, blockObj]) => {
+				if (!blockObj?.variations) {
+					return [blockName, blockObj];
+				}
+
+				const { variations, ...rest } = blockObj;
+				const hasNaturalVariations = Object.keys(variations).some((styleName) =>
+					styleName.includes('--natural-1--'),
+				);
+
+				if (!hasNaturalVariations) {
+					return [blockName, blockObj];
+				}
+
+				return [
+					blockName,
+					{
+						...rest,
+						variations: processBlockVariations(variations, selectedVibe),
+					},
+				];
+			}),
+		);
+
+		// Apply the update
+		await updateGlobalStyles(globalStylesPostID, {
+			styles: { ...themeStyles, blocks: updatedBlocks },
+		});
+	} catch (error) {
+		const errorMessage =
+			error?.response?.data?.message || error?.message || 'Unknown error';
+		throw new Error(`Vibe update failed: ${errorMessage}`);
 	}
 };

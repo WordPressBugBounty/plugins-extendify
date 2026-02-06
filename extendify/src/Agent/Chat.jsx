@@ -7,7 +7,8 @@ import { useWorkflowStore } from '@agent/state/workflows';
 
 export const Chat = ({ busy, children }) => {
 	const { setIsMobile, isMobile } = useGlobalStore();
-	const { domToolEnabled, block, setBlock } = useWorkflowStore();
+	const { domToolEnabled, block, setBlock, setDomToolEnabled } =
+		useWorkflowStore();
 
 	useEffect(() => {
 		if (!isMobile || !block) return;
@@ -29,6 +30,23 @@ export const Chat = ({ busy, children }) => {
 			window.removeEventListener('resize', onResize);
 		};
 	}, [setIsMobile]);
+
+	useEffect(() => {
+		// Exit select mode when Escape is pressed
+		const onKeyDown = (e) => {
+			if (e.key !== 'Escape' || !domToolEnabled) return;
+
+			// If a block is selected, clear it
+			if (block) return setBlock(null);
+
+			// If no block is selected, exit select mode
+			setDomToolEnabled(false);
+		};
+		window.addEventListener('keydown', onKeyDown);
+		return () => {
+			window.removeEventListener('keydown', onKeyDown);
+		};
+	}, [domToolEnabled, block, setBlock, setDomToolEnabled]);
 
 	if (isMobile) {
 		return (

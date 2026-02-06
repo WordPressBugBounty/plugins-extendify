@@ -1,10 +1,20 @@
 import { useCallback, useEffect } from '@wordpress/element';
 import { __ } from '@wordpress/i18n';
 
-export const UpdatePostConfirm = ({ inputs, onConfirm, onCancel }) => {
+export const UpdatePostConfirm = ({ inputs, onConfirm, onCancel, onRetry }) => {
 	const handleConfirm = () => {
 		onConfirm({ data: inputs });
 	};
+
+	const handleRetry = useCallback(() => {
+		const replacements = inputs.replacements || [];
+		const reversed = replacements.map(({ original, updated }) => ({
+			original: updated,
+			updated: original,
+		}));
+		updateAllTextNodesAndAttributes(reversed);
+		onRetry();
+	}, [onRetry, inputs]);
 
 	const handleCancel = useCallback(() => {
 		const replacements = inputs.replacements || [];
@@ -32,16 +42,22 @@ export const UpdatePostConfirm = ({ inputs, onConfirm, onCancel }) => {
 					</p>
 				</div>
 			</div>
-			<div className="flex items-center justify-start gap-2 p-3">
+			<div className="flex flex-wrap justify-start gap-2 p-3">
 				<button
 					type="button"
-					className="w-full rounded border border-gray-300 bg-white p-2 text-sm text-gray-700"
+					className="flex-1 rounded border border-gray-300 bg-white p-2 text-sm text-gray-700"
 					onClick={handleCancel}>
 					{__('Cancel', 'extendify-local')}
 				</button>
 				<button
 					type="button"
-					className="w-full rounded border border-design-main bg-design-main p-2 text-sm text-white"
+					className="flex-1 rounded border border-gray-300 bg-white p-2 text-sm text-gray-700"
+					onClick={handleRetry}>
+					{__('Try Again', 'extendify-local')}
+				</button>
+				<button
+					type="button"
+					className="flex-1 rounded border border-design-main bg-design-main p-2 text-sm text-white"
 					onClick={handleConfirm}>
 					{__('Save', 'extendify-local')}
 				</button>

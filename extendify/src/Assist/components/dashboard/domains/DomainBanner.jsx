@@ -54,11 +54,13 @@ export const DomainBanner = () => {
 									{domains[0]}
 								</div>
 								<p className="m-0 p-0 text-sm">
-									{__(
+									{
 										// translators: this refers to a domain name
-										'Available and just right for your site',
-										'extendify-local',
-									)}
+										__(
+											'Available and just right for your site',
+											'extendify-local',
+										)
+									}
 								</p>
 							</div>
 

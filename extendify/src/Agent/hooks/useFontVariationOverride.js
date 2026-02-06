@@ -1,4 +1,8 @@
+import { parse } from '@wordpress/blocks';
+import { useSelect } from '@wordpress/data';
 import { useEffect, useRef, useState } from '@wordpress/element';
+import { getDynamicDuotoneMap } from '@agent/lib/svg-blocks-scanner';
+import { replaceDuotoneSVG } from '@agent/lib/svg-helpers';
 
 const id = 'global-styles-inline-css';
 const path = window.location.pathname;
@@ -6,8 +10,9 @@ const s = new URLSearchParams(window.location.search);
 const onEditor =
 	path.includes('/wp-admin/post.php') && s.get('action') === 'edit';
 
-export const useFontVariationOverride = ({ css }) => {
+export const useFontVariationOverride = ({ css, duotoneTheme }) => {
 	const frontStyles = useRef(null);
+	const duotoneCleanup = useRef(null);
 	const [theDocument, setDocument] = useState(null);
 
 	useEffect(() => {
@@ -60,8 +65,46 @@ export const useFontVariationOverride = ({ css }) => {
 		return () => clearTimeout(timer);
 	}, [theDocument]);
 
+	const dynamicDuotone = useSelect((select) => {
+		let blocks = select('core/block-editor')?.getBlocks?.() ?? [];
+
+		const hasShowTemplateOn = blocks.find(
+			(block) => block.name === 'core/template-part',
+		);
+
+		if (hasShowTemplateOn) {
+			const { getEditedPostContent } = select('core/editor');
+			blocks = parse(getEditedPostContent(), {});
+		}
+
+		return getDynamicDuotoneMap(blocks);
+	}, []);
+
+	// Handle duotone changes
+	useEffect(() => {
+		if (!duotoneTheme) return;
+
+		// Clean up previous duotone changes
+		if (duotoneCleanup.current) {
+			duotoneCleanup.current();
+			duotoneCleanup.current = null;
+		}
+
+		// Apply new duotone changes and store cleanup
+		duotoneCleanup.current = replaceDuotoneSVG({
+			duotoneTheme,
+			dynamicDuotone,
+		});
+	}, [duotoneTheme, dynamicDuotone]);
+
 	return {
 		undoChange: () => {
+			// Revert duotone changes
+			if (duotoneCleanup.current) {
+				duotoneCleanup.current();
+				duotoneCleanup.current = null;
+			}
+
 			// Revert CSS changes
 			const style = document.getElementById(id);
 			if (style && frontStyles.current) {

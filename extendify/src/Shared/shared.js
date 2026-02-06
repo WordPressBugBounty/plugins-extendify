@@ -29,6 +29,8 @@ domReady(() => {
 	requestAnimationFrame(() => {
 		requestAnimationFrame(() => {
 			window.dispatchEvent(new CustomEvent('extendify-launch-success'));
+			// Open the Agent if not open
+			window.dispatchEvent(new CustomEvent('extendify-agent:open'));
 		});
 	});
 	if (showAIAgents) return;

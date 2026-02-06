@@ -150,7 +150,7 @@ export const AIChat = () => {
 };
 
 const ConsentOverlay = () => {
-	const { consentTermsHTML, setUserGaveConsent } = useAIConsentStore();
+	const { consentTerms, setUserGaveConsent } = useAIConsentStore();
 
 	return (
 		<div
@@ -160,12 +160,7 @@ const ConsentOverlay = () => {
 				<h2 className="mb-2 mt-0 text-lg">
 					{__('Terms of Use', 'extendify-local')}
 				</h2>
-				<p
-					className="m-0"
-					dangerouslySetInnerHTML={{
-						__html: consentTermsHTML,
-					}}
-				/>
+				<p className="m-0" dangerouslySetInnerHTML={{ __html: consentTerms }} />
 				<button
 					data-test="help-center-ai-chat-consent-accept-button"
 					className="mt-4 w-full rounded border-0 bg-design-main px-4 py-2 text-center text-white"

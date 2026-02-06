@@ -212,7 +212,11 @@ class WPController
             return self::variationHasProperties($variation, ['elements', 'typography']);
         });
 
-        $processedFonts = array_map(function ($variation) {
+        // Get duotone from current theme
+        $currentData = $current->get_data();
+        $currentDuotone = $currentData['settings']['color']['duotone'] ?? null;
+
+        $processedFonts = array_map(function ($variation) use ($currentDuotone) {
             if (!isset($variation['styles']['elements']) || !is_array($variation['styles']['elements'])) {
                 return $variation;
             }
@@ -231,11 +235,46 @@ class WPController
             // Removing the settings that cause the style to change.
             unset($variation['settings']);
 
+            if ($currentDuotone) {
+                $variation['settings'] = [
+                    'color' => [
+                        'duotone' => [
+                            'theme' => $currentDuotone
+                            ]
+                        ]
+                    ];
+            }
+
             return $variation;
         }, $fontsVariations);
 
         $deduped = static::getCss($processedFonts, $current, $includeLayoutStyles);
         return new \WP_REST_Response($deduped);
+    }
+
+    /**
+     * Get block style variations (vibes) from merged global styles
+     *
+     * @param \WP_REST_Request $request The request.
+     * @return \WP_REST_Response
+     */
+    public static function getBlockStyleVariations($request)
+    {
+        // Get theme + DB merged Global Styles
+        $merged = wp_get_global_styles();
+        $blocks = $merged['blocks'] ?? [];
+
+        $variations = [];
+
+        foreach ($blocks as $blockName => $blockData) {
+            if (!isset($blockData['variations'])) {
+                continue;
+            }
+
+            $variations[$blockName] = $blockData['variations'];
+        }
+
+        return new \WP_REST_Response($variations, 200);
     }
 
     /**
@@ -333,7 +372,6 @@ class WPController
         ], 200);
     }
 
-
     /**
      * Get the rendered HTML of some block code
      *
@@ -346,5 +384,19 @@ class WPController
         $content = \do_blocks($blockCode);
 
         return new \WP_REST_Response(['content' => trim($content)]);
+    }
+
+    /**
+     * Sets a lock on a post to prevent concurrent editing.
+     *
+     * @param \WP_REST_Request $request The REST API request object containing postId.
+     * @return \WP_REST_Response Response indicating success of the lock operation.
+     */
+    public static function lockPost($request)
+    {
+        $postId = (int) $request->get_param('postId');
+        update_post_meta($postId, '_edit_lock', time() . ':' . get_current_user_id());
+
+        return new \WP_REST_Response(['success' => true]);
     }
 }

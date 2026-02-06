@@ -240,6 +240,12 @@ export const updateThemeVariation = (id, variation) =>
 		styles: variation.styles,
 	});
 
+export const getThemeGlobalStyles = () =>
+	api.get(`${wpRoot}wp/v2/global-styles/themes/extendable?context=edit`);
+
+export const updateGlobalStyles = (globalStylesPostID, stylesData) =>
+	api.post(`${wpRoot}wp/v2/global-styles/${globalStylesPostID}`, stylesData);
+
 export const addSectionLinksToNav = async (
 	navigationId,
 	homePatterns = [],

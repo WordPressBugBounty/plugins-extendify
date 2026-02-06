@@ -3,7 +3,7 @@ import { __ } from '@wordpress/i18n';
 import { useAIConsentStore } from '@shared/state/ai-consent';
 
 export const ConsentSidebar = () => {
-	const { consentTermsHTML, setUserGaveConsent } = useAIConsentStore();
+	const { consentTerms, setUserGaveConsent } = useAIConsentStore();
 
 	return (
 		<Panel>
@@ -11,10 +11,7 @@ export const ConsentSidebar = () => {
 				<h2 className="mb-2 mt-0 text-lg">
 					{__('Terms of Use', 'extendify-local')}
 				</h2>
-				<p
-					className="m-0"
-					dangerouslySetInnerHTML={{ __html: consentTermsHTML }}
-				/>
+				<p className="m-0" dangerouslySetInnerHTML={{ __html: consentTerms }} />
 				<button
 					className="mt-4 w-full rounded border-0 bg-wp-theme-main px-4 py-2 text-center text-white"
 					type="button"

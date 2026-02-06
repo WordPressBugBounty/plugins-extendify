@@ -39,8 +39,9 @@ class WorkflowHistoryController
 
         $results = $wpdb->get_results(
             $wpdb->prepare(
-                "SELECT * FROM $table WHERE user_id = %d ORDER BY created_at DESC LIMIT 5",
-                $user_id
+                "SELECT * FROM $table WHERE user_id = %d AND status = %s ORDER BY created_at DESC LIMIT 5",
+                $user_id,
+                'completed'
             ),
             ARRAY_A
         );
@@ -48,7 +49,6 @@ class WorkflowHistoryController
             return [
                 'workflowId' => $item['workflow_id'],
                 'answerId'   => $item['answer_id'],
-                'summary'    => $item['summary'],
                 'status'     => $item['status'],
                 'errorMsg'   => $item['error_msg'],
                 'agentName'  => $item['agent_name'],
@@ -72,7 +72,6 @@ class WorkflowHistoryController
         $wpdb->insert($table, [
             'workflow_id' => Sanitizer::sanitizeText($request->get_param('workflowId')),
             'answer_id'   => Sanitizer::sanitizeText($request->get_param('answerId')),
-            'summary'     => Sanitizer::sanitizeTextarea($request->get_param('summary')),
             'status'      => Sanitizer::sanitizeText($request->get_param('status')),
             'error_msg'   => Sanitizer::sanitizeText($request->get_param('errorMsg')),
             'agent_name'  => Sanitizer::sanitizeText($request->get_param('agentName')),
@@ -98,7 +97,6 @@ class WorkflowHistoryController
             'id'          => "BIGINT UNSIGNED NOT NULL AUTO_INCREMENT PRIMARY KEY",
             'workflow_id' => "VARCHAR(64) NOT NULL",
             'answer_id'   => "VARCHAR(64) NOT NULL",
-            'summary'     => "TEXT",
             'error_msg'   => "TEXT",
             'agent_name'  => "VARCHAR(64) NOT NULL",
             'status'      => "VARCHAR(20) NOT NULL",

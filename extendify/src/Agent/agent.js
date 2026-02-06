@@ -7,7 +7,7 @@ import '@agent/buttons';
 import { GuidedTour } from '@agent/components/GuidedTour';
 import { ReOpenToolTip } from '@agent/components/tooltip/ReOpenToolTip';
 
-const isInsideIframe = () => window !== window.top;
+const isInsideIframe = () => !!document.querySelector('body.iframe');
 
 domReady(() => {
 	const bg =

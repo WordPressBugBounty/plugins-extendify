@@ -111,9 +111,7 @@ export const ChatMessages = () => {
 						message.type === 'status' &&
 						// Only show the status if it's last, or a workflow-tool-completed message
 						(isLastMessage ||
-							['workflow-tool-completed', 'workflow-tool-canceled'].includes(
-								message.details?.type,
-							))
+							['workflow-tool-completed'].includes(message.details?.type))
 					) {
 						const isError = message.details?.type === 'error';
 						return (

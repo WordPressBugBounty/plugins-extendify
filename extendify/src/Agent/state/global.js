@@ -1,15 +1,7 @@
 import { isInTheFuture } from '@wordpress/date';
 import { create } from 'zustand';
 import { persist, devtools } from 'zustand/middleware';
-
-const DEFAULT_HEIGHT = 510;
-
-const startingPosition = {
-	x: 100,
-	y: window.innerHeight - DEFAULT_HEIGHT,
-	width: 390,
-	height: DEFAULT_HEIGHT,
-};
+import { usePositionStore } from '@agent/state/position';
 
 export const useGlobalStore = create()(
 	persist(
@@ -17,40 +9,40 @@ export const useGlobalStore = create()(
 			(set, get) => ({
 				retryAfter: undefined,
 				open: true,
+				minimized: false,
 				seenToolTips: [],
 				showSuggestions: true,
 				// e.g. floating, docked-left, docked-right ?
 				mode: 'floating',
-				...startingPosition,
 				queuedTour: null,
 				scratch: {},
 				isMobile: window.innerWidth < 768,
-				setIsMobile: (isMobile) => set({ isMobile }),
+				setIsMobile: (isMobile) => {
+					if (get().isMobile === isMobile) return;
+					set({ isMobile });
+				},
 				queueTourForRedirect: (tour) => set({ queuedTour: tour }),
 				clearQueuedTour: () => set({ queuedTour: null }),
 				setOpen: (open) => {
 					if (!open) {
-						get().resetPosition();
+						usePositionStore.getState().resetPosition();
 						window.dispatchEvent(
 							new CustomEvent('extendify-agent:cancel-workflow'),
 						);
 					}
 					set({ open });
 				},
+				setMinimized: (minimized) => {
+					if (get().minimized === minimized) return;
+					set({ minimized });
+				},
 				setShowSuggestions: (show) => set({ showSuggestions: show }),
 				toggleOpen: () =>
 					set((state) => {
 						if (!state.open) {
-							get().resetPosition();
+							usePositionStore.getState().resetPosition();
 						}
 						return { open: !state.open };
-					}),
-				setSize: (width, height) => set({ width, height }),
-				setPosition: (x, y) => set({ x, y }),
-				resetPosition: () =>
-					set({
-						...startingPosition,
-						y: window.innerHeight - DEFAULT_HEIGHT,
 					}),
 				setSeenToolTip: (name) =>
 					set((state) => {

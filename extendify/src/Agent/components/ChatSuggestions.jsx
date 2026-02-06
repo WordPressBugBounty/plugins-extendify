@@ -5,6 +5,8 @@ import {
 	help,
 	chevronRight,
 	video,
+	drafts,
+	published,
 	typography,
 } from '@wordpress/icons';
 import { sparkle } from '@agent/icons';
@@ -29,13 +31,15 @@ const icons = {
 	help,
 	video,
 	sparkle,
+	drafts,
+	published,
 	typography,
 };
 
 const featured = suggestions.filter((s) => !!s?.feature);
 const standard = suggestions.filter((s) => !s?.feature);
 
-export const ChatSuggestions = () => {
+export const ChatSuggestions = ({ suggestions = [] }) => {
 	const { startTour } = useTourStore();
 	const [shuffled, setShuffled] = useState(standard);
 
@@ -50,6 +54,16 @@ export const ChatSuggestions = () => {
 			}),
 		);
 	};
+
+	if (suggestions?.length > 0) {
+		return suggestions.map((suggestion) => (
+			<SuggestionButton
+				key={suggestion.message}
+				suggestion={suggestion}
+				handleSubmit={handleSubmit}
+			/>
+		));
+	}
 
 	return (
 		<>
