@@ -1,19 +1,31 @@
+import { getDynamicDuotoneMap } from '@agent/lib/svg-blocks-scanner';
+import { replaceDuotoneSVG } from '@agent/lib/svg-helpers';
+import apiFetch from '@wordpress/api-fetch';
 import { parse } from '@wordpress/blocks';
 import { useSelect } from '@wordpress/data';
 import { useEffect, useRef, useState } from '@wordpress/element';
-import { getDynamicDuotoneMap } from '@agent/lib/svg-blocks-scanner';
-import { replaceDuotoneSVG } from '@agent/lib/svg-helpers';
 
 const id = 'global-styles-inline-css';
 const path = window.location.pathname;
 const s = new URLSearchParams(window.location.search);
 const onEditor =
 	path.includes('/wp-admin/post.php') && s.get('action') === 'edit';
+const { globalStylesPostID } = window.extSharedData;
 
-export const useFontVariationOverride = ({ css, duotoneTheme }) => {
+export const useFontVariationOverride = ({ css }) => {
 	const frontStyles = useRef(null);
 	const duotoneCleanup = useRef(null);
 	const [theDocument, setDocument] = useState(null);
+	const [duotoneTheme, setDuotoneTheme] = useState(null);
+
+	useEffect(() => {
+		apiFetch({
+			path: `/wp/v2/global-styles/${globalStylesPostID}?context=edit`,
+		}).then((stylesResponse) => {
+			const duotone = stylesResponse?.settings?.color?.duotone?.theme;
+			setDuotoneTheme(duotone);
+		});
+	}, [css]);
 
 	useEffect(() => {
 		if (!css || onEditor) return;
@@ -95,7 +107,7 @@ export const useFontVariationOverride = ({ css, duotoneTheme }) => {
 			duotoneTheme,
 			dynamicDuotone,
 		});
-	}, [duotoneTheme, dynamicDuotone]);
+	}, [css, duotoneTheme, dynamicDuotone]);
 
 	return {
 		undoChange: () => {

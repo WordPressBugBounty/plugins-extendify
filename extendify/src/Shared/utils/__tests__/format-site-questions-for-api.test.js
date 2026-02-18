@@ -16,7 +16,9 @@ describe('formatSiteQuestionsForAPI', () => {
 
 	it('should format questions using answerUser if available', () => {
 		const input = {
-			questions: [{ id:'test', question: 'What is your name?', answerUser: 'John' }],
+			questions: [
+				{ id: 'test', question: 'What is your name?', answerUser: 'John' },
+			],
 		};
 		expect(formatSiteQuestionsForAPI(input)).toEqual([
 			{ id: 'test', question: 'What is your name?', answer: 'John' },
@@ -25,7 +27,9 @@ describe('formatSiteQuestionsForAPI', () => {
 
 	it('should fall back to answerAI if answerUser is not present', () => {
 		const input = {
-			questions: [{ id:'test', question: 'What is your name?', answerAI: 'AI-John' }],
+			questions: [
+				{ id: 'test', question: 'What is your name?', answerAI: 'AI-John' },
+			],
 		};
 		expect(formatSiteQuestionsForAPI(input)).toEqual([
 			{ id: 'test', question: 'What is your name?', answer: 'AI-John' },

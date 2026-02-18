@@ -1,10 +1,10 @@
 import {
+	applyVariantNumberMapToHtml,
 	esc,
-	getVariantNumbersInTree,
-	getVariantNumbersInHtml,
 	getVariantClassInfo,
 	getVariantClassInfoFromHtml,
-	applyVariantNumberMapToHtml,
+	getVariantNumbersInHtml,
+	getVariantNumbersInTree,
 	patchVariantClasses,
 } from '../variant-classes';
 

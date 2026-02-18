@@ -1,23 +1,24 @@
-import {
-	useMemo,
-	useEffect,
-	useState,
-	useRef,
-	useCallback,
-} from '@wordpress/element';
-import { __ } from '@wordpress/i18n';
+import { callTool, digest, handleWorkflow, pickWorkflow } from '@agent/api';
 import { Chat } from '@agent/Chat';
-import { pickWorkflow, handleWorkflow, callTool, digest } from '@agent/api';
 import { ChatInput } from '@agent/components/ChatInput';
 import { ChatMessages } from '@agent/components/ChatMessages';
 import { ChatSuggestions } from '@agent/components/ChatSuggestions';
+import { UsageMessage } from '@agent/components/messages/UsageMessage';
 import { PageDocument } from '@agent/components/PageDocument';
 import { WelcomeScreen } from '@agent/components/WelcomeScreen';
-import { UsageMessage } from '@agent/components/messages/UsageMessage';
 import { useLockPost } from '@agent/hooks/useLockPost';
+import { getRedirectUrl } from '@agent/lib/redirects';
 import { useChatStore } from '@agent/state/chat';
 import { useGlobalStore } from '@agent/state/global';
 import { useWorkflowStore } from '@agent/state/workflows';
+import {
+	useCallback,
+	useEffect,
+	useMemo,
+	useRef,
+	useState,
+} from '@wordpress/element';
+import { __ } from '@wordpress/i18n';
 
 const devmode = window.extSharedData.devbuild;
 // Used to abort when wf canceled - reset in cleanup()
@@ -182,10 +183,11 @@ export const Agent = () => {
 		};
 		// Allow external code to clear the block and workflow
 		const handleCleanup = () => {
-			if (!workflow?.id) return;
 			controller.abort('Workflow aborted');
-			setWorkflow(null);
 			cleanup();
+
+			if (!workflow?.id) return;
+			setWorkflow(null);
 			addMessage('status', { type: 'workflow-canceled' });
 			return;
 		};
@@ -206,7 +208,7 @@ export const Agent = () => {
 			if (toolWorking.current) return;
 			toolWorking.current = true;
 			const { data, whenFinishedToolProps, shouldRefreshPage } = detail ?? {};
-			const { summary, status, whenFinishedTool, answerId } =
+			const { status, whenFinishedTool, answerId, redirectTo } =
 				whenFinishedToolProps.agentResponse;
 			const { id, labels } = whenFinishedTool || {};
 			// Not all workflows have a tool at the end (e.g. tours)
@@ -223,7 +225,6 @@ export const Agent = () => {
 			addWorkflowResult({
 				answerId,
 				agentName: workflow?.agent?.name,
-				summary,
 				status,
 				errorMsg: toolResponse?.error,
 			});
@@ -252,13 +253,16 @@ export const Agent = () => {
 				answerId,
 			});
 			setWorkflow(null);
-			cleanup();
 
-			if (shouldRefreshPage) window.location.reload();
+			const url = getRedirectUrl(redirectTo, whenFinishedToolProps?.inputs);
+			if (url) return window.location.assign(url);
+			if (shouldRefreshPage) return window.location.reload();
+			// Clean up if not redirecting
+			cleanup();
 		};
 		const handleCancel = ({ detail }) => {
 			if (toolWorking.current) return;
-			const { summary, answerId } = detail.whenFinishedToolProps.agentResponse;
+			const { answerId } = detail.whenFinishedToolProps.agentResponse;
 			addMessage('workflow', {
 				status: 'canceled',
 				agent: workflow.agent,
@@ -266,7 +270,6 @@ export const Agent = () => {
 			});
 			addWorkflowResult({
 				answerId,
-				summary,
 				status: 'canceled',
 				agentName: workflow?.agent?.name,
 			});
@@ -359,11 +362,10 @@ export const Agent = () => {
 			});
 			if (retrying.current) retrying.current = false;
 			if (!agentResponse) return;
-			const { summary, status, answerId, sessionId } = agentResponse;
+			const { status, answerId, sessionId } = agentResponse;
 			// Add the workflow result to the history
 			addWorkflowResult({
 				answerId,
-				summary,
 				status,
 				errorMsg: agentResponse?.error,
 				agentName: workflow?.agent?.name,
@@ -376,7 +378,6 @@ export const Agent = () => {
 				window.extAgentData.failedWorkflows.add(workflow.id);
 				throw new Error(`Error handling workflow: ${agentResponse.error}`);
 			}
-
 			// The ai sent back some text to show to the user
 			if (agentResponse.reply) {
 				addMessage('message', {
@@ -511,12 +512,13 @@ export const Agent = () => {
 			<div className="relative z-50 flex h-full flex-col justify-between overflow-auto border-t border-solid border-gray-300">
 				{showWelcomeScreen ? (
 					<div
-						className="relative flex flex-grow flex-col overflow-y-auto overflow-x-hidden"
+						className="relative flex grow flex-col overflow-y-auto overflow-x-hidden"
 						style={{
 							backgroundImage:
 								'linear-gradient( to bottom, #f0f0f0 0%, #fff 60%,  #fff 100%)',
-						}}>
-						<div className="flex-grow" />
+						}}
+					>
+						<div className="grow" />
 						<WelcomeScreen />
 					</div>
 				) : (

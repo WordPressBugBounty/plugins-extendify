@@ -1,15 +1,14 @@
-import { Tooltip } from '@wordpress/components';
-import { useMemo, useState, useEffect } from '@wordpress/element';
-import { __ } from '@wordpress/i18n';
 import { useFontVariationOverride } from '@agent/hooks/useFontVariationOverride';
 import { useThemeFontsVariations } from '@agent/hooks/useThemeFontsVariations';
 import { useChatStore } from '@agent/state/chat';
+import { Tooltip } from '@wordpress/components';
+import { useEffect, useMemo, useState } from '@wordpress/element';
+import { __ } from '@wordpress/i18n';
 
 export const SelectThemeFontsVariation = ({ onConfirm, onCancel }) => {
 	const [css, setCss] = useState('');
 	const [selected, setSelected] = useState(null);
-	const [duotoneTheme, setDuotoneTheme] = useState(null);
-	const { undoChange } = useFontVariationOverride({ css, duotoneTheme });
+	const { undoChange } = useFontVariationOverride({ css });
 	const { variations, isLoading } = useThemeFontsVariations();
 	const noVariations = !variations || variations.length === 0;
 	const shuffled = useMemo(
@@ -59,7 +58,7 @@ export const SelectThemeFontsVariation = ({ onConfirm, onCancel }) => {
 		<div className="mb-4 ml-10 mr-2 flex flex-col rounded-lg border border-gray-300 bg-gray-50 rtl:ml-2 rtl:mr-10">
 			<div className="rounded-lg border-b border-gray-300 bg-white">
 				<div className="grid grid-cols-2 gap-2 p-3">
-					{shuffled?.slice(0, 10)?.map(({ title, css, styles, settings }) => (
+					{shuffled?.slice(0, 10)?.map(({ title, css, styles }) => (
 						<Tooltip key={title} text={title} placement="top">
 							<button
 								aria-label={title}
@@ -71,8 +70,8 @@ export const SelectThemeFontsVariation = ({ onConfirm, onCancel }) => {
 								onClick={() => {
 									setSelected(title);
 									setCss(css);
-									setDuotoneTheme(settings?.color?.duotone?.theme);
-								}}>
+								}}
+							>
 								<div className="max-w-fit content-stretch items-center justify-center rounded-lg text-2xl rtl:space-x-reverse">
 									<span style={{ fontFamily: getFont(styles)?.heading }}>
 										A
@@ -87,15 +86,17 @@ export const SelectThemeFontsVariation = ({ onConfirm, onCancel }) => {
 			<div className="flex justify-start gap-2 p-3">
 				<button
 					type="button"
-					className="w-full rounded border border-gray-300 bg-white p-2 text-sm text-gray-700"
-					onClick={handleCancel}>
+					className="w-full rounded-sm border border-gray-500 bg-white p-2 text-sm text-gray-900"
+					onClick={handleCancel}
+				>
 					{__('Cancel', 'extendify-local')}
 				</button>
 				<button
 					type="button"
-					className="w-full rounded border border-design-main bg-design-main p-2 text-sm text-white"
+					className="w-full rounded-sm border border-design-main bg-design-main p-2 text-sm text-white"
 					disabled={!selected}
-					onClick={handleConfirm}>
+					onClick={handleConfirm}
+				>
 					{__('Save', 'extendify-local')}
 				</button>
 			</div>

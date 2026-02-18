@@ -1,3 +1,5 @@
+import { usePortal } from '@agent/hooks/usePortal';
+import { useWorkflowStore } from '@agent/state/workflows';
 import apiFetch from '@wordpress/api-fetch';
 import { Tooltip } from '@wordpress/components';
 import {
@@ -8,10 +10,9 @@ import {
 	useState,
 } from '@wordpress/element';
 import { __ } from '@wordpress/i18n';
-import { Icon, close } from '@wordpress/icons';
+import { close, Icon } from '@wordpress/icons';
+import { addQueryArgs } from '@wordpress/url';
 import { motion } from 'framer-motion';
-import { usePortal } from '@agent/hooks/usePortal';
-import { useWorkflowStore } from '@agent/state/workflows';
 
 const selector = [
 	'[data-extendify-agent-block-id]',
@@ -46,14 +47,15 @@ export const DOMHighlighter = ({ busy = false }) => {
 		const ac = new AbortController();
 		const postId = window.extAgentData?.context?.postId;
 		if (!postId) return;
-		const q = new URLSearchParams({
+		const queryArgs = {
 			postId: String(postId),
 			blockId: String(block.id),
-		}).toString();
+		};
+
 		const isAlive = { current: true };
 		(async () => {
 			const res = await apiFetch({
-				path: `/extendify/v1/agent/get-block-code?${q}`,
+				path: addQueryArgs(`extendify/v1/agent/get-block-code`, queryArgs),
 				signal: ac.signal,
 			}).catch(() => ({})); // Agent will get it later if fails
 			if (!res.block || !isAlive.current || ac.signal.aborted) return;
@@ -196,6 +198,22 @@ export const DOMHighlighter = ({ busy = false }) => {
 	}, [enabled, setBlock, rect, clearBlock, block, busy]);
 
 	useEffect(() => {
+		if (!el.current) return;
+
+		const resizeObserver = new ResizeObserver(() => {
+			if (!el.current) return;
+			const { top, left, width, height } = el.current.getBoundingClientRect();
+			setRect({ top, left, width, height });
+		});
+
+		resizeObserver.observe(el.current);
+
+		return () => {
+			resizeObserver.disconnect();
+		};
+	}, [el.current]);
+
+	useEffect(() => {
 		if (!enabled) return;
 		const root = document.querySelector('.wp-site-blocks');
 		if (!root) return;
@@ -225,18 +243,22 @@ export const DOMHighlighter = ({ busy = false }) => {
 		<>
 			{block && !busy ? (
 				<Tooltip text={__('Remove highlight', 'extendify-local')}>
+					{/* biome-ignore lint: Using <button> is complicated with unknown themes */}
 					<div
 						role="button"
 						className={
-							'fixed z-higher h-6 w-6 -translate-y-3.5 cursor-pointer select-none items-center justify-center rounded-full text-center font-bold ring-1 ring-black'
+							'fixed z-higher h-6 w-6 -translate-y-3.5 cursor-pointer select-none flex items-center justify-center rounded-full text-center font-bold ring-1 ring-black'
 						}
+						tabIndex={0}
 						onClick={() => setBlock(null)}
+						onKeyDown={() => setBlock(null)}
 						style={{
 							top,
 							left: width / 2 + left - 12,
 							backgroundColor: 'var(--wp--preset--color--primary, red)',
 							color: 'var(--wp--preset--color--background, white)',
-						}}>
+						}}
+					>
 						<Icon
 							className="pointer-events-none fill-current leading-none"
 							icon={close}
@@ -253,12 +275,13 @@ export const DOMHighlighter = ({ busy = false }) => {
 				aria-hidden
 				animate={animate}
 				transition={transition}
-				className="pointer-events-none fixed z-high-1 mix-blend-hard-light outline-dashed outline-4"
+				className="fixed z-high-1 mix-blend-hard-light outline-dashed outline-4"
 				style={{
 					top: 0,
 					left: 0,
 					willChange: 'transform,width,height,opacity',
 					outlineColor: 'var(--wp--preset--color--primary, red)',
+					pointerEvents: block && !busy ? 'auto' : 'none',
 				}}
 			/>
 		</>,

@@ -7,9 +7,7 @@ jest.mock('@wordpress/i18n', () => ({
 	__: (str) => str,
 	sprintf: (format, ...args) => {
 		// Simple mock for sprintf to replace %1$s, %2$s etc
-		return format
-			.replace('%1$s', args[0] || '')
-			.replace('%2$s', args[1] || '');
+		return format.replace('%1$s', args[0] || '').replace('%2$s', args[1] || '');
 	},
 }));
 
@@ -123,18 +121,28 @@ describe('useAIConsentStore', () => {
 		});
 
 		it('handles "launch" context', () => {
-			setState({ showAIConsent: true, consentTerms: 'Terms', userGaveConsent: false });
+			setState({
+				showAIConsent: true,
+				consentTerms: 'Terms',
+				userGaveConsent: false,
+			});
 			const { shouldShowAIConsent } = useAIConsentStore.getState();
 
 			// Launch shows regardless of consent status (as long as enabled)
 			expect(shouldShowAIConsent('launch')).toBeTruthy();
 
 			setState({ userGaveConsent: true });
-			expect(useAIConsentStore.getState().shouldShowAIConsent('launch')).toBeTruthy();
+			expect(
+				useAIConsentStore.getState().shouldShowAIConsent('launch'),
+			).toBeTruthy();
 		});
 
 		it('handles "draft" context', () => {
-			setState({ showAIConsent: true, consentTerms: 'Terms', userGaveConsent: false });
+			setState({
+				showAIConsent: true,
+				consentTerms: 'Terms',
+				userGaveConsent: false,
+			});
 			const { shouldShowAIConsent } = useAIConsentStore.getState();
 
 			// Shows if not consented
@@ -142,11 +150,17 @@ describe('useAIConsentStore', () => {
 
 			// Hides if consented
 			setState({ userGaveConsent: true });
-			expect(useAIConsentStore.getState().shouldShowAIConsent('draft')).toBeFalsy();
+			expect(
+				useAIConsentStore.getState().shouldShowAIConsent('draft'),
+			).toBeFalsy();
 		});
 
 		it('handles "help-center" context', () => {
-			setState({ showAIConsent: true, consentTerms: 'Terms', userGaveConsent: false });
+			setState({
+				showAIConsent: true,
+				consentTerms: 'Terms',
+				userGaveConsent: false,
+			});
 			const { shouldShowAIConsent } = useAIConsentStore.getState();
 
 			// Shows if not consented
@@ -154,7 +168,9 @@ describe('useAIConsentStore', () => {
 
 			// Hides if consented
 			setState({ userGaveConsent: true });
-			expect(useAIConsentStore.getState().shouldShowAIConsent('help-center')).toBeFalsy();
+			expect(
+				useAIConsentStore.getState().shouldShowAIConsent('help-center'),
+			).toBeFalsy();
 		});
 
 		it('returns false for unknown context', () => {

@@ -1,8 +1,8 @@
+import { recordPluginActivity } from '@shared/api/DataApi';
+import { activatePlugin, installPlugin } from '@shared/api/wp';
 import { useEffect, useState } from '@wordpress/element';
 import { __, sprintf } from '@wordpress/i18n';
-import { Icon, external } from '@wordpress/icons';
-import { recordPluginActivity } from '@shared/api/DataApi';
-import { installPlugin, activatePlugin } from '@shared/api/wp';
+import { external, Icon } from '@wordpress/icons';
 
 export const InstallPlugin = ({ inputs, onConfirm, onCancel }) => {
 	const [status, setStatus] = useState('idle');
@@ -119,7 +119,7 @@ export const InstallPlugin = ({ inputs, onConfirm, onCancel }) => {
 					</p>
 					<div className="flex justify-between gap-1">
 						{inputs.pluginName && (
-							<div className="text-md flex-1 font-bold">
+							<div className="text-base flex-1 font-bold">
 								{inputs.pluginName}
 							</div>
 						)}
@@ -127,7 +127,8 @@ export const InstallPlugin = ({ inputs, onConfirm, onCancel }) => {
 							className="flex flex-1 items-end text-gray-900 hover:text-gray-900 hover:decoration-solid"
 							href={`https://wordpress.org/plugins/${inputs.pluginSlug}`}
 							target="_blank"
-							rel="noopener noreferrer">
+							rel="noopener noreferrer"
+						>
 							<span
 								dangerouslySetInnerHTML={{
 									__html: sprintf(
@@ -160,8 +161,9 @@ export const InstallPlugin = ({ inputs, onConfirm, onCancel }) => {
 const CancelButton = ({ onClick }) => (
 	<button
 		type="button"
-		className="w-full rounded border border-gray-300 bg-white p-2 text-sm text-gray-700"
-		onClick={onClick}>
+		className="w-full rounded-sm border border-gray-500 bg-white p-2 text-sm text-gray-900"
+		onClick={onClick}
+	>
 		{__('Cancel', 'extendify-local')}
 	</button>
 );
@@ -169,8 +171,9 @@ const CancelButton = ({ onClick }) => (
 const ConfirmButton = ({ onClick, text }) => (
 	<button
 		type="button"
-		className="w-full rounded border border-design-main bg-design-main p-2 text-sm text-white"
-		onClick={onClick}>
+		className="w-full rounded-sm border border-design-main bg-design-main p-2 text-sm text-white"
+		onClick={onClick}
+	>
 		{text}
 	</button>
 );

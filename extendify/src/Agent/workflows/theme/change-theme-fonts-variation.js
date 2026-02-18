@@ -1,6 +1,6 @@
-import { __ } from '@wordpress/i18n';
 import { Redirect } from '@agent/workflows/theme/components/Redirect';
 import { SelectThemeFontsVariation } from '@agent/workflows/theme/components/SelectThemeFontsVariation';
+import { __ } from '@wordpress/i18n';
 
 const { context, abilities } = window.extAgentData;
 

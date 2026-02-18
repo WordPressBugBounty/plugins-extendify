@@ -1,9 +1,9 @@
-import { Tooltip } from '@wordpress/components';
-import { useMemo, useState, useEffect } from '@wordpress/element';
-import { __ } from '@wordpress/i18n';
 import { useThemeVariations } from '@agent/hooks/useThemeVariations';
 import { useVariationOverride } from '@agent/hooks/useVariationOverride';
 import { useChatStore } from '@agent/state/chat';
+import { Tooltip } from '@wordpress/components';
+import { useEffect, useMemo, useState } from '@wordpress/element';
+import { __ } from '@wordpress/i18n';
 
 export const SelectThemeVariation = ({ onConfirm, onCancel }) => {
 	const [css, setCss] = useState('');
@@ -72,13 +72,15 @@ export const SelectThemeVariation = ({ onConfirm, onCancel }) => {
 									setSelected(title);
 									setCss(css);
 									setDuotoneTheme(settings?.color?.duotone?.theme);
-								}}>
+								}}
+							>
 								<div className="flex max-w-fit items-center justify-center -space-x-4 rounded-lg rtl:space-x-reverse">
 									{getColors(settings)?.map((color, i) => (
 										<div
 											key={title + color + i}
 											style={{ backgroundColor: color }}
-											className="size-6 flex-shrink-0 overflow-visible rounded-full border border-white md:size-7"></div>
+											className="size-6 shrink-0 overflow-visible rounded-full border border-white md:size-7"
+										></div>
 									))}
 								</div>
 							</button>
@@ -89,15 +91,17 @@ export const SelectThemeVariation = ({ onConfirm, onCancel }) => {
 			<div className="flex justify-start gap-2 p-3">
 				<button
 					type="button"
-					className="w-full rounded border border-gray-300 bg-white p-2 text-sm text-gray-700"
-					onClick={handleCancel}>
+					className="w-full rounded-sm border border-gray-500 bg-white p-2 text-sm text-gray-900"
+					onClick={handleCancel}
+				>
 					{__('Cancel', 'extendify-local')}
 				</button>
 				<button
 					type="button"
-					className="w-full rounded border border-design-main bg-design-main p-2 text-sm text-white"
+					className="w-full rounded-sm border border-design-main bg-design-main p-2 text-sm text-white"
 					disabled={!selected}
-					onClick={handleConfirm}>
+					onClick={handleConfirm}
+				>
 					{__('Save', 'extendify-local')}
 				</button>
 			</div>

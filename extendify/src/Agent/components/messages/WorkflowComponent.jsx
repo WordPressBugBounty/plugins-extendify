@@ -1,16 +1,16 @@
-import { __ } from '@wordpress/i18n';
 import { ErrorMessage } from '@agent/components/ErrorMessage';
 import { workflows } from '@agent/workflows/workflows';
+import { __ } from '@wordpress/i18n';
 
 export const WorkflowComponent = ({ message }) => {
 	const Component = workflows.find((w) => w.id === message.details.id)
 		?.whenFinished?.component;
 
-	if (!Component) return <Error />;
+	if (!Component) return <ErrorM />;
 	return <Component {...message.details} />;
 };
 
-const Error = () => (
+const ErrorM = () => (
 	<ErrorMessage>
 		<div className="text-sm">
 			<div className="font-semibold">

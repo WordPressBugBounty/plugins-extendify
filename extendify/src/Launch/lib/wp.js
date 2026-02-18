@@ -1,27 +1,27 @@
-import apiFetch from '@wordpress/api-fetch';
-import { rawHandler, serialize } from '@wordpress/blocks';
-import { __, sprintf } from '@wordpress/i18n';
-import { recordPluginActivity } from '@shared/api/DataApi';
-import { pageNames } from '@shared/lib/pages';
 import blogSampleData from '@launch/_data/blog-sample.json';
 import {
 	generateCustomPatterns,
 	getImprintPageTemplate,
 } from '@launch/api/DataApi';
-import { getActivePlugins } from '@launch/api/WPApi';
 import {
-	updateOption,
-	createPage,
-	updateThemeVariation,
-	processPlaceholders,
-	uploadMedia,
-	createPost,
 	createCategory,
+	createPage,
+	createPost,
 	createTag,
+	getActivePlugins,
 	getThemeGlobalStyles,
+	processPlaceholders,
 	updateGlobalStyles,
+	updateOption,
+	updateThemeVariation,
+	uploadMedia,
 } from '@launch/api/WPApi';
 import { addIdAttributeToBlock } from '@launch/lib/blocks';
+import { recordPluginActivity } from '@shared/api/DataApi';
+import { pageNames } from '@shared/lib/pages';
+import apiFetch from '@wordpress/api-fetch';
+import { rawHandler, serialize } from '@wordpress/blocks';
+import { __, sprintf } from '@wordpress/i18n';
 
 // Currently this only processes patterns with placeholders
 // by swapping out the placeholders with the actual code
@@ -61,7 +61,7 @@ export const replacePlaceholderPatterns = async (patterns) => {
 
 	try {
 		return await processPlaceholders(patterns);
-	} catch (e) {
+	} catch (_e) {
 		// Try one more time (plugins installed may not be fully loaded)
 		return await processPlaceholders(patterns)
 			// If this fails, just return the original patterns
@@ -100,7 +100,7 @@ export const createWpPages = async (pages, { stickyNav }) => {
 			content.push(addIdAttributeToBlock(serializedBlock, slug));
 		}
 
-		let pageData = {
+		const pageData = {
 			title: page.name,
 			status: 'publish',
 			content: content.join(''),
@@ -114,7 +114,7 @@ export const createWpPages = async (pages, { stickyNav }) => {
 		let newPage;
 		try {
 			newPage = await createPage(pageData);
-		} catch (e) {
+		} catch (_e) {
 			// The above could fail is they are on extendable < 2.0.12
 			// TODO: can remove in a month or so
 			pageData.template = 'no-title';
@@ -142,7 +142,7 @@ export const createWpPages = async (pages, { stickyNav }) => {
 export const createWpCategories = async (categories) => {
 	const responses = [];
 	for (const category of categories) {
-		let categoryData = {
+		const categoryData = {
 			name: category.name,
 			slug: category.slug,
 			description: category.description,
@@ -150,7 +150,7 @@ export const createWpCategories = async (categories) => {
 		let newCategory;
 		try {
 			newCategory = await createCategory(categoryData);
-		} catch (e) {
+		} catch (_e) {
 			// Fail silently
 		}
 		if (newCategory?.id && newCategory?.slug) {
@@ -163,7 +163,7 @@ export const createWpCategories = async (categories) => {
 export const createWpTags = async (tags) => {
 	const responses = [];
 	for (const tag of tags) {
-		let tagData = {
+		const tagData = {
 			name: tag.name,
 			slug: tag.slug,
 			description: tag.description,
@@ -171,7 +171,7 @@ export const createWpTags = async (tags) => {
 		let newTag;
 		try {
 			newTag = await createTag(tagData);
-		} catch (e) {
+		} catch (_e) {
 			// Fail silently
 		}
 		if (newTag?.id && newTag?.slug) {
@@ -221,7 +221,7 @@ export const importImage = async (imageUrl, metadata) => {
 		formData.append('status', 'publish');
 
 		return await uploadMedia(formData);
-	} catch (error) {
+	} catch (_error) {
 		// Fail silently, return null
 		return null;
 	}
@@ -230,7 +230,7 @@ export const importImage = async (imageUrl, metadata) => {
 export const createBlogSampleData = async (siteStrings, siteImages) => {
 	const localizedBlogSampleData =
 		blogSampleData[window.extSharedData?.wpLanguage || 'en_US'] ||
-		blogSampleData['en_US'];
+		blogSampleData.en_US;
 
 	const categories =
 		(await createWpCategories(localizedBlogSampleData.categories)) || [];
@@ -298,7 +298,7 @@ export const createBlogSampleData = async (siteStrings, siteImages) => {
 			};
 
 			await createPost(postData);
-		} catch (error) {
+		} catch (_error) {
 			// Fail silently
 		}
 	}

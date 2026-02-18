@@ -13,17 +13,17 @@ export default async ({ selectedVibe }) => {
 	}
 
 	try {
+		// Fetch variation
+		const { styles: variationStyles } = await apiFetch({
+			path: `/wp/v2/global-styles/${globalStylesPostID}?context=edit`,
+		});
 		// Fetch theme styles
-		const { styles } = await apiFetch({
-			path: `wp/v2/global-styles/themes/${themeSlug}?context=edit`,
+		const { styles: themeStyles } = await apiFetch({
+			path: `/wp/v2/global-styles/themes/${themeSlug}?context=edit`,
 		});
 
-		if (!styles?.blocks) {
-			throw new Error('No block styles found in theme global styles');
-		}
-
 		const updatedBlocks = {};
-		for (const [blockName, blockObj] of Object.entries(styles.blocks)) {
+		for (const [blockName, blockObj] of Object.entries(themeStyles.blocks)) {
 			if (!blockObj?.variations) {
 				updatedBlocks[blockName] = blockObj;
 				continue;
@@ -42,7 +42,7 @@ export default async ({ selectedVibe }) => {
 				path: `wp/v2/global-styles/${globalStylesPostID}`,
 				method: 'POST',
 				data: {
-					styles: { ...styles, blocks: updatedBlocks },
+					styles: { ...variationStyles, blocks: updatedBlocks },
 				},
 			}),
 			updateSiteStyleOption(selectedVibe),

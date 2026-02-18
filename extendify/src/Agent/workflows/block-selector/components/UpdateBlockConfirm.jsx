@@ -1,8 +1,8 @@
+import { patchVariantClasses } from '@agent/lib/variant-classes';
+import { useWorkflowStore } from '@agent/state/workflows';
 import apiFetch from '@wordpress/api-fetch';
 import { useCallback, useEffect, useRef, useState } from '@wordpress/element';
 import { __ } from '@wordpress/i18n';
-import { patchVariantClasses } from '@agent/lib/variant-classes';
-import { useWorkflowStore } from '@agent/state/workflows';
 
 const dynamicClasses = ['is-style-ext-preset', 'is-style-outline'];
 
@@ -57,7 +57,7 @@ export const UpdateBlockConfirm = ({
 				`[data-extendify-agent-block-id="${block.id}"]`,
 			);
 			// TODO: work out a way to propagate an error here
-			if (!el) return onCancel();
+			if (!el && !detachedEl.current) return onCancel();
 			if (detachedEl.current) return; // already done
 			detachedEl.current = el;
 
@@ -71,8 +71,14 @@ export const UpdateBlockConfirm = ({
 			template.innerHTML = patched || '<div style="display:none"></div>';
 			const newEl = template.content.firstElementChild;
 			if (!newEl) return onCancel();
-			// Preserve classes from the original element
-			el.classList.forEach((className) => newEl.classList.add(className));
+			const wpBlockAttributeClasses =
+				/^has-([\w-]+-)?(background-color|color|font-size|gradient-background)$|^has-background$|^has-text-color$/;
+			const newElClasses = new Set(newEl.classList);
+			el.classList.forEach((className) => {
+				if (newElClasses.has(className)) return;
+				if (wpBlockAttributeClasses.test(className)) return;
+				newEl.classList.add(className);
+			});
 			newEl.setAttribute('data-extendify-temp-replacement', true);
 			el.parentNode.insertBefore(newEl, el.nextSibling);
 			el.parentNode?.removeChild(el);
@@ -100,20 +106,23 @@ export const UpdateBlockConfirm = ({
 			<div className="flex flex-wrap justify-start gap-2 p-3">
 				<button
 					type="button"
-					className="flex-1 rounded border border-gray-300 bg-white p-2 text-sm text-gray-700"
-					onClick={handleCancel}>
+					className="flex-1 rounded-sm border border-gray-500 bg-white p-2 text-sm text-gray-900"
+					onClick={handleCancel}
+				>
 					{__('Cancel', 'extendify-local')}
 				</button>
 				<button
 					type="button"
-					className="flex-1 rounded border border-gray-300 bg-white p-2 text-sm text-gray-700"
-					onClick={handleRetry}>
+					className="flex-1 rounded-sm border border-gray-500 bg-white p-2 text-sm text-gray-900"
+					onClick={handleRetry}
+				>
 					{__('Try Again', 'extendify-local')}
 				</button>
 				<button
 					type="button"
-					className="flex-1 rounded border border-design-main bg-design-main p-2 text-sm text-white"
-					onClick={handleConfirm}>
+					className="flex-1 rounded-sm border border-design-main bg-design-main p-2 text-sm text-white"
+					onClick={handleConfirm}
+				>
 					{__('Save', 'extendify-local')}
 				</button>
 			</div>

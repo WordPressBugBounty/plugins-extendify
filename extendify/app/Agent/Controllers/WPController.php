@@ -212,11 +212,7 @@ class WPController
             return self::variationHasProperties($variation, ['elements', 'typography']);
         });
 
-        // Get duotone from current theme
-        $currentData = $current->get_data();
-        $currentDuotone = $currentData['settings']['color']['duotone'] ?? null;
-
-        $processedFonts = array_map(function ($variation) use ($currentDuotone) {
+        $processedFonts = array_map(function ($variation) {
             if (!isset($variation['styles']['elements']) || !is_array($variation['styles']['elements'])) {
                 return $variation;
             }
@@ -234,16 +230,6 @@ class WPController
 
             // Removing the settings that cause the style to change.
             unset($variation['settings']);
-
-            if ($currentDuotone) {
-                $variation['settings'] = [
-                    'color' => [
-                        'duotone' => [
-                            'theme' => $currentDuotone
-                            ]
-                        ]
-                    ];
-            }
 
             return $variation;
         }, $fontsVariations);

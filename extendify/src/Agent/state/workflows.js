@@ -1,8 +1,8 @@
-import apiFetch from '@wordpress/api-fetch';
-import { deepMerge } from '@shared/lib/utils';
-import { create } from 'zustand';
-import { persist, devtools } from 'zustand/middleware';
 import { workflows } from '@agent/workflows/workflows';
+import { deepMerge } from '@shared/lib/utils';
+import apiFetch from '@wordpress/api-fetch';
+import { create } from 'zustand';
+import { devtools, persist } from 'zustand/middleware';
 
 const state = (set, get) => ({
 	workflow: null,
@@ -28,7 +28,7 @@ const state = (set, get) => ({
 	// TODO: maybe we need to have a way to include a
 	// workflow regardless of the block being active?
 	getAvailableWorkflows: () => {
-		let wfs = workflows.filter(({ available }) => available());
+		const wfs = workflows.filter(({ available }) => available());
 		// If a block is set, only include those with 'block'
 		const blockWorkflows = wfs.filter(({ requires }) =>
 			requires?.includes('block'),
@@ -52,36 +52,6 @@ const state = (set, get) => ({
 	workflowHistory: window.extAgentData?.workflowHistory || [],
 	// Data for the tool component that shows up at the end of a workflow
 	whenFinishedToolProps: null,
-	getWhenFinishedToolProps: () => {
-		const { whenFinishedToolProps } = get();
-		if (!whenFinishedToolProps) return null;
-		return {
-			...whenFinishedToolProps,
-			onConfirm: (props = {}) => {
-				window.dispatchEvent(
-					new CustomEvent('extendify-agent:workflow-confirm', {
-						detail: { ...props, whenFinishedToolProps },
-					}),
-				);
-			},
-			onCancel: () => {
-				window.dispatchEvent(
-					new CustomEvent('extendify-agent:workflow-cancel', {
-						detail: { whenFinishedToolProps },
-					}),
-				);
-			},
-			onRetry: () => {
-				// Remove whenfinishedToolProps from the store
-				set({ whenFinishedToolProps: null });
-				window.dispatchEvent(
-					new CustomEvent('extendify-agent:workflow-retry', {
-						detail: { whenFinishedToolProps },
-					}),
-				);
-			},
-		};
-	},
 	addWorkflowResult: (data) => {
 		if (data.status === 'completed') {
 			set((state) => {
@@ -130,7 +100,6 @@ export const useWorkflowStore = create()(
 	persist(devtools(state, { name: 'Extendify Agent Workflows' }), {
 		name: `extendify-agent-workflows-${window.extSharedData.siteId}`,
 		partialize: (state) => {
-			// eslint-disable-next-line
 			const { block, workflowHistory, ...rest } = state;
 			return { ...rest };
 		},

@@ -1,22 +1,22 @@
-import { BlockPreview } from '@wordpress/block-editor';
-import { rawHandler } from '@wordpress/blocks';
-import { Spinner } from '@wordpress/components';
-import {
-	useRef,
-	useMemo,
-	useState,
-	useLayoutEffect,
-	useCallback,
-} from '@wordpress/element';
-import { forwardRef } from '@wordpress/element';
-import { pageNames } from '@shared/lib/pages';
-import classNames from 'classnames';
-import { AnimatePresence, motion } from 'framer-motion';
 import blockStyleVariations from '@launch/_data/block-style-variations.json';
 import themeJSON from '@launch/_data/theme-processed.json';
 import { usePreviewIframe } from '@launch/hooks/usePreviewIframe';
 import { getFontOverrides } from '@launch/lib/preview-helpers';
 import { hexTomatrixValues, lowerImageQuality } from '@launch/lib/util';
+import { pageNames } from '@shared/lib/pages';
+import { BlockPreview } from '@wordpress/block-editor';
+import { rawHandler } from '@wordpress/blocks';
+import { Spinner } from '@wordpress/components';
+import {
+	forwardRef,
+	useCallback,
+	useLayoutEffect,
+	useMemo,
+	useRef,
+	useState,
+} from '@wordpress/element';
+import classNames from 'classnames';
+import { AnimatePresence, motion } from 'framer-motion';
 
 export const PagePreview = forwardRef(
 	({ style, siteTitle, loading, showNav = true }, ref) => {
@@ -66,9 +66,9 @@ export const PagePreview = forwardRef(
 						content.querySelector('[href*=load-styles]')?.remove();
 						const siteTitleElement =
 							content.querySelectorAll('[href*=site-title]');
-						siteTitleElement?.forEach(
-							(element) => (element.textContent = siteTitle),
-						);
+						siteTitleElement?.forEach((element) => {
+							element.textContent = siteTitle;
+						});
 					}
 
 					// Add custom font links if not already present
@@ -156,10 +156,7 @@ export const PagePreview = forwardRef(
 
 			const code = [
 				style?.headerCode,
-				style?.patterns
-					?.map(({ code }) => code)
-					.flat()
-					.join(''),
+				style?.patterns?.flatMap(({ code }) => code).join(''),
 				style?.footerCode,
 			]
 				.filter(Boolean)
@@ -221,7 +218,8 @@ export const PagePreview = forwardRef(
 								backgroundSize: '600% 600%',
 								animation:
 									'extendify-loading-skeleton 10s ease-in-out infinite',
-							}}>
+							}}
+						>
 							<div className="absolute inset-0 flex items-center justify-center">
 								<Spinner className="h-10 w-10 text-design-main" />
 							</div>
@@ -233,10 +231,12 @@ export const PagePreview = forwardRef(
 					ref={blockRef}
 					className={classNames('group z-10 w-full bg-transparent', {
 						'opacity-0': !showPreview,
-					})}>
+					})}
+				>
 					<div
 						ref={previewContainer}
-						className="relative m-auto max-w-[1440px] rounded-lg">
+						className="relative m-auto max-w-[1440px] rounded-lg"
+					>
 						<BlockPreview
 							blocks={blocks}
 							viewportWidth={1440}

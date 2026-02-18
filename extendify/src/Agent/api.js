@@ -1,8 +1,8 @@
-import { AI_HOST } from '@constants';
 import { useChatStore } from '@agent/state/chat';
 import { useGlobalStore } from '@agent/state/global';
 import { useWorkflowStore } from '@agent/state/workflows';
 import { tools } from '@agent/workflows/workflows';
+import { AI_HOST } from '@constants';
 
 const extraBody = {
 	...Object.fromEntries(
@@ -125,7 +125,7 @@ export const digest = ({ error, sessionId, caller, additional = {} }) => {
 	if (Boolean(extraBody?.devbuild) === true) return;
 
 	const errorMessage = () => {
-		if (error.response && error.response.statusText) {
+		if (error.response?.statusText) {
 			return (
 				error.response?.statusText || error.response.message || 'Unknown error'
 			);

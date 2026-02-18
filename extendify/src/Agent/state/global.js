@@ -1,7 +1,7 @@
+import { usePositionStore } from '@agent/state/position';
 import { isInTheFuture } from '@wordpress/date';
 import { create } from 'zustand';
-import { persist, devtools } from 'zustand/middleware';
-import { usePositionStore } from '@agent/state/position';
+import { devtools, persist } from 'zustand/middleware';
 
 export const useGlobalStore = create()(
 	persist(
@@ -62,7 +62,6 @@ export const useGlobalStore = create()(
 				getScratch: (key) => get().scratch[key] || null,
 				deleteScratch: (key) =>
 					set((state) => {
-						// eslint-disable-next-line
 						const { [key]: _, ...rest } = state.scratch;
 						return { scratch: rest };
 					}),
@@ -72,7 +71,6 @@ export const useGlobalStore = create()(
 		{
 			name: `extendify-agent-global-${window.extSharedData.siteId}`,
 			partialize: (state) => {
-				// eslint-disable-next-line
 				const { showSuggestions, isMobile, ...rest } = state;
 				return { ...rest };
 			},

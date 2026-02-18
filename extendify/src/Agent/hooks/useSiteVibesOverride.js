@@ -1,5 +1,5 @@
-import { useEffect, useRef, useState } from '@wordpress/element';
 import { isInEditor } from '@agent/lib/util';
+import { useEffect, useRef, useState } from '@wordpress/element';
 
 const styleId = 'block-style-variation-styles-inline-css';
 const editorIframeSelector = 'iframe[name="editor-canvas"]';
@@ -14,6 +14,7 @@ const getEditorDocument = () => {
 const transformVibeCSS = (css, slug) => css.replaceAll(slug, 'natural-1');
 
 export const useSiteVibesOverride = ({ css, slug }) => {
+	console.log({ css, slug });
 	const blockStyles = useRef(null);
 	const [theDocument, setDocument] = useState(null);
 	const onEditor = isInEditor();

@@ -1,7 +1,7 @@
+import { makeId } from '@agent/lib/util';
 import apiFetch from '@wordpress/api-fetch';
 import { create } from 'zustand';
-import { persist, devtools, createJSONStorage } from 'zustand/middleware';
-import { makeId } from '@agent/lib/util';
+import { createJSONStorage, devtools, persist } from 'zustand/middleware';
 
 const { chatHistory } = window.extAgentData;
 const state = (set, get) => ({
@@ -28,7 +28,8 @@ const state = (set, get) => ({
 					const isAssistant = message.details?.role === 'assistant';
 					const lastIsAssistant = last?.details?.role === 'assistant';
 					if (isAssistant && lastIsAssistant) return acc;
-					return [...acc, message];
+					acc.push(message);
+					return acc;
 				}, [])
 				.toReversed()
 		: [],

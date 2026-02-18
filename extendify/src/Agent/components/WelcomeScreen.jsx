@@ -1,5 +1,5 @@
-import { __ } from '@wordpress/i18n';
 import { ChatSuggestions } from '@agent/components/ChatSuggestions';
+import { __ } from '@wordpress/i18n';
 
 const launchCompletedAt = window.extSharedData.launchCompletedAt;
 let been24Hours = false;
@@ -8,7 +8,7 @@ try {
 	const yesterday = new Date();
 	yesterday.setDate(yesterday.getDate() - 1);
 	been24Hours = completedAt < yesterday;
-} catch (error) {
+} catch (_error) {
 	// Launch wasn't completed, so still false
 }
 
@@ -39,7 +39,7 @@ export const WelcomeScreen = () => {
 			<div className="mb-2 text-2xl font-semibold">
 				{__('Your expert AI team is here', 'extendify-local')}
 			</div>
-			<div className="text-md text-base text-gray-900">
+			<div className="text-base text-base text-gray-900">
 				{__(
 					'Your team of site experts — designers, developers, and marketers — ready to help from content to layouts. Tell us what you need or pick a task to start.',
 					'extendify-local',

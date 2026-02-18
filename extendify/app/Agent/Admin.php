@@ -104,6 +104,7 @@ class Admin
                 'title' => $item['title'] ?? '',
                 'slug'  => $item['ctaPluginSlug'] ?? $item['slug'] ?? '',
                 'description' => $item['aiDescription'] ?? $item['description'] ?? '',
+                'redirectTo' => $item['pluginSetupUrl'] ?? '', // this is a partial setup URL not full one.
             ];
         }, $pluginRecommendations));
         $agentContext = [

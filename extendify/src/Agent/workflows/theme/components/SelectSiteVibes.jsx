@@ -1,13 +1,13 @@
-import { Tooltip } from '@wordpress/components';
-import { useEffect, useMemo, useState } from '@wordpress/element';
-import { __ } from '@wordpress/i18n';
 import { useSiteVibesOverride } from '@agent/hooks/useSiteVibesOverride';
 import { useSiteVibesVariations } from '@agent/hooks/useSiteVibesVariations';
 import { useChatStore } from '@agent/state/chat';
+import { Tooltip } from '@wordpress/components';
+import { useEffect, useMemo, useState } from '@wordpress/element';
+import { __ } from '@wordpress/i18n';
 
 export const SelectSiteVibes = ({ onConfirm, onCancel }) => {
 	const { data, isLoading } = useSiteVibesVariations();
-	const { vibes, currentVibe, css: styles } = data || {};
+	const { vibes, css: styles } = data || {};
 	const [selected, setSelected] = useState(null);
 	const css = selected ? styles[selected] : '';
 	const { undoChange } = useSiteVibesOverride({ css, slug: selected });
@@ -17,11 +17,6 @@ export const SelectSiteVibes = ({ onConfirm, onCancel }) => {
 		[vibes],
 	);
 	const { addMessage, messages } = useChatStore();
-
-	useEffect(() => {
-		if (!currentVibe) return;
-		setSelected(currentVibe);
-	}, [currentVibe]);
 
 	const handleConfirm = () => {
 		if (!selected) return;
@@ -70,7 +65,8 @@ export const SelectSiteVibes = ({ onConfirm, onCancel }) => {
 					className="grid gap-2 p-3"
 					style={{
 						gridTemplateColumns: 'repeat(auto-fit, minmax(140px, 1fr))',
-					}}>
+					}}
+				>
 					{shuffled?.slice(0, 10).map(({ name, slug }) => (
 						<Tooltip key={slug} text={name} placement="top">
 							<style>
@@ -87,14 +83,15 @@ export const SelectSiteVibes = ({ onConfirm, onCancel }) => {
 								className={`ext-vibe-container relative z-10 flex w-full appearance-none items-center justify-center overflow-hidden rounded-lg border border-gray-300 bg-none p-0 text-sm text-inherit shadow-vibe drop-shadow-md ${
 									selected === slug ? 'z-0 ring-wp ring-design-main' : ''
 								}`}
-								onClick={() => setSelected(slug)}>
+								onClick={() => setSelected(slug)}
+							>
 								<div
-									className={`wp-block-group preview-is-style-ext-preset--group--${slug}--section has-background-background-color has-background p-3`}>
+									className={`wp-block-group preview-is-style-ext-preset--group--${slug}--section has-background-background-color has-background p-3`}
+								>
 									<div
-										style={{
-											color: textColor,
-										}}
-										className={`wp-block-group has-tertiary-background-color has-background max-w-fit content-stretch items-center justify-center bg-design-tertiary p-3 text-2xl rtl:space-x-reverse preview-is-style-ext-preset--group--${slug}--item-card-1--align-center`}>
+										style={{ color: textColor }}
+										className={`wp-block-group has-tertiary-background-color has-background max-w-fit content-stretch items-center justify-center bg-design-tertiary p-3 text-2xl rtl:space-x-reverse preview-is-style-ext-preset--group--${slug}--item-card-1--align-center`}
+									>
 										<h1 className="mb-1 text-base font-semibold">
 											{
 												// translators: This is a placeholder title used in a visual preview of a site structural aesthetic styles. It demonstrates how the typography looks.
@@ -120,15 +117,17 @@ export const SelectSiteVibes = ({ onConfirm, onCancel }) => {
 			<div className="flex justify-start gap-2 p-3">
 				<button
 					type="button"
-					className="w-full rounded border border-gray-300 bg-white p-2 text-sm text-gray-700"
-					onClick={handleCancel}>
+					className="w-full rounded-sm border border-gray-500 bg-white p-2 text-sm text-gray-900"
+					onClick={handleCancel}
+				>
 					{__('Cancel', 'extendify-local')}
 				</button>
 				<button
 					type="button"
-					className="w-full rounded border border-design-main bg-design-main p-2 text-sm text-white"
+					className="w-full rounded-sm border border-design-main bg-design-main p-2 text-sm text-white"
 					disabled={!selected}
-					onClick={handleConfirm}>
+					onClick={handleConfirm}
+				>
 					{__('Save', 'extendify-local')}
 				</button>
 			</div>

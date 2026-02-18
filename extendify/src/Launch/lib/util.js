@@ -8,7 +8,7 @@ function cleanAndBuildUnsplashUrl(url) {
 		.replaceAll('\\u0026', '&')
 		// Remove duplicate question marks in URL by replacing second '?' with '&'
 		.replace(/(\?.*?)\?/, '$1&');
-	let imageUrl = new URL(decodeEntities(cleanUrl));
+	const imageUrl = new URL(decodeEntities(cleanUrl));
 
 	const size = 1440;
 	const orientation = imageUrl.searchParams.get('orientation');
