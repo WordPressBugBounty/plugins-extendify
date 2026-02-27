@@ -47,7 +47,12 @@ export const pickWorkflow = async ({ workflows, options }) => {
 	const filteredWorkflows = workflows.filter((wf) => !failed.has(wf.id));
 
 	const { workflowHistory: pastWorkflows, block } = useWorkflowStore.getState();
+
 	const messages = useChatStore.getState().getMessagesForAI();
+	const lastAssistantMessage = useChatStore
+		.getState()
+		.getLastAssistantMessage();
+
 	const response = await fetch(`${AI_HOST}/api/agent/find-agent`, {
 		method: 'POST',
 		headers: { 'Content-Type': 'application/json' },
@@ -56,6 +61,11 @@ export const pickWorkflow = async ({ workflows, options }) => {
 			...extraBody,
 			workflows: filteredWorkflows,
 			previousAgentName: pastWorkflows.at(0)?.agentName,
+			previousWorkflow: {
+				lastMessage: lastAssistantMessage?.details?.content,
+				sessionId: lastAssistantMessage?.details?.sessionId,
+				...pastWorkflows?.at(0),
+			},
 			context,
 			agentContext: window.extAgentData.agentContext,
 			messages: messages.slice(-5),

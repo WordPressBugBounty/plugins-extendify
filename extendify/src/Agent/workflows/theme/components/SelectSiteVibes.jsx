@@ -65,6 +65,7 @@ export const SelectSiteVibes = ({ onConfirm, onCancel }) => {
 					className="grid gap-2 p-3"
 					style={{
 						gridTemplateColumns: 'repeat(auto-fit, minmax(140px, 1fr))',
+						gridAutoRows: '1fr',
 					}}
 				>
 					{shuffled?.slice(0, 10).map(({ name, slug }) => (
@@ -80,31 +81,30 @@ export const SelectSiteVibes = ({ onConfirm, onCancel }) => {
 							<button
 								aria-label={name}
 								type="button"
-								className={`ext-vibe-container relative z-10 flex w-full appearance-none items-center justify-center overflow-hidden rounded-lg border border-gray-300 bg-none p-0 text-sm text-inherit shadow-vibe drop-shadow-md ${
+								className={`ext-vibe-container relative z-10 flex h-full w-full appearance-none items-stretch justify-center overflow-hidden rounded-lg border border-gray-300 bg-none p-0 text-sm text-inherit shadow-vibe drop-shadow-md ${
 									selected === slug ? 'z-0 ring-wp ring-design-main' : ''
 								}`}
 								onClick={() => setSelected(slug)}
 							>
 								<div
-									className={`wp-block-group preview-is-style-ext-preset--group--${slug}--section has-background-background-color has-background p-3`}
+									className={`wp-block-group w-full preview-is-style-ext-preset--group--${slug}--section has-background-background-color has-background h-full p-3`}
 								>
 									<div
-										style={{ color: textColor }}
-										className={`wp-block-group has-tertiary-background-color has-background max-w-fit content-stretch items-center justify-center bg-design-tertiary p-3 text-2xl rtl:space-x-reverse preview-is-style-ext-preset--group--${slug}--item-card-1--align-center`}
+										style={{
+											color: textColor,
+										}}
+										className={`wp-block-group has-tertiary-background-color has-background h-full w-full content-stretch items-center justify-center bg-design-tertiary py-7 px-0 text-2xl rtl:space-x-reverse preview-is-style-ext-preset--group--${slug}--item-card-1--align-center`}
 									>
-										<h1 className="mb-1 text-base font-semibold">
+										<h1 className="mb-1 text-sm font-semibold">
 											{
 												// translators: This is a placeholder title used in a visual preview of a site structural aesthetic styles. It demonstrates how the typography looks.
-												__('Short title', 'extendify-local')
+												__('Title', 'extendify-local')
 											}
 										</h1>
 										<p className="mt-1 text-xs font-light">
 											{
 												// translators: This is a placeholder description used in a visual preview of a site structural aesthetic styles. It demonstrates how the typography looks.
-												__(
-													'Short description of the content.',
-													'extendify-local',
-												)
+												__('Description', 'extendify-local')
 											}
 										</p>
 									</div>

@@ -35,7 +35,7 @@ domReady(() => {
 	agent.style.position = 'sticky';
 	agent.style.top = 'calc(100% - var(--extendify-agent-mobile-btn-height))';
 	agent.style.bottom = '0';
-	agent.style.zIndex = '9999';
+	agent.style.zIndex = '99999';
 	document.body.appendChild(agent);
 	render(<Mobile />, agent);
 });

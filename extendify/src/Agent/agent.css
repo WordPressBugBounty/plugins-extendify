@@ -12,6 +12,9 @@
 	.extendify-agent-markdown h3 {
 		@apply mb-1! mt-3! text-lg! font-semibold!;
 	}
+	.extendify-agent-markdown h4 {
+		@apply mb-0.5! mt-2! text-base! font-semibold!;
+	}
 	.extendify-agent-markdown p {
 		@apply m-0! mb-2! text-sm! leading-relaxed! text-gray-900!;
 	}

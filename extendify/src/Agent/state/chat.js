@@ -54,6 +54,11 @@ const state = (set, get) => ({
 		}
 		return messages.toReversed();
 	},
+	getLastAssistantMessage: () =>
+		get()?.messagesRaw?.findLast(
+			(message) =>
+				message.type === 'message' && message.details?.role === 'assistant',
+		),
 	hasMessages: () => get().messages.length > 0,
 	addMessage: (type, details) => {
 		const id = makeId();

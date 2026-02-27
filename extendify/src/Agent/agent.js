@@ -10,6 +10,7 @@ import { ReOpenToolTip } from '@agent/components/tooltip/ReOpenToolTip';
 const isInsideIframe = () => !!document.querySelector('body.iframe');
 
 domReady(() => {
+	// disableForReducedMotion
 	// tours
 	const tourId = 'extendify-agent-tour';
 	if (document.getElementById(tourId)) return;

@@ -227,6 +227,7 @@ export const Agent = () => {
 				agentName: workflow?.agent?.name,
 				status,
 				errorMsg: toolResponse?.error,
+				language: workflow?.language,
 			});
 			if (toolResponse?.error) {
 				await new Promise((resolve) => setTimeout(resolve, 1000));
@@ -272,6 +273,7 @@ export const Agent = () => {
 				answerId,
 				status: 'canceled',
 				agentName: workflow?.agent?.name,
+				language: workflow?.language,
 			});
 			setWorkflow(null);
 			cleanup();
@@ -369,6 +371,7 @@ export const Agent = () => {
 				status,
 				errorMsg: agentResponse?.error,
 				agentName: workflow?.agent?.name,
+				language: workflow?.language,
 			});
 			if (!open) return;
 			if (agentResponse.error) {
