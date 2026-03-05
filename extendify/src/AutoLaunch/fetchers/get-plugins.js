@@ -2,7 +2,6 @@ import { getPluginsShape, pluginShape } from '@auto-launch/fetchers/shape';
 import {
 	failWithFallback,
 	fetchWithTimeout,
-	reqDataBasics,
 	retryTwice,
 	setStatus,
 } from '@auto-launch/functions/helpers';
@@ -13,6 +12,7 @@ import {
 	installPlugin,
 } from '@auto-launch/functions/plugins';
 import { AI_HOST } from '@constants';
+import { reqDataBasics } from '@shared/lib/data';
 import { __ } from '@wordpress/i18n';
 import { z } from 'zod';
 
@@ -27,15 +27,23 @@ const shapeLocal = z.object({
 	selectedPlugins: z.array(pluginShape),
 });
 
-export const handleSitePlugins = async ({ siteProfile }) => {
-	// translators: this is for a action log UI. Keep it short
-	setStatus(__('Setting up site functionality', 'extendify'));
+export const handleSitePlugins = async ({
+	siteProfile = {},
+	requiredOnly = false,
+	showStatus = true,
+}) => {
+	if (showStatus) {
+		// translators: this is for a action log UI. Keep it short
+		setStatus(__('Setting up site functionality', 'extendify-local'));
+	}
 
 	const body = JSON.stringify({
 		...reqDataBasics,
 		...siteProfile,
+		siteProfile,
 		siteObjective: siteProfile.objective,
 		pluginGroupId,
+		requiredOnly,
 	});
 
 	const response = await retryTwice(() =>
@@ -59,16 +67,15 @@ export const handleSitePlugins = async ({ siteProfile }) => {
 	const pluginsToInstall = plugins.sitePlugins.filter(
 		({ wordpressSlug: slug }) => !alreadyActive(activePlugins, slug),
 	);
-	setStatus(
-		// translators: this is for a action log UI. Keep it short
-		__('Setting up functionality for your website', 'extendify-local'),
-	);
-	await Promise.all(
-		pluginsToInstall.map(async ({ wordpressSlug: slug }) => {
-			const p = await installPlugin(slug);
-			await activatePlugin(p?.plugin ?? slug);
-		}),
-	);
-
+	if (showStatus && pluginsToInstall.length > 0) {
+		setStatus(
+			// translators: this is for a action log UI. Keep it short
+			__('Setting up functionality for your website', 'extendify-local'),
+		);
+	}
+	for (const { wordpressSlug: slug } of pluginsToInstall) {
+		const p = await installPlugin(slug);
+		await activatePlugin(p?.plugin ?? slug);
+	}
 	return plugins;
 };

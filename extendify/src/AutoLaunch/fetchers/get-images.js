@@ -2,11 +2,11 @@ import { getImagesShape } from '@auto-launch/fetchers/shape';
 import {
 	failWithFallback,
 	fetchWithTimeout,
-	reqDataBasics,
 	retryTwice,
 	setStatus,
 } from '@auto-launch/functions/helpers';
 import { IMAGES_HOST } from '@constants';
+import { reqDataBasics } from '@shared/lib/data';
 import { __ } from '@wordpress/i18n';
 
 const fallback = { siteImages: [] };
@@ -16,7 +16,7 @@ const headers = { 'Content-Type': 'application/json' };
 
 export const handleSiteImages = async ({ siteProfile }) => {
 	// translators: this is for a action log UI. Keep it short
-	setStatus(__('Finding the perfect images', 'extendify'));
+	setStatus(__('Finding the perfect images', 'extendify-local'));
 
 	const body = JSON.stringify({
 		...reqDataBasics,

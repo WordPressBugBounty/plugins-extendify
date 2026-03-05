@@ -1,12 +1,12 @@
 import { getHomeShape, homeTemplateShape } from '@auto-launch/fetchers/shape';
 import {
 	fetchWithTimeout,
-	reqDataBasics,
 	retryTwice,
 	setStatus,
 } from '@auto-launch/functions/helpers';
 import { getHeadersAndFooters } from '@auto-launch/functions/wp';
 import { PATTERNS_HOST } from '@constants';
+import { reqDataBasics } from '@shared/lib/data';
 import { __ } from '@wordpress/i18n';
 
 const { wpLanguage, showImprint } = window.extSharedData;
@@ -16,7 +16,7 @@ const headers = { 'Content-Type': 'application/json' };
 
 export const handleHome = async ({ siteProfile, sitePlugins, siteImages }) => {
 	// translators: this is for a action log UI. Keep it short
-	setStatus(__('Preparing your home page', 'extendify'));
+	setStatus(__('Preparing your home page', 'extendify-local'));
 
 	const body = JSON.stringify({
 		...reqDataBasics,

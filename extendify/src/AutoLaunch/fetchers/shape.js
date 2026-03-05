@@ -53,6 +53,7 @@ export const getProfileShape = z.looseObject({
 	type: z.string(),
 	title: z.string(),
 	description: z.string(),
+	descriptionRaw: z.string().optional(),
 	objective: z.string(),
 	category: z.string().optional(),
 	structure: z.string(),

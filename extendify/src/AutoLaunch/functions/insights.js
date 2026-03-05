@@ -1,5 +1,5 @@
 import { INSIGHTS_HOST } from '@constants';
-import { reqDataBasics } from './helpers';
+import { reqDataBasics } from '@shared/lib/data';
 
 const headers = {
 	'Content-type': 'application/json',

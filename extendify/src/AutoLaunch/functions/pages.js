@@ -1,6 +1,6 @@
-import { reqDataBasics } from '@auto-launch/functions/helpers';
 import { importImage, updateOption } from '@auto-launch/functions/wp';
 import { PATTERNS_HOST } from '@constants';
+import { reqDataBasics } from '@shared/lib/data';
 import { pageNames } from '@shared/lib/pages';
 import apiFetch from '@wordpress/api-fetch';
 import { createBlock, parse, serialize } from '@wordpress/blocks';

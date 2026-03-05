@@ -127,15 +127,15 @@ class Admin
             'canUploadMedia' => (bool) \current_user_can('upload_files'),
         ];
 
+        $agentOnboarding = PartnerData::setting('useAgentOnboarding') ||
+            constant('EXTENDIFY_DEVMODE');
+
         \wp_add_inline_script(
             Config::$slug . '-agent-scripts',
             'window.extAgentData = ' . \wp_json_encode([
                 // phpcs:ignore WordPress.Security.NonceVerification.Recommended
-                'startOnboarding' => isset($_GET['extendify-launch-success']) &&
-                    (
-                        PartnerData::setting('useAgentOnboarding') ||
-                        constant('EXTENDIFY_DEVMODE')
-                    ),
+                'startOnboarding' => isset($_GET['extendify-launch-success']) && $agentOnboarding,
+                'agentPosition' => $agentOnboarding && !is_admin() ? 'docked-left' : 'floating',
                 // Add context about where they are
                 'context' => $context,
                 // Context that the Agent might need when returning a response,
@@ -147,8 +147,8 @@ class Admin
                 // List of suggestions the AI can make for this user.
                 // For example, we could check whether they need to set up a specific plugin.
                 'suggestions' => $this->getSuggestions($context, $abilities),
-                'chatHistory' => Escaper::recursiveEscAttr(ChatHistoryController::getChatHistory()),
-                'workflowHistory' => Escaper::recursiveEscAttr(WorkflowHistoryController::getWorkflowHistory()),
+                'chatHistory' => ChatHistoryController::getChatHistory(),
+                'workflowHistory' => WorkflowHistoryController::getWorkflowHistory(),
                 'userData' => [
                     'tourData' => \wp_json_encode(TourController::get()->get_data()),
                 ],

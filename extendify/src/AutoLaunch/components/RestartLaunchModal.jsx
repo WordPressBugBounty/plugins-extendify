@@ -19,6 +19,10 @@ export const RestartLaunchModal = ({ pages }) => {
 	const handleOk = async () => {
 		setProcessing(true);
 		resetLaunchData({ exclude: ['descriptionBackup'] });
+		// remove any workflow info
+		localStorage.removeItem(
+			`extendify-agent-workflows-${window.extSharedData.siteId}`,
+		);
 		for (const pageId of pages) {
 			try {
 				await apiFetch({

@@ -76,12 +76,12 @@ export const useCreateSite = () => {
 		// TODO: do we want to reset state here?
 	});
 
-	// needs: title, description
+	// needs: title, descriptionRaw
 	// provides: siteProfile: { type, category, description, title, keywords, logoObjectName }
 	useRunStep(
 		'siteProfile',
 		() => {
-			if (!data.description && !data.title) return null;
+			if (!data.descriptionRaw && !data.title) return null;
 			return data;
 		},
 		handleSiteProfile,

@@ -1,11 +1,11 @@
 import { getPagesShape, pageTemplateShape } from '@auto-launch/fetchers/shape';
 import {
 	fetchWithTimeout,
-	reqDataBasics,
 	retryTwice,
 	setStatus,
 } from '@auto-launch/functions/helpers';
 import { PATTERNS_HOST } from '@constants';
+import { reqDataBasics } from '@shared/lib/data';
 import { __ } from '@wordpress/i18n';
 import { z } from 'zod';
 
@@ -29,7 +29,7 @@ export const handlePages = async ({
 	}
 
 	// translators: this is for a action log UI. Keep it short
-	setStatus(__('Preparing your pages', 'extendify'));
+	setStatus(__('Preparing your pages', 'extendify-local'));
 
 	const body = JSON.stringify({
 		...reqDataBasics,

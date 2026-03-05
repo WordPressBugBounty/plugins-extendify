@@ -21,6 +21,13 @@ export const installPlugin = async (slug) => {
 	try {
 		return await fn();
 	} catch (error) {
+		if (error?.code === 'folder_exists') {
+			console.warn(
+				`Plugin ${slug} already installed. Attempting to activate...`,
+			);
+			// Get the plugin info directly here
+			return await getPlugin(slug);
+		}
 		console.error(`Error installing ${slug}. Retrying...`, error);
 		try {
 			return await fn();
@@ -47,8 +54,8 @@ export const activatePlugin = async (slug) => {
 
 	try {
 		await fn(slug);
-	} catch (e) {
-		console.error(e);
+	} catch (_) {
+		console.warn(`Error activating ${slug}. Retrying with fresh data...`);
 		// try once more but get the slug first
 		const { plugin } = await getPlugin(slug);
 		await fn(plugin);

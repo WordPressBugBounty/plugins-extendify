@@ -1,8 +1,8 @@
-import { reqDataBasics } from '@auto-launch/functions/helpers';
 import { updatePage } from '@auto-launch/functions/pages';
 import { alreadyActive } from '@auto-launch/functions/plugins';
 import { getOption, getPageById } from '@auto-launch/functions/wp';
 import { AI_HOST } from '@constants';
+import { reqDataBasics } from '@shared/lib/data';
 import { pageNames } from '@shared/lib/pages';
 import { getBlockContent, parse } from '@wordpress/blocks';
 

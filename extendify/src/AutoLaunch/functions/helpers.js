@@ -1,26 +1,6 @@
 import { useLaunchDataStore } from '@auto-launch/state/launch-data';
 import { __ } from '@wordpress/i18n';
 
-// Default info sent to the api
-const allowList = [
-	'partnerId',
-	'devbuild',
-	'version',
-	'siteId',
-	'homeUrl',
-	'wpLanguage',
-	'wpVersion',
-	'siteCreatedAt',
-];
-
-export const reqDataBasics = {
-	...Object.fromEntries(
-		Object.entries(window.extSharedData).filter(([key]) =>
-			allowList.includes(key),
-		),
-	),
-};
-
 export const setStatus = (msg) => {
 	useLaunchDataStore.getState().addStatusMessage(msg);
 };

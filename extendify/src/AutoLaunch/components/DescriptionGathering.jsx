@@ -1,4 +1,7 @@
+import { fetchWithTimeout } from '@auto-launch/functions/helpers';
+import { useInstallRequiredPlugins } from '@auto-launch/hooks/useInstallRequiredPlugins';
 import { useLaunchDataStore } from '@auto-launch/state/launch-data';
+import { AI_HOST } from '@constants';
 import { useAIConsentStore } from '@shared/state/ai-consent';
 import {
 	forwardRef,
@@ -9,12 +12,16 @@ import {
 } from '@wordpress/element';
 import { __ } from '@wordpress/i18n';
 import { chevronRight, Icon } from '@wordpress/icons';
+import classNames from 'classnames';
 
 export const DescriptionGathering = () => {
 	const { setData, descriptionBackup } = useLaunchDataStore();
+	useInstallRequiredPlugins();
 	const [input, setInput] = useState(descriptionBackup || '');
+	const [improving, setImproving] = useState(false);
 	const textareaRef = useRef(null);
 	const { consentTerms } = useAIConsentStore();
+
 	// resize the height of the textarea based on the content
 	const adjustHeight = useCallback(() => {
 		const el = textareaRef.current;
@@ -39,11 +46,45 @@ export const DescriptionGathering = () => {
 
 	const submitForm = (e) => {
 		e.preventDefault();
-		setData('description', input.trim());
+		setData('descriptionRaw', input.trim());
+	};
+
+	const handleImprove = async () => {
+		setImproving(true);
+		const url = `${AI_HOST}/api/prompt/improve`;
+		const method = 'POST';
+		const headers = { 'Content-Type': 'application/json' };
+		const response = await fetchWithTimeout(url, {
+			method,
+			headers,
+			body: JSON.stringify({
+				description: input.trim(),
+				title: window.extSharedData.siteTitle,
+			}),
+		})
+			.then((res) => res.ok && res.json())
+			.catch(() => null);
+		const nextValue = response?.improvedPrompt;
+		setImproving(false);
+		if (nextValue) {
+			const el = textareaRef.current;
+			if (!el) return setInput(nextValue);
+			requestAnimationFrame(() => {
+				// Preserve undo ability by using native events instead of React state
+				el.focus();
+				el.select();
+				const ok = document.execCommand('insertText', false, nextValue);
+				if (!ok) setInput(nextValue);
+			});
+		}
 	};
 
 	useEffect(() => {
 		setData('descriptionBackup', input.trim());
+		const raf = requestAnimationFrame(() => {
+			adjustHeight();
+		});
+		return () => cancelAnimationFrame(raf);
 	}, [input, setData]);
 
 	useEffect(() => {
@@ -72,20 +113,28 @@ export const DescriptionGathering = () => {
 					<textarea
 						ref={textareaRef}
 						id="extendify-launch-chat-textarea"
-						className="flex min-h-36 w-full resize-none bg-transparent p-4 text-base placeholder:text-gray-700 focus:shadow-none focus:outline-hidden disabled:opacity-50 border-none text-gray-900"
+						className={classNames(
+							'flex min-h-36 w-full resize-none bg-transparent p-4 text-base placeholder:text-gray-700 focus:shadow-none focus:outline-hidden disabled:opacity-50 border-none text-gray-900',
+							{
+								'opacity-50': improving,
+							},
+						)}
 						rows="1"
 						// biome-ignore lint: Allow autofocus here
 						autoFocus
 						value={input}
+						readOnly={improving}
 						onChange={(e) => {
 							setInput(e.target.value);
-							adjustHeight();
 						}}
 					/>
-					<div className="flex justify-between gap-4 p-2.5">
-						<div className="ms-auto flex items-center">
-							<SubmitButton disabled={input.trim().length === 0} />
+					<div className="flex justify-between items-end gap-4 p-2.5 px-4">
+						<div>
+							{input.trim().length > 20 && (
+								<ImprovePrompt disabled={improving} onClick={handleImprove} />
+							)}
 						</div>
+						<SubmitButton disabled={improving || input.trim().length === 0} />
 					</div>
 				</div>
 			</form>
@@ -116,3 +165,16 @@ const SubmitButton = forwardRef((props, ref) => (
 		</span>
 	</button>
 ));
+
+const ImprovePrompt = (props) => {
+	return (
+		<button
+			type="button"
+			className="inline-flex items-center text-sm font-medium text-gray-700 hover:text-gray-900 transition-colors underline disabled:text-gray-400 disabled:hover:text-gray-400"
+			{...props}
+		>
+			{/* translators: "Enhance with AI" refers to improving the current input using AI. */}
+			{__('Enhance with AI', 'extendify-local')}
+		</button>
+	);
+};

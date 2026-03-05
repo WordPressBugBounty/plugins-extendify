@@ -17,8 +17,7 @@ export const CategoryControl = () => {
 	}, [data, isLoading, setCategories, errorCount]);
 
 	useEffect(() => {
-		// Wait for categories to be available
-		if (!categories?.length) return;
+		if (!categories?.length || category) return;
 		setCategory('all');
 	}, [category, setCategory, categories]);
 

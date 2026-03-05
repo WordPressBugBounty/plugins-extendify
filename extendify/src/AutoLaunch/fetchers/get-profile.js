@@ -1,12 +1,9 @@
 import { getProfileShape } from '@auto-launch/fetchers/shape';
-import {
-	fetchWithTimeout,
-	reqDataBasics,
-	setStatus,
-} from '@auto-launch/functions/helpers';
+import { fetchWithTimeout, setStatus } from '@auto-launch/functions/helpers';
 import { updateOption } from '@auto-launch/functions/wp';
 import { overrideWithUrlParams } from '@auto-launch/state/url-params';
 import { AI_HOST } from '@constants';
+import { reqDataBasics } from '@shared/lib/data';
 import { __ } from '@wordpress/i18n';
 import { z } from 'zod';
 
@@ -19,14 +16,18 @@ const url = `${AI_HOST}/api/site-profile`;
 const method = 'POST';
 const headers = { 'Content-Type': 'application/json' };
 
-export const handleSiteProfile = async ({ title, description, urlParams }) => {
+export const handleSiteProfile = async ({
+	title,
+	descriptionRaw,
+	urlParams,
+}) => {
 	// translators: this is for a action log UI. Keep it short
-	setStatus(__('Creating a site profile', 'extendify'));
+	setStatus(__('Creating a site profile', 'extendify-local'));
 
 	const body = JSON.stringify({
 		...reqDataBasics,
 		title: title || window.extSharedData.siteTitle,
-		description,
+		description: descriptionRaw,
 		autoLaunch: true,
 	});
 	const response = await fetchWithTimeout(
@@ -45,6 +46,7 @@ export const handleSiteProfile = async ({ title, description, urlParams }) => {
 	const profileWIthUrlOverrides = {
 		...profile,
 		...overrideWithUrlParams(urlParams),
+		descriptionRaw, // Add the raw description to profile
 	};
 
 	await updateOption(

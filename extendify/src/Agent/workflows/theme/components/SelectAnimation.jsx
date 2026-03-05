@@ -2,7 +2,6 @@ import { getOption } from '@agent/lib/wp';
 import {
 	__experimentalToggleGroupControl as ToggleGroupControl,
 	__experimentalToggleGroupControlOption as ToggleGroupControlOption,
-	Tooltip,
 } from '@wordpress/components';
 import { useEffect, useRef, useState } from '@wordpress/element';
 import { __, _x } from '@wordpress/i18n';
@@ -60,7 +59,7 @@ const speeds = [
 	},
 ];
 
-export const SelectAnimation = ({ onConfirm, onCancel }) => {
+export const SelectAnimation = ({ onConfirm, onCancel, onLoad }) => {
 	const initialSettings = useRef({});
 	const [animation, setAnimation] = useState(null);
 	const [touched, setTouched] = useState(0);
@@ -84,6 +83,11 @@ export const SelectAnimation = ({ onConfirm, onCancel }) => {
 		window.ExtendableAnimations.setType(animation);
 		window.ExtendableAnimations.setSpeed(speed);
 	}, [speed, animation, touched]);
+
+	useEffect(() => {
+		if (loading) return;
+		onLoad();
+	}, [loading, onLoad]);
 
 	useEffect(() => {
 		if (!loading) return;
@@ -114,27 +118,18 @@ export const SelectAnimation = ({ onConfirm, onCancel }) => {
 					{/* translators: "Type" refers to the category of animation effects available. e.g. The type could be 'Zoom In', 'Fade', etc. */}
 					{_x('Type', 'animation type', 'extendify-local')}
 				</div>
-				<div
-					className="grid gap-2 mb-6"
-					style={{
-						gridTemplateColumns: 'repeat(auto-fit, minmax(140px, 1fr))',
-						gridAutoRows: '1fr',
-					}}
-				>
+				<div className="grid gap-2 mb-6 grid-cols-2 auto-rows-fr">
 					{animations.map(({ name, slug, icon }) => (
-						<Tooltip key={slug} text={name} placement="top">
-							<div>
-								<Button
-									name={name}
-									icon={icon}
-									selected={animation === slug}
-									onClick={() => {
-										setTouched((v) => v + 1);
-										setAnimation(slug);
-									}}
-								/>
-							</div>
-						</Tooltip>
+						<Button
+							key={slug}
+							name={name}
+							icon={icon}
+							selected={animation === slug}
+							onClick={() => {
+								setTouched((v) => v + 1);
+								setAnimation(slug);
+							}}
+						/>
 					))}
 				</div>
 				{/* mb-1 because the toggle group has margins even if undefined */}

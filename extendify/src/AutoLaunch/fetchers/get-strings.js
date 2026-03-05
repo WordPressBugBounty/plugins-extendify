@@ -2,11 +2,11 @@ import { getStringsShape } from '@auto-launch/fetchers/shape';
 import {
 	failWithFallback,
 	fetchWithTimeout,
-	reqDataBasics,
 	retryTwice,
 	setStatus,
 } from '@auto-launch/functions/helpers';
 import { AI_HOST } from '@constants';
+import { reqDataBasics } from '@shared/lib/data';
 import { __ } from '@wordpress/i18n';
 
 const fallback = { aiHeaders: [], aiBlogTitles: [] };
@@ -16,7 +16,7 @@ const headers = { 'Content-Type': 'application/json' };
 
 export const handleSiteStrings = async ({ siteProfile }) => {
 	// translators: this is for a action log UI. Keep it short
-	setStatus(__('Generating site content ideas', 'extendify'));
+	setStatus(__('Generating site content ideas', 'extendify-local'));
 
 	const body = JSON.stringify({ ...reqDataBasics, siteProfile });
 

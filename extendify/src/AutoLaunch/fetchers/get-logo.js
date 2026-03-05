@@ -2,12 +2,12 @@ import { getLogoShape } from '@auto-launch/fetchers/shape';
 import {
 	failWithFallback,
 	fetchWithTimeout,
-	reqDataBasics,
 	retryTwice,
 	setStatus,
 } from '@auto-launch/functions/helpers';
 import { updateOption } from '@auto-launch/functions/wp';
 import { AI_HOST } from '@constants';
+import { reqDataBasics } from '@shared/lib/data';
 import { resizeImage } from '@shared/utils/resize-image';
 import { __ } from '@wordpress/i18n';
 import { uploadMedia } from '@wordpress/media-utils';
@@ -25,7 +25,7 @@ export const handleSiteLogo = async ({ siteProfile }) => {
 	if (!showAILogo) return fallback;
 
 	// translators: this is for a action log UI. Keep it short
-	setStatus(__('Generating a logo', 'extendify'));
+	setStatus(__('Generating a logo', 'extendify-local'));
 
 	const { logoObjectName: objectName } = siteProfile;
 	const body = JSON.stringify({ ...reqDataBasics, objectName });

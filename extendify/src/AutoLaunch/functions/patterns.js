@@ -1,5 +1,5 @@
-import { reqDataBasics } from '@auto-launch/functions/helpers';
 import { AI_HOST } from '@constants';
+import { reqDataBasics } from '@shared/lib/data';
 
 const generatePatterns = async (page, data) => {
 	const { siteProfile } = data;

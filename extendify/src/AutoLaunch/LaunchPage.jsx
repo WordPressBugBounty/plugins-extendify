@@ -22,8 +22,8 @@ export const LaunchPage = () => {
 	const oldPages = window.extLaunchData.resetSiteInformation.pagesIds ?? [];
 	const needsToReset = oldPages.length > 0;
 
-	const { title, description } = useLaunchDataStore();
-	const needsDescription = !(title || description);
+	const { title, descriptionRaw } = useLaunchDataStore();
+	const needsDescription = !(title || descriptionRaw);
 
 	const containerRef = useRef(null);
 

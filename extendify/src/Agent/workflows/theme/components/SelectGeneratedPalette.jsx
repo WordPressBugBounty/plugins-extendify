@@ -1,6 +1,5 @@
 import { useVariationOverride } from '@agent/hooks/useVariationOverride';
 import { useChatStore } from '@agent/state/chat';
-import { Tooltip } from '@wordpress/components';
 import { useEffect, useMemo, useState } from '@wordpress/element';
 import { __ } from '@wordpress/i18n';
 
@@ -145,32 +144,31 @@ export const SelectGeneratedPalette = ({
 			<div className="rounded-lg border-b border-gray-300 bg-white">
 				<div className="grid grid-cols-2 gap-2 p-3">
 					{palettes.map(({ name, colors, colorsArray }) => (
-						<Tooltip key={name} text={name} placement="top">
-							<button
-								type="button"
-								style={{ backgroundColor: getBackgroundColor(colors) }}
-								className={`relative flex w-full items-center justify-center overflow-hidden rounded-lg border border-gray-300 p-2 text-center text-sm ${
-									selected === name ? 'ring-wp ring-design-main' : ''
-								}`}
-								onClick={() => {
-									setSelected(name);
-									setPreviewCss(buildPreviewCss(colors));
-									setDuotoneTheme(buildDuotoneTheme(colors));
-								}}
-							>
-								<div className="flex max-w-fit items-center justify-center -space-x-4 rounded-lg rtl:space-x-reverse">
-									{colorsArray
-										.filter(({ slug }) => slug !== 'background')
-										.map(({ slug, color }) => (
-											<div
-												key={slug}
-												style={{ backgroundColor: color }}
-												className="size-6 shrink-0 overflow-visible rounded-full border border-white md:size-7"
-											/>
-										))}
-								</div>
-							</button>
-						</Tooltip>
+						<button
+							key={name}
+							type="button"
+							style={{ backgroundColor: getBackgroundColor(colors) }}
+							className={`relative flex w-full items-center justify-center overflow-hidden rounded-lg border border-gray-300 p-2 text-center text-sm ${
+								selected === name ? 'ring ring-design-main ring-wp' : ''
+							}`}
+							onClick={() => {
+								setSelected(name);
+								setPreviewCss(buildPreviewCss(colors));
+								setDuotoneTheme(buildDuotoneTheme(colors));
+							}}
+						>
+							<div className="flex max-w-fit items-center justify-center -space-x-4 rounded-lg rtl:space-x-reverse">
+								{colorsArray
+									.filter(({ slug }) => slug !== 'background')
+									.map(({ slug, color }) => (
+										<div
+											key={slug}
+											style={{ backgroundColor: color }}
+											className="size-6 shrink-0 overflow-visible rounded-full border border-white md:size-7"
+										/>
+									))}
+							</div>
+						</button>
 					))}
 				</div>
 			</div>

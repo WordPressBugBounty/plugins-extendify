@@ -1,11 +1,10 @@
 import { useSiteVibesOverride } from '@agent/hooks/useSiteVibesOverride';
 import { useSiteVibesVariations } from '@agent/hooks/useSiteVibesVariations';
 import { useChatStore } from '@agent/state/chat';
-import { Tooltip } from '@wordpress/components';
-import { useEffect, useMemo, useState } from '@wordpress/element';
+import { Fragment, useEffect, useMemo, useState } from '@wordpress/element';
 import { __ } from '@wordpress/i18n';
 
-export const SelectSiteVibes = ({ onConfirm, onCancel }) => {
+export const SelectSiteVibes = ({ onConfirm, onCancel, onLoad }) => {
 	const { data, isLoading } = useSiteVibesVariations();
 	const { vibes, css: styles } = data || {};
 	const [selected, setSelected] = useState(null);
@@ -27,6 +26,11 @@ export const SelectSiteVibes = ({ onConfirm, onCancel }) => {
 		undoChange();
 		onCancel();
 	};
+
+	useEffect(() => {
+		if (isLoading) return;
+		onLoad();
+	}, [isLoading, onLoad]);
 
 	useEffect(() => {
 		if (isLoading || !noVibes) return;
@@ -61,15 +65,9 @@ export const SelectSiteVibes = ({ onConfirm, onCancel }) => {
 	return (
 		<div className="mb-4 ml-10 mr-2 flex flex-col rounded-lg border border-gray-300 bg-gray-50 rtl:ml-2 rtl:mr-10">
 			<div className="rounded-lg border-b border-gray-300 bg-white">
-				<div
-					className="grid gap-2 p-3"
-					style={{
-						gridTemplateColumns: 'repeat(auto-fit, minmax(140px, 1fr))',
-						gridAutoRows: '1fr',
-					}}
-				>
+				<div className="grid gap-2 p-3 grid-cols-2 auto-rows-fr">
 					{shuffled?.slice(0, 10).map(({ name, slug }) => (
-						<Tooltip key={slug} text={name} placement="top">
+						<Fragment key={slug}>
 							<style>
 								{styles[slug]
 									?.replaceAll(':root', '.ext-vibe-container')
@@ -82,7 +80,7 @@ export const SelectSiteVibes = ({ onConfirm, onCancel }) => {
 								aria-label={name}
 								type="button"
 								className={`ext-vibe-container relative z-10 flex h-full w-full appearance-none items-stretch justify-center overflow-hidden rounded-lg border border-gray-300 bg-none p-0 text-sm text-inherit shadow-vibe drop-shadow-md ${
-									selected === slug ? 'z-0 ring-wp ring-design-main' : ''
+									selected === slug ? 'z-0 outline-1 outline-design-main' : ''
 								}`}
 								onClick={() => setSelected(slug)}
 							>
@@ -110,7 +108,7 @@ export const SelectSiteVibes = ({ onConfirm, onCancel }) => {
 									</div>
 								</div>
 							</button>
-						</Tooltip>
+						</Fragment>
 					))}
 				</div>
 			</div>

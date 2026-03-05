@@ -26,6 +26,7 @@ const initialState = {
 	errorCount: 0,
 	description: null,
 	descriptionBackup: undefined,
+	descriptionRaw: null,
 	urlParams: {},
 	siteProfile: {
 		...shapeToKeyValue(getProfileShape),
@@ -48,6 +49,7 @@ const state = (set, get) => ({
 	title: urlParams.title || undefined,
 	description: urlParams.description || undefined,
 	descriptionBackup: urlParams.description || undefined,
+	descriptionRaw: urlParams.description || undefined,
 	pulse: false,
 	setPulse: (value) => set({ pulse: value }),
 	setData: (key, value) => {
@@ -130,6 +132,7 @@ export const useLaunchDataStore = create(
 				// If there's a URL param here it should override these values
 				title: title || current.title,
 				description: description || current.description,
+				descriptionRaw: description || current.descriptionRaw,
 				urlParams: {
 					...current.urlParams,
 					...persisted.urlParams,
@@ -145,6 +148,7 @@ export const useLaunchDataStore = create(
 				errorCount,
 				pulse,
 				description,
+				descriptionRaw,
 				title,
 				...rest
 			} = state;

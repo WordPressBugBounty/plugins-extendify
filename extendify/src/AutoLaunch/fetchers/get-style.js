@@ -3,16 +3,16 @@ import { getStyleShape, styleShape } from '@auto-launch/fetchers/shape';
 import {
 	failWithFallback,
 	fetchWithTimeout,
-	reqDataBasics,
 	retryTwice,
 	setStatus,
 } from '@auto-launch/functions/helpers';
 import { updateOption } from '@auto-launch/functions/wp';
 import { AI_HOST } from '@constants';
+import { reqDataBasics } from '@shared/lib/data';
 import { __ } from '@wordpress/i18n';
 import { z } from 'zod';
 
-const fallback = { siteStyle: [] };
+const fallback = { siteStyle: {} };
 const url = `${AI_HOST}/api/styles`;
 const method = 'POST';
 const headers = { 'Content-Type': 'application/json' };
@@ -22,7 +22,7 @@ const shapeLocal = z.array(styleShape.omit({ variation: true }));
 
 export const handleSiteStyle = async ({ siteProfile }) => {
 	// translators: this is for a action log UI. Keep it short
-	setStatus(__('Picking the perfect design', 'extendify'));
+	setStatus(__('Picking the perfect design', 'extendify-local'));
 
 	const body = JSON.stringify({ ...reqDataBasics, siteProfile, count: 1 });
 
