@@ -58,7 +58,11 @@ export const activatePlugin = async (slug) => {
 		console.warn(`Error activating ${slug}. Retrying with fresh data...`);
 		// try once more but get the slug first
 		const { plugin } = await getPlugin(slug);
-		await fn(plugin);
+		try {
+			await fn(plugin);
+		} catch (error) {
+			console.error(`Failed to activate ${slug} again. Giving up`, error);
+		}
 	}
 };
 

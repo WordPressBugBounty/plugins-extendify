@@ -1,6 +1,6 @@
 import { __ } from '@wordpress/i18n';
 import { layout } from '@wordpress/icons';
-import { SelectSiteDesign } from './components/SelectSiteDesign';
+import { SelectSiteDesign } from './components/change-site-design/SelectSiteDesign';
 
 const { context, abilities } = window.extAgentData;
 

@@ -45,7 +45,7 @@ msgstr "Spustiť"
 
 #: app/AdminPageRouter.php:42
 #: app/AdminPageRouter.php:66
-#: public/build/extendify-agent-47ce1ec36e515e89dc80.js:18
+#: public/build/extendify-agent-9d1c6defa5e8b1930355.js:18
 #: public/build/extendify-assist-page-e98b949ab0c13ba07729.js:10
 #: public/build/extendify-help-center-079e40452a8cd0a1b4a2.js:4
 #: src/Agent/tours/site-assistant.js:5
@@ -73,7 +73,7 @@ msgstr "Používateľské nastavenia knižnice Extendify"
 msgid "View Site"
 msgstr "Zobraziť web"
 
-#: public/build/extendify-agent-47ce1ec36e515e89dc80.js:16
+#: public/build/extendify-agent-9d1c6defa5e8b1930355.js:16
 #: public/build/extendify-assist-page-e98b949ab0c13ba07729.js:1
 #: src/Agent/components/ImageUploader.jsx:141
 #: src/Assist/components/ImageUploader.jsx:96
@@ -90,7 +90,7 @@ msgstr "Nahradiť obrázok"
 msgid "Remove image"
 msgstr "Odstrániť obrázok"
 
-#: public/build/extendify-agent-47ce1ec36e515e89dc80.js:16
+#: public/build/extendify-agent-9d1c6defa5e8b1930355.js:16
 #: public/build/extendify-assist-page-e98b949ab0c13ba07729.js:1
 #: public/build/extendify-help-center-079e40452a8cd0a1b4a2.js:7
 #: src/Agent/components/GuidedTour.jsx:485
@@ -99,7 +99,7 @@ msgstr "Odstrániť obrázok"
 msgid "Done"
 msgstr "Hotovo"
 
-#: public/build/extendify-agent-47ce1ec36e515e89dc80.js:13
+#: public/build/extendify-agent-9d1c6defa5e8b1930355.js:13
 #: public/build/extendify-assist-page-e98b949ab0c13ba07729.js:1
 #: public/build/extendify-help-center-079e40452a8cd0a1b4a2.js:4
 #: src/Agent/components/GuidedTour.jsx:308
@@ -171,7 +171,7 @@ msgstr "Vyberte stránky webu"
 
 #: app/PluginNotifications/NotificationsListTable.php:81
 #: app/PluginNotifications/NotificationsListTable.php:173
-#: public/build/extendify-agent-47ce1ec36e515e89dc80.js:24
+#: public/build/extendify-agent-9d1c6defa5e8b1930355.js:24
 #: public/build/extendify-assist-page-e98b949ab0c13ba07729.js:1
 #: src/Agent/workflows/content/components/GeneratePageResult.jsx:32
 #: src/Assist/components/dashboard/buttons/DismissButton.jsx:17
@@ -184,14 +184,14 @@ msgstr "Zatvoriť"
 msgid "Upload site logo"
 msgstr "Nahrať logo webu"
 
-#: public/build/extendify-agent-47ce1ec36e515e89dc80.js:82
+#: public/build/extendify-agent-9d1c6defa5e8b1930355.js:82
 #: public/build/extendify-assist-page-e98b949ab0c13ba07729.js:1
 #: src/Agent/workflows/theme/components/UpdateLogoConfirm.jsx:66
 #: src/Assist/components/tasks/UpdateLogo.jsx:19
 msgid "Site logo"
 msgstr "Logo stránky"
 
-#: public/build/extendify-agent-47ce1ec36e515e89dc80.js:82
+#: public/build/extendify-agent-9d1c6defa5e8b1930355.js:82
 #: public/build/extendify-assist-page-e98b949ab0c13ba07729.js:1
 #: src/Agent/workflows/theme/components/UpdateLogoConfirm.jsx:67
 #: src/Assist/components/tasks/UpdateLogo.jsx:20
@@ -203,7 +203,7 @@ msgstr "Nastaviť logo webu"
 msgid "Add site description"
 msgstr "Pridať popis stránky"
 
-#: public/build/extendify-agent-47ce1ec36e515e89dc80.js:18
+#: public/build/extendify-agent-9d1c6defa5e8b1930355.js:18
 #: public/build/extendify-assist-page-e98b949ab0c13ba07729.js:1
 #: public/build/extendify-launch-169f4581091a2b7e786b.js:8
 #: src/Agent/workflows/block-selector/components/UpdateBlockConfirm.jsx:99
@@ -213,7 +213,7 @@ msgstr "Pridať popis stránky"
 msgid "Loading..."
 msgstr "Načítavanie..."
 
-#: public/build/extendify-agent-47ce1ec36e515e89dc80.js:18
+#: public/build/extendify-agent-9d1c6defa5e8b1930355.js:18
 #: public/build/extendify-assist-page-e98b949ab0c13ba07729.js:1
 #: public/build/extendify-help-center-079e40452a8cd0a1b4a2.js:4
 #: src/Agent/tours/page-creator.js:81
@@ -227,26 +227,26 @@ msgstr "Popis stránky"
 msgid "Enter a site description..."
 msgstr "Zadajte popis stránky..."
 
-#: public/build/extendify-agent-47ce1ec36e515e89dc80.js:16
-#: public/build/extendify-agent-47ce1ec36e515e89dc80.js:18
-#: public/build/extendify-agent-47ce1ec36e515e89dc80.js:21
-#: public/build/extendify-agent-47ce1ec36e515e89dc80.js:24
-#: public/build/extendify-agent-47ce1ec36e515e89dc80.js:33
-#: public/build/extendify-agent-47ce1ec36e515e89dc80.js:50
-#: public/build/extendify-agent-47ce1ec36e515e89dc80.js:54
-#: public/build/extendify-agent-47ce1ec36e515e89dc80.js:64
-#: public/build/extendify-agent-47ce1ec36e515e89dc80.js:70
-#: public/build/extendify-agent-47ce1ec36e515e89dc80.js:78
-#: public/build/extendify-agent-47ce1ec36e515e89dc80.js:82
+#: public/build/extendify-agent-9d1c6defa5e8b1930355.js:16
+#: public/build/extendify-agent-9d1c6defa5e8b1930355.js:18
+#: public/build/extendify-agent-9d1c6defa5e8b1930355.js:21
+#: public/build/extendify-agent-9d1c6defa5e8b1930355.js:24
+#: public/build/extendify-agent-9d1c6defa5e8b1930355.js:33
+#: public/build/extendify-agent-9d1c6defa5e8b1930355.js:50
+#: public/build/extendify-agent-9d1c6defa5e8b1930355.js:54
+#: public/build/extendify-agent-9d1c6defa5e8b1930355.js:64
+#: public/build/extendify-agent-9d1c6defa5e8b1930355.js:70
+#: public/build/extendify-agent-9d1c6defa5e8b1930355.js:78
+#: public/build/extendify-agent-9d1c6defa5e8b1930355.js:82
 #: public/build/extendify-assist-page-e98b949ab0c13ba07729.js:1
 #: src/Agent/components/ImageUploader.jsx:225
 #: src/Agent/workflows/block-selector/components/GenerateImageConfirm.jsx:254
 #: src/Agent/workflows/block-selector/components/UpdateBlockConfirm.jsx:133
 #: src/Agent/workflows/block-selector/components/UpdateImageConfirm.jsx:178
 #: src/Agent/workflows/content/components/UpdatePostConfirm.jsx:67
+#: src/Agent/workflows/theme/components/change-site-design/SelectSiteDesign.jsx:380
 #: src/Agent/workflows/theme/components/SelectAnimation.jsx:179
 #: src/Agent/workflows/theme/components/SelectGeneratedPalette.jsx:198
-#: src/Agent/workflows/theme/components/SelectSiteDesign.jsx:550
 #: src/Agent/workflows/theme/components/SelectSiteVibes.jsx:137
 #: src/Agent/workflows/theme/components/SelectThemeFontsVariation.jsx:105
 #: src/Agent/workflows/theme/components/SelectThemeVariation.jsx:119
@@ -260,14 +260,14 @@ msgstr "Uložiť"
 msgid "Upload site icon"
 msgstr "Nahrať ikonu stránky"
 
-#: public/build/extendify-agent-47ce1ec36e515e89dc80.js:82
+#: public/build/extendify-agent-9d1c6defa5e8b1930355.js:82
 #: public/build/extendify-assist-page-e98b949ab0c13ba07729.js:1
 #: src/Agent/workflows/theme/components/UpdateSiteIconConfirm.jsx:61
 #: src/Assist/components/tasks/UpdateSiteIcon.jsx:19
 msgid "Site icon"
 msgstr "Ikona stránky"
 
-#: public/build/extendify-agent-47ce1ec36e515e89dc80.js:82
+#: public/build/extendify-agent-9d1c6defa5e8b1930355.js:82
 #: public/build/extendify-assist-page-e98b949ab0c13ba07729.js:1
 #: src/Agent/workflows/theme/components/UpdateSiteIconConfirm.jsx:62
 #: src/Assist/components/tasks/UpdateSiteIcon.jsx:20
@@ -341,7 +341,7 @@ msgstr "Upraviť navigáciu stránky"
 msgid "Reset site"
 msgstr "Resetovať web"
 
-#: public/build/extendify-agent-47ce1ec36e515e89dc80.js:18
+#: public/build/extendify-agent-9d1c6defa5e8b1930355.js:18
 #: public/build/extendify-assist-page-e98b949ab0c13ba07729.js:9
 #: public/build/extendify-help-center-079e40452a8cd0a1b4a2.js:4
 #: src/Agent/tours/site-assistant.js:36
@@ -390,7 +390,7 @@ msgstr "Inštaluje sa..."
 msgid "Install Now"
 msgstr "Inštalovať teraz"
 
-#: public/build/extendify-agent-47ce1ec36e515e89dc80.js:18
+#: public/build/extendify-agent-9d1c6defa5e8b1930355.js:18
 #: public/build/extendify-assist-page-e98b949ab0c13ba07729.js:10
 #: public/build/extendify-help-center-079e40452a8cd0a1b4a2.js:4
 #: src/Agent/tours/site-assistant.js:58
@@ -942,7 +942,7 @@ msgstr "Na šírku: 4:3"
 msgid "Portrait: 3:4"
 msgstr "Na výšku: 3:4"
 
-#: public/build/extendify-agent-47ce1ec36e515e89dc80.js:21
+#: public/build/extendify-agent-9d1c6defa5e8b1930355.js:21
 #: public/build/extendify-draft-08ba35a8f591ab939cda.js:7
 #: src/Agent/workflows/block-selector/components/GenerateImageConfirm.jsx:216
 #: src/Draft/components/image-generation/GenerateForm.jsx:90
@@ -1230,7 +1230,7 @@ msgstr "AI Nástroje"
 msgid "Please try again."
 msgstr "Skúste to, prosím, znova."
 
-#: public/build/extendify-agent-47ce1ec36e515e89dc80.js:4
+#: public/build/extendify-agent-9d1c6defa5e8b1930355.js:4
 #: public/build/extendify-help-center-079e40452a8cd0a1b4a2.js:1
 #: src/Agent/components/Rating.jsx:27
 #: src/Agent/components/Rating.jsx:48
@@ -1239,14 +1239,14 @@ msgstr "Skúste to, prosím, znova."
 msgid "Remove rating"
 msgstr "Odstrániť hodnotenie"
 
-#: public/build/extendify-agent-47ce1ec36e515e89dc80.js:4
+#: public/build/extendify-agent-9d1c6defa5e8b1930355.js:4
 #: public/build/extendify-help-center-079e40452a8cd0a1b4a2.js:1
 #: src/Agent/components/Rating.jsx:28
 #: src/HelpCenter/components/ai-chat/Rating.jsx:27
 msgid "Rate that this answer was helpful"
 msgstr "Ohodnoťte, či bola táto odpoveď užitočná"
 
-#: public/build/extendify-agent-47ce1ec36e515e89dc80.js:4
+#: public/build/extendify-agent-9d1c6defa5e8b1930355.js:4
 #: public/build/extendify-help-center-079e40452a8cd0a1b4a2.js:1
 #: src/Agent/components/Rating.jsx:49
 #: src/HelpCenter/components/ai-chat/Rating.jsx:48
@@ -1388,76 +1388,77 @@ msgstr "Výsledky hľadania"
 msgid "Search the knowledge base"
 msgstr "Vyhľadať v Báze znalostí"
 
-#: public/build/extendify-agent-47ce1ec36e515e89dc80.js:18
+#: public/build/extendify-agent-9d1c6defa5e8b1930355.js:18
 #: public/build/extendify-assist-page-e98b949ab0c13ba07729.js:10
 #: public/build/extendify-help-center-079e40452a8cd0a1b4a2.js:4
-#: public/build/extendify-library-47d651124bad74dbba8b.js:1
+#: public/build/extendify-library-46b68847bd85f90eb8b6.js:1
 #: src/Agent/tours/library-tour.js:6
 #: src/Assist/tasks/images/HelpCenterAIMarkup.jsx:208
 #: src/Assist/tasks/images/HelpCenterMarkup.jsx:230
 #: src/Assist/tasks/open-design-library.js:7
 #: src/HelpCenter/tours/library-tour.js:7
-#: src/Library/components/MainButton.jsx:32
+#: src/Library/components/MainButton.jsx:31
+#: src/Library/components/MainButton.jsx:35
 msgid "Design Library"
 msgstr "Knižnica dizajnov"
 
-#: public/build/extendify-agent-47ce1ec36e515e89dc80.js:18
+#: public/build/extendify-agent-9d1c6defa5e8b1930355.js:18
 #: public/build/extendify-help-center-079e40452a8cd0a1b4a2.js:4
 #: src/Agent/tours/library-tour.js:31
 #: src/HelpCenter/tours/library-tour.js:29
 msgid "Open the Pattern Library"
 msgstr "Otvoriť knižnicu vzorov"
 
-#: public/build/extendify-agent-47ce1ec36e515e89dc80.js:18
+#: public/build/extendify-agent-9d1c6defa5e8b1930355.js:18
 #: public/build/extendify-help-center-079e40452a8cd0a1b4a2.js:4
 #: src/Agent/tours/library-tour.js:32
 #: src/HelpCenter/tours/library-tour.js:30
 msgid "The Extendify pattern library can be opened by clicking the button to the left."
 msgstr "Knižnicu vzorov Extendify môžete otvoriť kliknutím na tlačidlo vľavo."
 
-#: public/build/extendify-agent-47ce1ec36e515e89dc80.js:18
+#: public/build/extendify-agent-9d1c6defa5e8b1930355.js:18
 #: public/build/extendify-help-center-079e40452a8cd0a1b4a2.js:4
 #: src/Agent/tours/library-tour.js:53
 #: src/HelpCenter/tours/library-tour.js:51
 msgid "Filter Patterns"
 msgstr "Filtrovať vzory"
 
-#: public/build/extendify-agent-47ce1ec36e515e89dc80.js:18
+#: public/build/extendify-agent-9d1c6defa5e8b1930355.js:18
 #: public/build/extendify-help-center-079e40452a8cd0a1b4a2.js:4
 #: src/Agent/tours/library-tour.js:54
 #: src/HelpCenter/tours/library-tour.js:52
 msgid "Click on any pattern category to refine the selection."
 msgstr "Kliknite na ľubovoľnú kategóriu vzorov, aby ste upresnili výber."
 
-#: public/build/extendify-agent-47ce1ec36e515e89dc80.js:18
+#: public/build/extendify-agent-9d1c6defa5e8b1930355.js:18
 #: public/build/extendify-help-center-079e40452a8cd0a1b4a2.js:4
 #: src/Agent/tours/library-tour.js:79
 #: src/HelpCenter/tours/library-tour.js:77
 msgid "Select a Pattern"
 msgstr "Vybrať vzor"
 
-#: public/build/extendify-agent-47ce1ec36e515e89dc80.js:18
+#: public/build/extendify-agent-9d1c6defa5e8b1930355.js:18
 #: public/build/extendify-help-center-079e40452a8cd0a1b4a2.js:4
 #: src/Agent/tours/library-tour.js:80
 #: src/HelpCenter/tours/library-tour.js:78
 msgid "Simply select any pattern you wish to insert into a page by clicking on it."
 msgstr "Jednoducho vyberte vzor, ktorý chcete vložiť na stránku, kliknutím naň."
 
-#: public/build/extendify-agent-47ce1ec36e515e89dc80.js:18
+#: public/build/extendify-agent-9d1c6defa5e8b1930355.js:18
 #: public/build/extendify-help-center-079e40452a8cd0a1b4a2.js:4
 #: src/Agent/tours/library-tour.js:99
 #: src/HelpCenter/tours/library-tour.js:97
 msgid "View the Inserted Pattern"
 msgstr "Zobraziť vložený vzor"
 
-#: public/build/extendify-agent-47ce1ec36e515e89dc80.js:18
+#: public/build/extendify-agent-9d1c6defa5e8b1930355.js:18
 #: public/build/extendify-help-center-079e40452a8cd0a1b4a2.js:4
 #: src/Agent/tours/library-tour.js:100
 #: src/HelpCenter/tours/library-tour.js:98
 msgid "The selected pattern has been inserted into the page."
 msgstr "Vybraný vzor bol vložený na stránku."
 
-#: public/build/extendify-agent-47ce1ec36e515e89dc80.js:18
+#: public/build/extendify-agent-9d1c6defa5e8b1930355.js:18
 #: public/build/extendify-assist-page-e98b949ab0c13ba07729.js:10
 #: public/build/extendify-help-center-079e40452a8cd0a1b4a2.js:4
 #: src/Agent/tours/page-editor.js:13
@@ -1467,84 +1468,84 @@ msgstr "Vybraný vzor bol vložený na stránku."
 msgid "Page editor"
 msgstr "Editor stránky"
 
-#: public/build/extendify-agent-47ce1ec36e515e89dc80.js:18
+#: public/build/extendify-agent-9d1c6defa5e8b1930355.js:18
 #: public/build/extendify-help-center-079e40452a8cd0a1b4a2.js:4
 #: src/Agent/tours/page-editor.js:26
 #: src/HelpCenter/tours/page-editor.js:26
 msgid "Add a Block"
 msgstr "Pridať blok"
 
-#: public/build/extendify-agent-47ce1ec36e515e89dc80.js:18
+#: public/build/extendify-agent-9d1c6defa5e8b1930355.js:18
 #: public/build/extendify-help-center-079e40452a8cd0a1b4a2.js:4
 #: src/Agent/tours/page-editor.js:27
 #: src/HelpCenter/tours/page-editor.js:27
 msgid "Click the plus to open the block inserter."
 msgstr "Kliknite na plus, aby ste otvorili nástroj na vkladanie blokov."
 
-#: public/build/extendify-agent-47ce1ec36e515e89dc80.js:18
+#: public/build/extendify-agent-9d1c6defa5e8b1930355.js:18
 #: public/build/extendify-help-center-079e40452a8cd0a1b4a2.js:4
 #: src/Agent/tours/page-editor.js:47
 #: src/HelpCenter/tours/page-editor.js:47
 msgid "Block Inserter"
 msgstr "Vkladač blokov"
 
-#: public/build/extendify-agent-47ce1ec36e515e89dc80.js:18
+#: public/build/extendify-agent-9d1c6defa5e8b1930355.js:18
 #: public/build/extendify-help-center-079e40452a8cd0a1b4a2.js:4
 #: src/Agent/tours/page-editor.js:48
 #: src/HelpCenter/tours/page-editor.js:48
 msgid "Add a block by clicking or dragging it onto the page."
 msgstr "Pridajte blok kliknutím naň alebo jeho presunutím na stránku."
 
-#: public/build/extendify-agent-47ce1ec36e515e89dc80.js:18
+#: public/build/extendify-agent-9d1c6defa5e8b1930355.js:18
 #: public/build/extendify-help-center-079e40452a8cd0a1b4a2.js:4
 #: src/Agent/tours/page-editor.js:88
 #: src/HelpCenter/tours/page-editor.js:91
 msgid "Page Title"
 msgstr "Nadpis stránky"
 
-#: public/build/extendify-agent-47ce1ec36e515e89dc80.js:18
+#: public/build/extendify-agent-9d1c6defa5e8b1930355.js:18
 #: public/build/extendify-help-center-079e40452a8cd0a1b4a2.js:4
 #: src/Agent/tours/page-editor.js:89
 #: src/HelpCenter/tours/page-editor.js:92
 msgid "Edit the page title by clicking it. Note: The title may or may not show up on the published page, depending on the page template used."
 msgstr "Upravte nadpis stránky kliknutím naň. Poznámka: Nadpis sa na publikovanej stránke môže, ale nemusí zobraziť, v závislosti od použitej šablóny stránky."
 
-#: public/build/extendify-agent-47ce1ec36e515e89dc80.js:18
+#: public/build/extendify-agent-9d1c6defa5e8b1930355.js:18
 #: public/build/extendify-help-center-079e40452a8cd0a1b4a2.js:4
 #: src/Agent/tours/page-editor.js:128
 #: src/HelpCenter/tours/page-editor.js:131
 msgid "Blocks"
 msgstr "Bloky"
 
-#: public/build/extendify-agent-47ce1ec36e515e89dc80.js:18
+#: public/build/extendify-agent-9d1c6defa5e8b1930355.js:18
 #: public/build/extendify-help-center-079e40452a8cd0a1b4a2.js:4
 #: src/Agent/tours/page-editor.js:129
 #: src/HelpCenter/tours/page-editor.js:132
 msgid "Each block will show up on the page and can be edited by clicking on it."
 msgstr "Každý blok sa zobrazí na stránke a je možné ho upraviť kliknutím naň."
 
-#: public/build/extendify-agent-47ce1ec36e515e89dc80.js:18
+#: public/build/extendify-agent-9d1c6defa5e8b1930355.js:18
 #: public/build/extendify-help-center-079e40452a8cd0a1b4a2.js:4
 #: src/Agent/tours/page-editor.js:170
 #: src/HelpCenter/tours/page-editor.js:173
 msgid "This is a sample paragraph block. It can be several sentences long and will span multiple rows. You can add as many blocks as you'd like to the page."
 msgstr "Toto je ukážkový blok odseku. Môže obsahovať niekoľko viet vo viacerých riadkoch. Na stránku môžete pridať toľko blokov, koľko chcete."
 
-#: public/build/extendify-agent-47ce1ec36e515e89dc80.js:18
+#: public/build/extendify-agent-9d1c6defa5e8b1930355.js:18
 #: public/build/extendify-help-center-079e40452a8cd0a1b4a2.js:4
 #: src/Agent/tours/page-editor.js:185
 #: src/HelpCenter/tours/page-editor.js:188
 msgid "Page and Block Settings"
 msgstr "Nastavenia stránok a blokov"
 
-#: public/build/extendify-agent-47ce1ec36e515e89dc80.js:18
+#: public/build/extendify-agent-9d1c6defa5e8b1930355.js:18
 #: public/build/extendify-help-center-079e40452a8cd0a1b4a2.js:4
 #: src/Agent/tours/page-editor.js:186
 #: src/HelpCenter/tours/page-editor.js:189
 msgid "Select either page or block to change the settings for the entire page or the block that is selected."
 msgstr "Vyberte buď stránku alebo blok, aby ste zmenili nastavenia pre celú stránku alebo vybraný blok."
 
-#: public/build/extendify-agent-47ce1ec36e515e89dc80.js:18
+#: public/build/extendify-agent-9d1c6defa5e8b1930355.js:18
 #: public/build/extendify-help-center-079e40452a8cd0a1b4a2.js:4
 #: public/build/extendify-launch-169f4581091a2b7e786b.js:8
 #: src/Agent/tours/page-editor.js:228
@@ -1553,28 +1554,28 @@ msgstr "Vyberte buď stránku alebo blok, aby ste zmenili nastavenia pre celú s
 msgid "Preview"
 msgstr "Náhľad"
 
-#: public/build/extendify-agent-47ce1ec36e515e89dc80.js:18
+#: public/build/extendify-agent-9d1c6defa5e8b1930355.js:18
 #: public/build/extendify-help-center-079e40452a8cd0a1b4a2.js:4
 #: src/Agent/tours/page-editor.js:229
 #: src/HelpCenter/tours/page-editor.js:232
 msgid "Click preview to view how your changes look on the front end of your site."
 msgstr "Kliknite na náhľad, aby ste videli, ako vaše zmeny vyzerajú na verejnej časti vašej webovej stránky."
 
-#: public/build/extendify-agent-47ce1ec36e515e89dc80.js:18
+#: public/build/extendify-agent-9d1c6defa5e8b1930355.js:18
 #: public/build/extendify-help-center-079e40452a8cd0a1b4a2.js:4
 #: src/Agent/tours/page-editor.js:249
 #: src/HelpCenter/tours/page-editor.js:252
 msgid "Publish or Save"
 msgstr "Publikovať alebo uložiť"
 
-#: public/build/extendify-agent-47ce1ec36e515e89dc80.js:18
+#: public/build/extendify-agent-9d1c6defa5e8b1930355.js:18
 #: public/build/extendify-help-center-079e40452a8cd0a1b4a2.js:4
 #: src/Agent/tours/page-editor.js:250
 #: src/HelpCenter/tours/page-editor.js:253
 msgid "Click publish or update to save the changes you have made to the page and make them live on the site."
 msgstr "Kliknite na Publikovať alebo Aktualizovať, aby ste uložili vykonané zmeny a zverejnili ich na stránke."
 
-#: public/build/extendify-agent-47ce1ec36e515e89dc80.js:18
+#: public/build/extendify-agent-9d1c6defa5e8b1930355.js:18
 #: public/build/extendify-assist-page-e98b949ab0c13ba07729.js:10
 #: public/build/extendify-help-center-079e40452a8cd0a1b4a2.js:4
 #: src/Agent/tours/plugin-install.js:5
@@ -1584,77 +1585,77 @@ msgstr "Kliknite na Publikovať alebo Aktualizovať, aby ste uložili vykonané 
 msgid "Installing a plugin"
 msgstr "Inštalácia pluginu"
 
-#: public/build/extendify-agent-47ce1ec36e515e89dc80.js:18
+#: public/build/extendify-agent-9d1c6defa5e8b1930355.js:18
 #: public/build/extendify-help-center-079e40452a8cd0a1b4a2.js:4
 #: src/Agent/tours/plugin-install.js:18
 #: src/HelpCenter/tours/plugin-install.js:17
 msgid "Add New plugin menu"
 msgstr "Pridať nové menu pluginu"
 
-#: public/build/extendify-agent-47ce1ec36e515e89dc80.js:18
+#: public/build/extendify-agent-9d1c6defa5e8b1930355.js:18
 #: public/build/extendify-help-center-079e40452a8cd0a1b4a2.js:4
 #: src/Agent/tours/plugin-install.js:19
 #: src/HelpCenter/tours/plugin-install.js:18
 msgid "Click here to access the Add Plugins page."
 msgstr "Kliknite sem pre prístup na stránku Pridať pluginy."
 
-#: public/build/extendify-agent-47ce1ec36e515e89dc80.js:18
+#: public/build/extendify-agent-9d1c6defa5e8b1930355.js:18
 #: public/build/extendify-help-center-079e40452a8cd0a1b4a2.js:4
 #: src/Agent/tours/plugin-install.js:41
 #: src/HelpCenter/tours/plugin-install.js:40
 msgid "Search"
 msgstr "Vyhľadať"
 
-#: public/build/extendify-agent-47ce1ec36e515e89dc80.js:18
+#: public/build/extendify-agent-9d1c6defa5e8b1930355.js:18
 #: public/build/extendify-help-center-079e40452a8cd0a1b4a2.js:4
 #: src/Agent/tours/plugin-install.js:42
 #: src/HelpCenter/tours/plugin-install.js:41
 msgid "Search for a plugin by name or functionality."
 msgstr "Vyhľadajte plugin podľa názvu alebo funkcionality."
 
-#: public/build/extendify-agent-47ce1ec36e515e89dc80.js:18
+#: public/build/extendify-agent-9d1c6defa5e8b1930355.js:18
 #: public/build/extendify-help-center-079e40452a8cd0a1b4a2.js:4
 #: src/Agent/tours/plugin-install.js:67
 #: src/HelpCenter/tours/plugin-install.js:66
 msgid "Plugin details"
 msgstr "Detaily pluginu"
 
-#: public/build/extendify-agent-47ce1ec36e515e89dc80.js:18
+#: public/build/extendify-agent-9d1c6defa5e8b1930355.js:18
 #: public/build/extendify-help-center-079e40452a8cd0a1b4a2.js:4
 #: src/Agent/tours/plugin-install.js:68
 #: src/HelpCenter/tours/plugin-install.js:67
 msgid "See important information about each plugin."
 msgstr "Zobraziť dôležité informácie o každom plugine."
 
-#: public/build/extendify-agent-47ce1ec36e515e89dc80.js:18
+#: public/build/extendify-agent-9d1c6defa5e8b1930355.js:18
 #: public/build/extendify-help-center-079e40452a8cd0a1b4a2.js:4
 #: src/Agent/tours/plugin-install.js:87
 #: src/HelpCenter/tours/plugin-install.js:86
 msgid "Install now"
 msgstr "Inštalovať teraz"
 
-#: public/build/extendify-agent-47ce1ec36e515e89dc80.js:18
+#: public/build/extendify-agent-9d1c6defa5e8b1930355.js:18
 #: public/build/extendify-help-center-079e40452a8cd0a1b4a2.js:4
 #: src/Agent/tours/plugin-install.js:88
 #: src/HelpCenter/tours/plugin-install.js:87
 msgid "Install the plugin. Then, press this button again to activate the plugin."
 msgstr "Nainštalujte plugin. Potom stlačte toto tlačidlo znova, aby ste plugin aktivovali."
 
-#: public/build/extendify-agent-47ce1ec36e515e89dc80.js:18
+#: public/build/extendify-agent-9d1c6defa5e8b1930355.js:18
 #: public/build/extendify-help-center-079e40452a8cd0a1b4a2.js:4
 #: src/Agent/tours/plugin-install.js:113
 #: src/HelpCenter/tours/plugin-install.js:112
 msgid "Upload Plugin"
 msgstr "Nahrať plugin"
 
-#: public/build/extendify-agent-47ce1ec36e515e89dc80.js:18
+#: public/build/extendify-agent-9d1c6defa5e8b1930355.js:18
 #: public/build/extendify-help-center-079e40452a8cd0a1b4a2.js:4
 #: src/Agent/tours/plugin-install.js:114
 #: src/HelpCenter/tours/plugin-install.js:113
 msgid "If you have a plugin from an external source, you can upload it directly here."
 msgstr "Ak máte plugin z externého zdroja, môžete ho nahrať priamo sem."
 
-#: public/build/extendify-agent-47ce1ec36e515e89dc80.js:18
+#: public/build/extendify-agent-9d1c6defa5e8b1930355.js:18
 #: public/build/extendify-assist-page-e98b949ab0c13ba07729.js:10
 #: public/build/extendify-help-center-079e40452a8cd0a1b4a2.js:4
 #: src/Agent/tours/plugin-management.js:5
@@ -1664,84 +1665,84 @@ msgstr "Ak máte plugin z externého zdroja, môžete ho nahrať priamo sem."
 msgid "Plugin management"
 msgstr "Správa pluginov"
 
-#: public/build/extendify-agent-47ce1ec36e515e89dc80.js:18
+#: public/build/extendify-agent-9d1c6defa5e8b1930355.js:18
 #: public/build/extendify-help-center-079e40452a8cd0a1b4a2.js:4
 #: src/Agent/tours/plugin-management.js:18
 #: src/HelpCenter/tours/plugin-management.js:17
 msgid "Installed Plugins menu"
 msgstr "Menu nainštalovaných pluginov"
 
-#: public/build/extendify-agent-47ce1ec36e515e89dc80.js:18
+#: public/build/extendify-agent-9d1c6defa5e8b1930355.js:18
 #: public/build/extendify-help-center-079e40452a8cd0a1b4a2.js:4
 #: src/Agent/tours/plugin-management.js:19
 #: src/HelpCenter/tours/plugin-management.js:18
 msgid "Click this menu to see and manage the plugins you have installed."
 msgstr "Kliknite na toto menu, aby ste videli a spravovali nainštalované pluginy."
 
-#: public/build/extendify-agent-47ce1ec36e515e89dc80.js:18
+#: public/build/extendify-agent-9d1c6defa5e8b1930355.js:18
 #: public/build/extendify-help-center-079e40452a8cd0a1b4a2.js:4
 #: src/Agent/tours/plugin-management.js:44
 #: src/HelpCenter/tours/plugin-management.js:43
 msgid "Installed plugins"
 msgstr "Nainštalované pluginy"
 
-#: public/build/extendify-agent-47ce1ec36e515e89dc80.js:18
+#: public/build/extendify-agent-9d1c6defa5e8b1930355.js:18
 #: public/build/extendify-help-center-079e40452a8cd0a1b4a2.js:4
 #: src/Agent/tours/plugin-management.js:45
 #: src/HelpCenter/tours/plugin-management.js:44
 msgid "See all plugins installed on your site. This includes plugins that are active and deactivated."
 msgstr "Zobraziť všetky pluginy nainštalované na vašej webovej stránke. Zahrnuté sú aktívne aj deaktivované pluginy."
 
-#: public/build/extendify-agent-47ce1ec36e515e89dc80.js:18
+#: public/build/extendify-agent-9d1c6defa5e8b1930355.js:18
 #: public/build/extendify-help-center-079e40452a8cd0a1b4a2.js:4
 #: src/Agent/tours/plugin-management.js:64
 #: src/HelpCenter/tours/plugin-management.js:63
 msgid "Deactivate/activate option"
 msgstr "Deaktivovať/aktivovať možnosť"
 
-#: public/build/extendify-agent-47ce1ec36e515e89dc80.js:18
+#: public/build/extendify-agent-9d1c6defa5e8b1930355.js:18
 #: public/build/extendify-help-center-079e40452a8cd0a1b4a2.js:4
 #: src/Agent/tours/plugin-management.js:65
 #: src/HelpCenter/tours/plugin-management.js:64
 msgid "Under each plugin you can activate or deactivate it."
 msgstr "Pod každým pluginom môžete aktivovať alebo deaktivovať jeho funkciu."
 
-#: public/build/extendify-agent-47ce1ec36e515e89dc80.js:18
+#: public/build/extendify-agent-9d1c6defa5e8b1930355.js:18
 #: public/build/extendify-help-center-079e40452a8cd0a1b4a2.js:4
 #: src/Agent/tours/plugin-management.js:105
 #: src/HelpCenter/tours/plugin-management.js:104
 msgid "Add another"
 msgstr "Pridať ďalší"
 
-#: public/build/extendify-agent-47ce1ec36e515e89dc80.js:18
+#: public/build/extendify-agent-9d1c6defa5e8b1930355.js:18
 #: public/build/extendify-help-center-079e40452a8cd0a1b4a2.js:4
 #: src/Agent/tours/plugin-management.js:106
 #: src/HelpCenter/tours/plugin-management.js:105
 msgid "Click here to add another plugin to your site."
 msgstr "Kliknite sem a pridajte ďalší plugin na váš web."
 
-#: public/build/extendify-agent-47ce1ec36e515e89dc80.js:18
+#: public/build/extendify-agent-9d1c6defa5e8b1930355.js:18
 #: public/build/extendify-help-center-079e40452a8cd0a1b4a2.js:4
 #: src/Agent/tours/site-assistant.js:15
 #: src/HelpCenter/tours/site-assistant.js:14
 msgid "Tasks"
 msgstr "Úlohy"
 
-#: public/build/extendify-agent-47ce1ec36e515e89dc80.js:18
+#: public/build/extendify-agent-9d1c6defa5e8b1930355.js:18
 #: public/build/extendify-help-center-079e40452a8cd0a1b4a2.js:4
 #: src/Agent/tours/site-assistant.js:16
 #: src/HelpCenter/tours/site-assistant.js:15
 msgid "Now that you've created your starter site, make it your own with these follow up tasks."
 msgstr "Teraz, keď ste si vytvorili základnú stránku, prispôsobte si ju pomocou týchto nasledujúcich úloh."
 
-#: public/build/extendify-agent-47ce1ec36e515e89dc80.js:18
+#: public/build/extendify-agent-9d1c6defa5e8b1930355.js:18
 #: public/build/extendify-help-center-079e40452a8cd0a1b4a2.js:4
 #: src/Agent/tours/site-assistant.js:37
 #: src/HelpCenter/tours/site-assistant.js:36
 msgid "Easily access some of the most common items in WordPress with these quick links."
 msgstr "Ľahko získajte prístup k najčastejšie používaným položkám vo WordPresse pomocou týchto rýchlych odkazov."
 
-#: public/build/extendify-agent-47ce1ec36e515e89dc80.js:18
+#: public/build/extendify-agent-9d1c6defa5e8b1930355.js:18
 #: public/build/extendify-help-center-079e40452a8cd0a1b4a2.js:4
 #: src/Agent/tours/site-assistant.js:59
 #: src/HelpCenter/tours/site-assistant.js:58
@@ -1762,28 +1763,28 @@ msgstr "Centrum pomoci"
 msgid "You can always access the help center by clicking this button."
 msgstr "Centrum pomoci môžete kedykoľvek otvoriť kliknutím na toto tlačidlo."
 
-#: public/build/extendify-agent-47ce1ec36e515e89dc80.js:18
+#: public/build/extendify-agent-9d1c6defa5e8b1930355.js:18
 #: public/build/extendify-help-center-079e40452a8cd0a1b4a2.js:4
 #: src/Agent/tours/site-assistant.js:80
 #: src/HelpCenter/tours/site-assistant.js:100
 msgid "Visit your site"
 msgstr "Navštíviť vašu webovú stránku"
 
-#: public/build/extendify-agent-47ce1ec36e515e89dc80.js:18
+#: public/build/extendify-agent-9d1c6defa5e8b1930355.js:18
 #: public/build/extendify-help-center-079e40452a8cd0a1b4a2.js:4
 #: src/Agent/tours/site-assistant.js:81
 #: src/HelpCenter/tours/site-assistant.js:101
 msgid "You can always visit your site by clicking this button."
 msgstr "Svoju webovú stránku môžete kedykoľvek navštíviť kliknutím na toto tlačidlo."
 
-#: public/build/extendify-agent-47ce1ec36e515e89dc80.js:18
+#: public/build/extendify-agent-9d1c6defa5e8b1930355.js:18
 #: public/build/extendify-help-center-079e40452a8cd0a1b4a2.js:4
 #: src/Agent/tours/site-assistant.js:107
 #: src/HelpCenter/tours/site-assistant.js:127
 msgid "Come back to the Site Assistant any time by clicking the menu item."
 msgstr "Kedykoľvek sa môžete vrátiť do Asistenta stránky kliknutím na položku v menu."
 
-#: public/build/extendify-agent-47ce1ec36e515e89dc80.js:18
+#: public/build/extendify-agent-9d1c6defa5e8b1930355.js:18
 #: public/build/extendify-assist-page-e98b949ab0c13ba07729.js:10
 #: public/build/extendify-help-center-079e40452a8cd0a1b4a2.js:4
 #: src/Agent/tours/users-screen.js:5
@@ -1793,21 +1794,21 @@ msgstr "Kedykoľvek sa môžete vrátiť do Asistenta stránky kliknutím na pol
 msgid "Users screen"
 msgstr "Obrazovka používateľov"
 
-#: public/build/extendify-agent-47ce1ec36e515e89dc80.js:18
+#: public/build/extendify-agent-9d1c6defa5e8b1930355.js:18
 #: public/build/extendify-help-center-079e40452a8cd0a1b4a2.js:4
 #: src/Agent/tours/users-screen.js:18
 #: src/HelpCenter/tours/users-screen.js:17
 msgid "All Users menu"
 msgstr "Menu pre všetkých používateľov"
 
-#: public/build/extendify-agent-47ce1ec36e515e89dc80.js:18
+#: public/build/extendify-agent-9d1c6defa5e8b1930355.js:18
 #: public/build/extendify-help-center-079e40452a8cd0a1b4a2.js:4
 #: src/Agent/tours/users-screen.js:19
 #: src/HelpCenter/tours/users-screen.js:18
 msgid "Click here to view and manage the users on your site."
 msgstr "Kliknite sem a zobrazte a spravujte používateľov na vašej stránke."
 
-#: public/build/extendify-agent-47ce1ec36e515e89dc80.js:18
+#: public/build/extendify-agent-9d1c6defa5e8b1930355.js:18
 #: public/build/extendify-help-center-079e40452a8cd0a1b4a2.js:4
 #: src/Agent/tours/users-screen.js:44
 #: src/Agent/tours/welcome.js:250
@@ -1816,49 +1817,49 @@ msgstr "Kliknite sem a zobrazte a spravujte používateľov na vašej stránke."
 msgid "Users"
 msgstr "Používatelia"
 
-#: public/build/extendify-agent-47ce1ec36e515e89dc80.js:18
+#: public/build/extendify-agent-9d1c6defa5e8b1930355.js:18
 #: public/build/extendify-help-center-079e40452a8cd0a1b4a2.js:4
 #: src/Agent/tours/users-screen.js:45
 #: src/HelpCenter/tours/users-screen.js:44
 msgid "See all of your users, including admin users in this table."
 msgstr "V tejto tabuľke uvidíte všetkých svojich používateľov, vrátane administrátorov."
 
-#: public/build/extendify-agent-47ce1ec36e515e89dc80.js:18
+#: public/build/extendify-agent-9d1c6defa5e8b1930355.js:18
 #: public/build/extendify-help-center-079e40452a8cd0a1b4a2.js:4
 #: src/Agent/tours/users-screen.js:64
 #: src/HelpCenter/tours/users-screen.js:63
 msgid "Edit user information"
 msgstr "Upraviť informácie o používateľovi"
 
-#: public/build/extendify-agent-47ce1ec36e515e89dc80.js:18
+#: public/build/extendify-agent-9d1c6defa5e8b1930355.js:18
 #: public/build/extendify-help-center-079e40452a8cd0a1b4a2.js:4
 #: src/Agent/tours/users-screen.js:65
 #: src/HelpCenter/tours/users-screen.js:64
 msgid "Click the edit button to change the user's role, manage their account, or change their profile information."
 msgstr "Kliknite na tlačidlo úpravy, aby ste zmenili rolu používateľa, spravovali jeho účet alebo zmenili informácie v jeho profile."
 
-#: public/build/extendify-agent-47ce1ec36e515e89dc80.js:18
+#: public/build/extendify-agent-9d1c6defa5e8b1930355.js:18
 #: public/build/extendify-help-center-079e40452a8cd0a1b4a2.js:4
 #: src/Agent/tours/users-screen.js:95
 #: src/HelpCenter/tours/users-screen.js:94
 msgid "Search for users"
 msgstr "Vyhľadať používateľov"
 
-#: public/build/extendify-agent-47ce1ec36e515e89dc80.js:18
+#: public/build/extendify-agent-9d1c6defa5e8b1930355.js:18
 #: public/build/extendify-help-center-079e40452a8cd0a1b4a2.js:4
 #: src/Agent/tours/users-screen.js:96
 #: src/HelpCenter/tours/users-screen.js:95
 msgid "Use the search bar to find a particular user."
 msgstr "Použite vyhľadávací panel na nájdenie konkrétneho používateľa."
 
-#: public/build/extendify-agent-47ce1ec36e515e89dc80.js:18
+#: public/build/extendify-agent-9d1c6defa5e8b1930355.js:18
 #: public/build/extendify-help-center-079e40452a8cd0a1b4a2.js:4
 #: src/Agent/tours/users-screen.js:121
 #: src/HelpCenter/tours/users-screen.js:120
 msgid "Add a new user"
 msgstr "Pridať nového používateľa"
 
-#: public/build/extendify-agent-47ce1ec36e515e89dc80.js:18
+#: public/build/extendify-agent-9d1c6defa5e8b1930355.js:18
 #: public/build/extendify-help-center-079e40452a8cd0a1b4a2.js:4
 #: src/Agent/tours/users-screen.js:122
 #: src/HelpCenter/tours/users-screen.js:121
@@ -2068,14 +2069,14 @@ msgstr "Vráťte sa späť"
 msgid "Extendify Help Center"
 msgstr "Centrum pomoci Extendify"
 
-#: public/build/extendify-agent-47ce1ec36e515e89dc80.js:13
+#: public/build/extendify-agent-9d1c6defa5e8b1930355.js:13
 #: public/build/extendify-help-center-079e40452a8cd0a1b4a2.js:4
 #: src/Agent/components/GuidedTour.jsx:313
 #: src/HelpCenter/components/tours/GuidedTour.jsx:315
 msgid "Tour"
 msgstr "Prehliadka"
 
-#: public/build/extendify-agent-47ce1ec36e515e89dc80.js:13
+#: public/build/extendify-agent-9d1c6defa5e8b1930355.js:13
 #: public/build/extendify-help-center-079e40452a8cd0a1b4a2.js:4
 #: public/build/extendify-launch-169f4581091a2b7e786b.js:8
 #: src/Agent/components/GuidedTour.jsx:425
@@ -2084,7 +2085,7 @@ msgstr "Prehliadka"
 msgid "Back"
 msgstr "Späť"
 
-#: public/build/extendify-agent-47ce1ec36e515e89dc80.js:13
+#: public/build/extendify-agent-9d1c6defa5e8b1930355.js:13
 #: public/build/extendify-help-center-079e40452a8cd0a1b4a2.js:4
 #: src/Agent/components/GuidedTour.jsx:434
 #: src/HelpCenter/components/tours/GuidedTour.jsx:441
@@ -2092,7 +2093,7 @@ msgid "Tour Steps"
 msgstr "Kroky prehliadky"
 
 #. translators: %1$s is the current step, %2$s is the total number of steps
-#: public/build/extendify-agent-47ce1ec36e515e89dc80.js:16
+#: public/build/extendify-agent-9d1c6defa5e8b1930355.js:16
 #: public/build/extendify-help-center-079e40452a8cd0a1b4a2.js:7
 #: src/Agent/components/GuidedTour.jsx:443
 #: src/HelpCenter/components/tours/GuidedTour.jsx:450
@@ -2100,8 +2101,8 @@ msgstr "Kroky prehliadky"
 msgid "%1$s of %2$s"
 msgstr "%1$s z %2$s"
 
-#: public/build/extendify-agent-47ce1ec36e515e89dc80.js:16
-#: public/build/extendify-auto-launch-1871df5815ba8920098f.js:52
+#: public/build/extendify-agent-9d1c6defa5e8b1930355.js:16
+#: public/build/extendify-auto-launch-b5c459e24210e13f67d2.js:52
 #: public/build/extendify-help-center-079e40452a8cd0a1b4a2.js:7
 #: public/build/extendify-launch-169f4581091a2b7e786b.js:8
 #: src/Agent/components/GuidedTour.jsx:473
@@ -2121,8 +2122,8 @@ msgid "Help"
 msgstr "Pomoc"
 
 #. translators: Launch is the product name. Unless otherwise specified by the glossary, do not translate this name.
-#: public/build/extendify-auto-launch-1871df5815ba8920098f.js:29
-#: public/build/extendify-auto-launch-1871df5815ba8920098f.js:42
+#: public/build/extendify-auto-launch-b5c459e24210e13f67d2.js:15
+#: public/build/extendify-auto-launch-b5c459e24210e13f67d2.js:42
 #: public/build/extendify-common-20388f64d97467a51614.js:1
 #: public/build/extendify-launch-169f4581091a2b7e786b.js:3
 #: public/build/extendify-launch-169f4581091a2b7e786b.js:14
@@ -2139,7 +2140,7 @@ msgstr "Pridané pomocou Launch"
 msgid "Start over?"
 msgstr "Začať znova?"
 
-#: public/build/extendify-auto-launch-1871df5815ba8920098f.js:55
+#: public/build/extendify-auto-launch-b5c459e24210e13f67d2.js:55
 #: public/build/extendify-launch-169f4581091a2b7e786b.js:8
 #: src/AutoLaunch/components/RestartLaunchModal.jsx:154
 #: src/Launch/components/RestartLaunchModal.jsx:197
@@ -2152,7 +2153,7 @@ msgid "Processing"
 msgstr "Spracovávanie"
 
 #: public/build/extendify-launch-169f4581091a2b7e786b.js:8
-#: public/build/extendify-page-creator-c6065d168ab1f7c67158.js:4
+#: public/build/extendify-page-creator-6d8b3f0e0ada07c15f72.js:4
 #: src/Launch/components/RetryNotice.jsx:12
 #: src/PageCreator/components/RetryNotice.jsx:12
 msgid "Just a moment, this is taking longer than expected."
@@ -2215,8 +2216,8 @@ msgstr "Vyberte dizajn pre vašu webovú stránku"
 msgid "You can personalize this later."
 msgstr "Toto môžete personalizovať neskôr."
 
-#: public/build/extendify-agent-47ce1ec36e515e89dc80.js:74
-#: public/build/extendify-agent-47ce1ec36e515e89dc80.js:82
+#: public/build/extendify-agent-9d1c6defa5e8b1930355.js:74
+#: public/build/extendify-agent-9d1c6defa5e8b1930355.js:82
 #: public/build/extendify-launch-169f4581091a2b7e786b.js:8
 #: src/Agent/components/redirects/RedirectFontsVariations.jsx:12
 #: src/Agent/components/redirects/RedirectThemeVariations.jsx:17
@@ -2288,17 +2289,17 @@ msgid "Setting up site layout"
 msgstr "Nastavenie rozloženia webovej stránky"
 
 #. translators: This string represents the title of an "Events" page on a website that lists events of any kind. Please translate it in a way that fits the standard phrasing for an "Events" page in the target language, considering the common usage in websites for that language.
-#: public/build/extendify-auto-launch-1871df5815ba8920098f.js:50
+#: public/build/extendify-auto-launch-b5c459e24210e13f67d2.js:50
 #: public/build/extendify-common-20388f64d97467a51614.js:23
 #: public/build/extendify-launch-169f4581091a2b7e786b.js:17
-#: src/AutoLaunch/hooks/useCreateSite.js:388
+#: src/AutoLaunch/hooks/useCreateSite.js:429
 #: src/Launch/pages/CreatingSite.jsx:497
 msgid "Events"
 msgstr "Udalosti"
 
-#: public/build/extendify-auto-launch-1871df5815ba8920098f.js:35
+#: public/build/extendify-auto-launch-b5c459e24210e13f67d2.js:35
 #: public/build/extendify-launch-169f4581091a2b7e786b.js:1
-#: src/AutoLaunch/hooks/useCreateSite.js:291
+#: src/AutoLaunch/hooks/useCreateSite.js:319
 #: src/Launch/api/WPApi.js:51
 msgid "Header Navigation"
 msgstr "Navigácia v hlavičke"
@@ -2328,23 +2329,23 @@ msgstr "Presmerovanie za 3, 2, 1..."
 msgid "We encountered a server error we cannot recover from. Please reload the page and try again."
 msgstr "Narazili sme na serverovú chybu. Prosím, obnovte stránku a skúste to znova."
 
-#: public/build/extendify-auto-launch-1871df5815ba8920098f.js:52
+#: public/build/extendify-auto-launch-b5c459e24210e13f67d2.js:52
 #: public/build/extendify-launch-169f4581091a2b7e786b.js:17
 #: src/AutoLaunch/components/NeedsTheme.jsx:7
 #: src/Launch/pages/NeedsTheme.jsx:10
 msgid "One more thing before we start."
 msgstr "Ešte jedna vec predtým, ako začneme."
 
-#: public/build/extendify-auto-launch-1871df5815ba8920098f.js:52
+#: public/build/extendify-auto-launch-b5c459e24210e13f67d2.js:52
 #: public/build/extendify-launch-169f4581091a2b7e786b.js:17
 #: src/AutoLaunch/components/NeedsTheme.jsx:11
 #: src/Launch/pages/NeedsTheme.jsx:14
 msgid "Hey there, Launch is powered by Extendable and is required to proceed. You can install it from the link below and start over once activated."
 msgstr "Launch je poháňaný systémom Extendable a jeho inštalácia je potrebná na pokračovanie. Môžete ho nainštalovať z odkazu nižšie a po aktivácii začať znovu."
 
-#: public/build/extendify-agent-47ce1ec36e515e89dc80.js:1
-#: public/build/extendify-agent-47ce1ec36e515e89dc80.js:24
-#: public/build/extendify-auto-launch-1871df5815ba8920098f.js:52
+#: public/build/extendify-agent-9d1c6defa5e8b1930355.js:1
+#: public/build/extendify-agent-9d1c6defa5e8b1930355.js:24
+#: public/build/extendify-auto-launch-b5c459e24210e13f67d2.js:52
 #: public/build/extendify-launch-169f4581091a2b7e786b.js:17
 #: src/Agent/components/messages/AgentMessage.jsx:19
 #: src/Agent/workflows/content/components/GeneratePageResult.jsx:39
@@ -2353,47 +2354,47 @@ msgstr "Launch je poháňaný systémom Extendable a jeho inštalácia je potreb
 msgid "Take me there"
 msgstr "Zobrať ma tam"
 
-#: public/build/extendify-library-47d651124bad74dbba8b.js:1
+#: public/build/extendify-library-46b68847bd85f90eb8b6.js:1
 #: src/Library/components/BlockPreviewButton.jsx:28
 msgid "Insert Pattern"
 msgstr "Vložiť vzor"
 
-#: public/build/extendify-library-47d651124bad74dbba8b.js:1
+#: public/build/extendify-library-46b68847bd85f90eb8b6.js:1
 #: src/Library/components/ModalContent.jsx:37
 #: src/Library/components/ModalContent.jsx:70
 msgid "Loading Patterns..."
 msgstr "Načítavajú sa vzory..."
 
-#: public/build/extendify-library-47d651124bad74dbba8b.js:1
+#: public/build/extendify-library-46b68847bd85f90eb8b6.js:1
 #: src/Library/components/ModalContent.jsx:81
 msgid "Loading more patterns..."
 msgstr "Načítavajú sa ďalšie vzory..."
 
-#: public/build/extendify-library-47d651124bad74dbba8b.js:1
+#: public/build/extendify-library-46b68847bd85f90eb8b6.js:1
 #: src/Library/components/sidebar/CategoryControl.jsx:26
 msgid "Design Type"
 msgstr "Typ dizajnu"
 
 #: app/PluginNotifications/NotificationsListTable.php:65
 #: public/build/extendify-assist-page-e98b949ab0c13ba07729.js:1
-#: public/build/extendify-library-47d651124bad74dbba8b.js:1
+#: public/build/extendify-library-46b68847bd85f90eb8b6.js:1
 #: src/Assist/svg/DesignLibraryMarkup.jsx:78
 #: src/Library/components/sidebar/CategoryControl.jsx:62
 msgid "All"
 msgstr "Všetko"
 
-#: public/build/extendify-library-47d651124bad74dbba8b.js:1
+#: public/build/extendify-library-46b68847bd85f90eb8b6.js:1
 #: src/Library/components/sidebar/CategoryControl.jsx:86
 msgid "Retrying..."
 msgstr "Opakujem pokus..."
 
-#: public/build/extendify-library-47d651124bad74dbba8b.js:1
+#: public/build/extendify-library-46b68847bd85f90eb8b6.js:1
 #: src/Library/components/sidebar/CategoryControl.jsx:94
 msgid "Fetching..."
 msgstr "Získavanie..."
 
-#: public/build/extendify-library-47d651124bad74dbba8b.js:1
-#: public/build/extendify-page-creator-c6065d168ab1f7c67158.js:1
+#: public/build/extendify-library-46b68847bd85f90eb8b6.js:1
+#: public/build/extendify-page-creator-6d8b3f0e0ada07c15f72.js:1
 #: src/Library/components/topbar/CloseButton.jsx:9
 #: src/Library/components/topbar/CloseButton.jsx:16
 #: src/PageCreator/components/topbar/CloseButton.jsx:9
@@ -2403,27 +2404,27 @@ msgstr "Zavrieť"
 
 #. translators: %s: Extendify Library term
 #. translators: %s: Extendify AI Page creator term
-#: public/build/extendify-library-47d651124bad74dbba8b.js:4
-#: public/build/extendify-page-creator-c6065d168ab1f7c67158.js:4
+#: public/build/extendify-library-46b68847bd85f90eb8b6.js:4
+#: public/build/extendify-page-creator-6d8b3f0e0ada07c15f72.js:4
 #: src/Library/components/topbar/Topbar.jsx:12
 #: src/PageCreator/components/topbar/Topbar.jsx:49
 #, js-format
 msgid "Toggle %s on new pages"
 msgstr "Prepnúť %s na nových stránkach"
 
-#: public/build/extendify-library-47d651124bad74dbba8b.js:4
-#: public/build/extendify-page-creator-c6065d168ab1f7c67158.js:4
+#: public/build/extendify-library-46b68847bd85f90eb8b6.js:4
+#: public/build/extendify-page-creator-6d8b3f0e0ada07c15f72.js:4
 #: src/Library/components/topbar/Topbar.jsx:23
 #: src/PageCreator/components/topbar/Topbar.jsx:62
 msgid "Open for new pages"
 msgstr "Otvoriť pre nové stránky"
 
-#: public/build/extendify-library-47d651124bad74dbba8b.js:4
+#: public/build/extendify-library-46b68847bd85f90eb8b6.js:4
 #: src/Library/components/Modal.jsx:114
 msgid "Design Patterns"
 msgstr "Dizajnové vzory"
 
-#: public/build/extendify-library-47d651124bad74dbba8b.js:4
+#: public/build/extendify-library-46b68847bd85f90eb8b6.js:4
 #: src/Library/components/Modal.jsx:31
 msgid "Pattern added"
 msgstr "Vzor pridaný"
@@ -3086,7 +3087,7 @@ msgid "Share your vision, and we'll craft a website that's perfectly tailored to
 msgstr "Podeľte sa o svoju víziu a my vytvoríme webovú stránku, ktorá bude presne prispôsobená vašim potrebám a pripravená na spustenie v krátkom čase. Začnime tým, že sa dozvieme viac o vašom projekte."
 
 #. translators: Launch is a noun.
-#: public/build/extendify-auto-launch-1871df5815ba8920098f.js:57
+#: public/build/extendify-auto-launch-b5c459e24210e13f67d2.js:57
 #: public/build/extendify-launch-169f4581091a2b7e786b.js:19
 #: src/AutoLaunch/LaunchPage.jsx:34
 #: src/Launch/LaunchPage.jsx:57
@@ -3114,15 +3115,15 @@ msgid "Please wait while we build some website options for you to select from."
 msgstr "Prosím, čakajte, kým pripravíme niekoľko možností webových stránok na výber."
 
 #. translators: this is for a action log UI. Keep it short
-#: public/build/extendify-auto-launch-1871df5815ba8920098f.js:44
+#: public/build/extendify-auto-launch-b5c459e24210e13f67d2.js:44
 #: public/build/extendify-launch-169f4581091a2b7e786b.js:14
-#: src/AutoLaunch/hooks/useCreateSite.js:359
+#: src/AutoLaunch/hooks/useCreateSite.js:395
 #: src/Launch/pages/CreatingSite.jsx:410
 msgid "Creating blog sample data"
 msgstr "Vytváranie ukážkových údajov blogu"
 
 #. translators: "More" here is used for a navigation menu item that contains additional links.
-#: public/build/extendify-auto-launch-1871df5815ba8920098f.js:27
+#: public/build/extendify-auto-launch-b5c459e24210e13f67d2.js:13
 #: public/build/extendify-launch-169f4581091a2b7e786b.js:5
 #: src/AutoLaunch/functions/nav.js:177
 #: src/Launch/api/WPApi.js:400
@@ -3138,7 +3139,7 @@ msgid "Add Website Details"
 msgstr "Pridať podrobnosti o webovej stránke"
 
 #. translators: %s is a post number
-#: public/build/extendify-auto-launch-1871df5815ba8920098f.js:47
+#: public/build/extendify-auto-launch-b5c459e24210e13f67d2.js:47
 #: public/build/extendify-launch-169f4581091a2b7e786b.js:17
 #: src/AutoLaunch/functions/wp.js:154
 #, js-format
@@ -3172,7 +3173,7 @@ msgstr "Vyberte tón vašej stránky"
 msgid "Website title (required)"
 msgstr "Názov webovej stránky (povinné)"
 
-#: public/build/extendify-auto-launch-1871df5815ba8920098f.js:47
+#: public/build/extendify-auto-launch-b5c459e24210e13f67d2.js:47
 #: public/build/extendify-launch-169f4581091a2b7e786b.js:17
 #: src/AutoLaunch/functions/pages.js:212
 msgid "Hello World Featured Image"
@@ -3182,43 +3183,44 @@ msgstr "Ilustračný obrázok Hello World"
 msgid "Extendify Page Creator User Settings"
 msgstr "Používateľské nastavenia Extendify Page Creator"
 
-#: public/build/extendify-page-creator-c6065d168ab1f7c67158.js:1
+#: public/build/extendify-page-creator-6d8b3f0e0ada07c15f72.js:1
 #: src/PageCreator/components/ConfirmationModal.jsx:28
 msgid "Confirmation"
 msgstr "Potvrdenie"
 
-#: public/build/extendify-page-creator-c6065d168ab1f7c67158.js:1
+#: public/build/extendify-page-creator-6d8b3f0e0ada07c15f72.js:1
 #: src/PageCreator/components/ConfirmationModal.jsx:32
 msgid "Do you want to replace existing content or create a new page?"
 msgstr "Chcete nahradiť existujúci obsah alebo vytvoriť novú stránku?"
 
-#: public/build/extendify-page-creator-c6065d168ab1f7c67158.js:1
+#: public/build/extendify-page-creator-6d8b3f0e0ada07c15f72.js:1
 #: src/PageCreator/components/ConfirmationModal.jsx:39
 msgid "Delete existing content"
 msgstr "Zmazať existujúci obsah"
 
-#: public/build/extendify-page-creator-c6065d168ab1f7c67158.js:1
+#: public/build/extendify-page-creator-6d8b3f0e0ada07c15f72.js:1
 #: src/PageCreator/components/ConfirmationModal.jsx:47
 msgid "Create a new page"
 msgstr "Vytvoriť novú stránku"
 
-#: public/build/extendify-agent-47ce1ec36e515e89dc80.js:18
+#: public/build/extendify-agent-9d1c6defa5e8b1930355.js:18
 #: public/build/extendify-help-center-079e40452a8cd0a1b4a2.js:4
-#: public/build/extendify-page-creator-c6065d168ab1f7c67158.js:1
+#: public/build/extendify-page-creator-6d8b3f0e0ada07c15f72.js:1
 #: src/Agent/tours/page-creator.js:6
 #: src/Agent/tours/page-creator.js:29
 #: src/HelpCenter/tours/page-creator.js:7
 #: src/HelpCenter/tours/page-creator.js:29
 #: src/PageCreator/components/MainButton.jsx:52
+#: src/PageCreator/icons/ai-gen.jsx:10
 msgid "AI Page Generator"
 msgstr "Generátor stránok AI"
 
-#: public/build/extendify-page-creator-c6065d168ab1f7c67158.js:4
+#: public/build/extendify-page-creator-6d8b3f0e0ada07c15f72.js:4
 #: src/PageCreator/components/content/CustomTextarea.jsx:45
 msgid "Edit"
 msgstr "Upraviť"
 
-#: public/build/extendify-page-creator-c6065d168ab1f7c67158.js:4
+#: public/build/extendify-page-creator-6d8b3f0e0ada07c15f72.js:4
 #: src/PageCreator/components/content/CustomTextarea.jsx:63
 msgid "Clear"
 msgstr "Vymazať"
@@ -3228,39 +3230,39 @@ msgstr "Vymazať"
 msgid "Generating AI page profile..."
 msgstr "Generujem profil AI stránky ..."
 
-#: public/build/extendify-page-creator-c6065d168ab1f7c67158.js:4
+#: public/build/extendify-page-creator-6d8b3f0e0ada07c15f72.js:4
 #: src/PageCreator/pages/Dashboard.jsx:59
 msgid "AI Page Creation"
 msgstr "Vytvorenie stránky pomocou AI"
 
-#: public/build/extendify-page-creator-c6065d168ab1f7c67158.js:4
+#: public/build/extendify-page-creator-6d8b3f0e0ada07c15f72.js:4
 #: src/PageCreator/pages/Dashboard.jsx:60
 msgid "Describe the page you want to create, adding key details, and Al will generate a unique, ready-to-use page for you."
 msgstr "Opíšte stránku, ktorú chcete vytvoriť, pridajte kľúčové detaily a AI pre vás vygeneruje jedinečnú, pripravenú stránku."
 
-#: public/build/extendify-page-creator-c6065d168ab1f7c67158.js:4
+#: public/build/extendify-page-creator-6d8b3f0e0ada07c15f72.js:4
 #: src/PageCreator/pages/Dashboard.jsx:69
 msgid "Describe Your Page"
 msgstr "Opíšte svoju stránku"
 
 #. translators: %s: The site title
-#: public/build/extendify-page-creator-c6065d168ab1f7c67158.js:7
+#: public/build/extendify-page-creator-6d8b3f0e0ada07c15f72.js:7
 #: src/PageCreator/pages/Dashboard.jsx:88
 #, js-format
 msgid "Site Description for %s"
 msgstr "Popis stránky pre %s"
 
-#: public/build/extendify-page-creator-c6065d168ab1f7c67158.js:7
+#: public/build/extendify-page-creator-6d8b3f0e0ada07c15f72.js:7
 #: src/PageCreator/pages/Dashboard.jsx:91
 msgid "Site Description"
 msgstr "Popis webovej stránky"
 
-#: public/build/extendify-page-creator-c6065d168ab1f7c67158.js:7
+#: public/build/extendify-page-creator-6d8b3f0e0ada07c15f72.js:7
 #: src/PageCreator/pages/Dashboard.jsx:94
 msgid "This is the site description with all its ups and downs."
 msgstr "Toto je popis webovej stránky so všetkými jej výhodami a nevýhodami."
 
-#: public/build/extendify-page-creator-c6065d168ab1f7c67158.js:7
+#: public/build/extendify-page-creator-6d8b3f0e0ada07c15f72.js:7
 #: src/PageCreator/pages/Dashboard.jsx:124
 msgid "Generate Page"
 msgstr "Generovať stránku"
@@ -3280,17 +3282,17 @@ msgstr "Vytváranie vlastného rozloženia..."
 msgid "Writing custom content..."
 msgstr "Písanie vlastného obsahu..."
 
-#: public/build/extendify-page-creator-c6065d168ab1f7c67158.js:7
+#: public/build/extendify-page-creator-6d8b3f0e0ada07c15f72.js:7
 #: src/PageCreator/components/Modal.jsx:197
 msgid "AI Page Creator"
 msgstr "Tvorca stránok AI"
 
-#: public/build/extendify-page-creator-c6065d168ab1f7c67158.js:7
+#: public/build/extendify-page-creator-6d8b3f0e0ada07c15f72.js:7
 #: src/PageCreator/components/Modal.jsx:95
 msgid "Page added"
 msgstr "Stránka pridaná"
 
-#: public/build/extendify-page-creator-c6065d168ab1f7c67158.js:7
+#: public/build/extendify-page-creator-6d8b3f0e0ada07c15f72.js:7
 #: src/PageCreator/components/Modal.jsx:101
 msgid "Failed to add page"
 msgstr "Nepodarilo sa pridať stránku"
@@ -3335,7 +3337,9 @@ msgstr "Napr. Osobný finančný blog s odbornými tipmi na rozpočtovanie, inve
 msgid "E.g., A free ebook packed with actionable productivity tips and strategies to help you stay focused, manage your time effectively, and achieve your goals."
 msgstr "Napr. bezplatná e-kniha plná praktických tipov a stratégií na zvýšenie produktivity, ktoré vám pomôžu zostať sústredený, efektívne riadiť čas a dosiahnuť vaše ciele."
 
+#: public/build/extendify-auto-launch-b5c459e24210e13f67d2.js:52
 #: public/build/extendify-launch-169f4581091a2b7e786b.js:8
+#: src/AutoLaunch/components/DescriptionGathering.jsx:142
 #: src/Launch/pages/SiteInformation.jsx:204
 msgid "E.g., A personal photography portfolio featuring a collection of landscape, portrait, and street photography, capturing moments from around the world."
 msgstr "Napr. osobné fotografické portfólio s kolekciou krajinnej, portrétnej a pouličnej fotografie, zachytávajúce momenty z celého sveta."
@@ -3395,42 +3399,42 @@ msgstr "Povedzte nám o vašej webovej stránke"
 msgid "Share your vision, and we'll craft a landing page that's perfectly tailored to your needs, ready to launch in no time. Let's begin by learning more about what you're building."
 msgstr "Podeľte sa o svoju víziu a my vytvoríme vstupnú stránku presne na mieru vašim potrebám, pripravenú na rýchle spustenie. Začnime tým, že sa dozvieme viac o tom, čo budujete."
 
-#: public/build/extendify-agent-47ce1ec36e515e89dc80.js:18
+#: public/build/extendify-agent-9d1c6defa5e8b1930355.js:18
 #: public/build/extendify-help-center-079e40452a8cd0a1b4a2.js:4
 #: src/Agent/tours/page-creator.js:30
 #: src/HelpCenter/tours/page-creator.js:30
 msgid "Press here to get started with your AI Page Generator."
 msgstr "Stlačte tu pre začatie s vaším AI generátorom stránok."
 
-#: public/build/extendify-agent-47ce1ec36e515e89dc80.js:18
+#: public/build/extendify-agent-9d1c6defa5e8b1930355.js:18
 #: public/build/extendify-help-center-079e40452a8cd0a1b4a2.js:4
 #: src/Agent/tours/page-creator.js:53
 #: src/HelpCenter/tours/page-creator.js:53
 msgid "Page description"
 msgstr "Popis stránky"
 
-#: public/build/extendify-agent-47ce1ec36e515e89dc80.js:18
+#: public/build/extendify-agent-9d1c6defa5e8b1930355.js:18
 #: public/build/extendify-help-center-079e40452a8cd0a1b4a2.js:4
 #: src/Agent/tours/page-creator.js:54
 #: src/HelpCenter/tours/page-creator.js:54
 msgid "Write a description of the page you want to create. Be as detailed as you like. We will create a page based on this description."
 msgstr "Napíšte popis stránky, ktorú chcete vytvoriť. Buďte čo najpodrobnejší. Na základe tohto popisu vytvoríme stránku."
 
-#: public/build/extendify-agent-47ce1ec36e515e89dc80.js:18
+#: public/build/extendify-agent-9d1c6defa5e8b1930355.js:18
 #: public/build/extendify-help-center-079e40452a8cd0a1b4a2.js:4
 #: src/Agent/tours/page-creator.js:82
 #: src/HelpCenter/tours/page-creator.js:82
 msgid "If needed, update your site description here. We use this to add additional context about your website."
 msgstr "Ak je to potrebné, aktualizujte tu popis vašej webovej stránky. Používame to na pridanie ďalšieho kontextu o vašej webovej stránke."
 
-#: public/build/extendify-agent-47ce1ec36e515e89dc80.js:18
+#: public/build/extendify-agent-9d1c6defa5e8b1930355.js:18
 #: public/build/extendify-help-center-079e40452a8cd0a1b4a2.js:4
 #: src/Agent/tours/page-creator.js:105
 #: src/HelpCenter/tours/page-creator.js:105
 msgid "Generate your page"
 msgstr "Vytvorte svoju stránku"
 
-#: public/build/extendify-agent-47ce1ec36e515e89dc80.js:18
+#: public/build/extendify-agent-9d1c6defa5e8b1930355.js:18
 #: public/build/extendify-help-center-079e40452a8cd0a1b4a2.js:4
 #: src/Agent/tours/page-creator.js:106
 #: src/HelpCenter/tours/page-creator.js:106
@@ -3467,12 +3471,12 @@ msgstr "Nepodarilo sa nainštalovať plugin"
 msgid "Failed to activate the plugin"
 msgstr "Nepodarilo sa aktivovať plugin"
 
-#: public/build/extendify-page-creator-c6065d168ab1f7c67158.js:7
+#: public/build/extendify-page-creator-6d8b3f0e0ada07c15f72.js:7
 #: src/PageCreator/pages/Dashboard.jsx:103
 msgid "Allow plugins to be installed for advanced page features"
 msgstr "Povoliť inštaláciu pluginov pre pokročilé funkcie stránky"
 
-#: public/build/extendify-page-creator-c6065d168ab1f7c67158.js:7
+#: public/build/extendify-page-creator-6d8b3f0e0ada07c15f72.js:7
 #: src/PageCreator/pages/GeneratingPage.jsx:43
 msgid "Processing patterns and installing required plugins..."
 msgstr "Spracovanie vzorov a inštalácia požadovaných pluginov..."
@@ -3498,38 +3502,38 @@ msgstr "Hebrejčina"
 msgid "Edit text on this page"
 msgstr "Upraviť text na tejto stránke"
 
-#: public/build/extendify-agent-47ce1ec36e515e89dc80.js:74
+#: public/build/extendify-agent-9d1c6defa5e8b1930355.js:74
 #: src/Agent/hooks/useThemeVariations.js:17
 msgid "Failed to fetch theme variations."
 msgstr "Nepodarilo sa načítať variácie témy."
 
-#: public/build/extendify-agent-47ce1ec36e515e89dc80.js:74
+#: public/build/extendify-agent-9d1c6defa5e8b1930355.js:74
 #: src/Agent/components/redirects/RedirectThemeVariations.jsx:8
 msgid "Hey there! It looks like you are trying to change your theme colors, but you are not on a page where we can do that."
 msgstr "Ahoj! Vyzerá to, že sa snažíte zmeniť farby témy, ale nie ste na stránke, kde to môžeme urobiť."
 
-#: public/build/extendify-agent-47ce1ec36e515e89dc80.js:74
-#: public/build/extendify-agent-47ce1ec36e515e89dc80.js:82
+#: public/build/extendify-agent-9d1c6defa5e8b1930355.js:74
+#: public/build/extendify-agent-9d1c6defa5e8b1930355.js:82
 #: src/Agent/components/redirects/RedirectFontsVariations.jsx:10
 #: src/Agent/components/redirects/RedirectThemeVariations.jsx:15
 #: src/Agent/workflows/theme/components/Redirect.jsx:10
 msgid "Suggestion:"
 msgstr "Návrh:"
 
-#: public/build/extendify-agent-47ce1ec36e515e89dc80.js:1
-#: public/build/extendify-agent-47ce1ec36e515e89dc80.js:16
-#: public/build/extendify-agent-47ce1ec36e515e89dc80.js:18
-#: public/build/extendify-agent-47ce1ec36e515e89dc80.js:21
-#: public/build/extendify-agent-47ce1ec36e515e89dc80.js:24
-#: public/build/extendify-agent-47ce1ec36e515e89dc80.js:27
-#: public/build/extendify-agent-47ce1ec36e515e89dc80.js:30
-#: public/build/extendify-agent-47ce1ec36e515e89dc80.js:33
-#: public/build/extendify-agent-47ce1ec36e515e89dc80.js:50
-#: public/build/extendify-agent-47ce1ec36e515e89dc80.js:54
-#: public/build/extendify-agent-47ce1ec36e515e89dc80.js:64
-#: public/build/extendify-agent-47ce1ec36e515e89dc80.js:70
-#: public/build/extendify-agent-47ce1ec36e515e89dc80.js:76
-#: public/build/extendify-agent-47ce1ec36e515e89dc80.js:82
+#: public/build/extendify-agent-9d1c6defa5e8b1930355.js:1
+#: public/build/extendify-agent-9d1c6defa5e8b1930355.js:16
+#: public/build/extendify-agent-9d1c6defa5e8b1930355.js:18
+#: public/build/extendify-agent-9d1c6defa5e8b1930355.js:21
+#: public/build/extendify-agent-9d1c6defa5e8b1930355.js:24
+#: public/build/extendify-agent-9d1c6defa5e8b1930355.js:27
+#: public/build/extendify-agent-9d1c6defa5e8b1930355.js:30
+#: public/build/extendify-agent-9d1c6defa5e8b1930355.js:33
+#: public/build/extendify-agent-9d1c6defa5e8b1930355.js:50
+#: public/build/extendify-agent-9d1c6defa5e8b1930355.js:54
+#: public/build/extendify-agent-9d1c6defa5e8b1930355.js:64
+#: public/build/extendify-agent-9d1c6defa5e8b1930355.js:70
+#: public/build/extendify-agent-9d1c6defa5e8b1930355.js:76
+#: public/build/extendify-agent-9d1c6defa5e8b1930355.js:82
 #: src/Agent/components/ChatInput.jsx:222
 #: src/Agent/components/ImageUploader.jsx:189
 #: src/Agent/icons.jsx:214
@@ -3541,9 +3545,9 @@ msgstr "Návrh:"
 #: src/Agent/workflows/content/components/UpdatePostStatusConfirm.jsx:44
 #: src/Agent/workflows/plugins/components/InstallPlugin.jsx:165
 #: src/Agent/workflows/settings/components/UpdateSettingConfirm.jsx:55
+#: src/Agent/workflows/theme/components/change-site-design/SelectSiteDesign.jsx:363
 #: src/Agent/workflows/theme/components/SelectAnimation.jsx:171
 #: src/Agent/workflows/theme/components/SelectGeneratedPalette.jsx:183
-#: src/Agent/workflows/theme/components/SelectSiteDesign.jsx:533
 #: src/Agent/workflows/theme/components/SelectSiteVibes.jsx:129
 #: src/Agent/workflows/theme/components/SelectThemeFontsVariation.jsx:97
 #: src/Agent/workflows/theme/components/SelectThemeVariation.jsx:111
@@ -3551,9 +3555,9 @@ msgstr "Návrh:"
 msgid "Cancel"
 msgstr "Zrušiť"
 
-#: public/build/extendify-agent-47ce1ec36e515e89dc80.js:18
-#: public/build/extendify-agent-47ce1ec36e515e89dc80.js:24
-#: public/build/extendify-agent-47ce1ec36e515e89dc80.js:33
+#: public/build/extendify-agent-9d1c6defa5e8b1930355.js:18
+#: public/build/extendify-agent-9d1c6defa5e8b1930355.js:24
+#: public/build/extendify-agent-9d1c6defa5e8b1930355.js:33
 #: src/Agent/workflows/block-selector/components/UpdateBlockConfirm.jsx:107
 #: src/Agent/workflows/block-selector/components/UpdateImageConfirm.jsx:159
 #: src/Agent/workflows/content/components/UpdatePostConfirm.jsx:40
@@ -3561,134 +3565,134 @@ msgstr "Zrušiť"
 msgid "The agent has made the changes in the browser. Please review and confirm."
 msgstr "Agent vykonal zmeny v prehliadači. Skontrolujte a potvrďte."
 
-#: public/build/extendify-agent-47ce1ec36e515e89dc80.js:18
+#: public/build/extendify-agent-9d1c6defa5e8b1930355.js:18
 #: src/Agent/tours/library-tour.js:7
 msgid "Tour the design library"
 msgstr "Prehliadka knižnice dizajnov"
 
-#: public/build/extendify-agent-47ce1ec36e515e89dc80.js:18
+#: public/build/extendify-agent-9d1c6defa5e8b1930355.js:18
 #: src/Agent/tours/page-creator.js:7
 msgid "Learn about the AI Page Generator"
 msgstr "Zistite viac o generátore stránok AI"
 
-#: public/build/extendify-agent-47ce1ec36e515e89dc80.js:18
+#: public/build/extendify-agent-9d1c6defa5e8b1930355.js:18
 #: src/Agent/tours/page-editor.js:14
 msgid "Tour the page editor"
 msgstr "Prehliadka editora stránky"
 
-#: public/build/extendify-agent-47ce1ec36e515e89dc80.js:18
+#: public/build/extendify-agent-9d1c6defa5e8b1930355.js:18
 #: src/Agent/tours/plugin-install.js:6
 msgid "See how to install a plugin"
 msgstr "Pozrite si, ako nainštalovať plugin"
 
-#: public/build/extendify-agent-47ce1ec36e515e89dc80.js:18
+#: public/build/extendify-agent-9d1c6defa5e8b1930355.js:18
 #: src/Agent/tours/plugin-management.js:6
 msgid "Learn how to manage plugins"
 msgstr "Naučte sa spravovať pluginy"
 
-#: public/build/extendify-agent-47ce1ec36e515e89dc80.js:18
+#: public/build/extendify-agent-9d1c6defa5e8b1930355.js:18
 #: src/Agent/tours/site-assistant.js:6
 msgid "Tour the Site Assistant"
 msgstr "Prehliadka asistenta stránky"
 
-#: public/build/extendify-agent-47ce1ec36e515e89dc80.js:18
+#: public/build/extendify-agent-9d1c6defa5e8b1930355.js:18
 #: src/Agent/tours/users-screen.js:6
 msgid "Tour the Users screen"
 msgstr "Prehliadka obrazovky používateľov"
 
-#: public/build/extendify-agent-47ce1ec36e515e89dc80.js:1
+#: public/build/extendify-agent-9d1c6defa5e8b1930355.js:1
 #: src/Agent/components/ChatInput.jsx:176
 msgid "Ask anything"
 msgstr "Spýtajte sa čokoľvek"
 
-#: public/build/extendify-agent-47ce1ec36e515e89dc80.js:1
+#: public/build/extendify-agent-9d1c6defa5e8b1930355.js:1
 #: src/Agent/components/ChatInput.jsx:233
 msgid "Send message"
 msgstr "Odoslať správu"
 
-#: public/build/extendify-agent-47ce1ec36e515e89dc80.js:4
+#: public/build/extendify-agent-9d1c6defa5e8b1930355.js:4
 #: src/Agent/components/ScrollDownButton.jsx:22
 msgid "Scroll down"
 msgstr "Posunúť dole"
 
-#: public/build/extendify-agent-47ce1ec36e515e89dc80.js:1
+#: public/build/extendify-agent-9d1c6defa5e8b1930355.js:1
 #: src/Agent/components/messages/StatusMessage.jsx:15
 msgid "Working on it..."
 msgstr "Pracuje sa na tom..."
 
-#: public/build/extendify-agent-47ce1ec36e515e89dc80.js:1
+#: public/build/extendify-agent-9d1c6defa5e8b1930355.js:1
 #: src/Agent/components/messages/StatusMessage.jsx:21
 msgid "Gathering data..."
 msgstr "Zbieranie dát..."
 
-#: public/build/extendify-agent-47ce1ec36e515e89dc80.js:1
+#: public/build/extendify-agent-9d1c6defa5e8b1930355.js:1
 #: src/Agent/components/messages/StatusMessage.jsx:22
 msgid "Analyzing..."
 msgstr "Analyzuje sa..."
 
-#: public/build/extendify-agent-47ce1ec36e515e89dc80.js:1
+#: public/build/extendify-agent-9d1c6defa5e8b1930355.js:1
 #: src/Agent/components/messages/StatusMessage.jsx:23
 #: src/Agent/components/messages/StatusMessage.jsx:24
 msgid "Canceled"
 msgstr "Zrušené"
 
-#: public/build/extendify-agent-47ce1ec36e515e89dc80.js:1
+#: public/build/extendify-agent-9d1c6defa5e8b1930355.js:1
 #: src/Agent/components/messages/StatusMessage.jsx:25
 msgid "Usage limit reached"
 msgstr "Dosiahnutý limit používania"
 
-#: public/build/extendify-agent-47ce1ec36e515e89dc80.js:1
+#: public/build/extendify-agent-9d1c6defa5e8b1930355.js:1
 #: src/Agent/components/messages/StatusMessage.jsx:26
 msgid "Usage limit restored"
 msgstr "Limit používania obnovený"
 
-#: public/build/extendify-agent-47ce1ec36e515e89dc80.js:1
+#: public/build/extendify-agent-9d1c6defa5e8b1930355.js:1
 #: src/Agent/components/messages/StatusMessage.jsx:102
 msgid "Workflow completed successfully"
 msgstr "Pracovný postup bol úspešne dokončený"
 
-#: public/build/extendify-agent-47ce1ec36e515e89dc80.js:1
+#: public/build/extendify-agent-9d1c6defa5e8b1930355.js:1
 #: src/Agent/components/messages/WorkflowComponent.jsx:17
 msgid "Component not available"
 msgstr "Komponent nie je k dispozícii"
 
 #. translators: This is for when a component doesn't exist
-#: public/build/extendify-agent-47ce1ec36e515e89dc80.js:4
+#: public/build/extendify-agent-9d1c6defa5e8b1930355.js:4
 #: src/Agent/components/messages/WorkflowComponent.jsx:22
 msgid "It may have been removed or is not available for your account."
 msgstr "Mohlo byť odstránené alebo nie je dostupné pre váš účet."
 
-#: public/build/extendify-agent-47ce1ec36e515e89dc80.js:4
+#: public/build/extendify-agent-9d1c6defa5e8b1930355.js:4
 #: src/Agent/components/messages/WorkflowMessage.jsx:15
 msgid "What's next? Would you like to do something else?"
 msgstr "Čo ďalej? Chcete urobiť niečo iné?"
 
-#: public/build/extendify-agent-47ce1ec36e515e89dc80.js:1
+#: public/build/extendify-agent-9d1c6defa5e8b1930355.js:1
 #: src/Agent/components/layouts/DragResizeLayout.jsx:113
 #: src/Agent/components/layouts/SidebarLayout.jsx:114
 msgid "Close window"
 msgstr "Zavrieť okno"
 
-#: public/build/extendify-agent-47ce1ec36e515e89dc80.js:1
+#: public/build/extendify-agent-9d1c6defa5e8b1930355.js:1
 #: src/Agent/components/layouts/DragResizeLayout.jsx:154
 msgid "Drag to move"
 msgstr "Potiahnutím presuniete"
 
 #. translators: %s is a human-readable time difference, e.g. "2 hours from now"
-#: public/build/extendify-agent-47ce1ec36e515e89dc80.js:7
+#: public/build/extendify-agent-9d1c6defa5e8b1930355.js:7
 #: src/Agent/components/messages/UsageMessage.jsx:30
 #, js-format
 msgid "You have reached your daily messages limit. Your limit will reset in %s."
 msgstr "Dosiahli ste denný limit správ. Váš limit sa zresetuje o %s."
 
-#: public/build/extendify-agent-47ce1ec36e515e89dc80.js:13
+#: public/build/extendify-agent-9d1c6defa5e8b1930355.js:13
 #: src/Agent/components/buttons/AdminBar.jsx:41
 #: src/Agent/components/buttons/Mobile.jsx:38
 #: src/Agent/components/buttons/PostEditor.jsx:47
 msgid "Open Agent"
 msgstr "Otvoriť agenta"
 
-#: public/build/extendify-agent-47ce1ec36e515e89dc80.js:13
+#: public/build/extendify-agent-9d1c6defa5e8b1930355.js:13
 #: src/Agent/components/buttons/AdminBar.jsx:45
 #: src/Agent/components/buttons/Mobile.jsx:46
 #: src/Agent/components/buttons/PostEditor.jsx:54
@@ -3796,7 +3800,7 @@ msgstr "Odtiaľto môžete prispôsobiť rozmery, odsadenie a okraje použité p
 msgid "Take the welcome tour"
 msgstr "Absolvujte uvítaciu prehliadku"
 
-#: public/build/extendify-agent-47ce1ec36e515e89dc80.js:13
+#: public/build/extendify-agent-9d1c6defa5e8b1930355.js:13
 #: src/Agent/components/buttons/Mobile.jsx:49
 msgid "How can we help you today?"
 msgstr "Ako vám môžeme dnes pomôcť?"
@@ -3811,9 +3815,9 @@ msgstr "Skontrolujme vaše odporúčania založené na AI"
 msgid "Using the details you provided, our AI suggested the best settings for your site. Take a quick look and confirm everything looks right before moving on."
 msgstr "Na základe poskytnutých údajov naša AI navrhla najlepšie nastavenia pre vašu webovú stránku. Rýchlo si ich prezrite a potvrďte, že všetko vyzerá správne, predtým než budete pokračovať."
 
-#: public/build/extendify-auto-launch-1871df5815ba8920098f.js:40
+#: public/build/extendify-auto-launch-b5c459e24210e13f67d2.js:40
 #: public/build/extendify-launch-169f4581091a2b7e786b.js:14
-#: src/AutoLaunch/hooks/useCreateSite.js:323
+#: src/AutoLaunch/hooks/useCreateSite.js:352
 #: src/Launch/pages/CreatingSite.jsx:239
 msgid "Footer Navigation"
 msgstr "Navigácia v pätičke"
@@ -3833,67 +3837,67 @@ msgstr "Popis k tlačidlu na úpravu stránky"
 msgid "Welcome to your new site! When you're ready, press here to edit this page."
 msgstr "Vitajte na vašej novej webovej stránke! Keď budete pripravení, stlačte sem pre úpravu tejto stránky."
 
-#: public/build/extendify-agent-47ce1ec36e515e89dc80.js:7
+#: public/build/extendify-agent-9d1c6defa5e8b1930355.js:7
 #: src/Agent/components/PageDocument.jsx:25
 msgid "Remove"
 msgstr "Odstrániť"
 
-#: public/build/extendify-agent-47ce1ec36e515e89dc80.js:1
+#: public/build/extendify-agent-9d1c6defa5e8b1930355.js:1
 #: src/Agent/components/DOMHighlighter.jsx:266
 msgid "Remove highlight"
 msgstr "Odstrániť zvýraznenie"
 
-#: public/build/extendify-agent-47ce1ec36e515e89dc80.js:13
+#: public/build/extendify-agent-9d1c6defa5e8b1930355.js:13
 #: src/Agent/Agent.jsx:568
 msgid "AI Agent can make mistakes. Check changes before saving."
 msgstr "AI Agent môže robiť chyby. Skontrolujte zmeny pred uložením."
 
-#: public/build/extendify-agent-47ce1ec36e515e89dc80.js:27
-#: public/build/extendify-agent-47ce1ec36e515e89dc80.js:30
+#: public/build/extendify-agent-9d1c6defa5e8b1930355.js:27
+#: public/build/extendify-agent-9d1c6defa5e8b1930355.js:30
 #: src/Agent/workflows/content/components/UpdatePostStatusConfirm.jsx:51
 #: src/Agent/workflows/settings/components/UpdateSettingConfirm.jsx:62
 msgid "Confirm"
 msgstr "Potvrdiť"
 
-#: public/build/extendify-agent-47ce1ec36e515e89dc80.js:1
+#: public/build/extendify-agent-9d1c6defa5e8b1930355.js:1
 #: src/Agent/components/messages/StatusMessage.jsx:13
 msgid "Thinking..."
 msgstr "Premýšľam..."
 
-#: public/build/extendify-auto-launch-1871df5815ba8920098f.js:57
+#: public/build/extendify-auto-launch-b5c459e24210e13f67d2.js:57
 #: public/build/extendify-launch-169f4581091a2b7e786b.js:8
 #: src/AutoLaunch/LaunchPage.jsx:83
 #: src/Launch/components/PageControl.jsx:328
 msgid "WP Admin Dashboard"
 msgstr "WP Admin-nástenka"
 
-#: public/build/extendify-agent-47ce1ec36e515e89dc80.js:68
+#: public/build/extendify-agent-9d1c6defa5e8b1930355.js:68
 #: src/Agent/hooks/useThemeFontsVariations.js:29
 msgid "Failed to fetch theme font variations."
 msgstr "Nepodarilo sa načítať variácie písiem témy."
 
-#: public/build/extendify-agent-47ce1ec36e515e89dc80.js:68
+#: public/build/extendify-agent-9d1c6defa5e8b1930355.js:68
 #: src/Agent/workflows/theme/change-theme-fonts-variation.js:13
 msgid "Hey there! It looks like you are trying to change your theme fonts, but you are not on a page where we can do that."
 msgstr "Ahoj! Zdá sa, že sa pokúšate zmeniť písma témy, ale nie ste na stránke, kde to môžeme urobiť."
 
 #. translators: A chat message shown to the user
-#: public/build/extendify-agent-47ce1ec36e515e89dc80.js:70
+#: public/build/extendify-agent-9d1c6defa5e8b1930355.js:70
 #: src/Agent/workflows/theme/components/SelectThemeFontsVariation.jsx:58
 msgid "Loading font variations..."
 msgstr "Načítavam varianty písma..."
 
-#: public/build/extendify-agent-47ce1ec36e515e89dc80.js:1
+#: public/build/extendify-agent-9d1c6defa5e8b1930355.js:1
 #: src/Agent/components/ChatTools.jsx:35
 msgid "Select"
 msgstr "Vybrať"
 
-#: public/build/extendify-agent-47ce1ec36e515e89dc80.js:1
+#: public/build/extendify-agent-9d1c6defa5e8b1930355.js:1
 #: src/Agent/components/ChatInput.jsx:172
 msgid "What do you want to change in the selected content?"
 msgstr "Čo chcete zmeniť vo vybranom obsahu?"
 
-#: public/build/extendify-agent-47ce1ec36e515e89dc80.js:7
+#: public/build/extendify-agent-9d1c6defa5e8b1930355.js:7
 #: src/Agent/components/PageDocument.jsx:12
 msgid "Selected content"
 msgstr "Vybraný obsah"
@@ -3906,86 +3910,86 @@ msgstr "Publikovať túto stránku"
 msgid "Unpublish this page"
 msgstr "Zrušiť zverejnenie tejto stránky"
 
-#: public/build/extendify-agent-47ce1ec36e515e89dc80.js:16
-#: public/build/extendify-agent-47ce1ec36e515e89dc80.js:24
+#: public/build/extendify-agent-9d1c6defa5e8b1930355.js:16
+#: public/build/extendify-agent-9d1c6defa5e8b1930355.js:24
 #: src/Agent/components/ImageUploader.jsx:204
 #: src/Agent/workflows/block-selector/components/UpdateImageConfirm.jsx:13
 msgid "Open Media Library"
 msgstr "Otvoriť Knižnicu multimédií"
 
-#: public/build/extendify-agent-47ce1ec36e515e89dc80.js:24
+#: public/build/extendify-agent-9d1c6defa5e8b1930355.js:24
 #: src/Agent/workflows/block-selector/components/UpdateImageConfirm.jsx:107
 #, js-format
 msgid "The agent has requested the media library. Press \"%s\" to upload or select an image."
 msgstr "Agent požiadal o knižnicu multimédií. Stlačte \"%s\" na nahratie alebo výber obrázka."
 
-#: public/build/extendify-agent-47ce1ec36e515e89dc80.js:24
+#: public/build/extendify-agent-9d1c6defa5e8b1930355.js:24
 #: src/Agent/workflows/block-selector/components/UpdateImageConfirm.jsx:124
 msgid "Select or Upload Image"
 msgstr "Vybrať alebo nahrať obrázok"
 
-#: public/build/extendify-agent-47ce1ec36e515e89dc80.js:18
+#: public/build/extendify-agent-9d1c6defa5e8b1930355.js:18
 #: src/Agent/workflows/block-selector/components/GenerateImageConfirm.jsx:120
 msgid "An unknown error occurred."
 msgstr "Vyskytla sa neznáma chyba."
 
-#: public/build/extendify-agent-47ce1ec36e515e89dc80.js:21
+#: public/build/extendify-agent-9d1c6defa5e8b1930355.js:21
 #: src/Agent/workflows/block-selector/components/GenerateImageConfirm.jsx:227
 msgid "Image generated successfully!"
 msgstr "Obrázok bol úspešne vygenerovaný!"
 
 #. translators: %1$s is the number of credits remaining, %2$s is the total credits
-#: public/build/extendify-agent-47ce1ec36e515e89dc80.js:24
+#: public/build/extendify-agent-9d1c6defa5e8b1930355.js:24
 #: src/Agent/workflows/block-selector/components/GenerateImageConfirm.jsx:260
 #, js-format
 msgid "You have %1$s of %2$s daily image credits remaining."
 msgstr "Zostáva vám %1$s z %2$s denných kreditov na obrázky."
 
-#: public/build/extendify-agent-47ce1ec36e515e89dc80.js:24
+#: public/build/extendify-agent-9d1c6defa5e8b1930355.js:24
 #: src/Agent/workflows/content/components/GeneratePageResult.jsx:19
 msgid "The agent has finished creating your page. Press take me there to visit your new page or dismiss to remove this notice."
 msgstr "Agent dokončil vytváranie vašej stránky. Stlačte \"zobraziť\", aby ste navštívili novú stránku, alebo \"zavrieť\", aby ste odstránili toto oznámenie."
 
-#: public/build/extendify-page-creator-c6065d168ab1f7c67158.js:4
+#: public/build/extendify-page-creator-6d8b3f0e0ada07c15f72.js:4
 #: src/PageCreator/pages/Dashboard.jsx:72
 msgid "E.g., Create an \"About Us\" page highlighting our story, mission, values and team overview."
 msgstr "Napr. vytvorte stránku \"O nás\", ktorá zvýrazní náš príbeh, poslanie, hodnoty a prehľad tímu."
 
-#: public/build/extendify-agent-47ce1ec36e515e89dc80.js:18
+#: public/build/extendify-agent-9d1c6defa5e8b1930355.js:18
 #: src/Agent/workflows/block-selector/components/GenerateImageConfirm.jsx:115
 msgid "No image returned"
 msgstr "Neboli vrátené žiadne obrázky"
 
-#: public/build/extendify-agent-47ce1ec36e515e89dc80.js:1
+#: public/build/extendify-agent-9d1c6defa5e8b1930355.js:1
 #: src/Agent/components/messages/StatusMessage.jsx:17
 msgid "Formulating a response..."
 msgstr "Formulujem odpoveď..."
 
-#: public/build/extendify-agent-47ce1ec36e515e89dc80.js:1
+#: public/build/extendify-agent-9d1c6defa5e8b1930355.js:1
 #: src/Agent/components/messages/StatusMessage.jsx:18
 msgid "Reviewing logic..."
 msgstr "Kontrola logiky..."
 
-#: public/build/extendify-agent-47ce1ec36e515e89dc80.js:1
+#: public/build/extendify-agent-9d1c6defa5e8b1930355.js:1
 #: src/Agent/components/layouts/MobileLayout.jsx:63
 msgid "Minimize window"
 msgstr "Minimalizovať okno"
 
-#: public/build/extendify-agent-47ce1ec36e515e89dc80.js:1
+#: public/build/extendify-agent-9d1c6defa5e8b1930355.js:1
 #: src/Agent/components/messages/StatusMessage.jsx:16
 msgid "Interpreting message..."
 msgstr "Interpretácia správy..."
 
-#: public/build/extendify-agent-47ce1ec36e515e89dc80.js:27
+#: public/build/extendify-agent-9d1c6defa5e8b1930355.js:27
 #: src/Agent/workflows/plugins/components/InstallPlugin.jsx:79
 msgid "There was an error installing the plugin. You may try again"
 msgstr "Pri inštalácii pluginu došlo k chybe. Môžete to skúsiť znova"
 
-#: public/build/extendify-agent-47ce1ec36e515e89dc80.js:18
-#: public/build/extendify-agent-47ce1ec36e515e89dc80.js:21
-#: public/build/extendify-agent-47ce1ec36e515e89dc80.js:24
-#: public/build/extendify-agent-47ce1ec36e515e89dc80.js:27
-#: public/build/extendify-agent-47ce1ec36e515e89dc80.js:82
+#: public/build/extendify-agent-9d1c6defa5e8b1930355.js:18
+#: public/build/extendify-agent-9d1c6defa5e8b1930355.js:21
+#: public/build/extendify-agent-9d1c6defa5e8b1930355.js:24
+#: public/build/extendify-agent-9d1c6defa5e8b1930355.js:27
+#: public/build/extendify-agent-9d1c6defa5e8b1930355.js:82
 #: src/Agent/workflows/block-selector/components/GenerateImageConfirm.jsx:244
 #: src/Agent/workflows/block-selector/components/UpdateBlockConfirm.jsx:126
 #: src/Agent/workflows/content/components/UpdatePostConfirm.jsx:60
@@ -3994,22 +3998,22 @@ msgstr "Pri inštalácii pluginu došlo k chybe. Môžete to skúsiť znova"
 msgid "Try Again"
 msgstr "Skúsiť znova"
 
-#: public/build/extendify-agent-47ce1ec36e515e89dc80.js:27
+#: public/build/extendify-agent-9d1c6defa5e8b1930355.js:27
 #: src/Agent/workflows/plugins/components/InstallPlugin.jsx:102
 msgid "Installing plugin..."
 msgstr "Inštalácia pluginu..."
 
-#: public/build/extendify-agent-47ce1ec36e515e89dc80.js:27
+#: public/build/extendify-agent-9d1c6defa5e8b1930355.js:27
 #: src/Agent/workflows/plugins/components/InstallPlugin.jsx:103
 msgid "Activating plugin..."
 msgstr "Aktivácia pluginu..."
 
-#: public/build/extendify-agent-47ce1ec36e515e89dc80.js:27
+#: public/build/extendify-agent-9d1c6defa5e8b1930355.js:27
 #: src/Agent/workflows/plugins/components/InstallPlugin.jsx:115
 msgid "The agent is requesting to install and activate a plugin."
 msgstr "Agent žiada o inštaláciu a aktiváciu pluginu."
 
-#: public/build/extendify-agent-47ce1ec36e515e89dc80.js:30
+#: public/build/extendify-agent-9d1c6defa5e8b1930355.js:30
 #: src/Agent/workflows/plugins/components/InstallPlugin.jsx:152
 msgid "Install Plugin"
 msgstr "Nainštalovať plugin"
@@ -4019,7 +4023,7 @@ msgstr "Nainštalovať plugin"
 msgid "Go through the AI website creation process again to create a new site."
 msgstr "Prejdite procesom vytvárania webovej stránky pomocou AI znova a vytvorte novú stránku."
 
-#: public/build/extendify-auto-launch-1871df5815ba8920098f.js:55
+#: public/build/extendify-auto-launch-b5c459e24210e13f67d2.js:55
 #: public/build/extendify-launch-169f4581091a2b7e786b.js:8
 #: src/AutoLaunch/components/RestartLaunchModal.jsx:172
 #: src/Launch/components/RestartLaunchModal.jsx:206
@@ -4034,62 +4038,62 @@ msgid "By using AI features, you agree with the %1$sTerms of Use and Privacy Pol
 msgstr "Používaním funkcií AI súhlasíte s %1$sPodmienkami používania a Zásadami ochrany osobných údajov%2$s"
 
 #. translators: A chat message shown to the user
-#: public/build/extendify-agent-47ce1ec36e515e89dc80.js:68
+#: public/build/extendify-agent-9d1c6defa5e8b1930355.js:68
 #: src/Agent/workflows/theme/components/SelectThemeFontsVariation.jsx:45
 msgid "We were unable to find any variations for your theme"
 msgstr "Nepodarilo sa nám nájsť žiadne variácie pre vašu tému"
 
 #. translators: This message is shown when the AI agent fails to find a suitable workflow.
-#: public/build/extendify-agent-47ce1ec36e515e89dc80.js:9
+#: public/build/extendify-agent-9d1c6defa5e8b1930355.js:9
 #: src/Agent/Agent.jsx:101
 msgid "Something went wrong while trying to start this request. Please try again."
 msgstr "Pri pokuse o spustenie tejto požiadavky sa niečo pokazilo. Skúste to prosím znova."
 
 #. translators: This message is shown when the AI agent fails to confirm an action.
-#: public/build/extendify-agent-47ce1ec36e515e89dc80.js:11
+#: public/build/extendify-agent-9d1c6defa5e8b1930355.js:11
 #: src/Agent/Agent.jsx:249
 msgid "Sorry, something went wrong attempting to call the tool. Please try again."
 msgstr "Prepáčte, pri pokuse o spustenie nástroja sa vyskytla chyba. Skúste to znova."
 
 #. translators: This message is shown when the AI agent encounters a general error.
-#: public/build/extendify-agent-47ce1ec36e515e89dc80.js:13
+#: public/build/extendify-agent-9d1c6defa5e8b1930355.js:13
 #: src/Agent/Agent.jsx:509
 msgid "Sorry, something went wrong. I tried but wasn't able to do this request. Please try again."
 msgstr "Prepáčte, niečo sa pokazilo. Skúšal som, ale nepodarilo sa mi splniť túto požiadavku. Skúste to prosím znova."
 
 #. translators: A chat message shown to the user
-#: public/build/extendify-agent-47ce1ec36e515e89dc80.js:21
+#: public/build/extendify-agent-9d1c6defa5e8b1930355.js:21
 #: src/Agent/workflows/block-selector/components/GenerateImageConfirm.jsx:169
 #, js-format
 msgid "Error generating image: %s"
 msgstr "Chyba pri generovaní obrázka: %s"
 
 #. translators: %1$s and %2$s are HTML tags. %1$s opens a span with screen-reader-only text, and %2$s closes that span.
-#: public/build/extendify-agent-47ce1ec36e515e89dc80.js:30
+#: public/build/extendify-agent-9d1c6defa5e8b1930355.js:30
 #: src/Agent/workflows/plugins/components/InstallPlugin.jsx:134
 #, js-format
 msgid "Plugin Details %1$s(opens in a new tab)%2$s"
 msgstr "Podrobnosti o plugine %1$s(otvorí sa na novej karte)%2$s"
 
-#: public/build/extendify-agent-47ce1ec36e515e89dc80.js:30
+#: public/build/extendify-agent-9d1c6defa5e8b1930355.js:30
 #: src/Agent/workflows/settings/components/UpdateSettingConfirm.jsx:45
 msgid "Apply this setting change?"
 msgstr "Použiť túto zmenu nastavenia?"
 
 #. translators: "site style" refers to the structural aesthetic style for the site.
-#: public/build/extendify-agent-47ce1ec36e515e89dc80.js:59
+#: public/build/extendify-agent-9d1c6defa5e8b1930355.js:59
 #: src/Agent/workflows/theme/change-site-vibes.js:17
 msgid "Hey there! It looks like you are trying to change your site style, but you are not on a page where we can do that."
 msgstr "Ahoj! Zdá sa, že sa pokúšate zmeniť štýl vašej webovej stránky, ale nie ste na stránke, kde to môžeme urobiť."
 
 #. translators: A chat message shown to the user
-#: public/build/extendify-agent-47ce1ec36e515e89dc80.js:74
+#: public/build/extendify-agent-9d1c6defa5e8b1930355.js:74
 #: src/Agent/workflows/theme/components/SelectThemeVariation.jsx:54
 msgid "We were unable to find any colors for your theme"
 msgstr "Nepodarilo sa nám nájsť žiadne farby pre vašu tému"
 
 #. translators: A chat message shown to the user
-#: public/build/extendify-agent-47ce1ec36e515e89dc80.js:76
+#: public/build/extendify-agent-9d1c6defa5e8b1930355.js:76
 #: src/Agent/workflows/theme/components/SelectThemeVariation.jsx:67
 msgid "Loading available colors..."
 msgstr "Načítavam dostupné farby..."
@@ -4106,7 +4110,7 @@ msgstr "Aplikácia štýlu webovej stránky"
 msgid "Customizing your site style"
 msgstr "Prispôsobenie štýlu vašej webovej stránky"
 
-#: public/build/extendify-agent-47ce1ec36e515e89dc80.js:1
+#: public/build/extendify-agent-9d1c6defa5e8b1930355.js:1
 #: public/build/extendify-assist-page-e98b949ab0c13ba07729.js:10
 #: public/build/extendify-draft-08ba35a8f591ab939cda.js:1
 #: src/Agent/icons.jsx:12
@@ -4115,46 +4119,46 @@ msgstr "Prispôsobenie štýlu vašej webovej stránky"
 msgid "Magic Icon"
 msgstr "Magická ikona"
 
-#: public/build/extendify-agent-47ce1ec36e515e89dc80.js:1
+#: public/build/extendify-agent-9d1c6defa5e8b1930355.js:1
 #: src/Agent/icons.jsx:39
 msgid "Magic Sparkle Animation"
 msgstr "Animácia magického trblietania"
 
-#: public/build/extendify-agent-47ce1ec36e515e89dc80.js:1
+#: public/build/extendify-agent-9d1c6defa5e8b1930355.js:1
 #: public/build/extendify-help-center-079e40452a8cd0a1b4a2.js:1
 #: src/Agent/icons.jsx:113
 #: src/HelpCenter/components/ai-chat/icons.jsx:41
 msgid "Thumb Down Icon"
 msgstr "Ikona palec dole"
 
-#: public/build/extendify-agent-47ce1ec36e515e89dc80.js:1
+#: public/build/extendify-agent-9d1c6defa5e8b1930355.js:1
 #: public/build/extendify-help-center-079e40452a8cd0a1b4a2.js:1
 #: src/Agent/icons.jsx:125
 #: src/HelpCenter/components/ai-chat/icons.jsx:53
 msgid "Thumb Up Icon"
 msgstr "Ikona palec hore"
 
-#: public/build/extendify-agent-47ce1ec36e515e89dc80.js:1
+#: public/build/extendify-agent-9d1c6defa5e8b1930355.js:1
 #: src/Agent/icons.jsx:132
 msgid "Sparkle Icon"
 msgstr "Trblietavá ikona"
 
-#: public/build/extendify-agent-47ce1ec36e515e89dc80.js:1
+#: public/build/extendify-agent-9d1c6defa5e8b1930355.js:1
 #: src/Agent/icons.jsx:147
 msgid "Tool Select Icon"
 msgstr "Nástroj na výber ikony"
 
-#: public/build/extendify-agent-47ce1ec36e515e89dc80.js:1
+#: public/build/extendify-agent-9d1c6defa5e8b1930355.js:1
 #: src/Agent/icons.jsx:179
 msgid "Selected Content Icon"
 msgstr "Ikona vybraného obsahu"
 
-#: public/build/extendify-agent-47ce1ec36e515e89dc80.js:1
+#: public/build/extendify-agent-9d1c6defa5e8b1930355.js:1
 #: src/Agent/components/messages/StatusMessage.jsx:92
 msgid "Success icon"
 msgstr "Ikona úspechu"
 
-#: public/build/extendify-agent-47ce1ec36e515e89dc80.js:1
+#: public/build/extendify-agent-9d1c6defa5e8b1930355.js:1
 #: src/Agent/components/ErrorMessage.jsx:15
 msgid "Error icon"
 msgstr "Ikona chyby"
@@ -4374,7 +4378,7 @@ msgstr "Ikona blogu"
 msgid "Business Icon"
 msgstr "Ikona podnikania"
 
-#: public/build/extendify-auto-launch-1871df5815ba8920098f.js:52
+#: public/build/extendify-auto-launch-b5c459e24210e13f67d2.js:52
 #: public/build/extendify-launch-169f4581091a2b7e786b.js:8
 #: src/AutoLaunch/icons.jsx:87
 #: src/Launch/svg/Checkmark.jsx:15
@@ -4556,19 +4560,14 @@ msgstr "Ikona jazyka"
 msgid "Down Arrow Icon"
 msgstr "Ikona šípky nadol"
 
-#: public/build/extendify-auto-launch-1871df5815ba8920098f.js:52
-#: public/build/extendify-library-47d651124bad74dbba8b.js:1
-#: public/build/extendify-page-creator-c6065d168ab1f7c67158.js:1
+#: public/build/extendify-auto-launch-b5c459e24210e13f67d2.js:52
+#: public/build/extendify-library-46b68847bd85f90eb8b6.js:1
+#: public/build/extendify-page-creator-6d8b3f0e0ada07c15f72.js:1
 #: src/AutoLaunch/icons.jsx:5
-#: src/Library/icons/extendify-logo.jsx:4
+#: src/Library/icons/extendify-logo.jsx:3
 #: src/PageCreator/icons/extendify-logo.jsx:4
 msgid "Extendify Logo"
 msgstr "Logo Extendify"
-
-#: public/build/extendify-page-creator-c6065d168ab1f7c67158.js:1
-#: src/PageCreator/icons/ai-gen.jsx:10
-msgid "AI Generated Page Icon"
-msgstr "Ikona stránky generovaná AI"
 
 #: src/Assist/svg/AllCaughtUp.jsx:12
 msgid "All Caught Up Icon"
@@ -4612,35 +4611,35 @@ msgstr "Vylepšenie webovej stránky"
 msgid "Setting up essential tools"
 msgstr "Nastavenie základných nástrojov"
 
-#: public/build/extendify-agent-47ce1ec36e515e89dc80.js:16
+#: public/build/extendify-agent-9d1c6defa5e8b1930355.js:16
 #: src/Agent/components/ImageUploader.jsx:170
 msgid "Drop images to upload"
 msgstr "Presuňte sem obrázky na nahratie"
 
-#: public/build/extendify-agent-47ce1ec36e515e89dc80.js:21
+#: public/build/extendify-agent-9d1c6defa5e8b1930355.js:21
 #: src/Agent/workflows/block-selector/components/GenerateImageConfirm.jsx:65
 msgid "Failed to save image"
 msgstr "Nepodarilo sa uložiť obrázok"
 
-#: public/build/extendify-agent-47ce1ec36e515e89dc80.js:21
+#: public/build/extendify-agent-9d1c6defa5e8b1930355.js:21
 #: src/Agent/workflows/block-selector/components/GenerateImageConfirm.jsx:183
 #, js-format
 msgid "It looks like you've run out of credits. They'll refresh in %s, so check back then."
 msgstr "Vyzerá to, že vám došli kredity. Obnovia sa za %s, tak sa vráťte neskôr."
 
-#: public/build/extendify-agent-47ce1ec36e515e89dc80.js:21
+#: public/build/extendify-agent-9d1c6defa5e8b1930355.js:21
 #: src/Agent/workflows/block-selector/components/GenerateImageConfirm.jsx:253
 msgid "Saving..."
 msgstr "Ukladá sa..."
 
 #. translators: %1$s is the current page or post status, and %2$s is the updated page or post status.
-#: public/build/extendify-agent-47ce1ec36e515e89dc80.js:27
+#: public/build/extendify-agent-9d1c6defa5e8b1930355.js:27
 #: src/Agent/workflows/content/components/UpdatePostStatusConfirm.jsx:28
 #, js-format
 msgid "Status will change from \"%s\" to \"%s\", please confirm to save."
 msgstr "Status sa zmení z \"%1$s\" na \"%2$s\", potvrďte uloženie."
 
-#: public/build/extendify-agent-47ce1ec36e515e89dc80.js:1
+#: public/build/extendify-agent-9d1c6defa5e8b1930355.js:1
 #: src/Agent/components/ChatInput.jsx:199
 msgid "Message too long"
 msgstr "Správa je príliš dlhá"
@@ -4651,7 +4650,7 @@ msgid "A \"Shop\" page will also be automatically created."
 msgstr "Stránka \"Obchod\" bude tiež automaticky vytvorená"
 
 #. translators: This is a status message. 'Loading' is a verb — the app is currently loading the animation options. It is not referring to 'loading animation' as a compound noun.
-#: public/build/extendify-agent-47ce1ec36e515e89dc80.js:50
+#: public/build/extendify-agent-9d1c6defa5e8b1930355.js:50
 #: src/Agent/workflows/theme/components/SelectAnimation.jsx:117
 msgid "Loading animation options..."
 msgstr "Možnosti načítania animácie..."
@@ -4662,178 +4661,178 @@ msgid "Auto Launch"
 msgstr "Automatické spustenie"
 
 #. translators: This is an error message shown to the user when a network request fails and is being retried
-#: public/build/extendify-auto-launch-1871df5815ba8920098f.js:6
+#: public/build/extendify-auto-launch-b5c459e24210e13f67d2.js:6
 #: src/AutoLaunch/functions/helpers.js:17
 msgid "The network seems unstable. Retrying..."
 msgstr "Sieť sa zdá nestabilná. Opakujem..."
 
 #. translators: this is for a action log UI. Keep it short
-#: public/build/extendify-auto-launch-1871df5815ba8920098f.js:19
-#: src/AutoLaunch/fetchers/get-plugins.js:67
+#: public/build/extendify-auto-launch-b5c459e24210e13f67d2.js:11
+#: src/AutoLaunch/fetchers/get-plugins.js:76
 msgid "Setting up functionality for your website"
 msgstr "Nastavenie funkcií pre vašu webovú stránku"
 
 #. translators: this is for a action log UI. Keep it short
-#: public/build/extendify-auto-launch-1871df5815ba8920098f.js:31
-#: src/AutoLaunch/hooks/useCreateSite.js:196
+#: public/build/extendify-auto-launch-b5c459e24210e13f67d2.js:31
+#: src/AutoLaunch/hooks/useCreateSite.js:222
 msgid "Adding admin configurations"
 msgstr "Pridanie admin nastavení"
 
 #. translators: this is for a action log UI. Keep it short
-#: public/build/extendify-auto-launch-1871df5815ba8920098f.js:33
-#: src/AutoLaunch/hooks/useCreateSite.js:260
+#: public/build/extendify-auto-launch-b5c459e24210e13f67d2.js:33
+#: src/AutoLaunch/hooks/useCreateSite.js:286
 msgid "Installing fonts locally"
 msgstr "Inštalácia fontov lokálne"
 
-#: public/build/extendify-auto-launch-1871df5815ba8920098f.js:35
-#: src/AutoLaunch/hooks/useCreateSite.js:289
+#: public/build/extendify-auto-launch-b5c459e24210e13f67d2.js:35
+#: src/AutoLaunch/hooks/useCreateSite.js:317
 msgid "Working on the navigation"
 msgstr "Pracuje sa na navigácii"
 
 #. translators: this is for a action log UI. Keep it short
-#: public/build/extendify-auto-launch-1871df5815ba8920098f.js:37
-#: src/AutoLaunch/hooks/useCreateSite.js:300
+#: public/build/extendify-auto-launch-b5c459e24210e13f67d2.js:37
+#: src/AutoLaunch/hooks/useCreateSite.js:328
 msgid "Perfecting a landing page"
 msgstr "Vylepšenie vstupnej stránky"
 
 #. translators: this is for a action log UI. Keep it short
-#: public/build/extendify-auto-launch-1871df5815ba8920098f.js:42
-#: src/AutoLaunch/hooks/useCreateSite.js:333
+#: public/build/extendify-auto-launch-b5c459e24210e13f67d2.js:42
+#: src/AutoLaunch/hooks/useCreateSite.js:363
 msgid "Creating pages"
 msgstr "Vytváranie stránok"
 
 #. translators: this is for a action log UI. Keep it short
-#: public/build/extendify-auto-launch-1871df5815ba8920098f.js:50
-#: src/AutoLaunch/hooks/useCreateSite.js:377
+#: public/build/extendify-auto-launch-b5c459e24210e13f67d2.js:50
+#: src/AutoLaunch/hooks/useCreateSite.js:418
 msgid "Setting up your online store"
 msgstr "Nastavenie online obchodu"
 
 #. translators: this is for a action log UI. Keep it short
-#: public/build/extendify-auto-launch-1871df5815ba8920098f.js:52
-#: src/AutoLaunch/hooks/useCreateSite.js:447
+#: public/build/extendify-auto-launch-b5c459e24210e13f67d2.js:52
+#: src/AutoLaunch/hooks/useCreateSite.js:491
 msgid "All done!"
 msgstr "Hotovo!"
 
-#: public/build/extendify-auto-launch-1871df5815ba8920098f.js:52
-#: src/AutoLaunch/hooks/useCreateSite.js:457
+#: public/build/extendify-auto-launch-b5c459e24210e13f67d2.js:52
+#: src/AutoLaunch/hooks/useCreateSite.js:501
 msgid "Something went wrong during the final steps. We will try again but you may need to refresh the page."
 msgstr "Niečo sa pokazilo počas záverečných krokov. Skúsime to znova, ale možno budete musieť obnoviť stránku."
 
-#: public/build/extendify-auto-launch-1871df5815ba8920098f.js:52
-#: src/AutoLaunch/hooks/useCreateSite.js:487
+#: public/build/extendify-auto-launch-b5c459e24210e13f67d2.js:52
+#: src/AutoLaunch/hooks/useCreateSite.js:531
 msgid "Having some trouble with this step. Trying again..."
 msgstr "Vyskytol sa problém s týmto krokom. Skúšam znova..."
 
-#: public/build/extendify-auto-launch-1871df5815ba8920098f.js:52
+#: public/build/extendify-auto-launch-b5c459e24210e13f67d2.js:52
 #: src/AutoLaunch/components/CreatingSite.jsx:94
 msgid "We are experiencing some delays"
 msgstr "Momentálne máme meškania"
 
-#: public/build/extendify-auto-launch-1871df5815ba8920098f.js:52
+#: public/build/extendify-auto-launch-b5c459e24210e13f67d2.js:52
 #: src/AutoLaunch/components/CreatingSite.jsx:97
 msgid "Pausing for a few seconds"
 msgstr "Pozastavenie na niekoľko sekúnd"
 
-#: public/build/extendify-auto-launch-1871df5815ba8920098f.js:52
+#: public/build/extendify-auto-launch-b5c459e24210e13f67d2.js:52
 #: src/AutoLaunch/components/RestartLaunchModal.jsx:115
 msgid "Start Over?"
 msgstr "Začať odznova?"
 
-#: public/build/extendify-auto-launch-1871df5815ba8920098f.js:52
+#: public/build/extendify-auto-launch-b5c459e24210e13f67d2.js:52
 #: src/AutoLaunch/components/RestartLaunchModal.jsx:120
 msgid "It looks like you have been here before. We need to clean up some things before we can continue."
 msgstr "Vyzerá to, že ste tu už boli. Musíme upratať niektoré veci, aby sme mohli pokračovať"
 
 #. translators: %3$s is the number of old pages
-#: public/build/extendify-auto-launch-1871df5815ba8920098f.js:55
+#: public/build/extendify-auto-launch-b5c459e24210e13f67d2.js:55
 #: src/AutoLaunch/components/RestartLaunchModal.jsx:128
 #, js-format
 msgid "%s pages/posts will be deleted."
 msgstr "%s stránok/článkov bude odstránených"
 
-#: public/build/extendify-agent-47ce1ec36e515e89dc80.js:1
-#: public/build/extendify-auto-launch-1871df5815ba8920098f.js:55
+#: public/build/extendify-agent-9d1c6defa5e8b1930355.js:1
+#: public/build/extendify-auto-launch-b5c459e24210e13f67d2.js:55
 #: src/Agent/components/messages/StatusMessage.jsx:20
 #: src/AutoLaunch/components/RestartLaunchModal.jsx:163
 msgid "Processing..."
 msgstr "Spracováva sa..."
 
-#: public/build/extendify-auto-launch-1871df5815ba8920098f.js:57
+#: public/build/extendify-auto-launch-b5c459e24210e13f67d2.js:57
 #: src/AutoLaunch/LaunchPage.jsx:120
 msgid "Describe the website you want to build"
 msgstr "Opíšte webovú stránku, ktorú chcete vytvoriť"
 
-#: public/build/extendify-agent-47ce1ec36e515e89dc80.js:82
+#: public/build/extendify-agent-9d1c6defa5e8b1930355.js:82
 #: src/Agent/workflows/theme/components/SelectGeneratedPalette.jsx:107
 msgid "We were unable to generate color palettes. Please try again."
 msgstr "Nepodarilo sa nám vygenerovať farebné palety. Skúste to znova"
 
 #. translators: vibe in this context is a noun - the feeling of their site design.
-#: public/build/extendify-auto-launch-1871df5815ba8920098f.js:35
-#: src/AutoLaunch/hooks/useCreateSite.js:274
+#: public/build/extendify-auto-launch-b5c459e24210e13f67d2.js:35
+#: src/AutoLaunch/hooks/useCreateSite.js:300
 msgid "Setting the website style"
 msgstr "Nastavenie štýlu webovej stránky"
 
-#: public/build/extendify-agent-47ce1ec36e515e89dc80.js:1
+#: public/build/extendify-agent-9d1c6defa5e8b1930355.js:1
 #: src/Agent/components/OptionsPopover.jsx:78
 msgid "View more options"
 msgstr "Zobraziť viac možností"
 
-#: public/build/extendify-agent-47ce1ec36e515e89dc80.js:1
+#: public/build/extendify-agent-9d1c6defa5e8b1930355.js:1
 #: src/Agent/components/messages/StatusMessage.jsx:118
 msgid "Workflow was canceled"
 msgstr "Pracovný postup bol zrušený"
 
 #. translators: This message show above a UI where the user can select a different animation for their site.
-#: public/build/extendify-agent-47ce1ec36e515e89dc80.js:54
+#: public/build/extendify-agent-9d1c6defa5e8b1930355.js:54
 #: src/Agent/workflows/theme/change-animation.js:16
 msgid "Below you can select a different animation for your site."
 msgstr "Nižšie môžete vybrať inú animáciu pre vašu stránku."
 
 #. translators: This message show above a UI where the user can select a different site style variation for their theme.
-#: public/build/extendify-agent-47ce1ec36e515e89dc80.js:68
+#: public/build/extendify-agent-9d1c6defa5e8b1930355.js:68
 #: src/Agent/workflows/theme/change-site-vibes.js:29
 msgid "Below you can select a different site style variation for your theme."
 msgstr "Nižšie môžete vybrať inú variáciu štýlu pre vašu tému."
 
 #. translators: This message show above a UI where the user can select a different font variation for their theme.
-#: public/build/extendify-agent-47ce1ec36e515e89dc80.js:74
+#: public/build/extendify-agent-9d1c6defa5e8b1930355.js:74
 #: src/Agent/workflows/theme/change-theme-fonts-variation.js:27
 msgid "Below you can select a different font variation for your theme."
 msgstr "Nižšie môžete vybrať inú variáciu písma pre vašu tému."
 
-#: public/build/extendify-agent-47ce1ec36e515e89dc80.js:74
+#: public/build/extendify-agent-9d1c6defa5e8b1930355.js:74
 #: src/Agent/workflows/theme/change-theme-fonts-variation.js:34
 msgid "Updated the theme fonts"
 msgstr "Aktualizované písma témy"
 
-#: public/build/extendify-agent-47ce1ec36e515e89dc80.js:74
+#: public/build/extendify-agent-9d1c6defa5e8b1930355.js:74
 #: src/Agent/workflows/theme/change-theme-fonts-variation.js:35
 msgid "Canceled the theme fonts update"
 msgstr "Aktualizácia fontov témy bola zrušená"
 
 #. translators: This message show above a UI where the user can select a different color variation for their theme.
-#: public/build/extendify-agent-47ce1ec36e515e89dc80.js:82
+#: public/build/extendify-agent-9d1c6defa5e8b1930355.js:82
 #: src/Agent/workflows/theme/change-theme-variation.js:21
 msgid "Below you can select a different color variation for your theme."
 msgstr "Nižšie môžete vybrať inú farebnú variáciu pre vašu tému."
 
-#: public/build/extendify-agent-47ce1ec36e515e89dc80.js:82
+#: public/build/extendify-agent-9d1c6defa5e8b1930355.js:82
 #: src/Agent/workflows/theme/change-theme-variation.js:28
 msgid "Updated the theme color"
 msgstr "Aktualizovaná farba témy"
 
-#: public/build/extendify-agent-47ce1ec36e515e89dc80.js:82
+#: public/build/extendify-agent-9d1c6defa5e8b1930355.js:82
 #: src/Agent/workflows/theme/change-theme-variation.js:29
 msgid "Canceled the theme color update"
 msgstr "Aktualizácia farby témy bola zrušená"
 
-#: public/build/extendify-auto-launch-1871df5815ba8920098f.js:52
+#: public/build/extendify-auto-launch-b5c459e24210e13f67d2.js:52
 #: src/AutoLaunch/components/DescriptionGathering.jsx:191
 msgid "Enhance with AI"
 msgstr "Vylepšiť pomocou AI"
 
-#: public/build/extendify-agent-47ce1ec36e515e89dc80.js:18
+#: public/build/extendify-agent-9d1c6defa5e8b1930355.js:18
 #: src/Agent/state/chat.js:21
 msgid ""
 "#### Your site is ready 🎉\n"
@@ -4843,55 +4842,55 @@ msgstr ""
 "Chcete preskúmať ďalšie farby webu?"
 
 #. translators: this is for a action log UI. Keep it short
-#: public/build/extendify-auto-launch-1871df5815ba8920098f.js:8
+#: public/build/extendify-auto-launch-b5c459e24210e13f67d2.js:27
 #: src/AutoLaunch/fetchers/get-home.js:24
 msgid "Preparing your home page"
 msgstr "Príprava domovskej stránky"
 
 #. translators: this is for a action log UI. Keep it short
-#: public/build/extendify-auto-launch-1871df5815ba8920098f.js:10
+#: public/build/extendify-auto-launch-b5c459e24210e13f67d2.js:25
 #: src/AutoLaunch/fetchers/get-images.js:19
 msgid "Finding the perfect images"
 msgstr "Hľadanie dokonalých obrázkov"
 
 #. translators: this is for a action log UI. Keep it short
-#: public/build/extendify-auto-launch-1871df5815ba8920098f.js:12
+#: public/build/extendify-auto-launch-b5c459e24210e13f67d2.js:19
 #: src/AutoLaunch/fetchers/get-logo.js:28
 msgid "Generating a logo"
 msgstr "Generovanie loga"
 
 #. translators: this is for a action log UI. Keep it short
-#: public/build/extendify-auto-launch-1871df5815ba8920098f.js:14
+#: public/build/extendify-auto-launch-b5c459e24210e13f67d2.js:29
 #: src/AutoLaunch/fetchers/get-pages.js:32
 msgid "Preparing your pages"
 msgstr "Príprava stránok"
 
 #. translators: this is for a action log UI. Keep it short
-#: public/build/extendify-auto-launch-1871df5815ba8920098f.js:16
+#: public/build/extendify-auto-launch-b5c459e24210e13f67d2.js:8
 #: src/AutoLaunch/fetchers/get-plugins.js:32
 msgid "Setting up site functionality"
 msgstr "Nastavenie funkcionality webu"
 
 #. translators: this is for a action log UI. Keep it short
-#: public/build/extendify-auto-launch-1871df5815ba8920098f.js:21
+#: public/build/extendify-auto-launch-b5c459e24210e13f67d2.js:17
 #: src/AutoLaunch/fetchers/get-profile.js:25
 msgid "Creating a site profile"
 msgstr "Vytvorenie profilu webu"
 
 #. translators: this is for a action log UI. Keep it short
-#: public/build/extendify-auto-launch-1871df5815ba8920098f.js:23
+#: public/build/extendify-auto-launch-b5c459e24210e13f67d2.js:23
 #: src/AutoLaunch/fetchers/get-strings.js:19
 msgid "Generating site content ideas"
 msgstr "Generovanie nápadov na obsah webu"
 
 #. translators: this is for a action log UI. Keep it short
-#: public/build/extendify-auto-launch-1871df5815ba8920098f.js:25
+#: public/build/extendify-auto-launch-b5c459e24210e13f67d2.js:21
 #: src/AutoLaunch/fetchers/get-style.js:25
 msgid "Picking the perfect design"
 msgstr "Výber dokonalého dizajnu"
 
 #. translators: No value found message for when a WP setting has no value.
-#: public/build/extendify-agent-47ce1ec36e515e89dc80.js:33
+#: public/build/extendify-agent-9d1c6defa5e8b1930355.js:33
 msgid "No value found"
 msgstr "Nebola nájdená žiadna hodnota"
 
@@ -5091,21 +5090,21 @@ msgid "Latvian"
 msgstr "Lotyšský jazyk"
 
 #: app/Agent/Admin.php:390
-#: public/build/extendify-agent-47ce1ec36e515e89dc80.js:56
+#: public/build/extendify-agent-9d1c6defa5e8b1930355.js:56
 #: src/Agent/workflows/theme/change-site-design.js:37
 msgid "Change website title"
 msgstr "Zmeniť názov webovej stránky"
 
 #. translators: "site style" refers to the structural aesthetic style for the site.
 #: app/Agent/Admin.php:414
-#: public/build/extendify-agent-47ce1ec36e515e89dc80.js:66
+#: public/build/extendify-agent-9d1c6defa5e8b1930355.js:66
 #: src/Agent/workflows/theme/change-site-vibes.js:26
 msgid "Change website style"
 msgstr "Zmeniť štýl webovej stránky"
 
 #. translators: "site animation" refers to the animation style for the current site.
 #: app/Agent/Admin.php:430
-#: public/build/extendify-agent-47ce1ec36e515e89dc80.js:52
+#: public/build/extendify-agent-9d1c6defa5e8b1930355.js:52
 #: src/Agent/workflows/theme/change-animation.js:13
 msgid "Change website animation"
 msgstr "Zmeniť animáciu webovej stránky"
@@ -5167,25 +5166,20 @@ msgid "Create your site now"
 msgstr "Vytvorte svoju webovú stránku teraz"
 
 #. translators: this is for a action log UI. Keep it short
-#: public/build/extendify-auto-launch-1871df5815ba8920098f.js:3
+#: public/build/extendify-auto-launch-b5c459e24210e13f67d2.js:3
 #: src/AutoLaunch/state/launch-data.js:25
 msgid "Booting things up"
 msgstr "Spúšťanie"
 
-#: public/build/extendify-auto-launch-1871df5815ba8920098f.js:52
+#: public/build/extendify-auto-launch-b5c459e24210e13f67d2.js:52
 #: src/AutoLaunch/components/DescriptionGathering.jsx:126
 msgid "Enhancing the website description..."
 msgstr "Vylepšovanie popisu webovej stránky..."
 
-#: public/build/extendify-auto-launch-1871df5815ba8920098f.js:52
-#: src/AutoLaunch/components/DescriptionGathering.jsx:142
-msgid "Ask AI to create a website for a cafe..."
-msgstr "Požiadajte AI, aby vytvorila webovú stránku pre kaviareň..."
-
 #. translators: "theme colors" refers to the color palette variation for the current theme.
 #: app/Agent/Admin.php:398
-#: public/build/extendify-agent-47ce1ec36e515e89dc80.js:56
-#: public/build/extendify-agent-47ce1ec36e515e89dc80.js:80
+#: public/build/extendify-agent-9d1c6defa5e8b1930355.js:56
+#: public/build/extendify-agent-9d1c6defa5e8b1930355.js:80
 #: src/Agent/workflows/theme/change-site-design.js:30
 #: src/Agent/workflows/theme/change-theme-variation.js:18
 msgid "Change website colors"
@@ -5193,13 +5187,13 @@ msgstr "Zmeniť farby webovej stránky"
 
 #. translators: "theme fonts" refers to the font variation for the current theme.
 #: app/Agent/Admin.php:406
-#: public/build/extendify-agent-47ce1ec36e515e89dc80.js:72
+#: public/build/extendify-agent-9d1c6defa5e8b1930355.js:72
 #: src/Agent/workflows/theme/change-theme-fonts-variation.js:24
 msgid "Change website fonts"
 msgstr "Zmeniť písma webovej stránky"
 
 #: app/Agent/Admin.php:438
-#: public/build/extendify-agent-47ce1ec36e515e89dc80.js:56
+#: public/build/extendify-agent-9d1c6defa5e8b1930355.js:56
 #: src/Agent/workflows/theme/change-site-design.js:44
 msgid "Change website logo"
 msgstr "Zmeniť logo webovej stránky"
@@ -5208,41 +5202,41 @@ msgstr "Zmeniť logo webovej stránky"
 msgid "Change website browser icon"
 msgstr "Zmeniť ikonu prehliadača webovej stránky"
 
-#: public/build/extendify-agent-47ce1ec36e515e89dc80.js:4
+#: public/build/extendify-agent-9d1c6defa5e8b1930355.js:4
 #: src/Agent/components/ChatSuggestions.jsx:107
 msgid "Show more"
 msgstr "Zobraziť viac"
 
 #. translators: "site style" refers to the structural aesthetic style for the site.
-#: public/build/extendify-agent-47ce1ec36e515e89dc80.js:59
+#: public/build/extendify-agent-9d1c6defa5e8b1930355.js:59
 #: src/Agent/workflows/theme/components/SelectSiteVibes.jsx:48
 msgid "We were unable to find any website style for your theme."
 msgstr "Nepodarilo sa nám nájsť žiadny štýl webovej stránky pre vašu tému."
 
 #. translators: "site style" refers to the structural aesthetic style for the site.
-#: public/build/extendify-agent-47ce1ec36e515e89dc80.js:64
+#: public/build/extendify-agent-9d1c6defa5e8b1930355.js:64
 #: src/Agent/workflows/theme/components/SelectSiteVibes.jsx:64
 msgid "Loading website style options..."
 msgstr "Načítavajú sa možnosti štýlu webovej stránky..."
 
-#: public/build/extendify-auto-launch-1871df5815ba8920098f.js:52
+#: public/build/extendify-auto-launch-b5c459e24210e13f67d2.js:52
 #: src/AutoLaunch/icons.jsx:97
 msgid "Three bars loading animation"
 msgstr "Animácia načítavania s tromi pruhmi"
 
-#: public/build/extendify-auto-launch-1871df5815ba8920098f.js:52
+#: public/build/extendify-auto-launch-b5c459e24210e13f67d2.js:52
 #: src/AutoLaunch/icons.jsx:193
 msgid "Site creation loading animation"
 msgstr "Animácia načítavania vytvárania stránky"
 
-#: public/build/extendify-auto-launch-1871df5815ba8920098f.js:25
+#: public/build/extendify-auto-launch-b5c459e24210e13f67d2.js:11
 #: src/AutoLaunch/functions/pages.js:127
 #, js-format
 msgid "Adding page: %s"
 msgstr "Pridáva sa stránka: %s"
 
 #. translators: this is the initial message in the agent chat, welcoming the user. Keep it short and friendly and follow the same markdown format and emoji.
-#: public/build/extendify-agent-47ce1ec36e515e89dc80.js:18
+#: public/build/extendify-agent-9d1c6defa5e8b1930355.js:18
 #: src/Agent/state/chat.js:17
 msgid ""
 "#### Your site is ready 🎉\n"
@@ -5251,70 +5245,70 @@ msgstr ""
 "#### Vaša stránka je pripravená 🎉  \n"
 "Chcete preskúmať ďalšie dizajny webových stránok?"
 
-#: public/build/extendify-agent-47ce1ec36e515e89dc80.js:54
-#: src/Agent/workflows/theme/components/SelectSiteDesign.jsx:202
+#: public/build/extendify-agent-9d1c6defa5e8b1930355.js:54
+#: src/Agent/workflows/theme/components/change-site-design/DesignOption.jsx:143
 msgid "Preview site design"
 msgstr "Náhľad dizajnu webovej stránky"
 
-#: public/build/extendify-agent-47ce1ec36e515e89dc80.js:54
-#: src/Agent/workflows/theme/components/SelectSiteDesign.jsx:516
+#: public/build/extendify-agent-9d1c6defa5e8b1930355.js:54
+#: src/Agent/workflows/theme/components/change-site-design/SelectSiteDesign.jsx:346
 msgid "Load more"
 msgstr "Načítať ďalšie"
 
-#: public/build/extendify-agent-47ce1ec36e515e89dc80.js:54
+#: public/build/extendify-agent-9d1c6defa5e8b1930355.js:54
 #: src/Agent/workflows/theme/change-site-design.js:19
 msgid "Change website design"
 msgstr "Zmeniť dizajn webovej stránky"
 
 #. translators: This message show above a UI where the user can select a different site design.
-#: public/build/extendify-agent-47ce1ec36e515e89dc80.js:56
+#: public/build/extendify-agent-9d1c6defa5e8b1930355.js:56
 #: src/Agent/workflows/theme/change-site-design.js:22
 msgid "Below you can select a different design for your website."
 msgstr "Nižšie môžete vybrať iný dizajn pre vašu webovú stránku."
 
-#: public/build/extendify-agent-47ce1ec36e515e89dc80.js:56
+#: public/build/extendify-agent-9d1c6defa5e8b1930355.js:56
 #: src/Agent/workflows/theme/change-site-design.js:52
 msgid "Updated the website design"
 msgstr "Aktualizovaný dizajn webovej stránky"
 
-#: public/build/extendify-agent-47ce1ec36e515e89dc80.js:56
+#: public/build/extendify-agent-9d1c6defa5e8b1930355.js:56
 #: src/Agent/workflows/theme/change-site-design.js:53
 msgid "Canceled the website design update"
 msgstr "Aktualizácia dizajnu webovej stránky bola zrušená"
 
-#: public/build/extendify-agent-47ce1ec36e515e89dc80.js:54
+#: public/build/extendify-agent-9d1c6defa5e8b1930355.js:54
 #: src/Agent/workflows/theme/change-animation.js:23
 msgid "Updated the website animation"
 msgstr "Aktualizovaná animácia webovej stránky"
 
-#: public/build/extendify-agent-47ce1ec36e515e89dc80.js:54
+#: public/build/extendify-agent-9d1c6defa5e8b1930355.js:54
 #: src/Agent/workflows/theme/change-animation.js:24
 msgid "Canceled the website animation update"
 msgstr "Zrušená aktualizácia animácie webovej stránky"
 
-#: public/build/extendify-agent-47ce1ec36e515e89dc80.js:68
+#: public/build/extendify-agent-9d1c6defa5e8b1930355.js:68
 #: src/Agent/workflows/theme/change-site-vibes.js:36
 msgid "Updated the website style"
 msgstr "Štýl webovej stránky bol aktualizovaný"
 
-#: public/build/extendify-agent-47ce1ec36e515e89dc80.js:68
+#: public/build/extendify-agent-9d1c6defa5e8b1930355.js:68
 #: src/Agent/workflows/theme/change-site-vibes.js:37
 msgid "Canceled the website style update"
 msgstr "Zrušená aktualizácia štýlu webovej stránky"
 
 #. translators: A chat message shown to the user when their selected color variation cannot be applied
-#: public/build/extendify-agent-47ce1ec36e515e89dc80.js:78
+#: public/build/extendify-agent-9d1c6defa5e8b1930355.js:78
 #: src/Agent/workflows/theme/components/SelectThemeVariation.jsx:33
 msgid "We were unable to apply your selected colors. Please try again."
 msgstr "Nepodarilo sa použiť vybrané farby. Skúste to prosím znova."
 
 #. translators: Use a number that is appropriate for the locale. It does not need to be this exact number. This is a placeholder phone number. For example, in pt_BR you could use (11) 91234-5678.
-#: public/build/extendify-auto-launch-1871df5815ba8920098f.js:40
-#: src/AutoLaunch/hooks/useCreateSite.js:313
+#: public/build/extendify-auto-launch-b5c459e24210e13f67d2.js:40
+#: src/AutoLaunch/hooks/useCreateSite.js:341
 msgid "206-555-0100"
 msgstr "0900 555 010"
 
-#: public/build/extendify-agent-47ce1ec36e515e89dc80.js:64
+#: public/build/extendify-agent-9d1c6defa5e8b1930355.js:64
 #: src/Agent/workflows/theme/components/SelectSiteVibes.jsx:88
 #: src/Agent/workflows/theme/components/SelectSiteVibes.jsx:107
 #, js-format
@@ -5348,67 +5342,67 @@ msgid "Activated"
 msgstr "Aktivované"
 
 #. translators: "Slow" refers to a slower speed at which the animation effect occurs. This is an option in a list of animation speeds.
-#: public/build/extendify-agent-47ce1ec36e515e89dc80.js:43
+#: public/build/extendify-agent-9d1c6defa5e8b1930355.js:43
 #: src/Agent/workflows/theme/components/SelectAnimation.jsx:47
 msgctxt "animation speed"
 msgid "Slow"
 msgstr "Pomalé"
 
 #. translators: "Medium" refers to a moderate speed at which the animation effect occurs. This is an option in a list of animation speeds.
-#: public/build/extendify-agent-47ce1ec36e515e89dc80.js:45
+#: public/build/extendify-agent-9d1c6defa5e8b1930355.js:45
 #: src/Agent/workflows/theme/components/SelectAnimation.jsx:52
 msgctxt "animation speed"
 msgid "Medium"
 msgstr "Stredná"
 
 #. translators: "Fast" refers to a quicker speed at which the animation effect occurs. This is an option in a list of animation speeds.
-#: public/build/extendify-agent-47ce1ec36e515e89dc80.js:47
+#: public/build/extendify-agent-9d1c6defa5e8b1930355.js:47
 #: src/Agent/workflows/theme/components/SelectAnimation.jsx:57
 msgctxt "animation speed"
 msgid "Fast"
 msgstr "Rýchlo"
 
-#: public/build/extendify-agent-47ce1ec36e515e89dc80.js:50
+#: public/build/extendify-agent-9d1c6defa5e8b1930355.js:50
 #: src/Agent/workflows/theme/components/SelectAnimation.jsx:147
 msgctxt "animation speed"
 msgid "Speed"
 msgstr "Rýchlosť"
 
 #. translators: Animation style where the element gradually appears by transitioning from transparent to visible. Translate as a simple, non-technical description of the visual effect (e.g., 'appear', 'show up') suitable for non-technical users.
-#: public/build/extendify-agent-47ce1ec36e515e89dc80.js:35
+#: public/build/extendify-agent-9d1c6defa5e8b1930355.js:35
 #: src/Agent/workflows/theme/components/SelectAnimation.jsx:20
 msgctxt "animation type"
 msgid "Fade In"
 msgstr "Zobraziť sa"
 
 #. translators: Animation style where the element appears while moving upward. Translate as a simple, non-technical description of the motion (e.g., 'appear from below', 'rise into view') suitable for non-technical users.
-#: public/build/extendify-agent-47ce1ec36e515e89dc80.js:37
+#: public/build/extendify-agent-9d1c6defa5e8b1930355.js:37
 #: src/Agent/workflows/theme/components/SelectAnimation.jsx:26
 msgctxt "animation type"
 msgid "Fade Up"
 msgstr "Zobraziť zdola"
 
 #. translators: Animation style where the element appears by scaling from small to its full size. Translate as a simple, non-technical description of the effect (e.g., 'zoom in', 'get closer') suitable for non-technical users. If the target language commonly uses the English term 'zoom', it's acceptable to keep it.
-#: public/build/extendify-agent-47ce1ec36e515e89dc80.js:39
+#: public/build/extendify-agent-9d1c6defa5e8b1930355.js:39
 #: src/Agent/workflows/theme/components/SelectAnimation.jsx:32
 msgctxt "animation type"
 msgid "Zoom In"
 msgstr "Priblíženie"
 
 #. translators: None refers to 'no animation'. Apply the correct grammatical gender/form that agrees with the word for 'animation' in the target language.
-#: public/build/extendify-agent-47ce1ec36e515e89dc80.js:41
+#: public/build/extendify-agent-9d1c6defa5e8b1930355.js:41
 #: src/Agent/workflows/theme/components/SelectAnimation.jsx:38
 msgctxt "animation type"
 msgid "None"
 msgstr "Žiadna"
 
-#: public/build/extendify-agent-47ce1ec36e515e89dc80.js:50
+#: public/build/extendify-agent-9d1c6defa5e8b1930355.js:50
 #: src/Agent/workflows/theme/components/SelectAnimation.jsx:128
 msgctxt "animation type"
 msgid "Type"
 msgstr "Typ"
 
-#: public/build/extendify-auto-launch-1871df5815ba8920098f.js:52
+#: public/build/extendify-auto-launch-b5c459e24210e13f67d2.js:52
 #: src/AutoLaunch/icons.jsx:55
 msgctxt "icon"
 msgid "Loading animation"

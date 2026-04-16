@@ -13,51 +13,51 @@ msgstr ""
 "Plural-Forms: nplurals=3; plural=(n % 10 == 1 && n % 100 != 11) ? 0 : ((n % 10 >= 2 && n % 10 <= 4 && (n % 100 < 12 || n % 100 > 14)) ? 1 : 2);\n"
 "X-Generator: GlotPress/4.0.0-alpha.11\n"
 
-#: public/build/extendify-library-47d651124bad74dbba8b.js:4
+#: public/build/extendify-library-46b68847bd85f90eb8b6.js:4
 #: src/Library/components/Modal.jsx:31
 msgid "Pattern added"
 msgstr "Патерн додано"
 
-#: public/build/extendify-library-47d651124bad74dbba8b.js:4
+#: public/build/extendify-library-46b68847bd85f90eb8b6.js:4
 #: src/Library/components/Modal.jsx:114
 msgid "Design Patterns"
 msgstr "Дизайн патернів"
 
-#: public/build/extendify-library-47d651124bad74dbba8b.js:1
+#: public/build/extendify-library-46b68847bd85f90eb8b6.js:1
 #: src/Library/components/sidebar/CategoryControl.jsx:94
 msgid "Fetching..."
 msgstr "Отримання..."
 
-#: public/build/extendify-library-47d651124bad74dbba8b.js:1
+#: public/build/extendify-library-46b68847bd85f90eb8b6.js:1
 #: src/Library/components/sidebar/CategoryControl.jsx:86
 msgid "Retrying..."
 msgstr "Повторна спроба..."
 
 #: app/PluginNotifications/NotificationsListTable.php:65
 #: public/build/extendify-assist-page-e98b949ab0c13ba07729.js:1
-#: public/build/extendify-library-47d651124bad74dbba8b.js:1
+#: public/build/extendify-library-46b68847bd85f90eb8b6.js:1
 #: src/Assist/svg/DesignLibraryMarkup.jsx:78
 #: src/Library/components/sidebar/CategoryControl.jsx:62
 msgid "All"
 msgstr "Все"
 
-#: public/build/extendify-library-47d651124bad74dbba8b.js:1
+#: public/build/extendify-library-46b68847bd85f90eb8b6.js:1
 #: src/Library/components/sidebar/CategoryControl.jsx:26
 msgid "Design Type"
 msgstr "Тип дизайну"
 
-#: public/build/extendify-library-47d651124bad74dbba8b.js:1
+#: public/build/extendify-library-46b68847bd85f90eb8b6.js:1
 #: src/Library/components/ModalContent.jsx:81
 msgid "Loading more patterns..."
 msgstr "Завантаження більшої кількості патернів..."
 
-#: public/build/extendify-library-47d651124bad74dbba8b.js:1
+#: public/build/extendify-library-46b68847bd85f90eb8b6.js:1
 #: src/Library/components/ModalContent.jsx:37
 #: src/Library/components/ModalContent.jsx:70
 msgid "Loading Patterns..."
 msgstr "Завантаження патернів..."
 
-#: public/build/extendify-library-47d651124bad74dbba8b.js:1
+#: public/build/extendify-library-46b68847bd85f90eb8b6.js:1
 #: src/Library/components/BlockPreviewButton.jsx:28
 msgid "Insert Pattern"
 msgstr "Вставити патерн"
@@ -95,8 +95,8 @@ msgstr "Ми вже вибрали найпоширеніші сторінки �
 msgid "Pick the pages to add to your website"
 msgstr "Виберіть сторінки, які хочете додати на свій вебсайт"
 
-#: public/build/extendify-agent-47ce1ec36e515e89dc80.js:74
-#: public/build/extendify-agent-47ce1ec36e515e89dc80.js:82
+#: public/build/extendify-agent-9d1c6defa5e8b1930355.js:74
+#: public/build/extendify-agent-9d1c6defa5e8b1930355.js:82
 #: public/build/extendify-launch-169f4581091a2b7e786b.js:8
 #: src/Agent/components/redirects/RedirectFontsVariations.jsx:12
 #: src/Agent/components/redirects/RedirectThemeVariations.jsx:17
@@ -267,21 +267,21 @@ msgstr "Проміжний"
 msgid "Beginner"
 msgstr "Початківець"
 
-#: public/build/extendify-agent-47ce1ec36e515e89dc80.js:4
+#: public/build/extendify-agent-9d1c6defa5e8b1930355.js:4
 #: public/build/extendify-help-center-079e40452a8cd0a1b4a2.js:1
 #: src/Agent/components/Rating.jsx:49
 #: src/HelpCenter/components/ai-chat/Rating.jsx:48
 msgid "Rate that this answer was not helpful"
 msgstr "Оцініть, наскільки ця відповідь була не корисною"
 
-#: public/build/extendify-agent-47ce1ec36e515e89dc80.js:4
+#: public/build/extendify-agent-9d1c6defa5e8b1930355.js:4
 #: public/build/extendify-help-center-079e40452a8cd0a1b4a2.js:1
 #: src/Agent/components/Rating.jsx:28
 #: src/HelpCenter/components/ai-chat/Rating.jsx:27
 msgid "Rate that this answer was helpful"
 msgstr "Оцініть наскільки корисною була ця відповідь"
 
-#: public/build/extendify-agent-47ce1ec36e515e89dc80.js:4
+#: public/build/extendify-agent-9d1c6defa5e8b1930355.js:4
 #: public/build/extendify-help-center-079e40452a8cd0a1b4a2.js:1
 #: src/Agent/components/Rating.jsx:27
 #: src/Agent/components/Rating.jsx:48
@@ -341,56 +341,56 @@ msgstr "Згорнути меню"
 msgid "Search for articles"
 msgstr "Шукати статті"
 
-#: public/build/extendify-agent-47ce1ec36e515e89dc80.js:18
+#: public/build/extendify-agent-9d1c6defa5e8b1930355.js:18
 #: public/build/extendify-help-center-079e40452a8cd0a1b4a2.js:4
 #: src/Agent/tours/library-tour.js:100
 #: src/HelpCenter/tours/library-tour.js:98
 msgid "The selected pattern has been inserted into the page."
 msgstr "Обраний патерн було додано на сторінку."
 
-#: public/build/extendify-agent-47ce1ec36e515e89dc80.js:18
+#: public/build/extendify-agent-9d1c6defa5e8b1930355.js:18
 #: public/build/extendify-help-center-079e40452a8cd0a1b4a2.js:4
 #: src/Agent/tours/library-tour.js:99
 #: src/HelpCenter/tours/library-tour.js:97
 msgid "View the Inserted Pattern"
 msgstr "Переглянути доданий патерн"
 
-#: public/build/extendify-agent-47ce1ec36e515e89dc80.js:18
+#: public/build/extendify-agent-9d1c6defa5e8b1930355.js:18
 #: public/build/extendify-help-center-079e40452a8cd0a1b4a2.js:4
 #: src/Agent/tours/library-tour.js:80
 #: src/HelpCenter/tours/library-tour.js:78
 msgid "Simply select any pattern you wish to insert into a page by clicking on it."
 msgstr "Просто оберіть будь-який патерн, який хочете додати на сторінку, натиснувши на нього."
 
-#: public/build/extendify-agent-47ce1ec36e515e89dc80.js:18
+#: public/build/extendify-agent-9d1c6defa5e8b1930355.js:18
 #: public/build/extendify-help-center-079e40452a8cd0a1b4a2.js:4
 #: src/Agent/tours/library-tour.js:79
 #: src/HelpCenter/tours/library-tour.js:77
 msgid "Select a Pattern"
 msgstr "Обрати патерн"
 
-#: public/build/extendify-agent-47ce1ec36e515e89dc80.js:18
+#: public/build/extendify-agent-9d1c6defa5e8b1930355.js:18
 #: public/build/extendify-help-center-079e40452a8cd0a1b4a2.js:4
 #: src/Agent/tours/library-tour.js:54
 #: src/HelpCenter/tours/library-tour.js:52
 msgid "Click on any pattern category to refine the selection."
 msgstr "Натисніть на будь-яку категорію патернів, щоб уточнити вибір."
 
-#: public/build/extendify-agent-47ce1ec36e515e89dc80.js:18
+#: public/build/extendify-agent-9d1c6defa5e8b1930355.js:18
 #: public/build/extendify-help-center-079e40452a8cd0a1b4a2.js:4
 #: src/Agent/tours/library-tour.js:53
 #: src/HelpCenter/tours/library-tour.js:51
 msgid "Filter Patterns"
 msgstr "Фільтрувати патерни"
 
-#: public/build/extendify-agent-47ce1ec36e515e89dc80.js:18
+#: public/build/extendify-agent-9d1c6defa5e8b1930355.js:18
 #: public/build/extendify-help-center-079e40452a8cd0a1b4a2.js:4
 #: src/Agent/tours/library-tour.js:32
 #: src/HelpCenter/tours/library-tour.js:30
 msgid "The Extendify pattern library can be opened by clicking the button to the left."
 msgstr "Бібліотеку дизайнів Extendify можна відкрити, натиснувши на кнопку ліворуч."
 
-#: public/build/extendify-agent-47ce1ec36e515e89dc80.js:18
+#: public/build/extendify-agent-9d1c6defa5e8b1930355.js:18
 #: public/build/extendify-help-center-079e40452a8cd0a1b4a2.js:4
 #: src/Agent/tours/library-tour.js:31
 #: src/HelpCenter/tours/library-tour.js:29
@@ -506,21 +506,21 @@ msgstr "На головній сторінці панелі керування W
 msgid "Access the Site Assistant at any time."
 msgstr "Користуйтеся помічником по сайту в будь-який час."
 
-#: public/build/extendify-agent-47ce1ec36e515e89dc80.js:18
+#: public/build/extendify-agent-9d1c6defa5e8b1930355.js:18
 #: public/build/extendify-help-center-079e40452a8cd0a1b4a2.js:4
 #: src/Agent/tours/site-assistant.js:107
 #: src/HelpCenter/tours/site-assistant.js:127
 msgid "Come back to the Site Assistant any time by clicking the menu item."
 msgstr "Знову відкрийте Помічник сайту, натиснувши на цей пункт меню у будь-який час."
 
-#: public/build/extendify-agent-47ce1ec36e515e89dc80.js:18
+#: public/build/extendify-agent-9d1c6defa5e8b1930355.js:18
 #: public/build/extendify-help-center-079e40452a8cd0a1b4a2.js:4
 #: src/Agent/tours/site-assistant.js:59
 #: src/HelpCenter/tours/site-assistant.js:58
 msgid "See our personalized recommendations for you that will help you accomplish your goals."
 msgstr "Подивіться наші індивідуальні рекомендації, які допоможуть вам у створенні сайту."
 
-#: public/build/extendify-agent-47ce1ec36e515e89dc80.js:18
+#: public/build/extendify-agent-9d1c6defa5e8b1930355.js:18
 #: public/build/extendify-help-center-079e40452a8cd0a1b4a2.js:4
 #: src/Agent/tours/site-assistant.js:37
 #: src/HelpCenter/tours/site-assistant.js:36
@@ -534,7 +534,7 @@ msgstr "Отримайте швидкий доступ до найбільш п�
 msgid "Knowledge Base"
 msgstr "База знань"
 
-#: public/build/extendify-agent-47ce1ec36e515e89dc80.js:18
+#: public/build/extendify-agent-9d1c6defa5e8b1930355.js:18
 #: public/build/extendify-help-center-079e40452a8cd0a1b4a2.js:4
 #: src/Agent/tours/site-assistant.js:16
 #: src/HelpCenter/tours/site-assistant.js:15
@@ -584,56 +584,56 @@ msgstr "Огляди"
 msgid "Help Center"
 msgstr "Довідковий центр"
 
-#: public/build/extendify-agent-47ce1ec36e515e89dc80.js:18
+#: public/build/extendify-agent-9d1c6defa5e8b1930355.js:18
 #: public/build/extendify-help-center-079e40452a8cd0a1b4a2.js:4
 #: src/Agent/tours/users-screen.js:122
 #: src/HelpCenter/tours/users-screen.js:121
 msgid "Click the Add New button to add a new user to your site."
 msgstr "Натисність кнопку «Додати», щоб створити нового користувача для вашого сайту."
 
-#: public/build/extendify-agent-47ce1ec36e515e89dc80.js:18
+#: public/build/extendify-agent-9d1c6defa5e8b1930355.js:18
 #: public/build/extendify-help-center-079e40452a8cd0a1b4a2.js:4
 #: src/Agent/tours/users-screen.js:121
 #: src/HelpCenter/tours/users-screen.js:120
 msgid "Add a new user"
 msgstr "Додати нового користувача"
 
-#: public/build/extendify-agent-47ce1ec36e515e89dc80.js:18
+#: public/build/extendify-agent-9d1c6defa5e8b1930355.js:18
 #: public/build/extendify-help-center-079e40452a8cd0a1b4a2.js:4
 #: src/Agent/tours/users-screen.js:96
 #: src/HelpCenter/tours/users-screen.js:95
 msgid "Use the search bar to find a particular user."
 msgstr "Скористуйтеся пошуком, щоб швидко знайти конкретного користувача."
 
-#: public/build/extendify-agent-47ce1ec36e515e89dc80.js:18
+#: public/build/extendify-agent-9d1c6defa5e8b1930355.js:18
 #: public/build/extendify-help-center-079e40452a8cd0a1b4a2.js:4
 #: src/Agent/tours/users-screen.js:95
 #: src/HelpCenter/tours/users-screen.js:94
 msgid "Search for users"
 msgstr "Шукати користувачів"
 
-#: public/build/extendify-agent-47ce1ec36e515e89dc80.js:18
+#: public/build/extendify-agent-9d1c6defa5e8b1930355.js:18
 #: public/build/extendify-help-center-079e40452a8cd0a1b4a2.js:4
 #: src/Agent/tours/users-screen.js:65
 #: src/HelpCenter/tours/users-screen.js:64
 msgid "Click the edit button to change the user's role, manage their account, or change their profile information."
 msgstr "Натисність кнопку «Редагувати», щоб змінити роль користувача або змінити інформацію в його обліковому записі."
 
-#: public/build/extendify-agent-47ce1ec36e515e89dc80.js:18
+#: public/build/extendify-agent-9d1c6defa5e8b1930355.js:18
 #: public/build/extendify-help-center-079e40452a8cd0a1b4a2.js:4
 #: src/Agent/tours/users-screen.js:64
 #: src/HelpCenter/tours/users-screen.js:63
 msgid "Edit user information"
 msgstr "Редагувати інформацію користувача"
 
-#: public/build/extendify-agent-47ce1ec36e515e89dc80.js:18
+#: public/build/extendify-agent-9d1c6defa5e8b1930355.js:18
 #: public/build/extendify-help-center-079e40452a8cd0a1b4a2.js:4
 #: src/Agent/tours/users-screen.js:45
 #: src/HelpCenter/tours/users-screen.js:44
 msgid "See all of your users, including admin users in this table."
 msgstr "У цій таблиці ви побачите всіх ваших користувачів, в тому числі адміністраторів."
 
-#: public/build/extendify-agent-47ce1ec36e515e89dc80.js:18
+#: public/build/extendify-agent-9d1c6defa5e8b1930355.js:18
 #: public/build/extendify-help-center-079e40452a8cd0a1b4a2.js:4
 #: src/Agent/tours/users-screen.js:44
 #: src/Agent/tours/welcome.js:250
@@ -642,154 +642,154 @@ msgstr "У цій таблиці ви побачите всіх ваших ко�
 msgid "Users"
 msgstr "Користувачі"
 
-#: public/build/extendify-agent-47ce1ec36e515e89dc80.js:18
+#: public/build/extendify-agent-9d1c6defa5e8b1930355.js:18
 #: public/build/extendify-help-center-079e40452a8cd0a1b4a2.js:4
 #: src/Agent/tours/users-screen.js:19
 #: src/HelpCenter/tours/users-screen.js:18
 msgid "Click here to view and manage the users on your site."
 msgstr "Перейдіть у цей розділ, щоб переглянути користувачів вашого сайту та керувати ними."
 
-#: public/build/extendify-agent-47ce1ec36e515e89dc80.js:18
+#: public/build/extendify-agent-9d1c6defa5e8b1930355.js:18
 #: public/build/extendify-help-center-079e40452a8cd0a1b4a2.js:4
 #: src/Agent/tours/users-screen.js:18
 #: src/HelpCenter/tours/users-screen.js:17
 msgid "All Users menu"
 msgstr "Розділ «Всі користувачі»"
 
-#: public/build/extendify-agent-47ce1ec36e515e89dc80.js:18
+#: public/build/extendify-agent-9d1c6defa5e8b1930355.js:18
 #: public/build/extendify-help-center-079e40452a8cd0a1b4a2.js:4
 #: src/Agent/tours/plugin-management.js:106
 #: src/HelpCenter/tours/plugin-management.js:105
 msgid "Click here to add another plugin to your site."
 msgstr "Натисність тут, щоб додати ще один плагін на сайт."
 
-#: public/build/extendify-agent-47ce1ec36e515e89dc80.js:18
+#: public/build/extendify-agent-9d1c6defa5e8b1930355.js:18
 #: public/build/extendify-help-center-079e40452a8cd0a1b4a2.js:4
 #: src/Agent/tours/plugin-management.js:105
 #: src/HelpCenter/tours/plugin-management.js:104
 msgid "Add another"
 msgstr "Додати плагін"
 
-#: public/build/extendify-agent-47ce1ec36e515e89dc80.js:18
+#: public/build/extendify-agent-9d1c6defa5e8b1930355.js:18
 #: public/build/extendify-help-center-079e40452a8cd0a1b4a2.js:4
 #: src/Agent/tours/plugin-management.js:65
 #: src/HelpCenter/tours/plugin-management.js:64
 msgid "Under each plugin you can activate or deactivate it."
 msgstr "Під кожним плагіном ви можете його активувати або деактивувати."
 
-#: public/build/extendify-agent-47ce1ec36e515e89dc80.js:18
+#: public/build/extendify-agent-9d1c6defa5e8b1930355.js:18
 #: public/build/extendify-help-center-079e40452a8cd0a1b4a2.js:4
 #: src/Agent/tours/plugin-management.js:64
 #: src/HelpCenter/tours/plugin-management.js:63
 msgid "Deactivate/activate option"
 msgstr "Опція активувати/деактивувати"
 
-#: public/build/extendify-agent-47ce1ec36e515e89dc80.js:18
+#: public/build/extendify-agent-9d1c6defa5e8b1930355.js:18
 #: public/build/extendify-help-center-079e40452a8cd0a1b4a2.js:4
 #: src/Agent/tours/plugin-management.js:45
 #: src/HelpCenter/tours/plugin-management.js:44
 msgid "See all plugins installed on your site. This includes plugins that are active and deactivated."
 msgstr "У цій таблиці ви знайдете всі плагіни, що встановлені у вас на сайті. Як ввімкнені, так і вимкнені."
 
-#: public/build/extendify-agent-47ce1ec36e515e89dc80.js:18
+#: public/build/extendify-agent-9d1c6defa5e8b1930355.js:18
 #: public/build/extendify-help-center-079e40452a8cd0a1b4a2.js:4
 #: src/Agent/tours/plugin-management.js:44
 #: src/HelpCenter/tours/plugin-management.js:43
 msgid "Installed plugins"
 msgstr "Встановлені плагіни"
 
-#: public/build/extendify-agent-47ce1ec36e515e89dc80.js:18
+#: public/build/extendify-agent-9d1c6defa5e8b1930355.js:18
 #: public/build/extendify-help-center-079e40452a8cd0a1b4a2.js:4
 #: src/Agent/tours/plugin-management.js:19
 #: src/HelpCenter/tours/plugin-management.js:18
 msgid "Click this menu to see and manage the plugins you have installed."
 msgstr "Перейдіть у цей розділ, щоб переглянути встановлені плагіни на та керувати ними."
 
-#: public/build/extendify-agent-47ce1ec36e515e89dc80.js:18
+#: public/build/extendify-agent-9d1c6defa5e8b1930355.js:18
 #: public/build/extendify-help-center-079e40452a8cd0a1b4a2.js:4
 #: src/Agent/tours/plugin-management.js:18
 #: src/HelpCenter/tours/plugin-management.js:17
 msgid "Installed Plugins menu"
 msgstr "Розділ «Встановлені плагіни»"
 
-#: public/build/extendify-agent-47ce1ec36e515e89dc80.js:18
+#: public/build/extendify-agent-9d1c6defa5e8b1930355.js:18
 #: public/build/extendify-help-center-079e40452a8cd0a1b4a2.js:4
 #: src/Agent/tours/plugin-install.js:114
 #: src/HelpCenter/tours/plugin-install.js:113
 msgid "If you have a plugin from an external source, you can upload it directly here."
 msgstr "Якщо у вас є плагін, який ви скачали з іншого сайту, ви можете завантажити його тут."
 
-#: public/build/extendify-agent-47ce1ec36e515e89dc80.js:18
+#: public/build/extendify-agent-9d1c6defa5e8b1930355.js:18
 #: public/build/extendify-help-center-079e40452a8cd0a1b4a2.js:4
 #: src/Agent/tours/plugin-install.js:113
 #: src/HelpCenter/tours/plugin-install.js:112
 msgid "Upload Plugin"
 msgstr "Завантажити плагін"
 
-#: public/build/extendify-agent-47ce1ec36e515e89dc80.js:18
+#: public/build/extendify-agent-9d1c6defa5e8b1930355.js:18
 #: public/build/extendify-help-center-079e40452a8cd0a1b4a2.js:4
 #: src/Agent/tours/plugin-install.js:88
 #: src/HelpCenter/tours/plugin-install.js:87
 msgid "Install the plugin. Then, press this button again to activate the plugin."
 msgstr "Натисніть «Встановити», щоб додати плагін на сайт. Потім натисніть «Активувати», щоб увімкнути плагін."
 
-#: public/build/extendify-agent-47ce1ec36e515e89dc80.js:18
+#: public/build/extendify-agent-9d1c6defa5e8b1930355.js:18
 #: public/build/extendify-help-center-079e40452a8cd0a1b4a2.js:4
 #: src/Agent/tours/plugin-install.js:87
 #: src/HelpCenter/tours/plugin-install.js:86
 msgid "Install now"
 msgstr "Встановити плагін"
 
-#: public/build/extendify-agent-47ce1ec36e515e89dc80.js:18
+#: public/build/extendify-agent-9d1c6defa5e8b1930355.js:18
 #: public/build/extendify-help-center-079e40452a8cd0a1b4a2.js:4
 #: src/Agent/tours/plugin-install.js:68
 #: src/HelpCenter/tours/plugin-install.js:67
 msgid "See important information about each plugin."
 msgstr "Тут ви знайдете важливу інформацію про кожен плагін."
 
-#: public/build/extendify-agent-47ce1ec36e515e89dc80.js:18
+#: public/build/extendify-agent-9d1c6defa5e8b1930355.js:18
 #: public/build/extendify-help-center-079e40452a8cd0a1b4a2.js:4
 #: src/Agent/tours/plugin-install.js:67
 #: src/HelpCenter/tours/plugin-install.js:66
 msgid "Plugin details"
 msgstr "Інформація про плагін"
 
-#: public/build/extendify-agent-47ce1ec36e515e89dc80.js:18
+#: public/build/extendify-agent-9d1c6defa5e8b1930355.js:18
 #: public/build/extendify-help-center-079e40452a8cd0a1b4a2.js:4
 #: src/Agent/tours/plugin-install.js:42
 #: src/HelpCenter/tours/plugin-install.js:41
 msgid "Search for a plugin by name or functionality."
 msgstr "Шукати плагін за назвою або функціоналом."
 
-#: public/build/extendify-agent-47ce1ec36e515e89dc80.js:18
+#: public/build/extendify-agent-9d1c6defa5e8b1930355.js:18
 #: public/build/extendify-help-center-079e40452a8cd0a1b4a2.js:4
 #: src/Agent/tours/plugin-install.js:19
 #: src/HelpCenter/tours/plugin-install.js:18
 msgid "Click here to access the Add Plugins page."
 msgstr "Натисніть тут, щоб перейти в розділ «Додати плагіни»."
 
-#: public/build/extendify-agent-47ce1ec36e515e89dc80.js:18
+#: public/build/extendify-agent-9d1c6defa5e8b1930355.js:18
 #: public/build/extendify-help-center-079e40452a8cd0a1b4a2.js:4
 #: src/Agent/tours/plugin-install.js:18
 #: src/HelpCenter/tours/plugin-install.js:17
 msgid "Add New plugin menu"
 msgstr "Розділ «Додати новий»"
 
-#: public/build/extendify-agent-47ce1ec36e515e89dc80.js:18
+#: public/build/extendify-agent-9d1c6defa5e8b1930355.js:18
 #: public/build/extendify-help-center-079e40452a8cd0a1b4a2.js:4
 #: src/Agent/tours/page-editor.js:249
 #: src/HelpCenter/tours/page-editor.js:252
 msgid "Publish or Save"
 msgstr "Опублікувати або Зберегти"
 
-#: public/build/extendify-agent-47ce1ec36e515e89dc80.js:18
+#: public/build/extendify-agent-9d1c6defa5e8b1930355.js:18
 #: public/build/extendify-help-center-079e40452a8cd0a1b4a2.js:4
 #: src/Agent/tours/page-editor.js:229
 #: src/HelpCenter/tours/page-editor.js:232
 msgid "Click preview to view how your changes look on the front end of your site."
 msgstr "Натисність «Переглянути», щоб побачити, як внесені зміни будуть виглядати на сайті."
 
-#: public/build/extendify-agent-47ce1ec36e515e89dc80.js:18
+#: public/build/extendify-agent-9d1c6defa5e8b1930355.js:18
 #: public/build/extendify-help-center-079e40452a8cd0a1b4a2.js:4
 #: public/build/extendify-launch-169f4581091a2b7e786b.js:8
 #: src/Agent/tours/page-editor.js:228
@@ -798,77 +798,77 @@ msgstr "Натисність «Переглянути», щоб побачити
 msgid "Preview"
 msgstr "Перегляд"
 
-#: public/build/extendify-agent-47ce1ec36e515e89dc80.js:18
+#: public/build/extendify-agent-9d1c6defa5e8b1930355.js:18
 #: public/build/extendify-help-center-079e40452a8cd0a1b4a2.js:4
 #: src/Agent/tours/page-editor.js:186
 #: src/HelpCenter/tours/page-editor.js:189
 msgid "Select either page or block to change the settings for the entire page or the block that is selected."
 msgstr "Оберіть «Сторінка» або «Блок», щоб змінити налаштування для всієї сторінки або обраного блока."
 
-#: public/build/extendify-agent-47ce1ec36e515e89dc80.js:18
+#: public/build/extendify-agent-9d1c6defa5e8b1930355.js:18
 #: public/build/extendify-help-center-079e40452a8cd0a1b4a2.js:4
 #: src/Agent/tours/page-editor.js:185
 #: src/HelpCenter/tours/page-editor.js:188
 msgid "Page and Block Settings"
 msgstr "Наташтування сторінки або блока"
 
-#: public/build/extendify-agent-47ce1ec36e515e89dc80.js:18
+#: public/build/extendify-agent-9d1c6defa5e8b1930355.js:18
 #: public/build/extendify-help-center-079e40452a8cd0a1b4a2.js:4
 #: src/Agent/tours/page-editor.js:170
 #: src/HelpCenter/tours/page-editor.js:173
 msgid "This is a sample paragraph block. It can be several sentences long and will span multiple rows. You can add as many blocks as you'd like to the page."
 msgstr "Це зразок блоку «Параграф». Він може складатись з кількох речень і займати кілька рядків. Ви можете додати на сторінку стільки блоків, скільки забажаєте."
 
-#: public/build/extendify-agent-47ce1ec36e515e89dc80.js:18
+#: public/build/extendify-agent-9d1c6defa5e8b1930355.js:18
 #: public/build/extendify-help-center-079e40452a8cd0a1b4a2.js:4
 #: src/Agent/tours/page-editor.js:129
 #: src/HelpCenter/tours/page-editor.js:132
 msgid "Each block will show up on the page and can be edited by clicking on it."
 msgstr "Кожен блок відображатиметься тут і його можна буде відредагувати, натиснувши на нього."
 
-#: public/build/extendify-agent-47ce1ec36e515e89dc80.js:18
+#: public/build/extendify-agent-9d1c6defa5e8b1930355.js:18
 #: public/build/extendify-help-center-079e40452a8cd0a1b4a2.js:4
 #: src/Agent/tours/page-editor.js:128
 #: src/HelpCenter/tours/page-editor.js:131
 msgid "Blocks"
 msgstr "Блоки"
 
-#: public/build/extendify-agent-47ce1ec36e515e89dc80.js:18
+#: public/build/extendify-agent-9d1c6defa5e8b1930355.js:18
 #: public/build/extendify-help-center-079e40452a8cd0a1b4a2.js:4
 #: src/Agent/tours/page-editor.js:89
 #: src/HelpCenter/tours/page-editor.js:92
 msgid "Edit the page title by clicking it. Note: The title may or may not show up on the published page, depending on the page template used."
 msgstr "Редагуйте назву сторінки, натиснувши на неї. Ця назва може бути або не бути відображена на опублікованій сторінці, в залежності від шаблону сторінки."
 
-#: public/build/extendify-agent-47ce1ec36e515e89dc80.js:18
+#: public/build/extendify-agent-9d1c6defa5e8b1930355.js:18
 #: public/build/extendify-help-center-079e40452a8cd0a1b4a2.js:4
 #: src/Agent/tours/page-editor.js:88
 #: src/HelpCenter/tours/page-editor.js:91
 msgid "Page Title"
 msgstr "Назва сторінки"
 
-#: public/build/extendify-agent-47ce1ec36e515e89dc80.js:18
+#: public/build/extendify-agent-9d1c6defa5e8b1930355.js:18
 #: public/build/extendify-help-center-079e40452a8cd0a1b4a2.js:4
 #: src/Agent/tours/page-editor.js:48
 #: src/HelpCenter/tours/page-editor.js:48
 msgid "Add a block by clicking or dragging it onto the page."
 msgstr "Додайте блок, натиснувши на нього або перетягнувши на сторінку."
 
-#: public/build/extendify-agent-47ce1ec36e515e89dc80.js:18
+#: public/build/extendify-agent-9d1c6defa5e8b1930355.js:18
 #: public/build/extendify-help-center-079e40452a8cd0a1b4a2.js:4
 #: src/Agent/tours/page-editor.js:47
 #: src/HelpCenter/tours/page-editor.js:47
 msgid "Block Inserter"
 msgstr "Розділ з блоками"
 
-#: public/build/extendify-agent-47ce1ec36e515e89dc80.js:18
+#: public/build/extendify-agent-9d1c6defa5e8b1930355.js:18
 #: public/build/extendify-help-center-079e40452a8cd0a1b4a2.js:4
 #: src/Agent/tours/page-editor.js:27
 #: src/HelpCenter/tours/page-editor.js:27
 msgid "Click the plus to open the block inserter."
 msgstr "Натисніть на плюс, щоб додати новий блок."
 
-#: public/build/extendify-agent-47ce1ec36e515e89dc80.js:18
+#: public/build/extendify-agent-9d1c6defa5e8b1930355.js:18
 #: public/build/extendify-help-center-079e40452a8cd0a1b4a2.js:4
 #: src/Agent/tours/page-editor.js:26
 #: src/HelpCenter/tours/page-editor.js:26
@@ -880,10 +880,10 @@ msgid "Page not found"
 msgstr "Сторінку не знайдено"
 
 #. translators: This string represents the title of an "Events" page on a website that lists events of any kind. Please translate it in a way that fits the standard phrasing for an "Events" page in the target language, considering the common usage in websites for that language.
-#: public/build/extendify-auto-launch-1871df5815ba8920098f.js:50
+#: public/build/extendify-auto-launch-b5c459e24210e13f67d2.js:50
 #: public/build/extendify-common-20388f64d97467a51614.js:23
 #: public/build/extendify-launch-169f4581091a2b7e786b.js:17
-#: src/AutoLaunch/hooks/useCreateSite.js:388
+#: src/AutoLaunch/hooks/useCreateSite.js:429
 #: src/Launch/pages/CreatingSite.jsx:497
 msgid "Events"
 msgstr "Події"
@@ -901,14 +901,14 @@ msgstr "Перейти до розділу «Допомога»"
 msgid "Dashboard"
 msgstr "Майстерня"
 
-#: public/build/extendify-agent-47ce1ec36e515e89dc80.js:18
+#: public/build/extendify-agent-9d1c6defa5e8b1930355.js:18
 #: public/build/extendify-help-center-079e40452a8cd0a1b4a2.js:4
 #: src/Agent/tours/site-assistant.js:15
 #: src/HelpCenter/tours/site-assistant.js:14
 msgid "Tasks"
 msgstr "Завдання"
 
-#: public/build/extendify-agent-47ce1ec36e515e89dc80.js:18
+#: public/build/extendify-agent-9d1c6defa5e8b1930355.js:18
 #: public/build/extendify-assist-page-e98b949ab0c13ba07729.js:9
 #: public/build/extendify-help-center-079e40452a8cd0a1b4a2.js:4
 #: src/Agent/tours/site-assistant.js:36
@@ -929,7 +929,7 @@ msgstr "У будь-який час ви можете побачити свій 
 msgid "Use the pages menu to add, delete, or edit the pages on your site."
 msgstr "Створюйте нові сторінки на вашому сайті або редагуйте вже створені."
 
-#: public/build/extendify-agent-47ce1ec36e515e89dc80.js:16
+#: public/build/extendify-agent-9d1c6defa5e8b1930355.js:16
 #: public/build/extendify-assist-page-e98b949ab0c13ba07729.js:1
 #: public/build/extendify-help-center-079e40452a8cd0a1b4a2.js:7
 #: src/Agent/components/GuidedTour.jsx:485
@@ -938,22 +938,22 @@ msgstr "Створюйте нові сторінки на вашому сайт�
 msgid "Done"
 msgstr "Готово"
 
-#: public/build/extendify-agent-47ce1ec36e515e89dc80.js:13
+#: public/build/extendify-agent-9d1c6defa5e8b1930355.js:13
 #: public/build/extendify-help-center-079e40452a8cd0a1b4a2.js:4
 #: src/Agent/components/GuidedTour.jsx:434
 #: src/HelpCenter/components/tours/GuidedTour.jsx:441
 msgid "Tour Steps"
 msgstr "Етапи огляду"
 
-#: public/build/extendify-agent-47ce1ec36e515e89dc80.js:13
+#: public/build/extendify-agent-9d1c6defa5e8b1930355.js:13
 #: public/build/extendify-help-center-079e40452a8cd0a1b4a2.js:4
 #: src/Agent/components/GuidedTour.jsx:313
 #: src/HelpCenter/components/tours/GuidedTour.jsx:315
 msgid "Tour"
 msgstr "Огляд"
 
-#: public/build/extendify-library-47d651124bad74dbba8b.js:4
-#: public/build/extendify-page-creator-c6065d168ab1f7c67158.js:4
+#: public/build/extendify-library-46b68847bd85f90eb8b6.js:4
+#: public/build/extendify-page-creator-6d8b3f0e0ada07c15f72.js:4
 #: src/Library/components/topbar/Topbar.jsx:23
 #: src/PageCreator/components/topbar/Topbar.jsx:62
 msgid "Open for new pages"
@@ -961,8 +961,8 @@ msgstr "Запускати бібліотеку на нових сторінка
 
 #. translators: %s: Extendify Library term
 #. translators: %s: Extendify AI Page creator term
-#: public/build/extendify-library-47d651124bad74dbba8b.js:4
-#: public/build/extendify-page-creator-c6065d168ab1f7c67158.js:4
+#: public/build/extendify-library-46b68847bd85f90eb8b6.js:4
+#: public/build/extendify-page-creator-6d8b3f0e0ada07c15f72.js:4
 #: src/Library/components/topbar/Topbar.jsx:12
 #: src/PageCreator/components/topbar/Topbar.jsx:49
 #, js-format
@@ -974,26 +974,26 @@ msgstr "Відкривати %s на нових сторінках"
 msgid "We encountered a server error we cannot recover from. Please reload the page and try again."
 msgstr "На сервері виникла помилка. Будь-ласка, перезавантажте сторінку та спробуйте знову."
 
-#: public/build/extendify-agent-47ce1ec36e515e89dc80.js:16
-#: public/build/extendify-agent-47ce1ec36e515e89dc80.js:18
-#: public/build/extendify-agent-47ce1ec36e515e89dc80.js:21
-#: public/build/extendify-agent-47ce1ec36e515e89dc80.js:24
-#: public/build/extendify-agent-47ce1ec36e515e89dc80.js:33
-#: public/build/extendify-agent-47ce1ec36e515e89dc80.js:50
-#: public/build/extendify-agent-47ce1ec36e515e89dc80.js:54
-#: public/build/extendify-agent-47ce1ec36e515e89dc80.js:64
-#: public/build/extendify-agent-47ce1ec36e515e89dc80.js:70
-#: public/build/extendify-agent-47ce1ec36e515e89dc80.js:78
-#: public/build/extendify-agent-47ce1ec36e515e89dc80.js:82
+#: public/build/extendify-agent-9d1c6defa5e8b1930355.js:16
+#: public/build/extendify-agent-9d1c6defa5e8b1930355.js:18
+#: public/build/extendify-agent-9d1c6defa5e8b1930355.js:21
+#: public/build/extendify-agent-9d1c6defa5e8b1930355.js:24
+#: public/build/extendify-agent-9d1c6defa5e8b1930355.js:33
+#: public/build/extendify-agent-9d1c6defa5e8b1930355.js:50
+#: public/build/extendify-agent-9d1c6defa5e8b1930355.js:54
+#: public/build/extendify-agent-9d1c6defa5e8b1930355.js:64
+#: public/build/extendify-agent-9d1c6defa5e8b1930355.js:70
+#: public/build/extendify-agent-9d1c6defa5e8b1930355.js:78
+#: public/build/extendify-agent-9d1c6defa5e8b1930355.js:82
 #: public/build/extendify-assist-page-e98b949ab0c13ba07729.js:1
 #: src/Agent/components/ImageUploader.jsx:225
 #: src/Agent/workflows/block-selector/components/GenerateImageConfirm.jsx:254
 #: src/Agent/workflows/block-selector/components/UpdateBlockConfirm.jsx:133
 #: src/Agent/workflows/block-selector/components/UpdateImageConfirm.jsx:178
 #: src/Agent/workflows/content/components/UpdatePostConfirm.jsx:67
+#: src/Agent/workflows/theme/components/change-site-design/SelectSiteDesign.jsx:380
 #: src/Agent/workflows/theme/components/SelectAnimation.jsx:179
 #: src/Agent/workflows/theme/components/SelectGeneratedPalette.jsx:198
-#: src/Agent/workflows/theme/components/SelectSiteDesign.jsx:550
 #: src/Agent/workflows/theme/components/SelectSiteVibes.jsx:137
 #: src/Agent/workflows/theme/components/SelectThemeFontsVariation.jsx:105
 #: src/Agent/workflows/theme/components/SelectThemeVariation.jsx:119
@@ -1007,7 +1007,7 @@ msgstr "Зберегти"
 msgid "Enter a site description..."
 msgstr "Введіть опис сайту…"
 
-#: public/build/extendify-agent-47ce1ec36e515e89dc80.js:18
+#: public/build/extendify-agent-9d1c6defa5e8b1930355.js:18
 #: public/build/extendify-assist-page-e98b949ab0c13ba07729.js:1
 #: public/build/extendify-help-center-079e40452a8cd0a1b4a2.js:4
 #: src/Agent/tours/page-creator.js:81
@@ -1028,7 +1028,7 @@ msgstr "Завантажити логотип сайту"
 
 #: app/AdminPageRouter.php:42
 #: app/AdminPageRouter.php:66
-#: public/build/extendify-agent-47ce1ec36e515e89dc80.js:18
+#: public/build/extendify-agent-9d1c6defa5e8b1930355.js:18
 #: public/build/extendify-assist-page-e98b949ab0c13ba07729.js:10
 #: public/build/extendify-help-center-079e40452a8cd0a1b4a2.js:4
 #: src/Agent/tours/site-assistant.js:5
@@ -1059,28 +1059,28 @@ msgstr "Показати сайт"
 msgid "Upload site icon"
 msgstr "Завантажити іконку сайту"
 
-#: public/build/extendify-agent-47ce1ec36e515e89dc80.js:82
+#: public/build/extendify-agent-9d1c6defa5e8b1930355.js:82
 #: public/build/extendify-assist-page-e98b949ab0c13ba07729.js:1
 #: src/Agent/workflows/theme/components/UpdateSiteIconConfirm.jsx:62
 #: src/Assist/components/tasks/UpdateSiteIcon.jsx:20
 msgid "Set site icon"
 msgstr "Встановити іконку сайту"
 
-#: public/build/extendify-agent-47ce1ec36e515e89dc80.js:82
+#: public/build/extendify-agent-9d1c6defa5e8b1930355.js:82
 #: public/build/extendify-assist-page-e98b949ab0c13ba07729.js:1
 #: src/Agent/workflows/theme/components/UpdateSiteIconConfirm.jsx:61
 #: src/Assist/components/tasks/UpdateSiteIcon.jsx:19
 msgid "Site icon"
 msgstr "Іконка сайту"
 
-#: public/build/extendify-agent-47ce1ec36e515e89dc80.js:82
+#: public/build/extendify-agent-9d1c6defa5e8b1930355.js:82
 #: public/build/extendify-assist-page-e98b949ab0c13ba07729.js:1
 #: src/Agent/workflows/theme/components/UpdateLogoConfirm.jsx:67
 #: src/Assist/components/tasks/UpdateLogo.jsx:20
 msgid "Set site logo"
 msgstr "Встановити логотип сайту"
 
-#: public/build/extendify-agent-47ce1ec36e515e89dc80.js:82
+#: public/build/extendify-agent-9d1c6defa5e8b1930355.js:82
 #: public/build/extendify-assist-page-e98b949ab0c13ba07729.js:1
 #: src/Agent/workflows/theme/components/UpdateLogoConfirm.jsx:66
 #: src/Assist/components/tasks/UpdateLogo.jsx:19
@@ -1097,14 +1097,14 @@ msgstr "Видалити зображення"
 msgid "Replace image"
 msgstr "Замінити зображення"
 
-#: public/build/extendify-agent-47ce1ec36e515e89dc80.js:16
+#: public/build/extendify-agent-9d1c6defa5e8b1930355.js:16
 #: public/build/extendify-assist-page-e98b949ab0c13ba07729.js:1
 #: src/Agent/components/ImageUploader.jsx:141
 #: src/Assist/components/ImageUploader.jsx:96
 msgid "Edit or update the image"
 msgstr "Редагувати або оновити зображення"
 
-#: public/build/extendify-agent-47ce1ec36e515e89dc80.js:13
+#: public/build/extendify-agent-9d1c6defa5e8b1930355.js:13
 #: public/build/extendify-assist-page-e98b949ab0c13ba07729.js:1
 #: public/build/extendify-help-center-079e40452a8cd0a1b4a2.js:4
 #: src/Agent/components/GuidedTour.jsx:308
@@ -1115,7 +1115,7 @@ msgstr "Закрити модальне вікно"
 
 #: app/PluginNotifications/NotificationsListTable.php:81
 #: app/PluginNotifications/NotificationsListTable.php:173
-#: public/build/extendify-agent-47ce1ec36e515e89dc80.js:24
+#: public/build/extendify-agent-9d1c6defa5e8b1930355.js:24
 #: public/build/extendify-assist-page-e98b949ab0c13ba07729.js:1
 #: src/Agent/workflows/content/components/GeneratePageResult.jsx:32
 #: src/Assist/components/dashboard/buttons/DismissButton.jsx:17
@@ -1167,7 +1167,7 @@ msgstr "Налаштування вашого помічника сайту"
 msgid "Starting off with a full website"
 msgstr "Початок роботи з повноцінним вебсайтом"
 
-#: public/build/extendify-agent-47ce1ec36e515e89dc80.js:13
+#: public/build/extendify-agent-9d1c6defa5e8b1930355.js:13
 #: public/build/extendify-help-center-079e40452a8cd0a1b4a2.js:4
 #: public/build/extendify-launch-169f4581091a2b7e786b.js:8
 #: src/Agent/components/GuidedTour.jsx:425
@@ -1181,9 +1181,9 @@ msgstr "Назад"
 msgid "Site Industry"
 msgstr "Галузь сайту"
 
-#: public/build/extendify-agent-47ce1ec36e515e89dc80.js:1
-#: public/build/extendify-agent-47ce1ec36e515e89dc80.js:24
-#: public/build/extendify-auto-launch-1871df5815ba8920098f.js:52
+#: public/build/extendify-agent-9d1c6defa5e8b1930355.js:1
+#: public/build/extendify-agent-9d1c6defa5e8b1930355.js:24
+#: public/build/extendify-auto-launch-b5c459e24210e13f67d2.js:52
 #: public/build/extendify-launch-169f4581091a2b7e786b.js:17
 #: src/Agent/components/messages/AgentMessage.jsx:19
 #: src/Agent/workflows/content/components/GeneratePageResult.jsx:39
@@ -1192,14 +1192,14 @@ msgstr "Галузь сайту"
 msgid "Take me there"
 msgstr "Перейти туди"
 
-#: public/build/extendify-auto-launch-1871df5815ba8920098f.js:52
+#: public/build/extendify-auto-launch-b5c459e24210e13f67d2.js:52
 #: public/build/extendify-launch-169f4581091a2b7e786b.js:17
 #: src/AutoLaunch/components/NeedsTheme.jsx:11
 #: src/Launch/pages/NeedsTheme.jsx:14
 msgid "Hey there, Launch is powered by Extendable and is required to proceed. You can install it from the link below and start over once activated."
 msgstr "Вітаємо, додаток «Запуск» працює за допомогою теми Extendable і вона потрібна для того, щоб продовжити. Її можна встановити за посиланням нижче і почати знову, коли вона буде ввімкнена."
 
-#: public/build/extendify-auto-launch-1871df5815ba8920098f.js:52
+#: public/build/extendify-auto-launch-b5c459e24210e13f67d2.js:52
 #: public/build/extendify-launch-169f4581091a2b7e786b.js:17
 #: src/AutoLaunch/components/NeedsTheme.jsx:7
 #: src/Launch/pages/NeedsTheme.jsx:10
@@ -1218,8 +1218,8 @@ msgstr "Плагіни"
 msgid "View Site"
 msgstr "Показати сайт"
 
-#: public/build/extendify-agent-47ce1ec36e515e89dc80.js:16
-#: public/build/extendify-auto-launch-1871df5815ba8920098f.js:52
+#: public/build/extendify-agent-9d1c6defa5e8b1930355.js:16
+#: public/build/extendify-auto-launch-b5c459e24210e13f67d2.js:52
 #: public/build/extendify-help-center-079e40452a8cd0a1b4a2.js:7
 #: public/build/extendify-launch-169f4581091a2b7e786b.js:8
 #: src/Agent/components/GuidedTour.jsx:473
@@ -1242,7 +1242,7 @@ msgstr "Сторінки"
 msgid "You can personalize this later."
 msgstr "Ви можете персоналізувати це пізніше."
 
-#: public/build/extendify-agent-47ce1ec36e515e89dc80.js:18
+#: public/build/extendify-agent-9d1c6defa5e8b1930355.js:18
 #: public/build/extendify-assist-page-e98b949ab0c13ba07729.js:1
 #: public/build/extendify-launch-169f4581091a2b7e786b.js:8
 #: src/Agent/workflows/block-selector/components/UpdateBlockConfirm.jsx:99
@@ -1260,22 +1260,23 @@ msgid "Press to select"
 msgstr "Натисність, щоб обрати"
 
 #: public/build/extendify-launch-169f4581091a2b7e786b.js:8
-#: public/build/extendify-page-creator-c6065d168ab1f7c67158.js:4
+#: public/build/extendify-page-creator-6d8b3f0e0ada07c15f72.js:4
 #: src/Launch/components/RetryNotice.jsx:12
 #: src/PageCreator/components/RetryNotice.jsx:12
 msgid "Just a moment, this is taking longer than expected."
 msgstr "Хвилинку, це займає більше часу, ніж очікувалось."
 
-#: public/build/extendify-agent-47ce1ec36e515e89dc80.js:18
+#: public/build/extendify-agent-9d1c6defa5e8b1930355.js:18
 #: public/build/extendify-assist-page-e98b949ab0c13ba07729.js:10
 #: public/build/extendify-help-center-079e40452a8cd0a1b4a2.js:4
-#: public/build/extendify-library-47d651124bad74dbba8b.js:1
+#: public/build/extendify-library-46b68847bd85f90eb8b6.js:1
 #: src/Agent/tours/library-tour.js:6
 #: src/Assist/tasks/images/HelpCenterAIMarkup.jsx:208
 #: src/Assist/tasks/images/HelpCenterMarkup.jsx:230
 #: src/Assist/tasks/open-design-library.js:7
 #: src/HelpCenter/tours/library-tour.js:7
-#: src/Library/components/MainButton.jsx:32
+#: src/Library/components/MainButton.jsx:31
+#: src/Library/components/MainButton.jsx:35
 msgid "Design Library"
 msgstr "Бібліотека дизайнів"
 
@@ -1286,8 +1287,8 @@ msgstr "Бібліотека дизайнів"
 msgid "Design"
 msgstr "Дизайн"
 
-#: public/build/extendify-library-47d651124bad74dbba8b.js:1
-#: public/build/extendify-page-creator-c6065d168ab1f7c67158.js:1
+#: public/build/extendify-library-46b68847bd85f90eb8b6.js:1
+#: public/build/extendify-page-creator-6d8b3f0e0ada07c15f72.js:1
 #: src/Library/components/topbar/CloseButton.jsx:9
 #: src/Library/components/topbar/CloseButton.jsx:16
 #: src/PageCreator/components/topbar/CloseButton.jsx:9
@@ -1306,7 +1307,7 @@ msgstr "Відправити"
 msgid "Settings"
 msgstr "Налаштування"
 
-#: public/build/extendify-agent-47ce1ec36e515e89dc80.js:18
+#: public/build/extendify-agent-9d1c6defa5e8b1930355.js:18
 #: public/build/extendify-help-center-079e40452a8cd0a1b4a2.js:4
 #: src/Agent/tours/plugin-install.js:41
 #: src/HelpCenter/tours/plugin-install.js:40
@@ -1329,7 +1330,7 @@ msgid "Extendify"
 msgstr "Extendify"
 
 #. translators: %1$s is the current step, %2$s is the total number of steps
-#: public/build/extendify-agent-47ce1ec36e515e89dc80.js:16
+#: public/build/extendify-agent-9d1c6defa5e8b1930355.js:16
 #: public/build/extendify-help-center-079e40452a8cd0a1b4a2.js:7
 #: src/Agent/components/GuidedTour.jsx:443
 #: src/HelpCenter/components/tours/GuidedTour.jsx:450
@@ -1383,8 +1384,8 @@ msgid "Launch"
 msgstr "Запуск"
 
 #. translators: Launch is the product name. Unless otherwise specified by the glossary, do not translate this name.
-#: public/build/extendify-auto-launch-1871df5815ba8920098f.js:29
-#: public/build/extendify-auto-launch-1871df5815ba8920098f.js:42
+#: public/build/extendify-auto-launch-b5c459e24210e13f67d2.js:15
+#: public/build/extendify-auto-launch-b5c459e24210e13f67d2.js:42
 #: public/build/extendify-common-20388f64d97467a51614.js:1
 #: public/build/extendify-launch-169f4581091a2b7e786b.js:3
 #: public/build/extendify-launch-169f4581091a2b7e786b.js:14
@@ -1401,7 +1402,7 @@ msgstr "Доданий Launch"
 msgid "Start over?"
 msgstr "Почати спочатку?"
 
-#: public/build/extendify-auto-launch-1871df5815ba8920098f.js:55
+#: public/build/extendify-auto-launch-b5c459e24210e13f67d2.js:55
 #: public/build/extendify-launch-169f4581091a2b7e786b.js:8
 #: src/AutoLaunch/components/RestartLaunchModal.jsx:154
 #: src/Launch/components/RestartLaunchModal.jsx:197
@@ -1646,7 +1647,7 @@ msgstr "Розкажіть штучному інтелекту про зобра
 msgid "Image Prompt"
 msgstr "Запит зображення"
 
-#: public/build/extendify-agent-47ce1ec36e515e89dc80.js:21
+#: public/build/extendify-agent-9d1c6defa5e8b1930355.js:21
 #: public/build/extendify-draft-08ba35a8f591ab939cda.js:7
 #: src/Agent/workflows/block-selector/components/GenerateImageConfirm.jsx:216
 #: src/Draft/components/image-generation/GenerateForm.jsx:90
@@ -1747,7 +1748,7 @@ msgstr "Редагувати підвал"
 msgid "Reset site"
 msgstr "Скинути сайт"
 
-#: public/build/extendify-agent-47ce1ec36e515e89dc80.js:18
+#: public/build/extendify-agent-9d1c6defa5e8b1930355.js:18
 #: public/build/extendify-assist-page-e98b949ab0c13ba07729.js:10
 #: public/build/extendify-help-center-079e40452a8cd0a1b4a2.js:4
 #: src/Agent/tours/site-assistant.js:58
@@ -2006,7 +2007,7 @@ msgstr "Результати пошуку"
 msgid "Search the knowledge base"
 msgstr "Шукати в базі знань"
 
-#: public/build/extendify-agent-47ce1ec36e515e89dc80.js:18
+#: public/build/extendify-agent-9d1c6defa5e8b1930355.js:18
 #: public/build/extendify-assist-page-e98b949ab0c13ba07729.js:10
 #: public/build/extendify-help-center-079e40452a8cd0a1b4a2.js:4
 #: src/Agent/tours/page-editor.js:13
@@ -2016,14 +2017,14 @@ msgstr "Шукати в базі знань"
 msgid "Page editor"
 msgstr "Редактор сторінок"
 
-#: public/build/extendify-agent-47ce1ec36e515e89dc80.js:18
+#: public/build/extendify-agent-9d1c6defa5e8b1930355.js:18
 #: public/build/extendify-help-center-079e40452a8cd0a1b4a2.js:4
 #: src/Agent/tours/page-editor.js:250
 #: src/HelpCenter/tours/page-editor.js:253
 msgid "Click publish or update to save the changes you have made to the page and make them live on the site."
 msgstr "Натисніть \"Опублікувати\" або \"Оновити\", щоб зберегти зроблені вами зміни на сторінці та застосувати їх на сайті."
 
-#: public/build/extendify-agent-47ce1ec36e515e89dc80.js:18
+#: public/build/extendify-agent-9d1c6defa5e8b1930355.js:18
 #: public/build/extendify-assist-page-e98b949ab0c13ba07729.js:10
 #: public/build/extendify-help-center-079e40452a8cd0a1b4a2.js:4
 #: src/Agent/tours/plugin-install.js:5
@@ -2033,7 +2034,7 @@ msgstr "Натисніть \"Опублікувати\" або \"Оновити\
 msgid "Installing a plugin"
 msgstr "Встановлення плагіна"
 
-#: public/build/extendify-agent-47ce1ec36e515e89dc80.js:18
+#: public/build/extendify-agent-9d1c6defa5e8b1930355.js:18
 #: public/build/extendify-assist-page-e98b949ab0c13ba07729.js:10
 #: public/build/extendify-help-center-079e40452a8cd0a1b4a2.js:4
 #: src/Agent/tours/plugin-management.js:5
@@ -2048,21 +2049,21 @@ msgstr "Керування плагінами"
 msgid "You can always access the help center by clicking this button."
 msgstr "Ви завжди можете отримати доступ до центру допомоги, натиснувши цю кнопку."
 
-#: public/build/extendify-agent-47ce1ec36e515e89dc80.js:18
+#: public/build/extendify-agent-9d1c6defa5e8b1930355.js:18
 #: public/build/extendify-help-center-079e40452a8cd0a1b4a2.js:4
 #: src/Agent/tours/site-assistant.js:80
 #: src/HelpCenter/tours/site-assistant.js:100
 msgid "Visit your site"
 msgstr "Відвідайте ваш сайт"
 
-#: public/build/extendify-agent-47ce1ec36e515e89dc80.js:18
+#: public/build/extendify-agent-9d1c6defa5e8b1930355.js:18
 #: public/build/extendify-help-center-079e40452a8cd0a1b4a2.js:4
 #: src/Agent/tours/site-assistant.js:81
 #: src/HelpCenter/tours/site-assistant.js:101
 msgid "You can always visit your site by clicking this button."
 msgstr "Ви завжди можете відвідати свій сайт, натиснувши цю кнопку."
 
-#: public/build/extendify-agent-47ce1ec36e515e89dc80.js:18
+#: public/build/extendify-agent-9d1c6defa5e8b1930355.js:18
 #: public/build/extendify-assist-page-e98b949ab0c13ba07729.js:10
 #: public/build/extendify-help-center-079e40452a8cd0a1b4a2.js:4
 #: src/Agent/tours/users-screen.js:5
@@ -2179,9 +2180,9 @@ msgstr "Доступний та ідеально підходить для ва�
 msgid "Get another domain for your site."
 msgstr "Отримайте інший домен для вашого сайту."
 
-#: public/build/extendify-auto-launch-1871df5815ba8920098f.js:35
+#: public/build/extendify-auto-launch-b5c459e24210e13f67d2.js:35
 #: public/build/extendify-launch-169f4581091a2b7e786b.js:1
-#: src/AutoLaunch/hooks/useCreateSite.js:291
+#: src/AutoLaunch/hooks/useCreateSite.js:319
 #: src/Launch/api/WPApi.js:51
 msgid "Header Navigation"
 msgstr "Навігація у шапці сайту"
@@ -3093,7 +3094,7 @@ msgid "Share your vision, and we'll craft a website that's perfectly tailored to
 msgstr "Поділіться своїм баченням, і ми створимо сайт, який ідеально відповідатиме вашим потребам, готовий до запуску в найкоротші терміни. Почнемо з того, що дізнаємося більше про ваш проект."
 
 #. translators: Launch is a noun.
-#: public/build/extendify-auto-launch-1871df5815ba8920098f.js:57
+#: public/build/extendify-auto-launch-b5c459e24210e13f67d2.js:57
 #: public/build/extendify-launch-169f4581091a2b7e786b.js:19
 #: src/AutoLaunch/LaunchPage.jsx:34
 #: src/Launch/LaunchPage.jsx:57
@@ -3121,15 +3122,15 @@ msgid "Please wait while we build some website options for you to select from."
 msgstr "Будь ласка, зачекайте, поки ми створюємо параметри сайту для вашого вибору."
 
 #. translators: this is for a action log UI. Keep it short
-#: public/build/extendify-auto-launch-1871df5815ba8920098f.js:44
+#: public/build/extendify-auto-launch-b5c459e24210e13f67d2.js:44
 #: public/build/extendify-launch-169f4581091a2b7e786b.js:14
-#: src/AutoLaunch/hooks/useCreateSite.js:359
+#: src/AutoLaunch/hooks/useCreateSite.js:395
 #: src/Launch/pages/CreatingSite.jsx:410
 msgid "Creating blog sample data"
 msgstr "Створення зразкових даних блогу"
 
 #. translators: "More" here is used for a navigation menu item that contains additional links.
-#: public/build/extendify-auto-launch-1871df5815ba8920098f.js:27
+#: public/build/extendify-auto-launch-b5c459e24210e13f67d2.js:13
 #: public/build/extendify-launch-169f4581091a2b7e786b.js:5
 #: src/AutoLaunch/functions/nav.js:177
 #: src/Launch/api/WPApi.js:400
@@ -3145,7 +3146,7 @@ msgid "Add Website Details"
 msgstr "Додати деталі сайту"
 
 #. translators: %s is a post number
-#: public/build/extendify-auto-launch-1871df5815ba8920098f.js:47
+#: public/build/extendify-auto-launch-b5c459e24210e13f67d2.js:47
 #: public/build/extendify-launch-169f4581091a2b7e786b.js:17
 #: src/AutoLaunch/functions/wp.js:154
 #, js-format
@@ -3179,7 +3180,7 @@ msgstr "Виберіть тон вашого сайту"
 msgid "Website title (required)"
 msgstr "Назва вебсайту (обов'язково)"
 
-#: public/build/extendify-auto-launch-1871df5815ba8920098f.js:47
+#: public/build/extendify-auto-launch-b5c459e24210e13f67d2.js:47
 #: public/build/extendify-launch-169f4581091a2b7e786b.js:17
 #: src/AutoLaunch/functions/pages.js:212
 msgid "Hello World Featured Image"
@@ -3189,43 +3190,44 @@ msgstr "Головне зображення Hello World"
 msgid "Extendify Page Creator User Settings"
 msgstr "Налаштування користувача Extendify Page Creator"
 
-#: public/build/extendify-page-creator-c6065d168ab1f7c67158.js:1
+#: public/build/extendify-page-creator-6d8b3f0e0ada07c15f72.js:1
 #: src/PageCreator/components/ConfirmationModal.jsx:28
 msgid "Confirmation"
 msgstr "Підтвердження"
 
-#: public/build/extendify-page-creator-c6065d168ab1f7c67158.js:1
+#: public/build/extendify-page-creator-6d8b3f0e0ada07c15f72.js:1
 #: src/PageCreator/components/ConfirmationModal.jsx:32
 msgid "Do you want to replace existing content or create a new page?"
 msgstr "Бажаєте замінити існуючий вміст чи створити нову сторінку?"
 
-#: public/build/extendify-page-creator-c6065d168ab1f7c67158.js:1
+#: public/build/extendify-page-creator-6d8b3f0e0ada07c15f72.js:1
 #: src/PageCreator/components/ConfirmationModal.jsx:39
 msgid "Delete existing content"
 msgstr "Видалити наявний вміст"
 
-#: public/build/extendify-page-creator-c6065d168ab1f7c67158.js:1
+#: public/build/extendify-page-creator-6d8b3f0e0ada07c15f72.js:1
 #: src/PageCreator/components/ConfirmationModal.jsx:47
 msgid "Create a new page"
 msgstr "Створити нову сторінку"
 
-#: public/build/extendify-agent-47ce1ec36e515e89dc80.js:18
+#: public/build/extendify-agent-9d1c6defa5e8b1930355.js:18
 #: public/build/extendify-help-center-079e40452a8cd0a1b4a2.js:4
-#: public/build/extendify-page-creator-c6065d168ab1f7c67158.js:1
+#: public/build/extendify-page-creator-6d8b3f0e0ada07c15f72.js:1
 #: src/Agent/tours/page-creator.js:6
 #: src/Agent/tours/page-creator.js:29
 #: src/HelpCenter/tours/page-creator.js:7
 #: src/HelpCenter/tours/page-creator.js:29
 #: src/PageCreator/components/MainButton.jsx:52
+#: src/PageCreator/icons/ai-gen.jsx:10
 msgid "AI Page Generator"
 msgstr "Генератор сторінок AI"
 
-#: public/build/extendify-page-creator-c6065d168ab1f7c67158.js:4
+#: public/build/extendify-page-creator-6d8b3f0e0ada07c15f72.js:4
 #: src/PageCreator/components/content/CustomTextarea.jsx:45
 msgid "Edit"
 msgstr "Редагувати"
 
-#: public/build/extendify-page-creator-c6065d168ab1f7c67158.js:4
+#: public/build/extendify-page-creator-6d8b3f0e0ada07c15f72.js:4
 #: src/PageCreator/components/content/CustomTextarea.jsx:63
 msgid "Clear"
 msgstr "Очистити"
@@ -3235,39 +3237,39 @@ msgstr "Очистити"
 msgid "Generating AI page profile..."
 msgstr "Генерування AI профілю сторінки..."
 
-#: public/build/extendify-page-creator-c6065d168ab1f7c67158.js:4
+#: public/build/extendify-page-creator-6d8b3f0e0ada07c15f72.js:4
 #: src/PageCreator/pages/Dashboard.jsx:59
 msgid "AI Page Creation"
 msgstr "Створення сторінки за допомогою ШІ"
 
-#: public/build/extendify-page-creator-c6065d168ab1f7c67158.js:4
+#: public/build/extendify-page-creator-6d8b3f0e0ada07c15f72.js:4
 #: src/PageCreator/pages/Dashboard.jsx:60
 msgid "Describe the page you want to create, adding key details, and Al will generate a unique, ready-to-use page for you."
 msgstr "Опишіть сторінку, яку хочете створити, додайте ключові деталі, і Al згенерує унікальну, готову до використання сторінку для вас."
 
-#: public/build/extendify-page-creator-c6065d168ab1f7c67158.js:4
+#: public/build/extendify-page-creator-6d8b3f0e0ada07c15f72.js:4
 #: src/PageCreator/pages/Dashboard.jsx:69
 msgid "Describe Your Page"
 msgstr "Опишіть вашу сторінку"
 
 #. translators: %s: The site title
-#: public/build/extendify-page-creator-c6065d168ab1f7c67158.js:7
+#: public/build/extendify-page-creator-6d8b3f0e0ada07c15f72.js:7
 #: src/PageCreator/pages/Dashboard.jsx:88
 #, js-format
 msgid "Site Description for %s"
 msgstr "Опис сайту для %s"
 
-#: public/build/extendify-page-creator-c6065d168ab1f7c67158.js:7
+#: public/build/extendify-page-creator-6d8b3f0e0ada07c15f72.js:7
 #: src/PageCreator/pages/Dashboard.jsx:91
 msgid "Site Description"
 msgstr "Опис сайту"
 
-#: public/build/extendify-page-creator-c6065d168ab1f7c67158.js:7
+#: public/build/extendify-page-creator-6d8b3f0e0ada07c15f72.js:7
 #: src/PageCreator/pages/Dashboard.jsx:94
 msgid "This is the site description with all its ups and downs."
 msgstr "Це опис сайту з усіма його перевагами та недоліками."
 
-#: public/build/extendify-page-creator-c6065d168ab1f7c67158.js:7
+#: public/build/extendify-page-creator-6d8b3f0e0ada07c15f72.js:7
 #: src/PageCreator/pages/Dashboard.jsx:124
 msgid "Generate Page"
 msgstr "Згенерувати сторінку"
@@ -3287,17 +3289,17 @@ msgstr "Створення власного компонування..."
 msgid "Writing custom content..."
 msgstr "Написання власного вмісту..."
 
-#: public/build/extendify-page-creator-c6065d168ab1f7c67158.js:7
+#: public/build/extendify-page-creator-6d8b3f0e0ada07c15f72.js:7
 #: src/PageCreator/components/Modal.jsx:197
 msgid "AI Page Creator"
 msgstr "AI створювач сторінок"
 
-#: public/build/extendify-page-creator-c6065d168ab1f7c67158.js:7
+#: public/build/extendify-page-creator-6d8b3f0e0ada07c15f72.js:7
 #: src/PageCreator/components/Modal.jsx:95
 msgid "Page added"
 msgstr "Сторінку додано"
 
-#: public/build/extendify-page-creator-c6065d168ab1f7c67158.js:7
+#: public/build/extendify-page-creator-6d8b3f0e0ada07c15f72.js:7
 #: src/PageCreator/components/Modal.jsx:101
 msgid "Failed to add page"
 msgstr "Не вдалося додати сторінку"
@@ -3342,7 +3344,9 @@ msgstr "Наприклад, блог про особисті фінанси з �
 msgid "E.g., A free ebook packed with actionable productivity tips and strategies to help you stay focused, manage your time effectively, and achieve your goals."
 msgstr "Наприклад, безкоштовний ebook з практичними порадами та стратегіями підвищення продуктивності, які допоможуть вам залишатися зосередженими, ефективно керувати часом і досягати своїх цілей."
 
+#: public/build/extendify-auto-launch-b5c459e24210e13f67d2.js:52
 #: public/build/extendify-launch-169f4581091a2b7e786b.js:8
+#: src/AutoLaunch/components/DescriptionGathering.jsx:142
 #: src/Launch/pages/SiteInformation.jsx:204
 msgid "E.g., A personal photography portfolio featuring a collection of landscape, portrait, and street photography, capturing moments from around the world."
 msgstr "Наприклад, персональне портфоліо фотографій, що містить колекцію ландшафтних, портретних і вуличних фото, які захоплюють моменти з усього світу"
@@ -3402,42 +3406,42 @@ msgstr "Розкажіть про ваш вебсайт"
 msgid "Share your vision, and we'll craft a landing page that's perfectly tailored to your needs, ready to launch in no time. Let's begin by learning more about what you're building."
 msgstr "Поділіться своїм баченням, і ми створимо цільову сторінку, яка ідеально відповідатиме вашим потребам, готова до запуску в найкоротші терміни. Почнемо з того, що дізнаємося більше про ваш проект."
 
-#: public/build/extendify-agent-47ce1ec36e515e89dc80.js:18
+#: public/build/extendify-agent-9d1c6defa5e8b1930355.js:18
 #: public/build/extendify-help-center-079e40452a8cd0a1b4a2.js:4
 #: src/Agent/tours/page-creator.js:30
 #: src/HelpCenter/tours/page-creator.js:30
 msgid "Press here to get started with your AI Page Generator."
 msgstr "Натисніть тут, щоб почати роботу з вашим AI Page Generator."
 
-#: public/build/extendify-agent-47ce1ec36e515e89dc80.js:18
+#: public/build/extendify-agent-9d1c6defa5e8b1930355.js:18
 #: public/build/extendify-help-center-079e40452a8cd0a1b4a2.js:4
 #: src/Agent/tours/page-creator.js:53
 #: src/HelpCenter/tours/page-creator.js:53
 msgid "Page description"
 msgstr "Опис сторінки"
 
-#: public/build/extendify-agent-47ce1ec36e515e89dc80.js:18
+#: public/build/extendify-agent-9d1c6defa5e8b1930355.js:18
 #: public/build/extendify-help-center-079e40452a8cd0a1b4a2.js:4
 #: src/Agent/tours/page-creator.js:54
 #: src/HelpCenter/tours/page-creator.js:54
 msgid "Write a description of the page you want to create. Be as detailed as you like. We will create a page based on this description."
 msgstr "Напишіть опис сторінки, яку хочете створити. Будьте якомога детальнішими. Ми створимо сторінку на основі цього опису."
 
-#: public/build/extendify-agent-47ce1ec36e515e89dc80.js:18
+#: public/build/extendify-agent-9d1c6defa5e8b1930355.js:18
 #: public/build/extendify-help-center-079e40452a8cd0a1b4a2.js:4
 #: src/Agent/tours/page-creator.js:82
 #: src/HelpCenter/tours/page-creator.js:82
 msgid "If needed, update your site description here. We use this to add additional context about your website."
 msgstr "За потреби оновіть опис вашого сайту тут. Ми використовуємо це для додавання додаткового контексту про ваш вебсайт."
 
-#: public/build/extendify-agent-47ce1ec36e515e89dc80.js:18
+#: public/build/extendify-agent-9d1c6defa5e8b1930355.js:18
 #: public/build/extendify-help-center-079e40452a8cd0a1b4a2.js:4
 #: src/Agent/tours/page-creator.js:105
 #: src/HelpCenter/tours/page-creator.js:105
 msgid "Generate your page"
 msgstr "Створити вашу сторінку"
 
-#: public/build/extendify-agent-47ce1ec36e515e89dc80.js:18
+#: public/build/extendify-agent-9d1c6defa5e8b1930355.js:18
 #: public/build/extendify-help-center-079e40452a8cd0a1b4a2.js:4
 #: src/Agent/tours/page-creator.js:106
 #: src/HelpCenter/tours/page-creator.js:106
@@ -3474,12 +3478,12 @@ msgstr "Не вдалося встановити плагін"
 msgid "Failed to activate the plugin"
 msgstr "Не вдалося активувати плагін"
 
-#: public/build/extendify-page-creator-c6065d168ab1f7c67158.js:7
+#: public/build/extendify-page-creator-6d8b3f0e0ada07c15f72.js:7
 #: src/PageCreator/pages/Dashboard.jsx:103
 msgid "Allow plugins to be installed for advanced page features"
 msgstr "Дозволити встановлення плагінів для передових функцій сторінки"
 
-#: public/build/extendify-page-creator-c6065d168ab1f7c67158.js:7
+#: public/build/extendify-page-creator-6d8b3f0e0ada07c15f72.js:7
 #: src/PageCreator/pages/GeneratingPage.jsx:43
 msgid "Processing patterns and installing required plugins..."
 msgstr "Обробка патернів та встановлення необхідних плагінів..."
@@ -3505,38 +3509,38 @@ msgstr "Іврит"
 msgid "Edit text on this page"
 msgstr "Редагувати текст на цій сторінці"
 
-#: public/build/extendify-agent-47ce1ec36e515e89dc80.js:74
+#: public/build/extendify-agent-9d1c6defa5e8b1930355.js:74
 #: src/Agent/hooks/useThemeVariations.js:17
 msgid "Failed to fetch theme variations."
 msgstr "Не вдалося отримати варіації теми."
 
-#: public/build/extendify-agent-47ce1ec36e515e89dc80.js:74
+#: public/build/extendify-agent-9d1c6defa5e8b1930355.js:74
 #: src/Agent/components/redirects/RedirectThemeVariations.jsx:8
 msgid "Hey there! It looks like you are trying to change your theme colors, but you are not on a page where we can do that."
 msgstr "Привіт! Схоже, ви намагаєтеся змінити кольори теми, але ви не на тій сторінці, де це можливо."
 
-#: public/build/extendify-agent-47ce1ec36e515e89dc80.js:74
-#: public/build/extendify-agent-47ce1ec36e515e89dc80.js:82
+#: public/build/extendify-agent-9d1c6defa5e8b1930355.js:74
+#: public/build/extendify-agent-9d1c6defa5e8b1930355.js:82
 #: src/Agent/components/redirects/RedirectFontsVariations.jsx:10
 #: src/Agent/components/redirects/RedirectThemeVariations.jsx:15
 #: src/Agent/workflows/theme/components/Redirect.jsx:10
 msgid "Suggestion:"
 msgstr "Пропозиція:"
 
-#: public/build/extendify-agent-47ce1ec36e515e89dc80.js:1
-#: public/build/extendify-agent-47ce1ec36e515e89dc80.js:16
-#: public/build/extendify-agent-47ce1ec36e515e89dc80.js:18
-#: public/build/extendify-agent-47ce1ec36e515e89dc80.js:21
-#: public/build/extendify-agent-47ce1ec36e515e89dc80.js:24
-#: public/build/extendify-agent-47ce1ec36e515e89dc80.js:27
-#: public/build/extendify-agent-47ce1ec36e515e89dc80.js:30
-#: public/build/extendify-agent-47ce1ec36e515e89dc80.js:33
-#: public/build/extendify-agent-47ce1ec36e515e89dc80.js:50
-#: public/build/extendify-agent-47ce1ec36e515e89dc80.js:54
-#: public/build/extendify-agent-47ce1ec36e515e89dc80.js:64
-#: public/build/extendify-agent-47ce1ec36e515e89dc80.js:70
-#: public/build/extendify-agent-47ce1ec36e515e89dc80.js:76
-#: public/build/extendify-agent-47ce1ec36e515e89dc80.js:82
+#: public/build/extendify-agent-9d1c6defa5e8b1930355.js:1
+#: public/build/extendify-agent-9d1c6defa5e8b1930355.js:16
+#: public/build/extendify-agent-9d1c6defa5e8b1930355.js:18
+#: public/build/extendify-agent-9d1c6defa5e8b1930355.js:21
+#: public/build/extendify-agent-9d1c6defa5e8b1930355.js:24
+#: public/build/extendify-agent-9d1c6defa5e8b1930355.js:27
+#: public/build/extendify-agent-9d1c6defa5e8b1930355.js:30
+#: public/build/extendify-agent-9d1c6defa5e8b1930355.js:33
+#: public/build/extendify-agent-9d1c6defa5e8b1930355.js:50
+#: public/build/extendify-agent-9d1c6defa5e8b1930355.js:54
+#: public/build/extendify-agent-9d1c6defa5e8b1930355.js:64
+#: public/build/extendify-agent-9d1c6defa5e8b1930355.js:70
+#: public/build/extendify-agent-9d1c6defa5e8b1930355.js:76
+#: public/build/extendify-agent-9d1c6defa5e8b1930355.js:82
 #: src/Agent/components/ChatInput.jsx:222
 #: src/Agent/components/ImageUploader.jsx:189
 #: src/Agent/icons.jsx:214
@@ -3548,9 +3552,9 @@ msgstr "Пропозиція:"
 #: src/Agent/workflows/content/components/UpdatePostStatusConfirm.jsx:44
 #: src/Agent/workflows/plugins/components/InstallPlugin.jsx:165
 #: src/Agent/workflows/settings/components/UpdateSettingConfirm.jsx:55
+#: src/Agent/workflows/theme/components/change-site-design/SelectSiteDesign.jsx:363
 #: src/Agent/workflows/theme/components/SelectAnimation.jsx:171
 #: src/Agent/workflows/theme/components/SelectGeneratedPalette.jsx:183
-#: src/Agent/workflows/theme/components/SelectSiteDesign.jsx:533
 #: src/Agent/workflows/theme/components/SelectSiteVibes.jsx:129
 #: src/Agent/workflows/theme/components/SelectThemeFontsVariation.jsx:97
 #: src/Agent/workflows/theme/components/SelectThemeVariation.jsx:111
@@ -3558,9 +3562,9 @@ msgstr "Пропозиція:"
 msgid "Cancel"
 msgstr "Скасувати"
 
-#: public/build/extendify-agent-47ce1ec36e515e89dc80.js:18
-#: public/build/extendify-agent-47ce1ec36e515e89dc80.js:24
-#: public/build/extendify-agent-47ce1ec36e515e89dc80.js:33
+#: public/build/extendify-agent-9d1c6defa5e8b1930355.js:18
+#: public/build/extendify-agent-9d1c6defa5e8b1930355.js:24
+#: public/build/extendify-agent-9d1c6defa5e8b1930355.js:33
 #: src/Agent/workflows/block-selector/components/UpdateBlockConfirm.jsx:107
 #: src/Agent/workflows/block-selector/components/UpdateImageConfirm.jsx:159
 #: src/Agent/workflows/content/components/UpdatePostConfirm.jsx:40
@@ -3568,134 +3572,134 @@ msgstr "Скасувати"
 msgid "The agent has made the changes in the browser. Please review and confirm."
 msgstr "Агент вніс зміни в браузері. Будь ласка, перегляньте та підтвердьте."
 
-#: public/build/extendify-agent-47ce1ec36e515e89dc80.js:18
+#: public/build/extendify-agent-9d1c6defa5e8b1930355.js:18
 #: src/Agent/tours/library-tour.js:7
 msgid "Tour the design library"
 msgstr "Огляд бібліотеки дизайнів"
 
-#: public/build/extendify-agent-47ce1ec36e515e89dc80.js:18
+#: public/build/extendify-agent-9d1c6defa5e8b1930355.js:18
 #: src/Agent/tours/page-creator.js:7
 msgid "Learn about the AI Page Generator"
 msgstr "Дізнайтеся про генератор сторінок AI"
 
-#: public/build/extendify-agent-47ce1ec36e515e89dc80.js:18
+#: public/build/extendify-agent-9d1c6defa5e8b1930355.js:18
 #: src/Agent/tours/page-editor.js:14
 msgid "Tour the page editor"
 msgstr "Огляд редактора сторінки"
 
-#: public/build/extendify-agent-47ce1ec36e515e89dc80.js:18
+#: public/build/extendify-agent-9d1c6defa5e8b1930355.js:18
 #: src/Agent/tours/plugin-install.js:6
 msgid "See how to install a plugin"
 msgstr "Дізнайтеся, як встановити плагін"
 
-#: public/build/extendify-agent-47ce1ec36e515e89dc80.js:18
+#: public/build/extendify-agent-9d1c6defa5e8b1930355.js:18
 #: src/Agent/tours/plugin-management.js:6
 msgid "Learn how to manage plugins"
 msgstr "Дізнайтеся, як керувати плагінами"
 
-#: public/build/extendify-agent-47ce1ec36e515e89dc80.js:18
+#: public/build/extendify-agent-9d1c6defa5e8b1930355.js:18
 #: src/Agent/tours/site-assistant.js:6
 msgid "Tour the Site Assistant"
 msgstr "Ознайомитися з Помічником сайту"
 
-#: public/build/extendify-agent-47ce1ec36e515e89dc80.js:18
+#: public/build/extendify-agent-9d1c6defa5e8b1930355.js:18
 #: src/Agent/tours/users-screen.js:6
 msgid "Tour the Users screen"
 msgstr "Огляд екрана \"Користувачі\""
 
-#: public/build/extendify-agent-47ce1ec36e515e89dc80.js:1
+#: public/build/extendify-agent-9d1c6defa5e8b1930355.js:1
 #: src/Agent/components/ChatInput.jsx:176
 msgid "Ask anything"
 msgstr "Запитайте що завгодно"
 
-#: public/build/extendify-agent-47ce1ec36e515e89dc80.js:1
+#: public/build/extendify-agent-9d1c6defa5e8b1930355.js:1
 #: src/Agent/components/ChatInput.jsx:233
 msgid "Send message"
 msgstr "Надіслати повідомлення"
 
-#: public/build/extendify-agent-47ce1ec36e515e89dc80.js:4
+#: public/build/extendify-agent-9d1c6defa5e8b1930355.js:4
 #: src/Agent/components/ScrollDownButton.jsx:22
 msgid "Scroll down"
 msgstr "Прокрутити вниз"
 
-#: public/build/extendify-agent-47ce1ec36e515e89dc80.js:1
+#: public/build/extendify-agent-9d1c6defa5e8b1930355.js:1
 #: src/Agent/components/messages/StatusMessage.jsx:15
 msgid "Working on it..."
 msgstr "Працюємо над цим..."
 
-#: public/build/extendify-agent-47ce1ec36e515e89dc80.js:1
+#: public/build/extendify-agent-9d1c6defa5e8b1930355.js:1
 #: src/Agent/components/messages/StatusMessage.jsx:21
 msgid "Gathering data..."
 msgstr "Збирання даних..."
 
-#: public/build/extendify-agent-47ce1ec36e515e89dc80.js:1
+#: public/build/extendify-agent-9d1c6defa5e8b1930355.js:1
 #: src/Agent/components/messages/StatusMessage.jsx:22
 msgid "Analyzing..."
 msgstr "Аналіз…"
 
-#: public/build/extendify-agent-47ce1ec36e515e89dc80.js:1
+#: public/build/extendify-agent-9d1c6defa5e8b1930355.js:1
 #: src/Agent/components/messages/StatusMessage.jsx:23
 #: src/Agent/components/messages/StatusMessage.jsx:24
 msgid "Canceled"
 msgstr "Скасовано"
 
-#: public/build/extendify-agent-47ce1ec36e515e89dc80.js:1
+#: public/build/extendify-agent-9d1c6defa5e8b1930355.js:1
 #: src/Agent/components/messages/StatusMessage.jsx:25
 msgid "Usage limit reached"
 msgstr "Досягнуто ліміту використання"
 
-#: public/build/extendify-agent-47ce1ec36e515e89dc80.js:1
+#: public/build/extendify-agent-9d1c6defa5e8b1930355.js:1
 #: src/Agent/components/messages/StatusMessage.jsx:26
 msgid "Usage limit restored"
 msgstr "Ліміт використання відновлено"
 
-#: public/build/extendify-agent-47ce1ec36e515e89dc80.js:1
+#: public/build/extendify-agent-9d1c6defa5e8b1930355.js:1
 #: src/Agent/components/messages/StatusMessage.jsx:102
 msgid "Workflow completed successfully"
 msgstr "Робочий процес успішно завершено"
 
-#: public/build/extendify-agent-47ce1ec36e515e89dc80.js:1
+#: public/build/extendify-agent-9d1c6defa5e8b1930355.js:1
 #: src/Agent/components/messages/WorkflowComponent.jsx:17
 msgid "Component not available"
 msgstr "Компонент недоступний"
 
 #. translators: This is for when a component doesn't exist
-#: public/build/extendify-agent-47ce1ec36e515e89dc80.js:4
+#: public/build/extendify-agent-9d1c6defa5e8b1930355.js:4
 #: src/Agent/components/messages/WorkflowComponent.jsx:22
 msgid "It may have been removed or is not available for your account."
 msgstr "Можливо, його видалено або він недоступний для вашого облікового запису."
 
-#: public/build/extendify-agent-47ce1ec36e515e89dc80.js:4
+#: public/build/extendify-agent-9d1c6defa5e8b1930355.js:4
 #: src/Agent/components/messages/WorkflowMessage.jsx:15
 msgid "What's next? Would you like to do something else?"
 msgstr "Що далі? Хочете зробити щось інше?"
 
-#: public/build/extendify-agent-47ce1ec36e515e89dc80.js:1
+#: public/build/extendify-agent-9d1c6defa5e8b1930355.js:1
 #: src/Agent/components/layouts/DragResizeLayout.jsx:113
 #: src/Agent/components/layouts/SidebarLayout.jsx:114
 msgid "Close window"
 msgstr "Закрити вікно"
 
-#: public/build/extendify-agent-47ce1ec36e515e89dc80.js:1
+#: public/build/extendify-agent-9d1c6defa5e8b1930355.js:1
 #: src/Agent/components/layouts/DragResizeLayout.jsx:154
 msgid "Drag to move"
 msgstr "Перетягніть, щоб перемістити"
 
 #. translators: %s is a human-readable time difference, e.g. "2 hours from now"
-#: public/build/extendify-agent-47ce1ec36e515e89dc80.js:7
+#: public/build/extendify-agent-9d1c6defa5e8b1930355.js:7
 #: src/Agent/components/messages/UsageMessage.jsx:30
 #, js-format
 msgid "You have reached your daily messages limit. Your limit will reset in %s."
 msgstr "Ви досягли щоденного ліміту повідомлень. Ваш ліміт скинеться через %s."
 
-#: public/build/extendify-agent-47ce1ec36e515e89dc80.js:13
+#: public/build/extendify-agent-9d1c6defa5e8b1930355.js:13
 #: src/Agent/components/buttons/AdminBar.jsx:41
 #: src/Agent/components/buttons/Mobile.jsx:38
 #: src/Agent/components/buttons/PostEditor.jsx:47
 msgid "Open Agent"
 msgstr "Відкрити агента"
 
-#: public/build/extendify-agent-47ce1ec36e515e89dc80.js:13
+#: public/build/extendify-agent-9d1c6defa5e8b1930355.js:13
 #: src/Agent/components/buttons/AdminBar.jsx:45
 #: src/Agent/components/buttons/Mobile.jsx:46
 #: src/Agent/components/buttons/PostEditor.jsx:54
@@ -3803,7 +3807,7 @@ msgstr "Тут можна налаштувати розміри, внутріш�
 msgid "Take the welcome tour"
 msgstr "Пройдіть ознайомлювальний тур"
 
-#: public/build/extendify-agent-47ce1ec36e515e89dc80.js:13
+#: public/build/extendify-agent-9d1c6defa5e8b1930355.js:13
 #: src/Agent/components/buttons/Mobile.jsx:49
 msgid "How can we help you today?"
 msgstr "Чим ми можемо вам допомогти сьогодні?"
@@ -3818,9 +3822,9 @@ msgstr "Давайте переглянемо ваші рекомендації 
 msgid "Using the details you provided, our AI suggested the best settings for your site. Take a quick look and confirm everything looks right before moving on."
 msgstr "Використовуючи надані вами дані, наш ШІ запропонував найкращі налаштування для вашого сайту. Швидко перегляньте та підтвердьте, що все виглядає правильно, перш ніж продовжити."
 
-#: public/build/extendify-auto-launch-1871df5815ba8920098f.js:40
+#: public/build/extendify-auto-launch-b5c459e24210e13f67d2.js:40
 #: public/build/extendify-launch-169f4581091a2b7e786b.js:14
-#: src/AutoLaunch/hooks/useCreateSite.js:323
+#: src/AutoLaunch/hooks/useCreateSite.js:352
 #: src/Launch/pages/CreatingSite.jsx:239
 msgid "Footer Navigation"
 msgstr "Навігація в підвалі"
@@ -3840,67 +3844,67 @@ msgstr "Підказка, що вказує на кнопку редагуван
 msgid "Welcome to your new site! When you're ready, press here to edit this page."
 msgstr "Ласкаво просимо на ваш новий сайт! Коли будете готові, натисніть тут, щоб відредагувати цю сторінку."
 
-#: public/build/extendify-agent-47ce1ec36e515e89dc80.js:7
+#: public/build/extendify-agent-9d1c6defa5e8b1930355.js:7
 #: src/Agent/components/PageDocument.jsx:25
 msgid "Remove"
 msgstr "Видалити"
 
-#: public/build/extendify-agent-47ce1ec36e515e89dc80.js:1
+#: public/build/extendify-agent-9d1c6defa5e8b1930355.js:1
 #: src/Agent/components/DOMHighlighter.jsx:266
 msgid "Remove highlight"
 msgstr "Видалити виділення"
 
-#: public/build/extendify-agent-47ce1ec36e515e89dc80.js:13
+#: public/build/extendify-agent-9d1c6defa5e8b1930355.js:13
 #: src/Agent/Agent.jsx:568
 msgid "AI Agent can make mistakes. Check changes before saving."
 msgstr "Агент ШІ може робити помилки. Перевірте зміни перед збереженням."
 
-#: public/build/extendify-agent-47ce1ec36e515e89dc80.js:27
-#: public/build/extendify-agent-47ce1ec36e515e89dc80.js:30
+#: public/build/extendify-agent-9d1c6defa5e8b1930355.js:27
+#: public/build/extendify-agent-9d1c6defa5e8b1930355.js:30
 #: src/Agent/workflows/content/components/UpdatePostStatusConfirm.jsx:51
 #: src/Agent/workflows/settings/components/UpdateSettingConfirm.jsx:62
 msgid "Confirm"
 msgstr "Підтвердити"
 
-#: public/build/extendify-agent-47ce1ec36e515e89dc80.js:1
+#: public/build/extendify-agent-9d1c6defa5e8b1930355.js:1
 #: src/Agent/components/messages/StatusMessage.jsx:13
 msgid "Thinking..."
 msgstr "Обробка…"
 
-#: public/build/extendify-auto-launch-1871df5815ba8920098f.js:57
+#: public/build/extendify-auto-launch-b5c459e24210e13f67d2.js:57
 #: public/build/extendify-launch-169f4581091a2b7e786b.js:8
 #: src/AutoLaunch/LaunchPage.jsx:83
 #: src/Launch/components/PageControl.jsx:328
 msgid "WP Admin Dashboard"
 msgstr "Консоль WP"
 
-#: public/build/extendify-agent-47ce1ec36e515e89dc80.js:68
+#: public/build/extendify-agent-9d1c6defa5e8b1930355.js:68
 #: src/Agent/hooks/useThemeFontsVariations.js:29
 msgid "Failed to fetch theme font variations."
 msgstr "Не вдалося отримати варіації шрифтів теми."
 
-#: public/build/extendify-agent-47ce1ec36e515e89dc80.js:68
+#: public/build/extendify-agent-9d1c6defa5e8b1930355.js:68
 #: src/Agent/workflows/theme/change-theme-fonts-variation.js:13
 msgid "Hey there! It looks like you are trying to change your theme fonts, but you are not on a page where we can do that."
 msgstr "Привіт! Схоже, ви намагаєтеся змінити шрифти теми, але ви не на тій сторінці, де це можливо."
 
 #. translators: A chat message shown to the user
-#: public/build/extendify-agent-47ce1ec36e515e89dc80.js:70
+#: public/build/extendify-agent-9d1c6defa5e8b1930355.js:70
 #: src/Agent/workflows/theme/components/SelectThemeFontsVariation.jsx:58
 msgid "Loading font variations..."
 msgstr "Завантаження варіацій шрифту..."
 
-#: public/build/extendify-agent-47ce1ec36e515e89dc80.js:1
+#: public/build/extendify-agent-9d1c6defa5e8b1930355.js:1
 #: src/Agent/components/ChatTools.jsx:35
 msgid "Select"
 msgstr "Вибрати"
 
-#: public/build/extendify-agent-47ce1ec36e515e89dc80.js:1
+#: public/build/extendify-agent-9d1c6defa5e8b1930355.js:1
 #: src/Agent/components/ChatInput.jsx:172
 msgid "What do you want to change in the selected content?"
 msgstr "Що ви хочете змінити у вибраному вмісті?"
 
-#: public/build/extendify-agent-47ce1ec36e515e89dc80.js:7
+#: public/build/extendify-agent-9d1c6defa5e8b1930355.js:7
 #: src/Agent/components/PageDocument.jsx:12
 msgid "Selected content"
 msgstr "Вибраний вміст"
@@ -3913,86 +3917,86 @@ msgstr "Опублікувати цю сторінку"
 msgid "Unpublish this page"
 msgstr "Скасувати публікацію цієї сторінки"
 
-#: public/build/extendify-agent-47ce1ec36e515e89dc80.js:16
-#: public/build/extendify-agent-47ce1ec36e515e89dc80.js:24
+#: public/build/extendify-agent-9d1c6defa5e8b1930355.js:16
+#: public/build/extendify-agent-9d1c6defa5e8b1930355.js:24
 #: src/Agent/components/ImageUploader.jsx:204
 #: src/Agent/workflows/block-selector/components/UpdateImageConfirm.jsx:13
 msgid "Open Media Library"
 msgstr "Відкрити бібліотеку медіа"
 
-#: public/build/extendify-agent-47ce1ec36e515e89dc80.js:24
+#: public/build/extendify-agent-9d1c6defa5e8b1930355.js:24
 #: src/Agent/workflows/block-selector/components/UpdateImageConfirm.jsx:107
 #, js-format
 msgid "The agent has requested the media library. Press \"%s\" to upload or select an image."
 msgstr "Агент запросив бібліотеку медіа. Натисніть \"%s\", щоб завантажити або вибрати зображення."
 
-#: public/build/extendify-agent-47ce1ec36e515e89dc80.js:24
+#: public/build/extendify-agent-9d1c6defa5e8b1930355.js:24
 #: src/Agent/workflows/block-selector/components/UpdateImageConfirm.jsx:124
 msgid "Select or Upload Image"
 msgstr "Вибрати або завантажити зображення"
 
-#: public/build/extendify-agent-47ce1ec36e515e89dc80.js:18
+#: public/build/extendify-agent-9d1c6defa5e8b1930355.js:18
 #: src/Agent/workflows/block-selector/components/GenerateImageConfirm.jsx:120
 msgid "An unknown error occurred."
 msgstr "Сталася невідома помилка."
 
-#: public/build/extendify-agent-47ce1ec36e515e89dc80.js:21
+#: public/build/extendify-agent-9d1c6defa5e8b1930355.js:21
 #: src/Agent/workflows/block-selector/components/GenerateImageConfirm.jsx:227
 msgid "Image generated successfully!"
 msgstr "Зображення успішно створено!"
 
 #. translators: %1$s is the number of credits remaining, %2$s is the total credits
-#: public/build/extendify-agent-47ce1ec36e515e89dc80.js:24
+#: public/build/extendify-agent-9d1c6defa5e8b1930355.js:24
 #: src/Agent/workflows/block-selector/components/GenerateImageConfirm.jsx:260
 #, js-format
 msgid "You have %1$s of %2$s daily image credits remaining."
 msgstr "У вас залишилося %1$s з %2$s щоденних кредитів на зображення."
 
-#: public/build/extendify-agent-47ce1ec36e515e89dc80.js:24
+#: public/build/extendify-agent-9d1c6defa5e8b1930355.js:24
 #: src/Agent/workflows/content/components/GeneratePageResult.jsx:19
 msgid "The agent has finished creating your page. Press take me there to visit your new page or dismiss to remove this notice."
 msgstr "Агент завершив створення вашої сторінки. Натисніть \"перейти\", щоб відвідати нову сторінку, або \"закрити\", щоб видалити це сповіщення."
 
-#: public/build/extendify-page-creator-c6065d168ab1f7c67158.js:4
+#: public/build/extendify-page-creator-6d8b3f0e0ada07c15f72.js:4
 #: src/PageCreator/pages/Dashboard.jsx:72
 msgid "E.g., Create an \"About Us\" page highlighting our story, mission, values and team overview."
 msgstr "Наприклад, створіть сторінку \"Про нас\", де висвітліть нашу історію, місію, цінності та огляд команди"
 
-#: public/build/extendify-agent-47ce1ec36e515e89dc80.js:18
+#: public/build/extendify-agent-9d1c6defa5e8b1930355.js:18
 #: src/Agent/workflows/block-selector/components/GenerateImageConfirm.jsx:115
 msgid "No image returned"
 msgstr "Зображення не повернуто"
 
-#: public/build/extendify-agent-47ce1ec36e515e89dc80.js:1
+#: public/build/extendify-agent-9d1c6defa5e8b1930355.js:1
 #: src/Agent/components/messages/StatusMessage.jsx:17
 msgid "Formulating a response..."
 msgstr "Формування відповіді..."
 
-#: public/build/extendify-agent-47ce1ec36e515e89dc80.js:1
+#: public/build/extendify-agent-9d1c6defa5e8b1930355.js:1
 #: src/Agent/components/messages/StatusMessage.jsx:18
 msgid "Reviewing logic..."
 msgstr "Перегляд логіки..."
 
-#: public/build/extendify-agent-47ce1ec36e515e89dc80.js:1
+#: public/build/extendify-agent-9d1c6defa5e8b1930355.js:1
 #: src/Agent/components/layouts/MobileLayout.jsx:63
 msgid "Minimize window"
 msgstr "Згорнути вікно"
 
-#: public/build/extendify-agent-47ce1ec36e515e89dc80.js:1
+#: public/build/extendify-agent-9d1c6defa5e8b1930355.js:1
 #: src/Agent/components/messages/StatusMessage.jsx:16
 msgid "Interpreting message..."
 msgstr "Інтерпретація повідомлення…"
 
-#: public/build/extendify-agent-47ce1ec36e515e89dc80.js:27
+#: public/build/extendify-agent-9d1c6defa5e8b1930355.js:27
 #: src/Agent/workflows/plugins/components/InstallPlugin.jsx:79
 msgid "There was an error installing the plugin. You may try again"
 msgstr "Виникла помилка під час встановлення плагіна. Ви можете спробувати знову"
 
-#: public/build/extendify-agent-47ce1ec36e515e89dc80.js:18
-#: public/build/extendify-agent-47ce1ec36e515e89dc80.js:21
-#: public/build/extendify-agent-47ce1ec36e515e89dc80.js:24
-#: public/build/extendify-agent-47ce1ec36e515e89dc80.js:27
-#: public/build/extendify-agent-47ce1ec36e515e89dc80.js:82
+#: public/build/extendify-agent-9d1c6defa5e8b1930355.js:18
+#: public/build/extendify-agent-9d1c6defa5e8b1930355.js:21
+#: public/build/extendify-agent-9d1c6defa5e8b1930355.js:24
+#: public/build/extendify-agent-9d1c6defa5e8b1930355.js:27
+#: public/build/extendify-agent-9d1c6defa5e8b1930355.js:82
 #: src/Agent/workflows/block-selector/components/GenerateImageConfirm.jsx:244
 #: src/Agent/workflows/block-selector/components/UpdateBlockConfirm.jsx:126
 #: src/Agent/workflows/content/components/UpdatePostConfirm.jsx:60
@@ -4001,22 +4005,22 @@ msgstr "Виникла помилка під час встановлення п�
 msgid "Try Again"
 msgstr "Спробуйте ще раз"
 
-#: public/build/extendify-agent-47ce1ec36e515e89dc80.js:27
+#: public/build/extendify-agent-9d1c6defa5e8b1930355.js:27
 #: src/Agent/workflows/plugins/components/InstallPlugin.jsx:102
 msgid "Installing plugin..."
 msgstr "Встановлення плагіну..."
 
-#: public/build/extendify-agent-47ce1ec36e515e89dc80.js:27
+#: public/build/extendify-agent-9d1c6defa5e8b1930355.js:27
 #: src/Agent/workflows/plugins/components/InstallPlugin.jsx:103
 msgid "Activating plugin..."
 msgstr "Активація плагіну..."
 
-#: public/build/extendify-agent-47ce1ec36e515e89dc80.js:27
+#: public/build/extendify-agent-9d1c6defa5e8b1930355.js:27
 #: src/Agent/workflows/plugins/components/InstallPlugin.jsx:115
 msgid "The agent is requesting to install and activate a plugin."
 msgstr "Агент запитує встановлення та активацію плагіну."
 
-#: public/build/extendify-agent-47ce1ec36e515e89dc80.js:30
+#: public/build/extendify-agent-9d1c6defa5e8b1930355.js:30
 #: src/Agent/workflows/plugins/components/InstallPlugin.jsx:152
 msgid "Install Plugin"
 msgstr "Встановити плагін"
@@ -4026,7 +4030,7 @@ msgstr "Встановити плагін"
 msgid "Go through the AI website creation process again to create a new site."
 msgstr "Пройдіть процес створення сайту за допомогою AI ще раз, щоб створити новий сайт."
 
-#: public/build/extendify-auto-launch-1871df5815ba8920098f.js:55
+#: public/build/extendify-auto-launch-b5c459e24210e13f67d2.js:55
 #: public/build/extendify-launch-169f4581091a2b7e786b.js:8
 #: src/AutoLaunch/components/RestartLaunchModal.jsx:172
 #: src/Launch/components/RestartLaunchModal.jsx:206
@@ -4041,62 +4045,62 @@ msgid "By using AI features, you agree with the %1$sTerms of Use and Privacy Pol
 msgstr "Використовуючи функції штучного інтелекту, ви погоджуєтеся з %1$sУмовами використання та Політикою конфіденційності%2$s"
 
 #. translators: A chat message shown to the user
-#: public/build/extendify-agent-47ce1ec36e515e89dc80.js:68
+#: public/build/extendify-agent-9d1c6defa5e8b1930355.js:68
 #: src/Agent/workflows/theme/components/SelectThemeFontsVariation.jsx:45
 msgid "We were unable to find any variations for your theme"
 msgstr "Ми не змогли знайти жодних варіацій для вашої теми"
 
 #. translators: This message is shown when the AI agent fails to find a suitable workflow.
-#: public/build/extendify-agent-47ce1ec36e515e89dc80.js:9
+#: public/build/extendify-agent-9d1c6defa5e8b1930355.js:9
 #: src/Agent/Agent.jsx:101
 msgid "Something went wrong while trying to start this request. Please try again."
 msgstr "Щось пішло не так під час запуску цього запиту. Будь ласка, спробуйте знову."
 
 #. translators: This message is shown when the AI agent fails to confirm an action.
-#: public/build/extendify-agent-47ce1ec36e515e89dc80.js:11
+#: public/build/extendify-agent-9d1c6defa5e8b1930355.js:11
 #: src/Agent/Agent.jsx:249
 msgid "Sorry, something went wrong attempting to call the tool. Please try again."
 msgstr "Вибачте, щось пішло не так під час виклику інструменту. Будь ласка, спробуйте ще раз."
 
 #. translators: This message is shown when the AI agent encounters a general error.
-#: public/build/extendify-agent-47ce1ec36e515e89dc80.js:13
+#: public/build/extendify-agent-9d1c6defa5e8b1930355.js:13
 #: src/Agent/Agent.jsx:509
 msgid "Sorry, something went wrong. I tried but wasn't able to do this request. Please try again."
 msgstr "Вибачте, щось пішло не так. Я намагався, але не зміг виконати цей запит. Будь ласка, спробуйте знову."
 
 #. translators: A chat message shown to the user
-#: public/build/extendify-agent-47ce1ec36e515e89dc80.js:21
+#: public/build/extendify-agent-9d1c6defa5e8b1930355.js:21
 #: src/Agent/workflows/block-selector/components/GenerateImageConfirm.jsx:169
 #, js-format
 msgid "Error generating image: %s"
 msgstr "Помилка створення зображення: %s"
 
 #. translators: %1$s and %2$s are HTML tags. %1$s opens a span with screen-reader-only text, and %2$s closes that span.
-#: public/build/extendify-agent-47ce1ec36e515e89dc80.js:30
+#: public/build/extendify-agent-9d1c6defa5e8b1930355.js:30
 #: src/Agent/workflows/plugins/components/InstallPlugin.jsx:134
 #, js-format
 msgid "Plugin Details %1$s(opens in a new tab)%2$s"
 msgstr "Деталі плагіна %1$s(відкривається у новій вкладці)%2$s"
 
-#: public/build/extendify-agent-47ce1ec36e515e89dc80.js:30
+#: public/build/extendify-agent-9d1c6defa5e8b1930355.js:30
 #: src/Agent/workflows/settings/components/UpdateSettingConfirm.jsx:45
 msgid "Apply this setting change?"
 msgstr "Застосувати цю зміну налаштувань?"
 
 #. translators: "site style" refers to the structural aesthetic style for the site.
-#: public/build/extendify-agent-47ce1ec36e515e89dc80.js:59
+#: public/build/extendify-agent-9d1c6defa5e8b1930355.js:59
 #: src/Agent/workflows/theme/change-site-vibes.js:17
 msgid "Hey there! It looks like you are trying to change your site style, but you are not on a page where we can do that."
 msgstr "Привіт! Схоже, ви намагаєтеся змінити стиль сайту, але ви не на сторінці, де це можливо."
 
 #. translators: A chat message shown to the user
-#: public/build/extendify-agent-47ce1ec36e515e89dc80.js:74
+#: public/build/extendify-agent-9d1c6defa5e8b1930355.js:74
 #: src/Agent/workflows/theme/components/SelectThemeVariation.jsx:54
 msgid "We were unable to find any colors for your theme"
 msgstr "Не вдалося знайти кольори для вашої теми"
 
 #. translators: A chat message shown to the user
-#: public/build/extendify-agent-47ce1ec36e515e89dc80.js:76
+#: public/build/extendify-agent-9d1c6defa5e8b1930355.js:76
 #: src/Agent/workflows/theme/components/SelectThemeVariation.jsx:67
 msgid "Loading available colors..."
 msgstr "Завантаження доступних кольорів..."
@@ -4113,7 +4117,7 @@ msgstr "Застосування стилю сайту"
 msgid "Customizing your site style"
 msgstr "Налаштовування стилю сайту"
 
-#: public/build/extendify-agent-47ce1ec36e515e89dc80.js:1
+#: public/build/extendify-agent-9d1c6defa5e8b1930355.js:1
 #: public/build/extendify-assist-page-e98b949ab0c13ba07729.js:10
 #: public/build/extendify-draft-08ba35a8f591ab939cda.js:1
 #: src/Agent/icons.jsx:12
@@ -4122,46 +4126,46 @@ msgstr "Налаштовування стилю сайту"
 msgid "Magic Icon"
 msgstr "Магічна іконка"
 
-#: public/build/extendify-agent-47ce1ec36e515e89dc80.js:1
+#: public/build/extendify-agent-9d1c6defa5e8b1930355.js:1
 #: src/Agent/icons.jsx:39
 msgid "Magic Sparkle Animation"
 msgstr "Анімація магічного сяйва"
 
-#: public/build/extendify-agent-47ce1ec36e515e89dc80.js:1
+#: public/build/extendify-agent-9d1c6defa5e8b1930355.js:1
 #: public/build/extendify-help-center-079e40452a8cd0a1b4a2.js:1
 #: src/Agent/icons.jsx:113
 #: src/HelpCenter/components/ai-chat/icons.jsx:41
 msgid "Thumb Down Icon"
 msgstr "Іконка \"палець вниз\""
 
-#: public/build/extendify-agent-47ce1ec36e515e89dc80.js:1
+#: public/build/extendify-agent-9d1c6defa5e8b1930355.js:1
 #: public/build/extendify-help-center-079e40452a8cd0a1b4a2.js:1
 #: src/Agent/icons.jsx:125
 #: src/HelpCenter/components/ai-chat/icons.jsx:53
 msgid "Thumb Up Icon"
 msgstr "Іконка \"Палець вгору\""
 
-#: public/build/extendify-agent-47ce1ec36e515e89dc80.js:1
+#: public/build/extendify-agent-9d1c6defa5e8b1930355.js:1
 #: src/Agent/icons.jsx:132
 msgid "Sparkle Icon"
 msgstr "Іконка блиску"
 
-#: public/build/extendify-agent-47ce1ec36e515e89dc80.js:1
+#: public/build/extendify-agent-9d1c6defa5e8b1930355.js:1
 #: src/Agent/icons.jsx:147
 msgid "Tool Select Icon"
 msgstr "Інструмент вибору значка"
 
-#: public/build/extendify-agent-47ce1ec36e515e89dc80.js:1
+#: public/build/extendify-agent-9d1c6defa5e8b1930355.js:1
 #: src/Agent/icons.jsx:179
 msgid "Selected Content Icon"
 msgstr "Вибрана іконка контенту"
 
-#: public/build/extendify-agent-47ce1ec36e515e89dc80.js:1
+#: public/build/extendify-agent-9d1c6defa5e8b1930355.js:1
 #: src/Agent/components/messages/StatusMessage.jsx:92
 msgid "Success icon"
 msgstr "Іконка успіху"
 
-#: public/build/extendify-agent-47ce1ec36e515e89dc80.js:1
+#: public/build/extendify-agent-9d1c6defa5e8b1930355.js:1
 #: src/Agent/components/ErrorMessage.jsx:15
 msgid "Error icon"
 msgstr "Іконка помилки"
@@ -4381,7 +4385,7 @@ msgstr "Іконка блогу"
 msgid "Business Icon"
 msgstr "Іконка бізнесу"
 
-#: public/build/extendify-auto-launch-1871df5815ba8920098f.js:52
+#: public/build/extendify-auto-launch-b5c459e24210e13f67d2.js:52
 #: public/build/extendify-launch-169f4581091a2b7e786b.js:8
 #: src/AutoLaunch/icons.jsx:87
 #: src/Launch/svg/Checkmark.jsx:15
@@ -4563,19 +4567,14 @@ msgstr "Іконка мови"
 msgid "Down Arrow Icon"
 msgstr "Іконка стрілки вниз"
 
-#: public/build/extendify-auto-launch-1871df5815ba8920098f.js:52
-#: public/build/extendify-library-47d651124bad74dbba8b.js:1
-#: public/build/extendify-page-creator-c6065d168ab1f7c67158.js:1
+#: public/build/extendify-auto-launch-b5c459e24210e13f67d2.js:52
+#: public/build/extendify-library-46b68847bd85f90eb8b6.js:1
+#: public/build/extendify-page-creator-6d8b3f0e0ada07c15f72.js:1
 #: src/AutoLaunch/icons.jsx:5
-#: src/Library/icons/extendify-logo.jsx:4
+#: src/Library/icons/extendify-logo.jsx:3
 #: src/PageCreator/icons/extendify-logo.jsx:4
 msgid "Extendify Logo"
 msgstr "Лого Extendify"
-
-#: public/build/extendify-page-creator-c6065d168ab1f7c67158.js:1
-#: src/PageCreator/icons/ai-gen.jsx:10
-msgid "AI Generated Page Icon"
-msgstr "Іконка сторінки, створена AI"
 
 #: src/Assist/svg/AllCaughtUp.jsx:12
 msgid "All Caught Up Icon"
@@ -4619,35 +4618,35 @@ msgstr "Покращення вашого сайту"
 msgid "Setting up essential tools"
 msgstr "Налаштування основних інструментів"
 
-#: public/build/extendify-agent-47ce1ec36e515e89dc80.js:16
+#: public/build/extendify-agent-9d1c6defa5e8b1930355.js:16
 #: src/Agent/components/ImageUploader.jsx:170
 msgid "Drop images to upload"
 msgstr "Перетягніть зображення, щоб завантажити"
 
-#: public/build/extendify-agent-47ce1ec36e515e89dc80.js:21
+#: public/build/extendify-agent-9d1c6defa5e8b1930355.js:21
 #: src/Agent/workflows/block-selector/components/GenerateImageConfirm.jsx:65
 msgid "Failed to save image"
 msgstr "Не вдалося зберегти зображення"
 
-#: public/build/extendify-agent-47ce1ec36e515e89dc80.js:21
+#: public/build/extendify-agent-9d1c6defa5e8b1930355.js:21
 #: src/Agent/workflows/block-selector/components/GenerateImageConfirm.jsx:183
 #, js-format
 msgid "It looks like you've run out of credits. They'll refresh in %s, so check back then."
 msgstr "Схоже, що у вас закінчилися кредити. Вони оновляться через %s, тому зайдіть тоді."
 
-#: public/build/extendify-agent-47ce1ec36e515e89dc80.js:21
+#: public/build/extendify-agent-9d1c6defa5e8b1930355.js:21
 #: src/Agent/workflows/block-selector/components/GenerateImageConfirm.jsx:253
 msgid "Saving..."
 msgstr "Збереження..."
 
 #. translators: %1$s is the current page or post status, and %2$s is the updated page or post status.
-#: public/build/extendify-agent-47ce1ec36e515e89dc80.js:27
+#: public/build/extendify-agent-9d1c6defa5e8b1930355.js:27
 #: src/Agent/workflows/content/components/UpdatePostStatusConfirm.jsx:28
 #, js-format
 msgid "Status will change from \"%s\" to \"%s\", please confirm to save."
 msgstr "Статус зміниться з \"%1$s\" на \"%2$s\", підтвердьте для збереження"
 
-#: public/build/extendify-agent-47ce1ec36e515e89dc80.js:1
+#: public/build/extendify-agent-9d1c6defa5e8b1930355.js:1
 #: src/Agent/components/ChatInput.jsx:199
 msgid "Message too long"
 msgstr "Повідомлення занадто довге"
@@ -4658,7 +4657,7 @@ msgid "A \"Shop\" page will also be automatically created."
 msgstr "Сторінка \"Магазин\" також буде створена автоматично"
 
 #. translators: This is a status message. 'Loading' is a verb — the app is currently loading the animation options. It is not referring to 'loading animation' as a compound noun.
-#: public/build/extendify-agent-47ce1ec36e515e89dc80.js:50
+#: public/build/extendify-agent-9d1c6defa5e8b1930355.js:50
 #: src/Agent/workflows/theme/components/SelectAnimation.jsx:117
 msgid "Loading animation options..."
 msgstr "Параметри анімації завантаження..."
@@ -4669,178 +4668,178 @@ msgid "Auto Launch"
 msgstr "Автоматичний запуск"
 
 #. translators: This is an error message shown to the user when a network request fails and is being retried
-#: public/build/extendify-auto-launch-1871df5815ba8920098f.js:6
+#: public/build/extendify-auto-launch-b5c459e24210e13f67d2.js:6
 #: src/AutoLaunch/functions/helpers.js:17
 msgid "The network seems unstable. Retrying..."
 msgstr "Мережа здається нестабільною. Повторна спроба..."
 
 #. translators: this is for a action log UI. Keep it short
-#: public/build/extendify-auto-launch-1871df5815ba8920098f.js:19
-#: src/AutoLaunch/fetchers/get-plugins.js:67
+#: public/build/extendify-auto-launch-b5c459e24210e13f67d2.js:11
+#: src/AutoLaunch/fetchers/get-plugins.js:76
 msgid "Setting up functionality for your website"
 msgstr "Налаштування функціональності для вашого сайту"
 
 #. translators: this is for a action log UI. Keep it short
-#: public/build/extendify-auto-launch-1871df5815ba8920098f.js:31
-#: src/AutoLaunch/hooks/useCreateSite.js:196
+#: public/build/extendify-auto-launch-b5c459e24210e13f67d2.js:31
+#: src/AutoLaunch/hooks/useCreateSite.js:222
 msgid "Adding admin configurations"
 msgstr "Додавання конфігурацій адміністратора"
 
 #. translators: this is for a action log UI. Keep it short
-#: public/build/extendify-auto-launch-1871df5815ba8920098f.js:33
-#: src/AutoLaunch/hooks/useCreateSite.js:260
+#: public/build/extendify-auto-launch-b5c459e24210e13f67d2.js:33
+#: src/AutoLaunch/hooks/useCreateSite.js:286
 msgid "Installing fonts locally"
 msgstr "Встановлення шрифтів локально"
 
-#: public/build/extendify-auto-launch-1871df5815ba8920098f.js:35
-#: src/AutoLaunch/hooks/useCreateSite.js:289
+#: public/build/extendify-auto-launch-b5c459e24210e13f67d2.js:35
+#: src/AutoLaunch/hooks/useCreateSite.js:317
 msgid "Working on the navigation"
 msgstr "Робота над навігацією"
 
 #. translators: this is for a action log UI. Keep it short
-#: public/build/extendify-auto-launch-1871df5815ba8920098f.js:37
-#: src/AutoLaunch/hooks/useCreateSite.js:300
+#: public/build/extendify-auto-launch-b5c459e24210e13f67d2.js:37
+#: src/AutoLaunch/hooks/useCreateSite.js:328
 msgid "Perfecting a landing page"
 msgstr "Оптимізація цільової сторінки"
 
 #. translators: this is for a action log UI. Keep it short
-#: public/build/extendify-auto-launch-1871df5815ba8920098f.js:42
-#: src/AutoLaunch/hooks/useCreateSite.js:333
+#: public/build/extendify-auto-launch-b5c459e24210e13f67d2.js:42
+#: src/AutoLaunch/hooks/useCreateSite.js:363
 msgid "Creating pages"
 msgstr "Створення сторінок"
 
 #. translators: this is for a action log UI. Keep it short
-#: public/build/extendify-auto-launch-1871df5815ba8920098f.js:50
-#: src/AutoLaunch/hooks/useCreateSite.js:377
+#: public/build/extendify-auto-launch-b5c459e24210e13f67d2.js:50
+#: src/AutoLaunch/hooks/useCreateSite.js:418
 msgid "Setting up your online store"
 msgstr "Налаштування вашого інтернет-магазину"
 
 #. translators: this is for a action log UI. Keep it short
-#: public/build/extendify-auto-launch-1871df5815ba8920098f.js:52
-#: src/AutoLaunch/hooks/useCreateSite.js:447
+#: public/build/extendify-auto-launch-b5c459e24210e13f67d2.js:52
+#: src/AutoLaunch/hooks/useCreateSite.js:491
 msgid "All done!"
 msgstr "Готово!"
 
-#: public/build/extendify-auto-launch-1871df5815ba8920098f.js:52
-#: src/AutoLaunch/hooks/useCreateSite.js:457
+#: public/build/extendify-auto-launch-b5c459e24210e13f67d2.js:52
+#: src/AutoLaunch/hooks/useCreateSite.js:501
 msgid "Something went wrong during the final steps. We will try again but you may need to refresh the page."
 msgstr "Щось пішло не так на останніх етапах. Ми спробуємо ще раз, але можливо, вам потрібно буде оновити сторінку"
 
-#: public/build/extendify-auto-launch-1871df5815ba8920098f.js:52
-#: src/AutoLaunch/hooks/useCreateSite.js:487
+#: public/build/extendify-auto-launch-b5c459e24210e13f67d2.js:52
+#: src/AutoLaunch/hooks/useCreateSite.js:531
 msgid "Having some trouble with this step. Trying again..."
 msgstr "Виникли проблеми на цьому етапі. Спробуйте ще раз"
 
-#: public/build/extendify-auto-launch-1871df5815ba8920098f.js:52
+#: public/build/extendify-auto-launch-b5c459e24210e13f67d2.js:52
 #: src/AutoLaunch/components/CreatingSite.jsx:94
 msgid "We are experiencing some delays"
 msgstr "Ми стикаємося з деякими затримками"
 
-#: public/build/extendify-auto-launch-1871df5815ba8920098f.js:52
+#: public/build/extendify-auto-launch-b5c459e24210e13f67d2.js:52
 #: src/AutoLaunch/components/CreatingSite.jsx:97
 msgid "Pausing for a few seconds"
 msgstr "Пауза на кілька секунд"
 
-#: public/build/extendify-auto-launch-1871df5815ba8920098f.js:52
+#: public/build/extendify-auto-launch-b5c459e24210e13f67d2.js:52
 #: src/AutoLaunch/components/RestartLaunchModal.jsx:115
 msgid "Start Over?"
 msgstr "Почати заново?"
 
-#: public/build/extendify-auto-launch-1871df5815ba8920098f.js:52
+#: public/build/extendify-auto-launch-b5c459e24210e13f67d2.js:52
 #: src/AutoLaunch/components/RestartLaunchModal.jsx:120
 msgid "It looks like you have been here before. We need to clean up some things before we can continue."
 msgstr "Схоже, ви вже були тут раніше. Нам потрібно прибрати деякі речі, перш ніж ми зможемо продовжити"
 
 #. translators: %3$s is the number of old pages
-#: public/build/extendify-auto-launch-1871df5815ba8920098f.js:55
+#: public/build/extendify-auto-launch-b5c459e24210e13f67d2.js:55
 #: src/AutoLaunch/components/RestartLaunchModal.jsx:128
 #, js-format
 msgid "%s pages/posts will be deleted."
 msgstr "Буде видалено %s сторінок/записів"
 
-#: public/build/extendify-agent-47ce1ec36e515e89dc80.js:1
-#: public/build/extendify-auto-launch-1871df5815ba8920098f.js:55
+#: public/build/extendify-agent-9d1c6defa5e8b1930355.js:1
+#: public/build/extendify-auto-launch-b5c459e24210e13f67d2.js:55
 #: src/Agent/components/messages/StatusMessage.jsx:20
 #: src/AutoLaunch/components/RestartLaunchModal.jsx:163
 msgid "Processing..."
 msgstr "Обробка..."
 
-#: public/build/extendify-auto-launch-1871df5815ba8920098f.js:57
+#: public/build/extendify-auto-launch-b5c459e24210e13f67d2.js:57
 #: src/AutoLaunch/LaunchPage.jsx:120
 msgid "Describe the website you want to build"
 msgstr "Опишіть вебсайт, який ви хочете створити"
 
-#: public/build/extendify-agent-47ce1ec36e515e89dc80.js:82
+#: public/build/extendify-agent-9d1c6defa5e8b1930355.js:82
 #: src/Agent/workflows/theme/components/SelectGeneratedPalette.jsx:107
 msgid "We were unable to generate color palettes. Please try again."
 msgstr "Не вдалося створити палітри кольорів. Спробуйте ще раз"
 
 #. translators: vibe in this context is a noun - the feeling of their site design.
-#: public/build/extendify-auto-launch-1871df5815ba8920098f.js:35
-#: src/AutoLaunch/hooks/useCreateSite.js:274
+#: public/build/extendify-auto-launch-b5c459e24210e13f67d2.js:35
+#: src/AutoLaunch/hooks/useCreateSite.js:300
 msgid "Setting the website style"
 msgstr "Налаштування стилю вебсайту"
 
-#: public/build/extendify-agent-47ce1ec36e515e89dc80.js:1
+#: public/build/extendify-agent-9d1c6defa5e8b1930355.js:1
 #: src/Agent/components/OptionsPopover.jsx:78
 msgid "View more options"
 msgstr "Переглянути ще налаштування"
 
-#: public/build/extendify-agent-47ce1ec36e515e89dc80.js:1
+#: public/build/extendify-agent-9d1c6defa5e8b1930355.js:1
 #: src/Agent/components/messages/StatusMessage.jsx:118
 msgid "Workflow was canceled"
 msgstr "Робочий процес скасовано"
 
 #. translators: This message show above a UI where the user can select a different animation for their site.
-#: public/build/extendify-agent-47ce1ec36e515e89dc80.js:54
+#: public/build/extendify-agent-9d1c6defa5e8b1930355.js:54
 #: src/Agent/workflows/theme/change-animation.js:16
 msgid "Below you can select a different animation for your site."
 msgstr "Нижче ви можете вибрати іншу анімацію для вашого сайту."
 
 #. translators: This message show above a UI where the user can select a different site style variation for their theme.
-#: public/build/extendify-agent-47ce1ec36e515e89dc80.js:68
+#: public/build/extendify-agent-9d1c6defa5e8b1930355.js:68
 #: src/Agent/workflows/theme/change-site-vibes.js:29
 msgid "Below you can select a different site style variation for your theme."
 msgstr "Нижче ви можете вибрати інший різновид стилю сайту для вашої теми"
 
 #. translators: This message show above a UI where the user can select a different font variation for their theme.
-#: public/build/extendify-agent-47ce1ec36e515e89dc80.js:74
+#: public/build/extendify-agent-9d1c6defa5e8b1930355.js:74
 #: src/Agent/workflows/theme/change-theme-fonts-variation.js:27
 msgid "Below you can select a different font variation for your theme."
 msgstr "Нижче ви можете вибрати інший варіант шрифту для вашої теми."
 
-#: public/build/extendify-agent-47ce1ec36e515e89dc80.js:74
+#: public/build/extendify-agent-9d1c6defa5e8b1930355.js:74
 #: src/Agent/workflows/theme/change-theme-fonts-variation.js:34
 msgid "Updated the theme fonts"
 msgstr "Оновлено шрифти теми"
 
-#: public/build/extendify-agent-47ce1ec36e515e89dc80.js:74
+#: public/build/extendify-agent-9d1c6defa5e8b1930355.js:74
 #: src/Agent/workflows/theme/change-theme-fonts-variation.js:35
 msgid "Canceled the theme fonts update"
 msgstr "Скасовано оновлення шрифтів теми"
 
 #. translators: This message show above a UI where the user can select a different color variation for their theme.
-#: public/build/extendify-agent-47ce1ec36e515e89dc80.js:82
+#: public/build/extendify-agent-9d1c6defa5e8b1930355.js:82
 #: src/Agent/workflows/theme/change-theme-variation.js:21
 msgid "Below you can select a different color variation for your theme."
 msgstr "Нижче ви можете вибрати іншу варіацію кольору для вашої теми"
 
-#: public/build/extendify-agent-47ce1ec36e515e89dc80.js:82
+#: public/build/extendify-agent-9d1c6defa5e8b1930355.js:82
 #: src/Agent/workflows/theme/change-theme-variation.js:28
 msgid "Updated the theme color"
 msgstr "Оновлено колір теми"
 
-#: public/build/extendify-agent-47ce1ec36e515e89dc80.js:82
+#: public/build/extendify-agent-9d1c6defa5e8b1930355.js:82
 #: src/Agent/workflows/theme/change-theme-variation.js:29
 msgid "Canceled the theme color update"
 msgstr "Скасовано оновлення кольору теми"
 
-#: public/build/extendify-auto-launch-1871df5815ba8920098f.js:52
+#: public/build/extendify-auto-launch-b5c459e24210e13f67d2.js:52
 #: src/AutoLaunch/components/DescriptionGathering.jsx:191
 msgid "Enhance with AI"
 msgstr "Покращити за допомогою AI"
 
-#: public/build/extendify-agent-47ce1ec36e515e89dc80.js:18
+#: public/build/extendify-agent-9d1c6defa5e8b1930355.js:18
 #: src/Agent/state/chat.js:21
 msgid ""
 "#### Your site is ready 🎉\n"
@@ -4850,55 +4849,55 @@ msgstr ""
 "Хочете дослідити інші кольори сайту?"
 
 #. translators: this is for a action log UI. Keep it short
-#: public/build/extendify-auto-launch-1871df5815ba8920098f.js:8
+#: public/build/extendify-auto-launch-b5c459e24210e13f67d2.js:27
 #: src/AutoLaunch/fetchers/get-home.js:24
 msgid "Preparing your home page"
 msgstr "Підготовка головної сторінки"
 
 #. translators: this is for a action log UI. Keep it short
-#: public/build/extendify-auto-launch-1871df5815ba8920098f.js:10
+#: public/build/extendify-auto-launch-b5c459e24210e13f67d2.js:25
 #: src/AutoLaunch/fetchers/get-images.js:19
 msgid "Finding the perfect images"
 msgstr "Пошук ідеальних зображень"
 
 #. translators: this is for a action log UI. Keep it short
-#: public/build/extendify-auto-launch-1871df5815ba8920098f.js:12
+#: public/build/extendify-auto-launch-b5c459e24210e13f67d2.js:19
 #: src/AutoLaunch/fetchers/get-logo.js:28
 msgid "Generating a logo"
 msgstr "Генерація логотипу"
 
 #. translators: this is for a action log UI. Keep it short
-#: public/build/extendify-auto-launch-1871df5815ba8920098f.js:14
+#: public/build/extendify-auto-launch-b5c459e24210e13f67d2.js:29
 #: src/AutoLaunch/fetchers/get-pages.js:32
 msgid "Preparing your pages"
 msgstr "Підготовка сторінок"
 
 #. translators: this is for a action log UI. Keep it short
-#: public/build/extendify-auto-launch-1871df5815ba8920098f.js:16
+#: public/build/extendify-auto-launch-b5c459e24210e13f67d2.js:8
 #: src/AutoLaunch/fetchers/get-plugins.js:32
 msgid "Setting up site functionality"
 msgstr "Налаштування функціональності сайту"
 
 #. translators: this is for a action log UI. Keep it short
-#: public/build/extendify-auto-launch-1871df5815ba8920098f.js:21
+#: public/build/extendify-auto-launch-b5c459e24210e13f67d2.js:17
 #: src/AutoLaunch/fetchers/get-profile.js:25
 msgid "Creating a site profile"
 msgstr "Створення профілю сайту"
 
 #. translators: this is for a action log UI. Keep it short
-#: public/build/extendify-auto-launch-1871df5815ba8920098f.js:23
+#: public/build/extendify-auto-launch-b5c459e24210e13f67d2.js:23
 #: src/AutoLaunch/fetchers/get-strings.js:19
 msgid "Generating site content ideas"
 msgstr "Генерація ідей для контенту"
 
 #. translators: this is for a action log UI. Keep it short
-#: public/build/extendify-auto-launch-1871df5815ba8920098f.js:25
+#: public/build/extendify-auto-launch-b5c459e24210e13f67d2.js:21
 #: src/AutoLaunch/fetchers/get-style.js:25
 msgid "Picking the perfect design"
 msgstr "Вибір ідеального дизайну"
 
 #. translators: No value found message for when a WP setting has no value.
-#: public/build/extendify-agent-47ce1ec36e515e89dc80.js:33
+#: public/build/extendify-agent-9d1c6defa5e8b1930355.js:33
 msgid "No value found"
 msgstr "Значення не знайдено"
 
@@ -5098,21 +5097,21 @@ msgid "Latvian"
 msgstr "Латвійська"
 
 #: app/Agent/Admin.php:390
-#: public/build/extendify-agent-47ce1ec36e515e89dc80.js:56
+#: public/build/extendify-agent-9d1c6defa5e8b1930355.js:56
 #: src/Agent/workflows/theme/change-site-design.js:37
 msgid "Change website title"
 msgstr "Змінити назву вебсайту"
 
 #. translators: "site style" refers to the structural aesthetic style for the site.
 #: app/Agent/Admin.php:414
-#: public/build/extendify-agent-47ce1ec36e515e89dc80.js:66
+#: public/build/extendify-agent-9d1c6defa5e8b1930355.js:66
 #: src/Agent/workflows/theme/change-site-vibes.js:26
 msgid "Change website style"
 msgstr "Змінити стиль сайту"
 
 #. translators: "site animation" refers to the animation style for the current site.
 #: app/Agent/Admin.php:430
-#: public/build/extendify-agent-47ce1ec36e515e89dc80.js:52
+#: public/build/extendify-agent-9d1c6defa5e8b1930355.js:52
 #: src/Agent/workflows/theme/change-animation.js:13
 msgid "Change website animation"
 msgstr "Змінити анімацію сайту"
@@ -5174,25 +5173,20 @@ msgid "Create your site now"
 msgstr "Створіть свій сайт зараз"
 
 #. translators: this is for a action log UI. Keep it short
-#: public/build/extendify-auto-launch-1871df5815ba8920098f.js:3
+#: public/build/extendify-auto-launch-b5c459e24210e13f67d2.js:3
 #: src/AutoLaunch/state/launch-data.js:25
 msgid "Booting things up"
 msgstr "Запуск"
 
-#: public/build/extendify-auto-launch-1871df5815ba8920098f.js:52
+#: public/build/extendify-auto-launch-b5c459e24210e13f67d2.js:52
 #: src/AutoLaunch/components/DescriptionGathering.jsx:126
 msgid "Enhancing the website description..."
 msgstr "Покращення опису сайту..."
 
-#: public/build/extendify-auto-launch-1871df5815ba8920098f.js:52
-#: src/AutoLaunch/components/DescriptionGathering.jsx:142
-msgid "Ask AI to create a website for a cafe..."
-msgstr "Запитайте AI створити сайт для кафе"
-
 #. translators: "theme colors" refers to the color palette variation for the current theme.
 #: app/Agent/Admin.php:398
-#: public/build/extendify-agent-47ce1ec36e515e89dc80.js:56
-#: public/build/extendify-agent-47ce1ec36e515e89dc80.js:80
+#: public/build/extendify-agent-9d1c6defa5e8b1930355.js:56
+#: public/build/extendify-agent-9d1c6defa5e8b1930355.js:80
 #: src/Agent/workflows/theme/change-site-design.js:30
 #: src/Agent/workflows/theme/change-theme-variation.js:18
 msgid "Change website colors"
@@ -5200,13 +5194,13 @@ msgstr "Змінити кольори сайту"
 
 #. translators: "theme fonts" refers to the font variation for the current theme.
 #: app/Agent/Admin.php:406
-#: public/build/extendify-agent-47ce1ec36e515e89dc80.js:72
+#: public/build/extendify-agent-9d1c6defa5e8b1930355.js:72
 #: src/Agent/workflows/theme/change-theme-fonts-variation.js:24
 msgid "Change website fonts"
 msgstr "Змінити шрифти сайту"
 
 #: app/Agent/Admin.php:438
-#: public/build/extendify-agent-47ce1ec36e515e89dc80.js:56
+#: public/build/extendify-agent-9d1c6defa5e8b1930355.js:56
 #: src/Agent/workflows/theme/change-site-design.js:44
 msgid "Change website logo"
 msgstr "Змінити логотип вебсайту"
@@ -5215,41 +5209,41 @@ msgstr "Змінити логотип вебсайту"
 msgid "Change website browser icon"
 msgstr "Змінити іконку браузера сайту"
 
-#: public/build/extendify-agent-47ce1ec36e515e89dc80.js:4
+#: public/build/extendify-agent-9d1c6defa5e8b1930355.js:4
 #: src/Agent/components/ChatSuggestions.jsx:107
 msgid "Show more"
 msgstr "Показати більше"
 
 #. translators: "site style" refers to the structural aesthetic style for the site.
-#: public/build/extendify-agent-47ce1ec36e515e89dc80.js:59
+#: public/build/extendify-agent-9d1c6defa5e8b1930355.js:59
 #: src/Agent/workflows/theme/components/SelectSiteVibes.jsx:48
 msgid "We were unable to find any website style for your theme."
 msgstr "Нам не вдалося знайти стиль сайту для вашої теми."
 
 #. translators: "site style" refers to the structural aesthetic style for the site.
-#: public/build/extendify-agent-47ce1ec36e515e89dc80.js:64
+#: public/build/extendify-agent-9d1c6defa5e8b1930355.js:64
 #: src/Agent/workflows/theme/components/SelectSiteVibes.jsx:64
 msgid "Loading website style options..."
 msgstr "Завантаження параметрів стилю сайту..."
 
-#: public/build/extendify-auto-launch-1871df5815ba8920098f.js:52
+#: public/build/extendify-auto-launch-b5c459e24210e13f67d2.js:52
 #: src/AutoLaunch/icons.jsx:97
 msgid "Three bars loading animation"
 msgstr "Анімація завантаження з трьома смужками"
 
-#: public/build/extendify-auto-launch-1871df5815ba8920098f.js:52
+#: public/build/extendify-auto-launch-b5c459e24210e13f67d2.js:52
 #: src/AutoLaunch/icons.jsx:193
 msgid "Site creation loading animation"
 msgstr "Анімація завантаження створення сайту"
 
-#: public/build/extendify-auto-launch-1871df5815ba8920098f.js:25
+#: public/build/extendify-auto-launch-b5c459e24210e13f67d2.js:11
 #: src/AutoLaunch/functions/pages.js:127
 #, js-format
 msgid "Adding page: %s"
 msgstr "Додавання сторінки: %s"
 
 #. translators: this is the initial message in the agent chat, welcoming the user. Keep it short and friendly and follow the same markdown format and emoji.
-#: public/build/extendify-agent-47ce1ec36e515e89dc80.js:18
+#: public/build/extendify-agent-9d1c6defa5e8b1930355.js:18
 #: src/Agent/state/chat.js:17
 msgid ""
 "#### Your site is ready 🎉\n"
@@ -5258,70 +5252,70 @@ msgstr ""
 "#### Ваш сайт готовий 🎉  \n"
 "Бажаєте переглянути інші дизайни сайтів?"
 
-#: public/build/extendify-agent-47ce1ec36e515e89dc80.js:54
-#: src/Agent/workflows/theme/components/SelectSiteDesign.jsx:202
+#: public/build/extendify-agent-9d1c6defa5e8b1930355.js:54
+#: src/Agent/workflows/theme/components/change-site-design/DesignOption.jsx:143
 msgid "Preview site design"
 msgstr "Переглянути дизайн сайту"
 
-#: public/build/extendify-agent-47ce1ec36e515e89dc80.js:54
-#: src/Agent/workflows/theme/components/SelectSiteDesign.jsx:516
+#: public/build/extendify-agent-9d1c6defa5e8b1930355.js:54
+#: src/Agent/workflows/theme/components/change-site-design/SelectSiteDesign.jsx:346
 msgid "Load more"
 msgstr "Завантажити більше"
 
-#: public/build/extendify-agent-47ce1ec36e515e89dc80.js:54
+#: public/build/extendify-agent-9d1c6defa5e8b1930355.js:54
 #: src/Agent/workflows/theme/change-site-design.js:19
 msgid "Change website design"
 msgstr "Змінити дизайн сайту"
 
 #. translators: This message show above a UI where the user can select a different site design.
-#: public/build/extendify-agent-47ce1ec36e515e89dc80.js:56
+#: public/build/extendify-agent-9d1c6defa5e8b1930355.js:56
 #: src/Agent/workflows/theme/change-site-design.js:22
 msgid "Below you can select a different design for your website."
 msgstr "Нижче ви можете вибрати інший дизайн для вашого сайту"
 
-#: public/build/extendify-agent-47ce1ec36e515e89dc80.js:56
+#: public/build/extendify-agent-9d1c6defa5e8b1930355.js:56
 #: src/Agent/workflows/theme/change-site-design.js:52
 msgid "Updated the website design"
 msgstr "Оновлено дизайн сайту"
 
-#: public/build/extendify-agent-47ce1ec36e515e89dc80.js:56
+#: public/build/extendify-agent-9d1c6defa5e8b1930355.js:56
 #: src/Agent/workflows/theme/change-site-design.js:53
 msgid "Canceled the website design update"
 msgstr "Скасовано оновлення дизайну сайту"
 
-#: public/build/extendify-agent-47ce1ec36e515e89dc80.js:54
+#: public/build/extendify-agent-9d1c6defa5e8b1930355.js:54
 #: src/Agent/workflows/theme/change-animation.js:23
 msgid "Updated the website animation"
 msgstr "Анімацію сайту оновлено"
 
-#: public/build/extendify-agent-47ce1ec36e515e89dc80.js:54
+#: public/build/extendify-agent-9d1c6defa5e8b1930355.js:54
 #: src/Agent/workflows/theme/change-animation.js:24
 msgid "Canceled the website animation update"
 msgstr "Скасовано оновлення анімації сайту"
 
-#: public/build/extendify-agent-47ce1ec36e515e89dc80.js:68
+#: public/build/extendify-agent-9d1c6defa5e8b1930355.js:68
 #: src/Agent/workflows/theme/change-site-vibes.js:36
 msgid "Updated the website style"
 msgstr "Оновлено стиль сайту"
 
-#: public/build/extendify-agent-47ce1ec36e515e89dc80.js:68
+#: public/build/extendify-agent-9d1c6defa5e8b1930355.js:68
 #: src/Agent/workflows/theme/change-site-vibes.js:37
 msgid "Canceled the website style update"
 msgstr "Скасовано оновлення стилю сайту"
 
 #. translators: A chat message shown to the user when their selected color variation cannot be applied
-#: public/build/extendify-agent-47ce1ec36e515e89dc80.js:78
+#: public/build/extendify-agent-9d1c6defa5e8b1930355.js:78
 #: src/Agent/workflows/theme/components/SelectThemeVariation.jsx:33
 msgid "We were unable to apply your selected colors. Please try again."
 msgstr "Не вдалося застосувати вибрані вами кольори. Будь ласка, спробуйте знову."
 
 #. translators: Use a number that is appropriate for the locale. It does not need to be this exact number. This is a placeholder phone number. For example, in pt_BR you could use (11) 91234-5678.
-#: public/build/extendify-auto-launch-1871df5815ba8920098f.js:40
-#: src/AutoLaunch/hooks/useCreateSite.js:313
+#: public/build/extendify-auto-launch-b5c459e24210e13f67d2.js:40
+#: src/AutoLaunch/hooks/useCreateSite.js:341
 msgid "206-555-0100"
 msgstr "206-555-0100"
 
-#: public/build/extendify-agent-47ce1ec36e515e89dc80.js:64
+#: public/build/extendify-agent-9d1c6defa5e8b1930355.js:64
 #: src/Agent/workflows/theme/components/SelectSiteVibes.jsx:88
 #: src/Agent/workflows/theme/components/SelectSiteVibes.jsx:107
 #, js-format
@@ -5355,67 +5349,67 @@ msgid "Activated"
 msgstr "Активовано"
 
 #. translators: "Slow" refers to a slower speed at which the animation effect occurs. This is an option in a list of animation speeds.
-#: public/build/extendify-agent-47ce1ec36e515e89dc80.js:43
+#: public/build/extendify-agent-9d1c6defa5e8b1930355.js:43
 #: src/Agent/workflows/theme/components/SelectAnimation.jsx:47
 msgctxt "animation speed"
 msgid "Slow"
 msgstr "Повільно"
 
 #. translators: "Medium" refers to a moderate speed at which the animation effect occurs. This is an option in a list of animation speeds.
-#: public/build/extendify-agent-47ce1ec36e515e89dc80.js:45
+#: public/build/extendify-agent-9d1c6defa5e8b1930355.js:45
 #: src/Agent/workflows/theme/components/SelectAnimation.jsx:52
 msgctxt "animation speed"
 msgid "Medium"
 msgstr "Середній"
 
 #. translators: "Fast" refers to a quicker speed at which the animation effect occurs. This is an option in a list of animation speeds.
-#: public/build/extendify-agent-47ce1ec36e515e89dc80.js:47
+#: public/build/extendify-agent-9d1c6defa5e8b1930355.js:47
 #: src/Agent/workflows/theme/components/SelectAnimation.jsx:57
 msgctxt "animation speed"
 msgid "Fast"
 msgstr "Швидко"
 
-#: public/build/extendify-agent-47ce1ec36e515e89dc80.js:50
+#: public/build/extendify-agent-9d1c6defa5e8b1930355.js:50
 #: src/Agent/workflows/theme/components/SelectAnimation.jsx:147
 msgctxt "animation speed"
 msgid "Speed"
 msgstr "Швидкість"
 
 #. translators: Animation style where the element gradually appears by transitioning from transparent to visible. Translate as a simple, non-technical description of the visual effect (e.g., 'appear', 'show up') suitable for non-technical users.
-#: public/build/extendify-agent-47ce1ec36e515e89dc80.js:35
+#: public/build/extendify-agent-9d1c6defa5e8b1930355.js:35
 #: src/Agent/workflows/theme/components/SelectAnimation.jsx:20
 msgctxt "animation type"
 msgid "Fade In"
 msgstr "Плавна поява"
 
 #. translators: Animation style where the element appears while moving upward. Translate as a simple, non-technical description of the motion (e.g., 'appear from below', 'rise into view') suitable for non-technical users.
-#: public/build/extendify-agent-47ce1ec36e515e89dc80.js:37
+#: public/build/extendify-agent-9d1c6defa5e8b1930355.js:37
 #: src/Agent/workflows/theme/components/SelectAnimation.jsx:26
 msgctxt "animation type"
 msgid "Fade Up"
 msgstr "З'являється знизу"
 
 #. translators: Animation style where the element appears by scaling from small to its full size. Translate as a simple, non-technical description of the effect (e.g., 'zoom in', 'get closer') suitable for non-technical users. If the target language commonly uses the English term 'zoom', it's acceptable to keep it.
-#: public/build/extendify-agent-47ce1ec36e515e89dc80.js:39
+#: public/build/extendify-agent-9d1c6defa5e8b1930355.js:39
 #: src/Agent/workflows/theme/components/SelectAnimation.jsx:32
 msgctxt "animation type"
 msgid "Zoom In"
 msgstr "Збільшення"
 
 #. translators: None refers to 'no animation'. Apply the correct grammatical gender/form that agrees with the word for 'animation' in the target language.
-#: public/build/extendify-agent-47ce1ec36e515e89dc80.js:41
+#: public/build/extendify-agent-9d1c6defa5e8b1930355.js:41
 #: src/Agent/workflows/theme/components/SelectAnimation.jsx:38
 msgctxt "animation type"
 msgid "None"
 msgstr "Немає"
 
-#: public/build/extendify-agent-47ce1ec36e515e89dc80.js:50
+#: public/build/extendify-agent-9d1c6defa5e8b1930355.js:50
 #: src/Agent/workflows/theme/components/SelectAnimation.jsx:128
 msgctxt "animation type"
 msgid "Type"
 msgstr "Тип"
 
-#: public/build/extendify-auto-launch-1871df5815ba8920098f.js:52
+#: public/build/extendify-auto-launch-b5c459e24210e13f67d2.js:52
 #: src/AutoLaunch/icons.jsx:55
 msgctxt "icon"
 msgid "Loading animation"

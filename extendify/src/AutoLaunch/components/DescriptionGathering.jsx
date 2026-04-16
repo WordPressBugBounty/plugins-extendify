@@ -140,7 +140,7 @@ export const DescriptionGathering = () => {
 									setInput(e.target.value);
 								}}
 								placeholder={__(
-									'Ask AI to create a website for a cafe...',
+									'E.g., A personal photography portfolio featuring a collection of landscape, portrait, and street photography, capturing moments from around the world.',
 									'extendify-local',
 								)}
 							/>

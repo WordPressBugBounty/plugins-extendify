@@ -49,11 +49,20 @@ export const handleSitePlugins = async ({
 
 	const plugins = await failWithFallback(async () => {
 		const data = await response.json();
+		const priority = ['give', 'woocommerce'];
 		const sitePlugins = shapeLocal
 			.parse(data)
 			.selectedPlugins // We add give to the front. See here why:
 			// https://github.com/extendify/company-product/issues/713
-			.toSorted(({ wordpressSlug }) => (wordpressSlug === 'give' ? -1 : 1));
+			.toSorted((a, b) => {
+				const aIndex = priority.indexOf(a.wordpressSlug);
+				const bIndex = priority.indexOf(b.wordpressSlug);
+
+				if (aIndex !== -1 && bIndex !== -1) return aIndex - bIndex;
+				if (aIndex !== -1) return -1;
+				if (bIndex !== -1) return 1;
+				return 0;
+			});
 		return getPluginsShape.parse({ sitePlugins });
 	}, fallback);
 

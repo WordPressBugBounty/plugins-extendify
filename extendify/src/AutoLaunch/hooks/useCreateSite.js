@@ -73,7 +73,7 @@ export const useCreateSite = () => {
 
 	// We keep the data on reload but show this to prevent movement
 	useWarnOnLeave(warnOnReload, () => {
-		// TODO: do we want to reset state here?
+		checkIn({ stage: 'exit_early' });
 	});
 
 	// needs: title, descriptionRaw
@@ -84,7 +84,10 @@ export const useCreateSite = () => {
 			if (!data.descriptionRaw && !data.title) return null;
 			return data;
 		},
-		handleSiteProfile,
+		async (params) => {
+			checkIn({ stage: 'get_profile' });
+			return await handleSiteProfile(params);
+		},
 	);
 
 	// needs: siteProfile
@@ -95,7 +98,10 @@ export const useCreateSite = () => {
 			if (!data.siteProfile?.title) return null;
 			return data;
 		},
-		handleSiteLogo,
+		async (params) => {
+			checkIn({ stage: 'get_logo' });
+			return await handleSiteLogo(params);
+		},
 	);
 
 	// needs: siteProfile
@@ -107,7 +113,10 @@ export const useCreateSite = () => {
 			if (!data.siteProfile?.title) return null;
 			return data;
 		},
-		handleSitePlugins,
+		async (params) => {
+			checkIn({ stage: 'get_plugins' });
+			return await handleSitePlugins(params);
+		},
 	);
 
 	// needs: siteProfile
@@ -119,7 +128,10 @@ export const useCreateSite = () => {
 			if (!data.siteProfile?.title) return null;
 			return data;
 		},
-		handleSiteStyle,
+		async (params) => {
+			checkIn({ stage: 'get_style' });
+			return await handleSiteStyle(params);
+		},
 	);
 
 	// needs: siteProfile
@@ -131,7 +143,10 @@ export const useCreateSite = () => {
 			if (!data.siteProfile?.title) return null;
 			return data;
 		},
-		handleSiteStrings,
+		async (params) => {
+			checkIn({ stage: 'get_strings' });
+			return await handleSiteStrings(params);
+		},
 	);
 
 	// needs: siteProfile
@@ -143,7 +158,10 @@ export const useCreateSite = () => {
 			if (!data.siteProfile?.title) return null;
 			return data;
 		},
-		handleSiteImages,
+		async (params) => {
+			checkIn({ stage: 'get_images' });
+			return await handleSiteImages(params);
+		},
 	);
 
 	// needs: siteProfile, sitePlugins, siteStyle, siteImages, aiHeaders
@@ -161,7 +179,10 @@ export const useCreateSite = () => {
 			].every((v) => v !== undefined);
 			return ok ? data : null;
 		},
-		handleHome,
+		async (params) => {
+			checkIn({ stage: 'get_home' });
+			return await handleHome(params);
+		},
 	);
 
 	// 	siteProfile, sitePlugins, siteStyle, siteImages
@@ -178,12 +199,15 @@ export const useCreateSite = () => {
 			].every((v) => v !== undefined);
 			return ok ? data : null;
 		},
-		handlePages,
+		async (params) => {
+			checkIn({ stage: 'get_pages' });
+			return await handlePages(params);
+		},
 	);
 
 	// basic defaults
 	useRunStep(
-		'basicUpdates',
+		'generalUpdates',
 		() => {
 			const ok = [data.siteProfile, data.home, data.pages].every(
 				(v) => v !== undefined,
@@ -191,6 +215,8 @@ export const useCreateSite = () => {
 			return ok ? data : null;
 		},
 		async ({ siteProfile, sitePlugins, siteStyle }) => {
+			checkIn({ stage: 'set_general', siteProfile, sitePlugins, siteStyle });
+
 			const { title } = siteProfile;
 			// translators: this is for a action log UI. Keep it short
 			addStatusMessage(__('Adding admin configurations', 'extendify-local'));
@@ -200,8 +226,6 @@ export const useCreateSite = () => {
 			setUserGaveConsent(true);
 			// Update title
 			if (title) await updateOption('blogname', title);
-
-			checkIn({ stage: 'basic_updates', siteProfile, sitePlugins, siteStyle });
 		},
 	);
 
@@ -213,6 +237,7 @@ export const useCreateSite = () => {
 			return data;
 		},
 		async () => {
+			checkIn({ stage: 'set_plugin_config' });
 			const activePlugins = await getActivePlugins();
 			if (alreadyActive(activePlugins, 'wpforms-lite')) {
 				await updateOption('wpforms_activation_redirect', 'skip');
@@ -256,6 +281,7 @@ export const useCreateSite = () => {
 				siteStyle?.variation?.settings?.typography?.fontFamilies?.custom;
 			let variation = siteStyle?.variation;
 			if (customFonts?.length) {
+				checkIn({ stage: 'install_fonts' });
 				// translators: this is for a action log UI. Keep it short
 				addStatusMessage(__('Installing fonts locally', 'extendify-local'));
 				const installed = await installFontFamilies(customFonts).catch(
@@ -272,6 +298,7 @@ export const useCreateSite = () => {
 			if (siteStyle?.vibe && siteStyle.vibe !== 'natural-1') {
 				// translators: vibe in this context is a noun - the feeling of their site design.
 				addStatusMessage(__('Setting the website style', 'extendify-local'));
+				checkIn({ stage: 'compute_vibe' });
 				const vibeBlocks = await computeVibeAdjustedBlocks(
 					siteStyle.vibe,
 				).catch(() => null);
@@ -283,6 +310,7 @@ export const useCreateSite = () => {
 				}
 			}
 
+			checkIn({ stage: 'set_vibe' });
 			await updateVariation(variation);
 
 			// navigation menu
@@ -313,6 +341,7 @@ export const useCreateSite = () => {
 						__('206-555-0100', 'extendify-local'),
 				);
 			}
+			checkIn({ stage: 'set_navigation' });
 			await updateTemplatePart('extendable/header', headerCode);
 
 			// footer
@@ -326,6 +355,7 @@ export const useCreateSite = () => {
 				footerNavId = nav.id;
 				footerCode = updateNavAttributes(footerCode, { ref: footerNavId });
 			}
+			checkIn({ stage: 'set_footer' });
 			await updateTemplatePart('extendable/footer', footerCode);
 
 			// pages
@@ -335,17 +365,22 @@ export const useCreateSite = () => {
 			const titlePattern = pages?.[0]?.patterns?.find((p) =>
 				p.patternTypes?.includes('page-title'),
 			);
-			if (titlePattern) await updatePageTitlePattern(titlePattern.code);
+			if (titlePattern) {
+				checkIn({ stage: 'set_page_title_pattern' });
+				await updatePageTitlePattern(titlePattern.code);
+			}
 			// Some patterns have preview html, we can replace those
 			// which may install some plugins too.
 			const pagesReplaced = [];
 			// Run these one page at a time so we don't end up
 			// with duplicate dependency issues
+			checkIn({ stage: 'replace_placeholder_patterns' });
 			for (const page of pagesToCreate) {
 				const patterns = await replacePlaceholderPatterns(page.patterns);
 				const updatedPage = { ...page, patterns };
 				pagesReplaced.push(updatedPage);
 			}
+			checkIn({ stage: 'generate_page_content' });
 			const customPages = await generatePageContent(pagesReplaced, data);
 			const stickyNav =
 				structure === 'single-page' && objective !== 'landing-page';
@@ -355,15 +390,20 @@ export const useCreateSite = () => {
 				pattern.patternTypes.includes('blog-section'),
 			);
 			if (objective === 'blog' || hasBlogPattern) {
+				checkIn({ stage: 'create_blog_sample_data' });
 				// translators: this is for a action log UI. Keep it short
 				addStatusMessage(__('Creating blog sample data', 'extendify-local'));
 				await createBlogSampleData({ aiBlogTitles }, siteImages);
 			}
 			// If we have site images then set up the hello world image
-			if (siteImages?.length) await setHelloWorldFeaturedImage(siteImages);
+			if (siteImages?.length) {
+				checkIn({ stage: 'set_hello_world_image' });
+				await setHelloWorldFeaturedImage(siteImages);
+			}
 
 			let imprint = {};
 			if (needsImprint) {
+				checkIn({ stage: 'create_imprint' });
 				imprint = await addImprintPage({ siteStyle }).catch(() => null);
 			}
 
@@ -372,6 +412,7 @@ export const useCreateSite = () => {
 			// Collect pages we need to add to the nav
 			const pluginPages = [];
 			if (alreadyActive(activePlugins, 'woocommerce')) {
+				checkIn({ stage: 'import_woocommerce_products' });
 				addStatusMessage(
 					// translators: this is for a action log UI. Keep it short
 					__('Setting up your online store', 'extendify-local'),
@@ -392,6 +433,7 @@ export const useCreateSite = () => {
 			}
 
 			// Adding pages to the nav
+			checkIn({ stage: 'set_page_links' });
 			const pagesWithLinksUpdated =
 				structure === 'single-page'
 					? await updateSinglePageLinksToSections(createdPagesWP, customPages, {
@@ -411,9 +453,9 @@ export const useCreateSite = () => {
 				});
 			}
 
+			checkIn({ stage: 'set_navigation_links' });
 			if (objective !== 'landing-page') {
 				if (structure === 'single-page') {
-					addSectionLinksToNav;
 					await addSectionLinksToNav(
 						headerNavId,
 						home?.patterns,
@@ -440,7 +482,9 @@ export const useCreateSite = () => {
 				}
 			}
 
+			checkIn({ stage: 'prefetch_assist_data' });
 			await prefetchAssistData();
+			checkIn({ stage: 'final_steps' });
 			await setThemeRenderingMode('template-locked');
 			await postLaunchFunctions();
 			// translators: this is for a action log UI. Keep it short

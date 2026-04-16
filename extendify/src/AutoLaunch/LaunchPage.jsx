@@ -108,7 +108,7 @@ const Wrapper = ({ children }) => {
 };
 
 const TheTitle = ({ skipDescription }) => {
-	if (!skipDescription) return null;
+	if (skipDescription) return null;
 
 	return (
 		<motion.h2

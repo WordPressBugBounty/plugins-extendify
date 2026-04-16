@@ -1,0 +1,1 @@
+<?php return array('dependencies' => array('react', 'react-jsx-runtime', 'wp-api-fetch', 'wp-block-library', 'wp-blocks', 'wp-components', 'wp-data', 'wp-element', 'wp-i18n', 'wp-media-utils', 'wp-primitives', 'wp-url'), 'version' => '90a94752f90a9ce97cec', 'handle' => 'undefined-extendify-auto-launch-b5c459e24210e13f67d2');

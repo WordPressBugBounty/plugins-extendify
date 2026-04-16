@@ -39,6 +39,7 @@ const initialState = {
 	...shapeToKeyValue(getImagesShape),
 	...shapeToKeyValue(getHomeShape),
 	...shapeToKeyValue(getPagesShape),
+	attempt: 1,
 };
 
 const state = (set, get) => ({
@@ -75,7 +76,7 @@ const state = (set, get) => ({
 		set({ errorCount: 0 });
 	},
 	reset: ({ exclude }) => {
-		const newState = { ...initialState };
+		const newState = { ...initialState, attempt: get().attempt + 1 };
 		if (exclude && Array.isArray(exclude)) {
 			exclude.forEach((key) => {
 				if (!isValidKey(key)) return;
