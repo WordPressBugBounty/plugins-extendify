@@ -23,9 +23,12 @@ export const LaunchPage = () => {
 	const oldPages = window.extLaunchData.resetSiteInformation.pagesIds ?? [];
 	const needsToReset = oldPages.length > 0;
 
-	const { title, descriptionRaw, go } = useLaunchDataStore();
-	// If title/desc are set, the user still can edit the description unless go mode
-	const skipDescription = (title || descriptionRaw) && go;
+	const { title, descriptionRaw, go, urlParams, designBuild } =
+		useLaunchDataStore();
+	const skipDescription =
+		Boolean(urlParams?.['build-id']) ||
+		designBuild ||
+		((title || descriptionRaw) && go);
 
 	const containerRef = useRef(null);
 
@@ -78,6 +81,7 @@ export const LaunchPage = () => {
 					<a
 						className="inline-flex items-center gap-0.5 text-sm text-banner-text opacity-70 hover:opacity-100 transition-opacity p-2"
 						href={window.extSharedData.adminUrl}
+						onClick={() => checkIn({ stage: 'exit_to_wp_admin' })}
 					>
 						<Icon fill="currentColor" icon={chevronLeft} size={20} />
 						{__('WP Admin Dashboard', 'extendify-local')}

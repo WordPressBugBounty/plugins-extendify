@@ -7,6 +7,12 @@ import { createBlock, parse, serialize } from '@wordpress/blocks';
 import { __, sprintf } from '@wordpress/i18n';
 import { setStatus } from './helpers';
 
+// Slugs that plugins own — skip creating design-build pages for these.
+export const PLUGIN_OWNED_PAGES = [
+	{ slug: 'shop', plugin: 'woocommerce' },
+	{ slug: 'events', plugin: 'the-events-calendar' },
+];
+
 export const getPagesToCreate = (data) => {
 	const { home, pages, siteProfile } = data;
 	const homepage = {
@@ -130,10 +136,11 @@ export const createWpPages = async (pagesRaw, { stickyNav }) => {
 			const code = pattern.code;
 			const patternType = pattern.patternTypes?.[0];
 
-			const { slug } =
+			const { slug: defaultSlug } =
 				Object.values(pageNames).find(({ alias }) =>
 					alias.includes(patternType),
 				) || {};
+			const slug = pattern.navSlug ?? defaultSlug;
 
 			if (seenPatternTypes.has(slug) || !slug) {
 				content.push(code);

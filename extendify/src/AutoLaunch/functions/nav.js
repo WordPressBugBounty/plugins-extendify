@@ -29,6 +29,7 @@ export const addSectionLinksToNav = async (
 	homePatterns = [],
 	pluginPages = [],
 	createdPages = [],
+	{ orderedSlugs = [] } = {},
 ) => {
 	// Extract plugin page slugs for comparison
 	const pluginPageTitles = pluginPages.map(({ title }) =>
@@ -41,26 +42,27 @@ export const addSectionLinksToNav = async (
 			?.map((page) => page.slug)
 			?.filter(Boolean) ?? [];
 
-	// ['about-us', 'services', 'contact-us']
-	const sections = homePatterns
-		.map(({ patternTypes }) => patternTypes?.[0])
-		.filter(Boolean)
-		// Filter out any pattern type that has a page created by 3rd party plugins.
-		.filter((patternType) => {
-			const { slug } =
-				Object.values(pageNames).find(({ alias }) =>
-					alias.includes(patternType),
-				) || {};
-			return slug && !pluginPageTitles.includes(slug);
-		});
-
-	const seen = new Set();
-
-	const sectionsNavigationLinks = sections.map((patternType) => {
-		const { title, slug } =
+	const resolve = (pattern) => {
+		const patternType = pattern.patternTypes?.[0];
+		const lookup =
 			Object.values(pageNames).find(({ alias }) =>
 				alias.includes(patternType),
 			) || {};
+		return {
+			label: pattern.navLabel ?? lookup.title,
+			slug: pattern.navSlug ?? lookup.slug,
+		};
+	};
+
+	const sectionPatterns = homePatterns.filter((pattern) => {
+		const { slug } = resolve(pattern);
+		return slug && !pluginPageTitles.includes(slug);
+	});
+
+	const seen = new Set();
+
+	const sectionsNavigationLinks = sectionPatterns.map((pattern) => {
+		const { label, slug } = resolve(pattern);
 		if (!slug) return '';
 		if (seen.has(slug)) return '';
 		seen.add(slug);
@@ -70,7 +72,7 @@ export const addSectionLinksToNav = async (
 			: `${window.extSharedData.homeUrl}/#${slug}`;
 
 		const attributes = JSON.stringify({
-			label: title,
+			label,
 			type: 'custom',
 			url,
 			kind: 'custom',
@@ -95,9 +97,36 @@ export const addSectionLinksToNav = async (
 		},
 	);
 
-	const navigationLinks = sectionsNavigationLinks
-		.concat(pluginPagesNavigationLinks)
-		.join('');
+	// When an ordered slug list is provided, interleave plugin pages by slug
+	// so e.g. "shop" lands where the design preview placed it.
+	let navigationLinks;
+	if (orderedSlugs.length) {
+		const bySlug = new Map();
+		sectionsNavigationLinks.forEach((link, i) => {
+			const slug = resolve(sectionPatterns[i]).slug;
+			if (slug) bySlug.set(slug, link);
+		});
+		pluginPages.forEach((page, i) => {
+			if (page.slug) bySlug.set(page.slug, pluginPagesNavigationLinks[i]);
+		});
+		const ordered = orderedSlugs
+			.map((slug) => bySlug.get(slug))
+			.filter(Boolean);
+		const placed = new Set(orderedSlugs.filter((s) => bySlug.has(s)));
+		const extras = [
+			...sectionsNavigationLinks.filter(
+				(_, i) => !placed.has(resolve(sectionPatterns[i]).slug),
+			),
+			...pluginPagesNavigationLinks.filter(
+				(_, i) => !placed.has(pluginPages[i].slug),
+			),
+		];
+		navigationLinks = [...ordered, ...extras].join('');
+	} else {
+		navigationLinks = sectionsNavigationLinks
+			.concat(pluginPagesNavigationLinks)
+			.join('');
+	}
 
 	await updateNavigation(navigationId, navigationLinks);
 };
@@ -107,6 +136,7 @@ export const addPageLinksToNav = async (
 	allPages,
 	createdPages,
 	pluginPages = [],
+	{ orderedSlugs = [] } = {},
 ) => {
 	// Because WP may have changed the slug and permalink (i.e., because of different languages),
 	// we are using the `originalSlug` property to match the original pages with the updated ones.
@@ -129,29 +159,37 @@ export const addPageLinksToNav = async (
 		);
 	};
 	const mergedPages = [...filteredCreatedPages, ...pluginPages];
-	const contactPage = mergedPages.find((page) => {
-		const slug = getSlug(page);
-		return slug === 'contact' || pageNames.contact?.alias?.includes(slug);
-	});
 
-	const sortedPages = mergedPages
-		.filter((page) => page !== contactPage)
-		.sort((a, b) => getOrder(a) - getOrder(b));
+	let finalPages;
+	if (orderedSlugs.length) {
+		const indexOf = (p) => orderedSlugs.indexOf(getSlug(p));
+		const ordered = mergedPages
+			.filter((p) => indexOf(p) !== -1)
+			.sort((a, b) => indexOf(a) - indexOf(b));
+		const extras = mergedPages.filter((p) => indexOf(p) === -1);
+		finalPages = [...ordered, ...extras];
+	} else {
+		const contactPage = mergedPages.find((page) => {
+			const slug = getSlug(page);
+			return slug === 'contact' || pageNames.contact?.alias?.includes(slug);
+		});
 
-	// Re-insert contact page at the correct position
-	const finalPages = contactPage
-		? (() => {
-				// Top-level links: 5 if 7+ pages, or 6 if exactly 6 pages (no submenu for a single extra link)
-				// Note: sortedPages.length is checked AFTER removing contact, so length 5 means 6 total pages
-				const index =
-					sortedPages.length === 5 ? 5 : Math.min(4, sortedPages.length);
-				return [
-					...sortedPages.slice(0, index),
-					contactPage,
-					...sortedPages.slice(index),
-				];
-			})()
-		: sortedPages;
+		const sortedPages = mergedPages
+			.filter((page) => page !== contactPage)
+			.sort((a, b) => getOrder(a) - getOrder(b));
+
+		finalPages = contactPage
+			? (() => {
+					const index =
+						sortedPages.length === 5 ? 5 : Math.min(4, sortedPages.length);
+					return [
+						...sortedPages.slice(0, index),
+						contactPage,
+						...sortedPages.slice(index),
+					];
+				})()
+			: sortedPages;
+	}
 
 	const pageLinks = finalPages.map(({ id, title, link, type }) => {
 		const attributes = JSON.stringify({

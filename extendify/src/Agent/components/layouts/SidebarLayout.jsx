@@ -140,6 +140,9 @@ export const useLayoutShift = (open) => {
 	useEffect(() => {
 		const siteBlocks = document.querySelector('.wp-site-blocks');
 		const wpadminbar = document.querySelector('#wpadminbar');
+		const stickyHeader = document.querySelector(
+			'header.is-position-sticky, header.wp-block-template-part:has(.ext-header-sticky)',
+		);
 
 		const applyScaling = () => {
 			if (!siteBlocks) return;
@@ -147,19 +150,47 @@ export const useLayoutShift = (open) => {
 			if (open) {
 				const viewportWidth = window.innerWidth;
 				const scale = (viewportWidth - SIDEBAR_WIDTH) / viewportWidth;
+				const scaledHeight = window.innerHeight / scale;
+
 				Object.assign(siteBlocks.style, {
 					transformOrigin: 'top left',
-					transform: `translateX(${SIDEBAR_WIDTH}px) scale(${scale})`,
-					height: '100vh',
+					transform: `translateX(${SIDEBAR_WIDTH}px) translateY(40px) scale(${scale})`,
+					height: `${scaledHeight}px`,
+					overflowY: 'auto',
+					scrollBehavior: 'smooth',
 				});
-				document.body.style.overflowX = 'hidden';
+				if (stickyHeader) {
+					stickyHeader.style.setProperty(
+						'--wp-admin--admin-bar--position-offset',
+						'0px',
+					);
+				}
+				document.body.style.overflow = 'hidden';
+				document.body.style.position = 'fixed';
+				document.body.style.top = '0';
+				document.body.style.left = '0';
+				document.body.style.width = '100vw';
+				window.scrollTo(0, 0);
 			} else {
 				Object.assign(siteBlocks.style, {
 					transformOrigin: 'top left',
-					transform: 'translateX(0) scale(1)',
+					transform: 'translateX(0) translateY(0) scale(1)',
 					height: '',
+					overflowY: '',
+					maxWidth: '100vw',
+					scrollBehavior: '',
 				});
-				document.body.style.overflowX = '';
+				if (stickyHeader) {
+					stickyHeader.style.removeProperty(
+						'--wp-admin--admin-bar--position-offset',
+						'32px',
+					);
+				}
+				document.body.style.overflow = '';
+				document.body.style.position = '';
+				document.body.style.top = '';
+				document.body.style.left = '';
+				document.body.style.width = '';
 			}
 		};
 
@@ -212,7 +243,14 @@ export const useLayoutShift = (open) => {
 					transform: '',
 					transformOrigin: '',
 					height: '',
+					overflowY: '',
+					maxWidth: '',
 				});
+			}
+			if (stickyHeader) {
+				stickyHeader.style.removeProperty(
+					'--wp-admin--admin-bar--position-offset',
+				);
 			}
 			if (wpadminbar) {
 				Object.assign(wpadminbar.style, {

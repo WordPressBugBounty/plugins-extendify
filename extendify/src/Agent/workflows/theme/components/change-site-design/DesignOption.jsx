@@ -60,7 +60,6 @@ const generatePreviewHtml = (renderedHtml, styles) => {
 	});
 
 	clone.querySelector('#block-style-variation-styles-inline-css')?.remove();
-	clone.querySelector('#wp-block-library-inline-css')?.remove();
 	clone.querySelector('#admin-bar-inline-css')?.remove();
 
 	// Inject variation styles

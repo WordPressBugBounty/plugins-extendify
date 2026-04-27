@@ -8,7 +8,6 @@ import {
 import { updateOption } from '@auto-launch/functions/wp';
 import { AI_HOST } from '@constants';
 import { reqDataBasics } from '@shared/lib/data';
-import { resizeImage } from '@shared/utils/resize-image';
 import { __ } from '@wordpress/i18n';
 import { uploadMedia } from '@wordpress/media-utils';
 
@@ -37,10 +36,7 @@ export const handleSiteLogo = async ({ siteProfile }) => {
 
 	const logoUrl = await failWithFallback(async () => {
 		const { logoUrl } = getLogoShape.parse(await response.json());
-		return await resizeImage(logoUrl, {
-			size: { width: 256, height: 256 },
-			mimeType: 'image/webp',
-		});
+		return logoUrl;
 	}, fallback.logoUrl);
 
 	// If this errors we just move on.
@@ -49,7 +45,7 @@ export const handleSiteLogo = async ({ siteProfile }) => {
 	return getLogoShape.parse({ logoUrl });
 };
 
-const uploadLogo = async (url) => {
+export const uploadLogo = async (url) => {
 	const blob = await (await fetch(url)).blob();
 	const type = blob.type;
 	const fileExtension = type.replace('image/', '');

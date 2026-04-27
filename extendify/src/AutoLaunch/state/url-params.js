@@ -73,6 +73,10 @@ export const urlParamsShape = z.object({
 		.union([z.boolean(), z.string()])
 		.optional()
 		.catch(() => false),
+	'build-id': z
+		.string()
+		.optional()
+		.catch(() => ''),
 	go: z
 		.boolean()
 		.optional()

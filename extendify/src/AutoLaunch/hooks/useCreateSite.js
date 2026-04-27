@@ -1,3 +1,4 @@
+import { handleDesignBuild } from '@auto-launch/fetchers/get-design-build';
 import { handleHome } from '@auto-launch/fetchers/get-home';
 import { handleSiteImages } from '@auto-launch/fetchers/get-images';
 import { handleSiteLogo } from '@auto-launch/fetchers/get-logo';
@@ -10,7 +11,7 @@ import {
 	installFontFamilies,
 	mergeFontsIntoVariation,
 } from '@auto-launch/functions/fonts';
-import { apiFetchWithTimeout } from '@auto-launch/functions/helpers';
+import { apiFetchWithTimeout, setStatus } from '@auto-launch/functions/helpers';
 import { checkIn } from '@auto-launch/functions/insights';
 import {
 	updateButtonLinks,
@@ -26,13 +27,16 @@ import {
 	addImprintPage,
 	createWpPages,
 	getPagesToCreate,
+	PLUGIN_OWNED_PAGES,
 	setHelloWorldFeaturedImage,
 	updatePageTitlePattern,
 } from '@auto-launch/functions/pages';
 import { generatePageContent } from '@auto-launch/functions/patterns';
 import {
+	activatePlugin,
 	alreadyActive,
 	getActivePlugins,
+	installPlugin,
 	replacePlaceholderPatterns,
 } from '@auto-launch/functions/plugins';
 import {
@@ -58,7 +62,8 @@ import { useEffect, useRef, useState } from '@wordpress/element';
 import { __ } from '@wordpress/i18n';
 import useSWRImmutable from 'swr/immutable';
 
-const { homeUrl, showImprint, wpLanguage } = window.extSharedData;
+const { homeUrl, showImprint, wpLanguage, installedPluginsSlugs } =
+	window.extSharedData;
 
 // TODO: I think a good strategy is "if something fails, try to refetch some state"
 
@@ -76,7 +81,18 @@ export const useCreateSite = () => {
 		checkIn({ stage: 'exit_early' });
 	});
 
-	// needs: title, descriptionRaw
+	// needs: urlParams['build-id']
+	// provides: designBuild, siteProfile, siteStyle
+	useRunStep(
+		'designBuild',
+		() => {
+			if (!data.urlParams?.['build-id']) return null;
+			return data;
+		},
+		handleDesignBuild,
+	);
+
+	// needs: title, descriptionRaw (or designBuild when build-id)
 	// provides: siteProfile: { type, category, description, title, keywords, logoObjectName }
 	useRunStep(
 		'siteProfile',
@@ -118,6 +134,26 @@ export const useCreateSite = () => {
 			return await handleSitePlugins(params);
 		},
 	);
+
+	useEffect(() => {
+		// Start installing the partner plugins asap
+		if (!data.sitePlugins) return;
+
+		const pluginsToInstall = data.sitePlugins.filter(
+			({ wordpressSlug: slug }) => !installedPluginsSlugs?.includes(slug),
+		);
+		if (pluginsToInstall.length === 0) return;
+		setStatus(
+			// translators: this is for a action log UI. Keep it short
+			__('Setting up functionality for your website', 'extendify-local'),
+		);
+		(async function install() {
+			for (const { wordpressSlug: slug } of pluginsToInstall) {
+				const p = await installPlugin(slug);
+				await activatePlugin(p?.plugin ?? slug);
+			}
+		})();
+	}, [data.sitePlugins]);
 
 	// needs: siteProfile
 	// provides: style: {}
@@ -263,6 +299,7 @@ export const useCreateSite = () => {
 			siteStyle,
 			aiBlogTitles,
 			siteImages,
+			designBuild,
 		} = data;
 		// pages could be [] and pass here, that's ok
 		if (!home || !pages) return;
@@ -276,7 +313,6 @@ export const useCreateSite = () => {
 				? showImprint.includes(wpLanguage ?? '') && category === 'Business'
 				: false;
 
-			// install fonts and updateVariation
 			const customFonts =
 				siteStyle?.variation?.settings?.typography?.fontFamilies?.custom;
 			let variation = siteStyle?.variation;
@@ -289,12 +325,7 @@ export const useCreateSite = () => {
 				);
 				variation = mergeFontsIntoVariation(siteStyle.variation, installed);
 			}
-			// If the selected vibe isn't the default, we need to pick the
-			// vibe-specific block variations from the theme's global styles and
-			// apply them. We merge the vibe-adjusted blocks straight into the
-			// variation so updateVariation can POST everything in one shot —
-			// otherwise a second POST would overwrite the fonts, colors and
-			// other style overrides the variation carries.
+
 			if (siteStyle?.vibe && siteStyle.vibe !== 'natural-1') {
 				// translators: vibe in this context is a noun - the feeling of their site design.
 				addStatusMessage(__('Setting the website style', 'extendify-local'));
@@ -369,19 +400,34 @@ export const useCreateSite = () => {
 				checkIn({ stage: 'set_page_title_pattern' });
 				await updatePageTitlePattern(titlePattern.code);
 			}
+
+			const activePlugins = await getActivePlugins();
+			// This lets us keep plugin pages in th enav but skip making the page
+			const reservedSlugs = new Set(
+				PLUGIN_OWNED_PAGES.filter(
+					({ plugin }) =>
+						sitePlugins.some((p) => p.wordpressSlug === plugin) ||
+						alreadyActive(activePlugins, plugin),
+				).map(({ slug }) => slug),
+			);
+			const pagesToActuallyCreate = pagesToCreate.filter(
+				(p) => !reservedSlugs.has(p.slug),
+			);
+
 			// Some patterns have preview html, we can replace those
 			// which may install some plugins too.
 			const pagesReplaced = [];
 			// Run these one page at a time so we don't end up
 			// with duplicate dependency issues
 			checkIn({ stage: 'replace_placeholder_patterns' });
-			for (const page of pagesToCreate) {
+			for (const page of pagesToActuallyCreate) {
 				const patterns = await replacePlaceholderPatterns(page.patterns);
 				const updatedPage = { ...page, patterns };
 				pagesReplaced.push(updatedPage);
 			}
 			checkIn({ stage: 'generate_page_content' });
 			const customPages = await generatePageContent(pagesReplaced, data);
+
 			const stickyNav =
 				structure === 'single-page' && objective !== 'landing-page';
 			const createdPagesWP = await createWpPages(customPages, { stickyNav });
@@ -407,9 +453,6 @@ export const useCreateSite = () => {
 				imprint = await addImprintPage({ siteStyle }).catch(() => null);
 			}
 
-			// install partner plugins
-			const activePlugins = await getActivePlugins();
-			// Collect pages we need to add to the nav
 			const pluginPages = [];
 			if (alreadyActive(activePlugins, 'woocommerce')) {
 				checkIn({ stage: 'import_woocommerce_products' });
@@ -455,12 +498,14 @@ export const useCreateSite = () => {
 
 			checkIn({ stage: 'set_navigation_links' });
 			if (objective !== 'landing-page') {
+				const orderedSlugs = designBuild?.pages?.map((p) => p.slug) ?? [];
 				if (structure === 'single-page') {
 					await addSectionLinksToNav(
 						headerNavId,
 						home?.patterns,
 						pluginPages,
 						createdPagesWP,
+						{ orderedSlugs },
 					);
 				} else {
 					await addPageLinksToNav(
@@ -468,6 +513,7 @@ export const useCreateSite = () => {
 						pagesToCreate,
 						pagesWithLinksUpdated,
 						pluginPages,
+						{ orderedSlugs },
 					);
 				}
 				if (footerNavId) {

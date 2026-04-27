@@ -1,4 +1,5 @@
 import {
+	getDesignBuildShape,
 	getHomeShape,
 	getImagesShape,
 	getLogoShape,
@@ -39,6 +40,8 @@ const initialState = {
 	...shapeToKeyValue(getImagesShape),
 	...shapeToKeyValue(getHomeShape),
 	...shapeToKeyValue(getPagesShape),
+	...shapeToKeyValue(getDesignBuildShape),
+	designBuild: undefined,
 	attempt: 1,
 };
 
@@ -102,6 +105,7 @@ const keySchemas = {
 			getImagesShape,
 			getHomeShape,
 			getPagesShape,
+			getDesignBuildShape,
 		].flatMap((s) => Object.entries(s.shape)),
 	),
 };

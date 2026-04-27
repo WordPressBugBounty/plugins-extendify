@@ -263,6 +263,7 @@ class AdminPageRouter
                 'blog',
                 'landing-page',
                 'cta-link',
+                'build-id',
                 'go',
             ];
             // phpcs:ignore WordPress.Security.NonceVerification.Recommended,WordPress.Security.ValidatedSanitizedInput.MissingUnslash
