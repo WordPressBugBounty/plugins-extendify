@@ -139,6 +139,10 @@ export const SelectSiteDesign = ({ onConfirm, onCancel }) => {
 			heroSectionElement?.querySelector('p')?.textContent ?? null;
 		const cta =
 			heroSectionElement?.querySelector('.wp-block-button__link') ?? null;
+		const heroPatternName =
+			[...(heroSectionElement?.classList ?? [])]
+				.find((className) => className.startsWith('ext-hero-section--'))
+				?.replace('ext-hero-section--', '') ?? null;
 		const images = [...(heroSectionElement?.querySelectorAll('img') ?? [])]
 			.filter(
 				(img) =>
@@ -160,6 +164,7 @@ export const SelectSiteDesign = ({ onConfirm, onCancel }) => {
 				title,
 				images,
 				description,
+				currentHeroPattern: heroPatternName,
 				cta: {
 					label: cta?.textContent,
 					link: cta?.href,

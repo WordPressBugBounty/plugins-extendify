@@ -1,6 +1,5 @@
 import {
 	callTool,
-	digest,
 	handleWorkflow,
 	pickWorkflow,
 	recordAgentActivity,
@@ -16,6 +15,7 @@ import { useChatStore } from '@agent/state/chat';
 import { useGlobalStore } from '@agent/state/global';
 import { useSuggestionsStore } from '@agent/state/suggestions';
 import { useWorkflowStore } from '@agent/state/workflows';
+import { digest } from '@shared/api/digest';
 import {
 	useCallback,
 	useEffect,
@@ -227,7 +227,14 @@ export const Agent = () => {
 			const toolResponse = await callTool?.({ tool: id, inputs: data }).catch(
 				(error) => {
 					const { sessionId } = workflow || {};
-					digest({ caller: `when-finished: ${id}`, sessionId, error });
+					digest({
+						error,
+						details: {
+							source: 'agent',
+							caller: `when-finished: ${id}`,
+							sessionId,
+						},
+					});
 					devmode && console.error(error);
 					return { error: error.message };
 				},
@@ -390,7 +397,10 @@ export const Agent = () => {
 					return;
 				}
 				const { sessionId } = workflow || {};
-				digest({ caller: 'handle-workflow', sessionId, error });
+				digest({
+					error,
+					details: { source: 'agent', caller: `handle-workflow`, sessionId },
+				});
 				devmode && console.error(error);
 				return { error: error.message };
 			});
@@ -479,7 +489,14 @@ export const Agent = () => {
 					.then(([data]) => data)
 					.catch((error) => {
 						const { sessionId } = workflow || {};
-						digest({ caller: `in-progress: ${id}`, sessionId, error });
+						digest({
+							error,
+							details: {
+								source: 'agent',
+								caller: `in-progress: ${id}`,
+								sessionId,
+							},
+						});
 						devmode && console.error(error);
 						throw error;
 					});
@@ -498,7 +515,10 @@ export const Agent = () => {
 			setWaitingOnToolOrUser(true);
 		})().catch(async (error) => {
 			const { sessionId } = workflow || {};
-			digest({ caller: 'main-loop', sessionId, error });
+			digest({
+				error,
+				details: { source: 'agent', caller: 'main-loop', sessionId },
+			});
 			devmode && console.error(error);
 			setWorkflow(null);
 			cleanup();

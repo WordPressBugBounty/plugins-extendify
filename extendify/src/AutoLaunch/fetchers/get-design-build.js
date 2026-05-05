@@ -14,6 +14,7 @@ import {
 import { updateOption } from '@auto-launch/functions/wp';
 import { useLaunchDataStore } from '@auto-launch/state/launch-data';
 import { AI_HOST } from '@constants';
+import { digest } from '@shared/api/digest';
 import { __ } from '@wordpress/i18n';
 import { mutate } from 'swr';
 
@@ -28,8 +29,23 @@ export const handleDesignBuild = async ({ urlParams }) => {
 	setStatus(__('Loading your design', 'extendify-local'));
 
 	const url = `${AI_HOST}/api/design/${encodeURIComponent(buildId)}`;
-	const response = await retryTwice(() => fetchWithTimeout(url, { headers }));
-	if (!response?.ok) return fallback;
+	const response = await retryTwice(() =>
+		fetchWithTimeout(url, { headers }),
+	).catch((error) => {
+		return { ok: false, statusText: error.message, status: 0 };
+	});
+
+	if (!response?.ok) {
+		digest({
+			error: {
+				message: response.statusText,
+				name: 'FetchError',
+				status: response.status,
+			},
+			details: { source: 'auto-launch', caller: 'handleDesignBuild' },
+		});
+		return fallback;
+	}
 
 	try {
 		const parsed = getDesignBuildShape.parse(await response.json());
@@ -67,6 +83,10 @@ export const handleDesignBuild = async ({ urlParams }) => {
 		// Spreading it here sets it for other state values we override
 		return { designBuild, ...designBuild };
 	} catch (e) {
+		digest({
+			error: e,
+			details: { source: 'auto-launch', caller: 'handleDesignBuild::parsing' },
+		});
 		console.error('handleDesignBuild:', e);
 		// Drop the build-id so downstream checks (e.g. skipDescription) fallback
 		useLaunchDataStore.setState((s) => ({

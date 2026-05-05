@@ -57,6 +57,7 @@ import {
 } from '@auto-launch/functions/wp';
 import { useWarnOnLeave } from '@auto-launch/hooks/useWarnOnLeave';
 import { useLaunchDataStore } from '@auto-launch/state/launch-data';
+import { digest } from '@shared/api/digest';
 import { useAIConsentStore } from '@shared/state/ai-consent';
 import { useEffect, useRef, useState } from '@wordpress/element';
 import { __ } from '@wordpress/i18n';
@@ -540,6 +541,10 @@ export const useCreateSite = () => {
 			setDone(true);
 		})().catch((error) => {
 			console.error(error);
+			digest({
+				error,
+				details: { source: 'auto-launch', caller: 'create-site' },
+			});
 			// if we error here we can try again by resetting the home stretch and stalling again to refetch data
 			homeStretch.current = false;
 			needToStall(true);
@@ -573,6 +578,7 @@ const useRunStep = (stepKey, getParams, fetcher) => {
 	useEffect(() => {
 		if (!error || needToStall()) return;
 		console.error(error);
+		digest({ error, details: { source: 'auto-launch', caller: 'run-step' } });
 		setErrorMessage(
 			__(
 				'Having some trouble with this step. Trying again...',

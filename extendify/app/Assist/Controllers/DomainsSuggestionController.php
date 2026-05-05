@@ -75,10 +75,12 @@ class DomainsSuggestionController
                 : is_readable(EXTENDIFY_PATH . '.devbuild'),
             'siteId' => \get_option('extendify_site_id', ''),
             'tlds' => ($partnerData['domainTLDs'] ?? []),
+            'priorityTlds' => ($partnerData['priorityDomainTLDs'] ?? []),
             'partnerId' => \esc_attr(constant('EXTENDIFY_PARTNER_ID')),
             'wpLanguage' => \get_locale(),
             'wpVersion' => \get_bloginfo('version'),
             'businessDescription' => \esc_attr($businessDescription),
+            'siteProfile' => $siteProfile,
         ];
 
         $response = \wp_remote_post(
@@ -93,12 +95,17 @@ class DomainsSuggestionController
             return new \WP_REST_Response([]);
         }
 
+        $status = \wp_remote_retrieve_response_code($response);
+        if ($status < 200 || $status >= 300) {
+            return new \WP_REST_Response([]);
+        }
+
         $body = wp_remote_retrieve_body($response);
         if (empty($body)) {
             return new \WP_REST_Response([]);
         }
 
-        return new \WP_REST_Response(json_decode($body, true), \wp_remote_retrieve_response_code($response));
+        return new \WP_REST_Response(json_decode($body, true), $status);
     }
 
     /**

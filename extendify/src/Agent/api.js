@@ -3,6 +3,7 @@ import { useGlobalStore } from '@agent/state/global';
 import { useWorkflowStore } from '@agent/state/workflows';
 import { tools } from '@agent/workflows/workflows';
 import { AI_HOST } from '@constants';
+import { digest } from '@shared/api/digest';
 import { reqDataBasics } from '@shared/lib/data';
 
 const extra = () => {
@@ -62,11 +63,11 @@ export const pickWorkflow = async ({ workflows, options }) => {
 
 	if (!response.ok) {
 		digest({
-			caller: 'pick-workflow',
 			error: {
 				name: response.statusText,
 				messages: response.statusMessage,
 			},
+			details: { source: 'agent', caller: 'pick-workflow' },
 		});
 		const error = new Error('Bad response from server');
 		error.response = response;
@@ -104,58 +105,14 @@ export const rateAnswer = ({ answerId, rating }) =>
 		body: JSON.stringify({ answerId, rating }),
 	}).catch((error) =>
 		digest({
-			caller: 'rateAnswer',
-			error,
-			extra: { answerId, rating },
+			error: error,
+			details: { source: 'agent', caller: 'rateAnswer', answerId, rating },
 		}),
 	);
 
 export const callTool = async ({ tool, inputs }) => {
 	if (!tools[tool]) throw new Error(`Tool ${tool} not found`);
 	return await tools[tool](inputs);
-};
-
-export const digest = ({ error, sessionId, caller, additional = {} }) => {
-	if (Boolean(reqDataBasics?.devbuild) === true) return;
-
-	const errorMessage = () => {
-		if (error.response?.statusText) {
-			return (
-				error.response?.statusText || error.response.message || 'Unknown error'
-			);
-		}
-		return typeof error === 'string'
-			? error
-			: error?.message || 'Unknown error';
-	};
-
-	const errorData = {
-		message: errorMessage(),
-		name: error?.name,
-	};
-
-	return fetch(`${AI_HOST}/api/agent/digest`, {
-		method: 'POST',
-		keepalive: true,
-		headers: { 'Content-Type': 'application/json' },
-		body: JSON.stringify({
-			...reqDataBasics,
-			phpVersion: window.extSharedData?.phpVersion,
-			sessionId,
-			error: errorData,
-			browser: {
-				userAgent: window.navigator?.userAgent,
-				vendor: window.navigator?.vendor,
-				platform: window.navigator?.platform,
-				width: window.innerWidth,
-				height: window.innerHeight,
-				touchSupport: 'ontouchstart' in window || navigator.maxTouchPoints > 0,
-			},
-			caller,
-			...additional,
-			extra: extra(),
-		}),
-	}).catch(() => {});
 };
 
 export const recordAgentActivity = ({ action, sessionId, value = {} }) => {

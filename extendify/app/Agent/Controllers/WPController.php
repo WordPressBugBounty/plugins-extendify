@@ -486,6 +486,7 @@ class WPController
 
                 return [
                     'id'               => $heroPattern['id'],
+                    'name'             => $heroPattern['name'],
                     'code'             => $code,
                     'renderedHtml'     => $renderedHtml,
                     'blockSupportsCss' => $blockSupportsCss,
@@ -530,12 +531,26 @@ class WPController
         $images = $request->get_param('images');
         $cta = $request->get_param('cta');
         $featuredOnly = true; // Only show featured patterns
+        $currentHeroPattern = $request->get_param('currentHeroPattern');
 
         $heroPatterns = self::getHeroPatternsData($title, $description, $images, $cta, $featuredOnly);
 
         if (\is_wp_error($heroPatterns)) {
             return new \WP_REST_Response([], 500);
         }
+
+        $heroPatterns = array_values(
+            array_filter(
+                $heroPatterns,
+                function ($heroPattern) use ($currentHeroPattern) {
+                    if (!$currentHeroPattern) {
+                        return true;
+                    }
+
+                    return $heroPattern['name'] !== $currentHeroPattern;
+                }
+            )
+        );
 
         $current = \WP_Theme_JSON_Resolver::get_merged_data('theme');
 

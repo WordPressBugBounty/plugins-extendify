@@ -9,6 +9,7 @@ namespace Extendify\AutoLaunch;
 defined('ABSPATH') || die('No direct access.');
 
 use Extendify\Config;
+use Extendify\PartnerData;
 
 /**
  * This class handles any file loading for the admin area.
@@ -83,6 +84,7 @@ class Admin
                         'hello-world',
                         'Default post slug'
                     ),
+                'hideAutoLaunchExitLink' => (bool) PartnerData::setting('hideLaunchExitLink'),
             ]),
             'before'
         );

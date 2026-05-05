@@ -76,7 +76,8 @@ export const LaunchPage = () => {
 					/>
 				</AnimatePresence>
 			</div>
-			{skipDescription ? null : (
+			{skipDescription ||
+			window.extLaunchData?.hideAutoLaunchExitLink ? null : (
 				<div className="flex w-full p-6 md:p-8 absolute bottom-0 left-0">
 					<a
 						className="inline-flex items-center gap-0.5 text-sm text-banner-text opacity-70 hover:opacity-100 transition-opacity p-2"

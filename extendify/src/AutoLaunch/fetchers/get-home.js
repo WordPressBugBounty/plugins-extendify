@@ -10,6 +10,7 @@ import {
 } from '@auto-launch/functions/helpers';
 import { getHeadersAndFooters } from '@auto-launch/functions/wp';
 import { PATTERNS_HOST } from '@constants';
+import { digest } from '@shared/api/digest';
 import { reqDataBasics } from '@shared/lib/data';
 import { __ } from '@wordpress/i18n';
 
@@ -41,7 +42,22 @@ export const handleHome = async ({
 
 	const response = await retryTwice(() =>
 		fetchWithTimeout(url, { method, headers, body }),
-	);
+	).catch((error) => {
+		return { ok: false, statusText: error.message, status: 0 };
+	});
+
+	if (!response?.ok) {
+		digest({
+			error: {
+				message: response.statusText,
+				name: 'FetchError',
+				status: response.status,
+			},
+			details: { source: 'auto-launch', caller: 'handleHome' },
+		});
+		throw new Error(response.statusText);
+	}
+
 	const template = homeTemplateShape.parse(await response.json());
 	template.patterns = applyDesignBuildHero(template.patterns, designBuild);
 	template.patterns = applyDesignBuildNav(template.patterns, designBuild);

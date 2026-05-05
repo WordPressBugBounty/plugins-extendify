@@ -30,6 +30,7 @@ class AdminPageRouter
         // This does the initial redirect to Launch.
         \add_action('admin_init', [$this, 'redirectOnce'], 10);
         \add_action('admin_init', [$this, 'maybeForceFlush'], 5);
+        \add_action('admin_init', [$this, 'handleLaunchRedirect'], 1);
 
         // Add a dropdown above Dashboard in the admin toolbar.
         \add_action('admin_bar_menu', function ($wpAdminBar) {
@@ -173,6 +174,42 @@ class AdminPageRouter
     {
         // This router use to handle more cases but now everyone goes to Assist.
         return 'admin.php?page=extendify-assist';
+    }
+
+    /**
+     * Routes /wp-admin/?launch-redirect based on Launch and Agent state.
+     *
+     * @return void
+     */
+    public function handleLaunchRedirect()
+    {
+        // phpcs:ignore WordPress.Security.NonceVerification.Recommended
+        if (!isset($_GET['launch-redirect']) || \wp_doing_ajax() || !PartnerData::$id) {
+            return;
+        }
+
+        // If launch hasn't yet completed, they go to launch/auto-launch
+        if (!Config::$launchCompleted) {
+            $useAgentOnboarding = PartnerData::setting('useAgentOnboarding') ||
+                Config::preview('agent-onboarding') ||
+                constant('EXTENDIFY_DEVMODE');
+            $page = $useAgentOnboarding ? 'extendify-auto-launch' : 'extendify-launch';
+            \wp_safe_redirect(\admin_url('admin.php?page=' . $page));
+            exit;
+        }
+
+        // If they have the Agent onboarding enabled, redirect to home.
+        if (PartnerData::setting('showAIAgents')) {
+            \wp_safe_redirect(\add_query_arg(
+                ['extendify-open-agent' => '1'],
+                \home_url('/')
+            ));
+            exit;
+        }
+
+        // Otherwise, they go to Assist.
+        \wp_safe_redirect(\admin_url() . $this->getRoute());
+        exit;
     }
 
     /**

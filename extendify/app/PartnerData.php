@@ -55,6 +55,7 @@ class PartnerData
         'showSecondaryDomainBanner' => false,
         'showSecondaryDomainTask' => false,
         'domainTLDs' => ['com', 'net'],
+        'priorityDomainTLDs' => [],
         'stagingSites' => ['wordpress'],
         'domainSearchURL' => '',
         'showDraft' => false,
@@ -81,6 +82,7 @@ class PartnerData
         'requiredPlugins' => null,
         'useAgentOnboarding' => false,
         'hidePluginNotifications' => false,
+        'hideLaunchExitLink' => false,
     ];
 
     // phpcs:disable Generic.Metrics.CyclomaticComplexity.MaxExceeded
@@ -100,6 +102,8 @@ class PartnerData
         self::$config['showSecondaryDomainBanner'] = ($data['showSecondaryDomainBanner']
             ?? self::$config['showSecondaryDomainBanner']);
         self::$config['domainTLDs'] = ($data['domainTLDs'] ?? self::$config['domainTLDs']);
+        self::$config['priorityDomainTLDs'] = ($data['priorityDomainTLDs']
+            ?? self::$config['priorityDomainTLDs']);
         self::$config['stagingSites'] = array_map('trim', ($data['stagingSites'] ?? self::$config['stagingSites']));
         self::$config['domainSearchURL'] = ($data['domainSearchURL'] ?? self::$config['domainSearchURL']);
         self::$logo = isset($data['logo'][0]['thumbnails']['large']['url'])
@@ -144,6 +148,7 @@ class PartnerData
         self::$config['useAgentOnboarding'] = ($data['useAgentOnboarding'] ?? self::$config['useAgentOnboarding']);
         self::$config['hidePluginNotifications'] = ($data['hidePluginNotifications']
             ?? self::$config['hidePluginNotifications']);
+        self::$config['hideLaunchExitLink'] = ($data['hideLaunchExitLink'] ?? self::$config['hideLaunchExitLink']);
 
         // Add the job hook to fetch the partner data.
         \add_action('extendify_fetch_partner_data', [self::class, 'fetchPartnerData']);

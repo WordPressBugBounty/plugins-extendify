@@ -29,5 +29,6 @@ export const handleSiteStrings = async ({ siteProfile }) => {
 	return failWithFallback(
 		async () => getStringsShape.parse(await response.json()),
 		fallback,
+		{ caller: 'handleSiteStrings' },
 	);
 };

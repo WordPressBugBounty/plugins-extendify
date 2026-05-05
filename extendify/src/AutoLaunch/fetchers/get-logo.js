@@ -7,6 +7,7 @@ import {
 } from '@auto-launch/functions/helpers';
 import { updateOption } from '@auto-launch/functions/wp';
 import { AI_HOST } from '@constants';
+import { digest } from '@shared/api/digest';
 import { reqDataBasics } from '@shared/lib/data';
 import { __ } from '@wordpress/i18n';
 import { uploadMedia } from '@wordpress/media-utils';
@@ -30,14 +31,30 @@ export const handleSiteLogo = async ({ siteProfile }) => {
 	const body = JSON.stringify({ ...reqDataBasics, objectName });
 	const response = await retryTwice(() =>
 		fetchWithTimeout(url, { method, headers, body }),
+	).catch((error) => {
+		return { ok: false, statusText: error.message, status: 0 };
+	});
+
+	if (!response?.ok) {
+		digest({
+			error: {
+				message: response.statusText,
+				name: 'FetchError',
+				status: response.status,
+			},
+			details: { source: 'auto-launch', caller: 'handleSiteLogo', objectName },
+		});
+		return fallback;
+	}
+
+	const logoUrl = await failWithFallback(
+		async () => {
+			const { logoUrl } = getLogoShape.parse(await response.json());
+			return logoUrl;
+		},
+		fallback.logoUrl,
+		{ caller: 'handleSiteLogo' },
 	);
-
-	if (!response?.ok) return fallback;
-
-	const logoUrl = await failWithFallback(async () => {
-		const { logoUrl } = getLogoShape.parse(await response.json());
-		return logoUrl;
-	}, fallback.logoUrl);
 
 	// If this errors we just move on.
 	await uploadLogo(logoUrl);
@@ -58,6 +75,12 @@ export const uploadLogo = async (url) => {
 			if (!fileObj?.id) return;
 			await updateOption('site_logo', fileObj.id);
 		},
-		onError: console.error,
+		onError: (err) => {
+			console.error('Error uploading logo:', err);
+			digest({
+				error: err,
+				details: { source: 'auto-launch', caller: 'uploadLogo' },
+			});
+		},
 	});
 };

@@ -6,6 +6,7 @@ import {
 	setStatus,
 } from '@auto-launch/functions/helpers';
 import { AI_HOST } from '@constants';
+import { digest } from '@shared/api/digest';
 import { reqDataBasics } from '@shared/lib/data';
 import { __ } from '@wordpress/i18n';
 import { z } from 'zod';
@@ -41,12 +42,26 @@ export const handleSitePlugins = async ({
 
 	const response = await retryTwice(() =>
 		fetchWithTimeout(url, { method, headers, body }),
-	);
+	).catch((error) => {
+		return { ok: false, statusText: error.message, status: 0 };
+	});
 
-	if (!response?.ok) return fallback;
+	if (!response?.ok) {
+		digest({
+			error: {
+				message: response.statusText,
+				name: 'FetchError',
+				status: response.status,
+			},
+			details: { source: 'auto-launch', caller: 'handleSitePlugins' },
+		});
+		return fallback;
+	}
 
-	const { selectedPlugins } = await failWithFallback(async () =>
-		shapeLocal.parse(await response.json(), fallback),
+	const { selectedPlugins } = await failWithFallback(
+		async () => shapeLocal.parse(await response.json()),
+		fallback,
+		{ caller: 'handleSitePlugins' },
 	);
 	return getPluginsShape.parse({ sitePlugins: selectedPlugins });
 };
