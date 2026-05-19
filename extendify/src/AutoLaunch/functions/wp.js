@@ -35,6 +35,19 @@ export const getOption = (option) =>
 		path: addQueryArgs(`/extendify/v1/auto-launch/options`, { option }),
 	});
 
+export const storeSiteImages = (siteImages) =>
+	apiFetch({
+		path: '/extendify/v1/shared/site-images',
+		method: 'POST',
+		data: { siteImages },
+	});
+
+export const clearSiteImages = () =>
+	apiFetch({
+		path: '/extendify/v1/shared/site-images/clear',
+		method: 'POST',
+	});
+
 export const getPageById = (id) => {
 	try {
 		return apiFetch({ path: `/wp/v2/pages/${id}` });

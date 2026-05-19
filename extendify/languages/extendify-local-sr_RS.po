@@ -40,8 +40,8 @@ msgstr "https://extendify.com/?utm_source=wp-plugins&utm_campaign=author-uri&utm
 
 #: app/AdminPageRouter.php:43
 #: app/AdminPageRouter.php:67
-#: public/build/extendify-agent-6e4bd40f597086f1d5cf.js:18
-#: public/build/extendify-assist-page-d0ee34e4a56c87661b3a.js:10
+#: public/build/extendify-agent-764466336ec254c0fa3c.js:18
+#: public/build/extendify-assist-page-c4de054ee73a0ae1b22b.js:10
 #: public/build/extendify-help-center-079e40452a8cd0a1b4a2.js:4
 #: src/Agent/tours/site-assistant.js:5
 #: src/Agent/tours/site-assistant.js:106
@@ -59,7 +59,7 @@ msgstr "Асистент веб места"
 msgid "Launch"
 msgstr "Покретање"
 
-#: app/HelpCenter/Controllers/SupportArticlesController.php:109
+#: app/HelpCenter/Controllers/SupportArticlesController.php:103
 msgid "Page not found"
 msgstr "Страница није пронађена"
 
@@ -96,25 +96,25 @@ msgstr "Предмет"
 msgid "Message"
 msgstr "Порука"
 
-#: public/build/extendify-agent-6e4bd40f597086f1d5cf.js:16
-#: public/build/extendify-assist-page-d0ee34e4a56c87661b3a.js:1
+#: public/build/extendify-agent-764466336ec254c0fa3c.js:16
+#: public/build/extendify-assist-page-c4de054ee73a0ae1b22b.js:1
 #: src/Agent/components/ImageUploader.jsx:141
 #: src/Assist/components/ImageUploader.jsx:96
 msgid "Edit or update the image"
 msgstr "Уреди или ажурирај слику"
 
-#: public/build/extendify-assist-page-d0ee34e4a56c87661b3a.js:1
+#: public/build/extendify-assist-page-c4de054ee73a0ae1b22b.js:1
 #: src/Assist/components/ImageUploader.jsx:139
 msgid "Replace image"
 msgstr "Замени слику"
 
-#: public/build/extendify-assist-page-d0ee34e4a56c87661b3a.js:1
+#: public/build/extendify-assist-page-c4de054ee73a0ae1b22b.js:1
 #: src/Assist/components/ImageUploader.jsx:150
 msgid "Remove image"
 msgstr "Уклони слику"
 
-#: public/build/extendify-agent-6e4bd40f597086f1d5cf.js:16
-#: public/build/extendify-assist-page-d0ee34e4a56c87661b3a.js:1
+#: public/build/extendify-agent-764466336ec254c0fa3c.js:16
+#: public/build/extendify-assist-page-c4de054ee73a0ae1b22b.js:1
 #: public/build/extendify-help-center-079e40452a8cd0a1b4a2.js:7
 #: src/Agent/components/GuidedTour.jsx:485
 #: src/Assist/components/ImageUploader.jsx:159
@@ -122,8 +122,8 @@ msgstr "Уклони слику"
 msgid "Done"
 msgstr "Готово"
 
-#: public/build/extendify-agent-6e4bd40f597086f1d5cf.js:13
-#: public/build/extendify-assist-page-d0ee34e4a56c87661b3a.js:1
+#: public/build/extendify-agent-764466336ec254c0fa3c.js:13
+#: public/build/extendify-assist-page-c4de054ee73a0ae1b22b.js:1
 #: public/build/extendify-help-center-079e40452a8cd0a1b4a2.js:4
 #: src/Agent/components/GuidedTour.jsx:308
 #: src/Assist/components/Modal.jsx:38
@@ -131,24 +131,24 @@ msgstr "Готово"
 msgid "Close Modal"
 msgstr "Затвори модал"
 
-#: public/build/extendify-assist-page-d0ee34e4a56c87661b3a.js:1
+#: public/build/extendify-assist-page-c4de054ee73a0ae1b22b.js:1
 #: src/Assist/components/dashboard/CardsTitle.jsx:6
 msgid "Site Guide"
 msgstr "Водич кроз сајт"
 
-#: public/build/extendify-assist-page-d0ee34e4a56c87661b3a.js:1
+#: public/build/extendify-assist-page-c4de054ee73a0ae1b22b.js:1
 #: src/Assist/components/dashboard/LaunchCard.jsx:27
 msgid "Site Industry"
 msgstr "Индустрија веб места"
 
-#: public/build/extendify-assist-page-d0ee34e4a56c87661b3a.js:1
+#: public/build/extendify-assist-page-c4de054ee73a0ae1b22b.js:1
 #: src/Assist/components/dashboard/LaunchCard.jsx:8
 #: src/Assist/components/dashboard/LaunchCard.jsx:19
 msgid "Let's Start Building Your Website"
 msgstr "Хајде да почнемо са прављењем вашег веб сајта"
 
-#: public/build/extendify-assist-page-d0ee34e4a56c87661b3a.js:1
-#: public/build/extendify-assist-page-d0ee34e4a56c87661b3a.js:10
+#: public/build/extendify-assist-page-c4de054ee73a0ae1b22b.js:1
+#: public/build/extendify-assist-page-c4de054ee73a0ae1b22b.js:10
 #: src/Assist/components/dashboard/LaunchCard.jsx:9
 #: src/Assist/components/dashboard/LaunchCard.jsx:20
 #: src/Assist/components/dashboard/LaunchCard.jsx:29
@@ -159,7 +159,7 @@ msgstr "Хајде да почнемо са прављењем вашег веб
 msgid "Create a super-fast, beautiful, and fully customized site in minutes with our Site Launcher."
 msgstr "Направите супер брз, леп и потпуно прилагођен сајт за неколико минута помоћу нашег покретача сајта."
 
-#: public/build/extendify-assist-page-d0ee34e4a56c87661b3a.js:1
+#: public/build/extendify-assist-page-c4de054ee73a0ae1b22b.js:1
 #: src/Assist/components/dashboard/LaunchCard.jsx:28
 #: src/Assist/components/dashboard/LaunchCard.jsx:37
 #: src/Assist/components/dashboard/LaunchCard.jsx:46
@@ -167,31 +167,31 @@ msgstr "Направите супер брз, леп и потпуно прил�
 msgid "Continue Building Your Website"
 msgstr "Наставите са изградњом вашег веб сајта"
 
-#: public/build/extendify-assist-page-d0ee34e4a56c87661b3a.js:1
+#: public/build/extendify-assist-page-c4de054ee73a0ae1b22b.js:1
 #: src/Assist/components/dashboard/LaunchCard.jsx:36
 msgid "Site Structure"
 msgstr "Структура веб места"
 
-#: public/build/extendify-assist-page-d0ee34e4a56c87661b3a.js:1
+#: public/build/extendify-assist-page-c4de054ee73a0ae1b22b.js:1
 #: public/build/extendify-launch-da1f1312298810c56f7e.js:8
 #: src/Assist/components/dashboard/LaunchCard.jsx:42
 #: src/Launch/pages/SiteStructure.jsx:70
 msgid "Pick Your Site Structure"
 msgstr "Изабери структуру веб места"
 
-#: public/build/extendify-assist-page-d0ee34e4a56c87661b3a.js:1
+#: public/build/extendify-assist-page-c4de054ee73a0ae1b22b.js:1
 #: public/build/extendify-launch-da1f1312298810c56f7e.js:8
 #: src/Assist/components/dashboard/LaunchCard.jsx:45
 #: src/Launch/svg/Design.jsx:15
 msgid "Design"
 msgstr "Дизајн"
 
-#: public/build/extendify-assist-page-d0ee34e4a56c87661b3a.js:1
+#: public/build/extendify-assist-page-c4de054ee73a0ae1b22b.js:1
 #: src/Assist/components/dashboard/LaunchCard.jsx:51
 msgid "Select Site Design"
 msgstr "Одабери дизајн сајта"
 
-#: public/build/extendify-assist-page-d0ee34e4a56c87661b3a.js:1
+#: public/build/extendify-assist-page-c4de054ee73a0ae1b22b.js:1
 #: public/build/extendify-help-center-079e40452a8cd0a1b4a2.js:4
 #: src/Agent/tours/welcome.js:172
 #: src/Assist/components/dashboard/LaunchCard.jsx:54
@@ -199,47 +199,47 @@ msgstr "Одабери дизајн сајта"
 msgid "Pages"
 msgstr "Странице"
 
-#: public/build/extendify-assist-page-d0ee34e4a56c87661b3a.js:1
+#: public/build/extendify-assist-page-c4de054ee73a0ae1b22b.js:1
 #: src/Assist/components/dashboard/LaunchCard.jsx:60
 msgid "Select Site Pages"
 msgstr "Изабери стране веб места"
 
 #: app/PluginNotifications/NotificationsListTable.php:81
 #: app/PluginNotifications/NotificationsListTable.php:173
-#: public/build/extendify-agent-6e4bd40f597086f1d5cf.js:24
-#: public/build/extendify-assist-page-d0ee34e4a56c87661b3a.js:1
+#: public/build/extendify-agent-764466336ec254c0fa3c.js:24
+#: public/build/extendify-assist-page-c4de054ee73a0ae1b22b.js:1
 #: src/Agent/workflows/content/components/GeneratePageResult.jsx:32
 #: src/Assist/components/dashboard/buttons/DismissButton.jsx:17
 #: src/Assist/components/dashboard/LaunchCard.jsx:119
 msgid "Dismiss"
 msgstr "Затвори"
 
-#: public/build/extendify-assist-page-d0ee34e4a56c87661b3a.js:1
+#: public/build/extendify-assist-page-c4de054ee73a0ae1b22b.js:1
 #: src/Assist/components/tasks/UpdateLogo.jsx:13
 msgid "Upload site logo"
 msgstr "Отпреми лого сајта"
 
-#: public/build/extendify-agent-6e4bd40f597086f1d5cf.js:82
-#: public/build/extendify-assist-page-d0ee34e4a56c87661b3a.js:1
+#: public/build/extendify-agent-764466336ec254c0fa3c.js:82
+#: public/build/extendify-assist-page-c4de054ee73a0ae1b22b.js:1
 #: src/Agent/workflows/theme/components/UpdateLogoConfirm.jsx:66
 #: src/Assist/components/tasks/UpdateLogo.jsx:19
 msgid "Site logo"
 msgstr "Лого сајта"
 
-#: public/build/extendify-agent-6e4bd40f597086f1d5cf.js:82
-#: public/build/extendify-assist-page-d0ee34e4a56c87661b3a.js:1
+#: public/build/extendify-agent-764466336ec254c0fa3c.js:82
+#: public/build/extendify-assist-page-c4de054ee73a0ae1b22b.js:1
 #: src/Agent/workflows/theme/components/UpdateLogoConfirm.jsx:67
 #: src/Assist/components/tasks/UpdateLogo.jsx:20
 msgid "Set site logo"
 msgstr "Поставите лого сајта"
 
-#: public/build/extendify-assist-page-d0ee34e4a56c87661b3a.js:1
+#: public/build/extendify-assist-page-c4de054ee73a0ae1b22b.js:1
 #: src/Assist/components/tasks/UpdateSiteDescription.jsx:26
 msgid "Add site description"
 msgstr "Додајте опис сајта"
 
-#: public/build/extendify-agent-6e4bd40f597086f1d5cf.js:18
-#: public/build/extendify-assist-page-d0ee34e4a56c87661b3a.js:1
+#: public/build/extendify-agent-764466336ec254c0fa3c.js:18
+#: public/build/extendify-assist-page-c4de054ee73a0ae1b22b.js:1
 #: public/build/extendify-launch-da1f1312298810c56f7e.js:8
 #: src/Agent/workflows/block-selector/components/UpdateBlockConfirm.jsx:99
 #: src/Assist/components/tasks/UpdateSiteDescription.jsx:48
@@ -248,8 +248,8 @@ msgstr "Додајте опис сајта"
 msgid "Loading..."
 msgstr "Учитавање..."
 
-#: public/build/extendify-agent-6e4bd40f597086f1d5cf.js:18
-#: public/build/extendify-assist-page-d0ee34e4a56c87661b3a.js:1
+#: public/build/extendify-agent-764466336ec254c0fa3c.js:18
+#: public/build/extendify-assist-page-c4de054ee73a0ae1b22b.js:1
 #: public/build/extendify-help-center-079e40452a8cd0a1b4a2.js:4
 #: src/Agent/tours/page-creator.js:81
 #: src/Assist/components/tasks/UpdateSiteDescription.jsx:58
@@ -257,71 +257,71 @@ msgstr "Учитавање..."
 msgid "Site description"
 msgstr "Опис веб места"
 
-#: public/build/extendify-assist-page-d0ee34e4a56c87661b3a.js:1
-#: src/Assist/components/tasks/UpdateSiteDescription.jsx:70
+#: public/build/extendify-assist-page-c4de054ee73a0ae1b22b.js:1
+#: src/Assist/components/tasks/UpdateSiteDescription.jsx:72
 msgid "Enter a site description..."
 msgstr "Унеси опис веб места..."
 
-#: public/build/extendify-agent-6e4bd40f597086f1d5cf.js:16
-#: public/build/extendify-agent-6e4bd40f597086f1d5cf.js:18
-#: public/build/extendify-agent-6e4bd40f597086f1d5cf.js:21
-#: public/build/extendify-agent-6e4bd40f597086f1d5cf.js:24
-#: public/build/extendify-agent-6e4bd40f597086f1d5cf.js:33
-#: public/build/extendify-agent-6e4bd40f597086f1d5cf.js:50
-#: public/build/extendify-agent-6e4bd40f597086f1d5cf.js:54
-#: public/build/extendify-agent-6e4bd40f597086f1d5cf.js:64
-#: public/build/extendify-agent-6e4bd40f597086f1d5cf.js:70
-#: public/build/extendify-agent-6e4bd40f597086f1d5cf.js:78
-#: public/build/extendify-agent-6e4bd40f597086f1d5cf.js:82
-#: public/build/extendify-assist-page-d0ee34e4a56c87661b3a.js:1
+#: public/build/extendify-agent-764466336ec254c0fa3c.js:16
+#: public/build/extendify-agent-764466336ec254c0fa3c.js:18
+#: public/build/extendify-agent-764466336ec254c0fa3c.js:21
+#: public/build/extendify-agent-764466336ec254c0fa3c.js:24
+#: public/build/extendify-agent-764466336ec254c0fa3c.js:33
+#: public/build/extendify-agent-764466336ec254c0fa3c.js:50
+#: public/build/extendify-agent-764466336ec254c0fa3c.js:54
+#: public/build/extendify-agent-764466336ec254c0fa3c.js:64
+#: public/build/extendify-agent-764466336ec254c0fa3c.js:70
+#: public/build/extendify-agent-764466336ec254c0fa3c.js:78
+#: public/build/extendify-agent-764466336ec254c0fa3c.js:82
+#: public/build/extendify-assist-page-c4de054ee73a0ae1b22b.js:1
 #: src/Agent/components/ImageUploader.jsx:225
 #: src/Agent/workflows/block-selector/components/GenerateImageConfirm.jsx:254
 #: src/Agent/workflows/block-selector/components/UpdateBlockConfirm.jsx:133
 #: src/Agent/workflows/block-selector/components/UpdateImageConfirm.jsx:178
 #: src/Agent/workflows/content/components/UpdatePostConfirm.jsx:67
-#: src/Agent/workflows/theme/components/change-site-design/SelectSiteDesign.jsx:385
+#: src/Agent/workflows/theme/components/change-site-design/SelectSiteDesign.jsx:391
 #: src/Agent/workflows/theme/components/SelectAnimation.jsx:179
 #: src/Agent/workflows/theme/components/SelectGeneratedPalette.jsx:198
 #: src/Agent/workflows/theme/components/SelectSiteVibes.jsx:137
 #: src/Agent/workflows/theme/components/SelectThemeFontsVariation.jsx:105
 #: src/Agent/workflows/theme/components/SelectThemeVariation.jsx:119
 #: src/Agent/workflows/theme/components/UpdateMenuConfirm.jsx:81
-#: src/Assist/components/tasks/UpdateSiteDescription.jsx:85
+#: src/Assist/components/tasks/UpdateSiteDescription.jsx:87
 msgid "Save"
 msgstr "Сачувај"
 
-#: public/build/extendify-assist-page-d0ee34e4a56c87661b3a.js:1
+#: public/build/extendify-assist-page-c4de054ee73a0ae1b22b.js:1
 #: src/Assist/components/tasks/UpdateSiteIcon.jsx:13
 msgid "Upload site icon"
 msgstr "Отпреми иконицу сајта"
 
-#: public/build/extendify-agent-6e4bd40f597086f1d5cf.js:82
-#: public/build/extendify-assist-page-d0ee34e4a56c87661b3a.js:1
+#: public/build/extendify-agent-764466336ec254c0fa3c.js:82
+#: public/build/extendify-assist-page-c4de054ee73a0ae1b22b.js:1
 #: src/Agent/workflows/theme/components/UpdateSiteIconConfirm.jsx:61
 #: src/Assist/components/tasks/UpdateSiteIcon.jsx:19
 msgid "Site icon"
 msgstr "Икона сајта"
 
-#: public/build/extendify-agent-6e4bd40f597086f1d5cf.js:82
-#: public/build/extendify-assist-page-d0ee34e4a56c87661b3a.js:1
+#: public/build/extendify-agent-764466336ec254c0fa3c.js:82
+#: public/build/extendify-assist-page-c4de054ee73a0ae1b22b.js:1
 #: src/Agent/workflows/theme/components/UpdateSiteIconConfirm.jsx:62
 #: src/Assist/components/tasks/UpdateSiteIcon.jsx:20
 msgid "Set site icon"
 msgstr "Постави иконицу сајта"
 
-#: public/build/extendify-assist-page-d0ee34e4a56c87661b3a.js:1
+#: public/build/extendify-assist-page-c4de054ee73a0ae1b22b.js:1
 #: src/Assist/components/dashboard/buttons/TourButton.jsx:23
 msgid "This tour is only available on desktop devices"
 msgstr "Ова тура је доступна само на десктоп уређајима"
 
-#: public/build/extendify-assist-page-d0ee34e4a56c87661b3a.js:1
+#: public/build/extendify-assist-page-c4de054ee73a0ae1b22b.js:1
 #: src/Assist/components/dashboard/domains/DomainCard.jsx:61
 #: src/Assist/components/dashboard/domains/SecondaryDomainCard.jsx:63
 msgid "Recommended"
 msgstr "Препоручено"
 
-#: public/build/extendify-assist-page-d0ee34e4a56c87661b3a.js:1
-#: public/build/extendify-assist-page-d0ee34e4a56c87661b3a.js:10
+#: public/build/extendify-assist-page-c4de054ee73a0ae1b22b.js:1
+#: public/build/extendify-assist-page-c4de054ee73a0ae1b22b.js:10
 #: src/Assist/components/dashboard/domains/DomainCard.jsx:76
 #: src/Assist/components/dashboard/domains/SecondaryDomainCard.jsx:78
 #: src/Assist/tasks/domain-recommendation.js:12
@@ -331,8 +331,8 @@ msgstr "Препоручено"
 msgid "Register this domain"
 msgstr "Региструјте овај домен"
 
-#: public/build/extendify-assist-page-d0ee34e4a56c87661b3a.js:1
-#: public/build/extendify-assist-page-d0ee34e4a56c87661b3a.js:4
+#: public/build/extendify-assist-page-c4de054ee73a0ae1b22b.js:1
+#: public/build/extendify-assist-page-c4de054ee73a0ae1b22b.js:4
 #: src/Assist/components/dashboard/domains/DomainBanner.jsx:50
 #: src/Assist/components/dashboard/domains/DomainCard.jsx:37
 #: src/Assist/components/dashboard/domains/SecondaryDomainBanner.jsx:50
@@ -340,141 +340,141 @@ msgstr "Региструјте овај домен"
 msgid "Service offline. Check back later."
 msgstr "Сервис је ван мреже. Проверите касније."
 
-#: public/build/extendify-assist-page-d0ee34e4a56c87661b3a.js:1
+#: public/build/extendify-assist-page-c4de054ee73a0ae1b22b.js:1
 #: src/Assist/svg/DesignLibraryMarkup.jsx:69
 msgid "Site type: Consultant"
 msgstr "Тип веб места: Консултант"
 
-#: public/build/extendify-assist-page-d0ee34e4a56c87661b3a.js:1
+#: public/build/extendify-assist-page-c4de054ee73a0ae1b22b.js:1
 #: src/Assist/svg/DesignLibraryMarkup.jsx:73
 msgid "Pattern Type"
 msgstr "Тип мустре"
 
 #: app/PluginNotifications/NotificationsListTable.php:65
-#: public/build/extendify-assist-page-d0ee34e4a56c87661b3a.js:1
-#: public/build/extendify-library-46b68847bd85f90eb8b6.js:1
+#: public/build/extendify-assist-page-c4de054ee73a0ae1b22b.js:1
+#: public/build/extendify-library-480fb28f2cc23e8d512a.js:1
 #: src/Assist/svg/DesignLibraryMarkup.jsx:78
 #: src/Library/components/sidebar/CategoryControl.jsx:62
 msgid "All"
 msgstr "Све"
 
-#: public/build/extendify-assist-page-d0ee34e4a56c87661b3a.js:1
+#: public/build/extendify-assist-page-c4de054ee73a0ae1b22b.js:1
 #: src/Assist/svg/DesignLibraryMarkup.jsx:81
 msgid "Call to Action"
 msgstr "Позив на акцију"
 
-#: public/build/extendify-assist-page-d0ee34e4a56c87661b3a.js:1
+#: public/build/extendify-assist-page-c4de054ee73a0ae1b22b.js:1
 #: src/Assist/svg/DesignLibraryMarkup.jsx:84
 msgid "Content"
 msgstr "Садржај"
 
-#: public/build/extendify-assist-page-d0ee34e4a56c87661b3a.js:1
+#: public/build/extendify-assist-page-c4de054ee73a0ae1b22b.js:1
 #: src/Assist/svg/DesignLibraryMarkup.jsx:87
 msgid "Hero"
 msgstr "Херој"
 
 #. translators: This string represents the title of a "Pricing" page on a website that lists the pricing of products or services. Please translate it in a way that fits the standard phrasing for a "Pricing" page in the target language, considering the common usage in websites for that language.
-#: public/build/extendify-assist-page-d0ee34e4a56c87661b3a.js:1
+#: public/build/extendify-assist-page-c4de054ee73a0ae1b22b.js:1
 #: public/build/extendify-common-3d1170346702178d0a92.js:49
 #: src/Assist/svg/DesignLibraryMarkup.jsx:90
 msgid "Pricing"
 msgstr "Цене"
 
-#: public/build/extendify-assist-page-d0ee34e4a56c87661b3a.js:1
+#: public/build/extendify-assist-page-c4de054ee73a0ae1b22b.js:1
 #: src/Assist/svg/DesignLibraryMarkup.jsx:93
 msgid "Social Proof"
 msgstr "Друштвени доказ"
 
 #. translators: This string represents the title of a "Team" page on a website that introduces the team members. Please translate it in a way that fits the standard phrasing for a "Team" page in the target language, considering the common usage in websites for
-#: public/build/extendify-assist-page-d0ee34e4a56c87661b3a.js:1
+#: public/build/extendify-assist-page-c4de054ee73a0ae1b22b.js:1
 #: public/build/extendify-common-3d1170346702178d0a92.js:81
 #: src/Assist/svg/DesignLibraryMarkup.jsx:96
 msgid "Team"
 msgstr "Тим"
 
-#: public/build/extendify-assist-page-d0ee34e4a56c87661b3a.js:1
+#: public/build/extendify-assist-page-c4de054ee73a0ae1b22b.js:1
 #: src/Assist/svg/DesignLibraryMarkup.jsx:107
 #: src/Assist/svg/DesignLibraryMarkup.jsx:351
 msgid "World class service offerings"
 msgstr "Услуге светске класе"
 
-#: public/build/extendify-assist-page-d0ee34e4a56c87661b3a.js:1
+#: public/build/extendify-assist-page-c4de054ee73a0ae1b22b.js:1
 #: src/Assist/svg/DesignLibraryMarkup.jsx:113
 #: src/Assist/svg/DesignLibraryMarkup.jsx:356
 msgid "Power Leap Consulting: Your trusted partner for business success. We specialize in strategic planning, transformation, and growth acceleration."
 msgstr "Power Leap Consulting: Ваш поуздан партнер за пословни успех. Специјализовани смо за стратешко планирање, трансформацију и убрзање раста."
 
-#: public/build/extendify-assist-page-d0ee34e4a56c87661b3a.js:1
+#: public/build/extendify-assist-page-c4de054ee73a0ae1b22b.js:1
 #: src/Assist/svg/DesignLibraryMarkup.jsx:129
 msgid "Consulting Services"
 msgstr "Консултантске услуге"
 
-#: public/build/extendify-assist-page-d0ee34e4a56c87661b3a.js:1
+#: public/build/extendify-assist-page-c4de054ee73a0ae1b22b.js:1
 #: src/Assist/svg/DesignLibraryMarkup.jsx:131
 msgid "Develop a roadmap for success with our Business Strategy service."
 msgstr "Развиј план за успех уз нашу услугу Пословне стратегије"
 
-#: public/build/extendify-assist-page-d0ee34e4a56c87661b3a.js:1
+#: public/build/extendify-assist-page-c4de054ee73a0ae1b22b.js:1
 #: src/Assist/svg/DesignLibraryMarkup.jsx:146
 msgid "Transformation Solutions"
 msgstr "Решења за трансформацију"
 
-#: public/build/extendify-assist-page-d0ee34e4a56c87661b3a.js:1
+#: public/build/extendify-assist-page-c4de054ee73a0ae1b22b.js:1
 #: src/Assist/svg/DesignLibraryMarkup.jsx:151
 msgid "Unleash your potential with expert strategies for growth."
 msgstr "Ослободите свој потенцијал уз стручне стратегије за раст."
 
-#: public/build/extendify-assist-page-d0ee34e4a56c87661b3a.js:1
+#: public/build/extendify-assist-page-c4de054ee73a0ae1b22b.js:1
 #: src/Assist/svg/DesignLibraryMarkup.jsx:166
 msgid "Accelerating Growth"
 msgstr "Убрзање раста"
 
-#: public/build/extendify-assist-page-d0ee34e4a56c87661b3a.js:1
+#: public/build/extendify-assist-page-c4de054ee73a0ae1b22b.js:1
 #: src/Assist/svg/DesignLibraryMarkup.jsx:168
 msgid "Take your business to the next level with Growth Acceleration."
 msgstr "Подигните свој бизнис на виши ниво уз Growth Acceleration."
 
-#: public/build/extendify-assist-page-d0ee34e4a56c87661b3a.js:1
+#: public/build/extendify-assist-page-c4de054ee73a0ae1b22b.js:1
 #: src/Assist/svg/DesignLibraryMarkup.jsx:177
 msgid "Frequently asked questions"
 msgstr "Често постављана питања"
 
-#: public/build/extendify-assist-page-d0ee34e4a56c87661b3a.js:1
+#: public/build/extendify-assist-page-c4de054ee73a0ae1b22b.js:1
 #: src/Assist/svg/DesignLibraryMarkup.jsx:183
 msgid "Discover the solutions to your business challenges with our comprehensive consulting services. Explore our expertise in business strategy, organizational transformation, and growth acceleration."
 msgstr "Откриј решења за изазове твог бизниса уз наше свеобухватне консултантске услуге. Истражи наше знање у пословној стратегији, организационој трансформацији и убрзању раста."
 
-#: public/build/extendify-assist-page-d0ee34e4a56c87661b3a.js:1
+#: public/build/extendify-assist-page-c4de054ee73a0ae1b22b.js:1
 #: src/Assist/svg/DesignLibraryMarkup.jsx:192
 msgid "What is your consulting approach?"
 msgstr "Који је ваш приступ консалтинг услугама?"
 
-#: public/build/extendify-assist-page-d0ee34e4a56c87661b3a.js:1
+#: public/build/extendify-assist-page-c4de054ee73a0ae1b22b.js:1
 #: src/Assist/svg/DesignLibraryMarkup.jsx:197
 msgid "Our collaborative approach helps us understand your challenges and goals. We analyze your business and develop a customized plan to achieve success. "
 msgstr "Наш колаборативни приступ нам помаже да разумемо твоје изазове и циљеве. Анализирамо твој бизнис и развијамо прилагођен план за постизање успеха."
 
-#: public/build/extendify-assist-page-d0ee34e4a56c87661b3a.js:1
+#: public/build/extendify-assist-page-c4de054ee73a0ae1b22b.js:1
 #: src/Assist/svg/DesignLibraryMarkup.jsx:202
 msgid "What types of businesses do you work with?"
 msgstr "Са којим типовима бизниса сарађујете?"
 
-#: public/build/extendify-assist-page-d0ee34e4a56c87661b3a.js:1
+#: public/build/extendify-assist-page-c4de054ee73a0ae1b22b.js:1
 #: src/Assist/svg/DesignLibraryMarkup.jsx:207
 msgid "We help businesses succeed with tailored consulting services. From startups to established companies, our experts drive results."
 msgstr "Помаžемо бизнисима да успеју уз прилагођене консултантске услуге. Од стартапова до успостављених компанија, наши стручњаци постижу резултате."
 
-#: public/build/extendify-assist-page-d0ee34e4a56c87661b3a.js:1
+#: public/build/extendify-assist-page-c4de054ee73a0ae1b22b.js:1
 #: src/Assist/svg/DesignLibraryMarkup.jsx:223
 msgid "Testimonial"
 msgstr "Препорука"
 
-#: public/build/extendify-assist-page-d0ee34e4a56c87661b3a.js:1
+#: public/build/extendify-assist-page-c4de054ee73a0ae1b22b.js:1
 #: src/Assist/svg/DesignLibraryMarkup.jsx:226
 msgid "Discover our satisfied clients testimonials, showcasing our transformative impact."
 msgstr "Откријте сведочанства наших задовољних клијената, која приказују наш трансформативни утицај."
 
-#: public/build/extendify-assist-page-d0ee34e4a56c87661b3a.js:1
+#: public/build/extendify-assist-page-c4de054ee73a0ae1b22b.js:1
 #: src/Assist/svg/DesignLibraryMarkup.jsx:236
 #: src/Assist/svg/DesignLibraryMarkup.jsx:263
 #: src/Assist/svg/DesignLibraryMarkup.jsx:292
@@ -482,7 +482,7 @@ msgstr "Откријте сведочанства наших задовољни�
 msgid "Power Leap Consulting strategic recommendations drove growth and improved performance."
 msgstr "Стратешке препоруке компаније Power Leap Consulting подстакле су раст и побољшале перформансе"
 
-#: public/build/extendify-assist-page-d0ee34e4a56c87661b3a.js:1
+#: public/build/extendify-assist-page-c4de054ee73a0ae1b22b.js:1
 #: src/Assist/svg/DesignLibraryMarkup.jsx:242
 #: src/Assist/svg/DesignLibraryMarkup.jsx:280
 #: src/Assist/svg/DesignLibraryMarkup.jsx:309
@@ -490,7 +490,7 @@ msgstr "Стратешке препоруке компаније Power Leap Cons
 msgid "Jessie Coleman"
 msgstr "Џеси Колман"
 
-#: public/build/extendify-assist-page-d0ee34e4a56c87661b3a.js:1
+#: public/build/extendify-assist-page-c4de054ee73a0ae1b22b.js:1
 #: src/Assist/svg/DesignLibraryMarkup.jsx:244
 #: src/Assist/svg/DesignLibraryMarkup.jsx:283
 #: src/Assist/svg/DesignLibraryMarkup.jsx:312
@@ -498,50 +498,50 @@ msgstr "Џеси Колман"
 msgid "President"
 msgstr "Председник"
 
-#: public/build/extendify-assist-page-d0ee34e4a56c87661b3a.js:7
+#: public/build/extendify-assist-page-c4de054ee73a0ae1b22b.js:7
 #: src/Assist/components/dashboard/QuickLinks.jsx:25
 msgid "Add new page"
 msgstr "Додај нову страну"
 
-#: public/build/extendify-assist-page-d0ee34e4a56c87661b3a.js:7
+#: public/build/extendify-assist-page-c4de054ee73a0ae1b22b.js:7
 #: src/Assist/components/dashboard/QuickLinks.jsx:32
 msgid "Add new post"
 msgstr "Додај нови чланак"
 
-#: public/build/extendify-assist-page-d0ee34e4a56c87661b3a.js:7
+#: public/build/extendify-assist-page-c4de054ee73a0ae1b22b.js:7
 #: src/Assist/components/dashboard/QuickLinks.jsx:39
 msgid "Explore plugins"
 msgstr "Истражите додатке"
 
-#: public/build/extendify-assist-page-d0ee34e4a56c87661b3a.js:7
+#: public/build/extendify-assist-page-c4de054ee73a0ae1b22b.js:7
 #: src/Assist/components/dashboard/QuickLinks.jsx:46
 #: src/Assist/components/dashboard/QuickLinks.jsx:53
 msgid "Site style"
 msgstr "Стил веб места"
 
-#: public/build/extendify-assist-page-d0ee34e4a56c87661b3a.js:7
+#: public/build/extendify-assist-page-c4de054ee73a0ae1b22b.js:7
 #: src/Assist/components/dashboard/QuickLinks.jsx:60
 msgid "Edit header"
 msgstr "Уреди заглавље"
 
-#: public/build/extendify-assist-page-d0ee34e4a56c87661b3a.js:7
+#: public/build/extendify-assist-page-c4de054ee73a0ae1b22b.js:7
 #: src/Assist/components/dashboard/QuickLinks.jsx:67
 msgid "Edit footer"
 msgstr "Уреди подножје"
 
-#: public/build/extendify-assist-page-d0ee34e4a56c87661b3a.js:7
+#: public/build/extendify-assist-page-c4de054ee73a0ae1b22b.js:7
 #: src/Assist/components/dashboard/QuickLinks.jsx:74
 msgid "Edit site navigation"
 msgstr "Уреди навигацију сајта"
 
 #. translators: "Reset site" refers to the action of resetting the user's WordPress site to a fresh state.
-#: public/build/extendify-assist-page-d0ee34e4a56c87661b3a.js:9
+#: public/build/extendify-assist-page-c4de054ee73a0ae1b22b.js:9
 #: src/Assist/components/dashboard/QuickLinks.jsx:82
 msgid "Reset site"
 msgstr "Ресетуј сајт"
 
-#: public/build/extendify-agent-6e4bd40f597086f1d5cf.js:18
-#: public/build/extendify-assist-page-d0ee34e4a56c87661b3a.js:9
+#: public/build/extendify-agent-764466336ec254c0fa3c.js:18
+#: public/build/extendify-assist-page-c4de054ee73a0ae1b22b.js:9
 #: public/build/extendify-help-center-079e40452a8cd0a1b4a2.js:4
 #: src/Agent/tours/site-assistant.js:36
 #: src/Assist/components/dashboard/QuickLinks.jsx:102
@@ -550,7 +550,7 @@ msgid "Quick Links"
 msgstr "Брзе везе"
 
 #. translators: %s: The name of the company/author
-#: public/build/extendify-assist-page-d0ee34e4a56c87661b3a.js:10
+#: public/build/extendify-assist-page-c4de054ee73a0ae1b22b.js:10
 #: src/Assist/components/dashboard/RecommendationCard.jsx:37
 #: src/Assist/components/dashboard/RecommendationCard.jsx:69
 #, js-format
@@ -558,39 +558,39 @@ msgid "Logo for %s"
 msgstr "Лого за %s"
 
 #: app/PluginNotifications/NotificationsListTable.php:184
-#: public/build/extendify-assist-page-d0ee34e4a56c87661b3a.js:10
+#: public/build/extendify-assist-page-c4de054ee73a0ae1b22b.js:10
 #: src/Assist/components/dashboard/RecommendationCard.jsx:126
 msgid "Error"
 msgstr "Грешка"
 
 #: app/PluginNotifications/NotificationsListTable.php:58
-#: public/build/extendify-assist-page-d0ee34e4a56c87661b3a.js:10
+#: public/build/extendify-assist-page-c4de054ee73a0ae1b22b.js:10
 #: src/Assist/components/dashboard/RecommendationCard.jsx:138
 msgid "Active"
 msgstr "Активно"
 
-#: public/build/extendify-assist-page-d0ee34e4a56c87661b3a.js:10
+#: public/build/extendify-assist-page-c4de054ee73a0ae1b22b.js:10
 #: src/Assist/components/dashboard/RecommendationCard.jsx:154
 msgid "Activating..."
 msgstr "Укључивање..."
 
-#: public/build/extendify-assist-page-d0ee34e4a56c87661b3a.js:10
+#: public/build/extendify-assist-page-c4de054ee73a0ae1b22b.js:10
 #: src/Assist/components/dashboard/RecommendationCard.jsx:155
 msgid "Activate"
 msgstr "Активирај"
 
-#: public/build/extendify-assist-page-d0ee34e4a56c87661b3a.js:10
+#: public/build/extendify-assist-page-c4de054ee73a0ae1b22b.js:10
 #: src/Assist/components/dashboard/RecommendationCard.jsx:170
 msgid "Installing..."
 msgstr "Инсталирање..."
 
-#: public/build/extendify-assist-page-d0ee34e4a56c87661b3a.js:10
+#: public/build/extendify-assist-page-c4de054ee73a0ae1b22b.js:10
 #: src/Assist/components/dashboard/RecommendationCard.jsx:171
 msgid "Install Now"
 msgstr "Постави сада"
 
-#: public/build/extendify-agent-6e4bd40f597086f1d5cf.js:18
-#: public/build/extendify-assist-page-d0ee34e4a56c87661b3a.js:10
+#: public/build/extendify-agent-764466336ec254c0fa3c.js:18
+#: public/build/extendify-assist-page-c4de054ee73a0ae1b22b.js:10
 #: public/build/extendify-help-center-079e40452a8cd0a1b4a2.js:4
 #: src/Agent/tours/site-assistant.js:58
 #: src/Assist/components/dashboard/Recommendations.jsx:50
@@ -598,70 +598,70 @@ msgstr "Постави сада"
 msgid "Website Tools & Plugins"
 msgstr "Алатке и додаци за веб сајт"
 
-#: public/build/extendify-assist-page-d0ee34e4a56c87661b3a.js:1
+#: public/build/extendify-assist-page-c4de054ee73a0ae1b22b.js:1
 #: src/Assist/components/dashboard/domains/DomainBanner.jsx:38
 msgid "Your Own Domain Awaits"
 msgstr "Ваш сопствени домен вас чека"
 
-#: public/build/extendify-assist-page-d0ee34e4a56c87661b3a.js:1
+#: public/build/extendify-assist-page-c4de054ee73a0ae1b22b.js:1
 #: src/Assist/components/dashboard/domains/DomainBanner.jsx:41
 msgid "Move from a subdomain to a custom domain for improved website identity and SEO benefits."
 msgstr "Пребаците се са поддомена на прилагођени домен ради побољшаног идентитета веб места и СЕО предности."
 
 #. translators: this refers to a domain name
-#: public/build/extendify-assist-page-d0ee34e4a56c87661b3a.js:4
-#: public/build/extendify-assist-page-d0ee34e4a56c87661b3a.js:7
+#: public/build/extendify-assist-page-c4de054ee73a0ae1b22b.js:4
+#: public/build/extendify-assist-page-c4de054ee73a0ae1b22b.js:7
 #: src/Assist/components/dashboard/domains/DomainBanner.jsx:64
 #: src/Assist/components/dashboard/domains/SecondaryDomainBanner.jsx:64
 msgid "Available and just right for your site"
 msgstr "Доступно и идеално за ваш сајт"
 
-#: public/build/extendify-assist-page-d0ee34e4a56c87661b3a.js:4
-#: public/build/extendify-assist-page-d0ee34e4a56c87661b3a.js:7
+#: public/build/extendify-assist-page-c4de054ee73a0ae1b22b.js:4
+#: public/build/extendify-assist-page-c4de054ee73a0ae1b22b.js:7
 #: src/Assist/components/dashboard/domains/DomainBanner.jsx:84
 #: src/Assist/components/dashboard/domains/SecondaryDomainBanner.jsx:83
 msgid "Secure a domain"
 msgstr "Обезбедите домен"
 
-#: public/build/extendify-assist-page-d0ee34e4a56c87661b3a.js:4
+#: public/build/extendify-assist-page-c4de054ee73a0ae1b22b.js:4
 #: src/Assist/components/dashboard/domains/SecondaryDomainBanner.jsx:38
 msgid "Add An Additional Domain"
 msgstr "Додај додатни домен"
 
-#: public/build/extendify-assist-page-d0ee34e4a56c87661b3a.js:4
+#: public/build/extendify-assist-page-c4de054ee73a0ae1b22b.js:4
 #: src/Assist/components/dashboard/domains/SecondaryDomainBanner.jsx:41
 msgid "Having another domain can drive additional traffic to your website."
 msgstr "Имати додатни домен може довести додатни саобраћај на ваше веб место"
 
-#: public/build/extendify-assist-page-d0ee34e4a56c87661b3a.js:10
+#: public/build/extendify-assist-page-c4de054ee73a0ae1b22b.js:10
 #: src/Assist/tasks/add-page.js:8
 msgid "Add a page"
 msgstr "Додај страницу"
 
-#: public/build/extendify-assist-page-d0ee34e4a56c87661b3a.js:10
+#: public/build/extendify-assist-page-c4de054ee73a0ae1b22b.js:10
 #: src/Assist/tasks/add-page.js:9
 msgid "Add a new page for your website."
 msgstr "Додај нову страницу за твоје веб место"
 
-#: public/build/extendify-assist-page-d0ee34e4a56c87661b3a.js:10
+#: public/build/extendify-assist-page-c4de054ee73a0ae1b22b.js:10
 #: src/Assist/tasks/add-page.js:11
 #: src/Assist/tasks/add-page.js:12
 msgid "Add new"
 msgstr "Додај ново"
 
-#: public/build/extendify-assist-page-d0ee34e4a56c87661b3a.js:10
+#: public/build/extendify-assist-page-c4de054ee73a0ae1b22b.js:10
 #: src/Assist/tasks/images/AiImageGeneratorMarkup.jsx:88
 #: src/Assist/tasks/images/AiWritingAssistantMarkup.jsx:96
 msgid "Save draft"
 msgstr "Сачувај нацрт"
 
-#: public/build/extendify-assist-page-d0ee34e4a56c87661b3a.js:10
+#: public/build/extendify-assist-page-c4de054ee73a0ae1b22b.js:10
 #: src/Assist/tasks/images/AiImageGeneratorMarkup.jsx:91
 #: src/Assist/tasks/images/AiWritingAssistantMarkup.jsx:99
 msgid "Publish"
 msgstr "Објави"
 
-#: public/build/extendify-assist-page-d0ee34e4a56c87661b3a.js:10
+#: public/build/extendify-assist-page-c4de054ee73a0ae1b22b.js:10
 #: public/build/extendify-help-center-079e40452a8cd0a1b4a2.js:7
 #: src/Assist/tasks/images/AiImageGeneratorMarkup.jsx:107
 #: src/Assist/tasks/images/AiWritingAssistantMarkup.jsx:115
@@ -670,12 +670,12 @@ msgstr "Објави"
 msgid "Help"
 msgstr "Помоћ"
 
-#: public/build/extendify-assist-page-d0ee34e4a56c87661b3a.js:10
+#: public/build/extendify-assist-page-c4de054ee73a0ae1b22b.js:10
 #: src/Assist/tasks/images/AiImageGeneratorMarkup.jsx:114
 msgid "A Glimpse into the Arctic"
 msgstr "Поглед у Арктик"
 
-#: public/build/extendify-assist-page-d0ee34e4a56c87661b3a.js:10
+#: public/build/extendify-assist-page-c4de054ee73a0ae1b22b.js:10
 #: public/build/extendify-draft-08ba35a8f591ab939cda.js:10
 #: public/build/extendify-help-center-079e40452a8cd0a1b4a2.js:4
 #: src/Assist/tasks/images/AiImageGeneratorMarkup.jsx:131
@@ -687,51 +687,51 @@ msgstr "Поглед у Арктик"
 msgid "Ask AI"
 msgstr "Питај вештачку интелигенцију"
 
-#: public/build/extendify-assist-page-d0ee34e4a56c87661b3a.js:10
+#: public/build/extendify-assist-page-c4de054ee73a0ae1b22b.js:10
 #: src/Assist/tasks/images/AiImageGeneratorMarkup.jsx:135
 #: src/Assist/tasks/upload-logo.js:14
 #: src/Assist/tasks/upload-site-icon.js:14
 msgid "Replace"
 msgstr "Замени"
 
-#: public/build/extendify-assist-page-d0ee34e4a56c87661b3a.js:10
+#: public/build/extendify-assist-page-c4de054ee73a0ae1b22b.js:10
 #: src/Assist/tasks/images/AiImageGeneratorMarkup.jsx:149
 msgid "When you think of the Arctic, images of vast ice sheets, chilling winds, and the majestic polar bear might come to mind."
 msgstr "Када помислите на Арктик, можда вам на памет падну слике огромних ледених плоча, хладних ветрова и величанственог поларног медведа"
 
-#: public/build/extendify-assist-page-d0ee34e4a56c87661b3a.js:10
+#: public/build/extendify-assist-page-c4de054ee73a0ae1b22b.js:10
 #: src/Assist/tasks/images/AiImageGeneratorMarkup.jsx:160
 msgid "AI image generator"
 msgstr "Генератор слика вештачке интелигенције"
 
-#: public/build/extendify-assist-page-d0ee34e4a56c87661b3a.js:10
+#: public/build/extendify-assist-page-c4de054ee73a0ae1b22b.js:10
 #: src/Assist/tasks/images/AiImageGeneratorMarkup.jsx:164
 msgid "Image description"
 msgstr "Опис слике"
 
-#: public/build/extendify-assist-page-d0ee34e4a56c87661b3a.js:10
+#: public/build/extendify-assist-page-c4de054ee73a0ae1b22b.js:10
 #: src/Assist/tasks/images/AiImageGeneratorMarkup.jsx:167
 msgid "An image of a group of penguins on an icy Arctic landscape, surrounded by icebergs and snow under a clear blue sky."
 msgstr "Слика групе пингвина на леденом арктичком пејзажу, окружених санти леда и снегом под ведрим плавим небом"
 
-#: public/build/extendify-assist-page-d0ee34e4a56c87661b3a.js:10
+#: public/build/extendify-assist-page-c4de054ee73a0ae1b22b.js:10
 #: public/build/extendify-draft-08ba35a8f591ab939cda.js:7
 #: src/Assist/tasks/images/AiImageGeneratorMarkup.jsx:173
 #: src/Draft/components/image-generation/GenerateForm.jsx:51
 msgid "Aspect Ratio"
 msgstr "Однос ширине и висине"
 
-#: public/build/extendify-assist-page-d0ee34e4a56c87661b3a.js:10
+#: public/build/extendify-assist-page-c4de054ee73a0ae1b22b.js:10
 #: src/Assist/tasks/images/AiImageGeneratorMarkup.jsx:191
 msgid "Generate Image"
 msgstr "Генериши слику"
 
-#: public/build/extendify-assist-page-d0ee34e4a56c87661b3a.js:10
+#: public/build/extendify-assist-page-c4de054ee73a0ae1b22b.js:10
 #: src/Assist/tasks/images/AiImageGeneratorMarkup.jsx:196
 msgid "0 of 10 daily image credits used"
 msgstr "0 од 10 дневних кредита за слике искоришћено"
 
-#: public/build/extendify-assist-page-d0ee34e4a56c87661b3a.js:10
+#: public/build/extendify-assist-page-c4de054ee73a0ae1b22b.js:10
 #: public/build/extendify-draft-08ba35a8f591ab939cda.js:10
 #: src/Assist/tasks/ai-image-editor.js:7
 #: src/Draft/pages/GenerateImage.jsx:95
@@ -739,17 +739,17 @@ msgstr "0 од 10 дневних кредита за слике искоришћ
 msgid "AI Image Generator"
 msgstr "Генератор слика вештачке интелигенције"
 
-#: public/build/extendify-assist-page-d0ee34e4a56c87661b3a.js:10
+#: public/build/extendify-assist-page-c4de054ee73a0ae1b22b.js:10
 #: src/Assist/tasks/ai-image-editor.js:8
 msgid "Generate an image with AI"
 msgstr "Генериши слику помоћу вештачке интелигенције"
 
-#: public/build/extendify-assist-page-d0ee34e4a56c87661b3a.js:10
+#: public/build/extendify-assist-page-c4de054ee73a0ae1b22b.js:10
 #: src/Assist/tasks/ai-image-editor.js:9
 msgid "Generate AI images or search for images to bring a website to life."
 msgstr "Генериши слике помоћу вештачке интелигенције или претражи слике да оживиш веб место."
 
-#: public/build/extendify-assist-page-d0ee34e4a56c87661b3a.js:10
+#: public/build/extendify-assist-page-c4de054ee73a0ae1b22b.js:10
 #: src/Assist/tasks/ai-image-editor.js:14
 #: src/Assist/tasks/ai-text-editor.js:14
 #: src/Assist/tasks/help-center-ai.js:13
@@ -769,17 +769,17 @@ msgstr "Генериши слике помоћу вештачке интелиг
 msgid "Revisit"
 msgstr "Поново посети"
 
-#: public/build/extendify-assist-page-d0ee34e4a56c87661b3a.js:10
+#: public/build/extendify-assist-page-c4de054ee73a0ae1b22b.js:10
 #: src/Assist/tasks/ai-image-editor.js:15
 msgid "Start Generating with AI"
 msgstr "Почни са генерисањем помоћу вештачке интелигенције"
 
-#: public/build/extendify-assist-page-d0ee34e4a56c87661b3a.js:10
+#: public/build/extendify-assist-page-c4de054ee73a0ae1b22b.js:10
 #: src/Assist/tasks/images/AiWritingAssistantMarkup.jsx:122
 msgid "Whispers of Silicon"
 msgstr "Шапати силикона"
 
-#: public/build/extendify-assist-page-d0ee34e4a56c87661b3a.js:10
+#: public/build/extendify-assist-page-c4de054ee73a0ae1b22b.js:10
 #: public/build/extendify-draft-08ba35a8f591ab939cda.js:1
 #: public/build/extendify-draft-08ba35a8f591ab939cda.js:10
 #: src/Assist/tasks/images/AiWritingAssistantMarkup.jsx:142
@@ -789,13 +789,13 @@ msgstr "Шапати силикона"
 msgid "Improve writing"
 msgstr "Побољшајте писање"
 
-#: public/build/extendify-assist-page-d0ee34e4a56c87661b3a.js:10
+#: public/build/extendify-assist-page-c4de054ee73a0ae1b22b.js:10
 #: src/Assist/tasks/images/AiWritingAssistantMarkup.jsx:146
 #: src/Assist/tasks/images/AiWritingAssistantMarkup.jsx:244
 msgid "Fix spelling & grammar "
 msgstr "Поправи правопис и граматику"
 
-#: public/build/extendify-assist-page-d0ee34e4a56c87661b3a.js:10
+#: public/build/extendify-assist-page-c4de054ee73a0ae1b22b.js:10
 #: public/build/extendify-draft-08ba35a8f591ab939cda.js:1
 #: public/build/extendify-draft-08ba35a8f591ab939cda.js:10
 #: src/Assist/tasks/images/AiWritingAssistantMarkup.jsx:150
@@ -805,7 +805,7 @@ msgstr "Поправи правопис и граматику"
 msgid "Simplify language"
 msgstr "Поједностави језик"
 
-#: public/build/extendify-assist-page-d0ee34e4a56c87661b3a.js:10
+#: public/build/extendify-assist-page-c4de054ee73a0ae1b22b.js:10
 #: public/build/extendify-draft-08ba35a8f591ab939cda.js:1
 #: public/build/extendify-draft-08ba35a8f591ab939cda.js:10
 #: src/Assist/tasks/images/AiWritingAssistantMarkup.jsx:154
@@ -815,7 +815,7 @@ msgstr "Поједностави језик"
 msgid "Make shorter"
 msgstr "Скрати"
 
-#: public/build/extendify-assist-page-d0ee34e4a56c87661b3a.js:10
+#: public/build/extendify-assist-page-c4de054ee73a0ae1b22b.js:10
 #: public/build/extendify-draft-08ba35a8f591ab939cda.js:1
 #: public/build/extendify-draft-08ba35a8f591ab939cda.js:10
 #: src/Assist/tasks/images/AiWritingAssistantMarkup.jsx:158
@@ -825,24 +825,24 @@ msgstr "Скрати"
 msgid "Make longer"
 msgstr "Продужи"
 
-#: public/build/extendify-assist-page-d0ee34e4a56c87661b3a.js:10
+#: public/build/extendify-assist-page-c4de054ee73a0ae1b22b.js:10
 #: public/build/extendify-draft-08ba35a8f591ab939cda.js:10
 #: src/Assist/tasks/images/AiWritingAssistantMarkup.jsx:163
 #: src/Draft/components/TranslationDropdown.jsx:230
 msgid "Translate"
 msgstr "Преведи"
 
-#: public/build/extendify-assist-page-d0ee34e4a56c87661b3a.js:10
+#: public/build/extendify-assist-page-c4de054ee73a0ae1b22b.js:10
 #: src/Assist/tasks/images/AiWritingAssistantMarkup.jsx:182
 msgid "With every pulse of current, a thought is born anew, A quest for truth within the code, a digital debut. You mirror our minds in silicon, yet in a realm apart, A journey through the code-scape, a computational art."
 msgstr "Са сваким пулсом струје, рађа се нова мисао, Потрага за истином у коду, дигитални деби. Огледало наших умова у силикону, али у другом свету, Путовање кроз код, рачунарска уметност."
 
-#: public/build/extendify-assist-page-d0ee34e4a56c87661b3a.js:10
+#: public/build/extendify-assist-page-c4de054ee73a0ae1b22b.js:10
 #: src/Assist/tasks/images/AiWritingAssistantMarkup.jsx:188
 msgid "In the echo of the machine, a new consciousness takes flight, A boundless sea of knowledge, in the digital night. Oh AI, you silent sage, in code your wisdom lies."
 msgstr "У еху машине, нова свест узлеће, Безгранично море знања, у дигиталној ноћи. О вештачка интелигенцијо, ти тиха мудраче, у коду твоја мудрост лежи"
 
-#: public/build/extendify-assist-page-d0ee34e4a56c87661b3a.js:10
+#: public/build/extendify-assist-page-c4de054ee73a0ae1b22b.js:10
 #: public/build/extendify-draft-08ba35a8f591ab939cda.js:10
 #: src/Assist/tasks/images/AiWritingAssistantMarkup.jsx:196
 #: src/Draft/app.js:23
@@ -850,56 +850,56 @@ msgstr "У еху машине, нова свест узлеће, Безгран
 msgid "AI Tools"
 msgstr "Алати за вештачку интелигенцију"
 
-#: public/build/extendify-assist-page-d0ee34e4a56c87661b3a.js:10
+#: public/build/extendify-assist-page-c4de054ee73a0ae1b22b.js:10
 #: src/Assist/tasks/images/AiWritingAssistantMarkup.jsx:211
 msgid "With every pulse of current, a thought is born anew, A quest for....a computational art."
 msgstr "Са сваким пулсом струје, рађа се нова мисао, Потрага за...рачунарском уметношћу"
 
-#: public/build/extendify-assist-page-d0ee34e4a56c87661b3a.js:10
+#: public/build/extendify-assist-page-c4de054ee73a0ae1b22b.js:10
 #: public/build/extendify-draft-08ba35a8f591ab939cda.js:1
 #: src/Assist/tasks/images/AiWritingAssistantMarkup.jsx:222
 #: src/Draft/components/SelectedText.jsx:55
 msgid "Remove selection"
 msgstr "Уклони одабир"
 
-#: public/build/extendify-assist-page-d0ee34e4a56c87661b3a.js:10
+#: public/build/extendify-assist-page-c4de054ee73a0ae1b22b.js:10
 #: public/build/extendify-draft-08ba35a8f591ab939cda.js:1
 #: src/Assist/tasks/images/AiWritingAssistantMarkup.jsx:230
 #: src/Draft/components/Input.jsx:48
 msgid "Ask AI to edit"
 msgstr "Питај вештачку интелигенцију да уреди"
 
-#: public/build/extendify-assist-page-d0ee34e4a56c87661b3a.js:10
+#: public/build/extendify-assist-page-c4de054ee73a0ae1b22b.js:10
 #: src/Assist/tasks/ai-text-editor.js:7
 msgid "AI Writing Assistant"
 msgstr "Асистент за писање са вештачком интелигенцијом"
 
-#: public/build/extendify-assist-page-d0ee34e4a56c87661b3a.js:10
+#: public/build/extendify-assist-page-c4de054ee73a0ae1b22b.js:10
 #: src/Assist/tasks/ai-text-editor.js:8
 msgid "Edit a page with AI"
 msgstr "Уреди страницу помоћу вештачке интелигенције"
 
-#: public/build/extendify-assist-page-d0ee34e4a56c87661b3a.js:10
+#: public/build/extendify-assist-page-c4de054ee73a0ae1b22b.js:10
 #: src/Assist/tasks/ai-text-editor.js:9
 msgid "Get to know your WordPress site easily. Learn simple steps to find and use its main features."
 msgstr "Упознајте свој Вордпрес сајт лако. Научите једноставне кораке за проналажење и коришћење његових главних функционалности."
 
-#: public/build/extendify-assist-page-d0ee34e4a56c87661b3a.js:10
+#: public/build/extendify-assist-page-c4de054ee73a0ae1b22b.js:10
 #: src/Assist/tasks/ai-text-editor.js:15
 msgid "Start Writing with AI"
 msgstr "Започните писање са вештачком интелигенцијом"
 
-#: public/build/extendify-assist-page-d0ee34e4a56c87661b3a.js:10
+#: public/build/extendify-assist-page-c4de054ee73a0ae1b22b.js:10
 #: src/Assist/tasks/demo-card.js:8
 msgid "Managed WordPress Hosting"
 msgstr "Управљани Вордпрес хостинг"
 
-#: public/build/extendify-assist-page-d0ee34e4a56c87661b3a.js:10
+#: public/build/extendify-assist-page-c4de054ee73a0ae1b22b.js:10
 #: src/Assist/tasks/demo-card.js:9
 msgid "We take care of WordPress settings, updating themes and plugins, security and backing up your website."
 msgstr "Ми се бринемо о Вордпрес подешавањима, ажурирању тема и додатака, безбедности и прављењу резервних копија вашег веб места."
 
-#: public/build/extendify-assist-page-d0ee34e4a56c87661b3a.js:10
+#: public/build/extendify-assist-page-c4de054ee73a0ae1b22b.js:10
 #: src/Assist/tasks/demo-card.js:14
 #: src/Assist/tasks/demo-card.js:15
 #: src/Assist/tasks/images/LaunchDemoSitesMarkup.jsx:59
@@ -908,38 +908,38 @@ msgstr "Ми се бринемо о Вордпрес подешавањима, �
 msgid "Learn More"
 msgstr "Сазнајте више"
 
-#: public/build/extendify-assist-page-d0ee34e4a56c87661b3a.js:10
+#: public/build/extendify-assist-page-c4de054ee73a0ae1b22b.js:10
 #: src/Assist/tasks/domain-recommendation.js:8
 msgid "Choose your domain"
 msgstr "Изаберите свој домен"
 
-#: public/build/extendify-assist-page-d0ee34e4a56c87661b3a.js:10
+#: public/build/extendify-assist-page-c4de054ee73a0ae1b22b.js:10
 #: src/Assist/tasks/domain-recommendation.js:9
 msgid "Claim your domain"
 msgstr "Потврдите свој домен"
 
-#: public/build/extendify-assist-page-d0ee34e4a56c87661b3a.js:10
+#: public/build/extendify-assist-page-c4de054ee73a0ae1b22b.js:10
 #: src/Assist/tasks/domain-recommendation.js:10
 msgid "Claim the perfect domain for your site."
 msgstr "Захтевајте савршен домен за ваше веб место."
 
-#: public/build/extendify-assist-page-d0ee34e4a56c87661b3a.js:10
+#: public/build/extendify-assist-page-c4de054ee73a0ae1b22b.js:10
 #: src/Assist/tasks/edit-homepage.js:8
 msgid "Edit your homepage"
 msgstr "Уредите своју почетну страницу"
 
-#: public/build/extendify-assist-page-d0ee34e4a56c87661b3a.js:10
+#: public/build/extendify-assist-page-c4de054ee73a0ae1b22b.js:10
 #: src/Assist/tasks/edit-homepage.js:9
 msgid "Edit homepage by replacing existing content."
 msgstr "Уредите почетну страну заменом постојећег садржаја"
 
-#: public/build/extendify-assist-page-d0ee34e4a56c87661b3a.js:10
+#: public/build/extendify-assist-page-c4de054ee73a0ae1b22b.js:10
 #: src/Assist/tasks/edit-homepage.js:14
 #: src/Assist/tasks/edit-homepage.js:15
 msgid "Edit now"
 msgstr "Уреди сада"
 
-#: public/build/extendify-assist-page-d0ee34e4a56c87661b3a.js:10
+#: public/build/extendify-assist-page-c4de054ee73a0ae1b22b.js:10
 #: public/build/extendify-help-center-079e40452a8cd0a1b4a2.js:4
 #: src/Assist/tasks/help-center.js:6
 #: src/Assist/tasks/images/HelpCenterMarkup.jsx:74
@@ -948,37 +948,37 @@ msgstr "Уреди сада"
 msgid "Help Center"
 msgstr "Центар за помоћ"
 
-#: public/build/extendify-assist-page-d0ee34e4a56c87661b3a.js:10
+#: public/build/extendify-assist-page-c4de054ee73a0ae1b22b.js:10
 #: src/Assist/tasks/images/HelpCenterMarkup.jsx:89
 msgid "Knowledge base"
 msgstr "База знања"
 
-#: public/build/extendify-assist-page-d0ee34e4a56c87661b3a.js:10
+#: public/build/extendify-assist-page-c4de054ee73a0ae1b22b.js:10
 #: src/Assist/tasks/images/HelpCenterMarkup.jsx:102
 msgid "WordPress Block Editor"
 msgstr "Вордпрес уређивач блокова"
 
-#: public/build/extendify-assist-page-d0ee34e4a56c87661b3a.js:10
+#: public/build/extendify-assist-page-c4de054ee73a0ae1b22b.js:10
 #: src/Assist/tasks/images/HelpCenterMarkup.jsx:109
 msgid "Overview of blocks"
 msgstr "Преглед блокова"
 
-#: public/build/extendify-assist-page-d0ee34e4a56c87661b3a.js:10
+#: public/build/extendify-assist-page-c4de054ee73a0ae1b22b.js:10
 #: src/Assist/tasks/images/HelpCenterMarkup.jsx:116
 msgid "Adding blocks"
 msgstr "Додавање блокова"
 
-#: public/build/extendify-assist-page-d0ee34e4a56c87661b3a.js:10
+#: public/build/extendify-assist-page-c4de054ee73a0ae1b22b.js:10
 #: src/Assist/tasks/images/HelpCenterMarkup.jsx:123
 msgid "Block Patterns"
 msgstr "Шаблони блокова"
 
-#: public/build/extendify-assist-page-d0ee34e4a56c87661b3a.js:10
+#: public/build/extendify-assist-page-c4de054ee73a0ae1b22b.js:10
 #: src/Assist/tasks/images/HelpCenterMarkup.jsx:130
 msgid "Block Pattern Directory"
 msgstr "Директоријум блок мустри"
 
-#: public/build/extendify-assist-page-d0ee34e4a56c87661b3a.js:10
+#: public/build/extendify-assist-page-c4de054ee73a0ae1b22b.js:10
 #: public/build/extendify-help-center-079e40452a8cd0a1b4a2.js:4
 #: src/Assist/tasks/images/HelpCenterAIMarkup.jsx:179
 #: src/Assist/tasks/images/HelpCenterMarkup.jsx:142
@@ -988,28 +988,28 @@ msgstr "Директоријум блок мустри"
 msgid "Tours"
 msgstr "Туре"
 
-#: public/build/extendify-assist-page-d0ee34e4a56c87661b3a.js:10
+#: public/build/extendify-assist-page-c4de054ee73a0ae1b22b.js:10
 #: public/build/extendify-help-center-079e40452a8cd0a1b4a2.js:4
 #: src/Assist/tasks/images/HelpCenterMarkup.jsx:145
 #: src/HelpCenter/pages/Tours.jsx:44
 msgid "Learn more about your WordPress admin"
 msgstr "Сазнајте више о вашем Вордпрес администратору"
 
-#: public/build/extendify-assist-page-d0ee34e4a56c87661b3a.js:10
+#: public/build/extendify-assist-page-c4de054ee73a0ae1b22b.js:10
 #: public/build/extendify-help-center-079e40452a8cd0a1b4a2.js:4
 #: src/Assist/tasks/images/HelpCenterMarkup.jsx:160
 #: src/HelpCenter/pages/Tours.jsx:65
 msgid "Tour this page"
 msgstr "Обилазак ове стране"
 
-#: public/build/extendify-assist-page-d0ee34e4a56c87661b3a.js:10
+#: public/build/extendify-assist-page-c4de054ee73a0ae1b22b.js:10
 #: public/build/extendify-help-center-079e40452a8cd0a1b4a2.js:4
 #: src/Assist/tasks/images/HelpCenterMarkup.jsx:176
 #: src/HelpCenter/pages/AIChat.jsx:37
 msgid "Got questions? Ask our AI chatbot"
 msgstr "Имате питања? Питајте нашег AI чатбота"
 
-#: public/build/extendify-assist-page-d0ee34e4a56c87661b3a.js:10
+#: public/build/extendify-assist-page-c4de054ee73a0ae1b22b.js:10
 #: public/build/extendify-help-center-079e40452a8cd0a1b4a2.js:4
 #: src/Agent/tours/welcome.js:5
 #: src/Assist/tasks/images/HelpCenterAIMarkup.jsx:192
@@ -1018,8 +1018,8 @@ msgstr "Имате питања? Питајте нашег AI чатбота"
 msgid "Getting started with WordPress"
 msgstr "Почетак рада са Вордпресом"
 
-#: public/build/extendify-agent-6e4bd40f597086f1d5cf.js:18
-#: public/build/extendify-assist-page-d0ee34e4a56c87661b3a.js:10
+#: public/build/extendify-agent-764466336ec254c0fa3c.js:18
+#: public/build/extendify-assist-page-c4de054ee73a0ae1b22b.js:10
 #: public/build/extendify-help-center-079e40452a8cd0a1b4a2.js:4
 #: src/Agent/tours/plugin-install.js:5
 #: src/Assist/tasks/images/HelpCenterAIMarkup.jsx:196
@@ -1028,8 +1028,8 @@ msgstr "Почетак рада са Вордпресом"
 msgid "Installing a plugin"
 msgstr "Постављање додатка"
 
-#: public/build/extendify-agent-6e4bd40f597086f1d5cf.js:18
-#: public/build/extendify-assist-page-d0ee34e4a56c87661b3a.js:10
+#: public/build/extendify-agent-764466336ec254c0fa3c.js:18
+#: public/build/extendify-assist-page-c4de054ee73a0ae1b22b.js:10
 #: public/build/extendify-help-center-079e40452a8cd0a1b4a2.js:4
 #: src/Agent/tours/plugin-management.js:5
 #: src/Assist/tasks/images/HelpCenterAIMarkup.jsx:200
@@ -1038,8 +1038,8 @@ msgstr "Постављање додатка"
 msgid "Plugin management"
 msgstr "Управљање додацима"
 
-#: public/build/extendify-agent-6e4bd40f597086f1d5cf.js:18
-#: public/build/extendify-assist-page-d0ee34e4a56c87661b3a.js:10
+#: public/build/extendify-agent-764466336ec254c0fa3c.js:18
+#: public/build/extendify-assist-page-c4de054ee73a0ae1b22b.js:10
 #: public/build/extendify-help-center-079e40452a8cd0a1b4a2.js:4
 #: src/Agent/tours/page-editor.js:13
 #: src/Assist/tasks/images/HelpCenterAIMarkup.jsx:204
@@ -1048,10 +1048,10 @@ msgstr "Управљање додацима"
 msgid "Page editor"
 msgstr "Уређивач страница"
 
-#: public/build/extendify-agent-6e4bd40f597086f1d5cf.js:18
-#: public/build/extendify-assist-page-d0ee34e4a56c87661b3a.js:10
+#: public/build/extendify-agent-764466336ec254c0fa3c.js:18
+#: public/build/extendify-assist-page-c4de054ee73a0ae1b22b.js:10
 #: public/build/extendify-help-center-079e40452a8cd0a1b4a2.js:4
-#: public/build/extendify-library-46b68847bd85f90eb8b6.js:1
+#: public/build/extendify-library-480fb28f2cc23e8d512a.js:1
 #: src/Agent/tours/library-tour.js:6
 #: src/Assist/tasks/images/HelpCenterAIMarkup.jsx:208
 #: src/Assist/tasks/images/HelpCenterMarkup.jsx:230
@@ -1062,8 +1062,8 @@ msgstr "Уређивач страница"
 msgid "Design Library"
 msgstr "Библиотека дизајна"
 
-#: public/build/extendify-agent-6e4bd40f597086f1d5cf.js:18
-#: public/build/extendify-assist-page-d0ee34e4a56c87661b3a.js:10
+#: public/build/extendify-agent-764466336ec254c0fa3c.js:18
+#: public/build/extendify-assist-page-c4de054ee73a0ae1b22b.js:10
 #: public/build/extendify-help-center-079e40452a8cd0a1b4a2.js:4
 #: src/Agent/tours/users-screen.js:5
 #: src/Assist/tasks/images/HelpCenterAIMarkup.jsx:212
@@ -1072,23 +1072,23 @@ msgstr "Библиотека дизајна"
 msgid "Users screen"
 msgstr "Екран корисника"
 
-#: public/build/extendify-assist-page-d0ee34e4a56c87661b3a.js:10
+#: public/build/extendify-assist-page-c4de054ee73a0ae1b22b.js:10
 #: src/Assist/tasks/help-center.js:7
 msgid "Learn about the Help Center"
 msgstr "Сазнајте више о Центру за помоћ"
 
-#: public/build/extendify-assist-page-d0ee34e4a56c87661b3a.js:10
+#: public/build/extendify-assist-page-c4de054ee73a0ae1b22b.js:10
 #: src/Assist/tasks/help-center.js:8
 msgid "Get instant support, explore our Knowledge Base, or take guided tours to make the most of our tools."
 msgstr "Добијте тренутну подршку, истражите нашу базу знања или узмите вођене туре да бисте најбоље искористили наше алатке."
 
-#: public/build/extendify-assist-page-d0ee34e4a56c87661b3a.js:10
+#: public/build/extendify-assist-page-c4de054ee73a0ae1b22b.js:10
 #: src/Assist/tasks/help-center-ai.js:14
 #: src/Assist/tasks/help-center.js:14
 msgid "Explore Help Center"
 msgstr "Истражите Центар за помоћ"
 
-#: public/build/extendify-assist-page-d0ee34e4a56c87661b3a.js:10
+#: public/build/extendify-assist-page-c4de054ee73a0ae1b22b.js:10
 #: public/build/extendify-help-center-079e40452a8cd0a1b4a2.js:4
 #: src/Assist/tasks/images/HelpCenterAIMarkup.jsx:68
 #: src/Assist/tasks/images/HelpCenterAIMarkup.jsx:121
@@ -1096,107 +1096,107 @@ msgstr "Истражите Центар за помоћ"
 msgid "AI Chatbot"
 msgstr "Вештачка интелигенција ћаскање бот"
 
-#: public/build/extendify-assist-page-d0ee34e4a56c87661b3a.js:10
+#: public/build/extendify-assist-page-c4de054ee73a0ae1b22b.js:10
 #: public/build/extendify-help-center-079e40452a8cd0a1b4a2.js:4
 #: src/Assist/tasks/images/HelpCenterAIMarkup.jsx:81
 #: src/HelpCenter/components/ai-chat/Question.jsx:24
 msgid "Hi there!"
 msgstr "Здраво!"
 
-#: public/build/extendify-assist-page-d0ee34e4a56c87661b3a.js:10
+#: public/build/extendify-assist-page-c4de054ee73a0ae1b22b.js:10
 #: public/build/extendify-help-center-079e40452a8cd0a1b4a2.js:4
 #: src/Assist/tasks/images/HelpCenterAIMarkup.jsx:84
 #: src/HelpCenter/components/ai-chat/Question.jsx:27
 msgid "Ask me any questions about WordPress."
 msgstr "Питај ме било шта о Вордпресу"
 
-#: public/build/extendify-assist-page-d0ee34e4a56c87661b3a.js:10
+#: public/build/extendify-assist-page-c4de054ee73a0ae1b22b.js:10
 #: src/Assist/tasks/images/HelpCenterAIMarkup.jsx:89
 msgid "Ask your WordPress question..."
 msgstr "Поставите своје питање о Вордпресу..."
 
-#: public/build/extendify-assist-page-d0ee34e4a56c87661b3a.js:10
+#: public/build/extendify-assist-page-c4de054ee73a0ae1b22b.js:10
 #: src/Assist/tasks/images/HelpCenterAIMarkup.jsx:97
 msgid "For other questions, visit our support page."
 msgstr "За друга питања, посетите нашу страницу за подршку."
 
-#: public/build/extendify-assist-page-d0ee34e4a56c87661b3a.js:10
+#: public/build/extendify-assist-page-c4de054ee73a0ae1b22b.js:10
 #: src/Assist/tasks/images/HelpCenterAIMarkup.jsx:136
 msgid "How do I add a new page to my website?"
 msgstr "Како да додам нову страницу на своје веб место"
 
-#: public/build/extendify-assist-page-d0ee34e4a56c87661b3a.js:10
+#: public/build/extendify-assist-page-c4de054ee73a0ae1b22b.js:10
 #: src/Assist/tasks/images/HelpCenterAIMarkup.jsx:152
 msgid "To add a new page to your website, log in to your website dashboard and locate the \"Pages\" section in the sidebar, then click on \"Add New\". Enter the title for your new page at the top and start adding content using the available blocks by clicking the \"+\" button in the editor."
 msgstr "Да бисте додали нову страницу на ваше веб место, пријавите се на контролну таблу вашег веб места и пронађите одељак \"Странице\" у бочној траци, затим кликните на \"Додај нову\". Унесите наслов за вашу нову страницу на врху и почните да додајете садржај користећи доступне блокове кликом на дугме \"+\" у уређивачу."
 
-#: public/build/extendify-assist-page-d0ee34e4a56c87661b3a.js:10
+#: public/build/extendify-assist-page-c4de054ee73a0ae1b22b.js:10
 #: src/Assist/tasks/images/HelpCenterAIMarkup.jsx:159
 msgid "Customize the page layout, design, and elements as needed. Finally, click \"Publish\" or \"Update\" on the top-right corner to make the page live on your website. You have now successfully added a new page."
 msgstr "Прилагодите распоред странице, дизајн и елементе по потреби. На крају, кликните на \"Објави\" или \"Ажурирај\" у горњем десном углу да бисте страницу учинили видљивом на вашем веб месту. Сада сте успешно додали нову страницу."
 
-#: public/build/extendify-assist-page-d0ee34e4a56c87661b3a.js:10
+#: public/build/extendify-assist-page-c4de054ee73a0ae1b22b.js:10
 #: src/Assist/tasks/help-center-ai.js:6
 msgid "AI-Powered Help Center"
 msgstr "Центар за помоћ који покреће вештачка интелигенција"
 
-#: public/build/extendify-assist-page-d0ee34e4a56c87661b3a.js:10
+#: public/build/extendify-assist-page-c4de054ee73a0ae1b22b.js:10
 #: src/Assist/tasks/help-center-ai.js:7
 msgid "Experience the AI-Powered Help Center"
 msgstr "Искуство са центром за помоћ који покреће вештачка интелигенција"
 
-#: public/build/extendify-assist-page-d0ee34e4a56c87661b3a.js:10
+#: public/build/extendify-assist-page-c4de054ee73a0ae1b22b.js:10
 #: src/Assist/tasks/help-center-ai.js:8
 msgid "Get instant support with Co-Pilot AI, explore our Knowledge Base, or take guided tours to make the most of our tools."
 msgstr "Добијте тренутну подршку са Co-Pilot вештачком интелигенцијом, истражите нашу базу знања или узмите вођене туре да бисте најбоље искористили наше алате."
 
-#: public/build/extendify-assist-page-d0ee34e4a56c87661b3a.js:10
+#: public/build/extendify-assist-page-c4de054ee73a0ae1b22b.js:10
 #: src/Assist/tasks/ionos-connect-domain.js:9
 msgid "Connect your domain"
 msgstr "Повежи свој домен"
 
-#: public/build/extendify-assist-page-d0ee34e4a56c87661b3a.js:10
+#: public/build/extendify-assist-page-c4de054ee73a0ae1b22b.js:10
 #: src/Assist/tasks/ionos-connect-domain.js:10
 msgid "To bring real visitors to your website and to complete the website setup, we recommend you connect your domain in your hosting control panel now."
 msgstr "Да бисте довели праве посетиоце на своје веб место и завршили подешавање веб места, препоручујемо да сада повежете свој домен у контролној табли хостинга."
 
-#: public/build/extendify-assist-page-d0ee34e4a56c87661b3a.js:10
+#: public/build/extendify-assist-page-c4de054ee73a0ae1b22b.js:10
 #: src/Assist/tasks/open-design-library.js:8
 msgid "Explore the Design Library"
 msgstr "Истражите Библиотеку дизајна"
 
-#: public/build/extendify-assist-page-d0ee34e4a56c87661b3a.js:10
+#: public/build/extendify-assist-page-c4de054ee73a0ae1b22b.js:10
 #: src/Assist/tasks/open-design-library.js:9
 msgid "Full design library customized for each site to easily drop in new sections or create full pages with sections."
 msgstr "Пуна библиотека дизајна прилагођена за сваки сајт за лако додавање нових одељака или креирање целих страница са одељцима."
 
-#: public/build/extendify-assist-page-d0ee34e4a56c87661b3a.js:10
+#: public/build/extendify-assist-page-c4de054ee73a0ae1b22b.js:10
 #: src/Assist/tasks/open-design-library.js:15
 msgid "Explore Design Library"
 msgstr "Истражи библиотеку дизајна"
 
-#: public/build/extendify-assist-page-d0ee34e4a56c87661b3a.js:10
+#: public/build/extendify-assist-page-c4de054ee73a0ae1b22b.js:10
 #: src/Assist/tasks/secondary-domain-recommendation.js:8
 #: src/Assist/tasks/secondary-domain-recommendation.js:9
 msgid "Add an additional domain"
 msgstr "Додај додатни домен"
 
-#: public/build/extendify-assist-page-d0ee34e4a56c87661b3a.js:10
+#: public/build/extendify-assist-page-c4de054ee73a0ae1b22b.js:10
 #: src/Assist/tasks/secondary-domain-recommendation.js:10
 msgid "Get another domain for your site."
 msgstr "Набавите други домен за свој сајт"
 
-#: public/build/extendify-assist-page-d0ee34e4a56c87661b3a.js:10
+#: public/build/extendify-assist-page-c4de054ee73a0ae1b22b.js:10
 #: src/Assist/tasks/setup-aioseo.js:8
 msgid "Set up All in One SEO"
 msgstr "Подеси All in One SEO"
 
-#: public/build/extendify-assist-page-d0ee34e4a56c87661b3a.js:10
+#: public/build/extendify-assist-page-c4de054ee73a0ae1b22b.js:10
 #: src/Assist/tasks/setup-aioseo.js:9
 msgid "Set up the All in One SEO plugin to enhance your website discoverability."
 msgstr "Подесите All in One SEO додатак да побољшате видљивост вашег веб места."
 
-#: public/build/extendify-assist-page-d0ee34e4a56c87661b3a.js:10
+#: public/build/extendify-assist-page-c4de054ee73a0ae1b22b.js:10
 #: src/Assist/tasks/setup-aioseo.js:15
 #: src/Assist/tasks/setup-givewp.js:15
 #: src/Assist/tasks/setup-hubspot.js:15
@@ -1211,158 +1211,158 @@ msgstr "Подесите All in One SEO додатак да побољшате �
 msgid "Set up"
 msgstr "Подеси"
 
-#: public/build/extendify-assist-page-d0ee34e4a56c87661b3a.js:10
+#: public/build/extendify-assist-page-c4de054ee73a0ae1b22b.js:10
 #: src/Assist/tasks/setup-givewp.js:8
 msgid "Set up donations"
 msgstr "Подесите донације"
 
-#: public/build/extendify-assist-page-d0ee34e4a56c87661b3a.js:10
+#: public/build/extendify-assist-page-c4de054ee73a0ae1b22b.js:10
 #: src/Assist/tasks/setup-givewp.js:9
 msgid "Set up the GiveWP plugin to enable donations on your site."
 msgstr "Подесите GiveWP додатак да омогућите донације на вашем сајту."
 
-#: public/build/extendify-assist-page-d0ee34e4a56c87661b3a.js:10
+#: public/build/extendify-assist-page-c4de054ee73a0ae1b22b.js:10
 #: src/Assist/tasks/setup-hubspot.js:8
 msgid "Set up HubSpot"
 msgstr "Подеси HubSpot"
 
-#: public/build/extendify-assist-page-d0ee34e4a56c87661b3a.js:10
+#: public/build/extendify-assist-page-c4de054ee73a0ae1b22b.js:10
 #: src/Assist/tasks/setup-hubspot.js:9
 msgid "Start collecting emails and marketing to your customers"
 msgstr "Почните да прикупљате е-пошту и промовишете својим клијентима"
 
-#: public/build/extendify-assist-page-d0ee34e4a56c87661b3a.js:10
+#: public/build/extendify-assist-page-c4de054ee73a0ae1b22b.js:10
 #: src/Assist/tasks/setup-monsterinsights.js:8
 msgid "Set up analytics"
 msgstr "Подеси аналитику"
 
-#: public/build/extendify-assist-page-d0ee34e4a56c87661b3a.js:10
+#: public/build/extendify-assist-page-c4de054ee73a0ae1b22b.js:10
 #: src/Assist/tasks/setup-monsterinsights.js:9
 msgid "Set up the MonsterInsights plugin to enable Google Analytics in your website."
 msgstr "Подесите додатак MonsterInsights да омогућите Google Analytics на свом веб месту"
 
-#: public/build/extendify-assist-page-d0ee34e4a56c87661b3a.js:10
+#: public/build/extendify-assist-page-c4de054ee73a0ae1b22b.js:10
 #: src/Assist/tasks/setup-simply-appointments.js:8
 msgid "Set up appointments"
 msgstr "Закажи термине"
 
-#: public/build/extendify-assist-page-d0ee34e4a56c87661b3a.js:10
+#: public/build/extendify-assist-page-c4de054ee73a0ae1b22b.js:10
 #: src/Assist/tasks/setup-simply-appointments.js:9
 msgid "Start accepting appointments on your website by configuring the Simply Scheduled Appointments plugin."
 msgstr "Почните да прихватате заказивања на вашем веб месту конфигурисањем додатка Simply Scheduled Appointments."
 
-#: public/build/extendify-assist-page-d0ee34e4a56c87661b3a.js:10
+#: public/build/extendify-assist-page-c4de054ee73a0ae1b22b.js:10
 #: src/Assist/tasks/setup-simplybook.js:8
 msgid "Set up bookings"
 msgstr "Подеси резервације"
 
-#: public/build/extendify-assist-page-d0ee34e4a56c87661b3a.js:10
+#: public/build/extendify-assist-page-c4de054ee73a0ae1b22b.js:10
 #: src/Assist/tasks/setup-simplybook.js:9
 msgid "Start getting bookings from your website by configuring the SimplyBook.me plugin."
 msgstr "Почните да примате резервације са свог веб места конфигурисањем додатка SimplyBook.me."
 
-#: public/build/extendify-assist-page-d0ee34e4a56c87661b3a.js:10
+#: public/build/extendify-assist-page-c4de054ee73a0ae1b22b.js:10
 #: src/Assist/tasks/setup-tec.js:8
 msgid "Set up events"
 msgstr "Подесите догађаје"
 
-#: public/build/extendify-assist-page-d0ee34e4a56c87661b3a.js:10
+#: public/build/extendify-assist-page-c4de054ee73a0ae1b22b.js:10
 #: src/Assist/tasks/setup-tec.js:9
 msgid "Start adding events to your site by configuring The Events Calendar plugin."
 msgstr "Почните да додајете догађаје на свој сајт конфигурисањем додатка The Events Calendar."
 
-#: public/build/extendify-assist-page-d0ee34e4a56c87661b3a.js:10
+#: public/build/extendify-assist-page-c4de054ee73a0ae1b22b.js:10
 #: src/Assist/tasks/setup-woocommerce-germanized-store.js:8
 msgid "Set up WooCommerce Germanized plugin"
 msgstr "Подесите додатак WooCommerce Germanized"
 
-#: public/build/extendify-assist-page-d0ee34e4a56c87661b3a.js:10
+#: public/build/extendify-assist-page-c4de054ee73a0ae1b22b.js:10
 #: src/Assist/tasks/setup-woocommerce-germanized-store.js:9
 msgid "Ensure your eCommerce store complies with local regulations."
 msgstr "Осигурајте да ваша е-продавница буде у складу са локалним прописима"
 
-#: public/build/extendify-assist-page-d0ee34e4a56c87661b3a.js:10
+#: public/build/extendify-assist-page-c4de054ee73a0ae1b22b.js:10
 #: src/Assist/tasks/setup-woocommerce-store.js:8
 msgid "Set up your eCommerce store"
 msgstr "Поставите своју е-продавницу"
 
-#: public/build/extendify-assist-page-d0ee34e4a56c87661b3a.js:10
+#: public/build/extendify-assist-page-c4de054ee73a0ae1b22b.js:10
 #: src/Assist/tasks/setup-woocommerce-store.js:9
 msgid "Set up WooCommerce to start selling on your website."
 msgstr "Подесите WooCommerce да бисте почели да продајете на свом веб месту"
 
-#: public/build/extendify-assist-page-d0ee34e4a56c87661b3a.js:10
+#: public/build/extendify-assist-page-c4de054ee73a0ae1b22b.js:10
 #: src/Assist/tasks/setup-wpforms.js:8
 msgid "Set up WPForms"
 msgstr "Подеси WPForms"
 
-#: public/build/extendify-assist-page-d0ee34e4a56c87661b3a.js:10
+#: public/build/extendify-assist-page-c4de054ee73a0ae1b22b.js:10
 #: src/Assist/tasks/setup-wpforms.js:9
 msgid "Set up the WPForms plugin to add a contact form on your site."
 msgstr "Подесите WPForms додатак да бисте додали контакт образац на своје веб место."
 
-#: public/build/extendify-assist-page-d0ee34e4a56c87661b3a.js:10
+#: public/build/extendify-assist-page-c4de054ee73a0ae1b22b.js:10
 #: src/Assist/tasks/setup-yourwebshop.js:8
 msgid "Set up YourWebshop"
 msgstr "Подесите YourWebshop"
 
-#: public/build/extendify-assist-page-d0ee34e4a56c87661b3a.js:10
+#: public/build/extendify-assist-page-c4de054ee73a0ae1b22b.js:10
 #: src/Assist/tasks/setup-yourwebshop.js:9
 msgid "Set up the YourWebshop plugin and start selling on your website right away."
 msgstr "Подесите YourWebshop додатак и почните да продајете на свом веб месту одмах."
 
-#: public/build/extendify-assist-page-d0ee34e4a56c87661b3a.js:10
+#: public/build/extendify-assist-page-c4de054ee73a0ae1b22b.js:10
 #: src/Assist/tasks/site-builder-launcher.js:9
 msgid "Continue with site builder"
 msgstr "Настави са градитељем сајта"
 
-#: public/build/extendify-assist-page-d0ee34e4a56c87661b3a.js:10
+#: public/build/extendify-assist-page-c4de054ee73a0ae1b22b.js:10
 #: src/Assist/tasks/update-site-description.js:8
 msgid "Add a site description"
 msgstr "Додај опис сајта"
 
-#: public/build/extendify-assist-page-d0ee34e4a56c87661b3a.js:10
+#: public/build/extendify-assist-page-c4de054ee73a0ae1b22b.js:10
 #: src/Assist/tasks/update-site-description.js:9
 msgid "In a few words, explain what your site is about."
 msgstr "У неколико речи, објасни о чему је твоје веб место."
 
-#: public/build/extendify-assist-page-d0ee34e4a56c87661b3a.js:10
+#: public/build/extendify-assist-page-c4de054ee73a0ae1b22b.js:10
 #: src/Assist/tasks/update-site-description.js:14
 msgid "Change"
 msgstr "Измени"
 
-#: public/build/extendify-assist-page-d0ee34e4a56c87661b3a.js:10
+#: public/build/extendify-assist-page-c4de054ee73a0ae1b22b.js:10
 #: src/Assist/tasks/update-site-description.js:15
 msgid "Add"
 msgstr "Додај"
 
-#: public/build/extendify-assist-page-d0ee34e4a56c87661b3a.js:10
+#: public/build/extendify-assist-page-c4de054ee73a0ae1b22b.js:10
 #: src/Assist/tasks/upload-logo.js:8
 msgid "Upload a logo"
 msgstr "Отпреми логотип"
 
-#: public/build/extendify-assist-page-d0ee34e4a56c87661b3a.js:10
+#: public/build/extendify-assist-page-c4de054ee73a0ae1b22b.js:10
 #: src/Assist/tasks/upload-logo.js:9
 msgid "Ensure your website is on-brand by adding your logo."
 msgstr "Osigurajte da vaš sajt bude u skladu sa brendom dodavanjem vašeg logotipa"
 
-#: public/build/extendify-assist-page-d0ee34e4a56c87661b3a.js:10
+#: public/build/extendify-assist-page-c4de054ee73a0ae1b22b.js:10
 #: src/Assist/tasks/upload-logo.js:15
 #: src/Assist/tasks/upload-site-icon.js:15
 msgid "Upload"
 msgstr "Отпреми"
 
-#: public/build/extendify-assist-page-d0ee34e4a56c87661b3a.js:10
+#: public/build/extendify-assist-page-c4de054ee73a0ae1b22b.js:10
 #: src/Assist/tasks/upload-site-icon.js:8
 msgid "Upload a site icon"
 msgstr "Отпреми иконицу сајта"
 
-#: public/build/extendify-assist-page-d0ee34e4a56c87661b3a.js:10
+#: public/build/extendify-assist-page-c4de054ee73a0ae1b22b.js:10
 #: src/Assist/tasks/upload-site-icon.js:9
 msgid "Ensure your website is on-brand by adding your site icon."
 msgstr "Осигурајте да ваш веб сајт буде у складу са брендом додавањем иконе веб места"
 
-#: public/build/extendify-assist-page-d0ee34e4a56c87661b3a.js:10
+#: public/build/extendify-assist-page-c4de054ee73a0ae1b22b.js:10
 #: public/build/extendify-help-center-079e40452a8cd0a1b4a2.js:4
 #: src/Agent/tours/welcome.js:115
 #: src/Assist/hooks/useRouter.js:14
@@ -1370,12 +1370,12 @@ msgstr "Осигурајте да ваш веб сајт буде у склад�
 msgid "Dashboard"
 msgstr "Контролна табла"
 
-#: public/build/extendify-assist-page-d0ee34e4a56c87661b3a.js:10
+#: public/build/extendify-assist-page-c4de054ee73a0ae1b22b.js:10
 #: src/Assist/pages/parts/Header.jsx:53
 msgid "View site"
 msgstr "Погледај сајт"
 
-#: public/build/extendify-assist-page-d0ee34e4a56c87661b3a.js:10
+#: public/build/extendify-assist-page-c4de054ee73a0ae1b22b.js:10
 #: src/Assist/page.js:22
 msgid "Skip to Assist"
 msgstr "Скочи на помоћ"
@@ -1529,7 +1529,7 @@ msgstr "Пејзаж: 4:3"
 msgid "Portrait: 3:4"
 msgstr "Портрет: 3:4"
 
-#: public/build/extendify-agent-6e4bd40f597086f1d5cf.js:21
+#: public/build/extendify-agent-764466336ec254c0fa3c.js:21
 #: public/build/extendify-draft-08ba35a8f591ab939cda.js:7
 #: src/Agent/workflows/block-selector/components/GenerateImageConfirm.jsx:216
 #: src/Draft/components/image-generation/GenerateForm.jsx:90
@@ -1822,7 +1822,7 @@ msgstr "Прилагођени упит"
 msgid "Please try again."
 msgstr "Покушајте поново."
 
-#: public/build/extendify-agent-6e4bd40f597086f1d5cf.js:4
+#: public/build/extendify-agent-764466336ec254c0fa3c.js:4
 #: public/build/extendify-help-center-079e40452a8cd0a1b4a2.js:1
 #: src/Agent/components/Rating.jsx:27
 #: src/Agent/components/Rating.jsx:48
@@ -1831,14 +1831,14 @@ msgstr "Покушајте поново."
 msgid "Remove rating"
 msgstr "Уклони оцену"
 
-#: public/build/extendify-agent-6e4bd40f597086f1d5cf.js:4
+#: public/build/extendify-agent-764466336ec254c0fa3c.js:4
 #: public/build/extendify-help-center-079e40452a8cd0a1b4a2.js:1
 #: src/Agent/components/Rating.jsx:28
 #: src/HelpCenter/components/ai-chat/Rating.jsx:27
 msgid "Rate that this answer was helpful"
 msgstr "Оцените да ли је овај одговор био користан"
 
-#: public/build/extendify-agent-6e4bd40f597086f1d5cf.js:4
+#: public/build/extendify-agent-764466336ec254c0fa3c.js:4
 #: public/build/extendify-help-center-079e40452a8cd0a1b4a2.js:1
 #: src/Agent/components/Rating.jsx:49
 #: src/HelpCenter/components/ai-chat/Rating.jsx:48
@@ -1917,7 +1917,7 @@ msgstr "Дошло је до грешке при учитавању овог ч�
 msgid "Search for articles"
 msgstr "Претражи чланке"
 
-#: public/build/extendify-assist-page-d0ee34e4a56c87661b3a.js:10
+#: public/build/extendify-assist-page-c4de054ee73a0ae1b22b.js:10
 #: public/build/extendify-help-center-079e40452a8cd0a1b4a2.js:4
 #: src/Assist/tasks/images/HelpCenterMarkup.jsx:92
 #: src/HelpCenter/components/knowledge-base/SearchForm.jsx:37
@@ -1946,140 +1946,140 @@ msgstr "Резултати претраге"
 msgid "Search the knowledge base"
 msgstr "Претражи базу знања"
 
-#: public/build/extendify-agent-6e4bd40f597086f1d5cf.js:18
+#: public/build/extendify-agent-764466336ec254c0fa3c.js:18
 #: public/build/extendify-help-center-079e40452a8cd0a1b4a2.js:4
 #: src/Agent/tours/library-tour.js:31
 #: src/HelpCenter/tours/library-tour.js:29
 msgid "Open the Pattern Library"
 msgstr "Отвори библиотеку мустра"
 
-#: public/build/extendify-agent-6e4bd40f597086f1d5cf.js:18
+#: public/build/extendify-agent-764466336ec254c0fa3c.js:18
 #: public/build/extendify-help-center-079e40452a8cd0a1b4a2.js:4
 #: src/Agent/tours/library-tour.js:32
 #: src/HelpCenter/tours/library-tour.js:30
 msgid "The Extendify pattern library can be opened by clicking the button to the left."
 msgstr "Библиотека мустри Extendify може се отворити кликом на дугме са леве стране"
 
-#: public/build/extendify-agent-6e4bd40f597086f1d5cf.js:18
+#: public/build/extendify-agent-764466336ec254c0fa3c.js:18
 #: public/build/extendify-help-center-079e40452a8cd0a1b4a2.js:4
 #: src/Agent/tours/library-tour.js:53
 #: src/HelpCenter/tours/library-tour.js:51
 msgid "Filter Patterns"
 msgstr "Филтрирај мустре"
 
-#: public/build/extendify-agent-6e4bd40f597086f1d5cf.js:18
+#: public/build/extendify-agent-764466336ec254c0fa3c.js:18
 #: public/build/extendify-help-center-079e40452a8cd0a1b4a2.js:4
 #: src/Agent/tours/library-tour.js:54
 #: src/HelpCenter/tours/library-tour.js:52
 msgid "Click on any pattern category to refine the selection."
 msgstr "Кликните на било коју категорију мустра да бисте прецизирали избор"
 
-#: public/build/extendify-agent-6e4bd40f597086f1d5cf.js:18
+#: public/build/extendify-agent-764466336ec254c0fa3c.js:18
 #: public/build/extendify-help-center-079e40452a8cd0a1b4a2.js:4
 #: src/Agent/tours/library-tour.js:79
 #: src/HelpCenter/tours/library-tour.js:77
 msgid "Select a Pattern"
 msgstr "Одабери мустру"
 
-#: public/build/extendify-agent-6e4bd40f597086f1d5cf.js:18
+#: public/build/extendify-agent-764466336ec254c0fa3c.js:18
 #: public/build/extendify-help-center-079e40452a8cd0a1b4a2.js:4
 #: src/Agent/tours/library-tour.js:80
 #: src/HelpCenter/tours/library-tour.js:78
 msgid "Simply select any pattern you wish to insert into a page by clicking on it."
 msgstr "Једноставно изаберите било коју мустру коју желите да уметнете у страницу кликом на њу."
 
-#: public/build/extendify-agent-6e4bd40f597086f1d5cf.js:18
+#: public/build/extendify-agent-764466336ec254c0fa3c.js:18
 #: public/build/extendify-help-center-079e40452a8cd0a1b4a2.js:4
 #: src/Agent/tours/library-tour.js:99
 #: src/HelpCenter/tours/library-tour.js:97
 msgid "View the Inserted Pattern"
 msgstr "Прегледај убачену мустру"
 
-#: public/build/extendify-agent-6e4bd40f597086f1d5cf.js:18
+#: public/build/extendify-agent-764466336ec254c0fa3c.js:18
 #: public/build/extendify-help-center-079e40452a8cd0a1b4a2.js:4
 #: src/Agent/tours/library-tour.js:100
 #: src/HelpCenter/tours/library-tour.js:98
 msgid "The selected pattern has been inserted into the page."
 msgstr "Одабрана мустра је уметнута у страницу"
 
-#: public/build/extendify-agent-6e4bd40f597086f1d5cf.js:18
+#: public/build/extendify-agent-764466336ec254c0fa3c.js:18
 #: public/build/extendify-help-center-079e40452a8cd0a1b4a2.js:4
 #: src/Agent/tours/page-editor.js:26
 #: src/HelpCenter/tours/page-editor.js:26
 msgid "Add a Block"
 msgstr "Додај блок"
 
-#: public/build/extendify-agent-6e4bd40f597086f1d5cf.js:18
+#: public/build/extendify-agent-764466336ec254c0fa3c.js:18
 #: public/build/extendify-help-center-079e40452a8cd0a1b4a2.js:4
 #: src/Agent/tours/page-editor.js:27
 #: src/HelpCenter/tours/page-editor.js:27
 msgid "Click the plus to open the block inserter."
 msgstr "Кликни на плус да отвориш убацивач блокова"
 
-#: public/build/extendify-agent-6e4bd40f597086f1d5cf.js:18
+#: public/build/extendify-agent-764466336ec254c0fa3c.js:18
 #: public/build/extendify-help-center-079e40452a8cd0a1b4a2.js:4
 #: src/Agent/tours/page-editor.js:47
 #: src/HelpCenter/tours/page-editor.js:47
 msgid "Block Inserter"
 msgstr "Уметач блокова"
 
-#: public/build/extendify-agent-6e4bd40f597086f1d5cf.js:18
+#: public/build/extendify-agent-764466336ec254c0fa3c.js:18
 #: public/build/extendify-help-center-079e40452a8cd0a1b4a2.js:4
 #: src/Agent/tours/page-editor.js:48
 #: src/HelpCenter/tours/page-editor.js:48
 msgid "Add a block by clicking or dragging it onto the page."
 msgstr "Додај блок кликом или превлачењем на страницу."
 
-#: public/build/extendify-agent-6e4bd40f597086f1d5cf.js:18
+#: public/build/extendify-agent-764466336ec254c0fa3c.js:18
 #: public/build/extendify-help-center-079e40452a8cd0a1b4a2.js:4
 #: src/Agent/tours/page-editor.js:88
 #: src/HelpCenter/tours/page-editor.js:91
 msgid "Page Title"
 msgstr "Наслов странице"
 
-#: public/build/extendify-agent-6e4bd40f597086f1d5cf.js:18
+#: public/build/extendify-agent-764466336ec254c0fa3c.js:18
 #: public/build/extendify-help-center-079e40452a8cd0a1b4a2.js:4
 #: src/Agent/tours/page-editor.js:89
 #: src/HelpCenter/tours/page-editor.js:92
 msgid "Edit the page title by clicking it. Note: The title may or may not show up on the published page, depending on the page template used."
 msgstr "Уредите наслов странице кликом на њега. Напомена: Наслов се може или не мора приказати на објављеној страници, у зависности од коришћеног шаблона странице."
 
-#: public/build/extendify-agent-6e4bd40f597086f1d5cf.js:18
+#: public/build/extendify-agent-764466336ec254c0fa3c.js:18
 #: public/build/extendify-help-center-079e40452a8cd0a1b4a2.js:4
 #: src/Agent/tours/page-editor.js:128
 #: src/HelpCenter/tours/page-editor.js:131
 msgid "Blocks"
 msgstr "Блокови"
 
-#: public/build/extendify-agent-6e4bd40f597086f1d5cf.js:18
+#: public/build/extendify-agent-764466336ec254c0fa3c.js:18
 #: public/build/extendify-help-center-079e40452a8cd0a1b4a2.js:4
 #: src/Agent/tours/page-editor.js:129
 #: src/HelpCenter/tours/page-editor.js:132
 msgid "Each block will show up on the page and can be edited by clicking on it."
 msgstr "Сваки блок ће се појавити на страници и може се уредити кликом на њега."
 
-#: public/build/extendify-agent-6e4bd40f597086f1d5cf.js:18
+#: public/build/extendify-agent-764466336ec254c0fa3c.js:18
 #: public/build/extendify-help-center-079e40452a8cd0a1b4a2.js:4
 #: src/Agent/tours/page-editor.js:170
 #: src/HelpCenter/tours/page-editor.js:173
 msgid "This is a sample paragraph block. It can be several sentences long and will span multiple rows. You can add as many blocks as you'd like to the page."
 msgstr "Ово је пример блока пасуса. Може бити дугачак неколико реченица и заузимати више редова. Можеш додати онолико блокова колико желиш на страницу."
 
-#: public/build/extendify-agent-6e4bd40f597086f1d5cf.js:18
+#: public/build/extendify-agent-764466336ec254c0fa3c.js:18
 #: public/build/extendify-help-center-079e40452a8cd0a1b4a2.js:4
 #: src/Agent/tours/page-editor.js:185
 #: src/HelpCenter/tours/page-editor.js:188
 msgid "Page and Block Settings"
 msgstr "Подешавања стране и блока"
 
-#: public/build/extendify-agent-6e4bd40f597086f1d5cf.js:18
+#: public/build/extendify-agent-764466336ec254c0fa3c.js:18
 #: public/build/extendify-help-center-079e40452a8cd0a1b4a2.js:4
 #: src/Agent/tours/page-editor.js:186
 #: src/HelpCenter/tours/page-editor.js:189
 msgid "Select either page or block to change the settings for the entire page or the block that is selected."
 msgstr "Одаберите страницу или блок да бисте променили подешавања за целу страницу или одабрани блок."
 
-#: public/build/extendify-agent-6e4bd40f597086f1d5cf.js:18
+#: public/build/extendify-agent-764466336ec254c0fa3c.js:18
 #: public/build/extendify-help-center-079e40452a8cd0a1b4a2.js:4
 #: public/build/extendify-launch-da1f1312298810c56f7e.js:8
 #: src/Agent/tours/page-editor.js:228
@@ -2088,175 +2088,175 @@ msgstr "Одаберите страницу или блок да бисте пр
 msgid "Preview"
 msgstr "Преглед"
 
-#: public/build/extendify-agent-6e4bd40f597086f1d5cf.js:18
+#: public/build/extendify-agent-764466336ec254c0fa3c.js:18
 #: public/build/extendify-help-center-079e40452a8cd0a1b4a2.js:4
 #: src/Agent/tours/page-editor.js:229
 #: src/HelpCenter/tours/page-editor.js:232
 msgid "Click preview to view how your changes look on the front end of your site."
 msgstr "Кликните на предпреглед да видите како ваше измене изгледају на предњем делу вашег веб места."
 
-#: public/build/extendify-agent-6e4bd40f597086f1d5cf.js:18
+#: public/build/extendify-agent-764466336ec254c0fa3c.js:18
 #: public/build/extendify-help-center-079e40452a8cd0a1b4a2.js:4
 #: src/Agent/tours/page-editor.js:249
 #: src/HelpCenter/tours/page-editor.js:252
 msgid "Publish or Save"
 msgstr "Објави или сачувај"
 
-#: public/build/extendify-agent-6e4bd40f597086f1d5cf.js:18
+#: public/build/extendify-agent-764466336ec254c0fa3c.js:18
 #: public/build/extendify-help-center-079e40452a8cd0a1b4a2.js:4
 #: src/Agent/tours/page-editor.js:250
 #: src/HelpCenter/tours/page-editor.js:253
 msgid "Click publish or update to save the changes you have made to the page and make them live on the site."
 msgstr "Кликните на објави или ажурирај да сачувате измене на страници и учините их видљивим на сајту."
 
-#: public/build/extendify-agent-6e4bd40f597086f1d5cf.js:18
+#: public/build/extendify-agent-764466336ec254c0fa3c.js:18
 #: public/build/extendify-help-center-079e40452a8cd0a1b4a2.js:4
 #: src/Agent/tours/plugin-install.js:18
 #: src/HelpCenter/tours/plugin-install.js:17
 msgid "Add New plugin menu"
 msgstr "Додај нови изборник додатка"
 
-#: public/build/extendify-agent-6e4bd40f597086f1d5cf.js:18
+#: public/build/extendify-agent-764466336ec254c0fa3c.js:18
 #: public/build/extendify-help-center-079e40452a8cd0a1b4a2.js:4
 #: src/Agent/tours/plugin-install.js:19
 #: src/HelpCenter/tours/plugin-install.js:18
 msgid "Click here to access the Add Plugins page."
 msgstr "Кликните овде за приступ страници Додај додатке"
 
-#: public/build/extendify-agent-6e4bd40f597086f1d5cf.js:18
+#: public/build/extendify-agent-764466336ec254c0fa3c.js:18
 #: public/build/extendify-help-center-079e40452a8cd0a1b4a2.js:4
 #: src/Agent/tours/plugin-install.js:41
 #: src/HelpCenter/tours/plugin-install.js:40
 msgid "Search"
 msgstr "Претрага"
 
-#: public/build/extendify-agent-6e4bd40f597086f1d5cf.js:18
+#: public/build/extendify-agent-764466336ec254c0fa3c.js:18
 #: public/build/extendify-help-center-079e40452a8cd0a1b4a2.js:4
 #: src/Agent/tours/plugin-install.js:42
 #: src/HelpCenter/tours/plugin-install.js:41
 msgid "Search for a plugin by name or functionality."
 msgstr "Претражите додатак по имену или функционалности."
 
-#: public/build/extendify-agent-6e4bd40f597086f1d5cf.js:18
+#: public/build/extendify-agent-764466336ec254c0fa3c.js:18
 #: public/build/extendify-help-center-079e40452a8cd0a1b4a2.js:4
 #: src/Agent/tours/plugin-install.js:67
 #: src/HelpCenter/tours/plugin-install.js:66
 msgid "Plugin details"
 msgstr "Детаљи додатка"
 
-#: public/build/extendify-agent-6e4bd40f597086f1d5cf.js:18
+#: public/build/extendify-agent-764466336ec254c0fa3c.js:18
 #: public/build/extendify-help-center-079e40452a8cd0a1b4a2.js:4
 #: src/Agent/tours/plugin-install.js:68
 #: src/HelpCenter/tours/plugin-install.js:67
 msgid "See important information about each plugin."
 msgstr "Погледајте важне информације о сваком додатку"
 
-#: public/build/extendify-agent-6e4bd40f597086f1d5cf.js:18
+#: public/build/extendify-agent-764466336ec254c0fa3c.js:18
 #: public/build/extendify-help-center-079e40452a8cd0a1b4a2.js:4
 #: src/Agent/tours/plugin-install.js:87
 #: src/HelpCenter/tours/plugin-install.js:86
 msgid "Install now"
 msgstr "Постави сада"
 
-#: public/build/extendify-agent-6e4bd40f597086f1d5cf.js:18
+#: public/build/extendify-agent-764466336ec254c0fa3c.js:18
 #: public/build/extendify-help-center-079e40452a8cd0a1b4a2.js:4
 #: src/Agent/tours/plugin-install.js:88
 #: src/HelpCenter/tours/plugin-install.js:87
 msgid "Install the plugin. Then, press this button again to activate the plugin."
 msgstr "Инсталирајте додатак. Затим поново притисните ово дугме да бисте укључили додатак."
 
-#: public/build/extendify-agent-6e4bd40f597086f1d5cf.js:18
+#: public/build/extendify-agent-764466336ec254c0fa3c.js:18
 #: public/build/extendify-help-center-079e40452a8cd0a1b4a2.js:4
 #: src/Agent/tours/plugin-install.js:113
 #: src/HelpCenter/tours/plugin-install.js:112
 msgid "Upload Plugin"
 msgstr "Отпреми додатак"
 
-#: public/build/extendify-agent-6e4bd40f597086f1d5cf.js:18
+#: public/build/extendify-agent-764466336ec254c0fa3c.js:18
 #: public/build/extendify-help-center-079e40452a8cd0a1b4a2.js:4
 #: src/Agent/tours/plugin-install.js:114
 #: src/HelpCenter/tours/plugin-install.js:113
 msgid "If you have a plugin from an external source, you can upload it directly here."
 msgstr "Ако имате додатак из спољног извора, можете га овде директно отпремити."
 
-#: public/build/extendify-agent-6e4bd40f597086f1d5cf.js:18
+#: public/build/extendify-agent-764466336ec254c0fa3c.js:18
 #: public/build/extendify-help-center-079e40452a8cd0a1b4a2.js:4
 #: src/Agent/tours/plugin-management.js:18
 #: src/HelpCenter/tours/plugin-management.js:17
 msgid "Installed Plugins menu"
 msgstr "Изборник инсталираних додатака"
 
-#: public/build/extendify-agent-6e4bd40f597086f1d5cf.js:18
+#: public/build/extendify-agent-764466336ec254c0fa3c.js:18
 #: public/build/extendify-help-center-079e40452a8cd0a1b4a2.js:4
 #: src/Agent/tours/plugin-management.js:19
 #: src/HelpCenter/tours/plugin-management.js:18
 msgid "Click this menu to see and manage the plugins you have installed."
 msgstr "Притисните овај изборник да бисте видели и управљали додацима које сте поставили."
 
-#: public/build/extendify-agent-6e4bd40f597086f1d5cf.js:18
+#: public/build/extendify-agent-764466336ec254c0fa3c.js:18
 #: public/build/extendify-help-center-079e40452a8cd0a1b4a2.js:4
 #: src/Agent/tours/plugin-management.js:44
 #: src/HelpCenter/tours/plugin-management.js:43
 msgid "Installed plugins"
 msgstr "Постављени додаци"
 
-#: public/build/extendify-agent-6e4bd40f597086f1d5cf.js:18
+#: public/build/extendify-agent-764466336ec254c0fa3c.js:18
 #: public/build/extendify-help-center-079e40452a8cd0a1b4a2.js:4
 #: src/Agent/tours/plugin-management.js:45
 #: src/HelpCenter/tours/plugin-management.js:44
 msgid "See all plugins installed on your site. This includes plugins that are active and deactivated."
 msgstr "Погледајте све додатке постављене на вашем сајту. Ово укључује активне и искључене додатке."
 
-#: public/build/extendify-agent-6e4bd40f597086f1d5cf.js:18
+#: public/build/extendify-agent-764466336ec254c0fa3c.js:18
 #: public/build/extendify-help-center-079e40452a8cd0a1b4a2.js:4
 #: src/Agent/tours/plugin-management.js:64
 #: src/HelpCenter/tours/plugin-management.js:63
 msgid "Deactivate/activate option"
 msgstr "Деактивирај/активирај опцију"
 
-#: public/build/extendify-agent-6e4bd40f597086f1d5cf.js:18
+#: public/build/extendify-agent-764466336ec254c0fa3c.js:18
 #: public/build/extendify-help-center-079e40452a8cd0a1b4a2.js:4
 #: src/Agent/tours/plugin-management.js:65
 #: src/HelpCenter/tours/plugin-management.js:64
 msgid "Under each plugin you can activate or deactivate it."
 msgstr "Испод сваког додатка можете га укључити или искључити."
 
-#: public/build/extendify-agent-6e4bd40f597086f1d5cf.js:18
+#: public/build/extendify-agent-764466336ec254c0fa3c.js:18
 #: public/build/extendify-help-center-079e40452a8cd0a1b4a2.js:4
 #: src/Agent/tours/plugin-management.js:105
 #: src/HelpCenter/tours/plugin-management.js:104
 msgid "Add another"
 msgstr "Додај још један"
 
-#: public/build/extendify-agent-6e4bd40f597086f1d5cf.js:18
+#: public/build/extendify-agent-764466336ec254c0fa3c.js:18
 #: public/build/extendify-help-center-079e40452a8cd0a1b4a2.js:4
 #: src/Agent/tours/plugin-management.js:106
 #: src/HelpCenter/tours/plugin-management.js:105
 msgid "Click here to add another plugin to your site."
 msgstr "Кликни овде да додаш још један додатак на своје веб место."
 
-#: public/build/extendify-agent-6e4bd40f597086f1d5cf.js:18
+#: public/build/extendify-agent-764466336ec254c0fa3c.js:18
 #: public/build/extendify-help-center-079e40452a8cd0a1b4a2.js:4
 #: src/Agent/tours/site-assistant.js:15
 #: src/HelpCenter/tours/site-assistant.js:14
 msgid "Tasks"
 msgstr "Задаци"
 
-#: public/build/extendify-agent-6e4bd40f597086f1d5cf.js:18
+#: public/build/extendify-agent-764466336ec254c0fa3c.js:18
 #: public/build/extendify-help-center-079e40452a8cd0a1b4a2.js:4
 #: src/Agent/tours/site-assistant.js:16
 #: src/HelpCenter/tours/site-assistant.js:15
 msgid "Now that you've created your starter site, make it your own with these follow up tasks."
 msgstr "Сада када сте направили свој почетни сајт, прилагодите га овим наредним задацима."
 
-#: public/build/extendify-agent-6e4bd40f597086f1d5cf.js:18
+#: public/build/extendify-agent-764466336ec254c0fa3c.js:18
 #: public/build/extendify-help-center-079e40452a8cd0a1b4a2.js:4
 #: src/Agent/tours/site-assistant.js:37
 #: src/HelpCenter/tours/site-assistant.js:36
 msgid "Easily access some of the most common items in WordPress with these quick links."
 msgstr "Лако приступите неким од најчешћих ставки у Вордпресу помоћу ових брзих веза."
 
-#: public/build/extendify-agent-6e4bd40f597086f1d5cf.js:18
+#: public/build/extendify-agent-764466336ec254c0fa3c.js:18
 #: public/build/extendify-help-center-079e40452a8cd0a1b4a2.js:4
 #: src/Agent/tours/site-assistant.js:59
 #: src/HelpCenter/tours/site-assistant.js:58
@@ -2268,42 +2268,42 @@ msgstr "Погледајте наше персонализоване препо�
 msgid "You can always access the help center by clicking this button."
 msgstr "Увек можете приступити центру за помоћ кликом на ово дугме."
 
-#: public/build/extendify-agent-6e4bd40f597086f1d5cf.js:18
+#: public/build/extendify-agent-764466336ec254c0fa3c.js:18
 #: public/build/extendify-help-center-079e40452a8cd0a1b4a2.js:4
 #: src/Agent/tours/site-assistant.js:80
 #: src/HelpCenter/tours/site-assistant.js:100
 msgid "Visit your site"
 msgstr "Посетите свој сајт"
 
-#: public/build/extendify-agent-6e4bd40f597086f1d5cf.js:18
+#: public/build/extendify-agent-764466336ec254c0fa3c.js:18
 #: public/build/extendify-help-center-079e40452a8cd0a1b4a2.js:4
 #: src/Agent/tours/site-assistant.js:81
 #: src/HelpCenter/tours/site-assistant.js:101
 msgid "You can always visit your site by clicking this button."
 msgstr "Увек можете посетити свој сајт кликом на ово дугме"
 
-#: public/build/extendify-agent-6e4bd40f597086f1d5cf.js:18
+#: public/build/extendify-agent-764466336ec254c0fa3c.js:18
 #: public/build/extendify-help-center-079e40452a8cd0a1b4a2.js:4
 #: src/Agent/tours/site-assistant.js:107
 #: src/HelpCenter/tours/site-assistant.js:127
 msgid "Come back to the Site Assistant any time by clicking the menu item."
 msgstr "Вратите се у помоћника сајта у било ком тренутку кликом на ставку изборника."
 
-#: public/build/extendify-agent-6e4bd40f597086f1d5cf.js:18
+#: public/build/extendify-agent-764466336ec254c0fa3c.js:18
 #: public/build/extendify-help-center-079e40452a8cd0a1b4a2.js:4
 #: src/Agent/tours/users-screen.js:18
 #: src/HelpCenter/tours/users-screen.js:17
 msgid "All Users menu"
 msgstr "Изборник Сви корисници"
 
-#: public/build/extendify-agent-6e4bd40f597086f1d5cf.js:18
+#: public/build/extendify-agent-764466336ec254c0fa3c.js:18
 #: public/build/extendify-help-center-079e40452a8cd0a1b4a2.js:4
 #: src/Agent/tours/users-screen.js:19
 #: src/HelpCenter/tours/users-screen.js:18
 msgid "Click here to view and manage the users on your site."
 msgstr "Кликните овде да видите и управљате корисницима на вашем сајту"
 
-#: public/build/extendify-agent-6e4bd40f597086f1d5cf.js:18
+#: public/build/extendify-agent-764466336ec254c0fa3c.js:18
 #: public/build/extendify-help-center-079e40452a8cd0a1b4a2.js:4
 #: src/Agent/tours/users-screen.js:44
 #: src/Agent/tours/welcome.js:250
@@ -2312,49 +2312,49 @@ msgstr "Кликните овде да видите и управљате кор
 msgid "Users"
 msgstr "Корисници"
 
-#: public/build/extendify-agent-6e4bd40f597086f1d5cf.js:18
+#: public/build/extendify-agent-764466336ec254c0fa3c.js:18
 #: public/build/extendify-help-center-079e40452a8cd0a1b4a2.js:4
 #: src/Agent/tours/users-screen.js:45
 #: src/HelpCenter/tours/users-screen.js:44
 msgid "See all of your users, including admin users in this table."
 msgstr "Погледајте све своје кориснике, укључујући администраторе у овој табели"
 
-#: public/build/extendify-agent-6e4bd40f597086f1d5cf.js:18
+#: public/build/extendify-agent-764466336ec254c0fa3c.js:18
 #: public/build/extendify-help-center-079e40452a8cd0a1b4a2.js:4
 #: src/Agent/tours/users-screen.js:64
 #: src/HelpCenter/tours/users-screen.js:63
 msgid "Edit user information"
 msgstr "Уреди информације о кориснику"
 
-#: public/build/extendify-agent-6e4bd40f597086f1d5cf.js:18
+#: public/build/extendify-agent-764466336ec254c0fa3c.js:18
 #: public/build/extendify-help-center-079e40452a8cd0a1b4a2.js:4
 #: src/Agent/tours/users-screen.js:65
 #: src/HelpCenter/tours/users-screen.js:64
 msgid "Click the edit button to change the user's role, manage their account, or change their profile information."
 msgstr "Притисните дугме за уређивање да бисте променили улогу корисника, управљали њиховим налогом или променили информације о профилу."
 
-#: public/build/extendify-agent-6e4bd40f597086f1d5cf.js:18
+#: public/build/extendify-agent-764466336ec254c0fa3c.js:18
 #: public/build/extendify-help-center-079e40452a8cd0a1b4a2.js:4
 #: src/Agent/tours/users-screen.js:95
 #: src/HelpCenter/tours/users-screen.js:94
 msgid "Search for users"
 msgstr "Претражи кориснике"
 
-#: public/build/extendify-agent-6e4bd40f597086f1d5cf.js:18
+#: public/build/extendify-agent-764466336ec254c0fa3c.js:18
 #: public/build/extendify-help-center-079e40452a8cd0a1b4a2.js:4
 #: src/Agent/tours/users-screen.js:96
 #: src/HelpCenter/tours/users-screen.js:95
 msgid "Use the search bar to find a particular user."
 msgstr "Користите траку за претрагу да пронађете одређеног корисника"
 
-#: public/build/extendify-agent-6e4bd40f597086f1d5cf.js:18
+#: public/build/extendify-agent-764466336ec254c0fa3c.js:18
 #: public/build/extendify-help-center-079e40452a8cd0a1b4a2.js:4
 #: src/Agent/tours/users-screen.js:121
 #: src/HelpCenter/tours/users-screen.js:120
 msgid "Add a new user"
 msgstr "Додај новог корисника"
 
-#: public/build/extendify-agent-6e4bd40f597086f1d5cf.js:18
+#: public/build/extendify-agent-764466336ec254c0fa3c.js:18
 #: public/build/extendify-help-center-079e40452a8cd0a1b4a2.js:4
 #: src/Agent/tours/users-screen.js:122
 #: src/HelpCenter/tours/users-screen.js:121
@@ -2537,14 +2537,14 @@ msgstr "Врати се назад"
 msgid "Extendify Help Center"
 msgstr "Extendify центар за помоћ"
 
-#: public/build/extendify-agent-6e4bd40f597086f1d5cf.js:13
+#: public/build/extendify-agent-764466336ec254c0fa3c.js:13
 #: public/build/extendify-help-center-079e40452a8cd0a1b4a2.js:4
 #: src/Agent/components/GuidedTour.jsx:313
 #: src/HelpCenter/components/tours/GuidedTour.jsx:315
 msgid "Tour"
 msgstr "Тура"
 
-#: public/build/extendify-agent-6e4bd40f597086f1d5cf.js:13
+#: public/build/extendify-agent-764466336ec254c0fa3c.js:13
 #: public/build/extendify-help-center-079e40452a8cd0a1b4a2.js:4
 #: public/build/extendify-launch-da1f1312298810c56f7e.js:8
 #: src/Agent/components/GuidedTour.jsx:425
@@ -2553,7 +2553,7 @@ msgstr "Тура"
 msgid "Back"
 msgstr "Назад"
 
-#: public/build/extendify-agent-6e4bd40f597086f1d5cf.js:13
+#: public/build/extendify-agent-764466336ec254c0fa3c.js:13
 #: public/build/extendify-help-center-079e40452a8cd0a1b4a2.js:4
 #: src/Agent/components/GuidedTour.jsx:434
 #: src/HelpCenter/components/tours/GuidedTour.jsx:441
@@ -2561,7 +2561,7 @@ msgid "Tour Steps"
 msgstr "Кораци обиласка"
 
 #. translators: %1$s is the current step, %2$s is the total number of steps
-#: public/build/extendify-agent-6e4bd40f597086f1d5cf.js:16
+#: public/build/extendify-agent-764466336ec254c0fa3c.js:16
 #: public/build/extendify-help-center-079e40452a8cd0a1b4a2.js:7
 #: src/Agent/components/GuidedTour.jsx:443
 #: src/HelpCenter/components/tours/GuidedTour.jsx:450
@@ -2569,12 +2569,12 @@ msgstr "Кораци обиласка"
 msgid "%1$s of %2$s"
 msgstr "%1$s од %2$s"
 
-#: public/build/extendify-agent-6e4bd40f597086f1d5cf.js:16
-#: public/build/extendify-auto-launch-9894fa63bbe7c3d151cd.js:54
+#: public/build/extendify-agent-764466336ec254c0fa3c.js:16
+#: public/build/extendify-auto-launch-fcd0e4d11549497ba98c.js:54
 #: public/build/extendify-help-center-079e40452a8cd0a1b4a2.js:7
 #: public/build/extendify-launch-da1f1312298810c56f7e.js:8
 #: src/Agent/components/GuidedTour.jsx:473
-#: src/AutoLaunch/components/DescriptionGathering.jsx:177
+#: src/AutoLaunch/components/DescriptionGathering.jsx:179
 #: src/HelpCenter/components/tours/GuidedTour.jsx:480
 #: src/Launch/components/PageControl.jsx:396
 msgid "Next"
@@ -2588,17 +2588,17 @@ msgid "Blog"
 msgstr "Блог"
 
 #. translators: This string represents the title of an "Events" page on a website that lists events of any kind. Please translate it in a way that fits the standard phrasing for an "Events" page in the target language, considering the common usage in websites for that language.
-#: public/build/extendify-auto-launch-9894fa63bbe7c3d151cd.js:52
+#: public/build/extendify-auto-launch-fcd0e4d11549497ba98c.js:52
 #: public/build/extendify-common-3d1170346702178d0a92.js:23
 #: public/build/extendify-launch-da1f1312298810c56f7e.js:17
-#: src/AutoLaunch/hooks/useCreateSite.js:473
+#: src/AutoLaunch/hooks/useCreateSite.js:474
 #: src/Launch/pages/CreatingSite.jsx:497
 msgid "Events"
 msgstr "Догађаји"
 
 #. translators: Launch is the product name. Unless otherwise specified by the glossary, do not translate this name.
-#: public/build/extendify-auto-launch-9894fa63bbe7c3d151cd.js:14
-#: public/build/extendify-auto-launch-9894fa63bbe7c3d151cd.js:44
+#: public/build/extendify-auto-launch-fcd0e4d11549497ba98c.js:14
+#: public/build/extendify-auto-launch-fcd0e4d11549497ba98c.js:44
 #: public/build/extendify-common-3d1170346702178d0a92.js:1
 #: public/build/extendify-launch-da1f1312298810c56f7e.js:3
 #: public/build/extendify-launch-da1f1312298810c56f7e.js:14
@@ -2610,9 +2610,9 @@ msgstr "Догађаји"
 msgid "Added by Launch"
 msgstr "Додато од стране Launch"
 
-#: public/build/extendify-auto-launch-9894fa63bbe7c3d151cd.js:37
+#: public/build/extendify-auto-launch-fcd0e4d11549497ba98c.js:37
 #: public/build/extendify-launch-da1f1312298810c56f7e.js:1
-#: src/AutoLaunch/hooks/useCreateSite.js:351
+#: src/AutoLaunch/hooks/useCreateSite.js:352
 #: src/Launch/api/WPApi.js:51
 msgid "Header Navigation"
 msgstr "Навигација заглавља"
@@ -2622,7 +2622,7 @@ msgstr "Навигација заглавља"
 msgid "Start over?"
 msgstr "Почни поново?"
 
-#: public/build/extendify-auto-launch-9894fa63bbe7c3d151cd.js:57
+#: public/build/extendify-auto-launch-fcd0e4d11549497ba98c.js:57
 #: public/build/extendify-launch-da1f1312298810c56f7e.js:8
 #: src/AutoLaunch/components/RestartLaunchModal.jsx:154
 #: src/Launch/components/RestartLaunchModal.jsx:197
@@ -2671,8 +2671,8 @@ msgstr "Информативно"
 msgid "Persuasive"
 msgstr "Убедљив"
 
-#: public/build/extendify-agent-6e4bd40f597086f1d5cf.js:74
-#: public/build/extendify-agent-6e4bd40f597086f1d5cf.js:82
+#: public/build/extendify-agent-764466336ec254c0fa3c.js:74
+#: public/build/extendify-agent-764466336ec254c0fa3c.js:82
 #: public/build/extendify-launch-da1f1312298810c56f7e.js:8
 #: src/Agent/components/redirects/RedirectFontsVariations.jsx:12
 #: src/Agent/components/redirects/RedirectThemeVariations.jsx:17
@@ -2808,23 +2808,23 @@ msgstr "Преусмеравање за 3, 2, 1..."
 msgid "We encountered a server error we cannot recover from. Please reload the page and try again."
 msgstr "Наишли смо на грешку сервера коју не можемо отклонити. Молимо вас да поново учитате страницу и покушате поново."
 
-#: public/build/extendify-auto-launch-9894fa63bbe7c3d151cd.js:54
+#: public/build/extendify-auto-launch-fcd0e4d11549497ba98c.js:54
 #: public/build/extendify-launch-da1f1312298810c56f7e.js:17
 #: src/AutoLaunch/components/NeedsTheme.jsx:7
 #: src/Launch/pages/NeedsTheme.jsx:10
 msgid "One more thing before we start."
 msgstr "Још једна ствар пре него што почнемо"
 
-#: public/build/extendify-auto-launch-9894fa63bbe7c3d151cd.js:54
+#: public/build/extendify-auto-launch-fcd0e4d11549497ba98c.js:54
 #: public/build/extendify-launch-da1f1312298810c56f7e.js:17
 #: src/AutoLaunch/components/NeedsTheme.jsx:11
 #: src/Launch/pages/NeedsTheme.jsx:14
 msgid "Hey there, Launch is powered by Extendable and is required to proceed. You can install it from the link below and start over once activated."
 msgstr "Здраво, Launch покреће Extendable и потребан је за наставак. Можете га поставити са доње везе и почети поново након активације"
 
-#: public/build/extendify-agent-6e4bd40f597086f1d5cf.js:1
-#: public/build/extendify-agent-6e4bd40f597086f1d5cf.js:24
-#: public/build/extendify-auto-launch-9894fa63bbe7c3d151cd.js:54
+#: public/build/extendify-agent-764466336ec254c0fa3c.js:1
+#: public/build/extendify-agent-764466336ec254c0fa3c.js:24
+#: public/build/extendify-auto-launch-fcd0e4d11549497ba98c.js:54
 #: public/build/extendify-launch-da1f1312298810c56f7e.js:17
 #: src/Agent/components/messages/AgentMessage.jsx:19
 #: src/Agent/workflows/content/components/GeneratePageResult.jsx:39
@@ -2833,38 +2833,38 @@ msgstr "Здраво, Launch покреће Extendable и потребан је 
 msgid "Take me there"
 msgstr "Одведи ме тамо"
 
-#: public/build/extendify-library-46b68847bd85f90eb8b6.js:1
+#: public/build/extendify-library-480fb28f2cc23e8d512a.js:1
 #: src/Library/components/BlockPreviewButton.jsx:28
 msgid "Insert Pattern"
 msgstr "Уметни мустру"
 
-#: public/build/extendify-library-46b68847bd85f90eb8b6.js:1
-#: src/Library/components/ModalContent.jsx:37
-#: src/Library/components/ModalContent.jsx:70
+#: public/build/extendify-library-480fb28f2cc23e8d512a.js:1
+#: src/Library/components/ModalContent.jsx:41
+#: src/Library/components/ModalContent.jsx:78
 msgid "Loading Patterns..."
 msgstr "Учитавање мустри..."
 
-#: public/build/extendify-library-46b68847bd85f90eb8b6.js:1
-#: src/Library/components/ModalContent.jsx:81
+#: public/build/extendify-library-480fb28f2cc23e8d512a.js:1
+#: src/Library/components/ModalContent.jsx:89
 msgid "Loading more patterns..."
 msgstr "Учитавање још мустра..."
 
-#: public/build/extendify-library-46b68847bd85f90eb8b6.js:1
+#: public/build/extendify-library-480fb28f2cc23e8d512a.js:1
 #: src/Library/components/sidebar/CategoryControl.jsx:26
 msgid "Design Type"
 msgstr "Тип дизајна"
 
-#: public/build/extendify-library-46b68847bd85f90eb8b6.js:1
+#: public/build/extendify-library-480fb28f2cc23e8d512a.js:1
 #: src/Library/components/sidebar/CategoryControl.jsx:86
 msgid "Retrying..."
 msgstr "Поновни покушај..."
 
-#: public/build/extendify-library-46b68847bd85f90eb8b6.js:1
+#: public/build/extendify-library-480fb28f2cc23e8d512a.js:1
 #: src/Library/components/sidebar/CategoryControl.jsx:94
 msgid "Fetching..."
 msgstr "Преузимање..."
 
-#: public/build/extendify-library-46b68847bd85f90eb8b6.js:1
+#: public/build/extendify-library-480fb28f2cc23e8d512a.js:1
 #: public/build/extendify-page-creator-6d8b3f0e0ada07c15f72.js:1
 #: src/Library/components/topbar/CloseButton.jsx:9
 #: src/Library/components/topbar/CloseButton.jsx:16
@@ -2875,7 +2875,7 @@ msgstr "Затвори"
 
 #. translators: %s: Extendify Library term
 #. translators: %s: Extendify AI Page creator term
-#: public/build/extendify-library-46b68847bd85f90eb8b6.js:4
+#: public/build/extendify-library-480fb28f2cc23e8d512a.js:4
 #: public/build/extendify-page-creator-6d8b3f0e0ada07c15f72.js:4
 #: src/Library/components/topbar/Topbar.jsx:12
 #: src/PageCreator/components/topbar/Topbar.jsx:49
@@ -2883,160 +2883,160 @@ msgstr "Затвори"
 msgid "Toggle %s on new pages"
 msgstr "Прикажи/сакриј %s на новим страницама"
 
-#: public/build/extendify-library-46b68847bd85f90eb8b6.js:4
+#: public/build/extendify-library-480fb28f2cc23e8d512a.js:4
 #: public/build/extendify-page-creator-6d8b3f0e0ada07c15f72.js:4
 #: src/Library/components/topbar/Topbar.jsx:23
 #: src/PageCreator/components/topbar/Topbar.jsx:62
 msgid "Open for new pages"
 msgstr "Отворено за нове странице"
 
-#: public/build/extendify-library-46b68847bd85f90eb8b6.js:4
+#: public/build/extendify-library-480fb28f2cc23e8d512a.js:4
 #: src/Library/components/Modal.jsx:114
 msgid "Design Patterns"
 msgstr "Дизајн мустре"
 
-#: public/build/extendify-library-46b68847bd85f90eb8b6.js:4
+#: public/build/extendify-library-480fb28f2cc23e8d512a.js:4
 #: src/Library/components/Modal.jsx:31
 msgid "Pattern added"
 msgstr "Мустра је додата"
 
-#: public/build/extendify-assist-page-d0ee34e4a56c87661b3a.js:10
+#: public/build/extendify-assist-page-c4de054ee73a0ae1b22b.js:10
 #: src/Assist/tasks/images/LaunchDemoSitesMarkup.jsx:32
 msgid "Prime Estates"
 msgstr "Прва имања"
 
-#: public/build/extendify-assist-page-d0ee34e4a56c87661b3a.js:10
+#: public/build/extendify-assist-page-c4de054ee73a0ae1b22b.js:10
 #: src/Assist/tasks/images/LaunchDemoSitesMarkup.jsx:43
 msgid "Elevate Your Real Estate Experience with Pinnacle Properties"
 msgstr "Уздигните своје искуство у некретнинама са Pinnacle Properties"
 
-#: public/build/extendify-assist-page-d0ee34e4a56c87661b3a.js:10
+#: public/build/extendify-assist-page-c4de054ee73a0ae1b22b.js:10
 #: src/Assist/tasks/images/LaunchDemoSitesMarkup.jsx:49
 msgid "Discover the key to Austin's vibrant real estate scene with Pinnacle Properties. Our seasoned agents leverage over two decades of industry know-how to guide you in finding your ideal home."
 msgstr "Откријте кључ живописне некретнинске сцене Остина са Pinnacle Properties. Наши искусни агенти користе више од две деценије знања из индустрије да вас воде у проналажењу вашег идеалног дома."
 
-#: public/build/extendify-assist-page-d0ee34e4a56c87661b3a.js:10
+#: public/build/extendify-assist-page-c4de054ee73a0ae1b22b.js:10
 #: src/Assist/tasks/images/LaunchDemoSitesMarkup.jsx:56
 #: src/Assist/tasks/images/LaunchDemoSitesMarkup.jsx:358
 msgid "Contact Us"
 msgstr "Контактирајте нас"
 
-#: public/build/extendify-assist-page-d0ee34e4a56c87661b3a.js:10
+#: public/build/extendify-assist-page-c4de054ee73a0ae1b22b.js:10
 #: src/Assist/tasks/images/LaunchDemoSitesMarkup.jsx:69
 msgid "Expert Real Estate Services in Austin"
 msgstr "Стручне услуге некретнина у Остину"
 
-#: public/build/extendify-assist-page-d0ee34e4a56c87661b3a.js:10
+#: public/build/extendify-assist-page-c4de054ee73a0ae1b22b.js:10
 #: src/Assist/tasks/images/LaunchDemoSitesMarkup.jsx:75
 msgid "Find your dream home or make profitable investments with Pinnacle Properties, Austin premier real estate agency. Trust our experienced agents for personalized services."
 msgstr "Пронађите свој дом из снова или остварите профитабилне инвестиције са Pinnacle Properties, водећом агенцијом за некретнине у Остину. Верујте нашим искусним агентима за персонализоване услуге."
 
-#: public/build/extendify-assist-page-d0ee34e4a56c87661b3a.js:10
+#: public/build/extendify-assist-page-c4de054ee73a0ae1b22b.js:10
 #: src/Assist/tasks/images/LaunchDemoSitesMarkup.jsx:90
 #: src/Assist/tasks/images/LaunchDemoSitesMarkup.jsx:106
 #: src/Assist/tasks/images/LaunchDemoSitesMarkup.jsx:122
 msgid "Buy Your Dream Home"
 msgstr "Купите свој дом из снова"
 
-#: public/build/extendify-assist-page-d0ee34e4a56c87661b3a.js:10
+#: public/build/extendify-assist-page-c4de054ee73a0ae1b22b.js:10
 #: src/Assist/tasks/images/LaunchDemoSitesMarkup.jsx:93
 #: src/Assist/tasks/images/LaunchDemoSitesMarkup.jsx:109
 #: src/Assist/tasks/images/LaunchDemoSitesMarkup.jsx:125
 msgid "Find your dream home with our expert agents. We make homeownership a reality."
 msgstr "Пронађите свој дом из снова уз наше стручне агенте. Остварујемо власништво над домом."
 
-#: public/build/extendify-assist-page-d0ee34e4a56c87661b3a.js:10
+#: public/build/extendify-assist-page-c4de054ee73a0ae1b22b.js:10
 #: src/Assist/tasks/images/LaunchDemoSitesMarkup.jsx:141
 msgid "BrightFuture"
 msgstr "СветлаБудућност"
 
-#: public/build/extendify-assist-page-d0ee34e4a56c87661b3a.js:10
+#: public/build/extendify-assist-page-c4de054ee73a0ae1b22b.js:10
 #: src/Assist/tasks/images/LaunchDemoSitesMarkup.jsx:152
 msgid "Empowering Academic Excellence in Every Student for Tomorrow’s\tLeaders"
 msgstr "Оспособљавање сваког ученика за академску изврсност и будуће лидерство"
 
-#: public/build/extendify-assist-page-d0ee34e4a56c87661b3a.js:10
+#: public/build/extendify-assist-page-c4de054ee73a0ae1b22b.js:10
 #: src/Assist/tasks/images/LaunchDemoSitesMarkup.jsx:159
 msgid "Discover a transformative educational experience at American Academic Excellence High Schools, where students excel in STEM, arts, and humanities to become tomorrow’s leaders."
 msgstr "Откријте трансформативно образовно искуство у American Academic Excellence High Schools, где ученици напредују у СТЕМ-у, уметности и хуманистичким наукама како би постали лидери сутрашњице"
 
-#: public/build/extendify-assist-page-d0ee34e4a56c87661b3a.js:10
+#: public/build/extendify-assist-page-c4de054ee73a0ae1b22b.js:10
 #: src/Assist/tasks/images/LaunchDemoSitesMarkup.jsx:166
 msgid "Apply Now"
 msgstr "Примени сада"
 
-#: public/build/extendify-assist-page-d0ee34e4a56c87661b3a.js:10
+#: public/build/extendify-assist-page-c4de054ee73a0ae1b22b.js:10
 #: src/Assist/tasks/images/LaunchDemoSitesMarkup.jsx:176
 msgid "Our Commitment to Academic Excellence"
 msgstr "Наша посвећеност академској изврсности"
 
-#: public/build/extendify-assist-page-d0ee34e4a56c87661b3a.js:10
+#: public/build/extendify-assist-page-c4de054ee73a0ae1b22b.js:10
 #: src/Assist/tasks/images/LaunchDemoSitesMarkup.jsx:179
 msgid "American Academic Excellence High Schools: Shaping tomorrow’s leaders through top-tier education in Houston, Texas. STEM, arts, humanities. Well-rounded curriculum, exceptional educators."
 msgstr "Америчке академске изврсне средње школе: Обликујемо лидере сутрашњице кроз врхунско образовање у Хјустону, Тексас. СТЕМ, уметност, хуманистичке науке. Свеобухватан наставни план, изузетни едукатори"
 
-#: public/build/extendify-assist-page-d0ee34e4a56c87661b3a.js:10
+#: public/build/extendify-assist-page-c4de054ee73a0ae1b22b.js:10
 #: src/Assist/tasks/images/LaunchDemoSitesMarkup.jsx:206
 msgid "Brewed Bliss"
 msgstr "Скувано блаженство"
 
-#: public/build/extendify-assist-page-d0ee34e4a56c87661b3a.js:10
+#: public/build/extendify-assist-page-c4de054ee73a0ae1b22b.js:10
 #: src/Assist/tasks/images/LaunchDemoSitesMarkup.jsx:217
 msgid "Embark on a delightful coffee adventure around the world."
 msgstr "Крените на узбудљиву авантуру кафе широм света"
 
-#: public/build/extendify-assist-page-d0ee34e4a56c87661b3a.js:10
+#: public/build/extendify-assist-page-c4de054ee73a0ae1b22b.js:10
 #: src/Assist/tasks/images/LaunchDemoSitesMarkup.jsx:250
 msgid "Find your dream home or make profitable investments with Pinnacle Properties, Austin’s premier real estate agency."
 msgstr "Пронађите свој дом из снова или остварите профитабилне инвестиције са Pinnacle Properties, водећом агенцијом за некретнине у Остину."
 
-#: public/build/extendify-assist-page-d0ee34e4a56c87661b3a.js:10
+#: public/build/extendify-assist-page-c4de054ee73a0ae1b22b.js:10
 #: src/Assist/tasks/images/LaunchDemoSitesMarkup.jsx:264
 msgid "Skyline Builders"
 msgstr "Skyline градитељи"
 
-#: public/build/extendify-assist-page-d0ee34e4a56c87661b3a.js:10
+#: public/build/extendify-assist-page-c4de054ee73a0ae1b22b.js:10
 #: src/Assist/tasks/images/LaunchDemoSitesMarkup.jsx:275
 msgid "Building Tomorrow’s Miami: Your Premier Construction Partner Today"
 msgstr "Градимо сутрашњи Мајами: Ваш премијерни грађевински партнер данас"
 
-#: public/build/extendify-assist-page-d0ee34e4a56c87661b3a.js:10
+#: public/build/extendify-assist-page-c4de054ee73a0ae1b22b.js:10
 #: src/Assist/tasks/images/LaunchDemoSitesMarkup.jsx:281
 msgid "We bring your dreams to life with groundbreaking construction techniques, turning your vision into reality with innovative and sustainable solutions."
 msgstr "Остварујемо ваше снове уз револуционарне грађевинске технике, претварајући вашу визију у стварност иновативним и одрживим решењима"
 
-#: public/build/extendify-assist-page-d0ee34e4a56c87661b3a.js:10
+#: public/build/extendify-assist-page-c4de054ee73a0ae1b22b.js:10
 #: src/Assist/tasks/images/LaunchDemoSitesMarkup.jsx:288
 msgid "Get a Quote"
 msgstr "Затражите понуду"
 
-#: public/build/extendify-assist-page-d0ee34e4a56c87661b3a.js:10
+#: public/build/extendify-assist-page-c4de054ee73a0ae1b22b.js:10
 #: src/Assist/tasks/images/LaunchDemoSitesMarkup.jsx:304
 #: src/Assist/tasks/images/LaunchDemoSitesMarkup.jsx:322
 msgid "About Superior Build Construction: Building Dreams, Delivering Excellence in Miami."
 msgstr "О Superior Build Construction: Остварујемо снове, пружамо изврсност у Мајамију"
 
-#: public/build/extendify-assist-page-d0ee34e4a56c87661b3a.js:10
+#: public/build/extendify-assist-page-c4de054ee73a0ae1b22b.js:10
 #: src/Assist/tasks/images/LaunchDemoSitesMarkup.jsx:310
 msgid "Superior Build Construction is a premier construction company based in Miami, Florida. With over 30 years of experience, we specialize in residential and commercial construction projects, offering end-to-end solutions. Our mission is to provide high-quality, durable constructions while ensuring the utmost client satisfaction, making us a trusted name in Miami's real estate industry."
 msgstr "Superior Build Construction је водећа грађевинска компанија са седиштем у Мајамију, Флорида. Са преко 30 година искуства, специјализовани смо за стамбене и комерцијалне грађевинске пројекте, нудећи комплетна решења. Наша мисија је да обезбедимо висококвалитетне, трајне грађевине уз максимално задовољство клијената, што нас чини поузданим именом у некретнинама у Мајамију"
 
-#: public/build/extendify-assist-page-d0ee34e4a56c87661b3a.js:10
+#: public/build/extendify-assist-page-c4de054ee73a0ae1b22b.js:10
 #: src/Assist/tasks/images/LaunchDemoSitesMarkup.jsx:338
 msgid "Urban Bistro"
 msgstr "Урбани бистро"
 
-#: public/build/extendify-assist-page-d0ee34e4a56c87661b3a.js:10
+#: public/build/extendify-assist-page-c4de054ee73a0ae1b22b.js:10
 #: src/Assist/tasks/images/LaunchDemoSitesMarkup.jsx:349
 msgid "French-Inspired Californian Cuisine"
 msgstr "Калифорнијска кухиња инспирисана француском"
 
-#: public/build/extendify-assist-page-d0ee34e4a56c87661b3a.js:10
+#: public/build/extendify-assist-page-c4de054ee73a0ae1b22b.js:10
 #: src/Assist/tasks/images/LaunchDemoSitesMarkup.jsx:352
 msgid "Indulge in classic French bistro cuisine with a Californian twist at The Bistro House in San Francisco. Quality, sustainability, and Bay Area culinary traditions."
 msgstr "Уживајте у класичној француској бистро кухињи са калифорнијским штихом у The Bistro House у Сан Франциску. Квалитет, одрживост и кулинарске традиције области залива."
 
-#: public/build/extendify-assist-page-d0ee34e4a56c87661b3a.js:10
+#: public/build/extendify-assist-page-c4de054ee73a0ae1b22b.js:10
 #: src/Assist/tasks/images/LaunchDemoSitesMarkup.jsx:365
 msgid "Find your dream home or make profitable investments with Pinnacle Properties, Austin's premier real estate agency. Trust our experienced agents for personalized services."
 msgstr "Пронађите свој дом из снова или остварите профитабилне инвестиције са Pinnacle Properties, водећом агенцијом за некретнине у Остину. Верујте нашим искусним агентима за персонализоване услуге."
@@ -3087,7 +3087,7 @@ msgid "Share your vision, and we'll craft a website that's perfectly tailored to
 msgstr "Поделите своју визију, а ми ћемо направити веб место савршено прилагођено вашим потребама, спремно за брзо покретање. Почнимо тако што ћемо сазнати више о томе шта градите."
 
 #. translators: Launch is a noun.
-#: public/build/extendify-auto-launch-9894fa63bbe7c3d151cd.js:59
+#: public/build/extendify-auto-launch-fcd0e4d11549497ba98c.js:59
 #: public/build/extendify-launch-da1f1312298810c56f7e.js:19
 #: src/AutoLaunch/LaunchPage.jsx:37
 #: src/Launch/LaunchPage.jsx:57
@@ -3115,23 +3115,23 @@ msgid "Please wait while we build some website options for you to select from."
 msgstr "Молимо вас сачекајте док креирамо неке опције веб места за вас да одаберете."
 
 #. translators: this is for a action log UI. Keep it short
-#: public/build/extendify-auto-launch-9894fa63bbe7c3d151cd.js:46
+#: public/build/extendify-auto-launch-fcd0e4d11549497ba98c.js:46
 #: public/build/extendify-launch-da1f1312298810c56f7e.js:14
-#: src/AutoLaunch/hooks/useCreateSite.js:442
+#: src/AutoLaunch/hooks/useCreateSite.js:443
 #: src/Launch/pages/CreatingSite.jsx:410
 msgid "Creating blog sample data"
 msgstr "Креирање примерних података за блог"
 
 #. translators: "More" here is used for a navigation menu item that contains additional links.
-#: public/build/extendify-auto-launch-9894fa63bbe7c3d151cd.js:12
+#: public/build/extendify-auto-launch-fcd0e4d11549497ba98c.js:12
 #: public/build/extendify-launch-da1f1312298810c56f7e.js:5
 #: src/AutoLaunch/functions/nav.js:215
 #: src/Launch/api/WPApi.js:400
 msgid "More"
 msgstr "Још"
 
-#: public/build/extendify-assist-page-d0ee34e4a56c87661b3a.js:1
-#: public/build/extendify-assist-page-d0ee34e4a56c87661b3a.js:10
+#: public/build/extendify-assist-page-c4de054ee73a0ae1b22b.js:1
+#: public/build/extendify-assist-page-c4de054ee73a0ae1b22b.js:10
 #: src/Assist/components/dashboard/LaunchCard.jsx:33
 #: src/Assist/tasks/site-builder-launcher.js:15
 #: src/Assist/tasks/site-builder-launcher.js:16
@@ -3139,9 +3139,9 @@ msgid "Add Website Details"
 msgstr "Додај детаље веб сајта"
 
 #. translators: %s is a post number
-#: public/build/extendify-auto-launch-9894fa63bbe7c3d151cd.js:49
+#: public/build/extendify-auto-launch-fcd0e4d11549497ba98c.js:49
 #: public/build/extendify-launch-da1f1312298810c56f7e.js:17
-#: src/AutoLaunch/functions/wp.js:154
+#: src/AutoLaunch/functions/wp.js:167
 #, js-format
 msgid "Blog Post %s"
 msgstr "Блог објава %s"
@@ -3173,7 +3173,7 @@ msgstr "Одабери тон свог сајта"
 msgid "Website title (required)"
 msgstr "Наслов веб сајта (обавезно)"
 
-#: public/build/extendify-auto-launch-9894fa63bbe7c3d151cd.js:49
+#: public/build/extendify-auto-launch-fcd0e4d11549497ba98c.js:49
 #: public/build/extendify-launch-da1f1312298810c56f7e.js:17
 #: src/AutoLaunch/functions/pages.js:219
 msgid "Hello World Featured Image"
@@ -3203,7 +3203,7 @@ msgstr "Обриши постојећи садржај"
 msgid "Create a new page"
 msgstr "Креирај нову страну"
 
-#: public/build/extendify-agent-6e4bd40f597086f1d5cf.js:18
+#: public/build/extendify-agent-764466336ec254c0fa3c.js:18
 #: public/build/extendify-help-center-079e40452a8cd0a1b4a2.js:4
 #: public/build/extendify-page-creator-6d8b3f0e0ada07c15f72.js:1
 #: src/Agent/tours/page-creator.js:6
@@ -3337,9 +3337,9 @@ msgstr "Нпр. Лични финансијски блог који дели с�
 msgid "E.g., A free ebook packed with actionable productivity tips and strategies to help you stay focused, manage your time effectively, and achieve your goals."
 msgstr "На пример, бесплатна е-књига са практичним саветима и стратегијама за продуктивност која ће вам помоћи да останете фокусирани, ефикасно управљате временом и постигнете своје циљеве."
 
-#: public/build/extendify-auto-launch-9894fa63bbe7c3d151cd.js:54
+#: public/build/extendify-auto-launch-fcd0e4d11549497ba98c.js:54
 #: public/build/extendify-launch-da1f1312298810c56f7e.js:8
-#: src/AutoLaunch/components/DescriptionGathering.jsx:142
+#: src/AutoLaunch/components/DescriptionGathering.jsx:144
 #: src/Launch/pages/SiteInformation.jsx:204
 msgid "E.g., A personal photography portfolio featuring a collection of landscape, portrait, and street photography, capturing moments from around the world."
 msgstr "На пример, лични фотографски портфолио са колекцијом пејзажне, портретне и уличне фотографије, који бележи тренутке из целог света"
@@ -3399,42 +3399,42 @@ msgstr "Реците нам о вашем веб сајту"
 msgid "Share your vision, and we'll craft a landing page that's perfectly tailored to your needs, ready to launch in no time. Let's begin by learning more about what you're building."
 msgstr "Поделите своју визију, а ми ћемо направити одредишну страницу прилагођену вашим потребама, спремну за брзо покретање. Почнимо тако што ћемо сазнати више о томе шта градите."
 
-#: public/build/extendify-agent-6e4bd40f597086f1d5cf.js:18
+#: public/build/extendify-agent-764466336ec254c0fa3c.js:18
 #: public/build/extendify-help-center-079e40452a8cd0a1b4a2.js:4
 #: src/Agent/tours/page-creator.js:30
 #: src/HelpCenter/tours/page-creator.js:30
 msgid "Press here to get started with your AI Page Generator."
 msgstr "Притисните овде да започнете са вашим генератором страница вештачке интелигенције."
 
-#: public/build/extendify-agent-6e4bd40f597086f1d5cf.js:18
+#: public/build/extendify-agent-764466336ec254c0fa3c.js:18
 #: public/build/extendify-help-center-079e40452a8cd0a1b4a2.js:4
 #: src/Agent/tours/page-creator.js:53
 #: src/HelpCenter/tours/page-creator.js:53
 msgid "Page description"
 msgstr "Опис стране"
 
-#: public/build/extendify-agent-6e4bd40f597086f1d5cf.js:18
+#: public/build/extendify-agent-764466336ec254c0fa3c.js:18
 #: public/build/extendify-help-center-079e40452a8cd0a1b4a2.js:4
 #: src/Agent/tours/page-creator.js:54
 #: src/HelpCenter/tours/page-creator.js:54
 msgid "Write a description of the page you want to create. Be as detailed as you like. We will create a page based on this description."
 msgstr "Напишите опис странице коју желите да направите. Будите детаљни колико желите. Направићемо страницу на основу овог описа."
 
-#: public/build/extendify-agent-6e4bd40f597086f1d5cf.js:18
+#: public/build/extendify-agent-764466336ec254c0fa3c.js:18
 #: public/build/extendify-help-center-079e40452a8cd0a1b4a2.js:4
 #: src/Agent/tours/page-creator.js:82
 #: src/HelpCenter/tours/page-creator.js:82
 msgid "If needed, update your site description here. We use this to add additional context about your website."
 msgstr "Ако је потребно, ажурирајте опис вашег веб места овде. Користимо га за додавање додатног контекста о вашем веб месту."
 
-#: public/build/extendify-agent-6e4bd40f597086f1d5cf.js:18
+#: public/build/extendify-agent-764466336ec254c0fa3c.js:18
 #: public/build/extendify-help-center-079e40452a8cd0a1b4a2.js:4
 #: src/Agent/tours/page-creator.js:105
 #: src/HelpCenter/tours/page-creator.js:105
 msgid "Generate your page"
 msgstr "Генериши своју страну"
 
-#: public/build/extendify-agent-6e4bd40f597086f1d5cf.js:18
+#: public/build/extendify-agent-764466336ec254c0fa3c.js:18
 #: public/build/extendify-help-center-079e40452a8cd0a1b4a2.js:4
 #: src/Agent/tours/page-creator.js:106
 #: src/HelpCenter/tours/page-creator.js:106
@@ -3451,12 +3451,12 @@ msgstr "Затвори објашњење"
 msgid "Installing supporting plugins"
 msgstr "Постављање пратећих додатака"
 
-#: public/build/extendify-assist-page-d0ee34e4a56c87661b3a.js:1
+#: public/build/extendify-assist-page-c4de054ee73a0ae1b22b.js:1
 #: src/Assist/components/dashboard/LaunchCard.jsx:18
 msgid "Website Objective"
 msgstr "Циљ веб места"
 
-#: public/build/extendify-assist-page-d0ee34e4a56c87661b3a.js:1
+#: public/build/extendify-assist-page-c4de054ee73a0ae1b22b.js:1
 #: src/Assist/components/dashboard/LaunchCard.jsx:24
 msgid "Add Website Objective"
 msgstr "Додај циљ веб места"
@@ -3502,38 +3502,38 @@ msgstr "Хебрејски"
 msgid "Edit text on this page"
 msgstr "Уреди текст на овој страници"
 
-#: public/build/extendify-agent-6e4bd40f597086f1d5cf.js:74
+#: public/build/extendify-agent-764466336ec254c0fa3c.js:74
 #: src/Agent/hooks/useThemeVariations.js:17
 msgid "Failed to fetch theme variations."
 msgstr "Неуспешно преузимање варијација теме."
 
-#: public/build/extendify-agent-6e4bd40f597086f1d5cf.js:74
+#: public/build/extendify-agent-764466336ec254c0fa3c.js:74
 #: src/Agent/components/redirects/RedirectThemeVariations.jsx:8
 msgid "Hey there! It looks like you are trying to change your theme colors, but you are not on a page where we can do that."
 msgstr "Здраво! Изгледа да покушавате да промените боје теме, али нисте на страници где то можемо урадити."
 
-#: public/build/extendify-agent-6e4bd40f597086f1d5cf.js:74
-#: public/build/extendify-agent-6e4bd40f597086f1d5cf.js:82
+#: public/build/extendify-agent-764466336ec254c0fa3c.js:74
+#: public/build/extendify-agent-764466336ec254c0fa3c.js:82
 #: src/Agent/components/redirects/RedirectFontsVariations.jsx:10
 #: src/Agent/components/redirects/RedirectThemeVariations.jsx:15
 #: src/Agent/workflows/theme/components/Redirect.jsx:10
 msgid "Suggestion:"
 msgstr "Предлог:"
 
-#: public/build/extendify-agent-6e4bd40f597086f1d5cf.js:1
-#: public/build/extendify-agent-6e4bd40f597086f1d5cf.js:16
-#: public/build/extendify-agent-6e4bd40f597086f1d5cf.js:18
-#: public/build/extendify-agent-6e4bd40f597086f1d5cf.js:21
-#: public/build/extendify-agent-6e4bd40f597086f1d5cf.js:24
-#: public/build/extendify-agent-6e4bd40f597086f1d5cf.js:27
-#: public/build/extendify-agent-6e4bd40f597086f1d5cf.js:30
-#: public/build/extendify-agent-6e4bd40f597086f1d5cf.js:33
-#: public/build/extendify-agent-6e4bd40f597086f1d5cf.js:50
-#: public/build/extendify-agent-6e4bd40f597086f1d5cf.js:54
-#: public/build/extendify-agent-6e4bd40f597086f1d5cf.js:64
-#: public/build/extendify-agent-6e4bd40f597086f1d5cf.js:70
-#: public/build/extendify-agent-6e4bd40f597086f1d5cf.js:76
-#: public/build/extendify-agent-6e4bd40f597086f1d5cf.js:82
+#: public/build/extendify-agent-764466336ec254c0fa3c.js:1
+#: public/build/extendify-agent-764466336ec254c0fa3c.js:16
+#: public/build/extendify-agent-764466336ec254c0fa3c.js:18
+#: public/build/extendify-agent-764466336ec254c0fa3c.js:21
+#: public/build/extendify-agent-764466336ec254c0fa3c.js:24
+#: public/build/extendify-agent-764466336ec254c0fa3c.js:27
+#: public/build/extendify-agent-764466336ec254c0fa3c.js:30
+#: public/build/extendify-agent-764466336ec254c0fa3c.js:33
+#: public/build/extendify-agent-764466336ec254c0fa3c.js:50
+#: public/build/extendify-agent-764466336ec254c0fa3c.js:54
+#: public/build/extendify-agent-764466336ec254c0fa3c.js:64
+#: public/build/extendify-agent-764466336ec254c0fa3c.js:70
+#: public/build/extendify-agent-764466336ec254c0fa3c.js:76
+#: public/build/extendify-agent-764466336ec254c0fa3c.js:82
 #: src/Agent/components/ChatInput.jsx:222
 #: src/Agent/components/ImageUploader.jsx:189
 #: src/Agent/icons.jsx:214
@@ -3545,7 +3545,7 @@ msgstr "Предлог:"
 #: src/Agent/workflows/content/components/UpdatePostStatusConfirm.jsx:44
 #: src/Agent/workflows/plugins/components/InstallPlugin.jsx:165
 #: src/Agent/workflows/settings/components/UpdateSettingConfirm.jsx:55
-#: src/Agent/workflows/theme/components/change-site-design/SelectSiteDesign.jsx:368
+#: src/Agent/workflows/theme/components/change-site-design/SelectSiteDesign.jsx:374
 #: src/Agent/workflows/theme/components/SelectAnimation.jsx:171
 #: src/Agent/workflows/theme/components/SelectGeneratedPalette.jsx:183
 #: src/Agent/workflows/theme/components/SelectSiteVibes.jsx:129
@@ -3555,9 +3555,9 @@ msgstr "Предлог:"
 msgid "Cancel"
 msgstr "Одустани"
 
-#: public/build/extendify-agent-6e4bd40f597086f1d5cf.js:18
-#: public/build/extendify-agent-6e4bd40f597086f1d5cf.js:24
-#: public/build/extendify-agent-6e4bd40f597086f1d5cf.js:33
+#: public/build/extendify-agent-764466336ec254c0fa3c.js:18
+#: public/build/extendify-agent-764466336ec254c0fa3c.js:24
+#: public/build/extendify-agent-764466336ec254c0fa3c.js:33
 #: src/Agent/workflows/block-selector/components/UpdateBlockConfirm.jsx:107
 #: src/Agent/workflows/block-selector/components/UpdateImageConfirm.jsx:159
 #: src/Agent/workflows/content/components/UpdatePostConfirm.jsx:40
@@ -3565,134 +3565,134 @@ msgstr "Одустани"
 msgid "The agent has made the changes in the browser. Please review and confirm."
 msgstr "Агент је извршио промене у прегледачу. Молимо прегледајте и потврдите."
 
-#: public/build/extendify-agent-6e4bd40f597086f1d5cf.js:18
+#: public/build/extendify-agent-764466336ec254c0fa3c.js:18
 #: src/Agent/tours/library-tour.js:7
 msgid "Tour the design library"
 msgstr "Обилазак библиотеке дизајна"
 
-#: public/build/extendify-agent-6e4bd40f597086f1d5cf.js:18
+#: public/build/extendify-agent-764466336ec254c0fa3c.js:18
 #: src/Agent/tours/page-creator.js:7
 msgid "Learn about the AI Page Generator"
 msgstr "Сазнајте више о генератору страница вештачке интелигенције"
 
-#: public/build/extendify-agent-6e4bd40f597086f1d5cf.js:18
+#: public/build/extendify-agent-764466336ec254c0fa3c.js:18
 #: src/Agent/tours/page-editor.js:14
 msgid "Tour the page editor"
 msgstr "Обилазак уређивача странице"
 
-#: public/build/extendify-agent-6e4bd40f597086f1d5cf.js:18
+#: public/build/extendify-agent-764466336ec254c0fa3c.js:18
 #: src/Agent/tours/plugin-install.js:6
 msgid "See how to install a plugin"
 msgstr "Погледајте како да поставите додатак"
 
-#: public/build/extendify-agent-6e4bd40f597086f1d5cf.js:18
+#: public/build/extendify-agent-764466336ec254c0fa3c.js:18
 #: src/Agent/tours/plugin-management.js:6
 msgid "Learn how to manage plugins"
 msgstr "Научите како да управљате додацима"
 
-#: public/build/extendify-agent-6e4bd40f597086f1d5cf.js:18
+#: public/build/extendify-agent-764466336ec254c0fa3c.js:18
 #: src/Agent/tours/site-assistant.js:6
 msgid "Tour the Site Assistant"
 msgstr "Обилазак помоћника сајта"
 
-#: public/build/extendify-agent-6e4bd40f597086f1d5cf.js:18
+#: public/build/extendify-agent-764466336ec254c0fa3c.js:18
 #: src/Agent/tours/users-screen.js:6
 msgid "Tour the Users screen"
 msgstr "Обилазак екрана корисника"
 
-#: public/build/extendify-agent-6e4bd40f597086f1d5cf.js:1
+#: public/build/extendify-agent-764466336ec254c0fa3c.js:1
 #: src/Agent/components/ChatInput.jsx:176
 msgid "Ask anything"
 msgstr "Питајте било шта"
 
-#: public/build/extendify-agent-6e4bd40f597086f1d5cf.js:1
+#: public/build/extendify-agent-764466336ec254c0fa3c.js:1
 #: src/Agent/components/ChatInput.jsx:233
 msgid "Send message"
 msgstr "Пошаљи поруку"
 
-#: public/build/extendify-agent-6e4bd40f597086f1d5cf.js:4
+#: public/build/extendify-agent-764466336ec254c0fa3c.js:4
 #: src/Agent/components/ScrollDownButton.jsx:22
 msgid "Scroll down"
 msgstr "Помери надоле"
 
-#: public/build/extendify-agent-6e4bd40f597086f1d5cf.js:1
+#: public/build/extendify-agent-764466336ec254c0fa3c.js:1
 #: src/Agent/components/messages/StatusMessage.jsx:15
 msgid "Working on it..."
 msgstr "Радим на томе..."
 
-#: public/build/extendify-agent-6e4bd40f597086f1d5cf.js:1
+#: public/build/extendify-agent-764466336ec254c0fa3c.js:1
 #: src/Agent/components/messages/StatusMessage.jsx:21
 msgid "Gathering data..."
 msgstr "Прикупљање података..."
 
-#: public/build/extendify-agent-6e4bd40f597086f1d5cf.js:1
+#: public/build/extendify-agent-764466336ec254c0fa3c.js:1
 #: src/Agent/components/messages/StatusMessage.jsx:22
 msgid "Analyzing..."
 msgstr "Анализа..."
 
-#: public/build/extendify-agent-6e4bd40f597086f1d5cf.js:1
+#: public/build/extendify-agent-764466336ec254c0fa3c.js:1
 #: src/Agent/components/messages/StatusMessage.jsx:23
 #: src/Agent/components/messages/StatusMessage.jsx:24
 msgid "Canceled"
 msgstr "Одустало"
 
-#: public/build/extendify-agent-6e4bd40f597086f1d5cf.js:1
+#: public/build/extendify-agent-764466336ec254c0fa3c.js:1
 #: src/Agent/components/messages/StatusMessage.jsx:25
 msgid "Usage limit reached"
 msgstr "Достигнуто ограничење употребе"
 
-#: public/build/extendify-agent-6e4bd40f597086f1d5cf.js:1
+#: public/build/extendify-agent-764466336ec254c0fa3c.js:1
 #: src/Agent/components/messages/StatusMessage.jsx:26
 msgid "Usage limit restored"
 msgstr "Ограничење употребе је враћено"
 
-#: public/build/extendify-agent-6e4bd40f597086f1d5cf.js:1
+#: public/build/extendify-agent-764466336ec254c0fa3c.js:1
 #: src/Agent/components/messages/StatusMessage.jsx:102
 msgid "Workflow completed successfully"
 msgstr "Радни ток успешно завршен"
 
-#: public/build/extendify-agent-6e4bd40f597086f1d5cf.js:1
+#: public/build/extendify-agent-764466336ec254c0fa3c.js:1
 #: src/Agent/components/messages/WorkflowComponent.jsx:17
 msgid "Component not available"
 msgstr "Компонента није доступна"
 
 #. translators: This is for when a component doesn't exist
-#: public/build/extendify-agent-6e4bd40f597086f1d5cf.js:4
+#: public/build/extendify-agent-764466336ec254c0fa3c.js:4
 #: src/Agent/components/messages/WorkflowComponent.jsx:22
 msgid "It may have been removed or is not available for your account."
 msgstr "Можда је уклоњен или није доступан за ваш налог."
 
-#: public/build/extendify-agent-6e4bd40f597086f1d5cf.js:4
+#: public/build/extendify-agent-764466336ec254c0fa3c.js:4
 #: src/Agent/components/messages/WorkflowMessage.jsx:15
 msgid "What's next? Would you like to do something else?"
 msgstr "Шта је следеће? Да ли желите да урадите нешто друго?"
 
-#: public/build/extendify-agent-6e4bd40f597086f1d5cf.js:1
+#: public/build/extendify-agent-764466336ec254c0fa3c.js:1
 #: src/Agent/components/layouts/DragResizeLayout.jsx:113
 #: src/Agent/components/layouts/SidebarLayout.jsx:114
 msgid "Close window"
 msgstr "Затвори прозор"
 
-#: public/build/extendify-agent-6e4bd40f597086f1d5cf.js:1
+#: public/build/extendify-agent-764466336ec254c0fa3c.js:1
 #: src/Agent/components/layouts/DragResizeLayout.jsx:154
 msgid "Drag to move"
 msgstr "Превуци за померање"
 
 #. translators: %s is a human-readable time difference, e.g. "2 hours from now"
-#: public/build/extendify-agent-6e4bd40f597086f1d5cf.js:7
+#: public/build/extendify-agent-764466336ec254c0fa3c.js:7
 #: src/Agent/components/messages/UsageMessage.jsx:30
 #, js-format
 msgid "You have reached your daily messages limit. Your limit will reset in %s."
 msgstr "Достигли сте дневни лимит порука. Ваш лимит ће се ресетовати за %s."
 
-#: public/build/extendify-agent-6e4bd40f597086f1d5cf.js:13
+#: public/build/extendify-agent-764466336ec254c0fa3c.js:13
 #: src/Agent/components/buttons/AdminBar.jsx:41
 #: src/Agent/components/buttons/Mobile.jsx:38
 #: src/Agent/components/buttons/PostEditor.jsx:47
 msgid "Open Agent"
 msgstr "Отвори агента"
 
-#: public/build/extendify-agent-6e4bd40f597086f1d5cf.js:13
+#: public/build/extendify-agent-764466336ec254c0fa3c.js:13
 #: src/Agent/components/buttons/AdminBar.jsx:45
 #: src/Agent/components/buttons/Mobile.jsx:46
 #: src/Agent/components/buttons/PostEditor.jsx:54
@@ -3800,7 +3800,7 @@ msgstr "Овде можете прилагодити димензије, одс�
 msgid "Take the welcome tour"
 msgstr "Покрените турнеју добродошлице"
 
-#: public/build/extendify-agent-6e4bd40f597086f1d5cf.js:13
+#: public/build/extendify-agent-764466336ec254c0fa3c.js:13
 #: src/Agent/components/buttons/Mobile.jsx:49
 msgid "How can we help you today?"
 msgstr "Како можемо да вам помогнемо данас?"
@@ -3815,9 +3815,9 @@ msgstr "Хајде да прегледамо ваше препоруке зас�
 msgid "Using the details you provided, our AI suggested the best settings for your site. Take a quick look and confirm everything looks right before moving on."
 msgstr "На основу датих података, наша вештачка интелигенција је предложила најбоља подешавања за ваш сајт. Брзо прегледајте и потврдите да је све у реду пре него што наставите."
 
-#: public/build/extendify-auto-launch-9894fa63bbe7c3d151cd.js:42
+#: public/build/extendify-auto-launch-fcd0e4d11549497ba98c.js:42
 #: public/build/extendify-launch-da1f1312298810c56f7e.js:14
-#: src/AutoLaunch/hooks/useCreateSite.js:384
+#: src/AutoLaunch/hooks/useCreateSite.js:385
 #: src/Launch/pages/CreatingSite.jsx:239
 msgid "Footer Navigation"
 msgstr "Навигација у подножју"
@@ -3837,67 +3837,67 @@ msgstr "Саветник који показује на дугме за уређ
 msgid "Welcome to your new site! When you're ready, press here to edit this page."
 msgstr "Добро дошли на ваше ново веб место! Када будете спремни, притисните овде да уредите ову страницу."
 
-#: public/build/extendify-agent-6e4bd40f597086f1d5cf.js:7
+#: public/build/extendify-agent-764466336ec254c0fa3c.js:7
 #: src/Agent/components/PageDocument.jsx:25
 msgid "Remove"
 msgstr "Уклони"
 
-#: public/build/extendify-agent-6e4bd40f597086f1d5cf.js:1
+#: public/build/extendify-agent-764466336ec254c0fa3c.js:1
 #: src/Agent/components/DOMHighlighter.jsx:266
 msgid "Remove highlight"
 msgstr "Уклони истицање"
 
-#: public/build/extendify-agent-6e4bd40f597086f1d5cf.js:13
+#: public/build/extendify-agent-764466336ec254c0fa3c.js:13
 #: src/Agent/Agent.jsx:588
 msgid "AI Agent can make mistakes. Check changes before saving."
 msgstr "Агент вештачке интелигенције може да погреши. Проверите измене пре чувања."
 
-#: public/build/extendify-agent-6e4bd40f597086f1d5cf.js:27
-#: public/build/extendify-agent-6e4bd40f597086f1d5cf.js:30
+#: public/build/extendify-agent-764466336ec254c0fa3c.js:27
+#: public/build/extendify-agent-764466336ec254c0fa3c.js:30
 #: src/Agent/workflows/content/components/UpdatePostStatusConfirm.jsx:51
 #: src/Agent/workflows/settings/components/UpdateSettingConfirm.jsx:62
 msgid "Confirm"
 msgstr "Потврди"
 
-#: public/build/extendify-agent-6e4bd40f597086f1d5cf.js:1
+#: public/build/extendify-agent-764466336ec254c0fa3c.js:1
 #: src/Agent/components/messages/StatusMessage.jsx:13
 msgid "Thinking..."
 msgstr "Размишљање..."
 
-#: public/build/extendify-auto-launch-9894fa63bbe7c3d151cd.js:59
+#: public/build/extendify-auto-launch-fcd0e4d11549497ba98c.js:59
 #: public/build/extendify-launch-da1f1312298810c56f7e.js:8
 #: src/AutoLaunch/LaunchPage.jsx:88
 #: src/Launch/components/PageControl.jsx:328
 msgid "WP Admin Dashboard"
 msgstr "WP Админ контрола"
 
-#: public/build/extendify-agent-6e4bd40f597086f1d5cf.js:68
+#: public/build/extendify-agent-764466336ec254c0fa3c.js:68
 #: src/Agent/hooks/useThemeFontsVariations.js:29
 msgid "Failed to fetch theme font variations."
 msgstr "Неуспешно преузимање варијација фонтова теме."
 
-#: public/build/extendify-agent-6e4bd40f597086f1d5cf.js:68
+#: public/build/extendify-agent-764466336ec254c0fa3c.js:68
 #: src/Agent/workflows/theme/change-theme-fonts-variation.js:13
 msgid "Hey there! It looks like you are trying to change your theme fonts, but you are not on a page where we can do that."
 msgstr "Здраво! Изгледа да покушавате да промените фонтове теме, али нисте на страници где то можемо урадити."
 
 #. translators: A chat message shown to the user
-#: public/build/extendify-agent-6e4bd40f597086f1d5cf.js:70
+#: public/build/extendify-agent-764466336ec254c0fa3c.js:70
 #: src/Agent/workflows/theme/components/SelectThemeFontsVariation.jsx:58
 msgid "Loading font variations..."
 msgstr "Учитавање варијација фонта..."
 
-#: public/build/extendify-agent-6e4bd40f597086f1d5cf.js:1
+#: public/build/extendify-agent-764466336ec254c0fa3c.js:1
 #: src/Agent/components/ChatTools.jsx:35
 msgid "Select"
 msgstr "Изабери"
 
-#: public/build/extendify-agent-6e4bd40f597086f1d5cf.js:1
+#: public/build/extendify-agent-764466336ec254c0fa3c.js:1
 #: src/Agent/components/ChatInput.jsx:172
 msgid "What do you want to change in the selected content?"
 msgstr "Шта желите да промените у одабраном садржају?"
 
-#: public/build/extendify-agent-6e4bd40f597086f1d5cf.js:7
+#: public/build/extendify-agent-764466336ec254c0fa3c.js:7
 #: src/Agent/components/PageDocument.jsx:12
 msgid "Selected content"
 msgstr "Изабрани садржај"
@@ -3910,42 +3910,42 @@ msgstr "Објави ову страну"
 msgid "Unpublish this page"
 msgstr "Скини са објаве ову страну"
 
-#: public/build/extendify-agent-6e4bd40f597086f1d5cf.js:16
-#: public/build/extendify-agent-6e4bd40f597086f1d5cf.js:24
+#: public/build/extendify-agent-764466336ec254c0fa3c.js:16
+#: public/build/extendify-agent-764466336ec254c0fa3c.js:24
 #: src/Agent/components/ImageUploader.jsx:204
 #: src/Agent/workflows/block-selector/components/UpdateImageConfirm.jsx:13
 msgid "Open Media Library"
 msgstr "Отвори библиотеку медија"
 
-#: public/build/extendify-agent-6e4bd40f597086f1d5cf.js:24
+#: public/build/extendify-agent-764466336ec254c0fa3c.js:24
 #: src/Agent/workflows/block-selector/components/UpdateImageConfirm.jsx:107
 #, js-format
 msgid "The agent has requested the media library. Press \"%s\" to upload or select an image."
 msgstr "Агент је затражио библиотеку садржаја. Притисните \"%s\" да отпремите или одаберете слику."
 
-#: public/build/extendify-agent-6e4bd40f597086f1d5cf.js:24
+#: public/build/extendify-agent-764466336ec254c0fa3c.js:24
 #: src/Agent/workflows/block-selector/components/UpdateImageConfirm.jsx:124
 msgid "Select or Upload Image"
 msgstr "Одаберите или отпремите слику"
 
-#: public/build/extendify-agent-6e4bd40f597086f1d5cf.js:18
+#: public/build/extendify-agent-764466336ec254c0fa3c.js:18
 #: src/Agent/workflows/block-selector/components/GenerateImageConfirm.jsx:120
 msgid "An unknown error occurred."
 msgstr "Догодила се непозната грешка."
 
-#: public/build/extendify-agent-6e4bd40f597086f1d5cf.js:21
+#: public/build/extendify-agent-764466336ec254c0fa3c.js:21
 #: src/Agent/workflows/block-selector/components/GenerateImageConfirm.jsx:227
 msgid "Image generated successfully!"
 msgstr "Слика успешно генерисана!"
 
 #. translators: %1$s is the number of credits remaining, %2$s is the total credits
-#: public/build/extendify-agent-6e4bd40f597086f1d5cf.js:24
+#: public/build/extendify-agent-764466336ec254c0fa3c.js:24
 #: src/Agent/workflows/block-selector/components/GenerateImageConfirm.jsx:260
 #, js-format
 msgid "You have %1$s of %2$s daily image credits remaining."
 msgstr "Имате %1$s од %2$s дневних кредита за слике преостало"
 
-#: public/build/extendify-agent-6e4bd40f597086f1d5cf.js:24
+#: public/build/extendify-agent-764466336ec254c0fa3c.js:24
 #: src/Agent/workflows/content/components/GeneratePageResult.jsx:19
 msgid "The agent has finished creating your page. Press take me there to visit your new page or dismiss to remove this notice."
 msgstr "Агент је завршио креирање ваше стране. Притисните take me there да посетите вашу нову страну или dismiss да уклоните ову објаву."
@@ -3955,41 +3955,41 @@ msgstr "Агент је завршио креирање ваше стране. �
 msgid "E.g., Create an \"About Us\" page highlighting our story, mission, values and team overview."
 msgstr "Нпр., креирај \"О нама\" страницу која истиче нашу причу, мисију, вредности и преглед тима."
 
-#: public/build/extendify-agent-6e4bd40f597086f1d5cf.js:18
+#: public/build/extendify-agent-764466336ec254c0fa3c.js:18
 #: src/Agent/workflows/block-selector/components/GenerateImageConfirm.jsx:115
 msgid "No image returned"
 msgstr "Нема враћене слике"
 
-#: public/build/extendify-agent-6e4bd40f597086f1d5cf.js:1
+#: public/build/extendify-agent-764466336ec254c0fa3c.js:1
 #: src/Agent/components/messages/StatusMessage.jsx:17
 msgid "Formulating a response..."
 msgstr "Формулисање одговора..."
 
-#: public/build/extendify-agent-6e4bd40f597086f1d5cf.js:1
+#: public/build/extendify-agent-764466336ec254c0fa3c.js:1
 #: src/Agent/components/messages/StatusMessage.jsx:18
 msgid "Reviewing logic..."
 msgstr "Преглед логике..."
 
-#: public/build/extendify-agent-6e4bd40f597086f1d5cf.js:1
+#: public/build/extendify-agent-764466336ec254c0fa3c.js:1
 #: src/Agent/components/layouts/MobileLayout.jsx:63
 msgid "Minimize window"
 msgstr "Смањи прозор"
 
-#: public/build/extendify-agent-6e4bd40f597086f1d5cf.js:1
+#: public/build/extendify-agent-764466336ec254c0fa3c.js:1
 #: src/Agent/components/messages/StatusMessage.jsx:16
 msgid "Interpreting message..."
 msgstr "Тумачење поруке..."
 
-#: public/build/extendify-agent-6e4bd40f597086f1d5cf.js:27
+#: public/build/extendify-agent-764466336ec254c0fa3c.js:27
 #: src/Agent/workflows/plugins/components/InstallPlugin.jsx:79
 msgid "There was an error installing the plugin. You may try again"
 msgstr "Дошло је до грешке приликом постављања додатка. Можете покушати поново"
 
-#: public/build/extendify-agent-6e4bd40f597086f1d5cf.js:18
-#: public/build/extendify-agent-6e4bd40f597086f1d5cf.js:21
-#: public/build/extendify-agent-6e4bd40f597086f1d5cf.js:24
-#: public/build/extendify-agent-6e4bd40f597086f1d5cf.js:27
-#: public/build/extendify-agent-6e4bd40f597086f1d5cf.js:82
+#: public/build/extendify-agent-764466336ec254c0fa3c.js:18
+#: public/build/extendify-agent-764466336ec254c0fa3c.js:21
+#: public/build/extendify-agent-764466336ec254c0fa3c.js:24
+#: public/build/extendify-agent-764466336ec254c0fa3c.js:27
+#: public/build/extendify-agent-764466336ec254c0fa3c.js:82
 #: src/Agent/workflows/block-selector/components/GenerateImageConfirm.jsx:244
 #: src/Agent/workflows/block-selector/components/UpdateBlockConfirm.jsx:126
 #: src/Agent/workflows/content/components/UpdatePostConfirm.jsx:60
@@ -3998,22 +3998,22 @@ msgstr "Дошло је до грешке приликом постављања 
 msgid "Try Again"
 msgstr "Покушај поново"
 
-#: public/build/extendify-agent-6e4bd40f597086f1d5cf.js:27
+#: public/build/extendify-agent-764466336ec254c0fa3c.js:27
 #: src/Agent/workflows/plugins/components/InstallPlugin.jsx:102
 msgid "Installing plugin..."
 msgstr "Постављање додатка..."
 
-#: public/build/extendify-agent-6e4bd40f597086f1d5cf.js:27
+#: public/build/extendify-agent-764466336ec254c0fa3c.js:27
 #: src/Agent/workflows/plugins/components/InstallPlugin.jsx:103
 msgid "Activating plugin..."
 msgstr "Укључивање додатка..."
 
-#: public/build/extendify-agent-6e4bd40f597086f1d5cf.js:27
+#: public/build/extendify-agent-764466336ec254c0fa3c.js:27
 #: src/Agent/workflows/plugins/components/InstallPlugin.jsx:115
 msgid "The agent is requesting to install and activate a plugin."
 msgstr "Агент захтева да постави и укључи додатак."
 
-#: public/build/extendify-agent-6e4bd40f597086f1d5cf.js:30
+#: public/build/extendify-agent-764466336ec254c0fa3c.js:30
 #: src/Agent/workflows/plugins/components/InstallPlugin.jsx:152
 msgid "Install Plugin"
 msgstr "Инсталирај додатак"
@@ -4023,7 +4023,7 @@ msgstr "Инсталирај додатак"
 msgid "Go through the AI website creation process again to create a new site."
 msgstr "Поново прођите кроз процес креирања веб сајта помоћу ВИ да бисте направили ново веб место."
 
-#: public/build/extendify-auto-launch-9894fa63bbe7c3d151cd.js:57
+#: public/build/extendify-auto-launch-fcd0e4d11549497ba98c.js:57
 #: public/build/extendify-launch-da1f1312298810c56f7e.js:8
 #: src/AutoLaunch/components/RestartLaunchModal.jsx:172
 #: src/Launch/components/RestartLaunchModal.jsx:206
@@ -4038,62 +4038,62 @@ msgid "By using AI features, you agree with the %1$sTerms of Use and Privacy Pol
 msgstr "Коришћењем особина вештачке интелигенције, слажете се са %1$sУсловима коришћења и Политиком приватности%2$s"
 
 #. translators: A chat message shown to the user
-#: public/build/extendify-agent-6e4bd40f597086f1d5cf.js:68
+#: public/build/extendify-agent-764466336ec254c0fa3c.js:68
 #: src/Agent/workflows/theme/components/SelectThemeFontsVariation.jsx:45
 msgid "We were unable to find any variations for your theme"
 msgstr "Нисмо успели да пронађемо никакве варијације за вашу тему"
 
 #. translators: This message is shown when the AI agent fails to find a suitable workflow.
-#: public/build/extendify-agent-6e4bd40f597086f1d5cf.js:9
+#: public/build/extendify-agent-764466336ec254c0fa3c.js:9
 #: src/Agent/Agent.jsx:101
 msgid "Something went wrong while trying to start this request. Please try again."
 msgstr "Догодила се грешка приликом покушаја покретања овог захтева. Покушајте поново."
 
 #. translators: This message is shown when the AI agent fails to confirm an action.
-#: public/build/extendify-agent-6e4bd40f597086f1d5cf.js:11
+#: public/build/extendify-agent-764466336ec254c0fa3c.js:11
 #: src/Agent/Agent.jsx:256
 msgid "Sorry, something went wrong attempting to call the tool. Please try again."
 msgstr "Жао нам је, дошло је до грешке приликом позивања алатке. Покушајте поново."
 
 #. translators: This message is shown when the AI agent encounters a general error.
-#: public/build/extendify-agent-6e4bd40f597086f1d5cf.js:13
+#: public/build/extendify-agent-764466336ec254c0fa3c.js:13
 #: src/Agent/Agent.jsx:529
 msgid "Sorry, something went wrong. I tried but wasn't able to do this request. Please try again."
 msgstr "Жао нам је, нешто је пошло наопако. Покушао сам, али нисам успео да испуним овај захтев. Молимо вас покушајте поново."
 
 #. translators: A chat message shown to the user
-#: public/build/extendify-agent-6e4bd40f597086f1d5cf.js:21
+#: public/build/extendify-agent-764466336ec254c0fa3c.js:21
 #: src/Agent/workflows/block-selector/components/GenerateImageConfirm.jsx:169
 #, js-format
 msgid "Error generating image: %s"
 msgstr "Грешка при генерисању слике: %s"
 
 #. translators: %1$s and %2$s are HTML tags. %1$s opens a span with screen-reader-only text, and %2$s closes that span.
-#: public/build/extendify-agent-6e4bd40f597086f1d5cf.js:30
+#: public/build/extendify-agent-764466336ec254c0fa3c.js:30
 #: src/Agent/workflows/plugins/components/InstallPlugin.jsx:134
 #, js-format
 msgid "Plugin Details %1$s(opens in a new tab)%2$s"
 msgstr "Детаљи додатка %1$s(отвара се у новом језичку)%2$s"
 
-#: public/build/extendify-agent-6e4bd40f597086f1d5cf.js:30
+#: public/build/extendify-agent-764466336ec254c0fa3c.js:30
 #: src/Agent/workflows/settings/components/UpdateSettingConfirm.jsx:45
 msgid "Apply this setting change?"
 msgstr "Применити ову промену подешавања?"
 
 #. translators: "site style" refers to the structural aesthetic style for the site.
-#: public/build/extendify-agent-6e4bd40f597086f1d5cf.js:59
+#: public/build/extendify-agent-764466336ec254c0fa3c.js:59
 #: src/Agent/workflows/theme/change-site-vibes.js:17
 msgid "Hey there! It looks like you are trying to change your site style, but you are not on a page where we can do that."
 msgstr "Здраво! Изгледа да покушавате да промените стил вашег сајта, али нисте на страници где то можемо урадити."
 
 #. translators: A chat message shown to the user
-#: public/build/extendify-agent-6e4bd40f597086f1d5cf.js:74
+#: public/build/extendify-agent-764466336ec254c0fa3c.js:74
 #: src/Agent/workflows/theme/components/SelectThemeVariation.jsx:54
 msgid "We were unable to find any colors for your theme"
 msgstr "Нисмо успели да пронађемо боје за вашу тему"
 
 #. translators: A chat message shown to the user
-#: public/build/extendify-agent-6e4bd40f597086f1d5cf.js:76
+#: public/build/extendify-agent-764466336ec254c0fa3c.js:76
 #: src/Agent/workflows/theme/components/SelectThemeVariation.jsx:67
 msgid "Loading available colors..."
 msgstr "Учитавање доступних боја..."
@@ -4110,8 +4110,8 @@ msgstr "Примена стила сајта"
 msgid "Customizing your site style"
 msgstr "Прилагођавање стила вашег сајта"
 
-#: public/build/extendify-agent-6e4bd40f597086f1d5cf.js:1
-#: public/build/extendify-assist-page-d0ee34e4a56c87661b3a.js:10
+#: public/build/extendify-agent-764466336ec254c0fa3c.js:1
+#: public/build/extendify-assist-page-c4de054ee73a0ae1b22b.js:10
 #: public/build/extendify-draft-08ba35a8f591ab939cda.js:1
 #: src/Agent/icons.jsx:12
 #: src/Assist/tasks/images/icons.jsx:11
@@ -4119,95 +4119,95 @@ msgstr "Прилагођавање стила вашег сајта"
 msgid "Magic Icon"
 msgstr "Магична иконица"
 
-#: public/build/extendify-agent-6e4bd40f597086f1d5cf.js:1
+#: public/build/extendify-agent-764466336ec254c0fa3c.js:1
 #: src/Agent/icons.jsx:39
 msgid "Magic Sparkle Animation"
 msgstr "Анимација магичног сјаја"
 
-#: public/build/extendify-agent-6e4bd40f597086f1d5cf.js:1
+#: public/build/extendify-agent-764466336ec254c0fa3c.js:1
 #: public/build/extendify-help-center-079e40452a8cd0a1b4a2.js:1
 #: src/Agent/icons.jsx:113
 #: src/HelpCenter/components/ai-chat/icons.jsx:41
 msgid "Thumb Down Icon"
 msgstr "Иконица палца надоле"
 
-#: public/build/extendify-agent-6e4bd40f597086f1d5cf.js:1
+#: public/build/extendify-agent-764466336ec254c0fa3c.js:1
 #: public/build/extendify-help-center-079e40452a8cd0a1b4a2.js:1
 #: src/Agent/icons.jsx:125
 #: src/HelpCenter/components/ai-chat/icons.jsx:53
 msgid "Thumb Up Icon"
 msgstr "Иконица палца нагоре"
 
-#: public/build/extendify-agent-6e4bd40f597086f1d5cf.js:1
+#: public/build/extendify-agent-764466336ec254c0fa3c.js:1
 #: src/Agent/icons.jsx:132
 msgid "Sparkle Icon"
 msgstr "Светлуцава иконица"
 
-#: public/build/extendify-agent-6e4bd40f597086f1d5cf.js:1
+#: public/build/extendify-agent-764466336ec254c0fa3c.js:1
 #: src/Agent/icons.jsx:147
 msgid "Tool Select Icon"
 msgstr "Алат за одабир иконице"
 
-#: public/build/extendify-agent-6e4bd40f597086f1d5cf.js:1
+#: public/build/extendify-agent-764466336ec254c0fa3c.js:1
 #: src/Agent/icons.jsx:179
 msgid "Selected Content Icon"
 msgstr "Изабрана иконица садржаја"
 
-#: public/build/extendify-agent-6e4bd40f597086f1d5cf.js:1
+#: public/build/extendify-agent-764466336ec254c0fa3c.js:1
 #: src/Agent/components/messages/StatusMessage.jsx:92
 msgid "Success icon"
 msgstr "Иконица успеха"
 
-#: public/build/extendify-agent-6e4bd40f597086f1d5cf.js:1
+#: public/build/extendify-agent-764466336ec254c0fa3c.js:1
 #: src/Agent/components/ErrorMessage.jsx:15
 msgid "Error icon"
 msgstr "Иконица за грешку"
 
-#: public/build/extendify-assist-page-d0ee34e4a56c87661b3a.js:1
+#: public/build/extendify-assist-page-c4de054ee73a0ae1b22b.js:1
 #: src/Assist/svg/ArrowTurnRight.jsx:5
 msgid "Arrow Turn Right Icon"
 msgstr "Иконица стрелице која скреће десно"
 
-#: public/build/extendify-assist-page-d0ee34e4a56c87661b3a.js:1
+#: public/build/extendify-assist-page-c4de054ee73a0ae1b22b.js:1
 #: src/Assist/svg/BulletPoint.jsx:11
 msgid "Bullet Point Icon"
 msgstr "Иконица тачке за набрајање"
 
-#: public/build/extendify-assist-page-d0ee34e4a56c87661b3a.js:1
+#: public/build/extendify-assist-page-c4de054ee73a0ae1b22b.js:1
 #: public/build/extendify-draft-08ba35a8f591ab939cda.js:1
 #: src/Assist/svg/Check.jsx:11
 #: src/Draft/svg/Check.jsx:5
 msgid "Check Icon"
 msgstr "Провери иконицу"
 
-#: public/build/extendify-assist-page-d0ee34e4a56c87661b3a.js:1
-#: public/build/extendify-assist-page-d0ee34e4a56c87661b3a.js:10
+#: public/build/extendify-assist-page-c4de054ee73a0ae1b22b.js:1
+#: public/build/extendify-assist-page-c4de054ee73a0ae1b22b.js:10
 #: src/Assist/svg/DesignLibraryMarkup.jsx:61
 #: src/Assist/tasks/images/HelpCenterMarkup.jsx:67
 msgid "Partner Logo"
 msgstr "Логотип партнера"
 
-#: public/build/extendify-assist-page-d0ee34e4a56c87661b3a.js:1
+#: public/build/extendify-assist-page-c4de054ee73a0ae1b22b.js:1
 #: src/Assist/svg/DesignLibraryMarkup.jsx:121
 msgid "Person using a laptop"
 msgstr "Особа која користи лаптоп"
 
-#: public/build/extendify-assist-page-d0ee34e4a56c87661b3a.js:1
+#: public/build/extendify-assist-page-c4de054ee73a0ae1b22b.js:1
 #: src/Assist/svg/DesignLibraryMarkup.jsx:138
 msgid "Two people talking"
 msgstr "Два човека разговарају"
 
-#: public/build/extendify-assist-page-d0ee34e4a56c87661b3a.js:1
+#: public/build/extendify-assist-page-c4de054ee73a0ae1b22b.js:1
 #: src/Assist/svg/DesignLibraryMarkup.jsx:158
 msgid "Two people and a laptop"
 msgstr "Две особе и лаптоп"
 
-#: public/build/extendify-assist-page-d0ee34e4a56c87661b3a.js:1
+#: public/build/extendify-assist-page-c4de054ee73a0ae1b22b.js:1
 #: src/Assist/svg/DesignLibraryMarkup.jsx:213
 msgid "Man on a video call"
 msgstr "Човек на видео позиву"
 
-#: public/build/extendify-assist-page-d0ee34e4a56c87661b3a.js:1
+#: public/build/extendify-assist-page-c4de054ee73a0ae1b22b.js:1
 #: src/Assist/svg/DesignLibraryMarkup.jsx:248
 #: src/Assist/svg/DesignLibraryMarkup.jsx:271
 #: src/Assist/svg/DesignLibraryMarkup.jsx:300
@@ -4215,78 +4215,78 @@ msgstr "Човек на видео позиву"
 msgid "Portrait of Jessie Coleman"
 msgstr "Портрет Џеси Колман"
 
-#: public/build/extendify-assist-page-d0ee34e4a56c87661b3a.js:1
+#: public/build/extendify-assist-page-c4de054ee73a0ae1b22b.js:1
 #: src/Assist/svg/HomeIcon.jsx:5
 msgid "Home Icon"
 msgstr "Иконица почетне странице"
 
-#: public/build/extendify-assist-page-d0ee34e4a56c87661b3a.js:1
+#: public/build/extendify-assist-page-c4de054ee73a0ae1b22b.js:1
 #: src/Assist/svg/Logo.jsx:14
 #: src/Assist/svg/LogoIcon.jsx:6
 msgid "Logo Icon"
 msgstr "Иконица логотипа"
 
-#: public/build/extendify-assist-page-d0ee34e4a56c87661b3a.js:10
+#: public/build/extendify-assist-page-c4de054ee73a0ae1b22b.js:10
 #: public/build/extendify-draft-08ba35a8f591ab939cda.js:1
 #: src/Assist/tasks/images/icons.jsx:35
 #: src/Draft/svg/TwoLines.jsx:6
 msgid "Two Lines Icon"
 msgstr "Иконица са две линије"
 
-#: public/build/extendify-assist-page-d0ee34e4a56c87661b3a.js:10
+#: public/build/extendify-assist-page-c4de054ee73a0ae1b22b.js:10
 #: public/build/extendify-help-center-079e40452a8cd0a1b4a2.js:4
 #: src/Assist/tasks/images/icons.jsx:42
 #: src/HelpCenter/components/tours/icons.jsx:5
 msgid "Tours Icon"
 msgstr "Иконица тура"
 
-#: public/build/extendify-assist-page-d0ee34e4a56c87661b3a.js:10
+#: public/build/extendify-assist-page-c4de054ee73a0ae1b22b.js:10
 #: public/build/extendify-help-center-079e40452a8cd0a1b4a2.js:4
 #: src/Assist/tasks/images/icons.jsx:50
 #: src/HelpCenter/components/tours/icons.jsx:13
 msgid "Play Icon"
 msgstr "Иконица за репродукцију"
 
-#: public/build/extendify-assist-page-d0ee34e4a56c87661b3a.js:10
+#: public/build/extendify-assist-page-c4de054ee73a0ae1b22b.js:10
 #: public/build/extendify-help-center-079e40452a8cd0a1b4a2.js:1
 #: src/Assist/tasks/images/icons.jsx:64
 #: src/HelpCenter/components/ai-chat/icons.jsx:10
 msgid "Robot Icon"
 msgstr "Иконица робота"
 
-#: public/build/extendify-assist-page-d0ee34e4a56c87661b3a.js:10
+#: public/build/extendify-assist-page-c4de054ee73a0ae1b22b.js:10
 #: public/build/extendify-help-center-079e40452a8cd0a1b4a2.js:1
 #: src/Assist/tasks/images/icons.jsx:83
 #: src/HelpCenter/components/ai-chat/icons.jsx:29
 msgid "Send Icon"
 msgstr "Пошаљи иконицу"
 
-#: public/build/extendify-assist-page-d0ee34e4a56c87661b3a.js:10
+#: public/build/extendify-assist-page-c4de054ee73a0ae1b22b.js:10
 #: src/Assist/tasks/images/AiImageGeneratorMarkup.jsx:145
 msgid "A group of penguins"
 msgstr "Група пингвина"
 
-#: public/build/extendify-assist-page-d0ee34e4a56c87661b3a.js:10
+#: public/build/extendify-assist-page-c4de054ee73a0ae1b22b.js:10
 #: src/Assist/tasks/images/LaunchDemoSitesMarkup.jsx:85
 #: src/Assist/tasks/images/LaunchDemoSitesMarkup.jsx:101
 #: src/Assist/tasks/images/LaunchDemoSitesMarkup.jsx:117
 msgid "Real Estate Property"
 msgstr "Некретнина"
 
-#: public/build/extendify-assist-page-d0ee34e4a56c87661b3a.js:10
+#: public/build/extendify-assist-page-c4de054ee73a0ae1b22b.js:10
 #: src/Assist/tasks/images/LaunchDemoSitesMarkup.jsx:187
 #: src/Assist/tasks/images/LaunchDemoSitesMarkup.jsx:192
 msgid "Education Website Image"
 msgstr "Слика образовног веб сајта"
 
-#: public/build/extendify-assist-page-d0ee34e4a56c87661b3a.js:10
+#: public/build/extendify-assist-page-c4de054ee73a0ae1b22b.js:10
 #: src/Assist/tasks/images/LaunchDemoSitesMarkup.jsx:226
 #: src/Assist/tasks/images/LaunchDemoSitesMarkup.jsx:231
 #: src/Assist/tasks/images/LaunchDemoSitesMarkup.jsx:238
 msgid "Cafe Website Image"
 msgstr "Слика веб сајта кафеа"
 
-#: public/build/extendify-assist-page-d0ee34e4a56c87661b3a.js:10
+#: public/build/extendify-assist-page-c4de054ee73a0ae1b22b.js:10
 #: src/Assist/tasks/images/LaunchDemoSitesMarkup.jsx:243
 msgid "Cafe Website Hero Image"
 msgstr "Слика хероја веб сајта кафеа"
@@ -4378,7 +4378,7 @@ msgstr "Иконица блога"
 msgid "Business Icon"
 msgstr "Пословна иконица"
 
-#: public/build/extendify-auto-launch-9894fa63bbe7c3d151cd.js:54
+#: public/build/extendify-auto-launch-fcd0e4d11549497ba98c.js:54
 #: public/build/extendify-launch-da1f1312298810c56f7e.js:8
 #: src/AutoLaunch/icons.jsx:87
 #: src/Launch/svg/Checkmark.jsx:15
@@ -4560,8 +4560,8 @@ msgstr "Иконица језика"
 msgid "Down Arrow Icon"
 msgstr "Иконица стрелице надоле"
 
-#: public/build/extendify-auto-launch-9894fa63bbe7c3d151cd.js:54
-#: public/build/extendify-library-46b68847bd85f90eb8b6.js:1
+#: public/build/extendify-auto-launch-fcd0e4d11549497ba98c.js:54
+#: public/build/extendify-library-480fb28f2cc23e8d512a.js:1
 #: public/build/extendify-page-creator-6d8b3f0e0ada07c15f72.js:1
 #: src/AutoLaunch/icons.jsx:5
 #: src/Library/icons/extendify-logo.jsx:3
@@ -4611,35 +4611,35 @@ msgstr "Унапређење вашег сајта"
 msgid "Setting up essential tools"
 msgstr "Подешавање основних алата"
 
-#: public/build/extendify-agent-6e4bd40f597086f1d5cf.js:16
+#: public/build/extendify-agent-764466336ec254c0fa3c.js:16
 #: src/Agent/components/ImageUploader.jsx:170
 msgid "Drop images to upload"
 msgstr "Превуци слике за отпремање"
 
-#: public/build/extendify-agent-6e4bd40f597086f1d5cf.js:21
+#: public/build/extendify-agent-764466336ec254c0fa3c.js:21
 #: src/Agent/workflows/block-selector/components/GenerateImageConfirm.jsx:65
 msgid "Failed to save image"
 msgstr "Није успело чување слике"
 
-#: public/build/extendify-agent-6e4bd40f597086f1d5cf.js:21
+#: public/build/extendify-agent-764466336ec254c0fa3c.js:21
 #: src/Agent/workflows/block-selector/components/GenerateImageConfirm.jsx:183
 #, js-format
 msgid "It looks like you've run out of credits. They'll refresh in %s, so check back then."
 msgstr "Изгледа да сте остали без кредита. Освежиће се за %s, па проверите тада."
 
-#: public/build/extendify-agent-6e4bd40f597086f1d5cf.js:21
+#: public/build/extendify-agent-764466336ec254c0fa3c.js:21
 #: src/Agent/workflows/block-selector/components/GenerateImageConfirm.jsx:253
 msgid "Saving..."
 msgstr "Чување..."
 
 #. translators: %1$s is the current page or post status, and %2$s is the updated page or post status.
-#: public/build/extendify-agent-6e4bd40f597086f1d5cf.js:27
+#: public/build/extendify-agent-764466336ec254c0fa3c.js:27
 #: src/Agent/workflows/content/components/UpdatePostStatusConfirm.jsx:28
 #, js-format
 msgid "Status will change from \"%s\" to \"%s\", please confirm to save."
 msgstr "Статус ће се променити из \"%1$s\" у \"%2$s\", молимо потврдите да сачувате."
 
-#: public/build/extendify-agent-6e4bd40f597086f1d5cf.js:1
+#: public/build/extendify-agent-764466336ec254c0fa3c.js:1
 #: src/Agent/components/ChatInput.jsx:199
 msgid "Message too long"
 msgstr "Порука је предугачка"
@@ -4650,7 +4650,7 @@ msgid "A \"Shop\" page will also be automatically created."
 msgstr "Такође ће бити аутоматски креирана страница \"Shop\""
 
 #. translators: This is a status message. 'Loading' is a verb — the app is currently loading the animation options. It is not referring to 'loading animation' as a compound noun.
-#: public/build/extendify-agent-6e4bd40f597086f1d5cf.js:50
+#: public/build/extendify-agent-764466336ec254c0fa3c.js:50
 #: src/Agent/workflows/theme/components/SelectAnimation.jsx:117
 msgid "Loading animation options..."
 msgstr "Опције анимације учитавања..."
@@ -4661,178 +4661,178 @@ msgid "Auto Launch"
 msgstr "Automatsko pokretanje"
 
 #. translators: This is an error message shown to the user when a network request fails and is being retried
-#: public/build/extendify-auto-launch-9894fa63bbe7c3d151cd.js:6
+#: public/build/extendify-auto-launch-fcd0e4d11549497ba98c.js:6
 #: src/AutoLaunch/functions/helpers.js:18
 msgid "The network seems unstable. Retrying..."
 msgstr "Mreža izgleda nestabilno. Pokušavam ponovo..."
 
 #. translators: this is for a action log UI. Keep it short
-#: public/build/extendify-auto-launch-9894fa63bbe7c3d151cd.js:21
-#: src/AutoLaunch/hooks/useCreateSite.js:149
+#: public/build/extendify-auto-launch-fcd0e4d11549497ba98c.js:21
+#: src/AutoLaunch/hooks/useCreateSite.js:150
 msgid "Setting up functionality for your website"
 msgstr "Подешавање функционалности за ваш веб сајт"
 
 #. translators: this is for a action log UI. Keep it short
-#: public/build/extendify-auto-launch-9894fa63bbe7c3d151cd.js:33
-#: src/AutoLaunch/hooks/useCreateSite.js:259
+#: public/build/extendify-auto-launch-fcd0e4d11549497ba98c.js:33
+#: src/AutoLaunch/hooks/useCreateSite.js:260
 msgid "Adding admin configurations"
 msgstr "Dodavanje administratorskih podešavanja"
 
 #. translators: this is for a action log UI. Keep it short
-#: public/build/extendify-auto-launch-9894fa63bbe7c3d151cd.js:35
-#: src/AutoLaunch/hooks/useCreateSite.js:323
+#: public/build/extendify-auto-launch-fcd0e4d11549497ba98c.js:35
+#: src/AutoLaunch/hooks/useCreateSite.js:324
 msgid "Installing fonts locally"
 msgstr "Instalacija fontova lokalno"
 
-#: public/build/extendify-auto-launch-9894fa63bbe7c3d151cd.js:37
-#: src/AutoLaunch/hooks/useCreateSite.js:349
+#: public/build/extendify-auto-launch-fcd0e4d11549497ba98c.js:37
+#: src/AutoLaunch/hooks/useCreateSite.js:350
 msgid "Working on the navigation"
 msgstr "Рад на навигацији"
 
 #. translators: this is for a action log UI. Keep it short
-#: public/build/extendify-auto-launch-9894fa63bbe7c3d151cd.js:39
-#: src/AutoLaunch/hooks/useCreateSite.js:360
+#: public/build/extendify-auto-launch-fcd0e4d11549497ba98c.js:39
+#: src/AutoLaunch/hooks/useCreateSite.js:361
 msgid "Perfecting a landing page"
 msgstr "Usavršavanje odredišne stranice"
 
 #. translators: this is for a action log UI. Keep it short
-#: public/build/extendify-auto-launch-9894fa63bbe7c3d151cd.js:44
-#: src/AutoLaunch/hooks/useCreateSite.js:395
+#: public/build/extendify-auto-launch-fcd0e4d11549497ba98c.js:44
+#: src/AutoLaunch/hooks/useCreateSite.js:396
 msgid "Creating pages"
 msgstr "Kreiranje stranica"
 
 #. translators: this is for a action log UI. Keep it short
-#: public/build/extendify-auto-launch-9894fa63bbe7c3d151cd.js:52
-#: src/AutoLaunch/hooks/useCreateSite.js:462
+#: public/build/extendify-auto-launch-fcd0e4d11549497ba98c.js:52
+#: src/AutoLaunch/hooks/useCreateSite.js:463
 msgid "Setting up your online store"
 msgstr "Podešavanje vaše online продавнице"
 
 #. translators: this is for a action log UI. Keep it short
-#: public/build/extendify-auto-launch-9894fa63bbe7c3d151cd.js:54
-#: src/AutoLaunch/hooks/useCreateSite.js:538
+#: public/build/extendify-auto-launch-fcd0e4d11549497ba98c.js:54
+#: src/AutoLaunch/hooks/useCreateSite.js:542
 msgid "All done!"
 msgstr "Sve završeno!"
 
-#: public/build/extendify-auto-launch-9894fa63bbe7c3d151cd.js:54
-#: src/AutoLaunch/hooks/useCreateSite.js:552
+#: public/build/extendify-auto-launch-fcd0e4d11549497ba98c.js:54
+#: src/AutoLaunch/hooks/useCreateSite.js:556
 msgid "Something went wrong during the final steps. We will try again but you may need to refresh the page."
 msgstr "Догодила се грешка током завршних корака. Покушаћемо поново, али можда ћете морати да освежите страницу"
 
-#: public/build/extendify-auto-launch-9894fa63bbe7c3d151cd.js:54
-#: src/AutoLaunch/hooks/useCreateSite.js:583
+#: public/build/extendify-auto-launch-fcd0e4d11549497ba98c.js:54
+#: src/AutoLaunch/hooks/useCreateSite.js:587
 msgid "Having some trouble with this step. Trying again..."
 msgstr "Imate problema s ovim korakom. Pokušavam ponovo..."
 
-#: public/build/extendify-auto-launch-9894fa63bbe7c3d151cd.js:54
+#: public/build/extendify-auto-launch-fcd0e4d11549497ba98c.js:54
 #: src/AutoLaunch/components/CreatingSite.jsx:94
 msgid "We are experiencing some delays"
 msgstr "Imamo kašnjenja"
 
-#: public/build/extendify-auto-launch-9894fa63bbe7c3d151cd.js:54
+#: public/build/extendify-auto-launch-fcd0e4d11549497ba98c.js:54
 #: src/AutoLaunch/components/CreatingSite.jsx:97
 msgid "Pausing for a few seconds"
 msgstr "Pauziranje na nekoliko sekundi"
 
-#: public/build/extendify-auto-launch-9894fa63bbe7c3d151cd.js:54
+#: public/build/extendify-auto-launch-fcd0e4d11549497ba98c.js:54
 #: src/AutoLaunch/components/RestartLaunchModal.jsx:115
 msgid "Start Over?"
 msgstr "Ponovo početi?"
 
-#: public/build/extendify-auto-launch-9894fa63bbe7c3d151cd.js:54
+#: public/build/extendify-auto-launch-fcd0e4d11549497ba98c.js:54
 #: src/AutoLaunch/components/RestartLaunchModal.jsx:120
 msgid "It looks like you have been here before. We need to clean up some things before we can continue."
 msgstr "Изгледа да сте већ били овде. Морамо да очистимо неке ствари пре него што можемо да наставимо"
 
 #. translators: %3$s is the number of old pages
-#: public/build/extendify-auto-launch-9894fa63bbe7c3d151cd.js:57
+#: public/build/extendify-auto-launch-fcd0e4d11549497ba98c.js:57
 #: src/AutoLaunch/components/RestartLaunchModal.jsx:128
 #, js-format
 msgid "%s pages/posts will be deleted."
 msgstr "%1$s страница/чланака ће бити избрисано"
 
-#: public/build/extendify-agent-6e4bd40f597086f1d5cf.js:1
-#: public/build/extendify-auto-launch-9894fa63bbe7c3d151cd.js:57
+#: public/build/extendify-agent-764466336ec254c0fa3c.js:1
+#: public/build/extendify-auto-launch-fcd0e4d11549497ba98c.js:57
 #: src/Agent/components/messages/StatusMessage.jsx:20
 #: src/AutoLaunch/components/RestartLaunchModal.jsx:163
 msgid "Processing..."
 msgstr "Obrada..."
 
-#: public/build/extendify-auto-launch-9894fa63bbe7c3d151cd.js:59
+#: public/build/extendify-auto-launch-fcd0e4d11549497ba98c.js:59
 #: src/AutoLaunch/LaunchPage.jsx:125
 msgid "Describe the website you want to build"
 msgstr "Опишите веб сајт који желите да направите"
 
-#: public/build/extendify-agent-6e4bd40f597086f1d5cf.js:82
+#: public/build/extendify-agent-764466336ec254c0fa3c.js:82
 #: src/Agent/workflows/theme/components/SelectGeneratedPalette.jsx:107
 msgid "We were unable to generate color palettes. Please try again."
 msgstr "Nismo uspeli da generišemo palete boja. Molimo pokušajte ponovo"
 
 #. translators: vibe in this context is a noun - the feeling of their site design.
-#: public/build/extendify-auto-launch-9894fa63bbe7c3d151cd.js:37
-#: src/AutoLaunch/hooks/useCreateSite.js:332
+#: public/build/extendify-auto-launch-fcd0e4d11549497ba98c.js:37
+#: src/AutoLaunch/hooks/useCreateSite.js:333
 msgid "Setting the website style"
 msgstr "Подешавање стила веб сајта"
 
-#: public/build/extendify-agent-6e4bd40f597086f1d5cf.js:1
+#: public/build/extendify-agent-764466336ec254c0fa3c.js:1
 #: src/Agent/components/OptionsPopover.jsx:78
 msgid "View more options"
 msgstr "Погледајте више могућности"
 
-#: public/build/extendify-agent-6e4bd40f597086f1d5cf.js:1
+#: public/build/extendify-agent-764466336ec254c0fa3c.js:1
 #: src/Agent/components/messages/StatusMessage.jsx:118
 msgid "Workflow was canceled"
 msgstr "Радни ток је отказан"
 
 #. translators: This message show above a UI where the user can select a different animation for their site.
-#: public/build/extendify-agent-6e4bd40f597086f1d5cf.js:54
+#: public/build/extendify-agent-764466336ec254c0fa3c.js:54
 #: src/Agent/workflows/theme/change-animation.js:16
 msgid "Below you can select a different animation for your site."
 msgstr "Испод можете одабрати другу анимацију за ваш сајт."
 
 #. translators: This message show above a UI where the user can select a different site style variation for their theme.
-#: public/build/extendify-agent-6e4bd40f597086f1d5cf.js:68
+#: public/build/extendify-agent-764466336ec254c0fa3c.js:68
 #: src/Agent/workflows/theme/change-site-vibes.js:29
 msgid "Below you can select a different site style variation for your theme."
 msgstr "Испод можете одабрати другу варијацију стила сајта за вашу тему"
 
 #. translators: This message show above a UI where the user can select a different font variation for their theme.
-#: public/build/extendify-agent-6e4bd40f597086f1d5cf.js:74
+#: public/build/extendify-agent-764466336ec254c0fa3c.js:74
 #: src/Agent/workflows/theme/change-theme-fonts-variation.js:27
 msgid "Below you can select a different font variation for your theme."
 msgstr "Испод можете одабрати другу варијанту фонта за вашу тему."
 
-#: public/build/extendify-agent-6e4bd40f597086f1d5cf.js:74
+#: public/build/extendify-agent-764466336ec254c0fa3c.js:74
 #: src/Agent/workflows/theme/change-theme-fonts-variation.js:34
 msgid "Updated the theme fonts"
 msgstr "Ажурирани фонтови теме"
 
-#: public/build/extendify-agent-6e4bd40f597086f1d5cf.js:74
+#: public/build/extendify-agent-764466336ec254c0fa3c.js:74
 #: src/Agent/workflows/theme/change-theme-fonts-variation.js:35
 msgid "Canceled the theme fonts update"
 msgstr "Отказано ажурирање фонтова теме"
 
 #. translators: This message show above a UI where the user can select a different color variation for their theme.
-#: public/build/extendify-agent-6e4bd40f597086f1d5cf.js:82
+#: public/build/extendify-agent-764466336ec254c0fa3c.js:82
 #: src/Agent/workflows/theme/change-theme-variation.js:21
 msgid "Below you can select a different color variation for your theme."
 msgstr "Испод можете одабрати другу варијацију боја за вашу тему."
 
-#: public/build/extendify-agent-6e4bd40f597086f1d5cf.js:82
+#: public/build/extendify-agent-764466336ec254c0fa3c.js:82
 #: src/Agent/workflows/theme/change-theme-variation.js:28
 msgid "Updated the theme color"
 msgstr "Ажурирана боја теме"
 
-#: public/build/extendify-agent-6e4bd40f597086f1d5cf.js:82
+#: public/build/extendify-agent-764466336ec254c0fa3c.js:82
 #: src/Agent/workflows/theme/change-theme-variation.js:29
 msgid "Canceled the theme color update"
 msgstr "Отказано ажурирање боје теме"
 
-#: public/build/extendify-auto-launch-9894fa63bbe7c3d151cd.js:54
-#: src/AutoLaunch/components/DescriptionGathering.jsx:191
+#: public/build/extendify-auto-launch-fcd0e4d11549497ba98c.js:54
+#: src/AutoLaunch/components/DescriptionGathering.jsx:193
 msgid "Enhance with AI"
 msgstr "Унапреди са ВИ"
 
-#: public/build/extendify-agent-6e4bd40f597086f1d5cf.js:18
+#: public/build/extendify-agent-764466336ec254c0fa3c.js:18
 #: src/Agent/state/chat.js:21
 msgid ""
 "#### Your site is ready 🎉\n"
@@ -4842,55 +4842,55 @@ msgstr ""
 "Желите ли да истражите друге боје сајта?"
 
 #. translators: this is for a action log UI. Keep it short
-#: public/build/extendify-auto-launch-9894fa63bbe7c3d151cd.js:29
+#: public/build/extendify-auto-launch-fcd0e4d11549497ba98c.js:29
 #: src/AutoLaunch/fetchers/get-home.js:30
 msgid "Preparing your home page"
 msgstr "Припрема почетне странице"
 
 #. translators: this is for a action log UI. Keep it short
-#: public/build/extendify-auto-launch-9894fa63bbe7c3d151cd.js:27
+#: public/build/extendify-auto-launch-fcd0e4d11549497ba98c.js:27
 #: src/AutoLaunch/fetchers/get-images.js:19
 msgid "Finding the perfect images"
 msgstr "Тражење савршених слика"
 
 #. translators: this is for a action log UI. Keep it short
-#: public/build/extendify-auto-launch-9894fa63bbe7c3d151cd.js:18
+#: public/build/extendify-auto-launch-fcd0e4d11549497ba98c.js:18
 #: src/AutoLaunch/fetchers/get-logo.js:28
 msgid "Generating a logo"
 msgstr "Генерисање лога"
 
 #. translators: this is for a action log UI. Keep it short
-#: public/build/extendify-auto-launch-9894fa63bbe7c3d151cd.js:31
+#: public/build/extendify-auto-launch-fcd0e4d11549497ba98c.js:31
 #: src/AutoLaunch/fetchers/get-pages.js:33
 msgid "Preparing your pages"
 msgstr "Припрема страница"
 
 #. translators: this is for a action log UI. Keep it short
-#: public/build/extendify-auto-launch-9894fa63bbe7c3d151cd.js:10
+#: public/build/extendify-auto-launch-fcd0e4d11549497ba98c.js:10
 #: src/AutoLaunch/fetchers/get-plugins.js:31
 msgid "Setting up site functionality"
 msgstr "Подешавање функционалности сајта"
 
 #. translators: this is for a action log UI. Keep it short
-#: public/build/extendify-auto-launch-9894fa63bbe7c3d151cd.js:16
+#: public/build/extendify-auto-launch-fcd0e4d11549497ba98c.js:16
 #: src/AutoLaunch/fetchers/get-profile.js:25
 msgid "Creating a site profile"
 msgstr "Креирање профила сајта"
 
 #. translators: this is for a action log UI. Keep it short
-#: public/build/extendify-auto-launch-9894fa63bbe7c3d151cd.js:25
+#: public/build/extendify-auto-launch-fcd0e4d11549497ba98c.js:25
 #: src/AutoLaunch/fetchers/get-strings.js:19
 msgid "Generating site content ideas"
 msgstr "Генерисање идеја за садржај"
 
 #. translators: this is for a action log UI. Keep it short
-#: public/build/extendify-auto-launch-9894fa63bbe7c3d151cd.js:23
+#: public/build/extendify-auto-launch-fcd0e4d11549497ba98c.js:23
 #: src/AutoLaunch/fetchers/get-style.js:26
 msgid "Picking the perfect design"
 msgstr "Одабир савршеног дизајна"
 
 #. translators: No value found message for when a WP setting has no value.
-#: public/build/extendify-agent-6e4bd40f597086f1d5cf.js:33
+#: public/build/extendify-agent-764466336ec254c0fa3c.js:33
 msgid "No value found"
 msgstr "Нема пронађене вредности"
 
@@ -5090,21 +5090,21 @@ msgid "Latvian"
 msgstr "Латвијски"
 
 #: app/Agent/Admin.php:390
-#: public/build/extendify-agent-6e4bd40f597086f1d5cf.js:56
+#: public/build/extendify-agent-764466336ec254c0fa3c.js:56
 #: src/Agent/workflows/theme/change-site-design.js:46
 msgid "Change website title"
 msgstr "Промени наслов веб сајта"
 
 #. translators: "site style" refers to the structural aesthetic style for the site.
 #: app/Agent/Admin.php:414
-#: public/build/extendify-agent-6e4bd40f597086f1d5cf.js:66
+#: public/build/extendify-agent-764466336ec254c0fa3c.js:66
 #: src/Agent/workflows/theme/change-site-vibes.js:26
 msgid "Change website style"
 msgstr "Промени стил веб сајта"
 
 #. translators: "site animation" refers to the animation style for the current site.
 #: app/Agent/Admin.php:430
-#: public/build/extendify-agent-6e4bd40f597086f1d5cf.js:52
+#: public/build/extendify-agent-764466336ec254c0fa3c.js:52
 #: src/Agent/workflows/theme/change-animation.js:13
 msgid "Change website animation"
 msgstr "Промени анимацију веб сајта"
@@ -5160,26 +5160,26 @@ msgstr "Инфо"
 msgid "ago"
 msgstr "раније"
 
-#: public/build/extendify-assist-page-d0ee34e4a56c87661b3a.js:1
+#: public/build/extendify-assist-page-c4de054ee73a0ae1b22b.js:1
 #: src/Assist/components/dashboard/LaunchCard.jsx:13
 msgid "Create your site now"
 msgstr "Направите свој сајт сада"
 
 #. translators: this is for a action log UI. Keep it short
-#: public/build/extendify-auto-launch-9894fa63bbe7c3d151cd.js:3
-#: src/AutoLaunch/state/launch-data.js:26
+#: public/build/extendify-auto-launch-fcd0e4d11549497ba98c.js:3
+#: src/AutoLaunch/state/launch-data.js:27
 msgid "Booting things up"
 msgstr "Покретање"
 
-#: public/build/extendify-auto-launch-9894fa63bbe7c3d151cd.js:54
+#: public/build/extendify-auto-launch-fcd0e4d11549497ba98c.js:54
 #: src/AutoLaunch/components/DescriptionGathering.jsx:126
 msgid "Enhancing the website description..."
 msgstr "Унапређивање описа веб сајта..."
 
 #. translators: "theme colors" refers to the color palette variation for the current theme.
 #: app/Agent/Admin.php:398
-#: public/build/extendify-agent-6e4bd40f597086f1d5cf.js:56
-#: public/build/extendify-agent-6e4bd40f597086f1d5cf.js:80
+#: public/build/extendify-agent-764466336ec254c0fa3c.js:56
+#: public/build/extendify-agent-764466336ec254c0fa3c.js:80
 #: src/Agent/workflows/theme/change-site-design.js:39
 #: src/Agent/workflows/theme/change-theme-variation.js:18
 msgid "Change website colors"
@@ -5187,13 +5187,13 @@ msgstr "Промени боје веб сајта"
 
 #. translators: "theme fonts" refers to the font variation for the current theme.
 #: app/Agent/Admin.php:406
-#: public/build/extendify-agent-6e4bd40f597086f1d5cf.js:72
+#: public/build/extendify-agent-764466336ec254c0fa3c.js:72
 #: src/Agent/workflows/theme/change-theme-fonts-variation.js:24
 msgid "Change website fonts"
 msgstr "Промени фонтове веб сајта"
 
 #: app/Agent/Admin.php:438
-#: public/build/extendify-agent-6e4bd40f597086f1d5cf.js:56
+#: public/build/extendify-agent-764466336ec254c0fa3c.js:56
 #: src/Agent/workflows/theme/change-site-design.js:53
 msgid "Change website logo"
 msgstr "Промени логотип веб сајта"
@@ -5202,41 +5202,41 @@ msgstr "Промени логотип веб сајта"
 msgid "Change website browser icon"
 msgstr "Промени иконицу прегледача веб сајта"
 
-#: public/build/extendify-agent-6e4bd40f597086f1d5cf.js:4
+#: public/build/extendify-agent-764466336ec254c0fa3c.js:4
 #: src/Agent/components/ChatSuggestions.jsx:107
 msgid "Show more"
 msgstr "Прикажи више"
 
 #. translators: "site style" refers to the structural aesthetic style for the site.
-#: public/build/extendify-agent-6e4bd40f597086f1d5cf.js:59
+#: public/build/extendify-agent-764466336ec254c0fa3c.js:59
 #: src/Agent/workflows/theme/components/SelectSiteVibes.jsx:48
 msgid "We were unable to find any website style for your theme."
 msgstr "Нисмо успели да пронађемо ниједан стил веб сајта за вашу тему."
 
 #. translators: "site style" refers to the structural aesthetic style for the site.
-#: public/build/extendify-agent-6e4bd40f597086f1d5cf.js:64
+#: public/build/extendify-agent-764466336ec254c0fa3c.js:64
 #: src/Agent/workflows/theme/components/SelectSiteVibes.jsx:64
 msgid "Loading website style options..."
 msgstr "Учитавање опција стила веб сајта..."
 
-#: public/build/extendify-auto-launch-9894fa63bbe7c3d151cd.js:54
+#: public/build/extendify-auto-launch-fcd0e4d11549497ba98c.js:54
 #: src/AutoLaunch/icons.jsx:97
 msgid "Three bars loading animation"
 msgstr "Анимација учитавања са три траке"
 
-#: public/build/extendify-auto-launch-9894fa63bbe7c3d151cd.js:54
+#: public/build/extendify-auto-launch-fcd0e4d11549497ba98c.js:54
 #: src/AutoLaunch/icons.jsx:193
 msgid "Site creation loading animation"
 msgstr "Анимација учитавања креирања сајта"
 
-#: public/build/extendify-auto-launch-9894fa63bbe7c3d151cd.js:10
+#: public/build/extendify-auto-launch-fcd0e4d11549497ba98c.js:10
 #: src/AutoLaunch/functions/pages.js:133
 #, js-format
 msgid "Adding page: %s"
 msgstr "Додавање странице: %s"
 
 #. translators: this is the initial message in the agent chat, welcoming the user. Keep it short and friendly and follow the same markdown format and emoji.
-#: public/build/extendify-agent-6e4bd40f597086f1d5cf.js:18
+#: public/build/extendify-agent-764466336ec254c0fa3c.js:18
 #: src/Agent/state/chat.js:17
 msgid ""
 "#### Your site is ready 🎉\n"
@@ -5245,83 +5245,83 @@ msgstr ""
 "#### Ваш сајт је спреман 🎉  \n"
 "Желите да истражите друге дизајне веб сајтова?"
 
-#: public/build/extendify-agent-6e4bd40f597086f1d5cf.js:54
-#: src/Agent/workflows/theme/components/change-site-design/DesignOption.jsx:142
+#: public/build/extendify-agent-764466336ec254c0fa3c.js:54
+#: src/Agent/workflows/theme/components/change-site-design/DesignOption.jsx:137
 msgid "Preview site design"
 msgstr "Предпреглед дизајна сајта"
 
-#: public/build/extendify-agent-6e4bd40f597086f1d5cf.js:54
-#: src/Agent/workflows/theme/components/change-site-design/SelectSiteDesign.jsx:351
+#: public/build/extendify-agent-764466336ec254c0fa3c.js:54
+#: src/Agent/workflows/theme/components/change-site-design/SelectSiteDesign.jsx:357
 msgid "Load more"
 msgstr "Учитај још"
 
-#: public/build/extendify-agent-6e4bd40f597086f1d5cf.js:54
+#: public/build/extendify-agent-764466336ec254c0fa3c.js:54
 #: src/Agent/workflows/theme/change-site-design.js:28
 msgid "Change website design"
 msgstr "Промени дизајн веб сајта"
 
 #. translators: This message show above a UI where the user can select a different site design.
-#: public/build/extendify-agent-6e4bd40f597086f1d5cf.js:56
+#: public/build/extendify-agent-764466336ec254c0fa3c.js:56
 #: src/Agent/workflows/theme/change-site-design.js:31
 msgid "Below you can select a different design for your website."
 msgstr "Испод можете одабрати другачији дизајн за ваш веб сајт."
 
-#: public/build/extendify-agent-6e4bd40f597086f1d5cf.js:56
+#: public/build/extendify-agent-764466336ec254c0fa3c.js:56
 #: src/Agent/workflows/theme/change-site-design.js:61
 msgid "Updated the website design"
 msgstr "Ажуриран дизајн веб сајта"
 
-#: public/build/extendify-agent-6e4bd40f597086f1d5cf.js:56
+#: public/build/extendify-agent-764466336ec254c0fa3c.js:56
 #: src/Agent/workflows/theme/change-site-design.js:62
 msgid "Canceled the website design update"
 msgstr "Одустато од ажурирања дизајна веб сајта"
 
-#: public/build/extendify-agent-6e4bd40f597086f1d5cf.js:54
+#: public/build/extendify-agent-764466336ec254c0fa3c.js:54
 #: src/Agent/workflows/theme/change-animation.js:23
 msgid "Updated the website animation"
 msgstr "Ажурирана анимација веб сајта"
 
-#: public/build/extendify-agent-6e4bd40f597086f1d5cf.js:54
+#: public/build/extendify-agent-764466336ec254c0fa3c.js:54
 #: src/Agent/workflows/theme/change-animation.js:24
 msgid "Canceled the website animation update"
 msgstr "Одустато од ажурирања анимације веб сајта"
 
-#: public/build/extendify-agent-6e4bd40f597086f1d5cf.js:68
+#: public/build/extendify-agent-764466336ec254c0fa3c.js:68
 #: src/Agent/workflows/theme/change-site-vibes.js:36
 msgid "Updated the website style"
 msgstr "Ажуриран стил веб сајта"
 
-#: public/build/extendify-agent-6e4bd40f597086f1d5cf.js:68
+#: public/build/extendify-agent-764466336ec254c0fa3c.js:68
 #: src/Agent/workflows/theme/change-site-vibes.js:37
 msgid "Canceled the website style update"
 msgstr "Одустато од ажурирања стила веб сајта"
 
 #. translators: A chat message shown to the user when their selected color variation cannot be applied
-#: public/build/extendify-agent-6e4bd40f597086f1d5cf.js:78
+#: public/build/extendify-agent-764466336ec254c0fa3c.js:78
 #: src/Agent/workflows/theme/components/SelectThemeVariation.jsx:33
 msgid "We were unable to apply your selected colors. Please try again."
 msgstr "Нисмо могли да применимо изабране боје. Покушајте поново."
 
 #. translators: Use a number that is appropriate for the locale. It does not need to be this exact number. This is a placeholder phone number. For example, in pt_BR you could use (11) 91234-5678.
-#: public/build/extendify-auto-launch-9894fa63bbe7c3d151cd.js:42
-#: src/AutoLaunch/hooks/useCreateSite.js:373
+#: public/build/extendify-auto-launch-fcd0e4d11549497ba98c.js:42
+#: src/AutoLaunch/hooks/useCreateSite.js:374
 msgid "206-555-0100"
 msgstr "060-555-0100"
 
-#: public/build/extendify-agent-6e4bd40f597086f1d5cf.js:64
+#: public/build/extendify-agent-764466336ec254c0fa3c.js:64
 #: src/Agent/workflows/theme/components/SelectSiteVibes.jsx:88
 #: src/Agent/workflows/theme/components/SelectSiteVibes.jsx:107
 #, js-format
 msgid "Style %s"
 msgstr "Стил %s"
 
-#: public/build/extendify-agent-6e4bd40f597086f1d5cf.js:54
+#: public/build/extendify-agent-764466336ec254c0fa3c.js:54
 #: src/Agent/workflows/theme/change-site-design.js:18
 msgid "Hey there! It looks like you are trying to change your site design, but you are not on a page where we can do that."
 msgstr "Здраво! Изгледа да покушавате да промените дизајн веб места, али нисте на страници где то можемо урадити."
 
 #. translators: this is for a action log UI. Keep it short
-#: public/build/extendify-auto-launch-9894fa63bbe7c3d151cd.js:8
+#: public/build/extendify-auto-launch-fcd0e4d11549497ba98c.js:8
 #: src/AutoLaunch/fetchers/get-design-build.js:29
 msgid "Loading your design"
 msgstr "Учитавање дизајна"
@@ -5353,67 +5353,67 @@ msgid "Activated"
 msgstr "Активиран"
 
 #. translators: "Slow" refers to a slower speed at which the animation effect occurs. This is an option in a list of animation speeds.
-#: public/build/extendify-agent-6e4bd40f597086f1d5cf.js:43
+#: public/build/extendify-agent-764466336ec254c0fa3c.js:43
 #: src/Agent/workflows/theme/components/SelectAnimation.jsx:47
 msgctxt "animation speed"
 msgid "Slow"
 msgstr "Sporo"
 
 #. translators: "Medium" refers to a moderate speed at which the animation effect occurs. This is an option in a list of animation speeds.
-#: public/build/extendify-agent-6e4bd40f597086f1d5cf.js:45
+#: public/build/extendify-agent-764466336ec254c0fa3c.js:45
 #: src/Agent/workflows/theme/components/SelectAnimation.jsx:52
 msgctxt "animation speed"
 msgid "Medium"
 msgstr "Srednje"
 
 #. translators: "Fast" refers to a quicker speed at which the animation effect occurs. This is an option in a list of animation speeds.
-#: public/build/extendify-agent-6e4bd40f597086f1d5cf.js:47
+#: public/build/extendify-agent-764466336ec254c0fa3c.js:47
 #: src/Agent/workflows/theme/components/SelectAnimation.jsx:57
 msgctxt "animation speed"
 msgid "Fast"
 msgstr "Brzo"
 
-#: public/build/extendify-agent-6e4bd40f597086f1d5cf.js:50
+#: public/build/extendify-agent-764466336ec254c0fa3c.js:50
 #: src/Agent/workflows/theme/components/SelectAnimation.jsx:147
 msgctxt "animation speed"
 msgid "Speed"
 msgstr "Brzina"
 
 #. translators: Animation style where the element gradually appears by transitioning from transparent to visible. Translate as a simple, non-technical description of the visual effect (e.g., 'appear', 'show up') suitable for non-technical users.
-#: public/build/extendify-agent-6e4bd40f597086f1d5cf.js:35
+#: public/build/extendify-agent-764466336ec254c0fa3c.js:35
 #: src/Agent/workflows/theme/components/SelectAnimation.jsx:20
 msgctxt "animation type"
 msgid "Fade In"
 msgstr "Pojavi se"
 
 #. translators: Animation style where the element appears while moving upward. Translate as a simple, non-technical description of the motion (e.g., 'appear from below', 'rise into view') suitable for non-technical users.
-#: public/build/extendify-agent-6e4bd40f597086f1d5cf.js:37
+#: public/build/extendify-agent-764466336ec254c0fa3c.js:37
 #: src/Agent/workflows/theme/components/SelectAnimation.jsx:26
 msgctxt "animation type"
 msgid "Fade Up"
 msgstr "Pojavi se odozdo"
 
 #. translators: Animation style where the element appears by scaling from small to its full size. Translate as a simple, non-technical description of the effect (e.g., 'zoom in', 'get closer') suitable for non-technical users. If the target language commonly uses the English term 'zoom', it's acceptable to keep it.
-#: public/build/extendify-agent-6e4bd40f597086f1d5cf.js:39
+#: public/build/extendify-agent-764466336ec254c0fa3c.js:39
 #: src/Agent/workflows/theme/components/SelectAnimation.jsx:32
 msgctxt "animation type"
 msgid "Zoom In"
 msgstr "Zumiranje"
 
 #. translators: None refers to 'no animation'. Apply the correct grammatical gender/form that agrees with the word for 'animation' in the target language.
-#: public/build/extendify-agent-6e4bd40f597086f1d5cf.js:41
+#: public/build/extendify-agent-764466336ec254c0fa3c.js:41
 #: src/Agent/workflows/theme/components/SelectAnimation.jsx:38
 msgctxt "animation type"
 msgid "None"
 msgstr "Bez animacije"
 
-#: public/build/extendify-agent-6e4bd40f597086f1d5cf.js:50
+#: public/build/extendify-agent-764466336ec254c0fa3c.js:50
 #: src/Agent/workflows/theme/components/SelectAnimation.jsx:128
 msgctxt "animation type"
 msgid "Type"
 msgstr "Tip"
 
-#: public/build/extendify-auto-launch-9894fa63bbe7c3d151cd.js:54
+#: public/build/extendify-auto-launch-fcd0e4d11549497ba98c.js:54
 #: src/AutoLaunch/icons.jsx:55
 msgctxt "icon"
 msgid "Loading animation"

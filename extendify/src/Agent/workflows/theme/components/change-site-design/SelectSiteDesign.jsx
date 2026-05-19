@@ -12,35 +12,41 @@ import { useEffect, useMemo, useRef, useState } from '@wordpress/element';
 import { __ } from '@wordpress/i18n';
 import classnames from 'classnames';
 
+let originalHeroElement = null;
+
 const undoHeroSectionChange = () => {
-	document.querySelector('.ext-hero-section-preview')?.remove();
-
-	const heroSectionElement = document.querySelector('.ext-hero-section');
-
-	if (heroSectionElement) heroSectionElement.style.display = 'block';
+	const preview = document.querySelector('.ext-hero-section-preview');
+	if (preview && originalHeroElement) {
+		preview.replaceWith(originalHeroElement);
+	} else {
+		preview?.remove();
+	}
+	originalHeroElement = null;
 };
 
 const updateHeroSection = (content) => {
-	document.querySelector('.ext-hero-section-preview')?.remove();
+	const tempDiv = document.createElement('div');
+	tempDiv.innerHTML = content;
+	const newNode = tempDiv.firstElementChild;
+	newNode.classList.add('ext-hero-section-preview');
+
+	const existingPreview = document.querySelector('.ext-hero-section-preview');
+	if (existingPreview) {
+		existingPreview.replaceWith(newNode);
+		return;
+	}
 
 	const heroSectionElement = document.querySelector('.ext-hero-section');
-
 	if (heroSectionElement) {
-		heroSectionElement.style.display = 'none';
+		originalHeroElement = heroSectionElement;
+		heroSectionElement.replaceWith(newNode);
+		return;
 	}
 
 	const contentArea =
 		document.querySelector('.entry-content') ?? document.querySelector('main');
-
 	if (!contentArea) return;
-
-	contentArea.insertAdjacentHTML('afterbegin', content);
-
-	const visibleHeroSection = [
-		...document.querySelectorAll('.ext-hero-section'),
-	].find((el) => el.style.display !== 'none');
-
-	visibleHeroSection?.classList.add('ext-hero-section-preview');
+	contentArea.insertAdjacentElement('afterbegin', newNode);
 };
 
 const { context } = window.extAgentData;

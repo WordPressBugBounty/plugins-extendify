@@ -8,6 +8,7 @@ namespace Extendify;
 
 defined('ABSPATH') || die('No direct access.');
 
+use Extendify\Constants;
 use Extendify\Shared\Services\Sanitizer;
 
 /**
@@ -209,7 +210,7 @@ class PartnerData
                 'wp_language' => \get_locale(),
                 'site_url' => \home_url(),
             ],
-            'https://dashboard.extendify.com/api/onboarding/partner-data/'
+            Constants::DASHBOARD_HOST . '/api/onboarding/partner-data/'
         );
 
         $response = \wp_safe_remote_get($url, ['headers' => ['Accept' => 'application/json']]);

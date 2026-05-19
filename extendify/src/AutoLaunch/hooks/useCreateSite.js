@@ -53,6 +53,7 @@ import {
 	createBlogSampleData,
 	getOption,
 	getPageById,
+	storeSiteImages,
 	updateOption,
 } from '@auto-launch/functions/wp';
 import { useWarnOnLeave } from '@auto-launch/hooks/useWarnOnLeave';
@@ -534,6 +535,9 @@ export const useCreateSite = () => {
 			checkIn({ stage: 'final_steps' });
 			await setThemeRenderingMode('template-locked');
 			await postLaunchFunctions();
+			if (siteImages?.length) {
+				await storeSiteImages(siteImages).catch(() => null);
+			}
 			// translators: this is for a action log UI. Keep it short
 			addStatusMessage(__('All done!', 'extendify-local'));
 			await checkIn({ stage: 'finished', siteProfile, sitePlugins, siteStyle });

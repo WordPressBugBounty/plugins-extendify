@@ -1,15 +1,12 @@
 import { useIframeScale } from '@agent/hooks/useIframeScale';
 import { removeAnimationClasses } from '@agent/workflows/theme/components/change-site-design/utils/removeAnimationClasses';
-import { useMemo, useRef } from '@wordpress/element';
+import { useMemo } from '@wordpress/element';
 import { __ } from '@wordpress/i18n';
 import classnames from 'classnames';
 import { colord } from 'colord';
 
-const VIEWPORT_WIDTH = Math.max(window.innerWidth, 1400);
-const VIEWPORT_HEIGHT =
-	(document.querySelector('header')?.offsetHeight ?? 0) +
-		(document.querySelector('.ext-hero-section')?.offsetHeight ?? 0) ||
-	window.innerHeight;
+const PREVIEW_VIEWPORT_WIDTH = 1440;
+const PREVIEW_VIEWPORT_HEIGHT = 1024;
 
 const lowerImageQuality = (html) =>
 	html.replace(
@@ -96,9 +93,8 @@ const generatePreviewHtml = (renderedHtml, styles) => {
 };
 
 export const DesignOption = ({ renderedHtml, styles, isSelected, onClick }) => {
-	const iframeRef = useRef(null);
 	const { containerRef, scale, contentHeight, handleIframeLoad } =
-		useIframeScale();
+		useIframeScale({ viewportWidth: PREVIEW_VIEWPORT_WIDTH });
 
 	const srcdoc = useMemo(
 		() => generatePreviewHtml(renderedHtml, styles),
@@ -117,7 +113,7 @@ export const DesignOption = ({ renderedHtml, styles, isSelected, onClick }) => {
 			ref={containerRef}
 			type="button"
 			style={{
-				height: `${(contentHeight ?? VIEWPORT_HEIGHT) * scale}px`,
+				height: `${(contentHeight ?? PREVIEW_VIEWPORT_HEIGHT) * scale}px`,
 			}}
 			className={classnames(
 				'relative w-full cursor-pointer overflow-hidden rounded-md border shadow-md',
@@ -132,19 +128,21 @@ export const DesignOption = ({ renderedHtml, styles, isSelected, onClick }) => {
 			<div
 				className="overflow-hidden"
 				style={{
-					width: VIEWPORT_WIDTH,
+					width: PREVIEW_VIEWPORT_WIDTH,
 					transform: `scale(${scale})`,
 					transformOrigin: 'top left',
 				}}
 			>
 				<iframe
-					ref={iframeRef}
 					title={__('Preview site design', 'extendify-local')}
 					onLoad={handleIframeLoad}
 					srcDoc={srcdoc}
 					style={{
 						width: '100%',
-						height: Math.max(contentHeight ?? VIEWPORT_HEIGHT, VIEWPORT_HEIGHT),
+						height: Math.max(
+							contentHeight ?? PREVIEW_VIEWPORT_HEIGHT,
+							PREVIEW_VIEWPORT_HEIGHT,
+						),
 						border: 0,
 						pointerEvents: 'none',
 						display: 'block',

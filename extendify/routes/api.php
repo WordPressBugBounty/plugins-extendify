@@ -41,6 +41,7 @@ use Extendify\Shared\Controllers\UserSelectionController;
 use Extendify\Shared\Controllers\UserSettingsController as SharedUserSettingsController;
 use Extendify\Shared\Controllers\ActivityController;
 use Extendify\Shared\Controllers\SiteProfileController;
+use Extendify\Shared\Controllers\SiteImagesController;
 use Extendify\Shared\Controllers\DataController as SharedDataController;
 use Extendify\Shared\Controllers\ImageGenerationController;
 
@@ -134,6 +135,9 @@ use Extendify\Shared\Controllers\ImageGenerationController;
         ApiRouter::post('/shared/activity', [ActivityController::class, 'store']);
         ApiRouter::post('/shared/site-profile', [SiteProfileController::class, 'store']);
         ApiRouter::get('/shared/site-profile', [SiteProfileController::class, 'get']);
+        ApiRouter::get('/shared/site-images', [SiteImagesController::class, 'get']);
+        ApiRouter::post('/shared/site-images', [SiteImagesController::class, 'store']);
+        ApiRouter::post('/shared/site-images/clear', [SiteImagesController::class, 'clear']);
         ApiRouter::get('/shared/ping', [SharedDataController::class, 'ping']);
         ApiRouter::get('/shared/partner-plugins', [SharedDataController::class, 'getPartnerPlugins']);
     }

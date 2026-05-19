@@ -135,6 +135,8 @@ export const DescriptionGathering = () => {
 								rows="1"
 								// biome-ignore lint: Allow autofocus here
 								autoFocus
+								autoComplete="off"
+								data-1p-ignore
 								value={input}
 								onChange={(e) => {
 									setInput(e.target.value);

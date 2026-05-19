@@ -9,6 +9,7 @@ import {
 	getStringsShape,
 	getStyleShape,
 } from '@auto-launch/fetchers/shape';
+import { clearSiteImages } from '@auto-launch/functions/wp';
 import { __ } from '@wordpress/i18n';
 import { create } from 'zustand';
 import { devtools, persist } from 'zustand/middleware';
@@ -86,6 +87,7 @@ const state = (set, get) => ({
 				newState[key] = get()[key];
 			});
 		}
+		clearSiteImages().catch(() => null);
 		set(newState);
 	},
 });

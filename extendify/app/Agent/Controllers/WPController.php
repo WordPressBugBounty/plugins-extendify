@@ -8,6 +8,7 @@ namespace Extendify\Agent\Controllers;
 
 defined('ABSPATH') || die('No direct access.');
 
+use Extendify\Constants;
 use Extendify\Shared\Services\Sanitizer;
 
 /**
@@ -311,7 +312,7 @@ class WPController
             return new \WP_REST_Response(['error' => 'Post not found'], 404);
         }
 
-        $ignored = ['core/query', 'core/post-template', 'core/post-content'];
+        $ignored = \Extendify\Agent\TagBlocks::$ignored;
 
         $ast = array_values(array_filter(
             parse_blocks($post->post_content),
@@ -389,7 +390,7 @@ class WPController
     protected static function getHeroPatternsData($title, $description, $images, $cta, $featuredOnly = false)
     {
         $response = \wp_remote_post(
-            'https://patterns.extendify.com/api/heros',
+            Constants::PATTERNS_HOST . '/api/heros',
             [
                 'headers' => [
                     'Content-Type' => 'application/json',
@@ -556,8 +557,15 @@ class WPController
 
         $unfiltered = \WP_Theme_JSON_Resolver::get_style_variations();
 
+        // Keep only full style variations — exclude color-only and font-only
+        // presets that get_style_variations() returns from styles/colors/* and
+        // styles/typography/*.
         $colorAndFontsVariations = array_filter($unfiltered, function ($variation) {
-            return self::variationHasProperties($variation, ['color', 'elements', 'typography']);
+            $hasPalette    = ($variation['settings']['color']['palette'] ?? []) !== [];
+            $hasTypography = ($variation['styles']['typography'] ?? []) !== []
+            || ($variation['settings']['typography'] ?? []) !== [];
+            $hasElements   = ($variation['styles']['elements'] ?? []) !== [];
+            return $hasPalette && $hasTypography && $hasElements;
         });
 
         $buildSlugMap = function ($unfiltered) {
