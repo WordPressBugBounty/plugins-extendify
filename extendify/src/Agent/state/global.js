@@ -19,7 +19,7 @@ export const useGlobalStore = create()(
 				open: true,
 				minimized: false,
 				// e.g. floating, docked-left, docked-right ?
-				mode: window.extAgentData.agentPosition,
+				mode: window.extAgentData?.agentPosition,
 				queuedTour: null,
 				scratch: {},
 				isMobile: window.innerWidth < 768,

@@ -76,10 +76,17 @@ export const getProfileShape = z.looseObject({
 	phoneNumber: z.union([z.boolean(), z.string()]).optional(),
 });
 
+// get-launch-decisions
+export const getLaunchDecisionsShape = z.looseObject({
+	navExtras: z.string().optional(),
+	navButtonLabel: z.string().optional(),
+});
+
 // get-strings
 export const getStringsShape = z.looseObject({
 	aiHeaders: z.array(z.string()),
 	aiBlogTitles: z.array(z.string()),
+	heroDescription: z.string().optional(),
 });
 
 // get-style

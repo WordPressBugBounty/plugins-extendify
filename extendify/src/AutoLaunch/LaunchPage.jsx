@@ -4,6 +4,7 @@ import { MovingGradient } from '@auto-launch/components/MovingGradients';
 import { NeedsTheme } from '@auto-launch/components/NeedsTheme';
 import { RestartLaunchModal } from '@auto-launch/components/RestartLaunchModal';
 import { ViewportPulse } from '@auto-launch/components/ViewportPulse';
+import { preLaunchFunctions } from '@auto-launch/functions/setup';
 import { updateOption } from '@auto-launch/functions/wp';
 import { useLaunchDataStore } from '@auto-launch/state/launch-data';
 import { registerCoreBlocks } from '@wordpress/block-library';
@@ -39,6 +40,7 @@ export const LaunchPage = () => {
 		// We load core blocks so we can parse them
 		if (getBlockTypes().length === 0) registerCoreBlocks();
 
+		preLaunchFunctions();
 		checkIn({ stage: 'launch_page' });
 	}, []);
 
@@ -115,13 +117,32 @@ const Wrapper = ({ children }) => {
 const TheTitle = ({ skipDescription }) => {
 	if (skipDescription) return null;
 
+	const headingClass =
+		'text-xl md:text-2xl text-pretty text-banner-text font-semibold p-0 m-0 text-center';
+	const transition = {
+		animate: { opacity: 1 },
+		exit: { opacity: 0 },
+		transition: { duration: 0.4 },
+	};
+
+	if (window.extLaunchData?.activeTests?.['AutoLaunch.WebsiteTitle'] === 'B') {
+		return (
+			<motion.div className="flex flex-col items-center gap-2" {...transition}>
+				<h2 className={headingClass}>
+					{__('Tell Us About Your Website', 'extendify-local')}
+				</h2>
+				<p className="text-sm md:text-base text-pretty text-banner-text opacity-70 p-0 m-0 text-center max-w-xl">
+					{__(
+						"Share your vision, and we'll craft a website that's perfectly tailored to your needs, ready to launch in no time.",
+						'extendify-local',
+					)}
+				</p>
+			</motion.div>
+		);
+	}
+
 	return (
-		<motion.h2
-			className="text-xl md:text-2xl text-pretty text-banner-text font-semibold p-0 m-0 text-center"
-			animate={{ opacity: 1 }}
-			exit={{ opacity: 0 }}
-			transition={{ duration: 0.4 }}
-		>
+		<motion.h2 className={headingClass} {...transition}>
 			{__('Describe the website you want to build', 'extendify-local')}
 		</motion.h2>
 	);

@@ -9,6 +9,7 @@ namespace Extendify\AutoLaunch;
 defined('ABSPATH') || die('No direct access.');
 
 use Extendify\Config;
+use Extendify\Insights;
 use Extendify\PartnerData;
 
 /**
@@ -71,6 +72,7 @@ class Admin
             'window.extLaunchData = ' . \wp_json_encode([
                 'editorStyles' => \get_block_editor_settings([], new \WP_Block_Editor_Context()),
                 'wpRoot' => \rest_url(),
+                'activeTests' => \get_option(Insights::ACTIVE_TESTS_OPTION, []),
                 'resetSiteInformation' => [
                     'pagesIds' => array_map('esc_attr', $this->getLaunchCreatedPages()),
                     'navigationsIds' => array_map('esc_attr', $this->getLaunchCreatedNavigations()),

@@ -69,10 +69,11 @@ export const handleHome = async ({
 
 	const { headers: head, footers: foot } = await getHeadersAndFooters({
 		useNavFooter: hasFooterNav,
-		siteProfile,
 	});
+	const randomHeader = head[Math.floor(Math.random() * head.length)];
+	const randomFooter = foot[Math.floor(Math.random() * foot.length)];
 	const headerCode =
-		designBuild?.headerCode ?? head[0]?.content?.raw?.trim() ?? '';
-	const footerCode = foot[0]?.content?.raw?.trim() ?? '';
+		designBuild?.headerCode ?? randomHeader?.content?.raw?.trim() ?? '';
+	const footerCode = randomFooter?.content?.raw?.trim() ?? '';
 	return getHomeShape.parse({ home: { ...template, headerCode, footerCode } });
 };

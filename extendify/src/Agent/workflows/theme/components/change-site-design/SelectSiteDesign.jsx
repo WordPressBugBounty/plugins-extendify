@@ -3,6 +3,10 @@ import { useSiteVibesVariations } from '@agent/hooks/useSiteVibesVariations';
 import { useVariationOverride } from '@agent/hooks/useVariationOverride';
 import { DesignOption } from '@agent/workflows/theme/components/change-site-design/DesignOption';
 import { removeAnimationClasses } from '@agent/workflows/theme/components/change-site-design/utils/removeAnimationClasses';
+import { handleSiteImages } from '@auto-launch/fetchers/get-images';
+import { handleSiteStrings } from '@auto-launch/fetchers/get-strings';
+import { useUserSelectionStore } from '@launch/state/user-selections';
+import { safeParseJson } from '@shared/lib/parsing';
 import apiFetch from '@wordpress/api-fetch';
 import { registerCoreBlocks } from '@wordpress/block-library';
 import { getBlockTypes, parse, serialize } from '@wordpress/blocks';
@@ -146,10 +150,10 @@ export const SelectSiteDesign = ({ onConfirm, onCancel }) => {
 		const cta =
 			heroSectionElement?.querySelector('.wp-block-button__link') ?? null;
 		const heroPatternName =
-			[...(heroSectionElement?.classList ?? [])]
-				.find((className) => className.startsWith('ext-hero-section--'))
-				?.replace('ext-hero-section--', '') ?? null;
-		const images = [...(heroSectionElement?.querySelectorAll('img') ?? [])]
+			heroSectionElement?.className?.match(
+				/ext-hero-section ext-hero-section--(\S+)/,
+			)?.[1] ?? null;
+		const domImages = [...(heroSectionElement?.querySelectorAll('img') ?? [])]
 			.filter(
 				(img) =>
 					!img.src.includes('.svg') && !img.src.includes('data:image/svg+xml'),
@@ -163,33 +167,63 @@ export const SelectSiteDesign = ({ onConfirm, onCancel }) => {
 				}
 			});
 
-		apiFetch({
-			path: '/extendify/v1/agent/site-design-variations',
-			method: 'POST',
-			data: {
-				title,
-				images,
-				description,
-				currentHeroPattern: heroPatternName,
-				cta: {
-					label: cta?.textContent,
-					link: cta?.href,
-				},
-			},
-		})
-			.then((data) => {
-				setHeroPatterns(data?.patterns?.flat() ?? []);
-				setColorAndFontsVariations(
-					[...(data?.colorAndFontsVariations ?? [])].sort(
-						() => Math.random() - 0.5,
-					),
-				);
+		const { siteId } = window.extSharedData;
+		const stored = safeParseJson(
+			localStorage.getItem(`extendify-launch-data-${siteId}`),
+		);
+		const launchState = useUserSelectionStore.getState();
+		const storedSiteImages =
+			stored?.state?.siteImages ?? launchState?.siteImages?.siteImages ?? [];
+		const siteProfile = stored?.state?.siteProfile ?? launchState?.siteProfile;
 
-				setBlockEditorStyles(data?.blockEditorSettings);
+		const storedDescription =
+			description ??
+			stored?.state?.heroDescription ??
+			launchState?.siteStrings?.heroDescription ??
+			null;
+
+		(async () => {
+			const siteImages =
+				storedSiteImages.length > 0 || !siteProfile
+					? storedSiteImages
+					: (await handleSiteImages({ siteProfile })).siteImages;
+
+			const resolvedDescription =
+				storedDescription || !siteProfile
+					? storedDescription
+					: (await handleSiteStrings({ siteProfile })).heroDescription;
+
+			apiFetch({
+				path: '/extendify/v1/agent/site-design-variations',
+				method: 'POST',
+				data: {
+					title,
+					images: domImages,
+					siteImages,
+					postId: context?.postId,
+					description: resolvedDescription,
+					currentHeroPattern: heroPatternName,
+					source: 'change-site-design-workflow',
+					cta: {
+						label: cta?.textContent,
+						link: cta?.href,
+					},
+				},
 			})
-			.finally(() => {
-				setIsLoading(false);
-			});
+				.then((data) => {
+					setHeroPatterns(data?.patterns?.flat() ?? []);
+					setColorAndFontsVariations(
+						[...(data?.colorAndFontsVariations ?? [])].sort(
+							() => Math.random() - 0.5,
+						),
+					);
+
+					setBlockEditorStyles(data?.blockEditorSettings);
+				})
+				.finally(() => {
+					setIsLoading(false);
+				});
+		})();
 	}, []);
 
 	useEffect(() => {

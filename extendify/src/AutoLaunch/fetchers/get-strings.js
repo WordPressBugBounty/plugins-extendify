@@ -9,7 +9,7 @@ import { AI_HOST } from '@constants';
 import { reqDataBasics } from '@shared/lib/data';
 import { __ } from '@wordpress/i18n';
 
-const fallback = { aiHeaders: [], aiBlogTitles: [] };
+const fallback = { aiHeaders: [], aiBlogTitles: [], heroDescription: '' };
 const url = `${AI_HOST}/api/site-strings`;
 const method = 'POST';
 const headers = { 'Content-Type': 'application/json' };

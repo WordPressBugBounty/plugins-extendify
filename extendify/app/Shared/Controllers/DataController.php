@@ -34,7 +34,7 @@ class DataController
     }
 
     /**
-     * Just here to check for 200 (vs server rate limting)
+     * Just here to check for 200 (vs server rate limiting)
      *
      * @return \WP_REST_Response
      */

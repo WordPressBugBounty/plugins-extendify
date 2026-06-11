@@ -58,6 +58,9 @@ const generatePreviewHtml = (renderedHtml, styles) => {
 
 	clone.querySelector('#block-style-variation-styles-inline-css')?.remove();
 	clone.querySelector('#admin-bar-inline-css')?.remove();
+	clone.querySelector('#admin-bar-css')?.remove();
+	clone.querySelector('#extendify-toolbar-reset')?.remove();
+	body.classList.remove('admin-bar');
 
 	// Inject variation styles
 	const styleEl = head.appendChild(document.createElement('style'));
@@ -82,9 +85,13 @@ const generatePreviewHtml = (renderedHtml, styles) => {
 	const duotoneSvgNodes = getDuotoneSvgNodes(styles?.duotoneTheme);
 
 	// Set body to header + hero section, then append duotone SVGs
-	const headerHtml =
-		removeAnimationClasses(document.querySelector('header'))?.outerHTML ?? '';
-	body.innerHTML = `${headerHtml}${lowerImageQuality(renderedHtml)}`;
+	body.removeAttribute('style');
+
+	const headerNode = removeAnimationClasses(document.querySelector('header'));
+	headerNode?.classList.remove('is-past-hero', 'is-scrolled');
+	headerNode?.removeAttribute('style');
+	const headerHtml = headerNode?.outerHTML ?? '';
+	body.innerHTML = `${headerHtml}<div class="entry-content">${lowerImageQuality(renderedHtml)}</div>`;
 	duotoneSvgNodes.forEach((node) => {
 		body.appendChild(node);
 	});

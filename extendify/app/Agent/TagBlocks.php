@@ -6,9 +6,10 @@ defined('ABSPATH') || die('No direct access.');
 
 class TagBlocks
 {
-    // Iterating blocks: their inner template renders once per item, so tagging
-    // children would assign N rendered ids to one parsed block. Skip the subtree.
-    // Public so WPController::getBlockCode walks the same list.
+    // Loop blocks render their inner tree once per item; counting children as
+    // separate seqs would produce N DOM ids for one parse_blocks() entry and
+    // break source-walks that resolve clicked ids back to block code.
+    // Public so SaveController + WPController can share the same list.
     public static $ignored = [
         'core/query',
         'core/post-template',

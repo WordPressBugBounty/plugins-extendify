@@ -123,7 +123,7 @@ const transformHeadingToPostTitle = (rawHTML) => {
 	return serialize(parse(rawHTML).map(walk));
 };
 
-export const createWpPages = async (pagesRaw, { stickyNav }) => {
+export const createWpPages = async (pagesRaw) => {
 	const pages = [];
 
 	for (const page of pagesRaw) {
@@ -155,11 +155,7 @@ export const createWpPages = async (pagesRaw, { stickyNav }) => {
 			title: page.name,
 			status: 'publish',
 			content: content.join(''),
-			template: stickyNav
-				? 'no-title-sticky-header'
-				: page.slug === 'home'
-					? 'no-title'
-					: 'page-with-title',
+			template: page.slug === 'home' ? 'no-title' : 'page-with-title',
 			meta: { made_with_extendify_launch: true },
 		};
 

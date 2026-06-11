@@ -8,7 +8,7 @@ const headers = {
 	'X-Extendify': 'true',
 };
 
-const { urlParams } = window.extLaunchData;
+const { urlParams, activeTests } = window.extLaunchData;
 export const checkIn = ({
 	stage,
 	siteProfile = {},
@@ -24,6 +24,9 @@ export const checkIn = ({
 		autoLaunch: true,
 		stage,
 		attempt,
+		activeTests: Object.keys(activeTests ?? {}).length
+			? JSON.stringify(activeTests)
+			: undefined,
 		skippedDescription: Boolean(urlParams?.title || urlParams?.description),
 		insightsId: siteId,
 		hostpartner: partnerId,

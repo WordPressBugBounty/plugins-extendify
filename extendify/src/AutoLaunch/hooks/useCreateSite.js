@@ -1,6 +1,7 @@
 import { handleDesignBuild } from '@auto-launch/fetchers/get-design-build';
 import { handleHome } from '@auto-launch/fetchers/get-home';
 import { handleSiteImages } from '@auto-launch/fetchers/get-images';
+import { handleLaunchDecisions } from '@auto-launch/fetchers/get-launch-decisions';
 import { handleSiteLogo } from '@auto-launch/fetchers/get-logo';
 import { handlePages } from '@auto-launch/fetchers/get-pages';
 import { handleSitePlugins } from '@auto-launch/fetchers/get-plugins';
@@ -21,6 +22,7 @@ import {
 	addPageLinksToNav,
 	addSectionLinksToNav,
 	createNavigation,
+	injectNavExtras,
 	updateNavAttributes,
 } from '@auto-launch/functions/nav';
 import {
@@ -71,7 +73,7 @@ const { homeUrl, showImprint, wpLanguage, installedPluginsSlugs } =
 
 export const useCreateSite = () => {
 	// All the data we need to finish
-	const { setErrorMessage, addStatusMessage, needToStall, ...data } =
+	const { setErrorMessage, addStatusMessage, needToStall, setData, ...data } =
 		useLaunchDataStore();
 	const { setUserGaveConsent } = useAIConsentStore();
 	const homeStretch = useRef(false);
@@ -139,20 +141,19 @@ export const useCreateSite = () => {
 
 	useEffect(() => {
 		// Start installing the partner plugins asap
-		if (!data.sitePlugins) return;
+		if (!data.sitePlugins?.length) return;
 
-		const pluginsToInstall = data.sitePlugins.filter(
-			({ wordpressSlug: slug }) => !installedPluginsSlugs?.includes(slug),
-		);
-		if (pluginsToInstall.length === 0) return;
 		setStatus(
 			// translators: this is for a action log UI. Keep it short
 			__('Setting up functionality for your website', 'extendify-local'),
 		);
 		(async function install() {
-			for (const { wordpressSlug: slug } of pluginsToInstall) {
-				const p = await installPlugin(slug);
-				await activatePlugin(p?.plugin ?? slug);
+			for (const { wordpressSlug: slug } of data.sitePlugins) {
+				let plugin;
+				if (!installedPluginsSlugs?.includes(slug)) {
+					plugin = await installPlugin(slug);
+				}
+				await activatePlugin(plugin?.plugin ?? slug);
 			}
 		})();
 	}, [data.sitePlugins]);
@@ -199,6 +200,20 @@ export const useCreateSite = () => {
 		async (params) => {
 			checkIn({ stage: 'get_images' });
 			return await handleSiteImages(params);
+		},
+	);
+
+	// needs: siteProfile
+	// provides: launchDecisions: { navExtras, navButtonLabel }
+	useRunStep(
+		'launchDecisions',
+		() => {
+			if (!data.siteProfile?.title) return null;
+			return data;
+		},
+		async (params) => {
+			checkIn({ stage: 'get_launch_decisions' });
+			return await handleLaunchDecisions(params);
 		},
 	);
 
@@ -302,6 +317,7 @@ export const useCreateSite = () => {
 			aiBlogTitles,
 			siteImages,
 			designBuild,
+			launchDecisions,
 		} = data;
 		// pages could be [] and pass here, that's ok
 		if (!home || !pages) return;
@@ -355,6 +371,7 @@ export const useCreateSite = () => {
 			let headerCode = updateNavAttributes(home.headerCode || '', {
 				ref: headerNavId,
 			});
+			headerCode = injectNavExtras(headerCode, launchDecisions);
 			// remove the header navigation from the landing page
 			if (objective === 'landing-page') {
 				// translators: this is for a action log UI. Keep it short
@@ -365,17 +382,14 @@ export const useCreateSite = () => {
 					.replace(/<!--\s*wp:navigation\b[^>]*.*\/-->/gis, '')
 					.replace(social, '');
 			}
-			if (typeof siteProfile.phoneNumber === 'string') {
-				headerCode = headerCode.replaceAll(
-					// Hardcoded in the template
-					'206-555-0100',
-					siteProfile.phoneNumber ||
-						// translators: Use a number that is appropriate for the locale. It does not need to be this exact number. This is a placeholder phone number. For example, in pt_BR you could use (11) 91234-5678.
-						__('206-555-0100', 'extendify-local'),
-				);
-			}
+			headerCode = headerCode.replaceAll(
+				'206-555-0100',
+				(typeof siteProfile.phoneNumber === 'string' &&
+					siteProfile.phoneNumber) ||
+					// translators: Use a number that is appropriate for the locale. It does not need to be this exact number. This is a placeholder phone number. For example, in pt_BR you could use (11) 91234-5678.
+					__('206-555-0100', 'extendify-local'),
+			);
 			checkIn({ stage: 'set_navigation' });
-			await updateTemplatePart('extendable/header', headerCode);
 
 			// footer
 			let footerNavId = null;
@@ -430,9 +444,16 @@ export const useCreateSite = () => {
 			checkIn({ stage: 'generate_page_content' });
 			const customPages = await generatePageContent(pagesReplaced, data);
 
-			const stickyNav =
-				structure === 'single-page' && objective !== 'landing-page';
-			const createdPagesWP = await createWpPages(customPages, { stickyNav });
+			// Update heroDescription to the actual AI-rewritten hero content
+			const homePage = customPages.find((p) => p.slug === 'home');
+			const heroPattern = homePage?.patterns?.find((p) =>
+				p.patternTypes?.includes('hero-header'),
+			);
+			const pMatch = heroPattern?.code?.match(/<p[^>]*>([\s\S]*?)<\/p>/);
+			const heroDesc = pMatch?.[1]?.replace(/<[^>]+>/g, '').trim();
+			setData('heroDescription', heroDesc || data.heroDescription);
+
+			const createdPagesWP = await createWpPages(customPages);
 			// Aux pages
 			const hasBlogPattern = home?.patterns?.some((pattern) =>
 				pattern.patternTypes.includes('blog-section'),
@@ -479,14 +500,22 @@ export const useCreateSite = () => {
 
 			// Adding pages to the nav
 			checkIn({ stage: 'set_page_links' });
-			const pagesWithLinksUpdated =
+			const linksResult =
 				structure === 'single-page'
-					? await updateSinglePageLinksToSections(createdPagesWP, customPages, {
-							objective,
-							activePlugins,
-							landingPageCTALink: siteProfile.landingPageCTALink,
-						})
-					: await updateButtonLinks(createdPagesWP, pluginPages);
+					? await updateSinglePageLinksToSections(
+							createdPagesWP,
+							customPages,
+							{
+								objective,
+								activePlugins,
+								landingPageCTALink: siteProfile.landingPageCTALink,
+							},
+							headerCode,
+						)
+					: await updateButtonLinks(createdPagesWP, pluginPages, headerCode);
+			const pagesWithLinksUpdated = linksResult.wpPages;
+			headerCode = linksResult.headerCode;
+			await updateTemplatePart('extendable/header', headerCode);
 			const footerNavPages = [];
 			if (footerNavId && imprint?.title) {
 				const { originalSlug, title } = imprint;

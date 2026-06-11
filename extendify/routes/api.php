@@ -32,10 +32,10 @@ use Extendify\PageCreator\Controllers\SiteController as PageCreatorSiteControlle
 
 use Extendify\Agent\Controllers\WPController as AgentWPController;
 use Extendify\Agent\Controllers\ChatHistoryController as AgentChatController;
-use Extendify\Agent\Controllers\WorkflowHistoryController as AgentWorkflowController;
 use Extendify\Agent\Controllers\SiteNavigationController as AgentSiteNavigationController;
 
 use Extendify\PluginNotifications\Controllers\NotificationsController;
+use Extendify\Shared\Controllers\AutoUpdateController;
 use Extendify\Shared\Controllers\PatternPlaceholderController;
 use Extendify\Shared\Controllers\UserSelectionController;
 use Extendify\Shared\Controllers\UserSettingsController as SharedUserSettingsController;
@@ -44,6 +44,8 @@ use Extendify\Shared\Controllers\SiteProfileController;
 use Extendify\Shared\Controllers\SiteImagesController;
 use Extendify\Shared\Controllers\DataController as SharedDataController;
 use Extendify\Shared\Controllers\ImageGenerationController;
+use Extendify\Shared\Services\PluginsActivation\SimplyBook as SimplyBookActivation;
+use Extendify\Shared\Services\PluginsActivation\TranslatePress as TranslatePressActivation;
 
 \add_action(
     'rest_api_init',
@@ -75,6 +77,7 @@ use Extendify\Shared\Controllers\ImageGenerationController;
         ApiRouter::get('/auto-launch/prefetch-assist-data', [AutoLaunchWPController::class, 'prefetchAssistData']);
         ApiRouter::post('/auto-launch/create-navigation', [AutoLaunchWPController::class, 'createNavigationWithMeta']);
         ApiRouter::get('/auto-launch/get-navigation', [AutoLaunchWPController::class, 'getNavigation']);
+        ApiRouter::post('/auto-launch/pre-launch-functions', [AutoLaunchWPController::class, 'preLaunch']);
         ApiRouter::post('/auto-launch/post-launch-functions', [AutoLaunchWPController::class, 'postLaunch']);
         ApiRouter::get(
             '/auto-launch/import-woocommerce',
@@ -114,7 +117,6 @@ use Extendify\Shared\Controllers\ImageGenerationController;
         ApiRouter::post('/agent/lock-post', [AgentWPController::class, 'lockPost']);
         ApiRouter::get('/agent/chat-events', [AgentChatController::class, 'get']);
         ApiRouter::post('/agent/chat-events', [AgentChatController::class, 'store']);
-        ApiRouter::post('/agent/workflows', [AgentWorkflowController::class, 'add']);
         ApiRouter::post('/agent/site-navigation', [AgentSiteNavigationController::class, 'getSiteNavigation']);
         ApiRouter::post('/agent/render-navigation', [AgentSiteNavigationController::class, 'renderNavigationMenu']);
         ApiRouter::post('/agent/site-design-variations', [AgentWPController::class, 'getSiteDesignVariations']);
@@ -131,6 +133,7 @@ use Extendify\Shared\Controllers\ImageGenerationController;
         ApiRouter::post('/shared/user-selections-data', [UserSelectionController::class, 'store']);
         ApiRouter::post('/shared/update-user-meta', [SharedUserSettingsController::class, 'updateUserMeta']);
         ApiRouter::post('/shared/process-placeholders', [PatternPlaceholderController::class, 'processPlaceholders']);
+        ApiRouter::post('/shared/enable-auto-update', [AutoUpdateController::class, 'enable']);
         ApiRouter::get('/shared/activity', [ActivityController::class, 'get']);
         ApiRouter::post('/shared/activity', [ActivityController::class, 'store']);
         ApiRouter::post('/shared/site-profile', [SiteProfileController::class, 'store']);
@@ -140,5 +143,13 @@ use Extendify\Shared\Controllers\ImageGenerationController;
         ApiRouter::post('/shared/site-images/clear', [SiteImagesController::class, 'clear']);
         ApiRouter::get('/shared/ping', [SharedDataController::class, 'ping']);
         ApiRouter::get('/shared/partner-plugins', [SharedDataController::class, 'getPartnerPlugins']);
+        ApiRouter::post(
+            '/' . SimplyBookActivation::slug() . '/create-account',
+            [SimplyBookActivation::class, 'createAccount']
+        );
+        ApiRouter::post(
+            '/' . TranslatePressActivation::slug() . '/create-account',
+            [TranslatePressActivation::class, 'createAccount']
+        );
     }
 );

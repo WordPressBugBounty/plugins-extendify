@@ -22,7 +22,7 @@ const state = (set, get) => ({
 			activities: [
 				...get().activities,
 				{
-					domain,
+					domain: domain?.toLowerCase(),
 					position,
 					type,
 					action,

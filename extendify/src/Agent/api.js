@@ -1,8 +1,8 @@
 import { useChatStore } from '@agent/state/chat';
 import { useGlobalStore } from '@agent/state/global';
-import { useWorkflowStore } from '@agent/state/workflows';
 import { tools } from '@agent/workflows/workflows';
 import { AI_HOST } from '@constants';
+import { useQuickEditStore } from '@quick-edit/state/store';
 import { digest } from '@shared/api/digest';
 import { reqDataBasics } from '@shared/lib/data';
 
@@ -31,7 +31,7 @@ export const pickWorkflow = async ({ workflows, options }) => {
 	const failed = failedWorkflows ?? new Set();
 	const filteredWorkflows = workflows.filter((wf) => !failed.has(wf.id));
 
-	const { workflowHistory: pastWorkflows, block } = useWorkflowStore.getState();
+	const block = useQuickEditStore.getState().agentBlock;
 
 	const messages = useChatStore.getState().getMessagesForAI();
 	const lastAssistantMessage = useChatStore
@@ -45,11 +45,11 @@ export const pickWorkflow = async ({ workflows, options }) => {
 		body: JSON.stringify({
 			...reqDataBasics,
 			workflows: filteredWorkflows,
-			previousAgentName: pastWorkflows.at(0)?.agentName,
 			previousWorkflow: {
+				workflowId: lastAssistantMessage?.details?.workflowId,
+				language: lastAssistantMessage?.details?.language,
 				lastMessage: lastAssistantMessage?.details?.content,
 				sessionId: lastAssistantMessage?.details?.sessionId,
-				...pastWorkflows?.at(0),
 			},
 			context,
 			agentContext: window.extAgentData.agentContext,

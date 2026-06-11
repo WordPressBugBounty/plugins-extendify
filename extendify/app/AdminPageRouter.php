@@ -194,7 +194,8 @@ class AdminPageRouter
                 Config::preview('agent-onboarding') ||
                 constant('EXTENDIFY_DEVMODE');
             $page = $useAgentOnboarding ? 'extendify-auto-launch' : 'extendify-launch';
-            \wp_safe_redirect(\admin_url('admin.php?page=' . $page));
+            $query_params = $this->presentLaunchParams(['page' => $page]);
+            \wp_safe_redirect(\add_query_arg($query_params, \admin_url('admin.php')));
             exit;
         }
 
@@ -244,12 +245,10 @@ class AdminPageRouter
                 Config::preview('agent-onboarding') ||
                 constant('EXTENDIFY_DEVMODE');
             if ($agentOnboarding) {
-                // If they landed on launch but have the Agent onboarding enabled, redirect to auto-launch.
-                $redirect_url = \add_query_arg(
-                    ['page' => 'extendify-auto-launch'],
-                    \admin_url('admin.php')
-                );
-                \wp_safe_redirect($redirect_url);
+                // If they landed on launch but have the Agent onboarding enabled, redirect to
+                // auto-launch — carrying their deep-link params, which a bare page-only redirect drops.
+                $query_params = $this->presentLaunchParams(['page' => 'extendify-auto-launch']);
+                \wp_safe_redirect(\add_query_arg($query_params, \admin_url('admin.php')));
                 exit;
             }
             return;
@@ -275,50 +274,60 @@ class AdminPageRouter
             \update_option('permalink_structure', '/%postname%/');
             \update_option('extendify_needs_rewrite_flush', true);
 
-            $allowed_launch_params = [
-                'objective',
-                'title',
-                'description',
-                'structure',
-                'tone',
-                'skip',
-                // new for autolaunch (some duplicated)
-                'type',
-                'title',
-                'description',
-                'objective',
-                'category',
-                'structure',
-                'tone',
-                'products',
-                'appointments',
-                'events',
-                'donations',
-                'multilingual',
-                'contact',
-                'address',
-                'blog',
-                'landing-page',
-                'cta-link',
-                'build-id',
-                'go',
-            ];
             // phpcs:ignore WordPress.Security.NonceVerification.Recommended,WordPress.Security.ValidatedSanitizedInput.MissingUnslash
             $autoLaunch = isset($_GET['auto-launch']) && filter_var($_GET['auto-launch'], FILTER_VALIDATE_BOOLEAN);
-            $query_params = ['page' => $autoLaunch ? 'extendify-auto-launch' : 'extendify-launch'];
-
-            foreach ($allowed_launch_params as $param) {
-                // phpcs:ignore WordPress.Security.NonceVerification.Recommended
-                $value = sanitize_text_field(wp_unslash($_GET[$param] ?? ''));
-                if (!empty($value)) {
-                    $query_params[$param] = $value;
-                }
-            }
+            $query_params = $this->presentLaunchParams([
+                'page' => $autoLaunch ? 'extendify-auto-launch' : 'extendify-launch',
+            ]);
 
             $redirect_url = \add_query_arg($query_params, \admin_url('admin.php'));
             \wp_safe_redirect($redirect_url);
             exit;
         }
+    }
+
+    /**
+     * Merges the allowlisted launch deep-link params present in the request onto
+     * $base, so a redirect into Launch/AutoLaunch carries the partner's params
+     * through instead of dropping them.
+     *
+     * @param array $base Seed query args (typically the destination `page`).
+     * @return array
+     */
+    private function presentLaunchParams(array $base)
+    {
+        $allowed = [
+            'objective',
+            'title',
+            'description',
+            'structure',
+            'tone',
+            'skip',
+            'type',
+            'category',
+            'products',
+            'appointments',
+            'events',
+            'donations',
+            'multilingual',
+            'contact',
+            'address',
+            'blog',
+            'landing-page',
+            'cta-link',
+            'build-id',
+            'go',
+        ];
+
+        foreach ($allowed as $param) {
+            // phpcs:ignore WordPress.Security.NonceVerification.Recommended
+            $value = sanitize_text_field(wp_unslash($_GET[$param] ?? ''));
+            if (!empty($value)) {
+                $base[$param] = $value;
+            }
+        }
+
+        return $base;
     }
 
     /**

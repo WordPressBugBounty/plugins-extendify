@@ -2,6 +2,7 @@ import {
 	getDesignBuildShape,
 	getHomeShape,
 	getImagesShape,
+	getLaunchDecisionsShape,
 	getLogoShape,
 	getPagesShape,
 	getPluginsShape,
@@ -27,12 +28,16 @@ const initialState = {
 	statusMessages: [__('Booting things up', 'extendify-local')],
 	errorMessage: null,
 	errorCount: 0,
+	title: null,
 	description: null,
 	descriptionBackup: undefined,
 	descriptionRaw: null,
 	urlParams: {},
 	siteProfile: {
 		...shapeToKeyValue(getProfileShape),
+	},
+	launchDecisions: {
+		...shapeToKeyValue(getLaunchDecisionsShape),
 	},
 	...shapeToKeyValue(getLogoShape),
 	...shapeToKeyValue(getPluginsShape),
@@ -98,6 +103,7 @@ const isValidKey = (key) => Object.keys(initialState).includes(key);
 const keySchemas = {
 	urlParams: urlParamsShape,
 	siteProfile: getProfileShape,
+	launchDecisions: getLaunchDecisionsShape,
 	...Object.fromEntries(
 		[
 			getLogoShape,
