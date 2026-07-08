@@ -7,7 +7,7 @@
  * Plugin URI:        https://extendify.com/?utm_source=wp-plugins&utm_campaign=plugin-uri&utm_medium=wp-dash
  * Author:            Extendify
  * Author URI:        https://extendify.com/?utm_source=wp-plugins&utm_campaign=author-uri&utm_medium=wp-dash
- * Version:           3.1.1
+ * Version:           3.1.2
  * Requires at least: 6.5
  * Requires PHP:      7.0
  * License:           GPL-2.0-or-later
@@ -150,7 +150,12 @@ if (!class_exists('ExtendifySdk') && !class_exists('Extendify')) :
 
     // Allow Extendify requests to have a longer timeout.
     add_filter('http_request_args', function ($args, $url) {
-        if (strpos($url, 'extendify') !== false) {
+        $extendifyHosts = array_filter(array_map(function ($host) {
+            return wp_parse_url($host, PHP_URL_HOST);
+        }, \Extendify\Constants::serviceUrls()));
+
+        $host = wp_parse_url($url, PHP_URL_HOST);
+        if ($host && (str_contains($host, 'extendify') || in_array($host, $extendifyHosts, true))) {
             $args['timeout'] = 45;
         }
 

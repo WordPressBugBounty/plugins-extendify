@@ -24,6 +24,7 @@ const shapeToKeyValue = (shape) => {
 
 const initialState = {
 	go: false,
+	showExtendifyCodeScreen: false,
 	// translators: this is for a action log UI. Keep it short
 	statusMessages: [__('Booting things up', 'extendify-local')],
 	errorMessage: null,
@@ -171,6 +172,7 @@ export const useLaunchDataStore = create(
 				description,
 				descriptionRaw,
 				title,
+				showExtendifyCodeScreen,
 				...rest
 			} = state;
 			return Object.fromEntries(

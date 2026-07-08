@@ -1,4 +1,5 @@
 import { recordPluginActivity } from '@shared/api/DataApi';
+import { digest } from '@shared/api/digest';
 import { enableAutoUpdate } from '@shared/api/wp';
 import apiFetch from '@wordpress/api-fetch';
 import { addQueryArgs } from '@wordpress/url';
@@ -24,17 +25,17 @@ export const installPlugin = async (slug) => {
 		return await fn();
 	} catch (error) {
 		if (error?.code === 'folder_exists') {
-			console.warn(
-				`Plugin ${slug} already installed. Attempting to activate...`,
-			);
-			// Get the plugin info directly here
+			// Already on disk — fetch its record so the caller can activate it.
 			return await getPlugin(slug);
 		}
-		console.error(`Error installing ${slug}. Retrying...`, error);
 		try {
 			return await fn();
 		} catch (error) {
-			console.error(`Failed ${slug} again. Giving up`, error);
+			digest({
+				error,
+				details: { source: 'auto-launch', caller: 'installPlugin' },
+			});
+			return null;
 		}
 	}
 };
@@ -56,16 +57,65 @@ export const activatePlugin = async (slug) => {
 
 	try {
 		await fn(slug);
+		return true;
 	} catch (_) {
-		console.warn(`Error activating ${slug}. Retrying with fresh data...`);
 		try {
 			// try once more but get the slug first
 			const { plugin } = await getPlugin(slug);
 			await fn(plugin);
+			return true;
 		} catch (error) {
-			console.error(`Failed to activate ${slug} again. Giving up`, error);
+			digest({
+				error,
+				details: { source: 'auto-launch', caller: 'activatePlugin' },
+			});
+			return false;
 		}
 	}
+};
+
+// Isolates per-plugin failures so one bad plugin can't block the rest;
+// returns the slugs that never went active.
+export const ensurePluginsActive = async (
+	slugs,
+	{ installedSlugs = [] } = {},
+) => {
+	const failed = [];
+	for (const slug of slugs) {
+		try {
+			const plugin = installedSlugs.includes(slug)
+				? null
+				: await installPlugin(slug);
+			const activated = await activatePlugin(plugin?.plugin ?? slug);
+			if (!activated) failed.push(slug);
+		} catch (_) {
+			failed.push(slug);
+		}
+	}
+	return { failed };
+};
+
+// Last-chance guarantee before dependent work builds on these plugins: the
+// optimistic install pass is best-effort and unverified.
+export const verifyPluginsActive = async (
+	slugs,
+	{ installedSlugs = [] } = {},
+) => {
+	const activePlugins = await getActivePlugins();
+	// Exact slug match here (not alreadyActive's substring test): matching
+	// woocommerce against an active woocommerce-payments would skip a real miss.
+	const missing = slugs.filter(
+		(slug) => !activePlugins?.some((path) => path.split('/')[0] === slug),
+	);
+	if (!missing.length) return;
+
+	const { failed } = await ensurePluginsActive(missing, { installedSlugs });
+	if (!failed.length) return;
+
+	digest({
+		error: { message: `Plugins inactive after verify: ${failed.join(', ')}` },
+		details: { source: 'auto-launch', caller: 'verifyPluginsActive', failed },
+	});
 };
 
 // Currently this only processes patterns with placeholders

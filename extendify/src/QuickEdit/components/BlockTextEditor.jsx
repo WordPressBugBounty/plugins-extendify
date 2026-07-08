@@ -87,6 +87,7 @@ export const ensureRegistered = () => {
 };
 ensureRegistered();
 
+import { track } from '@shared/lib/track';
 import { parse, serialize } from '@wordpress/blocks';
 import { Popover } from '@wordpress/components';
 import { useDispatch, useRegistry, useSelect } from '@wordpress/data';
@@ -102,7 +103,6 @@ import {
 import { splice } from '../lib/dom';
 import { friendlyMessage } from '../lib/errors';
 import { normalizedTextEquals, textFingerprint } from '../lib/fingerprint';
-import { track } from '../lib/insights';
 import { fetchLinkSuggestions } from '../lib/link-suggestions';
 import { registerSaver, unregisterSaver } from '../lib/save-bridge';
 import { useQuickEditStore } from '../state/store';

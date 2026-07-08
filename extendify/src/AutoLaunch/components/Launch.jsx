@@ -5,9 +5,12 @@ import { motion } from 'framer-motion';
 const MAX_HEIGHT_SMALL = 400;
 
 export const Launch = ({ skipDescription, lastHeight }) => {
+	const widthClass = 'mx-auto w-full max-w-2xl';
+
 	if (!skipDescription) {
 		return (
 			<motion.div
+				className={widthClass}
 				animate={{ opacity: 1 }}
 				exit={{ opacity: 0 }}
 				transition={{ duration: 0.4 }}
@@ -19,6 +22,7 @@ export const Launch = ({ skipDescription, lastHeight }) => {
 
 	return (
 		<motion.div
+			className={widthClass}
 			initial={{ opacity: 0, height: lastHeight || 'auto' }}
 			animate={{ opacity: 1, height: MAX_HEIGHT_SMALL }}
 			transition={{ duration: 0.4 }}

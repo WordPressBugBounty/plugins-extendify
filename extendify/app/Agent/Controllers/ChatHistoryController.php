@@ -27,7 +27,7 @@ class ChatHistoryController
     }
 
     /**
-     * Get the last 150 messages
+     * Get the last 250 messages
      *
      * @return array
      */
@@ -39,7 +39,7 @@ class ChatHistoryController
 
         $results = $wpdb->get_results(
             $wpdb->prepare(
-                "SELECT * FROM $table WHERE user_id = %d ORDER BY id DESC LIMIT 150",
+                "SELECT * FROM $table WHERE user_id = %d ORDER BY id DESC LIMIT 250",
                 $user_id
             ),
             ARRAY_A

@@ -33,7 +33,9 @@ export const pickWorkflow = async ({ workflows, options }) => {
 
 	const block = useQuickEditStore.getState().agentBlock;
 
-	const messages = useChatStore.getState().getMessagesForAI();
+	const messages = useChatStore
+		.getState()
+		.getCurrentMessages({ includeTools: false });
 	const lastAssistantMessage = useChatStore
 		.getState()
 		.getLastAssistantMessage();
@@ -53,6 +55,7 @@ export const pickWorkflow = async ({ workflows, options }) => {
 			},
 			context,
 			agentContext: window.extAgentData.agentContext,
+			wpAbilities: window.extAgentData.wpAbilities ?? [],
 			messages: messages.slice(-5),
 			hasBlock: Boolean(block), // todo: remove this
 			blockDetails: block,
@@ -77,7 +80,7 @@ export const pickWorkflow = async ({ workflows, options }) => {
 };
 
 export const handleWorkflow = async ({ workflow, workflowData, options }) => {
-	const messages = useChatStore.getState().getMessagesForAI();
+	const { getCurrentMessages, getMessagesFor } = useChatStore.getState();
 	const response = await fetch(`${AI_HOST}/api/agent/handle-workflow`, {
 		method: 'POST',
 		headers: { 'Content-Type': 'application/json' },
@@ -86,9 +89,11 @@ export const handleWorkflow = async ({ workflow, workflowData, options }) => {
 			...reqDataBasics,
 			workflow,
 			workflowData,
-			messages: messages,
+			messages: getCurrentMessages(),
+			previousMessages: getMessagesFor(workflow?.id),
 			context: window.extAgentData.context,
 			agentContext: window.extAgentData.agentContext,
+			wpAbilities: window.extAgentData.wpAbilities ?? [],
 			retry: options?.retry || false,
 			extra: extra(),
 		}),
@@ -111,8 +116,18 @@ export const rateAnswer = ({ answerId, rating }) =>
 	);
 
 export const callTool = async ({ tool, inputs }) => {
-	if (!tools[tool]) throw new Error(`Tool ${tool} not found`);
-	return await tools[tool](inputs);
+	if (tools[tool]) return await tools[tool](inputs);
+	// Ability tools are named after the ability and have no file; the generic
+	// runner executes them. Key the result to its slot so the loop sees it filled.
+	const isAbility = (window.extAgentData?.wpAbilities ?? []).some((category) =>
+		category.abilities?.some((ability) => ability.name === tool),
+	);
+	if (isAbility) {
+		return {
+			[tool]: await tools['execute-ability']({ ability: tool, input: inputs }),
+		};
+	}
+	throw new Error(`Tool ${tool} not found`);
 };
 
 export const recordAgentActivity = ({ action, sessionId, value = {} }) => {

@@ -1,5 +1,6 @@
 import { ChatTools } from '@agent/components/ChatTools';
 import { cancelRequest } from '@agent/icons';
+import { useChatStore } from '@agent/state/chat';
 import { useGlobalStore } from '@agent/state/global';
 import { useWorkflowStore } from '@agent/state/workflows';
 import { useQuickEditStore } from '@quick-edit/state/store';
@@ -47,34 +48,21 @@ export const ChatInput = ({ disabled, handleSubmit }) => {
 	}, [adjustHeight]);
 
 	useEffect(() => {
-		const watchForSubmit = ({ detail }) => {
-			setHistory((prev) => {
-				// avoid duplicates
-				if (prev?.at(-1) === detail.message) return prev;
-				return [...prev, detail.message];
-			});
-			setHistoryIndex(null);
-		};
-		window.addEventListener('extendify-agent:chat-submit', watchForSubmit);
-		return () =>
-			window.removeEventListener('extendify-agent:chat-submit', watchForSubmit);
-	}, []);
-
-	useEffect(() => {
 		adjustHeight();
 	}, [input, adjustHeight]);
 
+	// Derive the up-arrow history from the chat store so it survives reload —
+	// a one-shot DOM read missed messages that hydrate in asynchronously.
+	const messages = useChatStore((s) => s.messages);
 	useEffect(() => {
-		const userMessages = Array.from(
-			document.querySelectorAll(
-				'#extendify-agent-chat-scroll-area > [data-agent-message-role="user"]',
-			),
-		)?.map((el) => el.textContent || '');
-		const deduped = userMessages.filter(
-			(msg, i, arr) => i === 0 || msg !== arr[i - 1],
+		const userMessages = messages
+			.filter((m) => m.type === 'message' && m.details?.role === 'user')
+			.map((m) => m.details.content ?? '');
+		setHistory(
+			userMessages.filter((msg, i, arr) => i === 0 || msg !== arr[i - 1]),
 		);
-		setHistory(deduped);
-	}, []);
+		setHistoryIndex(null);
+	}, [messages]);
 
 	const submitForm = useCallback(
 		(e) => {

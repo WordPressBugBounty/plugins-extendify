@@ -1,5 +1,7 @@
 // Plain-DOM (not React) — mouseover-driven, runs outside the React
 // commit cycle to avoid dropped clicks under fast pointer movement.
+
+import { track } from '@shared/lib/track';
 import { __ } from '@wordpress/i18n';
 import { useEditModeStore } from '../state/edit-mode';
 import { useQuickEditStore } from '../state/store';
@@ -15,7 +17,6 @@ import {
 import { prefetchBlockSource } from './block-source-cache';
 import { decideClickAction } from './click-rule';
 import { resolveTarget } from './dom';
-import { track } from './insights';
 import { hasQuickEditModalFor } from './quick-edit-handlers';
 import { hasSaver, saveSelected } from './save-bridge';
 import {
@@ -273,10 +274,17 @@ const onEditClick = (target) => {
 	const anchorRect = hoverBar?.getBoundingClientRect() ?? null;
 	const placement = hoverBar?.dataset.extendifyQuickEditPlacement ?? 'above';
 
-	if (!isPickerType(target.blockType)) clearBar();
+	const isPicker = isPickerType(target.blockType);
+	if (!isPicker) clearBar();
 	store.setCommittedSelection(null);
 	store.setSelected({ ...target, anchorRect, anchorPlacement: placement });
-	track('quick_edit_clicked', { blockType: target.blockType });
+
+	if (!isPicker) {
+		track('quick_edit_action', {
+			element: target.blockType,
+			type: 'quick_edit',
+		});
+	}
 };
 
 const onAiClick = (el) => {
@@ -289,7 +297,10 @@ const onAiClick = (el) => {
 	store.clearSelected();
 	clearBar();
 	store.setCommittedSelection(null);
-	track('ask_ai_clicked', { matched: !!resolveTarget(el)?.blockType });
+	track('quick_edit_action', {
+		element: resolveTarget(el)?.blockType ?? null,
+		type: 'ask_ai',
+	});
 	askAiAboutElement(el);
 };
 

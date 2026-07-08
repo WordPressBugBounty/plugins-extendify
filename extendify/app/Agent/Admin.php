@@ -16,6 +16,7 @@ use Extendify\Shared\Services\Escaper;
 use Extendify\Shared\Services\HttpClient;
 use Extendify\Agent\TagBlocks;
 use Extendify\Agent\TagTemplateParts;
+use Extendify\Agent\AbilitiesDiscovery;
 use Extendify\Agent\Controllers\SiteNavigationController;
 use Extendify\PartnerData;
 use Extendify\Shared\DataProvider\ProductsData;
@@ -154,6 +155,8 @@ class Admin
                 // List of abilities the AI can perform for this user.
                 // For example, we could check whether their theme has variations.
                 'abilities' => $abilities,
+                // Registered WordPress Abilities (6.9+) this user may run.
+                'wpAbilities' => AbilitiesDiscovery::discover(),
                 // List of suggestions the AI can make for this user.
                 // For example, we could check whether they need to set up a specific plugin.
                 'suggestions' => $this->getSuggestions(),

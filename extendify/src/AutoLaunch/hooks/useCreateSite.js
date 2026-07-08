@@ -35,11 +35,11 @@ import {
 } from '@auto-launch/functions/pages';
 import { generatePageContent } from '@auto-launch/functions/patterns';
 import {
-	activatePlugin,
 	alreadyActive,
+	ensurePluginsActive,
 	getActivePlugins,
-	installPlugin,
 	replacePlaceholderPatterns,
+	verifyPluginsActive,
 } from '@auto-launch/functions/plugins';
 import {
 	postLaunchFunctions,
@@ -147,15 +147,10 @@ export const useCreateSite = () => {
 			// translators: this is for a action log UI. Keep it short
 			__('Setting up functionality for your website', 'extendify-local'),
 		);
-		(async function install() {
-			for (const { wordpressSlug: slug } of data.sitePlugins) {
-				let plugin;
-				if (!installedPluginsSlugs?.includes(slug)) {
-					plugin = await installPlugin(slug);
-				}
-				await activatePlugin(plugin?.plugin ?? slug);
-			}
-		})();
+		ensurePluginsActive(
+			data.sitePlugins.map(({ wordpressSlug }) => wordpressSlug),
+			{ installedSlugs: installedPluginsSlugs },
+		);
 	}, [data.sitePlugins]);
 
 	// needs: siteProfile
@@ -325,6 +320,12 @@ export const useCreateSite = () => {
 		homeStretch.current = true;
 		(async () => {
 			const { objective, structure, category } = siteProfile;
+
+			// Guarantee plugins are active before the pattern imports below rely on them.
+			await verifyPluginsActive(
+				(sitePlugins ?? []).map(({ wordpressSlug }) => wordpressSlug),
+				{ installedSlugs: installedPluginsSlugs },
+			);
 
 			// Do they need an imprint page?
 			const needsImprint = Array.isArray(showImprint)

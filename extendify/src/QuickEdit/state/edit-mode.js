@@ -1,7 +1,7 @@
 import { isEmbedded } from '@shared/lib/embedded-guard';
+import { track } from '@shared/lib/track';
 import { create } from 'zustand';
 import { persist } from 'zustand/middleware';
-import { track } from '../lib/insights';
 
 const HTML_CLASS = 'extendify-quick-edit-on';
 
@@ -33,6 +33,6 @@ const applyHtmlClass = (on) =>
 
 useEditModeStore.subscribe((state) => {
 	applyHtmlClass(state.on);
-	track(state.on ? 'edit_mode_on' : 'edit_mode_off');
+	track('quick_edit_status', { value: state.on ? 'on' : 'off' });
 });
 applyHtmlClass(useEditModeStore.getState().on);

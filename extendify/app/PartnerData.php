@@ -79,6 +79,7 @@ class PartnerData
         ],
         'license' => 'active',
         'showAIAgents' => false,
+        'agentAbilitiesAllowlist' => [],
         'showQuickEdit' => false,
         // Simple front-end Extendify toolbar (replaces WP core admin
         // bar for editors who prefer it). Default style is Launch-aware
@@ -94,6 +95,13 @@ class PartnerData
         'hideLaunchExitLink' => false,
         'useAutoUpdate' => false,
         'activeTests' => [],
+        'showExtendifyCode' => false,
+        'extendifyCodeData' => [
+            'link' => '',
+            'title' => '',
+            'message' => '',
+            'cta-primary' => '',
+        ],
     ];
 
     // phpcs:disable Generic.Metrics.CyclomaticComplexity.MaxExceeded
@@ -158,6 +166,8 @@ class PartnerData
         self::$config['showImprint'] = ($data['showImprint'] ?? self::$config['showImprint']);
         self::$config['showLaunchQuestions'] = ($data['showLaunchQuestions'] ?? self::$config['showLaunchQuestions']);
         self::$config['showAIAgents'] = ($data['showAIAgents'] ?? self::$config['showAIAgents']);
+        self::$config['agentAbilitiesAllowlist'] = ($data['agentAbilitiesAllowlist']
+            ?? self::$config['agentAbilitiesAllowlist']);
         self::$config['showQuickEdit'] = ($data['showQuickEdit'] ?? self::$config['showQuickEdit']);
         self::$config['showSimpleToolbar'] = ($data['showSimpleToolbar']
             ?? self::$config['showSimpleToolbar']);
@@ -171,6 +181,8 @@ class PartnerData
         self::$config['hideLaunchExitLink'] = ($data['hideLaunchExitLink'] ?? self::$config['hideLaunchExitLink']);
         self::$config['useAutoUpdate'] = ($data['useAutoUpdate'] ?? self::$config['useAutoUpdate']);
         self::$config['activeTests'] = ($data['activeTests'] ?? self::$config['activeTests']);
+        self::$config['showExtendifyCode'] = ($data['showExtendifyCode'] ?? self::$config['showExtendifyCode']);
+        self::$config['extendifyCodeData'] = ($data['extendifyCodeData'] ?? self::$config['extendifyCodeData']);
 
         // Add the job hook to fetch the partner data.
         \add_action('extendify_fetch_partner_data', [self::class, 'fetchPartnerData']);

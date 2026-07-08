@@ -10,9 +10,14 @@ import { ChatMessages } from '@agent/components/ChatMessages';
 import { UsageMessage } from '@agent/components/messages/UsageMessage';
 import { PageDocument } from '@agent/components/PageDocument';
 import { useLockPost } from '@agent/hooks/useLockPost';
+import {
+	abilityAffectsCurrentPage,
+	isAbilityWorkflow,
+} from '@agent/lib/abilities';
 import { getRedirectUrl } from '@agent/lib/redirects';
 import { useChatStore } from '@agent/state/chat';
 import { useGlobalStore } from '@agent/state/global';
+import { useStatusStore } from '@agent/state/status';
 import { useSuggestionsStore } from '@agent/state/suggestions';
 import { useWorkflowStore } from '@agent/state/workflows';
 import { useQuickEditStore } from '@quick-edit/state/store';
@@ -33,6 +38,7 @@ const { postId } = window?.extAgentData?.context || {};
 
 export const Agent = () => {
 	const { addMessage, popMessage } = useChatStore();
+	const { pushStatus, clearStatuses } = useStatusStore();
 	const {
 		mergeWorkflowData,
 		getWorkflow,
@@ -64,6 +70,7 @@ export const Agent = () => {
 		setWaitingOnToolOrUser(false);
 		controller = new AbortController();
 		block && setBlock(null);
+		clearStatuses();
 		window.dispatchEvent(new Event('extendify-agent:remove-block-highlight'));
 		// scrollIntoView below walks up and scrolls the page itself,
 		// fighting useLayoutShift's scroll restore when closing.
@@ -75,11 +82,11 @@ export const Agent = () => {
 		)?.at(-1);
 		c?.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
 		c?.scrollBy({ top: -5, behavior: 'smooth' });
-	}, [setBlock, block]);
+	}, [setBlock, block, clearStatuses]);
 
 	const findAgent = useCallback(
 		async (options = {}) => {
-			addMessage('status', { type: 'calling-agent' });
+			pushStatus('calling-agent');
 			const response = await pickWorkflow({
 				workflows: workflowIds,
 				options: { signal: controller.signal, ...options },
@@ -88,12 +95,12 @@ export const Agent = () => {
 				if (error?.response?.status === 429) {
 					updateRetryAfter(error?.response?.headers?.get('Retry-After'));
 					setCanType(false);
-					addMessage('status', { type: 'credits-exhausted' });
+					pushStatus('credits-exhausted');
 					return;
 				}
 				setCanType(true);
 				if (error === 'Workflow aborted') {
-					addMessage('status', { type: 'workflow-canceled' });
+					addMessage('workflow', { status: 'canceled' });
 					return;
 				}
 
@@ -119,7 +126,7 @@ export const Agent = () => {
 			}
 			if (!wf?.id) setCanType(true);
 		},
-		[addMessage, updateRetryAfter, setWorkflow, workflowIds],
+		[addMessage, pushStatus, updateRetryAfter, setWorkflow, workflowIds],
 	);
 
 	const handleSubmit = useCallback(
@@ -136,7 +143,12 @@ export const Agent = () => {
 
 			// Let some phrases auto load workflows
 			const bypass = getWorkflowByExample(message);
-			if (bypass?.example?.agentResponse) return handleBypass(bypass);
+			if (bypass?.example?.agentResponse) {
+				// whenFinishedTool → inline input UI; none → ask for a typed reply.
+				return bypass.example.agentResponse.whenFinishedTool
+					? handleBypass(bypass)
+					: handleInstantAsk(bypass);
+			}
 
 			setCanType(false);
 			// If they typed while waiting on a redirect, reset the workflow
@@ -193,6 +205,30 @@ export const Agent = () => {
 		});
 	}, []);
 
+	// Ask the user, then let the normal loop handle their typed reply.
+	const handleInstantAsk = useCallback(async (workflow) => {
+		const agentResponse = workflow.example?.agentResponse;
+		cleanup();
+		if (!agentResponse) return;
+		setWorkflow(workflow);
+		// Without this the loop calls the backend before the user has typed.
+		setWaitingOnToolOrUser(true);
+		setCanType(false);
+		agentWorking.current = true;
+		await new Promise((resolve) => setTimeout(resolve, 750));
+		addMessage('message', {
+			role: 'assistant',
+			content: agentResponse.reply,
+		});
+		agentWorking.current = false;
+		setCanType(true);
+		recordAgentActivity({
+			sessionId: workflow?.sessionId,
+			action: 'workflow_instant_ask',
+			value: { workflow: workflow?.id },
+		});
+	}, []);
+
 	useEffect(() => {
 		// Allow external messages to trigger the agent
 		const handleMessage = ({ detail }) => {
@@ -206,7 +242,11 @@ export const Agent = () => {
 
 			if (!workflow?.id) return;
 			setWorkflow(null);
-			addMessage('status', { type: 'workflow-canceled' });
+			addMessage('workflow', {
+				status: 'canceled',
+				agent: workflow.agent,
+				workflowId: workflow.id,
+			});
 			return;
 		};
 		window.addEventListener('extendify-agent:cancel-workflow', handleCleanup);
@@ -225,7 +265,7 @@ export const Agent = () => {
 		const handleConfirm = async ({ detail }) => {
 			if (toolWorking.current) return;
 			setWhenFinishedToolProps(null);
-			addMessage('status', { type: 'workflow-tool-processing' });
+			pushStatus('workflow-tool-processing');
 			toolWorking.current = true;
 			const { data, whenFinishedToolProps, shouldRefreshPage, redirectUrl } =
 				detail ?? {};
@@ -245,61 +285,53 @@ export const Agent = () => {
 						},
 					});
 					devmode && console.error(error);
-					return { error: error.message };
+					return { error: { message: error?.message, code: error?.code } };
 				},
 			);
 			toolWorking.current = false;
+			// Only loop back on error, so the model can recover. A clean
+			// whenFinished tool means the workflow is done.
 			if (toolResponse?.error) {
-				await new Promise((resolve) => setTimeout(resolve, 1000));
-				addMessage('message', {
-					role: 'assistant',
-					// translators: This message is shown when the AI agent fails to confirm an action.
-					content: __(
-						'Sorry, something went wrong attempting to call the tool. Please try again.',
-						'extendify-local',
-					),
-					error: true,
-				});
-				setWorkflow(null);
-				cleanup();
+				addMessage('tool', { id, inputs: data, result: toolResponse });
+				setWaitingOnToolOrUser(false);
+				agentWorking.current = false;
+				setLoop((prev) => prev + 1);
 				return;
 			}
-			addMessage('status', {
-				label: labels?.confirm,
-				type: 'workflow-tool-completed',
-			});
+
+			// Later runs of this workflow need the result (e.g. created ids).
+			if (id) addMessage('tool', { id, inputs: data, result: toolResponse });
 			addSuggestions(whenFinishedToolProps.agentResponse?.recommendations);
 			addMessage('workflow', {
 				status: 'completed',
+				label: labels?.confirm,
 				agent: workflow.agent,
+				workflowId: workflow.id,
 				answerId,
 				suggestions: getSuggestions(),
 			});
 			setWorkflow(null);
 
 			const url = getRedirectUrl(redirectTo, whenFinishedToolProps?.inputs);
-
-			if (url || redirectUrl || shouldRefreshPage) {
+			const refreshForAbility = abilityAffectsCurrentPage(id, data);
+			if (url || redirectUrl || shouldRefreshPage || refreshForAbility) {
 				await new Promise((resolve) => setTimeout(resolve, 1000));
 			}
-
 			if (url) return window.location.assign(url);
 			if (redirectUrl) return window.location.assign(redirectUrl);
-			if (shouldRefreshPage) return window.location.reload();
-			// Clean up if not redirecting
+			if (shouldRefreshPage || refreshForAbility)
+				return window.location.reload();
 			cleanup();
 		};
 		const handleCancel = ({ detail }) => {
 			if (toolWorking.current) return;
 			const { answerId, whenFinishedTool } =
 				detail.whenFinishedToolProps?.agentResponse || {};
-			addMessage('status', {
-				type: 'workflow-canceled',
-				label: whenFinishedTool?.labels?.cancel,
-			});
 			addMessage('workflow', {
 				status: 'canceled',
+				label: whenFinishedTool?.labels?.cancel,
 				agent: workflow.agent,
+				workflowId: workflow.id,
 				answerId,
 				suggestions: getSuggestions(),
 			});
@@ -329,6 +361,7 @@ export const Agent = () => {
 		};
 	}, [
 		addMessage,
+		pushStatus,
 		popMessage,
 		cleanup,
 		setWorkflow,
@@ -369,6 +402,7 @@ export const Agent = () => {
 			addMessage('workflow', {
 				status: 'canceled',
 				agent: workflow.agent,
+				workflowId: workflow.id,
 				suggestions: getSuggestions(),
 			});
 			setWorkflow(null);
@@ -387,18 +421,14 @@ export const Agent = () => {
 			if (toolWorking.current) return;
 			setCanType(false);
 			agentWorking.current = true;
-			addMessage('status', { type: 'agent-working' });
+			pushStatus('agent-working');
 			const agentResponse = await handleWorkflow({
 				workflow,
 				workflowData,
 				options: { signal: controller.signal, retry: retrying.current },
 			}).catch((error) => {
-				if (error === 'Workflow aborted') {
-					addMessage('status', { type: 'workflow-canceled' });
-					setWorkflow(null);
-					cleanup();
-					return;
-				}
+				// handleCleanup already added the canceled message
+				if (error === 'Workflow aborted') return;
 				const { sessionId } = workflow || {};
 				digest({
 					error,
@@ -441,12 +471,18 @@ export const Agent = () => {
 				// If static, add it as a message
 				const { id, inputs, static: staticC } = agentResponse.whenFinishedTool;
 				if (staticC) {
-					addMessage('workflow-component', { id, status: 'completed', inputs });
+					addMessage('workflow-component', {
+						id,
+						status: 'completed',
+						inputs,
+						workflowId: workflow.id,
+					});
 					addSuggestions(agentResponse.recommendations);
 					setWorkflow(null);
 					addMessage('workflow', {
 						status: 'completed',
 						agent: workflow.agent,
+						workflowId: workflow.id,
 						answerId,
 						suggestions: getSuggestions(),
 					});
@@ -464,6 +500,7 @@ export const Agent = () => {
 				addMessage('workflow', {
 					status: isCompleted ? 'completed' : 'canceled',
 					agent: workflow.agent,
+					workflowId: workflow.id,
 					answerId,
 					suggestions: getSuggestions(),
 				});
@@ -478,7 +515,7 @@ export const Agent = () => {
 			// Agent needs more info from a
 			if (agentResponse.tool) {
 				const { id, inputs, labels } = agentResponse.tool;
-				addMessage('status', { label: labels?.started, type: 'tool-started' });
+				pushStatus('tool-started', labels?.started);
 				const toolData = await Promise.all([
 					callTool({ tool: id, inputs }),
 					new Promise((resolve) => setTimeout(resolve, 3000)),
@@ -495,14 +532,16 @@ export const Agent = () => {
 							},
 						});
 						devmode && console.error(error);
-						throw error;
+						// Don't throw; the loop hands the error to the model.
+						return { error: { message: error?.message, code: error?.code } };
 					});
-				addMessage('status', {
-					label: labels?.confirm,
-					type: 'tool-completed',
-				});
+				pushStatus('tool-completed', labels?.confirm);
 				await new Promise((resolve) => setTimeout(resolve, 1000));
-				mergeWorkflowData(toolData);
+				// do-when-finished spreads first-class workflowData into the tool.
+				if (!toolData?.error && !isAbilityWorkflow(workflow.id)) {
+					mergeWorkflowData(toolData);
+				}
+				addMessage('tool', { id, inputs, result: toolData });
 				setWaitingOnToolOrUser(false);
 				agentWorking.current = false;
 				setLoop((prev) => prev + 1); // Trigger next loop
@@ -537,6 +576,7 @@ export const Agent = () => {
 		workflow,
 		workflowData,
 		addMessage,
+		pushStatus,
 		setWorkflow,
 		agentWorking,
 		waitingOnToolOrUser,
@@ -570,7 +610,7 @@ export const Agent = () => {
 						<UsageMessage
 							onReady={() => {
 								cleanup();
-								addMessage('status', { type: 'credits-restored' });
+								pushStatus('credits-restored');
 							}}
 						/>
 					</div>

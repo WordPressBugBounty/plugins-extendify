@@ -1,5 +1,5 @@
 import { AgentMessage } from '@agent/components/messages/AgentMessage';
-import { StatusMessage } from '@agent/components/messages/StatusMessage';
+import { StatusIndicator } from '@agent/components/messages/StatusIndicator';
 import { UserMessage } from '@agent/components/messages/UserMessage';
 import { WorkflowComponent } from '@agent/components/messages/WorkflowComponent';
 import { WorkflowMessage } from '@agent/components/messages/WorkflowMessage';
@@ -30,9 +30,7 @@ export const ChatMessages = () => {
 	const [ready, setReady] = useState(false);
 
 	// If last message is a user message, move it to the top
-	const isUserMessage =
-		messages.filter(({ type }) => type !== 'status').at(-1)?.details?.role ===
-		'user';
+	const isUserMessage = messages.at(-1)?.details?.role === 'user';
 
 	useEffect(() => {
 		if (!containerRef.current || !open) return;
@@ -113,14 +111,13 @@ export const ChatMessages = () => {
 		<div
 			ref={containerRef}
 			style={{ overscrollBehavior: 'contain' }}
-			className="relative grow overflow-y-auto overflow-x-hidden p-1 pb-0 text-sm text-gray-900 md:p-2"
+			className="relative grow overflow-y-auto overflow-x-hidden p-1 pb-0 text-sm text-gray-900 md:p-2 scheme-light"
 		>
 			<div
 				id="extendify-agent-chat-scroll-area"
 				className={ready ? '' : 'invisible pointer-events-none'}
 			>
 				{messages.map((message) => {
-					const isLastMessage = messages.at(-1)?.id === message.id;
 					const freshLoad = isFreshPageLoad.current;
 					if (message.details?.role === 'user') {
 						return <UserMessage key={message.id} message={message} />;
@@ -140,25 +137,9 @@ export const ChatMessages = () => {
 					if (message.type === 'workflow-component') {
 						return <WorkflowComponent key={message.id} message={message} />;
 					}
-					if (
-						message.type === 'status' &&
-						// Only show the status if it's last, or a workflow-tool-completed message
-						(isLastMessage ||
-							['workflow-tool-completed', 'workflow-canceled'].includes(
-								message.details?.type,
-							))
-					) {
-						const isError = message.details?.type === 'error';
-						return (
-							<StatusMessage
-								animate={!isError}
-								key={message.id}
-								status={message}
-							/>
-						);
-					}
 					return null;
 				})}
+				<StatusIndicator />
 				{!workflow?.needsRedirect?.() &&
 				whenFinishedToolProps?.id &&
 				whenFinishedComponent ? (

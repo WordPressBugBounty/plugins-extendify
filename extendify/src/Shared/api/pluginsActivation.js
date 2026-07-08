@@ -1,4 +1,5 @@
 import apiFetch from '@wordpress/api-fetch';
+import { addQueryArgs } from '@wordpress/url';
 
 const getRecaptchaToken = (action, siteKey) =>
 	new Promise((resolve, reject) => {
@@ -57,16 +58,34 @@ const createAccount = async ({
 export const pluginsActivation = {
 	simplybook: {
 		idempotent: false,
-		createAccountCallback: async ({ scriptData, ...data }) => {
+		createAccountCallback: async ({
+			scriptData,
+			email,
+			marketingConsent,
+			termsAgreed,
+			signal,
+		}) => {
 			const captchaToken = await getRecaptchaToken(
 				scriptData?.recaptchaAction,
 				scriptData?.recaptchaSiteKey,
 			);
 
-			await createAccount({
-				slug: 'simplybook',
-				...data,
-				scriptData: { captcha_token: captchaToken },
+			// Hit the endpoint via ?rest_route= so the request URL contains "simplybook" —
+			// SimplyBook only registers its onboarding routes when it does, else they 404.
+			const url = addQueryArgs(`${window.extSharedData.homeUrl}/`, {
+				rest_route: '/extendify/v1/simplybook/create-account',
+			});
+
+			await apiFetch({
+				url,
+				method: 'POST',
+				data: {
+					email,
+					marketingConsent,
+					termsAgreed,
+					captcha_token: captchaToken,
+				},
+				signal,
 			});
 		},
 	},

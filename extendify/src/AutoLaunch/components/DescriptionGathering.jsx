@@ -1,3 +1,4 @@
+import { getExtendifyCodeRecommendation } from '@auto-launch/functions/extendify-code';
 import { getAbTest } from '@auto-launch/functions/getAbTest';
 import { fetchWithTimeout } from '@auto-launch/functions/helpers';
 import { useInstallRequiredPlugins } from '@auto-launch/hooks/useInstallRequiredPlugins';
@@ -31,15 +32,16 @@ export const DescriptionGathering = () => {
 		!blogname || isURL(blogname) ? '' : decodeEntities(blogname);
 	const [title, setTitle] = useState(urlParams.title || titlePrefill);
 	const [improving, setImproving] = useState(false);
+	const [checking, setChecking] = useState(false);
 	const [lastImproved, setLastImproved] = useState(null);
 	const textareaRef = useRef(null);
 	const { consentTerms } = useAIConsentStore();
 	// Showing the title field makes the description optional, so the submit
 	// gate and the textarea autofocus both follow it.
 	const showTitle = getShowTitle();
-	const submitDisabled = showTitle
-		? title.trim().length === 0
-		: input.trim().length === 0;
+	const submitDisabled =
+		checking ||
+		(showTitle ? title.trim().length === 0 : input.trim().length === 0);
 	const placeholder = useDescriptionPlaceholder();
 
 	// resize the height of the textarea based on the content
@@ -64,10 +66,28 @@ export const DescriptionGathering = () => {
 		window.dispatchEvent(new Event('launch-textarea-resize'));
 	}, []);
 
-	const submitForm = (e) => {
+	const submitForm = async (e) => {
 		e.preventDefault();
-		if (showTitle) setData('title', title.trim());
-		setData('descriptionRaw', input.trim());
+		const trimmedTitle = title.trim();
+		const trimmedInput = input.trim();
+		if (showTitle) setData('title', trimmedTitle);
+		setData('descriptionRaw', trimmedInput);
+
+		// Only `showExtendifyCode` partners pay the classification latency; on a
+		// `1` we divert to the connector screen instead of starting site creation.
+		if (window.extSharedData?.showExtendifyCode) {
+			setChecking(true);
+			const recommend = await getExtendifyCodeRecommendation(
+				trimmedInput || trimmedTitle,
+			);
+			if (recommend === 1) {
+				// Leave `checking` on so the loading state holds through the exit
+				// transition instead of flashing the textarea before the connector.
+				setData('showExtendifyCodeScreen', true);
+				return;
+			}
+			setChecking(false);
+		}
 		setData('go', true);
 	};
 
@@ -140,13 +160,16 @@ export const DescriptionGathering = () => {
 					improving={improving}
 				/>
 				<div className="w-full rounded-3xl border border-gray-300 bg-gray-100/80 text-gray-900 backdrop-blur-2xl focus-within:border-gray-500 focus-within:ring-gray-500 shadow-md overflow-hidden">
-					{improving ? (
+					{improving || checking ? (
 						<div className="flex h-49 flex-col items-center justify-center gap-4">
 							<div className="h-12 w-12 text-design-main">
 								{loaderThreeDots}
 							</div>
 							<p className="m-0 text-base leading-6 text-center text-gray-800">
-								{__('Enhancing the website description...', 'extendify-local')}
+								{checking &&
+									__('Reviewing your description...', 'extendify-local')}
+								{improving &&
+									__('Enhancing the website description...', 'extendify-local')}
 							</p>
 						</div>
 					) : (
@@ -180,7 +203,10 @@ export const DescriptionGathering = () => {
 						</>
 					)}
 				</div>
-				<OutsideSubmitButton disabled={submitDisabled} improving={improving} />
+				<OutsideSubmitButton
+					disabled={submitDisabled}
+					improving={improving || checking}
+				/>
 			</form>
 			<div
 				className="text-pretty mt-4 text-center text-xs leading-4 opacity-70 text-banner-text [&>a]:text-xs [&>a]:text-banner-text [&>a]:underline w-full"
@@ -208,7 +234,7 @@ const TitleField = ({ title, setTitle, setData, improving }) => {
 			<div className="mb-4 w-full">
 				<label
 					htmlFor="extendify-launch-site-title"
-					className="mb-2 block px-2 text-base font-medium leading-6 text-gray-900"
+					className="mb-2 block px-2 text-base font-medium leading-6 text-banner-text"
 				>
 					{__('Website title (required)', 'extendify-local')}
 				</label>
@@ -234,7 +260,7 @@ const TitleField = ({ title, setTitle, setData, improving }) => {
 			</div>
 			<label
 				htmlFor="extendify-launch-chat-textarea"
-				className="mb-2 block px-2 text-base font-medium leading-6 text-gray-900"
+				className="mb-2 block px-2 text-base font-medium leading-6 text-banner-text"
 			>
 				{__('Describe your website', 'extendify-local')}
 			</label>

@@ -1,4 +1,5 @@
 import { downloadImage } from '@shared/api/wp';
+import { track } from '@shared/lib/track';
 import { fetchImages } from '@shared/lib/unsplash';
 import {
 	Button,
@@ -13,7 +14,6 @@ import { loadProduct, save, saveProduct } from '../../lib/api';
 import { invalidateBlockSource } from '../../lib/block-source-cache';
 import { splice } from '../../lib/dom';
 import { friendlyMessage } from '../../lib/errors';
-import { track } from '../../lib/insights';
 import { QE_MODAL_BODY_OPEN_CLASS } from '../../lib/modal-root';
 import { pushUndo } from '../../state/undo';
 import { ModalCloseButton } from './ModalCloseButton';

@@ -17,6 +17,7 @@
  *     the core admin bar.
  */
 import { isEmbedded } from '@shared/lib/embedded-guard';
+import { track } from '@shared/lib/track';
 import { __ } from '@wordpress/i18n';
 import './toolbar.css';
 
@@ -145,6 +146,17 @@ function init() {
 			window.dispatchEvent(new CustomEvent(QUICK_EDIT_TOGGLE_EVENT));
 		});
 	}
+
+	toolbar
+		.querySelector('.ext-tb-edit')
+		?.addEventListener('click', () =>
+			track('toolbar_link_clicked', { target: 'block_editor' }),
+		);
+	toolbar
+		.querySelector('.ext-tb-admin-link')
+		?.addEventListener('click', () =>
+			track('toolbar_link_clicked', { target: 'wp_admin' }),
+		);
 
 	watchAgentSidebar(toolbar, aiBtn);
 }

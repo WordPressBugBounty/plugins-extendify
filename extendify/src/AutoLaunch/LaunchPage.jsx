@@ -1,5 +1,7 @@
+import { ExtendifyCodeConnector } from '@auto-launch/components/ExtendifyCodeConnector';
 import { Launch } from '@auto-launch/components/Launch';
 import { Logo } from '@auto-launch/components/Logo';
+import { MigrateChoice } from '@auto-launch/components/MigrateChoice';
 import { MovingGradient } from '@auto-launch/components/MovingGradients';
 import { NeedsTheme } from '@auto-launch/components/NeedsTheme';
 import { RestartLaunchModal } from '@auto-launch/components/RestartLaunchModal';
@@ -11,12 +13,12 @@ import { useLaunchDataStore } from '@auto-launch/state/launch-data';
 import { registerCoreBlocks } from '@wordpress/block-library';
 import { getBlockTypes } from '@wordpress/blocks';
 import { useSelect } from '@wordpress/data';
-import { useEffect, useRef } from '@wordpress/element';
+import { useEffect, useRef, useState } from '@wordpress/element';
 import { __ } from '@wordpress/i18n';
 import { chevronLeft, Icon } from '@wordpress/icons';
 import classNames from 'classnames';
 import { AnimatePresence, motion } from 'framer-motion';
-import { checkIn } from './functions/insights';
+import { checkIn, reportRestApiStatus } from './functions/insights';
 
 export const LaunchPage = () => {
 	const theme = useSelect((select) => select('core').getCurrentTheme());
@@ -26,15 +28,26 @@ export const LaunchPage = () => {
 	const oldPages = window.extLaunchData.resetSiteInformation.pagesIds ?? [];
 	const needsToReset = oldPages.length > 0;
 
-	const { title, descriptionRaw, go, urlParams, designBuild } =
-		useLaunchDataStore();
+	const {
+		title,
+		descriptionRaw,
+		go,
+		urlParams,
+		designBuild,
+		setData,
+		showExtendifyCodeScreen,
+	} = useLaunchDataStore();
 	const skipDescription =
 		Boolean(urlParams?.['build-id']) ||
 		designBuild ||
 		((title || descriptionRaw) && go);
+	const showConnector = !skipDescription && showExtendifyCodeScreen;
 	const showExitLink =
 		!skipDescription && !window.extLaunchData?.hideAutoLaunchExitLink;
-	const showTitle = getAbTest('AutoLaunch.ShowTitle').variant === 'B';
+	const inMigrateVariant =
+		getAbTest('AutoLaunch.MigrateScreen').variant === 'B';
+	const [choosingMigration, setChoosingMigration] = useState(inMigrateVariant);
+	const showMigrateChoice = !skipDescription && choosingMigration;
 
 	const containerRef = useRef(null);
 
@@ -47,6 +60,7 @@ export const LaunchPage = () => {
 
 		preLaunchFunctions();
 		checkIn({ stage: 'launch_page' });
+		reportRestApiStatus();
 	}, []);
 
 	if (needsTheme) {
@@ -70,46 +84,71 @@ export const LaunchPage = () => {
 	}
 
 	return (
-		<Wrapper>
+		<Wrapper
+			footer={
+				showConnector ? (
+					<BackLink onClick={() => setData('showExtendifyCodeScreen', false)} />
+				) : showExitLink ? (
+					<ExitLink />
+				) : null
+			}
+		>
 			<AnimatePresence mode="wait" initial={false}>
-				<TheTitle skipDescription={skipDescription} />
+				<TheTitle
+					key={showMigrateChoice ? 'migrate' : 'description'}
+					// The connector renders its own heading, so hide the shared one.
+					hide={skipDescription || showConnector}
+					migrate={showMigrateChoice}
+				/>
 			</AnimatePresence>
-			<div ref={containerRef} className="w-full max-w-2xl relative z-10">
+			<div
+				ref={containerRef}
+				className={classNames('w-full relative z-10', {
+					'max-w-3xl': inMigrateVariant || showConnector,
+					'max-w-2xl': !inMigrateVariant && !showConnector,
+					'md:h-72.75': inMigrateVariant && !skipDescription,
+				})}
+			>
 				<AnimatePresence mode="wait">
-					<Launch
-						key={skipDescription ? 'description-launch' : 'creating-launch'}
-						skipDescription={skipDescription}
-						lastHeight={containerRef.current?.offsetHeight}
-					/>
+					{showConnector && (
+						<ExtendifyCodeConnector
+							key="extendify-code"
+							onProceed={() => setData('go', true)}
+						/>
+					)}
+					{!showConnector && showMigrateChoice && (
+						<MigrateChoice
+							key="migrate-choice"
+							onBuildNew={() => setChoosingMigration(false)}
+						/>
+					)}
+					{!showConnector && !showMigrateChoice && (
+						<Launch
+							key={skipDescription ? 'description-launch' : 'creating-launch'}
+							skipDescription={skipDescription}
+							lastHeight={containerRef.current?.offsetHeight}
+						/>
+					)}
 				</AnimatePresence>
 			</div>
-			{showExitLink && (
-				<div
-					className={classNames('flex w-full', {
-						'mt-6': showTitle,
-						'py-8 px-6 absolute bottom-0 left-0 z-10': !showTitle,
-					})}
-				>
-					<ExitLink />
-				</div>
-			)}
 		</Wrapper>
 	);
 };
 
-const Wrapper = ({ children }) => {
+const Wrapper = ({ children, footer }) => {
 	const { pulse } = useLaunchDataStore();
 
 	return (
 		<div style={{ zIndex: 99999 + 1 }} className="fixed inset-0 bg-white">
-			<div className="relative h-dvh bg-banner-main text-banner-text text-base flex flex-col items-center justify-between">
-				<div className="relative w-full flex flex-col items-center p-6 flex-1 min-h-0 overflow-y-auto">
+			<div className="relative h-dvh bg-banner-main text-banner-text text-base overflow-y-auto">
+				<div className="relative z-10 min-h-dvh w-full flex flex-col items-center justify-between p-6">
 					<div className="w-full flex flex-col items-center gap-5 md:gap-8 m-auto">
 						<div className="mb-4">
 							<Logo />
 						</div>
 						{children}
 					</div>
+					{footer && <div className="w-full pt-8 shrink-0">{footer}</div>}
 				</div>
 			</div>
 			<MovingGradient />
@@ -131,10 +170,23 @@ const ExitLink = () => {
 	);
 };
 
-const TheTitle = ({ skipDescription }) => {
+const BackLink = ({ onClick }) => {
+	return (
+		<button
+			type="button"
+			onClick={onClick}
+			className="inline-flex items-center gap-0.5 border-0 bg-transparent cursor-pointer text-sm text-banner-text opacity-70 hover:opacity-100 transition-opacity"
+		>
+			<Icon fill="currentColor" icon={chevronLeft} size={20} />
+			{__('Back', 'extendify-local')}
+		</button>
+	);
+};
+
+const TheTitle = ({ hide, migrate }) => {
 	const useOldHeader =
 		getAbTest('AutoLaunch.HeaderParagraphOld').variant === 'B';
-	if (skipDescription) return null;
+	if (hide) return null;
 
 	const headingClass =
 		'text-xl md:text-2xl text-pretty text-banner-text font-semibold p-0 m-0 text-center';
@@ -143,6 +195,14 @@ const TheTitle = ({ skipDescription }) => {
 		exit: { opacity: 0 },
 		transition: { duration: 0.4 },
 	};
+
+	if (migrate) {
+		return (
+			<motion.h2 className={headingClass} {...transition}>
+				{__('How would you like to start your website?', 'extendify-local')}
+			</motion.h2>
+		);
+	}
 
 	if (useOldHeader) {
 		return (

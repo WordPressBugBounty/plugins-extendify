@@ -1,4 +1,6 @@
+import { buildToolMessages } from '@agent/lib/tool-messages';
 import { isChangeSiteDesignWorkflowAvailable, makeId } from '@agent/lib/util';
+import { useStatusStore } from '@agent/state/status';
 import apiFetch from '@wordpress/api-fetch';
 import { __ } from '@wordpress/i18n';
 import { create } from 'zustand';
@@ -27,16 +29,20 @@ const welcomeMessage = [
 ];
 const state = (set, get) => ({
 	messages: chatHistory?.length ? chatHistory.toReversed() : welcomeMessage,
-	// Messages sent to the api, user and assistant only. Up until the last workflow
-	getMessagesForAI: () => {
+	// API messages, back to the last finished workflow.
+	getCurrentMessages: ({ includeTools = true } = {}) => {
 		const messages = [];
 		let foundUserMessage = false;
 		for (const { type, details } of get().messages.toReversed()) {
-			const finished =
-				['completed', 'canceled'].includes(details.status) ||
-				(['status'].includes(type) && details.type === 'workflow-canceled');
+			const finished = ['completed', 'canceled'].includes(details.status);
 			if (type === 'workflow' && finished) break;
 			if (type === 'workflow-component' && finished) break;
+			if (type === 'tool' && includeTools) {
+				// buildToolMessages returns [call, result]; push reversed so the
+				// final toReversed() restores call-before-result order.
+				for (const m of buildToolMessages(details).toReversed())
+					messages.push(m);
+			}
 			// This prevents a loop of assistant messages from being at the end
 			if (type === 'message' && details.role === 'user') {
 				foundUserMessage = true;
@@ -45,6 +51,23 @@ const state = (set, get) => ({
 			if (type === 'message') messages.push(details);
 		}
 		return messages.toReversed();
+	},
+	// API messages from every finished run of the given workflow.
+	getMessagesFor: (workflowId) => {
+		if (!workflowId) return [];
+		const messages = [];
+		let segment = [];
+		for (const { type, details } of get().messages) {
+			const finished = ['completed', 'canceled'].includes(details.status);
+			if (['workflow', 'workflow-component'].includes(type) && finished) {
+				if (details.workflowId === workflowId) messages.push(...segment);
+				segment = [];
+				continue;
+			}
+			if (type === 'tool') segment.push(...buildToolMessages(details));
+			if (type === 'message') segment.push(details);
+		}
+		return messages;
 	},
 	getLastAssistantMessage: () =>
 		get()?.messages?.findLast(
@@ -55,17 +78,18 @@ const state = (set, get) => ({
 	addMessage: (type, details) => {
 		const id = makeId();
 		set((state) => {
-			// max 150 messages
-			const max = Math.max(0, state.messages.length - 149);
+			// max 250 messages
+			const max = Math.max(0, state.messages.length - 249);
 			const next = { id, type, details };
 			return {
 				// { id: 1, type: message, details: { role: 'user', content: 'Hello' } }
 				// { id: 2, type: message, details: { role: 'assistant', content: 'Hi there!' } }
 				// { id: 3, type: workflow, details: { name: 'Workflow 1' } }
-				// { id: 5, type: status, details: { type: 'calling-agent' }
 				messages: [...state.messages.toSpliced(0, max), next],
 			};
 		});
+		// A real message supersedes any in-flight progress status.
+		useStatusStore.getState().clearStatuses();
 		return id;
 	},
 	// pop messages all the way back to the last agent message

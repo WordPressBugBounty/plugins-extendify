@@ -1,5 +1,6 @@
 import { generateImage } from '@shared/api/DataApi';
 import { importImage, importImageServer } from '@shared/api/wp';
+import { track } from '@shared/lib/track';
 import { useImageGenerationStore } from '@shared/state/generate-images';
 import {
 	Button,
@@ -17,7 +18,6 @@ import { invalidateBlockSource } from '../../lib/block-source-cache';
 import { useCmdEnterSave } from '../../lib/cmd-enter-save';
 import { splice } from '../../lib/dom';
 import { friendlyMessage } from '../../lib/errors';
-import { track } from '../../lib/insights';
 import { QE_MODAL_BODY_OPEN_CLASS } from '../../lib/modal-root';
 import { pushUndo } from '../../state/undo';
 import { ModalCloseButton } from './ModalCloseButton';

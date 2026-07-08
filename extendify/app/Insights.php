@@ -41,6 +41,7 @@ class Insights
         'AutoLaunch.SubmitCreateWebsite',
         'AutoLaunch.DescriptionPlaceholderLaw',
         'AutoLaunch.HeaderParagraphOld',
+        'AutoLaunch.MigrateScreen',
     ];
 
     /**

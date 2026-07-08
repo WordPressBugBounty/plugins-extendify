@@ -178,6 +178,7 @@ export const getSitePlugins = async ({ pageProfile }) => {
 		wpLanguage,
 		partnerId,
 		pluginGroupId,
+		source: 'page-creator',
 	});
 
 	let response;

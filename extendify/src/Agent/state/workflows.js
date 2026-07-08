@@ -1,4 +1,6 @@
+import { isAbilityWorkflow } from '@agent/lib/abilities';
 import { isChangeSiteDesignWorkflowAvailable } from '@agent/lib/util';
+import { AbilityRunGate } from '@agent/workflows/abilities/components/AbilityRunGate';
 import changeSiteDesignWorkflow from '@agent/workflows/theme/change-site-design';
 import variationsWorkflow from '@agent/workflows/theme/change-theme-variation';
 import { workflows } from '@agent/workflows/workflows';
@@ -31,7 +33,14 @@ const state = (set, get) => ({
 		// Workflows may define a "parent" workflow via templateId
 		const currId = curr?.templateId || curr?.id;
 		const wf = workflows.find(({ id }) => id === currId);
-		if (!wf?.id) return curr || null;
+		if (!wf?.id) {
+			if (!curr) return null;
+			// Ability workflows are shaped per request, so they carry no static
+			// whenFinished component; give them the generic run gate.
+			return isAbilityWorkflow(curr.id)
+				? { ...curr, whenFinished: { component: AbilityRunGate } }
+				: curr;
+		}
 		return { ...deepMerge(curr, wf || {}), id: curr?.id };
 	},
 	getWorkflowByExample: (example) => {

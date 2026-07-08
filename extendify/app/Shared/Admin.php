@@ -154,6 +154,19 @@ class Admin
             }
         );
 
+        $extendifyCodeData = (array) PartnerData::setting('extendifyCodeData');
+
+        // esc_url() strips the {DESCRIPTION} braces; shield the placeholder across it.
+        $extendifyCodeLink = str_replace(
+            '__EXTENDIFY_DESCRIPTION__',
+            '{DESCRIPTION}',
+            \esc_url_raw(str_replace(
+                '{DESCRIPTION}',
+                '__EXTENDIFY_DESCRIPTION__',
+                (string) ($extendifyCodeData['link'] ?? '')
+            ))
+        );
+
         \wp_add_inline_script(
             Config::$slug . '-shared-scripts',
             'window.extSharedData = ' . \wp_json_encode([
@@ -219,6 +232,13 @@ class Admin
                 ),
                 'products' => ProductsData::get(),
                 'showAIAgents' => (bool) (PartnerData::setting('showAIAgents') || Config::preview('ai-agent')),
+                'showExtendifyCode' => (bool) PartnerData::setting('showExtendifyCode'),
+                'extendifyCodeData' => [
+                    'link' => $extendifyCodeLink,
+                    'title' => $extendifyCodeData['title'] ?? '',
+                    'message' => $extendifyCodeData['message'] ?? '',
+                    'ctaPrimary' => $extendifyCodeData['cta-primary'] ?? '',
+                ],
                 'pluginGroupId' => Escaper::recursiveEscAttr(PartnerData::setting('pluginGroupId')),
                 'adminPagesMenuList' => get_option('_transient_extendify_admin_pages_menu', []),
                 'globalState' => ImageGenerationController::get()->get_data(),
