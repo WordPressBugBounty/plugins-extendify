@@ -95,8 +95,8 @@ msgstr "Kami sudah memilih halaman yang paling umum untuk jenis website Anda."
 msgid "Pick the pages to add to your website"
 msgstr "Pilih halaman yang ingin ditambahkan ke website Anda"
 
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:81
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:89
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:81
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:89
 #: public/build/extendify-launch-86d848925fad51ac7e3f.js:8
 #: src/Agent/components/redirects/RedirectFontsVariations.jsx:12
 #: src/Agent/components/redirects/RedirectThemeVariations.jsx:17
@@ -271,21 +271,21 @@ msgstr "Menengah"
 msgid "Beginner"
 msgstr "Pemula"
 
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:7
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:7
 #: public/build/extendify-help-center-eabc21dfe936d7b4ce8e.js:1
 #: src/Agent/components/Rating.jsx:49
 #: src/HelpCenter/components/ai-chat/Rating.jsx:48
 msgid "Rate that this answer was not helpful"
 msgstr "Beri nilai bahwa jawaban ini tidak membantu"
 
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:7
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:7
 #: public/build/extendify-help-center-eabc21dfe936d7b4ce8e.js:1
 #: src/Agent/components/Rating.jsx:28
 #: src/HelpCenter/components/ai-chat/Rating.jsx:27
 msgid "Rate that this answer was helpful"
 msgstr "Beri nilai bahwa jawaban ini bermanfaat"
 
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:7
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:7
 #: public/build/extendify-help-center-eabc21dfe936d7b4ce8e.js:1
 #: src/Agent/components/Rating.jsx:27
 #: src/Agent/components/Rating.jsx:48
@@ -345,56 +345,56 @@ msgstr "Sembunyikan Menu"
 msgid "Search for articles"
 msgstr "Cari Artikel"
 
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:19
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:19
 #: public/build/extendify-help-center-eabc21dfe936d7b4ce8e.js:4
 #: src/Agent/tours/library-tour.js:100
 #: src/HelpCenter/tours/library-tour.js:98
 msgid "The selected pattern has been inserted into the page."
 msgstr "Pola yang dipilih telat ditambahkan kedalam halaman."
 
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:19
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:19
 #: public/build/extendify-help-center-eabc21dfe936d7b4ce8e.js:4
 #: src/Agent/tours/library-tour.js:99
 #: src/HelpCenter/tours/library-tour.js:97
 msgid "View the Inserted Pattern"
 msgstr "Lihat pola yang telah dimasukan"
 
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:19
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:19
 #: public/build/extendify-help-center-eabc21dfe936d7b4ce8e.js:4
 #: src/Agent/tours/library-tour.js:80
 #: src/HelpCenter/tours/library-tour.js:78
 msgid "Simply select any pattern you wish to insert into a page by clicking on it."
 msgstr "Pilih pola apa saja dengan mudah jika anda ingin menambahkanya ke website."
 
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:19
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:19
 #: public/build/extendify-help-center-eabc21dfe936d7b4ce8e.js:4
 #: src/Agent/tours/library-tour.js:79
 #: src/HelpCenter/tours/library-tour.js:77
 msgid "Select a Pattern"
 msgstr "Pilih Pola"
 
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:19
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:19
 #: public/build/extendify-help-center-eabc21dfe936d7b4ce8e.js:4
 #: src/Agent/tours/library-tour.js:54
 #: src/HelpCenter/tours/library-tour.js:52
 msgid "Click on any pattern category to refine the selection."
 msgstr "Klik pada kategori pola untuk menyaring pilihan."
 
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:19
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:19
 #: public/build/extendify-help-center-eabc21dfe936d7b4ce8e.js:4
 #: src/Agent/tours/library-tour.js:53
 #: src/HelpCenter/tours/library-tour.js:51
 msgid "Filter Patterns"
 msgstr "Menyaring Pola"
 
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:19
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:19
 #: public/build/extendify-help-center-eabc21dfe936d7b4ce8e.js:4
 #: src/Agent/tours/library-tour.js:32
 #: src/HelpCenter/tours/library-tour.js:30
 msgid "The Extendify pattern library can be opened by clicking the button to the left."
 msgstr "Perpustakaan pola Extendify dapat dibuka dengan mengklik Tombol di sebelah kirinya."
 
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:19
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:19
 #: public/build/extendify-help-center-eabc21dfe936d7b4ce8e.js:4
 #: src/Agent/tours/library-tour.js:31
 #: src/HelpCenter/tours/library-tour.js:29
@@ -510,21 +510,21 @@ msgstr "Dashboard bawaan WordPress akan mempunyai beberapa pengukuran website da
 msgid "Access the Site Assistant at any time."
 msgstr "Akses Asisten Website kapan saja."
 
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:19
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:19
 #: public/build/extendify-help-center-eabc21dfe936d7b4ce8e.js:4
 #: src/Agent/tours/site-assistant.js:107
 #: src/HelpCenter/tours/site-assistant.js:127
 msgid "Come back to the Site Assistant any time by clicking the menu item."
 msgstr "Kembali ke Asisten Website kapan saja dengan mengklik item di menu."
 
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:19
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:19
 #: public/build/extendify-help-center-eabc21dfe936d7b4ce8e.js:4
 #: src/Agent/tours/site-assistant.js:59
 #: src/HelpCenter/tours/site-assistant.js:58
 msgid "See our personalized recommendations for you that will help you accomplish your goals."
 msgstr "Lihat rekomendasi khusus untuk anda akan membantu anda mencapai tujuan."
 
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:19
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:19
 #: public/build/extendify-help-center-eabc21dfe936d7b4ce8e.js:4
 #: src/Agent/tours/site-assistant.js:37
 #: src/HelpCenter/tours/site-assistant.js:36
@@ -538,7 +538,7 @@ msgstr "Akses beberapa item paling umum di WordPress melalui Link cepat dengan m
 msgid "Knowledge Base"
 msgstr "Knowledge Base"
 
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:19
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:19
 #: public/build/extendify-help-center-eabc21dfe936d7b4ce8e.js:4
 #: src/Agent/tours/site-assistant.js:16
 #: src/HelpCenter/tours/site-assistant.js:15
@@ -588,56 +588,56 @@ msgstr "Tutorial"
 msgid "Help Center"
 msgstr "Pusat Bantuan"
 
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:19
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:19
 #: public/build/extendify-help-center-eabc21dfe936d7b4ce8e.js:4
 #: src/Agent/tours/users-screen.js:122
 #: src/HelpCenter/tours/users-screen.js:121
 msgid "Click the Add New button to add a new user to your site."
 msgstr "Klik tombol tambah baru untuk menambah pengguna baru ke website anda."
 
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:19
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:19
 #: public/build/extendify-help-center-eabc21dfe936d7b4ce8e.js:4
 #: src/Agent/tours/users-screen.js:121
 #: src/HelpCenter/tours/users-screen.js:120
 msgid "Add a new user"
 msgstr "Tambah Pengguna Baru"
 
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:19
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:19
 #: public/build/extendify-help-center-eabc21dfe936d7b4ce8e.js:4
 #: src/Agent/tours/users-screen.js:96
 #: src/HelpCenter/tours/users-screen.js:95
 msgid "Use the search bar to find a particular user."
 msgstr "Gunakan Search Bar untuk Menemukan Pengguna."
 
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:19
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:19
 #: public/build/extendify-help-center-eabc21dfe936d7b4ce8e.js:4
 #: src/Agent/tours/users-screen.js:95
 #: src/HelpCenter/tours/users-screen.js:94
 msgid "Search for users"
 msgstr "Mencari Pengguna"
 
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:19
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:19
 #: public/build/extendify-help-center-eabc21dfe936d7b4ce8e.js:4
 #: src/Agent/tours/users-screen.js:65
 #: src/HelpCenter/tours/users-screen.js:64
 msgid "Click the edit button to change the user's role, manage their account, or change their profile information."
 msgstr "Klik Tombol Edit untuk mengubah Hak Akses pengguna, mengelola akun mereka, atau mengganti informasi pada profil mereka."
 
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:19
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:19
 #: public/build/extendify-help-center-eabc21dfe936d7b4ce8e.js:4
 #: src/Agent/tours/users-screen.js:64
 #: src/HelpCenter/tours/users-screen.js:63
 msgid "Edit user information"
 msgstr "Ubah Informasi Pengguna"
 
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:19
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:19
 #: public/build/extendify-help-center-eabc21dfe936d7b4ce8e.js:4
 #: src/Agent/tours/users-screen.js:45
 #: src/HelpCenter/tours/users-screen.js:44
 msgid "See all of your users, including admin users in this table."
 msgstr "Lihat semua Pengguna, termasuk Admin di tabel ini."
 
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:19
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:19
 #: public/build/extendify-help-center-eabc21dfe936d7b4ce8e.js:4
 #: src/Agent/tours/users-screen.js:44
 #: src/Agent/tours/welcome.js:250
@@ -646,154 +646,154 @@ msgstr "Lihat semua Pengguna, termasuk Admin di tabel ini."
 msgid "Users"
 msgstr "Pengguna"
 
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:19
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:19
 #: public/build/extendify-help-center-eabc21dfe936d7b4ce8e.js:4
 #: src/Agent/tours/users-screen.js:19
 #: src/HelpCenter/tours/users-screen.js:18
 msgid "Click here to view and manage the users on your site."
 msgstr "Klik disini untuk melihat dan mengelola pengguna di website anda."
 
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:19
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:19
 #: public/build/extendify-help-center-eabc21dfe936d7b4ce8e.js:4
 #: src/Agent/tours/users-screen.js:18
 #: src/HelpCenter/tours/users-screen.js:17
 msgid "All Users menu"
 msgstr "Menu Semua Pengguna"
 
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:19
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:19
 #: public/build/extendify-help-center-eabc21dfe936d7b4ce8e.js:4
 #: src/Agent/tours/plugin-management.js:106
 #: src/HelpCenter/tours/plugin-management.js:105
 msgid "Click here to add another plugin to your site."
 msgstr "Klik disini untuk menambah plugin lain ke website anda."
 
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:19
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:19
 #: public/build/extendify-help-center-eabc21dfe936d7b4ce8e.js:4
 #: src/Agent/tours/plugin-management.js:105
 #: src/HelpCenter/tours/plugin-management.js:104
 msgid "Add another"
 msgstr "Tambah lainnya"
 
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:19
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:19
 #: public/build/extendify-help-center-eabc21dfe936d7b4ce8e.js:4
 #: src/Agent/tours/plugin-management.js:65
 #: src/HelpCenter/tours/plugin-management.js:64
 msgid "Under each plugin you can activate or deactivate it."
 msgstr "Anda dapat mengaktifkan/menonaktifkan plugin disetiap bagian Bawah plugin."
 
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:19
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:19
 #: public/build/extendify-help-center-eabc21dfe936d7b4ce8e.js:4
 #: src/Agent/tours/plugin-management.js:64
 #: src/HelpCenter/tours/plugin-management.js:63
 msgid "Deactivate/activate option"
 msgstr "Opsi Nonaktifkan/Aktifkan"
 
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:19
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:19
 #: public/build/extendify-help-center-eabc21dfe936d7b4ce8e.js:4
 #: src/Agent/tours/plugin-management.js:45
 #: src/HelpCenter/tours/plugin-management.js:44
 msgid "See all plugins installed on your site. This includes plugins that are active and deactivated."
 msgstr "Lihat semua plugin yang terinstall di website anda. Termasuk plugin yang aktif dan nonaktif."
 
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:19
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:19
 #: public/build/extendify-help-center-eabc21dfe936d7b4ce8e.js:4
 #: src/Agent/tours/plugin-management.js:44
 #: src/HelpCenter/tours/plugin-management.js:43
 msgid "Installed plugins"
 msgstr "Plugin Terinstall"
 
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:19
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:19
 #: public/build/extendify-help-center-eabc21dfe936d7b4ce8e.js:4
 #: src/Agent/tours/plugin-management.js:19
 #: src/HelpCenter/tours/plugin-management.js:18
 msgid "Click this menu to see and manage the plugins you have installed."
 msgstr "Klik menu ini untuk melihat dan mengelola plugin yang terinstall."
 
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:19
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:19
 #: public/build/extendify-help-center-eabc21dfe936d7b4ce8e.js:4
 #: src/Agent/tours/plugin-management.js:18
 #: src/HelpCenter/tours/plugin-management.js:17
 msgid "Installed Plugins menu"
 msgstr "Menu Plugin Terinstall"
 
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:19
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:19
 #: public/build/extendify-help-center-eabc21dfe936d7b4ce8e.js:4
 #: src/Agent/tours/plugin-install.js:114
 #: src/HelpCenter/tours/plugin-install.js:113
 msgid "If you have a plugin from an external source, you can upload it directly here."
 msgstr "Jika kamu punya plugin dari sumber luar, kamu dapat menguploadnya disini."
 
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:19
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:19
 #: public/build/extendify-help-center-eabc21dfe936d7b4ce8e.js:4
 #: src/Agent/tours/plugin-install.js:113
 #: src/HelpCenter/tours/plugin-install.js:112
 msgid "Upload Plugin"
 msgstr "Unggah Plugin"
 
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:19
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:19
 #: public/build/extendify-help-center-eabc21dfe936d7b4ce8e.js:4
 #: src/Agent/tours/plugin-install.js:88
 #: src/HelpCenter/tours/plugin-install.js:87
 msgid "Install the plugin. Then, press this button again to activate the plugin."
 msgstr "Install Plugin. lalu, tekan button ini lagi untuk mengaktifkan Plugin nya."
 
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:19
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:19
 #: public/build/extendify-help-center-eabc21dfe936d7b4ce8e.js:4
 #: src/Agent/tours/plugin-install.js:87
 #: src/HelpCenter/tours/plugin-install.js:86
 msgid "Install now"
 msgstr "Install Sekarang"
 
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:19
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:19
 #: public/build/extendify-help-center-eabc21dfe936d7b4ce8e.js:4
 #: src/Agent/tours/plugin-install.js:68
 #: src/HelpCenter/tours/plugin-install.js:67
 msgid "See important information about each plugin."
 msgstr "Lihat informasi penting tentang masing-masing plugin."
 
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:19
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:19
 #: public/build/extendify-help-center-eabc21dfe936d7b4ce8e.js:4
 #: src/Agent/tours/plugin-install.js:67
 #: src/HelpCenter/tours/plugin-install.js:66
 msgid "Plugin details"
 msgstr "Detail Plugin"
 
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:19
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:19
 #: public/build/extendify-help-center-eabc21dfe936d7b4ce8e.js:4
 #: src/Agent/tours/plugin-install.js:42
 #: src/HelpCenter/tours/plugin-install.js:41
 msgid "Search for a plugin by name or functionality."
 msgstr "Cari Plugin berdasarkan nama atau fungsi nya."
 
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:19
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:19
 #: public/build/extendify-help-center-eabc21dfe936d7b4ce8e.js:4
 #: src/Agent/tours/plugin-install.js:19
 #: src/HelpCenter/tours/plugin-install.js:18
 msgid "Click here to access the Add Plugins page."
 msgstr "Klik disini untuk mengakses Halaman Tambah Plugin."
 
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:19
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:19
 #: public/build/extendify-help-center-eabc21dfe936d7b4ce8e.js:4
 #: src/Agent/tours/plugin-install.js:18
 #: src/HelpCenter/tours/plugin-install.js:17
 msgid "Add New plugin menu"
 msgstr "Menu Tambah Plugin Baru"
 
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:19
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:19
 #: public/build/extendify-help-center-eabc21dfe936d7b4ce8e.js:4
 #: src/Agent/tours/page-editor.js:249
 #: src/HelpCenter/tours/page-editor.js:252
 msgid "Publish or Save"
 msgstr "Publish atau Simpan"
 
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:19
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:19
 #: public/build/extendify-help-center-eabc21dfe936d7b4ce8e.js:4
 #: src/Agent/tours/page-editor.js:229
 #: src/HelpCenter/tours/page-editor.js:232
 msgid "Click preview to view how your changes look on the front end of your site."
 msgstr "Klik Preview untuk melihat bagaimana tampilan depan dari website anda."
 
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:19
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:19
 #: public/build/extendify-help-center-eabc21dfe936d7b4ce8e.js:4
 #: public/build/extendify-launch-86d848925fad51ac7e3f.js:8
 #: src/Agent/tours/page-editor.js:228
@@ -802,77 +802,77 @@ msgstr "Klik Preview untuk melihat bagaimana tampilan depan dari website anda."
 msgid "Preview"
 msgstr "Preview"
 
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:19
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:19
 #: public/build/extendify-help-center-eabc21dfe936d7b4ce8e.js:4
 #: src/Agent/tours/page-editor.js:186
 #: src/HelpCenter/tours/page-editor.js:189
 msgid "Select either page or block to change the settings for the entire page or the block that is selected."
 msgstr "Pilih halaman atau block untuk mengubah pengaturan dari seluruh halaman atau block yang dipilih."
 
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:19
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:19
 #: public/build/extendify-help-center-eabc21dfe936d7b4ce8e.js:4
 #: src/Agent/tours/page-editor.js:185
 #: src/HelpCenter/tours/page-editor.js:188
 msgid "Page and Block Settings"
 msgstr "Pengaturan Halaman dan Block"
 
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:19
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:19
 #: public/build/extendify-help-center-eabc21dfe936d7b4ce8e.js:4
 #: src/Agent/tours/page-editor.js:170
 #: src/HelpCenter/tours/page-editor.js:173
 msgid "This is a sample paragraph block. It can be several sentences long and will span multiple rows. You can add as many blocks as you'd like to the page."
 msgstr "Ini adalah sample block paragraph. dapat berupa kalimat Panjang dan beberapa baris. Anda dapat menambahkan sebanyak block yang anda suka kedalam halaman."
 
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:19
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:19
 #: public/build/extendify-help-center-eabc21dfe936d7b4ce8e.js:4
 #: src/Agent/tours/page-editor.js:129
 #: src/HelpCenter/tours/page-editor.js:132
 msgid "Each block will show up on the page and can be edited by clicking on it."
 msgstr "Setiap block akan muncul pada halaman dan dapat diubah dengan mengklik nya."
 
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:19
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:19
 #: public/build/extendify-help-center-eabc21dfe936d7b4ce8e.js:4
 #: src/Agent/tours/page-editor.js:128
 #: src/HelpCenter/tours/page-editor.js:131
 msgid "Blocks"
 msgstr "Block"
 
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:19
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:19
 #: public/build/extendify-help-center-eabc21dfe936d7b4ce8e.js:4
 #: src/Agent/tours/page-editor.js:89
 #: src/HelpCenter/tours/page-editor.js:92
 msgid "Edit the page title by clicking it. Note: The title may or may not show up on the published page, depending on the page template used."
 msgstr "Ubah judul halaman dengan mengklik nya. Catatan: judul dapat muncul atau tidak pada halaman, tergantung dari template halaman yang digunakan."
 
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:19
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:19
 #: public/build/extendify-help-center-eabc21dfe936d7b4ce8e.js:4
 #: src/Agent/tours/page-editor.js:88
 #: src/HelpCenter/tours/page-editor.js:91
 msgid "Page Title"
 msgstr "Judul Halaman"
 
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:19
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:19
 #: public/build/extendify-help-center-eabc21dfe936d7b4ce8e.js:4
 #: src/Agent/tours/page-editor.js:48
 #: src/HelpCenter/tours/page-editor.js:48
 msgid "Add a block by clicking or dragging it onto the page."
 msgstr "Tambah block dengan mengklik atau menarik nya kedalam halaman."
 
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:19
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:19
 #: public/build/extendify-help-center-eabc21dfe936d7b4ce8e.js:4
 #: src/Agent/tours/page-editor.js:47
 #: src/HelpCenter/tours/page-editor.js:47
 msgid "Block Inserter"
 msgstr "Pemasang Block"
 
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:19
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:19
 #: public/build/extendify-help-center-eabc21dfe936d7b4ce8e.js:4
 #: src/Agent/tours/page-editor.js:27
 #: src/HelpCenter/tours/page-editor.js:27
 msgid "Click the plus to open the block inserter."
 msgstr "Klik tanda Plus untuk membuka Pemasang Block."
 
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:19
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:19
 #: public/build/extendify-help-center-eabc21dfe936d7b4ce8e.js:4
 #: src/Agent/tours/page-editor.js:26
 #: src/HelpCenter/tours/page-editor.js:26
@@ -905,14 +905,14 @@ msgstr "Lewati untuk Bantuan"
 msgid "Dashboard"
 msgstr "Dashboard"
 
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:19
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:19
 #: public/build/extendify-help-center-eabc21dfe936d7b4ce8e.js:4
 #: src/Agent/tours/site-assistant.js:15
 #: src/HelpCenter/tours/site-assistant.js:14
 msgid "Tasks"
 msgstr "Tugas"
 
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:19
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:19
 #: public/build/extendify-assist-page-5abc4f3121f907529fcd.js:9
 #: public/build/extendify-help-center-eabc21dfe936d7b4ce8e.js:4
 #: src/Agent/tours/site-assistant.js:36
@@ -933,7 +933,7 @@ msgstr "Kapan saja, anda dapat melihat website anda (dari sudut pandang pengunju
 msgid "Use the pages menu to add, delete, or edit the pages on your site."
 msgstr "Gunakan menu halaman untuk menambah, menghapus atau mengubah halaman di website anda."
 
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:17
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:17
 #: public/build/extendify-assist-page-5abc4f3121f907529fcd.js:1
 #: public/build/extendify-help-center-eabc21dfe936d7b4ce8e.js:7
 #: src/Agent/components/GuidedTour.jsx:485
@@ -942,14 +942,14 @@ msgstr "Gunakan menu halaman untuk menambah, menghapus atau mengubah halaman di 
 msgid "Done"
 msgstr "Selesai"
 
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:14
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:14
 #: public/build/extendify-help-center-eabc21dfe936d7b4ce8e.js:4
 #: src/Agent/components/GuidedTour.jsx:434
 #: src/HelpCenter/components/tours/GuidedTour.jsx:441
 msgid "Tour Steps"
 msgstr "Langkah-langkah"
 
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:14
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:14
 #: public/build/extendify-help-center-eabc21dfe936d7b4ce8e.js:4
 #: src/Agent/components/GuidedTour.jsx:313
 #: src/HelpCenter/components/tours/GuidedTour.jsx:315
@@ -978,17 +978,17 @@ msgstr "Beralih %s dalam Halaman baru"
 msgid "We encountered a server error we cannot recover from. Please reload the page and try again."
 msgstr "Kita menemukan masalah server yang tidak dapat di pulihkan. Silakan reload halaman dan mencoba lagi."
 
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:17
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:21
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:24
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:27
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:40
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:57
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:61
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:71
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:77
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:85
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:89
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:17
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:21
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:24
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:27
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:40
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:57
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:61
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:71
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:77
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:85
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:89
 #: public/build/extendify-assist-page-5abc4f3121f907529fcd.js:1
 #: public/build/extendify-quick-edit-8bab8f8f62c3e7af92e2.js:4
 #: public/build/extendify-quick-edit-8bab8f8f62c3e7af92e2.js:16
@@ -1021,7 +1021,7 @@ msgstr "Simpan"
 msgid "Enter a site description..."
 msgstr "Masukan Deskripsi Website."
 
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:19
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:19
 #: public/build/extendify-assist-page-5abc4f3121f907529fcd.js:1
 #: public/build/extendify-help-center-eabc21dfe936d7b4ce8e.js:4
 #: src/Agent/tours/page-creator.js:81
@@ -1042,7 +1042,7 @@ msgstr "Upload Logo Website"
 
 #: app/AdminPageRouter.php:43
 #: app/AdminPageRouter.php:67
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:19
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:19
 #: public/build/extendify-assist-page-5abc4f3121f907529fcd.js:10
 #: public/build/extendify-help-center-eabc21dfe936d7b4ce8e.js:4
 #: src/Agent/tours/site-assistant.js:5
@@ -1073,28 +1073,28 @@ msgstr "Lihat Website"
 msgid "Upload site icon"
 msgstr "Upload Ikon Website"
 
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:91
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:91
 #: public/build/extendify-assist-page-5abc4f3121f907529fcd.js:1
 #: src/Agent/workflows/theme/components/UpdateSiteIconConfirm.jsx:62
 #: src/Assist/components/tasks/UpdateSiteIcon.jsx:20
 msgid "Set site icon"
 msgstr "Gunakan Ikon Website"
 
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:91
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:91
 #: public/build/extendify-assist-page-5abc4f3121f907529fcd.js:1
 #: src/Agent/workflows/theme/components/UpdateSiteIconConfirm.jsx:61
 #: src/Assist/components/tasks/UpdateSiteIcon.jsx:19
 msgid "Site icon"
 msgstr "Ikon Website"
 
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:89
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:89
 #: public/build/extendify-assist-page-5abc4f3121f907529fcd.js:1
 #: src/Agent/workflows/theme/components/UpdateLogoConfirm.jsx:67
 #: src/Assist/components/tasks/UpdateLogo.jsx:20
 msgid "Set site logo"
 msgstr "Gunakan Logo Website"
 
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:89
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:89
 #: public/build/extendify-assist-page-5abc4f3121f907529fcd.js:1
 #: public/build/extendify-quick-edit-8bab8f8f62c3e7af92e2.js:16
 #: src/Agent/workflows/theme/components/UpdateLogoConfirm.jsx:66
@@ -1114,14 +1114,14 @@ msgstr "Lepas Gambar"
 msgid "Replace image"
 msgstr "Ganti Gambar"
 
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:17
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:17
 #: public/build/extendify-assist-page-5abc4f3121f907529fcd.js:1
 #: src/Agent/components/ImageUploader.jsx:141
 #: src/Assist/components/ImageUploader.jsx:96
 msgid "Edit or update the image"
 msgstr "Edit atau Update Gambar"
 
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:14
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:14
 #: public/build/extendify-assist-page-5abc4f3121f907529fcd.js:1
 #: public/build/extendify-help-center-eabc21dfe936d7b4ce8e.js:4
 #: src/Agent/components/GuidedTour.jsx:308
@@ -1132,7 +1132,7 @@ msgstr "Tutup modal"
 
 #: app/PluginNotifications/NotificationsListTable.php:81
 #: app/PluginNotifications/NotificationsListTable.php:173
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:27
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:27
 #: public/build/extendify-assist-page-5abc4f3121f907529fcd.js:1
 #: public/build/extendify-quick-edit-8bab8f8f62c3e7af92e2.js:4
 #: src/Agent/workflows/content/components/GeneratePageResult.jsx:32
@@ -1187,7 +1187,7 @@ msgstr "Mengatur Asisten Situs Anda"
 msgid "Starting off with a full website"
 msgstr "Memulai dengan website yang lengkap"
 
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:14
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:14
 #: public/build/extendify-auto-launch-fa577a30dd41aedded0e.js:51
 #: public/build/extendify-help-center-eabc21dfe936d7b4ce8e.js:4
 #: public/build/extendify-launch-86d848925fad51ac7e3f.js:8
@@ -1203,8 +1203,8 @@ msgstr "Kembali"
 msgid "Site Industry"
 msgstr "Industri Website"
 
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:4
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:27
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:4
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:27
 #: public/build/extendify-auto-launch-fa577a30dd41aedded0e.js:46
 #: public/build/extendify-launch-86d848925fad51ac7e3f.js:17
 #: src/Agent/components/messages/AgentMessage.jsx:19
@@ -1240,7 +1240,7 @@ msgstr "Plugin"
 msgid "View Site"
 msgstr "Lihat Website"
 
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:17
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:17
 #: public/build/extendify-auto-launch-fa577a30dd41aedded0e.js:46
 #: public/build/extendify-help-center-eabc21dfe936d7b4ce8e.js:7
 #: public/build/extendify-launch-86d848925fad51ac7e3f.js:8
@@ -1264,7 +1264,7 @@ msgstr "Halaman"
 msgid "You can personalize this later."
 msgstr "Anda dapat mengubah ini nanti."
 
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:21
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:21
 #: public/build/extendify-assist-page-5abc4f3121f907529fcd.js:1
 #: public/build/extendify-launch-86d848925fad51ac7e3f.js:8
 #: src/Agent/workflows/block-selector/components/UpdateBlockConfirm.jsx:99
@@ -1288,7 +1288,7 @@ msgstr "Tekan untuk pilih"
 msgid "Just a moment, this is taking longer than expected."
 msgstr "Mohon menunggu, ini perlu Waktu lebih Panjang dari biasanya."
 
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:19
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:19
 #: public/build/extendify-assist-page-5abc4f3121f907529fcd.js:10
 #: public/build/extendify-help-center-eabc21dfe936d7b4ce8e.js:4
 #: public/build/extendify-library-15577c026d0b0bca0190.js:1
@@ -1333,7 +1333,7 @@ msgstr "Kirim"
 msgid "Settings"
 msgstr "Pengaturan"
 
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:19
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:19
 #: public/build/extendify-help-center-eabc21dfe936d7b4ce8e.js:4
 #: src/Agent/tours/plugin-install.js:41
 #: src/HelpCenter/tours/plugin-install.js:40
@@ -1356,7 +1356,7 @@ msgid "Extendify"
 msgstr "Extendify"
 
 #. translators: %1$s is the current step, %2$s is the total number of steps
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:17
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:17
 #: public/build/extendify-help-center-eabc21dfe936d7b4ce8e.js:7
 #: src/Agent/components/GuidedTour.jsx:443
 #: src/HelpCenter/components/tours/GuidedTour.jsx:450
@@ -1677,7 +1677,7 @@ msgstr "Ceritakan kepada AI tentang gambar yang ingin Anda buat"
 msgid "Image Prompt"
 msgstr "Petunjuk Gambar"
 
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:24
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:24
 #: public/build/extendify-draft-21d96962600c40354b54.js:7
 #: src/Agent/workflows/block-selector/components/GenerateImageConfirm.jsx:217
 #: src/Draft/components/image-generation/GenerateForm.jsx:90
@@ -1780,7 +1780,7 @@ msgstr "Edit footer"
 msgid "Reset site"
 msgstr "Reset situs"
 
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:19
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:19
 #: public/build/extendify-assist-page-5abc4f3121f907529fcd.js:10
 #: public/build/extendify-help-center-eabc21dfe936d7b4ce8e.js:4
 #: src/Agent/tours/site-assistant.js:58
@@ -2041,7 +2041,7 @@ msgstr "Hasil pencarian"
 msgid "Search the knowledge base"
 msgstr "Cari di basis pengetahuan"
 
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:19
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:19
 #: public/build/extendify-assist-page-5abc4f3121f907529fcd.js:10
 #: public/build/extendify-help-center-eabc21dfe936d7b4ce8e.js:4
 #: src/Agent/tours/page-editor.js:13
@@ -2051,14 +2051,14 @@ msgstr "Cari di basis pengetahuan"
 msgid "Page editor"
 msgstr "Penyunting halaman"
 
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:19
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:19
 #: public/build/extendify-help-center-eabc21dfe936d7b4ce8e.js:4
 #: src/Agent/tours/page-editor.js:250
 #: src/HelpCenter/tours/page-editor.js:253
 msgid "Click publish or update to save the changes you have made to the page and make them live on the site."
 msgstr "Klik terbitkan atau perbarui untuk menyimpan perubahan yang telah Anda buat pada laman dan menerapkannya secara langsung pada situs."
 
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:19
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:19
 #: public/build/extendify-assist-page-5abc4f3121f907529fcd.js:10
 #: public/build/extendify-help-center-eabc21dfe936d7b4ce8e.js:4
 #: src/Agent/tours/plugin-install.js:5
@@ -2068,7 +2068,7 @@ msgstr "Klik terbitkan atau perbarui untuk menyimpan perubahan yang telah Anda b
 msgid "Installing a plugin"
 msgstr "Menginstal plugin"
 
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:19
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:19
 #: public/build/extendify-assist-page-5abc4f3121f907529fcd.js:10
 #: public/build/extendify-help-center-eabc21dfe936d7b4ce8e.js:4
 #: src/Agent/tours/plugin-management.js:5
@@ -2083,21 +2083,21 @@ msgstr "Manajemen plugin"
 msgid "You can always access the help center by clicking this button."
 msgstr "Anda selalu dapat mengakses pusat bantuan dengan mengklik tombol ini."
 
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:19
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:19
 #: public/build/extendify-help-center-eabc21dfe936d7b4ce8e.js:4
 #: src/Agent/tours/site-assistant.js:80
 #: src/HelpCenter/tours/site-assistant.js:100
 msgid "Visit your site"
 msgstr "Kunjungi situs Anda"
 
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:19
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:19
 #: public/build/extendify-help-center-eabc21dfe936d7b4ce8e.js:4
 #: src/Agent/tours/site-assistant.js:81
 #: src/HelpCenter/tours/site-assistant.js:101
 msgid "You can always visit your site by clicking this button."
 msgstr "Anda dapat selalu mengunjungi situs Anda dengan mengklik tombol ini."
 
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:19
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:19
 #: public/build/extendify-assist-page-5abc4f3121f907529fcd.js:10
 #: public/build/extendify-help-center-eabc21dfe936d7b4ce8e.js:4
 #: src/Agent/tours/users-screen.js:5
@@ -3245,7 +3245,7 @@ msgstr "Hapus konten yang ada"
 msgid "Create a new page"
 msgstr "Buat laman baru"
 
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:19
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:19
 #: public/build/extendify-help-center-eabc21dfe936d7b4ce8e.js:4
 #: public/build/extendify-page-creator-cbcefacf00c477a9dfaa.js:1
 #: src/Agent/tours/page-creator.js:6
@@ -3446,42 +3446,42 @@ msgstr "Ceritakan Tentang Situs Web Anda"
 msgid "Share your vision, and we'll craft a landing page that's perfectly tailored to your needs, ready to launch in no time. Let's begin by learning more about what you're building."
 msgstr "Bagikan visi Anda, dan kami akan membuat halaman arahan yang sesuai dengan kebutuhan Anda, siap diluncurkan dalam waktu singkat. Mari mulai dengan mempelajari lebih lanjut tentang apa yang Anda bangun."
 
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:19
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:19
 #: public/build/extendify-help-center-eabc21dfe936d7b4ce8e.js:4
 #: src/Agent/tours/page-creator.js:30
 #: src/HelpCenter/tours/page-creator.js:30
 msgid "Press here to get started with your AI Page Generator."
 msgstr "Tekan di sini untuk memulai dengan AI Page Generator Anda."
 
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:19
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:19
 #: public/build/extendify-help-center-eabc21dfe936d7b4ce8e.js:4
 #: src/Agent/tours/page-creator.js:53
 #: src/HelpCenter/tours/page-creator.js:53
 msgid "Page description"
 msgstr "Deskripsi laman"
 
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:19
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:19
 #: public/build/extendify-help-center-eabc21dfe936d7b4ce8e.js:4
 #: src/Agent/tours/page-creator.js:54
 #: src/HelpCenter/tours/page-creator.js:54
 msgid "Write a description of the page you want to create. Be as detailed as you like. We will create a page based on this description."
 msgstr "Tulis deskripsi halaman yang ingin Anda buat. Jelaskan secara detail sesuai keinginan Anda. Kami akan membuat halaman berdasarkan deskripsi ini."
 
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:19
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:19
 #: public/build/extendify-help-center-eabc21dfe936d7b4ce8e.js:4
 #: src/Agent/tours/page-creator.js:82
 #: src/HelpCenter/tours/page-creator.js:82
 msgid "If needed, update your site description here. We use this to add additional context about your website."
 msgstr "Jika diperlukan, perbarui deskripsi situs Anda di sini. Kami menggunakan ini untuk menambahkan konteks tambahan tentang situs web Anda."
 
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:19
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:19
 #: public/build/extendify-help-center-eabc21dfe936d7b4ce8e.js:4
 #: src/Agent/tours/page-creator.js:105
 #: src/HelpCenter/tours/page-creator.js:105
 msgid "Generate your page"
 msgstr "Hasilkan laman Anda"
 
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:19
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:19
 #: public/build/extendify-help-center-eabc21dfe936d7b4ce8e.js:4
 #: src/Agent/tours/page-creator.js:106
 #: src/HelpCenter/tours/page-creator.js:106
@@ -3545,39 +3545,39 @@ msgstr "Tampilkan pertanyaan lainnya"
 msgid "Hebrew"
 msgstr "Ibrani"
 
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:81
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:81
 #: src/Agent/hooks/useThemeVariations.js:17
 msgid "Failed to fetch theme variations."
 msgstr "Gagal mengambil variasi tema."
 
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:81
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:81
 #: src/Agent/components/redirects/RedirectThemeVariations.jsx:8
 msgid "Hey there! It looks like you are trying to change your theme colors, but you are not on a page where we can do that."
 msgstr "Hai! Sepertinya Anda mencoba mengubah warna tema Anda, tetapi Anda tidak berada pada halaman yang tepat untuk melakukannya."
 
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:81
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:89
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:81
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:89
 #: src/Agent/components/redirects/RedirectFontsVariations.jsx:10
 #: src/Agent/components/redirects/RedirectThemeVariations.jsx:15
 #: src/Agent/workflows/theme/components/Redirect.jsx:10
 msgid "Suggestion:"
 msgstr "Saran:"
 
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:4
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:17
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:21
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:24
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:27
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:30
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:32
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:35
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:40
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:57
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:61
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:71
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:77
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:83
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:89
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:4
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:17
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:21
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:24
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:27
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:30
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:32
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:35
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:40
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:57
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:61
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:71
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:77
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:83
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:89
 #: public/build/extendify-quick-edit-8bab8f8f62c3e7af92e2.js:4
 #: public/build/extendify-quick-edit-8bab8f8f62c3e7af92e2.js:16
 #: public/build/extendify-quick-edit-8bab8f8f62c3e7af92e2.js:19
@@ -3612,9 +3612,9 @@ msgstr "Saran:"
 msgid "Cancel"
 msgstr "Batal"
 
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:21
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:27
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:40
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:21
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:27
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:40
 #: src/Agent/workflows/block-selector/components/UpdateBlockConfirm.jsx:107
 #: src/Agent/workflows/block-selector/components/UpdateImageConfirm.jsx:190
 #: src/Agent/workflows/content/components/UpdatePostConfirm.jsx:40
@@ -3622,121 +3622,121 @@ msgstr "Batal"
 msgid "The agent has made the changes in the browser. Please review and confirm."
 msgstr "Agen telah mengubah di browser. Silakan tinjau dan konfirmasi."
 
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:19
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:19
 #: src/Agent/tours/library-tour.js:7
 msgid "Tour the design library"
 msgstr "Jelajahi pustaka desain"
 
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:19
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:19
 #: src/Agent/tours/page-creator.js:7
 msgid "Learn about the AI Page Generator"
 msgstr "Pelajari tentang AI Page Generator"
 
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:19
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:19
 #: src/Agent/tours/page-editor.js:14
 msgid "Tour the page editor"
 msgstr "Jelajahi penyunting halaman"
 
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:19
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:19
 #: src/Agent/tours/plugin-install.js:6
 msgid "See how to install a plugin"
 msgstr "Lihat cara menginstal plugin"
 
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:19
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:19
 #: src/Agent/tours/plugin-management.js:6
 msgid "Learn how to manage plugins"
 msgstr "Pelajari cara mengelola plugin"
 
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:19
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:19
 #: src/Agent/tours/site-assistant.js:6
 msgid "Tour the Site Assistant"
 msgstr "Jelajahi Asisten Situs"
 
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:19
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:19
 #: src/Agent/tours/users-screen.js:6
 msgid "Tour the Users screen"
 msgstr "Jelajahi layar Pengguna"
 
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:4
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:4
 #: src/Agent/components/ChatInput.jsx:166
 msgid "Ask anything"
 msgstr "Tanyakan apa saja"
 
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:4
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:4
 #: src/Agent/components/ChatInput.jsx:223
 msgid "Send message"
 msgstr "Kirim pesan"
 
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:7
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:7
 #: src/Agent/components/ScrollDownButton.jsx:22
 msgid "Scroll down"
 msgstr "Gulir ke bawah"
 
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:4
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:4
 #: src/Agent/components/messages/StatusIndicator.jsx:18
 msgid "Working on it..."
 msgstr "Sedang dikerjakan..."
 
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:4
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:4
 #: src/Agent/components/messages/StatusIndicator.jsx:24
 msgid "Gathering data..."
 msgstr "Mengumpulkan data..."
 
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:4
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:4
 #: src/Agent/components/messages/StatusIndicator.jsx:25
 msgid "Analyzing..."
 msgstr "Menganalisis..."
 
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:4
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:4
 #: src/Agent/components/messages/StatusIndicator.jsx:26
 msgid "Usage limit reached"
 msgstr "Batas penggunaan tercapai"
 
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:4
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:4
 #: src/Agent/components/messages/StatusIndicator.jsx:27
 msgid "Usage limit restored"
 msgstr "Batas penggunaan dipulihkan"
 
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:7
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:7
 #: src/Agent/components/messages/WorkflowMessage.jsx:75
 msgid "Workflow completed successfully"
 msgstr "Alur kerja berhasil diselesaikan"
 
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:4
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:4
 #: src/Agent/components/messages/WorkflowComponent.jsx:17
 msgid "Component not available"
 msgstr "Komponen tidak tersedia"
 
 #. translators: This is for when a component doesn't exist
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:7
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:7
 #: src/Agent/components/messages/WorkflowComponent.jsx:22
 msgid "It may have been removed or is not available for your account."
 msgstr "Mungkin telah dihapus atau tidak tersedia untuk akun Anda."
 
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:7
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:7
 #: src/Agent/components/messages/WorkflowMessage.jsx:38
 msgid "What's next? Would you like to do something else?"
 msgstr "Apa selanjutnya? Apakah Anda ingin melakukan sesuatu yang lain?"
 
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:4
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:4
 #: src/Agent/components/layouts/DragResizeLayout.jsx:117
 #: src/Agent/components/layouts/SidebarLayout.jsx:116
 msgid "Close window"
 msgstr "Tutup jendela"
 
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:4
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:4
 #: src/Agent/components/layouts/DragResizeLayout.jsx:158
 msgid "Drag to move"
 msgstr "Seret untuk memindahkan"
 
 #. translators: %s is a human-readable time difference, e.g. "2 hours from now"
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:10
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:10
 #: src/Agent/components/messages/UsageMessage.jsx:30
 #, js-format
 msgid "You have reached your daily messages limit. Your limit will reset in %s."
 msgstr "Anda telah mencapai batas pesan harian. Batas Anda akan diatur ulang dalam %s."
 
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:14
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:14
 #: src/Agent/components/buttons/AdminBar.jsx:42
 #: src/Agent/components/buttons/Mobile.jsx:38
 #: src/Agent/components/buttons/PostEditor.jsx:47
@@ -3744,7 +3744,7 @@ msgid "Open Agent"
 msgstr "Buka Agen"
 
 #: app/Toolbar/Frontend.php:187
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:14
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:14
 #: src/Agent/components/buttons/AdminBar.jsx:45
 #: src/Agent/components/buttons/Mobile.jsx:46
 #: src/Agent/components/buttons/PostEditor.jsx:54
@@ -3852,7 +3852,7 @@ msgstr "Dari sini Anda dapat menyesuaikan dimensi, padding, dan margin yang digu
 msgid "Take the welcome tour"
 msgstr "Ikuti tur selamat datang"
 
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:14
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:14
 #: src/Agent/components/buttons/Mobile.jsx:49
 msgid "How can we help you today?"
 msgstr "Bagaimana kami dapat membantu Anda hari ini?"
@@ -3889,33 +3889,33 @@ msgstr "Tooltip menunjuk ke tombol edit halaman"
 msgid "Welcome to your new site! When you're ready, press here to edit this page."
 msgstr "Selamat datang di situs baru Anda! Saat Anda siap, tekan di sini untuk menyunting halaman ini."
 
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:10
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:10
 #: public/build/extendify-quick-edit-8bab8f8f62c3e7af92e2.js:16
 #: src/Agent/components/PageDocument.jsx:25
 #: src/QuickEdit/components/modals/SiteIdentityModal.jsx:167
 msgid "Remove"
 msgstr "Hapus"
 
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:4
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:4
 #: src/Agent/components/DOMHighlighter.jsx:250
 msgid "Remove highlight"
 msgstr "Hapus sorotan"
 
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:14
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:14
 #: src/Agent/Agent.jsx:624
 msgid "AI Agent can make mistakes. Check changes before saving."
 msgstr "Agen AI dapat membuat kesalahan. Periksa perubahan sebelum menyimpan."
 
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:4
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:30
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:35
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:4
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:30
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:35
 #: src/Agent/workflows/abilities/components/AbilityRunGate.jsx:29
 #: src/Agent/workflows/content/components/UpdatePostStatusConfirm.jsx:51
 #: src/Agent/workflows/settings/components/UpdateSettingConfirm.jsx:62
 msgid "Confirm"
 msgstr "Konfirmasi"
 
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:4
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:4
 #: src/Agent/components/messages/StatusIndicator.jsx:16
 msgid "Thinking..."
 msgstr "Berpikir..."
@@ -3927,73 +3927,73 @@ msgstr "Berpikir..."
 msgid "WP Admin Dashboard"
 msgstr "Dasbor WP Admin"
 
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:75
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:75
 #: src/Agent/hooks/useThemeFontsVariations.js:29
 msgid "Failed to fetch theme font variations."
 msgstr "Gagal mengambil variasi font tema."
 
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:75
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:75
 #: src/Agent/workflows/theme/change-theme-fonts-variation.js:13
 msgid "Hey there! It looks like you are trying to change your theme fonts, but you are not on a page where we can do that."
 msgstr "Hai! Sepertinya Anda mencoba mengubah jenis huruf tema Anda, tetapi Anda tidak berada pada halaman yang memungkinkan kami melakukannya."
 
 #. translators: A chat message shown to the user
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:77
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:77
 #: src/Agent/workflows/theme/components/SelectThemeFontsVariation.jsx:58
 msgid "Loading font variations..."
 msgstr "Memuat variasi font..."
 
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:4
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:4
 #: src/Agent/components/ChatTools.jsx:36
 msgid "Select"
 msgstr "Pilih"
 
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:4
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:4
 #: src/Agent/components/ChatInput.jsx:162
 msgid "What do you want to change in the selected content?"
 msgstr "Apa yang ingin diubah dalam konten yang dipilih?"
 
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:10
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:10
 #: src/Agent/components/PageDocument.jsx:12
 msgid "Selected content"
 msgstr "Konten terpilih"
 
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:17
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:27
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:17
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:27
 #: src/Agent/components/ImageUploader.jsx:204
 #: src/Agent/workflows/block-selector/components/UpdateImageConfirm.jsx:13
 msgid "Open Media Library"
 msgstr "Buka Pustaka Media"
 
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:27
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:27
 #: src/Agent/workflows/block-selector/components/UpdateImageConfirm.jsx:138
 #, js-format
 msgid "The agent has requested the media library. Press \"%s\" to upload or select an image."
 msgstr "Agen telah meminta pustaka media. Tekan \"%s\" untuk mengunggah atau memilih gambar."
 
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:27
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:27
 #: src/Agent/workflows/block-selector/components/UpdateImageConfirm.jsx:155
 msgid "Select or Upload Image"
 msgstr "Pilih atau Unggah Gambar"
 
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:21
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:21
 #: src/Agent/workflows/block-selector/components/GenerateImageConfirm.jsx:121
 msgid "An unknown error occurred."
 msgstr "Terjadi eror yang tidak diketahui."
 
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:24
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:24
 #: src/Agent/workflows/block-selector/components/GenerateImageConfirm.jsx:228
 msgid "Image generated successfully!"
 msgstr "Gambar berhasil dibuat!"
 
 #. translators: %1$s is the number of credits remaining, %2$s is the total credits
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:27
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:27
 #: src/Agent/workflows/block-selector/components/GenerateImageConfirm.jsx:261
 #, js-format
 msgid "You have %1$s of %2$s daily image credits remaining."
 msgstr "Anda memiliki %1$s dari %2$s kredit gambar harian tersisa"
 
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:27
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:27
 #: src/Agent/workflows/content/components/GeneratePageResult.jsx:19
 msgid "The agent has finished creating your page. Press take me there to visit your new page or dismiss to remove this notice."
 msgstr "Agen telah selesai membuat laman Anda. Tekan bawa saya ke sana untuk mengunjungi laman baru Anda atau tutup untuk menghapus peringatan ini."
@@ -4003,41 +4003,41 @@ msgstr "Agen telah selesai membuat laman Anda. Tekan bawa saya ke sana untuk men
 msgid "E.g., Create an \"About Us\" page highlighting our story, mission, values and team overview."
 msgstr "Misalnya, buat halaman \"Tentang Kami\" yang menyoroti cerita, misi, nilai, dan ringkasan tim kami."
 
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:21
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:21
 #: src/Agent/workflows/block-selector/components/GenerateImageConfirm.jsx:116
 msgid "No image returned"
 msgstr "Tidak ada gambar dikembalikan"
 
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:4
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:4
 #: src/Agent/components/messages/StatusIndicator.jsx:20
 msgid "Formulating a response..."
 msgstr "Menyusun tanggapan..."
 
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:4
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:4
 #: src/Agent/components/messages/StatusIndicator.jsx:21
 msgid "Reviewing logic..."
 msgstr "Meninjau logika..."
 
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:4
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:4
 #: src/Agent/components/layouts/MobileLayout.jsx:63
 msgid "Minimize window"
 msgstr "Minimalkan jendela"
 
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:4
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:4
 #: src/Agent/components/messages/StatusIndicator.jsx:19
 msgid "Interpreting message..."
 msgstr "Menafsirkan pesan..."
 
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:32
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:32
 #: src/Agent/workflows/plugins/components/InstallPlugin.jsx:79
 msgid "There was an error installing the plugin. You may try again"
 msgstr "Terjadi eror saat menginstal plugin. Anda bisa mencoba lagi"
 
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:21
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:24
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:27
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:32
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:89
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:21
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:24
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:27
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:32
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:89
 #: src/Agent/workflows/block-selector/components/GenerateImageConfirm.jsx:245
 #: src/Agent/workflows/block-selector/components/UpdateBlockConfirm.jsx:126
 #: src/Agent/workflows/content/components/UpdatePostConfirm.jsx:60
@@ -4046,22 +4046,22 @@ msgstr "Terjadi eror saat menginstal plugin. Anda bisa mencoba lagi"
 msgid "Try Again"
 msgstr "Coba Lagi"
 
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:32
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:32
 #: src/Agent/workflows/plugins/components/InstallPlugin.jsx:102
 msgid "Installing plugin..."
 msgstr "Menginstal plugin..."
 
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:32
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:32
 #: src/Agent/workflows/plugins/components/InstallPlugin.jsx:103
 msgid "Activating plugin..."
 msgstr "Mengaktifkan plugin..."
 
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:32
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:32
 #: src/Agent/workflows/plugins/components/InstallPlugin.jsx:115
 msgid "The agent is requesting to install and activate a plugin."
 msgstr "Agen meminta untuk menginstal dan mengaktifkan plugin."
 
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:35
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:35
 #: src/Agent/workflows/plugins/components/InstallPlugin.jsx:152
 msgid "Install Plugin"
 msgstr "Instal Plugin"
@@ -4086,56 +4086,56 @@ msgid "By using AI features, you agree with the %1$sTerms of Use and Privacy Pol
 msgstr "Dengan menggunakan fitur AI, Anda setuju dengan %1$sKetentuan Penggunaan dan Kebijakan Privasi%2$s"
 
 #. translators: A chat message shown to the user
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:75
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:75
 #: src/Agent/workflows/theme/components/SelectThemeFontsVariation.jsx:45
 msgid "We were unable to find any variations for your theme"
 msgstr "Kami tidak dapat menemukan variasi untuk tema Anda"
 
 #. translators: This message is shown when the AI agent fails to find a suitable workflow.
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:12
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:12
 #: src/Agent/Agent.jsx:111
 msgid "Something went wrong while trying to start this request. Please try again."
 msgstr "Terjadi kesalahan saat mencoba memulai permintaan ini. Silakan coba lagi."
 
 #. translators: This message is shown when the AI agent encounters a general error.
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:14
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:14
 #: src/Agent/Agent.jsx:565
 msgid "Sorry, something went wrong. I tried but wasn't able to do this request. Please try again."
 msgstr "Maaf, terjadi kesalahan. Saya sudah mencoba tetapi tidak dapat memproses permintaan ini. Silakan coba lagi."
 
 #. translators: A chat message shown to the user
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:24
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:24
 #: src/Agent/workflows/block-selector/components/GenerateImageConfirm.jsx:170
 #, js-format
 msgid "Error generating image: %s"
 msgstr "Eror saat membuat gambar: %s"
 
 #. translators: %1$s and %2$s are HTML tags. %1$s opens a span with screen-reader-only text, and %2$s closes that span.
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:35
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:35
 #: src/Agent/workflows/plugins/components/InstallPlugin.jsx:134
 #, js-format
 msgid "Plugin Details %1$s(opens in a new tab)%2$s"
 msgstr "Detail Plugin %1$s(buka di tab baru)%2$s"
 
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:35
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:35
 #: src/Agent/workflows/settings/components/UpdateSettingConfirm.jsx:45
 msgid "Apply this setting change?"
 msgstr "Terapkan perubahan pengaturan ini?"
 
 #. translators: "site style" refers to the structural aesthetic style for the site.
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:66
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:66
 #: src/Agent/workflows/theme/change-site-vibes.js:17
 msgid "Hey there! It looks like you are trying to change your site style, but you are not on a page where we can do that."
 msgstr "Hai! Sepertinya Anda mencoba mengubah style situs Anda, tetapi Anda tidak berada pada halaman yang memungkinkan kami melakukannya."
 
 #. translators: A chat message shown to the user
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:81
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:81
 #: src/Agent/workflows/theme/components/SelectThemeVariation.jsx:54
 msgid "We were unable to find any colors for your theme"
 msgstr "Kami tidak dapat menemukan warna untuk tema Anda"
 
 #. translators: A chat message shown to the user
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:83
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:83
 #: src/Agent/workflows/theme/components/SelectThemeVariation.jsx:67
 msgid "Loading available colors..."
 msgstr "Memuat warna yang tersedia..."
@@ -4152,7 +4152,7 @@ msgstr "Menerapkan style situs"
 msgid "Customizing your site style"
 msgstr "Mengatur gaya situs Anda"
 
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:4
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:4
 #: public/build/extendify-assist-page-5abc4f3121f907529fcd.js:10
 #: public/build/extendify-draft-21d96962600c40354b54.js:1
 #: src/Agent/icons.jsx:12
@@ -4161,46 +4161,46 @@ msgstr "Mengatur gaya situs Anda"
 msgid "Magic Icon"
 msgstr "Ikon Ajaib"
 
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:4
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:4
 #: src/Agent/icons.jsx:39
 msgid "Magic Sparkle Animation"
 msgstr "Animasi Kilau Ajaib"
 
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:4
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:4
 #: public/build/extendify-help-center-eabc21dfe936d7b4ce8e.js:1
 #: src/Agent/icons.jsx:113
 #: src/HelpCenter/components/ai-chat/icons.jsx:41
 msgid "Thumb Down Icon"
 msgstr "Ikon Jempol Turun"
 
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:4
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:4
 #: public/build/extendify-help-center-eabc21dfe936d7b4ce8e.js:1
 #: src/Agent/icons.jsx:125
 #: src/HelpCenter/components/ai-chat/icons.jsx:53
 msgid "Thumb Up Icon"
 msgstr "Ikon Jempol Ke Atas"
 
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:4
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:4
 #: src/Agent/icons.jsx:132
 msgid "Sparkle Icon"
 msgstr "Ikon Berkilau"
 
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:4
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:4
 #: src/Agent/icons.jsx:147
 msgid "Tool Select Icon"
 msgstr "Alat Pilih Ikon"
 
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:4
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:4
 #: src/Agent/icons.jsx:179
 msgid "Selected Content Icon"
 msgstr "Ikon Konten Terpilih"
 
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:7
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:7
 #: src/Agent/components/messages/WorkflowMessage.jsx:65
 msgid "Success icon"
 msgstr "Ikon sukses"
 
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:4
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:4
 #: src/Agent/components/ErrorMessage.jsx:15
 msgid "Error icon"
 msgstr "Ikon kesalahan"
@@ -4653,35 +4653,35 @@ msgstr "Meningkatkan situs Anda"
 msgid "Setting up essential tools"
 msgstr "Menyiapkan perangkat penting"
 
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:17
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:17
 #: src/Agent/components/ImageUploader.jsx:170
 msgid "Drop images to upload"
 msgstr "Taruh gambar yang akan diunggah"
 
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:24
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:24
 #: src/Agent/workflows/block-selector/components/GenerateImageConfirm.jsx:65
 msgid "Failed to save image"
 msgstr "Gagal menyimpan gambar"
 
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:24
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:24
 #: src/Agent/workflows/block-selector/components/GenerateImageConfirm.jsx:184
 #, js-format
 msgid "It looks like you've run out of credits. They'll refresh in %s, so check back then."
 msgstr "Sepertinya Anda kehabisan kredit. Kredit akan diperbarui dalam %s, jadi periksa kembali nanti."
 
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:24
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:24
 #: src/Agent/workflows/block-selector/components/GenerateImageConfirm.jsx:254
 msgid "Saving..."
 msgstr "Menyimpan..."
 
 #. translators: %1$s is the current page or post status, and %2$s is the updated page or post status.
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:30
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:30
 #: src/Agent/workflows/content/components/UpdatePostStatusConfirm.jsx:28
 #, js-format
 msgid "Status will change from \"%s\" to \"%s\", please confirm to save."
 msgstr "Status akan berubah dari \"%1$s\" ke \"%2$s\", mohon konfirmasi untuk menyimpan."
 
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:4
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:4
 #: src/Agent/components/ChatInput.jsx:189
 msgid "Message too long"
 msgstr "Pesan terlalu panjang"
@@ -4692,7 +4692,7 @@ msgid "A \"Shop\" page will also be automatically created."
 msgstr "Halaman \"Shop\" juga akan otomatis dibuat"
 
 #. translators: This is a status message. 'Loading' is a verb — the app is currently loading the animation options. It is not referring to 'loading animation' as a compound noun.
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:57
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:57
 #: src/Agent/workflows/theme/components/SelectAnimation.jsx:117
 msgid "Loading animation options..."
 msgstr "Memuat pilihan animasi..."
@@ -4792,7 +4792,7 @@ msgstr "Sepertinya Anda pernah ke sini sebelumnya. Kami perlu membersihkan beber
 msgid "%s pages/posts will be deleted."
 msgstr "%s halaman/pos akan dihapus"
 
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:4
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:4
 #: public/build/extendify-auto-launch-fa577a30dd41aedded0e.js:49
 #: src/Agent/components/messages/StatusIndicator.jsx:23
 #: src/AutoLaunch/components/RestartLaunchModal.jsx:164
@@ -4804,7 +4804,7 @@ msgstr "Memproses..."
 msgid "Describe the website you want to build"
 msgstr "Jelaskan situs web yang ingin Anda bangun"
 
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:89
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:89
 #: src/Agent/workflows/theme/components/SelectGeneratedPalette.jsx:107
 msgid "We were unable to generate color palettes. Please try again."
 msgstr "Kami tidak dapat membuat palet warna. Silakan coba lagi"
@@ -4815,56 +4815,56 @@ msgstr "Kami tidak dapat membuat palet warna. Silakan coba lagi"
 msgid "Setting the website style"
 msgstr "Mengatur gaya situs web"
 
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:4
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:4
 #: src/Agent/components/OptionsPopover.jsx:78
 msgid "View more options"
 msgstr "Lihat pilihan lainnya"
 
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:7
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:7
 #: src/Agent/components/messages/WorkflowMessage.jsx:91
 msgid "Workflow was canceled"
 msgstr "Alur kerja dibatalkan"
 
 #. translators: This message show above a UI where the user can select a different animation for their site.
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:61
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:61
 #: src/Agent/workflows/theme/change-animation.js:16
 msgid "Below you can select a different animation for your site."
 msgstr "Di bawah ini Anda dapat memilih animasi berbeda untuk situs Anda."
 
 #. translators: This message show above a UI where the user can select a different site style variation for their theme.
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:75
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:75
 #: src/Agent/workflows/theme/change-site-vibes.js:29
 msgid "Below you can select a different site style variation for your theme."
 msgstr "Di bawah ini Anda dapat memilih variasi style situs yang berbeda untuk tema Anda."
 
 #. translators: This message show above a UI where the user can select a different font variation for their theme.
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:81
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:81
 #: src/Agent/workflows/theme/change-theme-fonts-variation.js:27
 msgid "Below you can select a different font variation for your theme."
 msgstr "Di bawah ini Anda dapat memilih variasi font yang berbeda untuk tema Anda."
 
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:81
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:81
 #: src/Agent/workflows/theme/change-theme-fonts-variation.js:34
 msgid "Updated the theme fonts"
 msgstr "Memperbarui font tema"
 
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:81
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:81
 #: src/Agent/workflows/theme/change-theme-fonts-variation.js:35
 msgid "Canceled the theme fonts update"
 msgstr "Membatalkan pembaruan jenis huruf tema"
 
 #. translators: This message show above a UI where the user can select a different color variation for their theme.
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:89
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:89
 #: src/Agent/workflows/theme/change-theme-variation.js:21
 msgid "Below you can select a different color variation for your theme."
 msgstr "Di bawah ini Anda dapat memilih variasi warna berbeda untuk tema Anda."
 
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:89
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:89
 #: src/Agent/workflows/theme/change-theme-variation.js:28
 msgid "Updated the theme color"
 msgstr "Memperbarui warna tema"
 
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:89
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:89
 #: src/Agent/workflows/theme/change-theme-variation.js:29
 msgid "Canceled the theme color update"
 msgstr "Membatalkan pembaruan warna tema"
@@ -4874,7 +4874,7 @@ msgstr "Membatalkan pembaruan warna tema"
 msgid "Enhance with AI"
 msgstr "Tingkatkan dengan AI"
 
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:19
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:19
 #: src/Agent/state/chat.js:23
 msgid ""
 "#### Your site is ready 🎉\n"
@@ -4932,7 +4932,7 @@ msgid "Picking the perfect design"
 msgstr "Memilih desain yang sempurna"
 
 #. translators: No value found message for when a WP setting has no value.
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:40
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:40
 msgid "No value found"
 msgstr "Tidak ada nilai yang ditemukan"
 
@@ -5131,21 +5131,21 @@ msgstr "testimoni"
 msgid "Latvian"
 msgstr "Latvia"
 
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:35
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:63
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:35
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:63
 #: src/Agent/workflows/settings/edit-wp-setting.js:20
 #: src/Agent/workflows/theme/change-site-design.js:46
 msgid "Change website title"
 msgstr "Ubah judul situs web"
 
 #. translators: "site style" refers to the structural aesthetic style for the site.
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:73
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:73
 #: src/Agent/workflows/theme/change-site-vibes.js:26
 msgid "Change website style"
 msgstr "Ubah gaya situs web"
 
 #. translators: "site animation" refers to the animation style for the current site.
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:59
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:59
 #: src/Agent/workflows/theme/change-animation.js:13
 msgid "Change website animation"
 msgstr "Ubah animasi situs web"
@@ -5218,39 +5218,39 @@ msgid "Enhancing the website description..."
 msgstr "Meningkatkan deskripsi situs web..."
 
 #. translators: "theme colors" refers to the color palette variation for the current theme.
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:63
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:87
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:63
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:87
 #: src/Agent/workflows/theme/change-site-design.js:39
 #: src/Agent/workflows/theme/change-theme-variation.js:18
 msgid "Change website colors"
 msgstr "Ubah warna situs web"
 
 #. translators: "theme fonts" refers to the font variation for the current theme.
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:79
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:79
 #: src/Agent/workflows/theme/change-theme-fonts-variation.js:24
 msgid "Change website fonts"
 msgstr "Ubah jenis huruf situs web"
 
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:63
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:89
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:63
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:89
 #: src/Agent/workflows/theme/change-site-design.js:53
 #: src/Agent/workflows/theme/update-logo.js:13
 msgid "Change website logo"
 msgstr "Ganti logo situs web"
 
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:7
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:7
 #: src/Agent/components/ChatSuggestions.jsx:138
 msgid "Show more"
 msgstr "Tampilkan lebih banyak"
 
 #. translators: "site style" refers to the structural aesthetic style for the site.
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:66
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:66
 #: src/Agent/workflows/theme/components/SelectSiteVibes.jsx:48
 msgid "We were unable to find any website style for your theme."
 msgstr "Kami tidak dapat menemukan gaya situs web untuk tema Anda."
 
 #. translators: "site style" refers to the structural aesthetic style for the site.
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:71
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:71
 #: src/Agent/workflows/theme/components/SelectSiteVibes.jsx:64
 msgid "Loading website style options..."
 msgstr "Memuat opsi gaya situs web..."
@@ -5272,7 +5272,7 @@ msgid "Adding page: %s"
 msgstr "Menambahkan laman: %s"
 
 #. translators: this is the initial message in the agent chat, welcoming the user. Keep it short and friendly and follow the same markdown format and emoji.
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:19
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:19
 #: src/Agent/state/chat.js:19
 msgid ""
 "#### Your site is ready 🎉\n"
@@ -5281,59 +5281,59 @@ msgstr ""
 "#### Situs Anda sudah siap 🎉  \n"
 "Ingin menjelajahi desain situs web lainnya?"
 
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:61
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:61
 #: src/Agent/workflows/theme/components/change-site-design/DesignOption.jsx:144
 msgid "Preview site design"
 msgstr "Pratinjau desain situs"
 
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:61
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:61
 #: src/Agent/workflows/theme/components/change-site-design/SelectSiteDesign.jsx:391
 msgid "Load more"
 msgstr "Muat lebih banyak"
 
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:61
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:61
 #: src/Agent/workflows/theme/change-site-design.js:28
 msgid "Change website design"
 msgstr "Ubah desain situs web"
 
 #. translators: This message show above a UI where the user can select a different site design.
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:63
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:63
 #: src/Agent/workflows/theme/change-site-design.js:31
 msgid "Below you can select a different design for your website."
 msgstr "Di bawah ini Anda dapat memilih desain berbeda untuk situs web Anda."
 
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:63
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:63
 #: src/Agent/workflows/theme/change-site-design.js:61
 msgid "Updated the website design"
 msgstr "Memperbarui desain situs web"
 
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:63
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:63
 #: src/Agent/workflows/theme/change-site-design.js:62
 msgid "Canceled the website design update"
 msgstr "Membatalkan pembaruan desain situs web"
 
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:61
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:61
 #: src/Agent/workflows/theme/change-animation.js:23
 msgid "Updated the website animation"
 msgstr "Memperbarui animasi situs web"
 
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:61
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:61
 #: src/Agent/workflows/theme/change-animation.js:24
 msgid "Canceled the website animation update"
 msgstr "Membatalkan pembaruan animasi situs web"
 
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:75
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:75
 #: src/Agent/workflows/theme/change-site-vibes.js:36
 msgid "Updated the website style"
 msgstr "Memperbarui gaya situs web"
 
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:75
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:75
 #: src/Agent/workflows/theme/change-site-vibes.js:37
 msgid "Canceled the website style update"
 msgstr "Membatalkan pembaruan gaya situs web"
 
 #. translators: A chat message shown to the user when their selected color variation cannot be applied
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:85
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:85
 #: src/Agent/workflows/theme/components/SelectThemeVariation.jsx:33
 msgid "We were unable to apply your selected colors. Please try again."
 msgstr "Kami tidak dapat menerapkan warna yang Anda pilih. Silakan coba lagi."
@@ -5344,14 +5344,14 @@ msgstr "Kami tidak dapat menerapkan warna yang Anda pilih. Silakan coba lagi."
 msgid "206-555-0100"
 msgstr "021-555-0100"
 
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:71
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:71
 #: src/Agent/workflows/theme/components/SelectSiteVibes.jsx:88
 #: src/Agent/workflows/theme/components/SelectSiteVibes.jsx:107
 #, js-format
 msgid "Style %s"
 msgstr "Style %s"
 
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:61
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:61
 #: src/Agent/workflows/theme/change-site-design.js:18
 msgid "Hey there! It looks like you are trying to change your site design, but you are not on a page where we can do that."
 msgstr "Hai! Sepertinya Anda mencoba mengubah desain situs Anda, tetapi Anda tidak berada di halaman yang memungkinkan untuk melakukannya."
@@ -5927,78 +5927,78 @@ msgstr "Misalnya, Firma hukum butik yang mengkhususkan diri dalam hukum keluarga
 msgid "Create website"
 msgstr "Buat situs web"
 
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:30
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:30
 #: src/Agent/workflows/content/update-post-status.js:12
 msgid "Publish this page"
 msgstr "Terbitkan laman ini"
 
 #. translators: Shown when the user clicks the "Publish this page" suggestion, above a confirm card.
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:32
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:32
 #: src/Agent/workflows/content/update-post-status.js:15
 msgid "Ready to publish this page?"
 msgstr "Siap untuk menerbitkan laman ini?"
 
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:32
-#: src/Agent/workflows/content/update-post-status.js:25
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:32
+#: src/Agent/workflows/content/update-post-status.js:32
 msgid "Published the page"
 msgstr "Menerbitkan laman"
 
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:32
-#: src/Agent/workflows/content/update-post-status.js:26
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:32
+#: src/Agent/workflows/content/update-post-status.js:33
 msgid "Canceled publishing the page"
 msgstr "Membatalkan penerbitan laman"
 
 #. translators: The agent asks this, then waits for the user to type their new site title.
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:37
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:37
 #: src/Agent/workflows/settings/edit-wp-setting.js:23
 msgid "What would you like your new website title to be?"
 msgstr "Apa judul situs web baru yang Anda inginkan?"
 
 #. translators: This message shows above a UI where the user can upload or replace their site logo.
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:91
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:91
 #: src/Agent/workflows/theme/update-logo.js:16
 msgid "Below you can upload or replace your website logo."
 msgstr "Di bawah ini Anda dapat mengunggah atau mengganti logo situs web Anda."
 
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:91
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:91
 #: src/Agent/workflows/theme/update-logo.js:23
 msgid "Updated the site logo"
 msgstr "Memperbarui logo situs"
 
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:91
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:91
 #: src/Agent/workflows/theme/update-logo.js:24
 msgid "Canceled the site logo update"
 msgstr "Membatalkan pembaruan logo situs"
 
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:91
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:91
 #: src/Agent/workflows/theme/update-site-icon.js:13
 msgid "Change website browser icon"
 msgstr "Ubah ikon browser situs web"
 
 #. translators: This message shows above a UI where the user can upload or replace their browser icon (favicon).
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:93
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:93
 #: src/Agent/workflows/theme/update-site-icon.js:16
 msgid "Below you can upload or replace your website browser icon."
 msgstr "Di bawah ini Anda dapat mengunggah atau mengganti ikon browser situs web Anda."
 
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:93
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:93
 #: src/Agent/workflows/theme/update-site-icon.js:23
 msgid "Updated the site icon"
 msgstr "Memperbarui ikon situs"
 
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:93
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:93
 #: src/Agent/workflows/theme/update-site-icon.js:24
 msgid "Canceled the site icon update"
 msgstr "Membatalkan pembaruan ikon situs"
 
 #. translators: confirm prompt before the agent performs a WordPress task it picked.
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:4
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:4
 #: src/Agent/workflows/abilities/components/AbilityRunGate.jsx:12
 msgid "Run this action?"
 msgstr "Jalankan tindakan ini?"
 
 #. translators: %s is the machine name of a WordPress ability the agent tried to run.
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:21
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:21
 #, js-format
 msgid "Ability \"%s\" is not available."
 msgstr "Ability \"%s\" tidak tersedia."
@@ -6078,6 +6078,11 @@ msgstr "Direkomendasikan untuk Anda"
 msgid "Reviewing your description..."
 msgstr "Meninjau deskripsi Anda..."
 
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:32
+#: src/Agent/workflows/content/update-post-status.js:19
+msgid "Add this to the menu"
+msgstr "Tambahkan ini ke menu"
+
 #: app/Toolbar/Admin.php:46
 msgctxt "toolbar style"
 msgid "Simple"
@@ -6115,61 +6120,61 @@ msgid "Activated"
 msgstr "Diaktifkan"
 
 #. translators: "Slow" refers to a slower speed at which the animation effect occurs. This is an option in a list of animation speeds.
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:50
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:50
 #: src/Agent/workflows/theme/components/SelectAnimation.jsx:47
 msgctxt "animation speed"
 msgid "Slow"
 msgstr "Lambat"
 
 #. translators: "Medium" refers to a moderate speed at which the animation effect occurs. This is an option in a list of animation speeds.
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:52
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:52
 #: src/Agent/workflows/theme/components/SelectAnimation.jsx:52
 msgctxt "animation speed"
 msgid "Medium"
 msgstr "Sedang"
 
 #. translators: "Fast" refers to a quicker speed at which the animation effect occurs. This is an option in a list of animation speeds.
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:54
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:54
 #: src/Agent/workflows/theme/components/SelectAnimation.jsx:57
 msgctxt "animation speed"
 msgid "Fast"
 msgstr "Cepat"
 
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:57
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:57
 #: src/Agent/workflows/theme/components/SelectAnimation.jsx:147
 msgctxt "animation speed"
 msgid "Speed"
 msgstr "Kecepatan"
 
 #. translators: Animation style where the element gradually appears by transitioning from transparent to visible. Translate as a simple, non-technical description of the visual effect (e.g., 'appear', 'show up') suitable for non-technical users.
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:42
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:42
 #: src/Agent/workflows/theme/components/SelectAnimation.jsx:20
 msgctxt "animation type"
 msgid "Fade In"
 msgstr "Muncul"
 
 #. translators: Animation style where the element appears while moving upward. Translate as a simple, non-technical description of the motion (e.g., 'appear from below', 'rise into view') suitable for non-technical users.
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:44
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:44
 #: src/Agent/workflows/theme/components/SelectAnimation.jsx:26
 msgctxt "animation type"
 msgid "Fade Up"
 msgstr "Muncul dari bawah"
 
 #. translators: Animation style where the element appears by scaling from small to its full size. Translate as a simple, non-technical description of the effect (e.g., 'zoom in', 'get closer') suitable for non-technical users. If the target language commonly uses the English term 'zoom', it's acceptable to keep it.
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:46
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:46
 #: src/Agent/workflows/theme/components/SelectAnimation.jsx:32
 msgctxt "animation type"
 msgid "Zoom In"
 msgstr "Zoom In"
 
 #. translators: None refers to 'no animation'. Apply the correct grammatical gender/form that agrees with the word for 'animation' in the target language.
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:48
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:48
 #: src/Agent/workflows/theme/components/SelectAnimation.jsx:38
 msgctxt "animation type"
 msgid "None"
 msgstr "Tidak ada"
 
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:57
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:57
 #: src/Agent/workflows/theme/components/SelectAnimation.jsx:128
 msgctxt "animation type"
 msgid "Type"

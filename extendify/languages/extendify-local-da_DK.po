@@ -95,8 +95,8 @@ msgstr "Vi har allerede valgt de mest almindelige sider til din type websted."
 msgid "Pick the pages to add to your website"
 msgstr "Vælg de sider, du vil tilføje til dit websted"
 
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:81
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:89
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:81
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:89
 #: public/build/extendify-launch-86d848925fad51ac7e3f.js:8
 #: src/Agent/components/redirects/RedirectFontsVariations.jsx:12
 #: src/Agent/components/redirects/RedirectThemeVariations.jsx:17
@@ -271,21 +271,21 @@ msgstr "Mellemniveau"
 msgid "Beginner"
 msgstr "Begynder"
 
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:7
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:7
 #: public/build/extendify-help-center-eabc21dfe936d7b4ce8e.js:1
 #: src/Agent/components/Rating.jsx:49
 #: src/HelpCenter/components/ai-chat/Rating.jsx:48
 msgid "Rate that this answer was not helpful"
 msgstr "Bedøm at dette svar ikke var hjælpsomt"
 
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:7
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:7
 #: public/build/extendify-help-center-eabc21dfe936d7b4ce8e.js:1
 #: src/Agent/components/Rating.jsx:28
 #: src/HelpCenter/components/ai-chat/Rating.jsx:27
 msgid "Rate that this answer was helpful"
 msgstr "Bedøm hvor hjælpsomt dette svar var"
 
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:7
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:7
 #: public/build/extendify-help-center-eabc21dfe936d7b4ce8e.js:1
 #: src/Agent/components/Rating.jsx:27
 #: src/Agent/components/Rating.jsx:48
@@ -345,56 +345,56 @@ msgstr "Sammenfold menu"
 msgid "Search for articles"
 msgstr "Søg efter artikler"
 
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:19
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:19
 #: public/build/extendify-help-center-eabc21dfe936d7b4ce8e.js:4
 #: src/Agent/tours/library-tour.js:100
 #: src/HelpCenter/tours/library-tour.js:98
 msgid "The selected pattern has been inserted into the page."
 msgstr "Den valgte blokgruppe er blevet indsat på siden."
 
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:19
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:19
 #: public/build/extendify-help-center-eabc21dfe936d7b4ce8e.js:4
 #: src/Agent/tours/library-tour.js:99
 #: src/HelpCenter/tours/library-tour.js:97
 msgid "View the Inserted Pattern"
 msgstr "Se den indsatte blokgruppe"
 
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:19
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:19
 #: public/build/extendify-help-center-eabc21dfe936d7b4ce8e.js:4
 #: src/Agent/tours/library-tour.js:80
 #: src/HelpCenter/tours/library-tour.js:78
 msgid "Simply select any pattern you wish to insert into a page by clicking on it."
 msgstr "Vælg blot den blokgruppe, du ønsker at indsætte på en side, ved at klikke på den."
 
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:19
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:19
 #: public/build/extendify-help-center-eabc21dfe936d7b4ce8e.js:4
 #: src/Agent/tours/library-tour.js:79
 #: src/HelpCenter/tours/library-tour.js:77
 msgid "Select a Pattern"
 msgstr "Vælg en blokgruppe"
 
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:19
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:19
 #: public/build/extendify-help-center-eabc21dfe936d7b4ce8e.js:4
 #: src/Agent/tours/library-tour.js:54
 #: src/HelpCenter/tours/library-tour.js:52
 msgid "Click on any pattern category to refine the selection."
 msgstr "Klik på enhver blokgruppe kategori for at finjustere udvælgelsen."
 
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:19
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:19
 #: public/build/extendify-help-center-eabc21dfe936d7b4ce8e.js:4
 #: src/Agent/tours/library-tour.js:53
 #: src/HelpCenter/tours/library-tour.js:51
 msgid "Filter Patterns"
 msgstr "Filtrer blokgrupper"
 
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:19
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:19
 #: public/build/extendify-help-center-eabc21dfe936d7b4ce8e.js:4
 #: src/Agent/tours/library-tour.js:32
 #: src/HelpCenter/tours/library-tour.js:30
 msgid "The Extendify pattern library can be opened by clicking the button to the left."
 msgstr "Extendify blokgruppebiblioteket kan åbnes ved at klikke på knappen til venstre."
 
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:19
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:19
 #: public/build/extendify-help-center-eabc21dfe936d7b4ce8e.js:4
 #: src/Agent/tours/library-tour.js:31
 #: src/HelpCenter/tours/library-tour.js:29
@@ -510,21 +510,21 @@ msgstr "Det standard WordPress kontrolpanel vil have nogle overordnede hjemmesid
 msgid "Access the Site Assistant at any time."
 msgstr "Få adgang til webstedsassistenten når som helst."
 
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:19
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:19
 #: public/build/extendify-help-center-eabc21dfe936d7b4ce8e.js:4
 #: src/Agent/tours/site-assistant.js:107
 #: src/HelpCenter/tours/site-assistant.js:127
 msgid "Come back to the Site Assistant any time by clicking the menu item."
 msgstr "Vend tilbage til Site Assistant når som helst ved at klikke på menupunktet."
 
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:19
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:19
 #: public/build/extendify-help-center-eabc21dfe936d7b4ce8e.js:4
 #: src/Agent/tours/site-assistant.js:59
 #: src/HelpCenter/tours/site-assistant.js:58
 msgid "See our personalized recommendations for you that will help you accomplish your goals."
 msgstr "Se vores personlige anbefalinger til dig, der vil hjælpe dig med at nå dine mål."
 
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:19
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:19
 #: public/build/extendify-help-center-eabc21dfe936d7b4ce8e.js:4
 #: src/Agent/tours/site-assistant.js:37
 #: src/HelpCenter/tours/site-assistant.js:36
@@ -538,7 +538,7 @@ msgstr "Få nem adgang til nogle af de mest almindelige elementer i WordPress me
 msgid "Knowledge Base"
 msgstr "Vidensbase"
 
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:19
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:19
 #: public/build/extendify-help-center-eabc21dfe936d7b4ce8e.js:4
 #: src/Agent/tours/site-assistant.js:16
 #: src/HelpCenter/tours/site-assistant.js:15
@@ -588,56 +588,56 @@ msgstr "Ture"
 msgid "Help Center"
 msgstr "Hjælpcenter"
 
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:19
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:19
 #: public/build/extendify-help-center-eabc21dfe936d7b4ce8e.js:4
 #: src/Agent/tours/users-screen.js:122
 #: src/HelpCenter/tours/users-screen.js:121
 msgid "Click the Add New button to add a new user to your site."
 msgstr "Klik på Tilføj ny knap for at tilføje en ny bruger til dit websted."
 
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:19
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:19
 #: public/build/extendify-help-center-eabc21dfe936d7b4ce8e.js:4
 #: src/Agent/tours/users-screen.js:121
 #: src/HelpCenter/tours/users-screen.js:120
 msgid "Add a new user"
 msgstr "Tilføj en ny bruger"
 
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:19
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:19
 #: public/build/extendify-help-center-eabc21dfe936d7b4ce8e.js:4
 #: src/Agent/tours/users-screen.js:96
 #: src/HelpCenter/tours/users-screen.js:95
 msgid "Use the search bar to find a particular user."
 msgstr "Brug søgefeltet til at finde en bestemt bruger."
 
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:19
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:19
 #: public/build/extendify-help-center-eabc21dfe936d7b4ce8e.js:4
 #: src/Agent/tours/users-screen.js:95
 #: src/HelpCenter/tours/users-screen.js:94
 msgid "Search for users"
 msgstr "Søg efter brugere"
 
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:19
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:19
 #: public/build/extendify-help-center-eabc21dfe936d7b4ce8e.js:4
 #: src/Agent/tours/users-screen.js:65
 #: src/HelpCenter/tours/users-screen.js:64
 msgid "Click the edit button to change the user's role, manage their account, or change their profile information."
 msgstr "Klik på redigeringsknappen for at ændre brugerens rolle, administrere deres konto eller ændre deres profiloplysninger."
 
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:19
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:19
 #: public/build/extendify-help-center-eabc21dfe936d7b4ce8e.js:4
 #: src/Agent/tours/users-screen.js:64
 #: src/HelpCenter/tours/users-screen.js:63
 msgid "Edit user information"
 msgstr "Rediger brugerinformation"
 
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:19
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:19
 #: public/build/extendify-help-center-eabc21dfe936d7b4ce8e.js:4
 #: src/Agent/tours/users-screen.js:45
 #: src/HelpCenter/tours/users-screen.js:44
 msgid "See all of your users, including admin users in this table."
 msgstr "Se alle dine brugere, inklusiv admin brugere i denne tabel."
 
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:19
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:19
 #: public/build/extendify-help-center-eabc21dfe936d7b4ce8e.js:4
 #: src/Agent/tours/users-screen.js:44
 #: src/Agent/tours/welcome.js:250
@@ -646,154 +646,154 @@ msgstr "Se alle dine brugere, inklusiv admin brugere i denne tabel."
 msgid "Users"
 msgstr "Brugere"
 
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:19
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:19
 #: public/build/extendify-help-center-eabc21dfe936d7b4ce8e.js:4
 #: src/Agent/tours/users-screen.js:19
 #: src/HelpCenter/tours/users-screen.js:18
 msgid "Click here to view and manage the users on your site."
 msgstr "Klik her for at se og administrere brugerne på dit websted."
 
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:19
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:19
 #: public/build/extendify-help-center-eabc21dfe936d7b4ce8e.js:4
 #: src/Agent/tours/users-screen.js:18
 #: src/HelpCenter/tours/users-screen.js:17
 msgid "All Users menu"
 msgstr "Menu for alle brugere"
 
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:19
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:19
 #: public/build/extendify-help-center-eabc21dfe936d7b4ce8e.js:4
 #: src/Agent/tours/plugin-management.js:106
 #: src/HelpCenter/tours/plugin-management.js:105
 msgid "Click here to add another plugin to your site."
 msgstr "Klik her for at tilføje endnu et plugin til din side."
 
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:19
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:19
 #: public/build/extendify-help-center-eabc21dfe936d7b4ce8e.js:4
 #: src/Agent/tours/plugin-management.js:105
 #: src/HelpCenter/tours/plugin-management.js:104
 msgid "Add another"
 msgstr "Tilføj en anden"
 
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:19
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:19
 #: public/build/extendify-help-center-eabc21dfe936d7b4ce8e.js:4
 #: src/Agent/tours/plugin-management.js:65
 #: src/HelpCenter/tours/plugin-management.js:64
 msgid "Under each plugin you can activate or deactivate it."
 msgstr "Under hvert plugin kan du aktivere eller deaktivere det."
 
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:19
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:19
 #: public/build/extendify-help-center-eabc21dfe936d7b4ce8e.js:4
 #: src/Agent/tours/plugin-management.js:64
 #: src/HelpCenter/tours/plugin-management.js:63
 msgid "Deactivate/activate option"
 msgstr "Deaktiver/aktiver mulighed"
 
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:19
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:19
 #: public/build/extendify-help-center-eabc21dfe936d7b4ce8e.js:4
 #: src/Agent/tours/plugin-management.js:45
 #: src/HelpCenter/tours/plugin-management.js:44
 msgid "See all plugins installed on your site. This includes plugins that are active and deactivated."
 msgstr "Se alle plugins installeret på dit websted. Dette inkluderer aktive og deaktiverede plugins."
 
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:19
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:19
 #: public/build/extendify-help-center-eabc21dfe936d7b4ce8e.js:4
 #: src/Agent/tours/plugin-management.js:44
 #: src/HelpCenter/tours/plugin-management.js:43
 msgid "Installed plugins"
 msgstr "Installerede plugins"
 
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:19
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:19
 #: public/build/extendify-help-center-eabc21dfe936d7b4ce8e.js:4
 #: src/Agent/tours/plugin-management.js:19
 #: src/HelpCenter/tours/plugin-management.js:18
 msgid "Click this menu to see and manage the plugins you have installed."
 msgstr "Klik på denne menu for at se og håndtere de plugins, du har installeret."
 
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:19
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:19
 #: public/build/extendify-help-center-eabc21dfe936d7b4ce8e.js:4
 #: src/Agent/tours/plugin-management.js:18
 #: src/HelpCenter/tours/plugin-management.js:17
 msgid "Installed Plugins menu"
 msgstr "Menu for installerede plugins"
 
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:19
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:19
 #: public/build/extendify-help-center-eabc21dfe936d7b4ce8e.js:4
 #: src/Agent/tours/plugin-install.js:114
 #: src/HelpCenter/tours/plugin-install.js:113
 msgid "If you have a plugin from an external source, you can upload it directly here."
 msgstr "Hvis du har et plugin fra en ekstern kilde, kan du uploade det direkte her."
 
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:19
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:19
 #: public/build/extendify-help-center-eabc21dfe936d7b4ce8e.js:4
 #: src/Agent/tours/plugin-install.js:113
 #: src/HelpCenter/tours/plugin-install.js:112
 msgid "Upload Plugin"
 msgstr "Upload plugin"
 
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:19
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:19
 #: public/build/extendify-help-center-eabc21dfe936d7b4ce8e.js:4
 #: src/Agent/tours/plugin-install.js:88
 #: src/HelpCenter/tours/plugin-install.js:87
 msgid "Install the plugin. Then, press this button again to activate the plugin."
 msgstr "Installer pluginet. Tryk derefter på denne knap igen for at aktivere pluginet."
 
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:19
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:19
 #: public/build/extendify-help-center-eabc21dfe936d7b4ce8e.js:4
 #: src/Agent/tours/plugin-install.js:87
 #: src/HelpCenter/tours/plugin-install.js:86
 msgid "Install now"
 msgstr "Installer nu"
 
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:19
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:19
 #: public/build/extendify-help-center-eabc21dfe936d7b4ce8e.js:4
 #: src/Agent/tours/plugin-install.js:68
 #: src/HelpCenter/tours/plugin-install.js:67
 msgid "See important information about each plugin."
 msgstr "Se vigtige oplysninger om hver plugin."
 
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:19
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:19
 #: public/build/extendify-help-center-eabc21dfe936d7b4ce8e.js:4
 #: src/Agent/tours/plugin-install.js:67
 #: src/HelpCenter/tours/plugin-install.js:66
 msgid "Plugin details"
 msgstr "Plugin detaljer"
 
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:19
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:19
 #: public/build/extendify-help-center-eabc21dfe936d7b4ce8e.js:4
 #: src/Agent/tours/plugin-install.js:42
 #: src/HelpCenter/tours/plugin-install.js:41
 msgid "Search for a plugin by name or functionality."
 msgstr "Søg efter en plugin ved navn eller funktionalitet."
 
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:19
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:19
 #: public/build/extendify-help-center-eabc21dfe936d7b4ce8e.js:4
 #: src/Agent/tours/plugin-install.js:19
 #: src/HelpCenter/tours/plugin-install.js:18
 msgid "Click here to access the Add Plugins page."
 msgstr "Klik her for at få adgang til Tilføj plugins-siden."
 
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:19
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:19
 #: public/build/extendify-help-center-eabc21dfe936d7b4ce8e.js:4
 #: src/Agent/tours/plugin-install.js:18
 #: src/HelpCenter/tours/plugin-install.js:17
 msgid "Add New plugin menu"
 msgstr "Tilføj ny plugin menu"
 
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:19
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:19
 #: public/build/extendify-help-center-eabc21dfe936d7b4ce8e.js:4
 #: src/Agent/tours/page-editor.js:249
 #: src/HelpCenter/tours/page-editor.js:252
 msgid "Publish or Save"
 msgstr "Udgiv eller gem"
 
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:19
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:19
 #: public/build/extendify-help-center-eabc21dfe936d7b4ce8e.js:4
 #: src/Agent/tours/page-editor.js:229
 #: src/HelpCenter/tours/page-editor.js:232
 msgid "Click preview to view how your changes look on the front end of your site."
 msgstr "Klik på forhåndsvisning for at se, hvordan dine ændringer ser ud på forsiden af dit websted."
 
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:19
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:19
 #: public/build/extendify-help-center-eabc21dfe936d7b4ce8e.js:4
 #: public/build/extendify-launch-86d848925fad51ac7e3f.js:8
 #: src/Agent/tours/page-editor.js:228
@@ -802,77 +802,77 @@ msgstr "Klik på forhåndsvisning for at se, hvordan dine ændringer ser ud på 
 msgid "Preview"
 msgstr "Forhåndsvis"
 
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:19
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:19
 #: public/build/extendify-help-center-eabc21dfe936d7b4ce8e.js:4
 #: src/Agent/tours/page-editor.js:186
 #: src/HelpCenter/tours/page-editor.js:189
 msgid "Select either page or block to change the settings for the entire page or the block that is selected."
 msgstr "Vælg enten side eller blok for at ændre indstillingerne for hele siden eller den valgte blok."
 
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:19
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:19
 #: public/build/extendify-help-center-eabc21dfe936d7b4ce8e.js:4
 #: src/Agent/tours/page-editor.js:185
 #: src/HelpCenter/tours/page-editor.js:188
 msgid "Page and Block Settings"
 msgstr "Side- og blokindstillinger"
 
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:19
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:19
 #: public/build/extendify-help-center-eabc21dfe936d7b4ce8e.js:4
 #: src/Agent/tours/page-editor.js:170
 #: src/HelpCenter/tours/page-editor.js:173
 msgid "This is a sample paragraph block. It can be several sentences long and will span multiple rows. You can add as many blocks as you'd like to the page."
 msgstr "Dette er en prøve på en afsnitsblok. Den kan være flere sætninger lang og strække sig over flere rækker. Du kan tilføje så mange blokke, du vil, til siden."
 
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:19
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:19
 #: public/build/extendify-help-center-eabc21dfe936d7b4ce8e.js:4
 #: src/Agent/tours/page-editor.js:129
 #: src/HelpCenter/tours/page-editor.js:132
 msgid "Each block will show up on the page and can be edited by clicking on it."
 msgstr "Hver blok vil blive vist på siden og kan redigeres ved at klikke på den."
 
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:19
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:19
 #: public/build/extendify-help-center-eabc21dfe936d7b4ce8e.js:4
 #: src/Agent/tours/page-editor.js:128
 #: src/HelpCenter/tours/page-editor.js:131
 msgid "Blocks"
 msgstr "Blokke"
 
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:19
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:19
 #: public/build/extendify-help-center-eabc21dfe936d7b4ce8e.js:4
 #: src/Agent/tours/page-editor.js:89
 #: src/HelpCenter/tours/page-editor.js:92
 msgid "Edit the page title by clicking it. Note: The title may or may not show up on the published page, depending on the page template used."
 msgstr "Rediger sidetitlen ved at klikke på den. Bemærk: Titlen kan muligvis ikke vises på den offentliggjorte side, afhængigt af den anvendte sideskabelon."
 
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:19
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:19
 #: public/build/extendify-help-center-eabc21dfe936d7b4ce8e.js:4
 #: src/Agent/tours/page-editor.js:88
 #: src/HelpCenter/tours/page-editor.js:91
 msgid "Page Title"
 msgstr "Sidens titel"
 
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:19
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:19
 #: public/build/extendify-help-center-eabc21dfe936d7b4ce8e.js:4
 #: src/Agent/tours/page-editor.js:48
 #: src/HelpCenter/tours/page-editor.js:48
 msgid "Add a block by clicking or dragging it onto the page."
 msgstr "Tilføj en blok ved at klikke eller trække den ind på siden."
 
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:19
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:19
 #: public/build/extendify-help-center-eabc21dfe936d7b4ce8e.js:4
 #: src/Agent/tours/page-editor.js:47
 #: src/HelpCenter/tours/page-editor.js:47
 msgid "Block Inserter"
 msgstr "Blokindsætter"
 
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:19
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:19
 #: public/build/extendify-help-center-eabc21dfe936d7b4ce8e.js:4
 #: src/Agent/tours/page-editor.js:27
 #: src/HelpCenter/tours/page-editor.js:27
 msgid "Click the plus to open the block inserter."
 msgstr "Klik på plus for at åbne blokindsætteren."
 
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:19
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:19
 #: public/build/extendify-help-center-eabc21dfe936d7b4ce8e.js:4
 #: src/Agent/tours/page-editor.js:26
 #: src/HelpCenter/tours/page-editor.js:26
@@ -905,14 +905,14 @@ msgstr "Spring til assistent"
 msgid "Dashboard"
 msgstr "Kontrolpanel"
 
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:19
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:19
 #: public/build/extendify-help-center-eabc21dfe936d7b4ce8e.js:4
 #: src/Agent/tours/site-assistant.js:15
 #: src/HelpCenter/tours/site-assistant.js:14
 msgid "Tasks"
 msgstr "Opgaver"
 
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:19
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:19
 #: public/build/extendify-assist-page-5abc4f3121f907529fcd.js:9
 #: public/build/extendify-help-center-eabc21dfe936d7b4ce8e.js:4
 #: src/Agent/tours/site-assistant.js:36
@@ -933,7 +933,7 @@ msgstr "Du kan til enhver tid se dit websted (fra en besøgendes perspektiv) fra
 msgid "Use the pages menu to add, delete, or edit the pages on your site."
 msgstr "Brug sidemenuen til at tilføje, slette eller redigere sider på dit websted."
 
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:17
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:17
 #: public/build/extendify-assist-page-5abc4f3121f907529fcd.js:1
 #: public/build/extendify-help-center-eabc21dfe936d7b4ce8e.js:7
 #: src/Agent/components/GuidedTour.jsx:485
@@ -942,14 +942,14 @@ msgstr "Brug sidemenuen til at tilføje, slette eller redigere sider på dit web
 msgid "Done"
 msgstr "Færdig"
 
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:14
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:14
 #: public/build/extendify-help-center-eabc21dfe936d7b4ce8e.js:4
 #: src/Agent/components/GuidedTour.jsx:434
 #: src/HelpCenter/components/tours/GuidedTour.jsx:441
 msgid "Tour Steps"
 msgstr "Turtrin"
 
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:14
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:14
 #: public/build/extendify-help-center-eabc21dfe936d7b4ce8e.js:4
 #: src/Agent/components/GuidedTour.jsx:313
 #: src/HelpCenter/components/tours/GuidedTour.jsx:315
@@ -978,17 +978,17 @@ msgstr "Skift %s på nye sider"
 msgid "We encountered a server error we cannot recover from. Please reload the page and try again."
 msgstr "Vi stødte på en serverfejl, vi ikke kan komme os fra. Genindlæs venligst siden og prøv igen."
 
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:17
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:21
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:24
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:27
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:40
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:57
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:61
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:71
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:77
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:85
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:89
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:17
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:21
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:24
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:27
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:40
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:57
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:61
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:71
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:77
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:85
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:89
 #: public/build/extendify-assist-page-5abc4f3121f907529fcd.js:1
 #: public/build/extendify-quick-edit-8bab8f8f62c3e7af92e2.js:4
 #: public/build/extendify-quick-edit-8bab8f8f62c3e7af92e2.js:16
@@ -1021,7 +1021,7 @@ msgstr "Gem"
 msgid "Enter a site description..."
 msgstr "Indtast en webstedsbeskrivelse..."
 
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:19
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:19
 #: public/build/extendify-assist-page-5abc4f3121f907529fcd.js:1
 #: public/build/extendify-help-center-eabc21dfe936d7b4ce8e.js:4
 #: src/Agent/tours/page-creator.js:81
@@ -1042,7 +1042,7 @@ msgstr "Upload webstedslogo"
 
 #: app/AdminPageRouter.php:43
 #: app/AdminPageRouter.php:67
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:19
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:19
 #: public/build/extendify-assist-page-5abc4f3121f907529fcd.js:10
 #: public/build/extendify-help-center-eabc21dfe936d7b4ce8e.js:4
 #: src/Agent/tours/site-assistant.js:5
@@ -1073,28 +1073,28 @@ msgstr "Vis websted"
 msgid "Upload site icon"
 msgstr "Upload webstedsikon"
 
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:91
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:91
 #: public/build/extendify-assist-page-5abc4f3121f907529fcd.js:1
 #: src/Agent/workflows/theme/components/UpdateSiteIconConfirm.jsx:62
 #: src/Assist/components/tasks/UpdateSiteIcon.jsx:20
 msgid "Set site icon"
 msgstr "Indstil webstedsikon"
 
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:91
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:91
 #: public/build/extendify-assist-page-5abc4f3121f907529fcd.js:1
 #: src/Agent/workflows/theme/components/UpdateSiteIconConfirm.jsx:61
 #: src/Assist/components/tasks/UpdateSiteIcon.jsx:19
 msgid "Site icon"
 msgstr "Webstedsikon"
 
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:89
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:89
 #: public/build/extendify-assist-page-5abc4f3121f907529fcd.js:1
 #: src/Agent/workflows/theme/components/UpdateLogoConfirm.jsx:67
 #: src/Assist/components/tasks/UpdateLogo.jsx:20
 msgid "Set site logo"
 msgstr "Indstil webstedslogo"
 
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:89
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:89
 #: public/build/extendify-assist-page-5abc4f3121f907529fcd.js:1
 #: public/build/extendify-quick-edit-8bab8f8f62c3e7af92e2.js:16
 #: src/Agent/workflows/theme/components/UpdateLogoConfirm.jsx:66
@@ -1114,14 +1114,14 @@ msgstr "Fjern billede"
 msgid "Replace image"
 msgstr "Erstat billede"
 
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:17
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:17
 #: public/build/extendify-assist-page-5abc4f3121f907529fcd.js:1
 #: src/Agent/components/ImageUploader.jsx:141
 #: src/Assist/components/ImageUploader.jsx:96
 msgid "Edit or update the image"
 msgstr "Rediger eller opdater billedet"
 
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:14
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:14
 #: public/build/extendify-assist-page-5abc4f3121f907529fcd.js:1
 #: public/build/extendify-help-center-eabc21dfe936d7b4ce8e.js:4
 #: src/Agent/components/GuidedTour.jsx:308
@@ -1132,7 +1132,7 @@ msgstr "Luk Modal"
 
 #: app/PluginNotifications/NotificationsListTable.php:81
 #: app/PluginNotifications/NotificationsListTable.php:173
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:27
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:27
 #: public/build/extendify-assist-page-5abc4f3121f907529fcd.js:1
 #: public/build/extendify-quick-edit-8bab8f8f62c3e7af92e2.js:4
 #: src/Agent/workflows/content/components/GeneratePageResult.jsx:32
@@ -1187,7 +1187,7 @@ msgstr "Opsætning af din Site Assistant"
 msgid "Starting off with a full website"
 msgstr "Starter med et komplet websted"
 
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:14
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:14
 #: public/build/extendify-auto-launch-fa577a30dd41aedded0e.js:51
 #: public/build/extendify-help-center-eabc21dfe936d7b4ce8e.js:4
 #: public/build/extendify-launch-86d848925fad51ac7e3f.js:8
@@ -1203,8 +1203,8 @@ msgstr "Tilbage"
 msgid "Site Industry"
 msgstr "Webstedsindustri"
 
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:4
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:27
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:4
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:27
 #: public/build/extendify-auto-launch-fa577a30dd41aedded0e.js:46
 #: public/build/extendify-launch-86d848925fad51ac7e3f.js:17
 #: src/Agent/components/messages/AgentMessage.jsx:19
@@ -1240,7 +1240,7 @@ msgstr "Plugins"
 msgid "View Site"
 msgstr "Vis websted"
 
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:17
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:17
 #: public/build/extendify-auto-launch-fa577a30dd41aedded0e.js:46
 #: public/build/extendify-help-center-eabc21dfe936d7b4ce8e.js:7
 #: public/build/extendify-launch-86d848925fad51ac7e3f.js:8
@@ -1264,7 +1264,7 @@ msgstr "Sider"
 msgid "You can personalize this later."
 msgstr "Du kan personalisere dette senere."
 
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:21
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:21
 #: public/build/extendify-assist-page-5abc4f3121f907529fcd.js:1
 #: public/build/extendify-launch-86d848925fad51ac7e3f.js:8
 #: src/Agent/workflows/block-selector/components/UpdateBlockConfirm.jsx:99
@@ -1288,7 +1288,7 @@ msgstr "Tryk for at vælge"
 msgid "Just a moment, this is taking longer than expected."
 msgstr "Bare et øjeblik, dette tager længere tid end forventet."
 
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:19
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:19
 #: public/build/extendify-assist-page-5abc4f3121f907529fcd.js:10
 #: public/build/extendify-help-center-eabc21dfe936d7b4ce8e.js:4
 #: public/build/extendify-library-15577c026d0b0bca0190.js:1
@@ -1333,7 +1333,7 @@ msgstr "Send"
 msgid "Settings"
 msgstr "Indstillinger"
 
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:19
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:19
 #: public/build/extendify-help-center-eabc21dfe936d7b4ce8e.js:4
 #: src/Agent/tours/plugin-install.js:41
 #: src/HelpCenter/tours/plugin-install.js:40
@@ -1356,7 +1356,7 @@ msgid "Extendify"
 msgstr "Extendify"
 
 #. translators: %1$s is the current step, %2$s is the total number of steps
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:17
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:17
 #: public/build/extendify-help-center-eabc21dfe936d7b4ce8e.js:7
 #: src/Agent/components/GuidedTour.jsx:443
 #: src/HelpCenter/components/tours/GuidedTour.jsx:450
@@ -1677,7 +1677,7 @@ msgstr "Fortæl AI om det billede, du gerne vil oprette"
 msgid "Image Prompt"
 msgstr "Billedprompt"
 
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:24
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:24
 #: public/build/extendify-draft-21d96962600c40354b54.js:7
 #: src/Agent/workflows/block-selector/components/GenerateImageConfirm.jsx:217
 #: src/Draft/components/image-generation/GenerateForm.jsx:90
@@ -1780,7 +1780,7 @@ msgstr "Rediger sidefod"
 msgid "Reset site"
 msgstr "Nulstil websted"
 
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:19
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:19
 #: public/build/extendify-assist-page-5abc4f3121f907529fcd.js:10
 #: public/build/extendify-help-center-eabc21dfe936d7b4ce8e.js:4
 #: src/Agent/tours/site-assistant.js:58
@@ -2041,7 +2041,7 @@ msgstr "Søgeresultater"
 msgid "Search the knowledge base"
 msgstr "Søg i vidensbasen"
 
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:19
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:19
 #: public/build/extendify-assist-page-5abc4f3121f907529fcd.js:10
 #: public/build/extendify-help-center-eabc21dfe936d7b4ce8e.js:4
 #: src/Agent/tours/page-editor.js:13
@@ -2051,14 +2051,14 @@ msgstr "Søg i vidensbasen"
 msgid "Page editor"
 msgstr "Sideeditor"
 
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:19
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:19
 #: public/build/extendify-help-center-eabc21dfe936d7b4ce8e.js:4
 #: src/Agent/tours/page-editor.js:250
 #: src/HelpCenter/tours/page-editor.js:253
 msgid "Click publish or update to save the changes you have made to the page and make them live on the site."
 msgstr "Klik på udgiv eller opdater for at gemme de ændringer, du har foretaget på siden, og gøre dem synlige på webstedet."
 
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:19
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:19
 #: public/build/extendify-assist-page-5abc4f3121f907529fcd.js:10
 #: public/build/extendify-help-center-eabc21dfe936d7b4ce8e.js:4
 #: src/Agent/tours/plugin-install.js:5
@@ -2068,7 +2068,7 @@ msgstr "Klik på udgiv eller opdater for at gemme de ændringer, du har foretage
 msgid "Installing a plugin"
 msgstr "Installation af en plugin"
 
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:19
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:19
 #: public/build/extendify-assist-page-5abc4f3121f907529fcd.js:10
 #: public/build/extendify-help-center-eabc21dfe936d7b4ce8e.js:4
 #: src/Agent/tours/plugin-management.js:5
@@ -2083,21 +2083,21 @@ msgstr "Pluginstyring"
 msgid "You can always access the help center by clicking this button."
 msgstr "Du kan altid få adgang til hjælpecentret ved at klikke på denne knap."
 
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:19
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:19
 #: public/build/extendify-help-center-eabc21dfe936d7b4ce8e.js:4
 #: src/Agent/tours/site-assistant.js:80
 #: src/HelpCenter/tours/site-assistant.js:100
 msgid "Visit your site"
 msgstr "Besøg dit websted"
 
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:19
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:19
 #: public/build/extendify-help-center-eabc21dfe936d7b4ce8e.js:4
 #: src/Agent/tours/site-assistant.js:81
 #: src/HelpCenter/tours/site-assistant.js:101
 msgid "You can always visit your site by clicking this button."
 msgstr "Du kan altid besøge dit websted ved at klikke på denne knap."
 
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:19
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:19
 #: public/build/extendify-assist-page-5abc4f3121f907529fcd.js:10
 #: public/build/extendify-help-center-eabc21dfe936d7b4ce8e.js:4
 #: src/Agent/tours/users-screen.js:5
@@ -3249,7 +3249,7 @@ msgstr "Slet eksisterende indhold"
 msgid "Create a new page"
 msgstr "Opret en ny side"
 
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:19
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:19
 #: public/build/extendify-help-center-eabc21dfe936d7b4ce8e.js:4
 #: public/build/extendify-page-creator-cbcefacf00c477a9dfaa.js:1
 #: src/Agent/tours/page-creator.js:6
@@ -3450,42 +3450,42 @@ msgstr "Fortæl os om dit websted"
 msgid "Share your vision, and we'll craft a landing page that's perfectly tailored to your needs, ready to launch in no time. Let's begin by learning more about what you're building."
 msgstr "Del din vision, og vi skaber en landingsside, der er skræddersyet til dine behov, klar til lancering på ingen tid. Lad os starte med at lære mere om, hvad du bygger."
 
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:19
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:19
 #: public/build/extendify-help-center-eabc21dfe936d7b4ce8e.js:4
 #: src/Agent/tours/page-creator.js:30
 #: src/HelpCenter/tours/page-creator.js:30
 msgid "Press here to get started with your AI Page Generator."
 msgstr "Tryk her for at komme i gang med din AI-sidegenerator."
 
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:19
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:19
 #: public/build/extendify-help-center-eabc21dfe936d7b4ce8e.js:4
 #: src/Agent/tours/page-creator.js:53
 #: src/HelpCenter/tours/page-creator.js:53
 msgid "Page description"
 msgstr "Sidebeskrivelse"
 
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:19
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:19
 #: public/build/extendify-help-center-eabc21dfe936d7b4ce8e.js:4
 #: src/Agent/tours/page-creator.js:54
 #: src/HelpCenter/tours/page-creator.js:54
 msgid "Write a description of the page you want to create. Be as detailed as you like. We will create a page based on this description."
 msgstr "Skriv en beskrivelse af den side, du vil oprette. Vær så detaljeret, som du ønsker. Vi opretter en side baseret på denne beskrivelse."
 
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:19
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:19
 #: public/build/extendify-help-center-eabc21dfe936d7b4ce8e.js:4
 #: src/Agent/tours/page-creator.js:82
 #: src/HelpCenter/tours/page-creator.js:82
 msgid "If needed, update your site description here. We use this to add additional context about your website."
 msgstr "Opdater din webstedsbeskrivelse her, hvis det er nødvendigt. Vi bruger dette til at tilføje yderligere kontekst om dit websted."
 
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:19
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:19
 #: public/build/extendify-help-center-eabc21dfe936d7b4ce8e.js:4
 #: src/Agent/tours/page-creator.js:105
 #: src/HelpCenter/tours/page-creator.js:105
 msgid "Generate your page"
 msgstr "Generer din side"
 
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:19
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:19
 #: public/build/extendify-help-center-eabc21dfe936d7b4ce8e.js:4
 #: src/Agent/tours/page-creator.js:106
 #: src/HelpCenter/tours/page-creator.js:106
@@ -3549,39 +3549,39 @@ msgstr "Vis flere spørgsmål"
 msgid "Hebrew"
 msgstr "Hebraisk"
 
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:81
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:81
 #: src/Agent/hooks/useThemeVariations.js:17
 msgid "Failed to fetch theme variations."
 msgstr "Kunne ikke hente temavariationer."
 
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:81
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:81
 #: src/Agent/components/redirects/RedirectThemeVariations.jsx:8
 msgid "Hey there! It looks like you are trying to change your theme colors, but you are not on a page where we can do that."
 msgstr "Hej! Det ser ud til, at du prøver at ændre dine temafarver, men du er ikke på en side, hvor vi kan gøre det."
 
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:81
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:89
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:81
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:89
 #: src/Agent/components/redirects/RedirectFontsVariations.jsx:10
 #: src/Agent/components/redirects/RedirectThemeVariations.jsx:15
 #: src/Agent/workflows/theme/components/Redirect.jsx:10
 msgid "Suggestion:"
 msgstr "Forslag:"
 
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:4
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:17
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:21
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:24
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:27
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:30
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:32
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:35
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:40
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:57
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:61
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:71
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:77
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:83
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:89
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:4
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:17
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:21
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:24
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:27
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:30
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:32
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:35
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:40
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:57
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:61
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:71
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:77
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:83
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:89
 #: public/build/extendify-quick-edit-8bab8f8f62c3e7af92e2.js:4
 #: public/build/extendify-quick-edit-8bab8f8f62c3e7af92e2.js:16
 #: public/build/extendify-quick-edit-8bab8f8f62c3e7af92e2.js:19
@@ -3616,9 +3616,9 @@ msgstr "Forslag:"
 msgid "Cancel"
 msgstr "Annuller"
 
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:21
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:27
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:40
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:21
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:27
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:40
 #: src/Agent/workflows/block-selector/components/UpdateBlockConfirm.jsx:107
 #: src/Agent/workflows/block-selector/components/UpdateImageConfirm.jsx:190
 #: src/Agent/workflows/content/components/UpdatePostConfirm.jsx:40
@@ -3626,121 +3626,121 @@ msgstr "Annuller"
 msgid "The agent has made the changes in the browser. Please review and confirm."
 msgstr "Agenten har foretaget ændringerne i browseren. Gennemse og bekræft venligst."
 
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:19
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:19
 #: src/Agent/tours/library-tour.js:7
 msgid "Tour the design library"
 msgstr "Udforsk designbiblioteket"
 
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:19
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:19
 #: src/Agent/tours/page-creator.js:7
 msgid "Learn about the AI Page Generator"
 msgstr "Lær om AI-sidegeneratoren"
 
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:19
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:19
 #: src/Agent/tours/page-editor.js:14
 msgid "Tour the page editor"
 msgstr "Rundvisning i sideeditoren"
 
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:19
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:19
 #: src/Agent/tours/plugin-install.js:6
 msgid "See how to install a plugin"
 msgstr "Se hvordan man installerer et plugin"
 
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:19
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:19
 #: src/Agent/tours/plugin-management.js:6
 msgid "Learn how to manage plugins"
 msgstr "Lær at administrere plugins"
 
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:19
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:19
 #: src/Agent/tours/site-assistant.js:6
 msgid "Tour the Site Assistant"
 msgstr "Guidet tur med webstedsassistenten"
 
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:19
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:19
 #: src/Agent/tours/users-screen.js:6
 msgid "Tour the Users screen"
 msgstr "Gennemgå brugerskærmen"
 
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:4
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:4
 #: src/Agent/components/ChatInput.jsx:166
 msgid "Ask anything"
 msgstr "Spørg om alt"
 
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:4
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:4
 #: src/Agent/components/ChatInput.jsx:223
 msgid "Send message"
 msgstr "Send besked"
 
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:7
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:7
 #: src/Agent/components/ScrollDownButton.jsx:22
 msgid "Scroll down"
 msgstr "Rul ned"
 
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:4
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:4
 #: src/Agent/components/messages/StatusIndicator.jsx:18
 msgid "Working on it..."
 msgstr "Arbejder på det..."
 
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:4
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:4
 #: src/Agent/components/messages/StatusIndicator.jsx:24
 msgid "Gathering data..."
 msgstr "Indsamler data..."
 
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:4
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:4
 #: src/Agent/components/messages/StatusIndicator.jsx:25
 msgid "Analyzing..."
 msgstr "Analyserer..."
 
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:4
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:4
 #: src/Agent/components/messages/StatusIndicator.jsx:26
 msgid "Usage limit reached"
 msgstr "Brugsgrænse nået"
 
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:4
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:4
 #: src/Agent/components/messages/StatusIndicator.jsx:27
 msgid "Usage limit restored"
 msgstr "Brugsgrænse gendannet"
 
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:7
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:7
 #: src/Agent/components/messages/WorkflowMessage.jsx:75
 msgid "Workflow completed successfully"
 msgstr "Arbejdsproces afsluttet uden problemer"
 
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:4
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:4
 #: src/Agent/components/messages/WorkflowComponent.jsx:17
 msgid "Component not available"
 msgstr "Komponent ikke tilgængelig"
 
 #. translators: This is for when a component doesn't exist
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:7
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:7
 #: src/Agent/components/messages/WorkflowComponent.jsx:22
 msgid "It may have been removed or is not available for your account."
 msgstr "Det kan være blevet fjernet eller er ikke tilgængeligt for din konto."
 
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:7
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:7
 #: src/Agent/components/messages/WorkflowMessage.jsx:38
 msgid "What's next? Would you like to do something else?"
 msgstr "Hvad er det næste? Vil du gøre noget andet?"
 
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:4
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:4
 #: src/Agent/components/layouts/DragResizeLayout.jsx:117
 #: src/Agent/components/layouts/SidebarLayout.jsx:116
 msgid "Close window"
 msgstr "Luk vindue"
 
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:4
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:4
 #: src/Agent/components/layouts/DragResizeLayout.jsx:158
 msgid "Drag to move"
 msgstr "Træk for at flytte"
 
 #. translators: %s is a human-readable time difference, e.g. "2 hours from now"
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:10
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:10
 #: src/Agent/components/messages/UsageMessage.jsx:30
 #, js-format
 msgid "You have reached your daily messages limit. Your limit will reset in %s."
 msgstr "Du har nået din daglige beskedgrænse. Din grænse nulstilles om %s."
 
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:14
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:14
 #: src/Agent/components/buttons/AdminBar.jsx:42
 #: src/Agent/components/buttons/Mobile.jsx:38
 #: src/Agent/components/buttons/PostEditor.jsx:47
@@ -3748,7 +3748,7 @@ msgid "Open Agent"
 msgstr "Åbn agent"
 
 #: app/Toolbar/Frontend.php:187
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:14
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:14
 #: src/Agent/components/buttons/AdminBar.jsx:45
 #: src/Agent/components/buttons/Mobile.jsx:46
 #: src/Agent/components/buttons/PostEditor.jsx:54
@@ -3856,7 +3856,7 @@ msgstr "Herfra kan du tilpasse dimensionerne, indre margen og margenerne, der br
 msgid "Take the welcome tour"
 msgstr "Tag velkomstturen"
 
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:14
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:14
 #: src/Agent/components/buttons/Mobile.jsx:49
 msgid "How can we help you today?"
 msgstr "Hvordan kan vi hjælpe dig i dag?"
@@ -3893,33 +3893,33 @@ msgstr "Værktøjstip, der peger på knappen rediger side"
 msgid "Welcome to your new site! When you're ready, press here to edit this page."
 msgstr "Velkommen til dit nye websted! Når du er klar, tryk her for at redigere denne side."
 
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:10
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:10
 #: public/build/extendify-quick-edit-8bab8f8f62c3e7af92e2.js:16
 #: src/Agent/components/PageDocument.jsx:25
 #: src/QuickEdit/components/modals/SiteIdentityModal.jsx:167
 msgid "Remove"
 msgstr "Fjern"
 
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:4
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:4
 #: src/Agent/components/DOMHighlighter.jsx:250
 msgid "Remove highlight"
 msgstr "Fjern fremhævning"
 
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:14
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:14
 #: src/Agent/Agent.jsx:624
 msgid "AI Agent can make mistakes. Check changes before saving."
 msgstr "AI-agenten kan lave fejl. Kontroller ændringerne, før du gemmer."
 
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:4
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:30
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:35
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:4
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:30
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:35
 #: src/Agent/workflows/abilities/components/AbilityRunGate.jsx:29
 #: src/Agent/workflows/content/components/UpdatePostStatusConfirm.jsx:51
 #: src/Agent/workflows/settings/components/UpdateSettingConfirm.jsx:62
 msgid "Confirm"
 msgstr "Bekræft"
 
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:4
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:4
 #: src/Agent/components/messages/StatusIndicator.jsx:16
 msgid "Thinking..."
 msgstr "Tænker..."
@@ -3931,73 +3931,73 @@ msgstr "Tænker..."
 msgid "WP Admin Dashboard"
 msgstr "WP Admin-kontrolpanel"
 
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:75
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:75
 #: src/Agent/hooks/useThemeFontsVariations.js:29
 msgid "Failed to fetch theme font variations."
 msgstr "Kunne ikke hente skrifttypevariationer for temaet."
 
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:75
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:75
 #: src/Agent/workflows/theme/change-theme-fonts-variation.js:13
 msgid "Hey there! It looks like you are trying to change your theme fonts, but you are not on a page where we can do that."
 msgstr "Hej! Det ser ud til, at du forsøger at ændre dine tema skrifttyper, men du er ikke på en side, hvor vi kan gøre det."
 
 #. translators: A chat message shown to the user
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:77
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:77
 #: src/Agent/workflows/theme/components/SelectThemeFontsVariation.jsx:58
 msgid "Loading font variations..."
 msgstr "Indlæser skrifttypevariationer..."
 
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:4
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:4
 #: src/Agent/components/ChatTools.jsx:36
 msgid "Select"
 msgstr "Vælg"
 
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:4
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:4
 #: src/Agent/components/ChatInput.jsx:162
 msgid "What do you want to change in the selected content?"
 msgstr "Hvad vil du ændre i det valgte indhold?"
 
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:10
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:10
 #: src/Agent/components/PageDocument.jsx:12
 msgid "Selected content"
 msgstr "Valgt indhold"
 
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:17
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:27
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:17
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:27
 #: src/Agent/components/ImageUploader.jsx:204
 #: src/Agent/workflows/block-selector/components/UpdateImageConfirm.jsx:13
 msgid "Open Media Library"
 msgstr "Åbn mediebiblioteket"
 
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:27
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:27
 #: src/Agent/workflows/block-selector/components/UpdateImageConfirm.jsx:138
 #, js-format
 msgid "The agent has requested the media library. Press \"%s\" to upload or select an image."
 msgstr "Agenten har anmodet om mediebiblioteket. Tryk på \"%s\" for at uploade eller vælge et billede."
 
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:27
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:27
 #: src/Agent/workflows/block-selector/components/UpdateImageConfirm.jsx:155
 msgid "Select or Upload Image"
 msgstr "Vælg eller upload billede"
 
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:21
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:21
 #: src/Agent/workflows/block-selector/components/GenerateImageConfirm.jsx:121
 msgid "An unknown error occurred."
 msgstr "En ukendt fejl opstod."
 
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:24
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:24
 #: src/Agent/workflows/block-selector/components/GenerateImageConfirm.jsx:228
 msgid "Image generated successfully!"
 msgstr "Billede genereret uden problemer!"
 
 #. translators: %1$s is the number of credits remaining, %2$s is the total credits
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:27
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:27
 #: src/Agent/workflows/block-selector/components/GenerateImageConfirm.jsx:261
 #, js-format
 msgid "You have %1$s of %2$s daily image credits remaining."
 msgstr "Du har %1$s ud af %2$s daglige billedkreditter tilbage"
 
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:27
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:27
 #: src/Agent/workflows/content/components/GeneratePageResult.jsx:19
 msgid "The agent has finished creating your page. Press take me there to visit your new page or dismiss to remove this notice."
 msgstr "Agenten har færdiggjort oprettelsen af din side. Tryk på \"tag mig derhen\" for at besøge din nye side eller \"fjern\" for at fjerne denne meddelelse."
@@ -4007,41 +4007,41 @@ msgstr "Agenten har færdiggjort oprettelsen af din side. Tryk på \"tag mig der
 msgid "E.g., Create an \"About Us\" page highlighting our story, mission, values and team overview."
 msgstr "F.eks. opret en \"Om os\"-side, der fremhæver vores historie, mission, værdier og teamoversigt."
 
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:21
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:21
 #: src/Agent/workflows/block-selector/components/GenerateImageConfirm.jsx:116
 msgid "No image returned"
 msgstr "Intet billede returneret"
 
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:4
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:4
 #: src/Agent/components/messages/StatusIndicator.jsx:20
 msgid "Formulating a response..."
 msgstr "Formulerer et svar..."
 
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:4
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:4
 #: src/Agent/components/messages/StatusIndicator.jsx:21
 msgid "Reviewing logic..."
 msgstr "Gennemgår logik..."
 
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:4
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:4
 #: src/Agent/components/layouts/MobileLayout.jsx:63
 msgid "Minimize window"
 msgstr "Minimer vindue"
 
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:4
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:4
 #: src/Agent/components/messages/StatusIndicator.jsx:19
 msgid "Interpreting message..."
 msgstr "Fortolker besked..."
 
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:32
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:32
 #: src/Agent/workflows/plugins/components/InstallPlugin.jsx:79
 msgid "There was an error installing the plugin. You may try again"
 msgstr "Der opstod en fejl ved installation af pluginet. Du kan prøve igen"
 
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:21
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:24
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:27
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:32
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:89
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:21
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:24
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:27
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:32
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:89
 #: src/Agent/workflows/block-selector/components/GenerateImageConfirm.jsx:245
 #: src/Agent/workflows/block-selector/components/UpdateBlockConfirm.jsx:126
 #: src/Agent/workflows/content/components/UpdatePostConfirm.jsx:60
@@ -4050,22 +4050,22 @@ msgstr "Der opstod en fejl ved installation af pluginet. Du kan prøve igen"
 msgid "Try Again"
 msgstr "Prøv igen"
 
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:32
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:32
 #: src/Agent/workflows/plugins/components/InstallPlugin.jsx:102
 msgid "Installing plugin..."
 msgstr "Installerer plugin ..."
 
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:32
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:32
 #: src/Agent/workflows/plugins/components/InstallPlugin.jsx:103
 msgid "Activating plugin..."
 msgstr "Aktiverer plugin..."
 
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:32
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:32
 #: src/Agent/workflows/plugins/components/InstallPlugin.jsx:115
 msgid "The agent is requesting to install and activate a plugin."
 msgstr "Agenten anmoder om at installere og aktivere et plugin."
 
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:35
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:35
 #: src/Agent/workflows/plugins/components/InstallPlugin.jsx:152
 msgid "Install Plugin"
 msgstr "Installer plugin"
@@ -4090,56 +4090,56 @@ msgid "By using AI features, you agree with the %1$sTerms of Use and Privacy Pol
 msgstr "Ved at bruge AI-funktioner accepterer du %1$sBrugsbetingelser og Privatlivspolitik%2$s."
 
 #. translators: A chat message shown to the user
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:75
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:75
 #: src/Agent/workflows/theme/components/SelectThemeFontsVariation.jsx:45
 msgid "We were unable to find any variations for your theme"
 msgstr "Vi kunne ikke finde nogen variationer for dit tema"
 
 #. translators: This message is shown when the AI agent fails to find a suitable workflow.
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:12
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:12
 #: src/Agent/Agent.jsx:111
 msgid "Something went wrong while trying to start this request. Please try again."
 msgstr "Noget gik galt ved forsøget på at starte denne anmodning. Prøv venligst igen."
 
 #. translators: This message is shown when the AI agent encounters a general error.
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:14
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:14
 #: src/Agent/Agent.jsx:565
 msgid "Sorry, something went wrong. I tried but wasn't able to do this request. Please try again."
 msgstr "Beklager, der opstod en fejl. Jeg forsøgte, men kunne ikke udføre denne anmodning. Prøv venligst igen."
 
 #. translators: A chat message shown to the user
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:24
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:24
 #: src/Agent/workflows/block-selector/components/GenerateImageConfirm.jsx:170
 #, js-format
 msgid "Error generating image: %s"
 msgstr "Fejl ved generering af billede: %s"
 
 #. translators: %1$s and %2$s are HTML tags. %1$s opens a span with screen-reader-only text, and %2$s closes that span.
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:35
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:35
 #: src/Agent/workflows/plugins/components/InstallPlugin.jsx:134
 #, js-format
 msgid "Plugin Details %1$s(opens in a new tab)%2$s"
 msgstr "Plugindetaljer %1$s(åbner i en ny fane)%2$s"
 
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:35
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:35
 #: src/Agent/workflows/settings/components/UpdateSettingConfirm.jsx:45
 msgid "Apply this setting change?"
 msgstr "Anvende denne indstillingsændring?"
 
 #. translators: "site style" refers to the structural aesthetic style for the site.
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:66
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:66
 #: src/Agent/workflows/theme/change-site-vibes.js:17
 msgid "Hey there! It looks like you are trying to change your site style, but you are not on a page where we can do that."
 msgstr "Hej! Det ser ud til, at du forsøger at ændre din webstedsstil, men du er ikke på en side, hvor vi kan gøre det."
 
 #. translators: A chat message shown to the user
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:81
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:81
 #: src/Agent/workflows/theme/components/SelectThemeVariation.jsx:54
 msgid "We were unable to find any colors for your theme"
 msgstr "Vi kunne ikke finde nogen farver til dit tema"
 
 #. translators: A chat message shown to the user
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:83
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:83
 #: src/Agent/workflows/theme/components/SelectThemeVariation.jsx:67
 msgid "Loading available colors..."
 msgstr "Indlæser tilgængelige farver..."
@@ -4156,7 +4156,7 @@ msgstr "Anvender webstedets stil"
 msgid "Customizing your site style"
 msgstr "Tilpasning af din webstedsstil"
 
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:4
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:4
 #: public/build/extendify-assist-page-5abc4f3121f907529fcd.js:10
 #: public/build/extendify-draft-21d96962600c40354b54.js:1
 #: src/Agent/icons.jsx:12
@@ -4165,46 +4165,46 @@ msgstr "Tilpasning af din webstedsstil"
 msgid "Magic Icon"
 msgstr "Magisk ikon"
 
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:4
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:4
 #: src/Agent/icons.jsx:39
 msgid "Magic Sparkle Animation"
 msgstr "Magisk glimmeranimation"
 
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:4
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:4
 #: public/build/extendify-help-center-eabc21dfe936d7b4ce8e.js:1
 #: src/Agent/icons.jsx:113
 #: src/HelpCenter/components/ai-chat/icons.jsx:41
 msgid "Thumb Down Icon"
 msgstr "Ikon for tommelfinger ned"
 
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:4
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:4
 #: public/build/extendify-help-center-eabc21dfe936d7b4ce8e.js:1
 #: src/Agent/icons.jsx:125
 #: src/HelpCenter/components/ai-chat/icons.jsx:53
 msgid "Thumb Up Icon"
 msgstr "Tommel op-ikon"
 
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:4
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:4
 #: src/Agent/icons.jsx:132
 msgid "Sparkle Icon"
 msgstr "Glitrende ikon"
 
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:4
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:4
 #: src/Agent/icons.jsx:147
 msgid "Tool Select Icon"
 msgstr "Værktøj Vælg ikon"
 
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:4
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:4
 #: src/Agent/icons.jsx:179
 msgid "Selected Content Icon"
 msgstr "Valgt indholdsikon"
 
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:7
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:7
 #: src/Agent/components/messages/WorkflowMessage.jsx:65
 msgid "Success icon"
 msgstr "Succesikon"
 
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:4
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:4
 #: src/Agent/components/ErrorMessage.jsx:15
 msgid "Error icon"
 msgstr "Fejlikon"
@@ -4657,35 +4657,35 @@ msgstr "Forbedring af dit websted"
 msgid "Setting up essential tools"
 msgstr "Opsætning af nødvendige værktøjer"
 
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:17
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:17
 #: src/Agent/components/ImageUploader.jsx:170
 msgid "Drop images to upload"
 msgstr "Træk billeder for at uploade"
 
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:24
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:24
 #: src/Agent/workflows/block-selector/components/GenerateImageConfirm.jsx:65
 msgid "Failed to save image"
 msgstr "Kunne ikke gemme billede"
 
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:24
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:24
 #: src/Agent/workflows/block-selector/components/GenerateImageConfirm.jsx:184
 #, js-format
 msgid "It looks like you've run out of credits. They'll refresh in %s, so check back then."
 msgstr "Det ser ud til, at du er løbet tør for kreditter. De opdateres om %s, så vend tilbage der."
 
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:24
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:24
 #: src/Agent/workflows/block-selector/components/GenerateImageConfirm.jsx:254
 msgid "Saving..."
 msgstr "Gemmer..."
 
 #. translators: %1$s is the current page or post status, and %2$s is the updated page or post status.
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:30
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:30
 #: src/Agent/workflows/content/components/UpdatePostStatusConfirm.jsx:28
 #, js-format
 msgid "Status will change from \"%s\" to \"%s\", please confirm to save."
 msgstr "Status vil ændre sig fra \"%1$s\" til \"%2$s\", bekræft for at gemme."
 
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:4
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:4
 #: src/Agent/components/ChatInput.jsx:189
 msgid "Message too long"
 msgstr "Besked for lang"
@@ -4696,7 +4696,7 @@ msgid "A \"Shop\" page will also be automatically created."
 msgstr "En \"Shop\"-side vil også automatisk blive oprettet"
 
 #. translators: This is a status message. 'Loading' is a verb — the app is currently loading the animation options. It is not referring to 'loading animation' as a compound noun.
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:57
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:57
 #: src/Agent/workflows/theme/components/SelectAnimation.jsx:117
 msgid "Loading animation options..."
 msgstr "Indlæsningsmuligheder for animation..."
@@ -4796,7 +4796,7 @@ msgstr "Det ser ud til, at du har været her før. Vi skal rydde op i nogle ting
 msgid "%s pages/posts will be deleted."
 msgstr "%s sider/indlæg vil blive slettet"
 
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:4
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:4
 #: public/build/extendify-auto-launch-fa577a30dd41aedded0e.js:49
 #: src/Agent/components/messages/StatusIndicator.jsx:23
 #: src/AutoLaunch/components/RestartLaunchModal.jsx:164
@@ -4808,7 +4808,7 @@ msgstr "Behandler..."
 msgid "Describe the website you want to build"
 msgstr "Beskriv det websted, du vil oprette"
 
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:89
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:89
 #: src/Agent/workflows/theme/components/SelectGeneratedPalette.jsx:107
 msgid "We were unable to generate color palettes. Please try again."
 msgstr "Vi kunne ikke generere farvepaletter. Prøv venligst igen"
@@ -4819,56 +4819,56 @@ msgstr "Vi kunne ikke generere farvepaletter. Prøv venligst igen"
 msgid "Setting the website style"
 msgstr "Indstilling af webstedets stil"
 
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:4
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:4
 #: src/Agent/components/OptionsPopover.jsx:78
 msgid "View more options"
 msgstr "Se flere muligheder"
 
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:7
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:7
 #: src/Agent/components/messages/WorkflowMessage.jsx:91
 msgid "Workflow was canceled"
 msgstr "Arbejdsproces blev annulleret"
 
 #. translators: This message show above a UI where the user can select a different animation for their site.
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:61
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:61
 #: src/Agent/workflows/theme/change-animation.js:16
 msgid "Below you can select a different animation for your site."
 msgstr "Nedenfor kan du vælge en anden animation til dit websted."
 
 #. translators: This message show above a UI where the user can select a different site style variation for their theme.
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:75
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:75
 #: src/Agent/workflows/theme/change-site-vibes.js:29
 msgid "Below you can select a different site style variation for your theme."
 msgstr "Nedenfor kan du vælge en anden stilvariation til dit tema."
 
 #. translators: This message show above a UI where the user can select a different font variation for their theme.
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:81
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:81
 #: src/Agent/workflows/theme/change-theme-fonts-variation.js:27
 msgid "Below you can select a different font variation for your theme."
 msgstr "Nedenfor kan du vælge en anden skrifttype-variation til dit tema."
 
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:81
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:81
 #: src/Agent/workflows/theme/change-theme-fonts-variation.js:34
 msgid "Updated the theme fonts"
 msgstr "Opdaterede temaets skrifttyper"
 
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:81
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:81
 #: src/Agent/workflows/theme/change-theme-fonts-variation.js:35
 msgid "Canceled the theme fonts update"
 msgstr "Annullerede opdateringen af temaets skrifttyper"
 
 #. translators: This message show above a UI where the user can select a different color variation for their theme.
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:89
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:89
 #: src/Agent/workflows/theme/change-theme-variation.js:21
 msgid "Below you can select a different color variation for your theme."
 msgstr "Nedenfor kan du vælge en anden farvevariation til dit tema."
 
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:89
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:89
 #: src/Agent/workflows/theme/change-theme-variation.js:28
 msgid "Updated the theme color"
 msgstr "Opdateret temafarven"
 
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:89
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:89
 #: src/Agent/workflows/theme/change-theme-variation.js:29
 msgid "Canceled the theme color update"
 msgstr "Annullerede opdateringen af temafarven"
@@ -4878,7 +4878,7 @@ msgstr "Annullerede opdateringen af temafarven"
 msgid "Enhance with AI"
 msgstr "Forbedr med AI"
 
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:19
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:19
 #: src/Agent/state/chat.js:23
 msgid ""
 "#### Your site is ready 🎉\n"
@@ -4936,7 +4936,7 @@ msgid "Picking the perfect design"
 msgstr "Vælger det perfekte design"
 
 #. translators: No value found message for when a WP setting has no value.
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:40
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:40
 msgid "No value found"
 msgstr "Ingen værdi fundet"
 
@@ -5135,21 +5135,21 @@ msgstr "anmeldelser"
 msgid "Latvian"
 msgstr "Lettisk"
 
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:35
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:63
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:35
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:63
 #: src/Agent/workflows/settings/edit-wp-setting.js:20
 #: src/Agent/workflows/theme/change-site-design.js:46
 msgid "Change website title"
 msgstr "Ændre webstedstitel"
 
 #. translators: "site style" refers to the structural aesthetic style for the site.
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:73
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:73
 #: src/Agent/workflows/theme/change-site-vibes.js:26
 msgid "Change website style"
 msgstr "Skift webstedets stil"
 
 #. translators: "site animation" refers to the animation style for the current site.
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:59
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:59
 #: src/Agent/workflows/theme/change-animation.js:13
 msgid "Change website animation"
 msgstr "Skift webstedets animation"
@@ -5222,39 +5222,39 @@ msgid "Enhancing the website description..."
 msgstr "Forbedrer webstedets beskrivelse..."
 
 #. translators: "theme colors" refers to the color palette variation for the current theme.
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:63
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:87
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:63
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:87
 #: src/Agent/workflows/theme/change-site-design.js:39
 #: src/Agent/workflows/theme/change-theme-variation.js:18
 msgid "Change website colors"
 msgstr "Skift webstedets farver"
 
 #. translators: "theme fonts" refers to the font variation for the current theme.
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:79
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:79
 #: src/Agent/workflows/theme/change-theme-fonts-variation.js:24
 msgid "Change website fonts"
 msgstr "Skift webstedets skrifttyper"
 
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:63
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:89
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:63
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:89
 #: src/Agent/workflows/theme/change-site-design.js:53
 #: src/Agent/workflows/theme/update-logo.js:13
 msgid "Change website logo"
 msgstr "Skift webstedets logo"
 
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:7
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:7
 #: src/Agent/components/ChatSuggestions.jsx:138
 msgid "Show more"
 msgstr "Vis mere"
 
 #. translators: "site style" refers to the structural aesthetic style for the site.
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:66
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:66
 #: src/Agent/workflows/theme/components/SelectSiteVibes.jsx:48
 msgid "We were unable to find any website style for your theme."
 msgstr "Vi kunne ikke finde nogen webstedsstil til dit tema."
 
 #. translators: "site style" refers to the structural aesthetic style for the site.
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:71
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:71
 #: src/Agent/workflows/theme/components/SelectSiteVibes.jsx:64
 msgid "Loading website style options..."
 msgstr "Indlæser stilindstillinger for websted..."
@@ -5276,7 +5276,7 @@ msgid "Adding page: %s"
 msgstr "Tilføjer side: %s"
 
 #. translators: this is the initial message in the agent chat, welcoming the user. Keep it short and friendly and follow the same markdown format and emoji.
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:19
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:19
 #: src/Agent/state/chat.js:19
 msgid ""
 "#### Your site is ready 🎉\n"
@@ -5285,59 +5285,59 @@ msgstr ""
 "#### Dit websted er klar 🎉  \n"
 "Vil du udforske andre webstedsdesigns?"
 
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:61
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:61
 #: src/Agent/workflows/theme/components/change-site-design/DesignOption.jsx:144
 msgid "Preview site design"
 msgstr "Forhåndsvis webstedsdesign"
 
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:61
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:61
 #: src/Agent/workflows/theme/components/change-site-design/SelectSiteDesign.jsx:391
 msgid "Load more"
 msgstr "Indlæs mere"
 
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:61
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:61
 #: src/Agent/workflows/theme/change-site-design.js:28
 msgid "Change website design"
 msgstr "Skift webstedsdesign"
 
 #. translators: This message show above a UI where the user can select a different site design.
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:63
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:63
 #: src/Agent/workflows/theme/change-site-design.js:31
 msgid "Below you can select a different design for your website."
 msgstr "Herunder kan du vælge et andet design til dit websted."
 
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:63
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:63
 #: src/Agent/workflows/theme/change-site-design.js:61
 msgid "Updated the website design"
 msgstr "Opdaterede webstedets design"
 
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:63
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:63
 #: src/Agent/workflows/theme/change-site-design.js:62
 msgid "Canceled the website design update"
 msgstr "Annullerede opdateringen af webstedsdesignet"
 
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:61
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:61
 #: src/Agent/workflows/theme/change-animation.js:23
 msgid "Updated the website animation"
 msgstr "Opdaterede webstedets animation"
 
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:61
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:61
 #: src/Agent/workflows/theme/change-animation.js:24
 msgid "Canceled the website animation update"
 msgstr "Annullerede opdateringen af webstedets animation"
 
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:75
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:75
 #: src/Agent/workflows/theme/change-site-vibes.js:36
 msgid "Updated the website style"
 msgstr "Opdaterede webstedets stil"
 
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:75
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:75
 #: src/Agent/workflows/theme/change-site-vibes.js:37
 msgid "Canceled the website style update"
 msgstr "Annullerede opdateringen af webstedets stil"
 
 #. translators: A chat message shown to the user when their selected color variation cannot be applied
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:85
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:85
 #: src/Agent/workflows/theme/components/SelectThemeVariation.jsx:33
 msgid "We were unable to apply your selected colors. Please try again."
 msgstr "Vi kunne ikke anvende dine valgte farver. Prøv venligst igen."
@@ -5348,14 +5348,14 @@ msgstr "Vi kunne ikke anvende dine valgte farver. Prøv venligst igen."
 msgid "206-555-0100"
 msgstr "32 15 10 00"
 
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:71
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:71
 #: src/Agent/workflows/theme/components/SelectSiteVibes.jsx:88
 #: src/Agent/workflows/theme/components/SelectSiteVibes.jsx:107
 #, js-format
 msgid "Style %s"
 msgstr "Stil %s"
 
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:61
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:61
 #: src/Agent/workflows/theme/change-site-design.js:18
 msgid "Hey there! It looks like you are trying to change your site design, but you are not on a page where we can do that."
 msgstr "Hej! Det ser ud til, at du forsøger at ændre dit websteds design, men du er ikke på en side, hvor det kan gøres."
@@ -5931,78 +5931,78 @@ msgstr "F.eks. Et specialiseret advokatfirma inden for familieret, ejendomsplanl
 msgid "Create website"
 msgstr "Opret websted"
 
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:30
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:30
 #: src/Agent/workflows/content/update-post-status.js:12
 msgid "Publish this page"
 msgstr "Udgiv denne side"
 
 #. translators: Shown when the user clicks the "Publish this page" suggestion, above a confirm card.
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:32
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:32
 #: src/Agent/workflows/content/update-post-status.js:15
 msgid "Ready to publish this page?"
 msgstr "Klar til at udgive denne side?"
 
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:32
-#: src/Agent/workflows/content/update-post-status.js:25
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:32
+#: src/Agent/workflows/content/update-post-status.js:32
 msgid "Published the page"
 msgstr "Udgav siden"
 
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:32
-#: src/Agent/workflows/content/update-post-status.js:26
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:32
+#: src/Agent/workflows/content/update-post-status.js:33
 msgid "Canceled publishing the page"
 msgstr "Annullerede udgivelsen af siden"
 
 #. translators: The agent asks this, then waits for the user to type their new site title.
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:37
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:37
 #: src/Agent/workflows/settings/edit-wp-setting.js:23
 msgid "What would you like your new website title to be?"
 msgstr "Hvad skal din nye webstedstitel være?"
 
 #. translators: This message shows above a UI where the user can upload or replace their site logo.
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:91
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:91
 #: src/Agent/workflows/theme/update-logo.js:16
 msgid "Below you can upload or replace your website logo."
 msgstr "Herunder kan du uploade eller erstatte dit websted logo."
 
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:91
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:91
 #: src/Agent/workflows/theme/update-logo.js:23
 msgid "Updated the site logo"
 msgstr "Opdaterede webstedets logo"
 
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:91
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:91
 #: src/Agent/workflows/theme/update-logo.js:24
 msgid "Canceled the site logo update"
 msgstr "Annullerede opdateringen af webstedets logo"
 
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:91
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:91
 #: src/Agent/workflows/theme/update-site-icon.js:13
 msgid "Change website browser icon"
 msgstr "Skift webstedsbrowserikon"
 
 #. translators: This message shows above a UI where the user can upload or replace their browser icon (favicon).
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:93
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:93
 #: src/Agent/workflows/theme/update-site-icon.js:16
 msgid "Below you can upload or replace your website browser icon."
 msgstr "Herunder kan du uploade eller erstatte dit websteds browserikon."
 
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:93
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:93
 #: src/Agent/workflows/theme/update-site-icon.js:23
 msgid "Updated the site icon"
 msgstr "Opdaterede webstedsikonet"
 
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:93
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:93
 #: src/Agent/workflows/theme/update-site-icon.js:24
 msgid "Canceled the site icon update"
 msgstr "Annullerede opdateringen af webstedsikonet"
 
 #. translators: confirm prompt before the agent performs a WordPress task it picked.
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:4
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:4
 #: src/Agent/workflows/abilities/components/AbilityRunGate.jsx:12
 msgid "Run this action?"
 msgstr "Udføre denne handling?"
 
 #. translators: %s is the machine name of a WordPress ability the agent tried to run.
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:21
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:21
 #, js-format
 msgid "Ability \"%s\" is not available."
 msgstr "Evne \"%s\" er ikke tilgængelig."
@@ -6082,6 +6082,11 @@ msgstr "Anbefalet til dig"
 msgid "Reviewing your description..."
 msgstr "Gennemgår din beskrivelse..."
 
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:32
+#: src/Agent/workflows/content/update-post-status.js:19
+msgid "Add this to the menu"
+msgstr "Tilføj dette til menuen"
+
 #: app/Toolbar/Admin.php:46
 msgctxt "toolbar style"
 msgid "Simple"
@@ -6119,61 +6124,61 @@ msgid "Activated"
 msgstr "Aktiveret"
 
 #. translators: "Slow" refers to a slower speed at which the animation effect occurs. This is an option in a list of animation speeds.
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:50
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:50
 #: src/Agent/workflows/theme/components/SelectAnimation.jsx:47
 msgctxt "animation speed"
 msgid "Slow"
 msgstr "Langsom"
 
 #. translators: "Medium" refers to a moderate speed at which the animation effect occurs. This is an option in a list of animation speeds.
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:52
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:52
 #: src/Agent/workflows/theme/components/SelectAnimation.jsx:52
 msgctxt "animation speed"
 msgid "Medium"
 msgstr "Medium"
 
 #. translators: "Fast" refers to a quicker speed at which the animation effect occurs. This is an option in a list of animation speeds.
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:54
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:54
 #: src/Agent/workflows/theme/components/SelectAnimation.jsx:57
 msgctxt "animation speed"
 msgid "Fast"
 msgstr "Hurtig"
 
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:57
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:57
 #: src/Agent/workflows/theme/components/SelectAnimation.jsx:147
 msgctxt "animation speed"
 msgid "Speed"
 msgstr "Hastighed"
 
 #. translators: Animation style where the element gradually appears by transitioning from transparent to visible. Translate as a simple, non-technical description of the visual effect (e.g., 'appear', 'show up') suitable for non-technical users.
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:42
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:42
 #: src/Agent/workflows/theme/components/SelectAnimation.jsx:20
 msgctxt "animation type"
 msgid "Fade In"
 msgstr "Dukk op"
 
 #. translators: Animation style where the element appears while moving upward. Translate as a simple, non-technical description of the motion (e.g., 'appear from below', 'rise into view') suitable for non-technical users.
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:44
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:44
 #: src/Agent/workflows/theme/components/SelectAnimation.jsx:26
 msgctxt "animation type"
 msgid "Fade Up"
 msgstr "Dukk op fra neden"
 
 #. translators: Animation style where the element appears by scaling from small to its full size. Translate as a simple, non-technical description of the effect (e.g., 'zoom in', 'get closer') suitable for non-technical users. If the target language commonly uses the English term 'zoom', it's acceptable to keep it.
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:46
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:46
 #: src/Agent/workflows/theme/components/SelectAnimation.jsx:32
 msgctxt "animation type"
 msgid "Zoom In"
 msgstr "Zoom ind"
 
 #. translators: None refers to 'no animation'. Apply the correct grammatical gender/form that agrees with the word for 'animation' in the target language.
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:48
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:48
 #: src/Agent/workflows/theme/components/SelectAnimation.jsx:38
 msgctxt "animation type"
 msgid "None"
 msgstr "Ingen"
 
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:57
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:57
 #: src/Agent/workflows/theme/components/SelectAnimation.jsx:128
 msgctxt "animation type"
 msgid "Type"

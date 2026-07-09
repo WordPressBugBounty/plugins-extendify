@@ -40,7 +40,7 @@ msgstr "https://extendify.com/?utm_source=wp-plugins&utm_campaign=author-uri&utm
 
 #: app/AdminPageRouter.php:43
 #: app/AdminPageRouter.php:67
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:19
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:19
 #: public/build/extendify-assist-page-5abc4f3121f907529fcd.js:10
 #: public/build/extendify-help-center-eabc21dfe936d7b4ce8e.js:4
 #: src/Agent/tours/site-assistant.js:5
@@ -96,7 +96,7 @@ msgstr "Θέμα"
 msgid "Message"
 msgstr "Μήνυμα"
 
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:14
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:14
 #: public/build/extendify-assist-page-5abc4f3121f907529fcd.js:1
 #: public/build/extendify-help-center-eabc21dfe936d7b4ce8e.js:4
 #: src/Agent/components/GuidedTour.jsx:308
@@ -175,7 +175,7 @@ msgstr "Επιλογή σελίδων ιστότοπου"
 
 #: app/PluginNotifications/NotificationsListTable.php:81
 #: app/PluginNotifications/NotificationsListTable.php:173
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:27
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:27
 #: public/build/extendify-assist-page-5abc4f3121f907529fcd.js:1
 #: public/build/extendify-quick-edit-8bab8f8f62c3e7af92e2.js:4
 #: src/Agent/workflows/content/components/GeneratePageResult.jsx:32
@@ -186,7 +186,7 @@ msgstr "Επιλογή σελίδων ιστότοπου"
 msgid "Dismiss"
 msgstr "Απόκρυψη"
 
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:17
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:17
 #: public/build/extendify-assist-page-5abc4f3121f907529fcd.js:1
 #: src/Agent/components/ImageUploader.jsx:141
 #: src/Assist/components/ImageUploader.jsx:96
@@ -204,7 +204,7 @@ msgstr "Αντικατάσταση εικόνας"
 msgid "Remove image"
 msgstr "Αφαίρεση εικόνας"
 
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:17
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:17
 #: public/build/extendify-assist-page-5abc4f3121f907529fcd.js:1
 #: public/build/extendify-help-center-eabc21dfe936d7b4ce8e.js:7
 #: src/Agent/components/GuidedTour.jsx:485
@@ -218,7 +218,7 @@ msgstr "Έγινε"
 msgid "Upload site logo"
 msgstr "Μεταφόρτωση λογότυπου ιστότοπου"
 
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:89
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:89
 #: public/build/extendify-assist-page-5abc4f3121f907529fcd.js:1
 #: public/build/extendify-quick-edit-8bab8f8f62c3e7af92e2.js:16
 #: src/Agent/workflows/theme/components/UpdateLogoConfirm.jsx:66
@@ -227,7 +227,7 @@ msgstr "Μεταφόρτωση λογότυπου ιστότοπου"
 msgid "Site logo"
 msgstr "Λογότυπο Ιστότοπου"
 
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:89
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:89
 #: public/build/extendify-assist-page-5abc4f3121f907529fcd.js:1
 #: src/Agent/workflows/theme/components/UpdateLogoConfirm.jsx:67
 #: src/Assist/components/tasks/UpdateLogo.jsx:20
@@ -239,7 +239,7 @@ msgstr "Ορίστε λογότυπο ιστότοπου"
 msgid "Add site description"
 msgstr "Προσθήκη περιγραφής ιστοτόπου"
 
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:21
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:21
 #: public/build/extendify-assist-page-5abc4f3121f907529fcd.js:1
 #: public/build/extendify-launch-86d848925fad51ac7e3f.js:8
 #: src/Agent/workflows/block-selector/components/UpdateBlockConfirm.jsx:99
@@ -249,7 +249,7 @@ msgstr "Προσθήκη περιγραφής ιστοτόπου"
 msgid "Loading..."
 msgstr "Φόρτωση..."
 
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:19
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:19
 #: public/build/extendify-assist-page-5abc4f3121f907529fcd.js:1
 #: public/build/extendify-help-center-eabc21dfe936d7b4ce8e.js:4
 #: src/Agent/tours/page-creator.js:81
@@ -263,17 +263,17 @@ msgstr "Περιγραφή ιστοτόπου"
 msgid "Enter a site description..."
 msgstr "Εισάγετε περιγραφή ιστότοπου..."
 
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:17
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:21
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:24
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:27
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:40
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:57
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:61
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:71
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:77
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:85
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:89
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:17
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:21
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:24
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:27
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:40
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:57
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:61
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:71
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:77
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:85
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:89
 #: public/build/extendify-assist-page-5abc4f3121f907529fcd.js:1
 #: public/build/extendify-quick-edit-8bab8f8f62c3e7af92e2.js:4
 #: public/build/extendify-quick-edit-8bab8f8f62c3e7af92e2.js:16
@@ -306,14 +306,14 @@ msgstr "Αποθήκευση"
 msgid "Upload site icon"
 msgstr "Μεταφόρτωση εικονιδίου ιστότοπου"
 
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:91
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:91
 #: public/build/extendify-assist-page-5abc4f3121f907529fcd.js:1
 #: src/Agent/workflows/theme/components/UpdateSiteIconConfirm.jsx:61
 #: src/Assist/components/tasks/UpdateSiteIcon.jsx:19
 msgid "Site icon"
 msgstr "Εικονίδιο ιστοτόπου"
 
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:91
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:91
 #: public/build/extendify-assist-page-5abc4f3121f907529fcd.js:1
 #: src/Agent/workflows/theme/components/UpdateSiteIconConfirm.jsx:62
 #: src/Assist/components/tasks/UpdateSiteIcon.jsx:20
@@ -556,7 +556,7 @@ msgstr "Επεξεργασία πλοήγησης ιστοτόπου"
 msgid "Reset site"
 msgstr "Επαναφορά ιστότοπου"
 
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:19
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:19
 #: public/build/extendify-assist-page-5abc4f3121f907529fcd.js:9
 #: public/build/extendify-help-center-eabc21dfe936d7b4ce8e.js:4
 #: src/Agent/tours/site-assistant.js:36
@@ -605,7 +605,7 @@ msgstr "Εγκατάσταση..."
 msgid "Install Now"
 msgstr "Εγκατάσταση τώρα"
 
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:19
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:19
 #: public/build/extendify-assist-page-5abc4f3121f907529fcd.js:10
 #: public/build/extendify-help-center-eabc21dfe936d7b4ce8e.js:4
 #: src/Agent/tours/site-assistant.js:58
@@ -1040,7 +1040,7 @@ msgstr "Έχετε ερωτήσεις; Ρωτήστε το AI chatbot μας"
 msgid "Getting started with WordPress"
 msgstr "Ξεκινώντας με το WordPress"
 
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:19
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:19
 #: public/build/extendify-assist-page-5abc4f3121f907529fcd.js:10
 #: public/build/extendify-help-center-eabc21dfe936d7b4ce8e.js:4
 #: src/Agent/tours/plugin-install.js:5
@@ -1050,7 +1050,7 @@ msgstr "Ξεκινώντας με το WordPress"
 msgid "Installing a plugin"
 msgstr "Εγκατάσταση πρόσθετου"
 
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:19
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:19
 #: public/build/extendify-assist-page-5abc4f3121f907529fcd.js:10
 #: public/build/extendify-help-center-eabc21dfe936d7b4ce8e.js:4
 #: src/Agent/tours/plugin-management.js:5
@@ -1060,7 +1060,7 @@ msgstr "Εγκατάσταση πρόσθετου"
 msgid "Plugin management"
 msgstr "Διαχείριση πρόσθετων"
 
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:19
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:19
 #: public/build/extendify-assist-page-5abc4f3121f907529fcd.js:10
 #: public/build/extendify-help-center-eabc21dfe936d7b4ce8e.js:4
 #: src/Agent/tours/page-editor.js:13
@@ -1070,7 +1070,7 @@ msgstr "Διαχείριση πρόσθετων"
 msgid "Page editor"
 msgstr "Επεξεργαστής σελίδας"
 
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:19
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:19
 #: public/build/extendify-assist-page-5abc4f3121f907529fcd.js:10
 #: public/build/extendify-help-center-eabc21dfe936d7b4ce8e.js:4
 #: public/build/extendify-library-15577c026d0b0bca0190.js:1
@@ -1084,7 +1084,7 @@ msgstr "Επεξεργαστής σελίδας"
 msgid "Design Library"
 msgstr "Βιβλιοθήκη σχεδίασης"
 
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:19
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:19
 #: public/build/extendify-assist-page-5abc4f3121f907529fcd.js:10
 #: public/build/extendify-help-center-eabc21dfe936d7b4ce8e.js:4
 #: src/Agent/tours/users-screen.js:5
@@ -1719,7 +1719,7 @@ msgstr "Οριζόντιο: 4:3"
 msgid "Portrait: 3:4"
 msgstr "Πορτραίτο: 3:4"
 
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:24
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:24
 #: public/build/extendify-draft-21d96962600c40354b54.js:7
 #: src/Agent/workflows/block-selector/components/GenerateImageConfirm.jsx:217
 #: src/Draft/components/image-generation/GenerateForm.jsx:90
@@ -2011,7 +2011,7 @@ msgstr "Προσαρμοσμένη προτροπή"
 msgid "Please try again."
 msgstr "Παρακαλώ δοκιμάστε ξανά"
 
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:7
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:7
 #: public/build/extendify-help-center-eabc21dfe936d7b4ce8e.js:1
 #: src/Agent/components/Rating.jsx:27
 #: src/Agent/components/Rating.jsx:48
@@ -2020,14 +2020,14 @@ msgstr "Παρακαλώ δοκιμάστε ξανά"
 msgid "Remove rating"
 msgstr "Αφαίρεση αξιολόγησης"
 
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:7
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:7
 #: public/build/extendify-help-center-eabc21dfe936d7b4ce8e.js:1
 #: src/Agent/components/Rating.jsx:28
 #: src/HelpCenter/components/ai-chat/Rating.jsx:27
 msgid "Rate that this answer was helpful"
 msgstr "Αξιολογήστε αν αυτή η απάντηση ήταν χρήσιμη"
 
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:7
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:7
 #: public/build/extendify-help-center-eabc21dfe936d7b4ce8e.js:1
 #: src/Agent/components/Rating.jsx:49
 #: src/HelpCenter/components/ai-chat/Rating.jsx:48
@@ -2135,140 +2135,140 @@ msgstr "Αναζήτηση αποτελεσμάτων"
 msgid "Search the knowledge base"
 msgstr "Αναζήτηση στη βάση γνώσεων"
 
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:19
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:19
 #: public/build/extendify-help-center-eabc21dfe936d7b4ce8e.js:4
 #: src/Agent/tours/library-tour.js:31
 #: src/HelpCenter/tours/library-tour.js:29
 msgid "Open the Pattern Library"
 msgstr "Άνοιγμα της Βιβλιοθήκης Μοτίβων"
 
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:19
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:19
 #: public/build/extendify-help-center-eabc21dfe936d7b4ce8e.js:4
 #: src/Agent/tours/library-tour.js:32
 #: src/HelpCenter/tours/library-tour.js:30
 msgid "The Extendify pattern library can be opened by clicking the button to the left."
 msgstr "Η βιβλιοθήκη μοτίβων του Extendify μπορεί να ανοίξει κάνοντας κλικ στο κουμπί στα αριστερά."
 
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:19
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:19
 #: public/build/extendify-help-center-eabc21dfe936d7b4ce8e.js:4
 #: src/Agent/tours/library-tour.js:53
 #: src/HelpCenter/tours/library-tour.js:51
 msgid "Filter Patterns"
 msgstr "Φιλτράρισμα μοτίβων"
 
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:19
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:19
 #: public/build/extendify-help-center-eabc21dfe936d7b4ce8e.js:4
 #: src/Agent/tours/library-tour.js:54
 #: src/HelpCenter/tours/library-tour.js:52
 msgid "Click on any pattern category to refine the selection."
 msgstr "Κάντε κλικ σε οποιαδήποτε κατηγορία μοτίβων για να βελτιώσετε την επιλογή."
 
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:19
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:19
 #: public/build/extendify-help-center-eabc21dfe936d7b4ce8e.js:4
 #: src/Agent/tours/library-tour.js:79
 #: src/HelpCenter/tours/library-tour.js:77
 msgid "Select a Pattern"
 msgstr "Επιλέξτε ένα μοτίβο"
 
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:19
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:19
 #: public/build/extendify-help-center-eabc21dfe936d7b4ce8e.js:4
 #: src/Agent/tours/library-tour.js:80
 #: src/HelpCenter/tours/library-tour.js:78
 msgid "Simply select any pattern you wish to insert into a page by clicking on it."
 msgstr "Απλώς επιλέξτε οποιοδήποτε μοτίβο θέλετε να εισαγάγετε σε μια σελίδα κάνοντας κλικ πάνω του"
 
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:19
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:19
 #: public/build/extendify-help-center-eabc21dfe936d7b4ce8e.js:4
 #: src/Agent/tours/library-tour.js:99
 #: src/HelpCenter/tours/library-tour.js:97
 msgid "View the Inserted Pattern"
 msgstr "Προβολή του εισαγόμενου μοτίβου"
 
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:19
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:19
 #: public/build/extendify-help-center-eabc21dfe936d7b4ce8e.js:4
 #: src/Agent/tours/library-tour.js:100
 #: src/HelpCenter/tours/library-tour.js:98
 msgid "The selected pattern has been inserted into the page."
 msgstr "Το επιλεγμένο μοτίβο έχει εισαχθεί στη σελίδα."
 
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:19
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:19
 #: public/build/extendify-help-center-eabc21dfe936d7b4ce8e.js:4
 #: src/Agent/tours/page-editor.js:26
 #: src/HelpCenter/tours/page-editor.js:26
 msgid "Add a Block"
 msgstr "Προσθήκη Μπλοκ"
 
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:19
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:19
 #: public/build/extendify-help-center-eabc21dfe936d7b4ce8e.js:4
 #: src/Agent/tours/page-editor.js:27
 #: src/HelpCenter/tours/page-editor.js:27
 msgid "Click the plus to open the block inserter."
 msgstr "Πατήστε το συν για να ανοίξετε τον εισαγωγέα μπλοκ"
 
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:19
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:19
 #: public/build/extendify-help-center-eabc21dfe936d7b4ce8e.js:4
 #: src/Agent/tours/page-editor.js:47
 #: src/HelpCenter/tours/page-editor.js:47
 msgid "Block Inserter"
 msgstr "Εισαγωγέας μπλοκ"
 
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:19
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:19
 #: public/build/extendify-help-center-eabc21dfe936d7b4ce8e.js:4
 #: src/Agent/tours/page-editor.js:48
 #: src/HelpCenter/tours/page-editor.js:48
 msgid "Add a block by clicking or dragging it onto the page."
 msgstr "Προσθέστε ένα μπλοκ κάνοντας κλικ ή σύροντάς το στη σελίδα."
 
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:19
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:19
 #: public/build/extendify-help-center-eabc21dfe936d7b4ce8e.js:4
 #: src/Agent/tours/page-editor.js:88
 #: src/HelpCenter/tours/page-editor.js:91
 msgid "Page Title"
 msgstr "Τίτλος σελίδας"
 
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:19
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:19
 #: public/build/extendify-help-center-eabc21dfe936d7b4ce8e.js:4
 #: src/Agent/tours/page-editor.js:89
 #: src/HelpCenter/tours/page-editor.js:92
 msgid "Edit the page title by clicking it. Note: The title may or may not show up on the published page, depending on the page template used."
 msgstr "Τροποποιήστε τον τίτλο της σελίδας κάνοντας κλικ πάνω του. Σημείωση: Ο τίτλος μπορεί να εμφανίζεται ή όχι στη δημοσιευμένη σελίδα, ανάλογα με το πρότυπο σελίδας που χρησιμοποιείται."
 
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:19
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:19
 #: public/build/extendify-help-center-eabc21dfe936d7b4ce8e.js:4
 #: src/Agent/tours/page-editor.js:128
 #: src/HelpCenter/tours/page-editor.js:131
 msgid "Blocks"
 msgstr "Μπλοκ"
 
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:19
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:19
 #: public/build/extendify-help-center-eabc21dfe936d7b4ce8e.js:4
 #: src/Agent/tours/page-editor.js:129
 #: src/HelpCenter/tours/page-editor.js:132
 msgid "Each block will show up on the page and can be edited by clicking on it."
 msgstr "Κάθε μπλοκ θα εμφανίζεται στη σελίδα και μπορεί να επεξεργαστεί με κλικ πάνω του."
 
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:19
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:19
 #: public/build/extendify-help-center-eabc21dfe936d7b4ce8e.js:4
 #: src/Agent/tours/page-editor.js:170
 #: src/HelpCenter/tours/page-editor.js:173
 msgid "This is a sample paragraph block. It can be several sentences long and will span multiple rows. You can add as many blocks as you'd like to the page."
 msgstr "Αυτό είναι ένα δείγμα μπλοκ παραγράφου. Μπορεί να αποτελείται από πολλές προτάσεις και να εκτείνεται σε πολλές σειρές. Μπορείτε να προσθέσετε όσα μπλοκ θέλετε στη σελίδα."
 
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:19
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:19
 #: public/build/extendify-help-center-eabc21dfe936d7b4ce8e.js:4
 #: src/Agent/tours/page-editor.js:185
 #: src/HelpCenter/tours/page-editor.js:188
 msgid "Page and Block Settings"
 msgstr "Ρυθμίσεις Σελίδας και Block"
 
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:19
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:19
 #: public/build/extendify-help-center-eabc21dfe936d7b4ce8e.js:4
 #: src/Agent/tours/page-editor.js:186
 #: src/HelpCenter/tours/page-editor.js:189
 msgid "Select either page or block to change the settings for the entire page or the block that is selected."
 msgstr "Επιλέξτε είτε σελίδα είτε μπλοκ για να αλλάξετε τις ρυθμίσεις για ολόκληρη τη σελίδα ή το επιλεγμένο μπλοκ."
 
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:19
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:19
 #: public/build/extendify-help-center-eabc21dfe936d7b4ce8e.js:4
 #: public/build/extendify-launch-86d848925fad51ac7e3f.js:8
 #: src/Agent/tours/page-editor.js:228
@@ -2277,175 +2277,175 @@ msgstr "Επιλέξτε είτε σελίδα είτε μπλοκ για να �
 msgid "Preview"
 msgstr "Προεπισκόπηση"
 
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:19
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:19
 #: public/build/extendify-help-center-eabc21dfe936d7b4ce8e.js:4
 #: src/Agent/tours/page-editor.js:229
 #: src/HelpCenter/tours/page-editor.js:232
 msgid "Click preview to view how your changes look on the front end of your site."
 msgstr "Κάντε κλικ στην προεπισκόπηση για να δείτε πώς φαίνονται οι αλλαγές στο μπροστινό μέρος του ιστότοπού σας."
 
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:19
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:19
 #: public/build/extendify-help-center-eabc21dfe936d7b4ce8e.js:4
 #: src/Agent/tours/page-editor.js:249
 #: src/HelpCenter/tours/page-editor.js:252
 msgid "Publish or Save"
 msgstr "Δημοσίευση ή Αποθήκευση"
 
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:19
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:19
 #: public/build/extendify-help-center-eabc21dfe936d7b4ce8e.js:4
 #: src/Agent/tours/page-editor.js:250
 #: src/HelpCenter/tours/page-editor.js:253
 msgid "Click publish or update to save the changes you have made to the page and make them live on the site."
 msgstr "Κάντε κλικ στη δημοσίευση ή την ενημέρωση για να αποθηκεύσετε τις αλλαγές που κάνατε στη σελίδα και να τις δημοσιεύσετε στον ιστότοπο."
 
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:19
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:19
 #: public/build/extendify-help-center-eabc21dfe936d7b4ce8e.js:4
 #: src/Agent/tours/plugin-install.js:18
 #: src/HelpCenter/tours/plugin-install.js:17
 msgid "Add New plugin menu"
 msgstr "Προσθήκη νέου μενού προσθήκης"
 
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:19
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:19
 #: public/build/extendify-help-center-eabc21dfe936d7b4ce8e.js:4
 #: src/Agent/tours/plugin-install.js:19
 #: src/HelpCenter/tours/plugin-install.js:18
 msgid "Click here to access the Add Plugins page."
 msgstr "Κάντε κλικ εδώ για πρόσβαση στη σελίδα Προσθήκη πρόσθετων."
 
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:19
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:19
 #: public/build/extendify-help-center-eabc21dfe936d7b4ce8e.js:4
 #: src/Agent/tours/plugin-install.js:41
 #: src/HelpCenter/tours/plugin-install.js:40
 msgid "Search"
 msgstr "Αναζήτηση"
 
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:19
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:19
 #: public/build/extendify-help-center-eabc21dfe936d7b4ce8e.js:4
 #: src/Agent/tours/plugin-install.js:42
 #: src/HelpCenter/tours/plugin-install.js:41
 msgid "Search for a plugin by name or functionality."
 msgstr "Αναζητήστε ένα πρόσθετο με βάση το όνομα ή τη λειτουργικότητα."
 
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:19
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:19
 #: public/build/extendify-help-center-eabc21dfe936d7b4ce8e.js:4
 #: src/Agent/tours/plugin-install.js:67
 #: src/HelpCenter/tours/plugin-install.js:66
 msgid "Plugin details"
 msgstr "Λεπτομέρειες προσθέτου"
 
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:19
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:19
 #: public/build/extendify-help-center-eabc21dfe936d7b4ce8e.js:4
 #: src/Agent/tours/plugin-install.js:68
 #: src/HelpCenter/tours/plugin-install.js:67
 msgid "See important information about each plugin."
 msgstr "Δείτε σημαντικές πληροφορίες για κάθε πρόσθετο."
 
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:19
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:19
 #: public/build/extendify-help-center-eabc21dfe936d7b4ce8e.js:4
 #: src/Agent/tours/plugin-install.js:87
 #: src/HelpCenter/tours/plugin-install.js:86
 msgid "Install now"
 msgstr "Εγκατάσταση τώρα"
 
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:19
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:19
 #: public/build/extendify-help-center-eabc21dfe936d7b4ce8e.js:4
 #: src/Agent/tours/plugin-install.js:88
 #: src/HelpCenter/tours/plugin-install.js:87
 msgid "Install the plugin. Then, press this button again to activate the plugin."
 msgstr "Εγκαταστήστε το πρόσθετο. Στη συνέχεια, πατήστε ξανά αυτό το κουμπί για να ενεργοποιήσετε το πρόσθετο."
 
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:19
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:19
 #: public/build/extendify-help-center-eabc21dfe936d7b4ce8e.js:4
 #: src/Agent/tours/plugin-install.js:113
 #: src/HelpCenter/tours/plugin-install.js:112
 msgid "Upload Plugin"
 msgstr "Μεταφόρτωση Πρόσθετου"
 
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:19
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:19
 #: public/build/extendify-help-center-eabc21dfe936d7b4ce8e.js:4
 #: src/Agent/tours/plugin-install.js:114
 #: src/HelpCenter/tours/plugin-install.js:113
 msgid "If you have a plugin from an external source, you can upload it directly here."
 msgstr "Αν έχετε ένα πρόσθετο από εξωτερική πηγή, μπορείτε να το μεταφορτώσετε απευθείας εδώ."
 
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:19
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:19
 #: public/build/extendify-help-center-eabc21dfe936d7b4ce8e.js:4
 #: src/Agent/tours/plugin-management.js:18
 #: src/HelpCenter/tours/plugin-management.js:17
 msgid "Installed Plugins menu"
 msgstr "Μενού εγκατεστημένων πρόσθετων"
 
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:19
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:19
 #: public/build/extendify-help-center-eabc21dfe936d7b4ce8e.js:4
 #: src/Agent/tours/plugin-management.js:19
 #: src/HelpCenter/tours/plugin-management.js:18
 msgid "Click this menu to see and manage the plugins you have installed."
 msgstr "Κάντε κλικ σε αυτό το μενού για να δείτε και να διαχειριστείτε τα πρόσθετα που έχετε εγκαταστήσει."
 
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:19
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:19
 #: public/build/extendify-help-center-eabc21dfe936d7b4ce8e.js:4
 #: src/Agent/tours/plugin-management.js:44
 #: src/HelpCenter/tours/plugin-management.js:43
 msgid "Installed plugins"
 msgstr "Εγκατεστημένα πρόσθετα"
 
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:19
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:19
 #: public/build/extendify-help-center-eabc21dfe936d7b4ce8e.js:4
 #: src/Agent/tours/plugin-management.js:45
 #: src/HelpCenter/tours/plugin-management.js:44
 msgid "See all plugins installed on your site. This includes plugins that are active and deactivated."
 msgstr "Δείτε όλα τα πρόσθετα που είναι εγκατεστημένα στον ιστότοπό σας. Αυτό περιλαμβάνει τα ενεργά και τα απενεργοποιημένα πρόσθετα."
 
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:19
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:19
 #: public/build/extendify-help-center-eabc21dfe936d7b4ce8e.js:4
 #: src/Agent/tours/plugin-management.js:64
 #: src/HelpCenter/tours/plugin-management.js:63
 msgid "Deactivate/activate option"
 msgstr "Απενεργοποίηση/ενεργοποίηση επιλογής"
 
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:19
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:19
 #: public/build/extendify-help-center-eabc21dfe936d7b4ce8e.js:4
 #: src/Agent/tours/plugin-management.js:65
 #: src/HelpCenter/tours/plugin-management.js:64
 msgid "Under each plugin you can activate or deactivate it."
 msgstr "Κάτω από κάθε πρόσθετο μπορείτε να το ενεργοποιήσετε ή να το απενεργοποιήσετε."
 
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:19
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:19
 #: public/build/extendify-help-center-eabc21dfe936d7b4ce8e.js:4
 #: src/Agent/tours/plugin-management.js:105
 #: src/HelpCenter/tours/plugin-management.js:104
 msgid "Add another"
 msgstr "Προσθήκη άλλου"
 
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:19
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:19
 #: public/build/extendify-help-center-eabc21dfe936d7b4ce8e.js:4
 #: src/Agent/tours/plugin-management.js:106
 #: src/HelpCenter/tours/plugin-management.js:105
 msgid "Click here to add another plugin to your site."
 msgstr "Κάντε κλικ εδώ για να προσθέσετε άλλο ένα πρόσθετο στον ιστότοπό σας."
 
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:19
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:19
 #: public/build/extendify-help-center-eabc21dfe936d7b4ce8e.js:4
 #: src/Agent/tours/site-assistant.js:15
 #: src/HelpCenter/tours/site-assistant.js:14
 msgid "Tasks"
 msgstr "Εργασίες"
 
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:19
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:19
 #: public/build/extendify-help-center-eabc21dfe936d7b4ce8e.js:4
 #: src/Agent/tours/site-assistant.js:16
 #: src/HelpCenter/tours/site-assistant.js:15
 msgid "Now that you've created your starter site, make it your own with these follow up tasks."
 msgstr "Τώρα που δημιουργήσατε τον αρχικό σας ιστότοπο, κάντε τον δικό σας με αυτές τις επόμενες εργασίες."
 
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:19
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:19
 #: public/build/extendify-help-center-eabc21dfe936d7b4ce8e.js:4
 #: src/Agent/tours/site-assistant.js:37
 #: src/HelpCenter/tours/site-assistant.js:36
 msgid "Easily access some of the most common items in WordPress with these quick links."
 msgstr "Αποκτήστε εύκολα πρόσβαση σε ορισμένα από τα πιο κοινά στοιχεία στο WordPress με αυτούς τους γρήγορους συνδέσμους."
 
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:19
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:19
 #: public/build/extendify-help-center-eabc21dfe936d7b4ce8e.js:4
 #: src/Agent/tours/site-assistant.js:59
 #: src/HelpCenter/tours/site-assistant.js:58
@@ -2457,42 +2457,42 @@ msgstr "Δείτε τις εξατομικευμένες προτάσεις μα
 msgid "You can always access the help center by clicking this button."
 msgstr "Μπορείτε πάντα να έχετε πρόσβαση στο κέντρο βοήθειας κάνοντας κλικ σε αυτό το κουμπί."
 
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:19
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:19
 #: public/build/extendify-help-center-eabc21dfe936d7b4ce8e.js:4
 #: src/Agent/tours/site-assistant.js:80
 #: src/HelpCenter/tours/site-assistant.js:100
 msgid "Visit your site"
 msgstr "Επισκεφθείτε τον ιστότοπό σας"
 
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:19
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:19
 #: public/build/extendify-help-center-eabc21dfe936d7b4ce8e.js:4
 #: src/Agent/tours/site-assistant.js:81
 #: src/HelpCenter/tours/site-assistant.js:101
 msgid "You can always visit your site by clicking this button."
 msgstr "Μπορείτε πάντα να επισκέπτεστε τον ιστότοπό σας κάνοντας κλικ σε αυτό το κουμπί."
 
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:19
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:19
 #: public/build/extendify-help-center-eabc21dfe936d7b4ce8e.js:4
 #: src/Agent/tours/site-assistant.js:107
 #: src/HelpCenter/tours/site-assistant.js:127
 msgid "Come back to the Site Assistant any time by clicking the menu item."
 msgstr "Επιστρέψτε στον Βοηθό Ιστότοπου οποιαδήποτε στιγμή κάνοντας κλικ στο στοιχείο μενού."
 
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:19
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:19
 #: public/build/extendify-help-center-eabc21dfe936d7b4ce8e.js:4
 #: src/Agent/tours/users-screen.js:18
 #: src/HelpCenter/tours/users-screen.js:17
 msgid "All Users menu"
 msgstr "Μενού Όλων των Χρηστών"
 
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:19
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:19
 #: public/build/extendify-help-center-eabc21dfe936d7b4ce8e.js:4
 #: src/Agent/tours/users-screen.js:19
 #: src/HelpCenter/tours/users-screen.js:18
 msgid "Click here to view and manage the users on your site."
 msgstr "Κάντε κλικ εδώ για να δείτε και να διαχειριστείτε τους χρήστες στον ιστότοπό σας."
 
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:19
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:19
 #: public/build/extendify-help-center-eabc21dfe936d7b4ce8e.js:4
 #: src/Agent/tours/users-screen.js:44
 #: src/Agent/tours/welcome.js:250
@@ -2501,49 +2501,49 @@ msgstr "Κάντε κλικ εδώ για να δείτε και να διαχε
 msgid "Users"
 msgstr "Χρήστες"
 
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:19
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:19
 #: public/build/extendify-help-center-eabc21dfe936d7b4ce8e.js:4
 #: src/Agent/tours/users-screen.js:45
 #: src/HelpCenter/tours/users-screen.js:44
 msgid "See all of your users, including admin users in this table."
 msgstr "Δείτε όλους τους χρήστες σας, συμπεριλαμβανομένων των διαχειριστών, σε αυτόν τον πίνακα"
 
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:19
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:19
 #: public/build/extendify-help-center-eabc21dfe936d7b4ce8e.js:4
 #: src/Agent/tours/users-screen.js:64
 #: src/HelpCenter/tours/users-screen.js:63
 msgid "Edit user information"
 msgstr "Επεξεργασία πληροφοριών χρήστη"
 
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:19
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:19
 #: public/build/extendify-help-center-eabc21dfe936d7b4ce8e.js:4
 #: src/Agent/tours/users-screen.js:65
 #: src/HelpCenter/tours/users-screen.js:64
 msgid "Click the edit button to change the user's role, manage their account, or change their profile information."
 msgstr "Κάντε κλικ στο κουμπί επεξεργασίας για να αλλάξετε τον ρόλο του χρήστη, να διαχειριστείτε τον λογαριασμό του ή να αλλάξετε τις πληροφορίες προφίλ του."
 
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:19
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:19
 #: public/build/extendify-help-center-eabc21dfe936d7b4ce8e.js:4
 #: src/Agent/tours/users-screen.js:95
 #: src/HelpCenter/tours/users-screen.js:94
 msgid "Search for users"
 msgstr "Αναζήτηση χρηστών"
 
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:19
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:19
 #: public/build/extendify-help-center-eabc21dfe936d7b4ce8e.js:4
 #: src/Agent/tours/users-screen.js:96
 #: src/HelpCenter/tours/users-screen.js:95
 msgid "Use the search bar to find a particular user."
 msgstr "Χρησιμοποιήστε τη γραμμή αναζήτησης για να βρείτε έναν συγκεκριμένο χρήστη."
 
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:19
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:19
 #: public/build/extendify-help-center-eabc21dfe936d7b4ce8e.js:4
 #: src/Agent/tours/users-screen.js:121
 #: src/HelpCenter/tours/users-screen.js:120
 msgid "Add a new user"
 msgstr "Προσθήκη νέου χρήστη"
 
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:19
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:19
 #: public/build/extendify-help-center-eabc21dfe936d7b4ce8e.js:4
 #: src/Agent/tours/users-screen.js:122
 #: src/HelpCenter/tours/users-screen.js:121
@@ -2726,14 +2726,14 @@ msgstr "Πίσω"
 msgid "Extendify Help Center"
 msgstr "Κέντρο Βοήθειας Extendify"
 
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:14
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:14
 #: public/build/extendify-help-center-eabc21dfe936d7b4ce8e.js:4
 #: src/Agent/components/GuidedTour.jsx:313
 #: src/HelpCenter/components/tours/GuidedTour.jsx:315
 msgid "Tour"
 msgstr "Περιήγηση"
 
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:14
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:14
 #: public/build/extendify-auto-launch-fa577a30dd41aedded0e.js:51
 #: public/build/extendify-help-center-eabc21dfe936d7b4ce8e.js:4
 #: public/build/extendify-launch-86d848925fad51ac7e3f.js:8
@@ -2744,7 +2744,7 @@ msgstr "Περιήγηση"
 msgid "Back"
 msgstr "Πίσω"
 
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:14
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:14
 #: public/build/extendify-help-center-eabc21dfe936d7b4ce8e.js:4
 #: src/Agent/components/GuidedTour.jsx:434
 #: src/HelpCenter/components/tours/GuidedTour.jsx:441
@@ -2752,7 +2752,7 @@ msgid "Tour Steps"
 msgstr "Βήματα περιήγησης"
 
 #. translators: %1$s is the current step, %2$s is the total number of steps
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:17
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:17
 #: public/build/extendify-help-center-eabc21dfe936d7b4ce8e.js:7
 #: src/Agent/components/GuidedTour.jsx:443
 #: src/HelpCenter/components/tours/GuidedTour.jsx:450
@@ -2760,7 +2760,7 @@ msgstr "Βήματα περιήγησης"
 msgid "%1$s of %2$s"
 msgstr "%1$s από %2$s"
 
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:17
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:17
 #: public/build/extendify-auto-launch-fa577a30dd41aedded0e.js:46
 #: public/build/extendify-help-center-eabc21dfe936d7b4ce8e.js:7
 #: public/build/extendify-launch-86d848925fad51ac7e3f.js:8
@@ -2846,8 +2846,8 @@ msgstr "Ενημερωτικό"
 msgid "Persuasive"
 msgstr "Πειστικός"
 
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:81
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:89
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:81
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:89
 #: public/build/extendify-launch-86d848925fad51ac7e3f.js:8
 #: src/Agent/components/redirects/RedirectFontsVariations.jsx:12
 #: src/Agent/components/redirects/RedirectThemeVariations.jsx:17
@@ -2999,8 +2999,8 @@ msgstr "Κάτι ακόμα πριν ξεκινήσουμε"
 msgid "Hey there, Launch is powered by Extendable and is required to proceed. You can install it from the link below and start over once activated."
 msgstr "Γεια σας, το Launch υποστηρίζεται από το Extendable και απαιτείται για να συνεχίσετε. Μπορείτε να το εγκαταστήσετε από τον παρακάτω σύνδεσμο και να ξεκινήσετε ξανά μόλις ενεργοποιηθεί."
 
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:4
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:27
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:4
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:27
 #: public/build/extendify-auto-launch-fa577a30dd41aedded0e.js:46
 #: public/build/extendify-launch-86d848925fad51ac7e3f.js:17
 #: src/Agent/components/messages/AgentMessage.jsx:19
@@ -3245,7 +3245,7 @@ msgstr "Διαγραφή υπάρχοντος περιεχομένου"
 msgid "Create a new page"
 msgstr "Δημιουργία νέας σελίδας"
 
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:19
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:19
 #: public/build/extendify-help-center-eabc21dfe936d7b4ce8e.js:4
 #: public/build/extendify-page-creator-cbcefacf00c477a9dfaa.js:1
 #: src/Agent/tours/page-creator.js:6
@@ -3446,42 +3446,42 @@ msgstr "Πείτε μας για τον ιστότοπό σας"
 msgid "Share your vision, and we'll craft a landing page that's perfectly tailored to your needs, ready to launch in no time. Let's begin by learning more about what you're building."
 msgstr "Μοιραστείτε το όραμά σας και θα δημιουργήσουμε μια σελίδα προορισμού προσαρμοσμένη στις ανάγκες σας, έτοιμη για άμεση εκκίνηση. Ας ξεκινήσουμε μαθαίνοντας περισσότερα για αυτό που δημιουργείτε."
 
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:19
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:19
 #: public/build/extendify-help-center-eabc21dfe936d7b4ce8e.js:4
 #: src/Agent/tours/page-creator.js:30
 #: src/HelpCenter/tours/page-creator.js:30
 msgid "Press here to get started with your AI Page Generator."
 msgstr "Πατήστε εδώ για να ξεκινήσετε με τον AI Page Generator σας."
 
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:19
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:19
 #: public/build/extendify-help-center-eabc21dfe936d7b4ce8e.js:4
 #: src/Agent/tours/page-creator.js:53
 #: src/HelpCenter/tours/page-creator.js:53
 msgid "Page description"
 msgstr "Περιγραφή σελίδας"
 
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:19
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:19
 #: public/build/extendify-help-center-eabc21dfe936d7b4ce8e.js:4
 #: src/Agent/tours/page-creator.js:54
 #: src/HelpCenter/tours/page-creator.js:54
 msgid "Write a description of the page you want to create. Be as detailed as you like. We will create a page based on this description."
 msgstr "Γράψτε μια περιγραφή της σελίδας που θέλετε να δημιουργήσετε. Να είστε όσο λεπτομερείς επιθυμείτε. Θα δημιουργήσουμε μια σελίδα βάσει αυτής της περιγραφής."
 
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:19
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:19
 #: public/build/extendify-help-center-eabc21dfe936d7b4ce8e.js:4
 #: src/Agent/tours/page-creator.js:82
 #: src/HelpCenter/tours/page-creator.js:82
 msgid "If needed, update your site description here. We use this to add additional context about your website."
 msgstr "Αν χρειάζεται, ενημερώστε την περιγραφή του ιστότοπού σας εδώ. Χρησιμοποιούμε αυτήν για να προσθέσουμε επιπλέον πληροφορίες σχετικά με τον ιστότοπό σας."
 
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:19
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:19
 #: public/build/extendify-help-center-eabc21dfe936d7b4ce8e.js:4
 #: src/Agent/tours/page-creator.js:105
 #: src/HelpCenter/tours/page-creator.js:105
 msgid "Generate your page"
 msgstr "Δημιουργήστε τη σελίδα σας"
 
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:19
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:19
 #: public/build/extendify-help-center-eabc21dfe936d7b4ce8e.js:4
 #: src/Agent/tours/page-creator.js:106
 #: src/HelpCenter/tours/page-creator.js:106
@@ -3545,39 +3545,39 @@ msgstr "Εμφάνιση περισσότερων ερωτήσεων"
 msgid "Hebrew"
 msgstr "Εβραϊκά"
 
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:81
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:81
 #: src/Agent/hooks/useThemeVariations.js:17
 msgid "Failed to fetch theme variations."
 msgstr "Αποτυχία ανάκτησης παραλλαγών θέματος."
 
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:81
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:81
 #: src/Agent/components/redirects/RedirectThemeVariations.jsx:8
 msgid "Hey there! It looks like you are trying to change your theme colors, but you are not on a page where we can do that."
 msgstr "Γεια σας! Φαίνεται ότι προσπαθείτε να αλλάξετε τα χρώματα του θέματος, αλλά δεν βρίσκεστε σε σελίδα όπου μπορούμε να το κάνουμε αυτό."
 
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:81
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:89
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:81
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:89
 #: src/Agent/components/redirects/RedirectFontsVariations.jsx:10
 #: src/Agent/components/redirects/RedirectThemeVariations.jsx:15
 #: src/Agent/workflows/theme/components/Redirect.jsx:10
 msgid "Suggestion:"
 msgstr "Πρόταση:"
 
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:4
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:17
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:21
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:24
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:27
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:30
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:32
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:35
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:40
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:57
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:61
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:71
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:77
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:83
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:89
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:4
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:17
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:21
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:24
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:27
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:30
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:32
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:35
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:40
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:57
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:61
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:71
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:77
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:83
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:89
 #: public/build/extendify-quick-edit-8bab8f8f62c3e7af92e2.js:4
 #: public/build/extendify-quick-edit-8bab8f8f62c3e7af92e2.js:16
 #: public/build/extendify-quick-edit-8bab8f8f62c3e7af92e2.js:19
@@ -3612,9 +3612,9 @@ msgstr "Πρόταση:"
 msgid "Cancel"
 msgstr "Ακύρωση"
 
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:21
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:27
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:40
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:21
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:27
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:40
 #: src/Agent/workflows/block-selector/components/UpdateBlockConfirm.jsx:107
 #: src/Agent/workflows/block-selector/components/UpdateImageConfirm.jsx:190
 #: src/Agent/workflows/content/components/UpdatePostConfirm.jsx:40
@@ -3622,121 +3622,121 @@ msgstr "Ακύρωση"
 msgid "The agent has made the changes in the browser. Please review and confirm."
 msgstr "Ο εκπρόσωπος έκανε τις αλλαγές στο πρόγραμμα περιήγησης. Παρακαλώ ελέγξτε και επιβεβαιώστε."
 
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:19
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:19
 #: src/Agent/tours/library-tour.js:7
 msgid "Tour the design library"
 msgstr "Περιήγηση στη βιβλιοθήκη σχεδίων"
 
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:19
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:19
 #: src/Agent/tours/page-creator.js:7
 msgid "Learn about the AI Page Generator"
 msgstr "Μάθετε για το AI Page Generator"
 
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:19
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:19
 #: src/Agent/tours/page-editor.js:14
 msgid "Tour the page editor"
 msgstr "Περιήγηση στον επεξεργαστή σελίδας"
 
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:19
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:19
 #: src/Agent/tours/plugin-install.js:6
 msgid "See how to install a plugin"
 msgstr "Δείτε πώς να εγκαταστήσετε ένα πρόσθετο"
 
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:19
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:19
 #: src/Agent/tours/plugin-management.js:6
 msgid "Learn how to manage plugins"
 msgstr "Μάθετε πώς να διαχειρίζεστε πρόσθετα"
 
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:19
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:19
 #: src/Agent/tours/site-assistant.js:6
 msgid "Tour the Site Assistant"
 msgstr "Περιήγηση στον Βοηθό Ιστότοπου"
 
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:19
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:19
 #: src/Agent/tours/users-screen.js:6
 msgid "Tour the Users screen"
 msgstr "Περιήγηση στην οθόνη Χρηστών"
 
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:4
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:4
 #: src/Agent/components/ChatInput.jsx:166
 msgid "Ask anything"
 msgstr "Ρωτήστε οτιδήποτε"
 
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:4
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:4
 #: src/Agent/components/ChatInput.jsx:223
 msgid "Send message"
 msgstr "Αποστολή μηνύματος"
 
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:7
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:7
 #: src/Agent/components/ScrollDownButton.jsx:22
 msgid "Scroll down"
 msgstr "Κύλιση προς τα κάτω"
 
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:4
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:4
 #: src/Agent/components/messages/StatusIndicator.jsx:18
 msgid "Working on it..."
 msgstr "Το επεξεργάζομαι..."
 
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:4
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:4
 #: src/Agent/components/messages/StatusIndicator.jsx:24
 msgid "Gathering data..."
 msgstr "Συλλογή δεδομένων..."
 
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:4
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:4
 #: src/Agent/components/messages/StatusIndicator.jsx:25
 msgid "Analyzing..."
 msgstr "Ανάλυση..."
 
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:4
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:4
 #: src/Agent/components/messages/StatusIndicator.jsx:26
 msgid "Usage limit reached"
 msgstr "Έχει επιτευχθεί το όριο χρήσης"
 
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:4
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:4
 #: src/Agent/components/messages/StatusIndicator.jsx:27
 msgid "Usage limit restored"
 msgstr "Το όριο χρήσης αποκαταστάθηκε"
 
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:7
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:7
 #: src/Agent/components/messages/WorkflowMessage.jsx:75
 msgid "Workflow completed successfully"
 msgstr "Η ροή εργασίας ολοκληρώθηκε με επιτυχία"
 
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:4
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:4
 #: src/Agent/components/messages/WorkflowComponent.jsx:17
 msgid "Component not available"
 msgstr "Το στοιχείο δεν είναι διαθέσιμο"
 
 #. translators: This is for when a component doesn't exist
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:7
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:7
 #: src/Agent/components/messages/WorkflowComponent.jsx:22
 msgid "It may have been removed or is not available for your account."
 msgstr "Μπορεί να έχει αφαιρεθεί ή να μην είναι διαθέσιμο για τον λογαριασμό σας."
 
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:7
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:7
 #: src/Agent/components/messages/WorkflowMessage.jsx:38
 msgid "What's next? Would you like to do something else?"
 msgstr "Τι ακολουθεί; Θέλετε να κάνετε κάτι άλλο;"
 
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:4
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:4
 #: src/Agent/components/layouts/DragResizeLayout.jsx:117
 #: src/Agent/components/layouts/SidebarLayout.jsx:116
 msgid "Close window"
 msgstr "Κλείσιμο παραθύρου"
 
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:4
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:4
 #: src/Agent/components/layouts/DragResizeLayout.jsx:158
 msgid "Drag to move"
 msgstr "Σύρετε για μετακίνηση"
 
 #. translators: %s is a human-readable time difference, e.g. "2 hours from now"
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:10
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:10
 #: src/Agent/components/messages/UsageMessage.jsx:30
 #, js-format
 msgid "You have reached your daily messages limit. Your limit will reset in %s."
 msgstr "Έχετε φτάσει το ημερήσιο όριο μηνυμάτων σας. Το όριό σας θα επαναφερθεί σε %s."
 
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:14
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:14
 #: src/Agent/components/buttons/AdminBar.jsx:42
 #: src/Agent/components/buttons/Mobile.jsx:38
 #: src/Agent/components/buttons/PostEditor.jsx:47
@@ -3744,7 +3744,7 @@ msgid "Open Agent"
 msgstr "Άνοιγμα πράκτορα"
 
 #: app/Toolbar/Frontend.php:187
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:14
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:14
 #: src/Agent/components/buttons/AdminBar.jsx:45
 #: src/Agent/components/buttons/Mobile.jsx:46
 #: src/Agent/components/buttons/PostEditor.jsx:54
@@ -3852,7 +3852,7 @@ msgstr "Από εδώ μπορείτε να προσαρμόσετε τις δι
 msgid "Take the welcome tour"
 msgstr "Κάντε την περιήγηση καλωσορίσματος"
 
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:14
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:14
 #: src/Agent/components/buttons/Mobile.jsx:49
 msgid "How can we help you today?"
 msgstr "Πώς μπορούμε να σας βοηθήσουμε σήμερα;"
@@ -3889,33 +3889,33 @@ msgstr "Εργαλείο υπόδειξης που δείχνει το κουμ�
 msgid "Welcome to your new site! When you're ready, press here to edit this page."
 msgstr "Καλώς ήρθατε στον νέο σας ιστότοπο! Όταν είστε έτοιμοι, πατήστε εδώ για να επεξεργαστείτε αυτήν τη σελίδα."
 
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:10
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:10
 #: public/build/extendify-quick-edit-8bab8f8f62c3e7af92e2.js:16
 #: src/Agent/components/PageDocument.jsx:25
 #: src/QuickEdit/components/modals/SiteIdentityModal.jsx:167
 msgid "Remove"
 msgstr "Αφαίρεση"
 
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:4
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:4
 #: src/Agent/components/DOMHighlighter.jsx:250
 msgid "Remove highlight"
 msgstr "Αφαίρεση επισήμανσης"
 
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:14
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:14
 #: src/Agent/Agent.jsx:624
 msgid "AI Agent can make mistakes. Check changes before saving."
 msgstr "Ο πράκτορας AI μπορεί να κάνει λάθη. Ελέγξτε τις αλλαγές πριν από την αποθήκευση."
 
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:4
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:30
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:35
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:4
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:30
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:35
 #: src/Agent/workflows/abilities/components/AbilityRunGate.jsx:29
 #: src/Agent/workflows/content/components/UpdatePostStatusConfirm.jsx:51
 #: src/Agent/workflows/settings/components/UpdateSettingConfirm.jsx:62
 msgid "Confirm"
 msgstr "Επιβεβαίωση"
 
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:4
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:4
 #: src/Agent/components/messages/StatusIndicator.jsx:16
 msgid "Thinking..."
 msgstr "Σκέψη..."
@@ -3927,73 +3927,73 @@ msgstr "Σκέψη..."
 msgid "WP Admin Dashboard"
 msgstr "Πίνακας Ελέγχου WP Admin"
 
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:75
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:75
 #: src/Agent/hooks/useThemeFontsVariations.js:29
 msgid "Failed to fetch theme font variations."
 msgstr "Αποτυχία ανάκτησης παραλλαγών γραμματοσειρών θέματος."
 
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:75
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:75
 #: src/Agent/workflows/theme/change-theme-fonts-variation.js:13
 msgid "Hey there! It looks like you are trying to change your theme fonts, but you are not on a page where we can do that."
 msgstr "Γεια σας! Φαίνεται ότι προσπαθείτε να αλλάξετε τις γραμματοσειρές του θέματός σας, αλλά δεν βρίσκεστε σε σελίδα όπου μπορούμε να το κάνουμε αυτό."
 
 #. translators: A chat message shown to the user
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:77
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:77
 #: src/Agent/workflows/theme/components/SelectThemeFontsVariation.jsx:58
 msgid "Loading font variations..."
 msgstr "Φόρτωση παραλλαγών γραμματοσειράς..."
 
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:4
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:4
 #: src/Agent/components/ChatTools.jsx:36
 msgid "Select"
 msgstr "Επιλέξτε"
 
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:4
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:4
 #: src/Agent/components/ChatInput.jsx:162
 msgid "What do you want to change in the selected content?"
 msgstr "Τι θέλετε να αλλάξετε στο επιλεγμένο περιεχόμενο;"
 
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:10
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:10
 #: src/Agent/components/PageDocument.jsx:12
 msgid "Selected content"
 msgstr "Επιλεγμένο περιεχόμενο"
 
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:17
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:27
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:17
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:27
 #: src/Agent/components/ImageUploader.jsx:204
 #: src/Agent/workflows/block-selector/components/UpdateImageConfirm.jsx:13
 msgid "Open Media Library"
 msgstr "Άνοιγμα βιβλιοθήκης πολυμέσων"
 
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:27
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:27
 #: src/Agent/workflows/block-selector/components/UpdateImageConfirm.jsx:138
 #, js-format
 msgid "The agent has requested the media library. Press \"%s\" to upload or select an image."
 msgstr "Ο πράκτορας ζήτησε τη βιβλιοθήκη πολυμέσων. Πατήστε \"%s\" για να μεταφορτώσετε ή να επιλέξετε μια εικόνα."
 
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:27
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:27
 #: src/Agent/workflows/block-selector/components/UpdateImageConfirm.jsx:155
 msgid "Select or Upload Image"
 msgstr "Επίλεξε ή μεταφόρτωσε εικόνα"
 
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:21
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:21
 #: src/Agent/workflows/block-selector/components/GenerateImageConfirm.jsx:121
 msgid "An unknown error occurred."
 msgstr "Προέκυψε ένα άγνωστο σφάλμα."
 
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:24
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:24
 #: src/Agent/workflows/block-selector/components/GenerateImageConfirm.jsx:228
 msgid "Image generated successfully!"
 msgstr "Η εικόνα δημιουργήθηκε με επιτυχία!"
 
 #. translators: %1$s is the number of credits remaining, %2$s is the total credits
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:27
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:27
 #: src/Agent/workflows/block-selector/components/GenerateImageConfirm.jsx:261
 #, js-format
 msgid "You have %1$s of %2$s daily image credits remaining."
 msgstr "Έχετε %1$s από %2$s ημερήσια διαθέσιμα credits εικόνας."
 
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:27
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:27
 #: src/Agent/workflows/content/components/GeneratePageResult.jsx:19
 msgid "The agent has finished creating your page. Press take me there to visit your new page or dismiss to remove this notice."
 msgstr "Ο πράκτορας ολοκλήρωσε τη δημιουργία της σελίδας σας. Πατήστε \"μεταβείτε εκεί\" για να επισκεφθείτε τη νέα σας σελίδα ή \"απόρριψη\" για να αφαιρέσετε αυτήν την ειδοποίηση."
@@ -4003,41 +4003,41 @@ msgstr "Ο πράκτορας ολοκλήρωσε τη δημιουργία τ�
 msgid "E.g., Create an \"About Us\" page highlighting our story, mission, values and team overview."
 msgstr "Π.χ., Δημιουργήστε μια σελίδα \"Σχετικά με εμάς\" που αναδεικνύει την ιστορία μας, την αποστολή, τις αξίες και την επισκόπηση της ομάδας."
 
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:21
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:21
 #: src/Agent/workflows/block-selector/components/GenerateImageConfirm.jsx:116
 msgid "No image returned"
 msgstr "Δεν επιστράφηκε εικόνα"
 
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:4
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:4
 #: src/Agent/components/messages/StatusIndicator.jsx:20
 msgid "Formulating a response..."
 msgstr "Διαμόρφωση απάντησης..."
 
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:4
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:4
 #: src/Agent/components/messages/StatusIndicator.jsx:21
 msgid "Reviewing logic..."
 msgstr "Ανασκόπηση λογικής..."
 
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:4
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:4
 #: src/Agent/components/layouts/MobileLayout.jsx:63
 msgid "Minimize window"
 msgstr "Ελαχιστοποίηση παραθύρου"
 
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:4
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:4
 #: src/Agent/components/messages/StatusIndicator.jsx:19
 msgid "Interpreting message..."
 msgstr "Ερμηνεία μηνύματος..."
 
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:32
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:32
 #: src/Agent/workflows/plugins/components/InstallPlugin.jsx:79
 msgid "There was an error installing the plugin. You may try again"
 msgstr "Παρουσιάστηκε σφάλμα κατά την εγκατάσταση του πρόσθετου. Μπορείτε να δοκιμάσετε ξανά"
 
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:21
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:24
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:27
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:32
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:89
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:21
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:24
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:27
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:32
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:89
 #: src/Agent/workflows/block-selector/components/GenerateImageConfirm.jsx:245
 #: src/Agent/workflows/block-selector/components/UpdateBlockConfirm.jsx:126
 #: src/Agent/workflows/content/components/UpdatePostConfirm.jsx:60
@@ -4046,22 +4046,22 @@ msgstr "Παρουσιάστηκε σφάλμα κατά την εγκατάστ
 msgid "Try Again"
 msgstr "Δοκιμάστε ξανά"
 
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:32
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:32
 #: src/Agent/workflows/plugins/components/InstallPlugin.jsx:102
 msgid "Installing plugin..."
 msgstr "Εγκατάσταση πρόσθετου..."
 
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:32
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:32
 #: src/Agent/workflows/plugins/components/InstallPlugin.jsx:103
 msgid "Activating plugin..."
 msgstr "Ενεργοποίηση προσθέτου..."
 
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:32
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:32
 #: src/Agent/workflows/plugins/components/InstallPlugin.jsx:115
 msgid "The agent is requesting to install and activate a plugin."
 msgstr "Ο πράκτορας ζητά να εγκαταστήσει και να ενεργοποιήσει ένα πρόσθετο."
 
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:35
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:35
 #: src/Agent/workflows/plugins/components/InstallPlugin.jsx:152
 msgid "Install Plugin"
 msgstr "Εγκατάσταση πρόσθετου"
@@ -4086,56 +4086,56 @@ msgid "By using AI features, you agree with the %1$sTerms of Use and Privacy Pol
 msgstr "Χρησιμοποιώντας τις δυνατότητες AI, συμφωνείτε με τους %1$sΌρους Χρήσης και την Πολιτική Απορρήτου%2$s."
 
 #. translators: A chat message shown to the user
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:75
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:75
 #: src/Agent/workflows/theme/components/SelectThemeFontsVariation.jsx:45
 msgid "We were unable to find any variations for your theme"
 msgstr "Δεν μπορέσαμε να βρούμε παραλλαγές για το θέμα σας"
 
 #. translators: This message is shown when the AI agent fails to find a suitable workflow.
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:12
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:12
 #: src/Agent/Agent.jsx:111
 msgid "Something went wrong while trying to start this request. Please try again."
 msgstr "Κάτι πήγε στραβά κατά την εκκίνηση αυτού του αιτήματος. Παρακαλώ δοκιμάστε ξανά."
 
 #. translators: This message is shown when the AI agent encounters a general error.
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:14
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:14
 #: src/Agent/Agent.jsx:565
 msgid "Sorry, something went wrong. I tried but wasn't able to do this request. Please try again."
 msgstr "Λυπάμαι, κάτι πήγε στραβά. Προσπάθησα αλλά δεν μπόρεσα να ολοκληρώσω το αίτημα. Παρακαλώ δοκιμάστε ξανά."
 
 #. translators: A chat message shown to the user
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:24
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:24
 #: src/Agent/workflows/block-selector/components/GenerateImageConfirm.jsx:170
 #, js-format
 msgid "Error generating image: %s"
 msgstr "Σφάλμα κατά τη δημιουργία εικόνας: %s"
 
 #. translators: %1$s and %2$s are HTML tags. %1$s opens a span with screen-reader-only text, and %2$s closes that span.
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:35
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:35
 #: src/Agent/workflows/plugins/components/InstallPlugin.jsx:134
 #, js-format
 msgid "Plugin Details %1$s(opens in a new tab)%2$s"
 msgstr "Λεπτομέρειες Πρόσθετου %1$s(ανοίγει σε νέα καρτέλα)%2$s"
 
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:35
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:35
 #: src/Agent/workflows/settings/components/UpdateSettingConfirm.jsx:45
 msgid "Apply this setting change?"
 msgstr "Εφαρμογή αυτής της αλλαγής ρύθμισης;"
 
 #. translators: "site style" refers to the structural aesthetic style for the site.
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:66
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:66
 #: src/Agent/workflows/theme/change-site-vibes.js:17
 msgid "Hey there! It looks like you are trying to change your site style, but you are not on a page where we can do that."
 msgstr "Γεια σας! Φαίνεται ότι προσπαθείτε να αλλάξετε το στυλ του ιστότοπού σας, αλλά δεν βρίσκεστε σε σελίδα όπου μπορούμε να το κάνουμε αυτό."
 
 #. translators: A chat message shown to the user
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:81
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:81
 #: src/Agent/workflows/theme/components/SelectThemeVariation.jsx:54
 msgid "We were unable to find any colors for your theme"
 msgstr "Δεν μπορέσαμε να βρούμε χρώματα για το θέμα σας"
 
 #. translators: A chat message shown to the user
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:83
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:83
 #: src/Agent/workflows/theme/components/SelectThemeVariation.jsx:67
 msgid "Loading available colors..."
 msgstr "Φόρτωση διαθέσιμων χρωμάτων..."
@@ -4152,7 +4152,7 @@ msgstr "Εφαρμογή στυλ ιστότοπου"
 msgid "Customizing your site style"
 msgstr "Προσαρμογή του στυλ του ιστότοπού σας"
 
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:4
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:4
 #: public/build/extendify-assist-page-5abc4f3121f907529fcd.js:10
 #: public/build/extendify-draft-21d96962600c40354b54.js:1
 #: src/Agent/icons.jsx:12
@@ -4161,46 +4161,46 @@ msgstr "Προσαρμογή του στυλ του ιστότοπού σας"
 msgid "Magic Icon"
 msgstr "Μαγικό εικονίδιο"
 
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:4
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:4
 #: src/Agent/icons.jsx:39
 msgid "Magic Sparkle Animation"
 msgstr "Κινούμενη λάμψη μαγείας"
 
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:4
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:4
 #: public/build/extendify-help-center-eabc21dfe936d7b4ce8e.js:1
 #: src/Agent/icons.jsx:113
 #: src/HelpCenter/components/ai-chat/icons.jsx:41
 msgid "Thumb Down Icon"
 msgstr "Εικονίδιο αντίχειρα προς τα κάτω"
 
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:4
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:4
 #: public/build/extendify-help-center-eabc21dfe936d7b4ce8e.js:1
 #: src/Agent/icons.jsx:125
 #: src/HelpCenter/components/ai-chat/icons.jsx:53
 msgid "Thumb Up Icon"
 msgstr "Εικονίδιο αντίχειρα προς τα πάνω"
 
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:4
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:4
 #: src/Agent/icons.jsx:132
 msgid "Sparkle Icon"
 msgstr "Εικονίδιο λάμψης"
 
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:4
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:4
 #: src/Agent/icons.jsx:147
 msgid "Tool Select Icon"
 msgstr "Εργαλείο επιλογής εικονιδίου"
 
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:4
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:4
 #: src/Agent/icons.jsx:179
 msgid "Selected Content Icon"
 msgstr "Επιλεγμένο εικονίδιο περιεχομένου"
 
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:7
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:7
 #: src/Agent/components/messages/WorkflowMessage.jsx:65
 msgid "Success icon"
 msgstr "Εικονίδιο επιτυχίας"
 
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:4
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:4
 #: src/Agent/components/ErrorMessage.jsx:15
 msgid "Error icon"
 msgstr "Εικονίδιο σφάλματος"
@@ -4653,35 +4653,35 @@ msgstr "Βελτίωση του ιστότοπού σας"
 msgid "Setting up essential tools"
 msgstr "Ρύθμιση βασικών εργαλείων"
 
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:17
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:17
 #: src/Agent/components/ImageUploader.jsx:170
 msgid "Drop images to upload"
 msgstr "Σύρετε εδώ εικόνες για μεταφόρτωση"
 
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:24
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:24
 #: src/Agent/workflows/block-selector/components/GenerateImageConfirm.jsx:65
 msgid "Failed to save image"
 msgstr "Αποτυχία αποθήκευσης εικόνας"
 
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:24
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:24
 #: src/Agent/workflows/block-selector/components/GenerateImageConfirm.jsx:184
 #, js-format
 msgid "It looks like you've run out of credits. They'll refresh in %s, so check back then."
 msgstr "Φαίνεται ότι έχετε εξαντλήσει τις μονάδες σας. Θα ανανεωθούν σε %s, οπότε ελέγξτε ξανά τότε."
 
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:24
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:24
 #: src/Agent/workflows/block-selector/components/GenerateImageConfirm.jsx:254
 msgid "Saving..."
 msgstr "Πραγματοποιείται αποθήκευση..."
 
 #. translators: %1$s is the current page or post status, and %2$s is the updated page or post status.
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:30
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:30
 #: src/Agent/workflows/content/components/UpdatePostStatusConfirm.jsx:28
 #, js-format
 msgid "Status will change from \"%s\" to \"%s\", please confirm to save."
 msgstr "Η κατάσταση θα αλλάξει από \"%1$s\" σε \"%2$s\", επιβεβαιώστε για αποθήκευση."
 
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:4
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:4
 #: src/Agent/components/ChatInput.jsx:189
 msgid "Message too long"
 msgstr "Το μήνυμα είναι πολύ μακρύ"
@@ -4692,7 +4692,7 @@ msgid "A \"Shop\" page will also be automatically created."
 msgstr "Θα δημιουργηθεί αυτόματα και μια σελίδα \"Κατάστημα\""
 
 #. translators: This is a status message. 'Loading' is a verb — the app is currently loading the animation options. It is not referring to 'loading animation' as a compound noun.
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:57
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:57
 #: src/Agent/workflows/theme/components/SelectAnimation.jsx:117
 msgid "Loading animation options..."
 msgstr "Επιλογές φόρτωσης κινούμενων γραφικών..."
@@ -4792,7 +4792,7 @@ msgstr "Φαίνεται ότι έχετε ξαναβρεθεί εδώ. Πρέπ
 msgid "%s pages/posts will be deleted."
 msgstr "Οι %s σελίδες/δημοσιεύσεις θα διαγραφούν"
 
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:4
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:4
 #: public/build/extendify-auto-launch-fa577a30dd41aedded0e.js:49
 #: src/Agent/components/messages/StatusIndicator.jsx:23
 #: src/AutoLaunch/components/RestartLaunchModal.jsx:164
@@ -4804,7 +4804,7 @@ msgstr "Επεξεργασία..."
 msgid "Describe the website you want to build"
 msgstr "Περιγράψτε την ιστοσελίδα που θέλετε να δημιουργήσετε"
 
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:89
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:89
 #: src/Agent/workflows/theme/components/SelectGeneratedPalette.jsx:107
 msgid "We were unable to generate color palettes. Please try again."
 msgstr "Δεν μπορέσαμε να δημιουργήσουμε παλέτες χρωμάτων. Παρακαλώ δοκιμάστε ξανά"
@@ -4815,56 +4815,56 @@ msgstr "Δεν μπορέσαμε να δημιουργήσουμε παλέτε
 msgid "Setting the website style"
 msgstr "Ρύθμιση του στυλ της ιστοσελίδας"
 
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:4
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:4
 #: src/Agent/components/OptionsPopover.jsx:78
 msgid "View more options"
 msgstr "Δείτε περισσότερες επιλογές"
 
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:7
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:7
 #: src/Agent/components/messages/WorkflowMessage.jsx:91
 msgid "Workflow was canceled"
 msgstr "Η ροή εργασίας ακυρώθηκε"
 
 #. translators: This message show above a UI where the user can select a different animation for their site.
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:61
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:61
 #: src/Agent/workflows/theme/change-animation.js:16
 msgid "Below you can select a different animation for your site."
 msgstr "Παρακάτω μπορείτε να επιλέξετε μια διαφορετική κίνηση για τον ιστότοπό σας."
 
 #. translators: This message show above a UI where the user can select a different site style variation for their theme.
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:75
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:75
 #: src/Agent/workflows/theme/change-site-vibes.js:29
 msgid "Below you can select a different site style variation for your theme."
 msgstr "Παρακάτω μπορείτε να επιλέξετε μια διαφορετική παραλλαγή στυλ για το θέμα σας."
 
 #. translators: This message show above a UI where the user can select a different font variation for their theme.
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:81
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:81
 #: src/Agent/workflows/theme/change-theme-fonts-variation.js:27
 msgid "Below you can select a different font variation for your theme."
 msgstr "Παρακάτω μπορείτε να επιλέξετε διαφορετική παραλλαγή γραμματοσειράς για το θέμα σας."
 
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:81
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:81
 #: src/Agent/workflows/theme/change-theme-fonts-variation.js:34
 msgid "Updated the theme fonts"
 msgstr "Οι γραμματοσειρές του θέματος ενημερώθηκαν"
 
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:81
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:81
 #: src/Agent/workflows/theme/change-theme-fonts-variation.js:35
 msgid "Canceled the theme fonts update"
 msgstr "Ακυρώθηκε η ενημέρωση γραμματοσειρών θέματος"
 
 #. translators: This message show above a UI where the user can select a different color variation for their theme.
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:89
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:89
 #: src/Agent/workflows/theme/change-theme-variation.js:21
 msgid "Below you can select a different color variation for your theme."
 msgstr "Παρακάτω μπορείτε να επιλέξετε μια διαφορετική παραλλαγή χρώματος για το θέμα σας."
 
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:89
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:89
 #: src/Agent/workflows/theme/change-theme-variation.js:28
 msgid "Updated the theme color"
 msgstr "Ενημερώθηκε το χρώμα του θέματος"
 
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:89
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:89
 #: src/Agent/workflows/theme/change-theme-variation.js:29
 msgid "Canceled the theme color update"
 msgstr "Ακυρώθηκε η ενημέρωση χρώματος θέματος"
@@ -4874,7 +4874,7 @@ msgstr "Ακυρώθηκε η ενημέρωση χρώματος θέματος
 msgid "Enhance with AI"
 msgstr "Βελτίωση με AI"
 
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:19
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:19
 #: src/Agent/state/chat.js:23
 msgid ""
 "#### Your site is ready 🎉\n"
@@ -4932,7 +4932,7 @@ msgid "Picking the perfect design"
 msgstr "Επιλογή τέλειου σχεδιασμού"
 
 #. translators: No value found message for when a WP setting has no value.
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:40
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:40
 msgid "No value found"
 msgstr "Δεν βρέθηκε τιμή"
 
@@ -5131,21 +5131,21 @@ msgstr "martyries"
 msgid "Latvian"
 msgstr "Λετονική"
 
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:35
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:63
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:35
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:63
 #: src/Agent/workflows/settings/edit-wp-setting.js:20
 #: src/Agent/workflows/theme/change-site-design.js:46
 msgid "Change website title"
 msgstr "Αλλαγή τίτλου ιστότοπου"
 
 #. translators: "site style" refers to the structural aesthetic style for the site.
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:73
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:73
 #: src/Agent/workflows/theme/change-site-vibes.js:26
 msgid "Change website style"
 msgstr "Αλλαγή στυλ ιστότοπου"
 
 #. translators: "site animation" refers to the animation style for the current site.
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:59
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:59
 #: src/Agent/workflows/theme/change-animation.js:13
 msgid "Change website animation"
 msgstr "Αλλαγή κινούμενης εικόνας ιστότοπου"
@@ -5218,39 +5218,39 @@ msgid "Enhancing the website description..."
 msgstr "Βελτίωση της περιγραφής του ιστοτόπου..."
 
 #. translators: "theme colors" refers to the color palette variation for the current theme.
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:63
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:87
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:63
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:87
 #: src/Agent/workflows/theme/change-site-design.js:39
 #: src/Agent/workflows/theme/change-theme-variation.js:18
 msgid "Change website colors"
 msgstr "Αλλαγή χρωμάτων ιστότοπου"
 
 #. translators: "theme fonts" refers to the font variation for the current theme.
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:79
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:79
 #: src/Agent/workflows/theme/change-theme-fonts-variation.js:24
 msgid "Change website fonts"
 msgstr "Αλλαγή γραμματοσειρών ιστοτόπου"
 
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:63
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:89
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:63
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:89
 #: src/Agent/workflows/theme/change-site-design.js:53
 #: src/Agent/workflows/theme/update-logo.js:13
 msgid "Change website logo"
 msgstr "Αλλαγή λογότυπου ιστοσελίδας"
 
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:7
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:7
 #: src/Agent/components/ChatSuggestions.jsx:138
 msgid "Show more"
 msgstr "Εμφάνιση περισσότερων"
 
 #. translators: "site style" refers to the structural aesthetic style for the site.
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:66
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:66
 #: src/Agent/workflows/theme/components/SelectSiteVibes.jsx:48
 msgid "We were unable to find any website style for your theme."
 msgstr "Δεν μπορέσαμε να βρούμε κανένα στυλ ιστοσελίδας για το θέμα σας."
 
 #. translators: "site style" refers to the structural aesthetic style for the site.
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:71
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:71
 #: src/Agent/workflows/theme/components/SelectSiteVibes.jsx:64
 msgid "Loading website style options..."
 msgstr "Φόρτωση επιλογών στυλ ιστοτόπου..."
@@ -5272,7 +5272,7 @@ msgid "Adding page: %s"
 msgstr "Προσθήκη σελίδας: %s"
 
 #. translators: this is the initial message in the agent chat, welcoming the user. Keep it short and friendly and follow the same markdown format and emoji.
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:19
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:19
 #: src/Agent/state/chat.js:19
 msgid ""
 "#### Your site is ready 🎉\n"
@@ -5281,59 +5281,59 @@ msgstr ""
 "#### Ο ιστότοπός σας είναι έτοιμος 🎉  \n"
 "Θέλετε να εξερευνήσετε άλλα σχέδια ιστοτόπων;"
 
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:61
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:61
 #: src/Agent/workflows/theme/components/change-site-design/DesignOption.jsx:144
 msgid "Preview site design"
 msgstr "Προεπισκόπηση σχεδίασης ιστοτόπου"
 
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:61
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:61
 #: src/Agent/workflows/theme/components/change-site-design/SelectSiteDesign.jsx:391
 msgid "Load more"
 msgstr "Φόρτωσε περισσότερα"
 
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:61
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:61
 #: src/Agent/workflows/theme/change-site-design.js:28
 msgid "Change website design"
 msgstr "Αλλαγή σχεδίασης ιστότοπου"
 
 #. translators: This message show above a UI where the user can select a different site design.
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:63
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:63
 #: src/Agent/workflows/theme/change-site-design.js:31
 msgid "Below you can select a different design for your website."
 msgstr "Παρακάτω μπορείτε να επιλέξετε ένα διαφορετικό σχέδιο για τον ιστότοπό σας."
 
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:63
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:63
 #: src/Agent/workflows/theme/change-site-design.js:61
 msgid "Updated the website design"
 msgstr "Ενημερώθηκε ο σχεδιασμός του ιστότοπου"
 
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:63
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:63
 #: src/Agent/workflows/theme/change-site-design.js:62
 msgid "Canceled the website design update"
 msgstr "Ακυρώθηκε η ενημέρωση του σχεδιασμού του ιστότοπου"
 
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:61
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:61
 #: src/Agent/workflows/theme/change-animation.js:23
 msgid "Updated the website animation"
 msgstr "Ενημερώθηκε η κίνηση του ιστότοπου"
 
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:61
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:61
 #: src/Agent/workflows/theme/change-animation.js:24
 msgid "Canceled the website animation update"
 msgstr "Ακυρώθηκε η ενημέρωση κινούμενης εικόνας του ιστότοπου"
 
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:75
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:75
 #: src/Agent/workflows/theme/change-site-vibes.js:36
 msgid "Updated the website style"
 msgstr "Ενημερώθηκε το στυλ του ιστότοπου"
 
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:75
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:75
 #: src/Agent/workflows/theme/change-site-vibes.js:37
 msgid "Canceled the website style update"
 msgstr "Ακυρώθηκε η ενημέρωση του στυλ ιστοτόπου"
 
 #. translators: A chat message shown to the user when their selected color variation cannot be applied
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:85
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:85
 #: src/Agent/workflows/theme/components/SelectThemeVariation.jsx:33
 msgid "We were unable to apply your selected colors. Please try again."
 msgstr "Δεν ήταν δυνατή η εφαρμογή των επιλεγμένων χρωμάτων σας. Παρακαλώ δοκιμάστε ξανά."
@@ -5344,14 +5344,14 @@ msgstr "Δεν ήταν δυνατή η εφαρμογή των επιλεγμέ
 msgid "206-555-0100"
 msgstr "210-555-0100"
 
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:71
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:71
 #: src/Agent/workflows/theme/components/SelectSiteVibes.jsx:88
 #: src/Agent/workflows/theme/components/SelectSiteVibes.jsx:107
 #, js-format
 msgid "Style %s"
 msgstr "Στυλ %s"
 
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:61
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:61
 #: src/Agent/workflows/theme/change-site-design.js:18
 msgid "Hey there! It looks like you are trying to change your site design, but you are not on a page where we can do that."
 msgstr "Γεια σας! Φαίνεται ότι προσπαθείτε να αλλάξετε τη σχεδίαση του ιστότοπού σας, αλλά δεν βρίσκεστε σε σελίδα όπου μπορούμε να το κάνουμε αυτό."
@@ -5927,78 +5927,78 @@ msgstr "Π.χ., Μια εξειδικευμένη νομική εταιρεία 
 msgid "Create website"
 msgstr "Δημιουργία ιστότοπου"
 
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:30
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:30
 #: src/Agent/workflows/content/update-post-status.js:12
 msgid "Publish this page"
 msgstr "Δημοσίευση αυτής της σελίδας"
 
 #. translators: Shown when the user clicks the "Publish this page" suggestion, above a confirm card.
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:32
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:32
 #: src/Agent/workflows/content/update-post-status.js:15
 msgid "Ready to publish this page?"
 msgstr "Έτοιμοι να δημοσιεύσετε αυτήν τη σελίδα;"
 
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:32
-#: src/Agent/workflows/content/update-post-status.js:25
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:32
+#: src/Agent/workflows/content/update-post-status.js:32
 msgid "Published the page"
 msgstr "Δημοσιεύθηκε η σελίδα"
 
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:32
-#: src/Agent/workflows/content/update-post-status.js:26
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:32
+#: src/Agent/workflows/content/update-post-status.js:33
 msgid "Canceled publishing the page"
 msgstr "Ακυρώθηκε η δημοσίευση της σελίδας"
 
 #. translators: The agent asks this, then waits for the user to type their new site title.
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:37
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:37
 #: src/Agent/workflows/settings/edit-wp-setting.js:23
 msgid "What would you like your new website title to be?"
 msgstr "Ποιος θέλετε να είναι ο νέος τίτλος του ιστοτόπου σας;"
 
 #. translators: This message shows above a UI where the user can upload or replace their site logo.
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:91
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:91
 #: src/Agent/workflows/theme/update-logo.js:16
 msgid "Below you can upload or replace your website logo."
 msgstr "Παρακάτω μπορείτε να ανεβάσετε ή να αντικαταστήσετε το λογότυπο του ιστότοπού σας"
 
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:91
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:91
 #: src/Agent/workflows/theme/update-logo.js:23
 msgid "Updated the site logo"
 msgstr "Ενημερώθηκε το λογότυπο του ιστότοπου"
 
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:91
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:91
 #: src/Agent/workflows/theme/update-logo.js:24
 msgid "Canceled the site logo update"
 msgstr "Ακυρώθηκε η ενημέρωση του λογότυπου του ιστότοπου"
 
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:91
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:91
 #: src/Agent/workflows/theme/update-site-icon.js:13
 msgid "Change website browser icon"
 msgstr "Αλλαγή εικονιδίου προγράμματος περιήγησης ιστότοπου"
 
 #. translators: This message shows above a UI where the user can upload or replace their browser icon (favicon).
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:93
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:93
 #: src/Agent/workflows/theme/update-site-icon.js:16
 msgid "Below you can upload or replace your website browser icon."
 msgstr "Παρακάτω μπορείτε να ανεβάσετε ή να αντικαταστήσετε το εικονίδιο περιηγητή του ιστότοπού σας."
 
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:93
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:93
 #: src/Agent/workflows/theme/update-site-icon.js:23
 msgid "Updated the site icon"
 msgstr "Ενημερώθηκε το εικονίδιο του ιστότοπου"
 
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:93
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:93
 #: src/Agent/workflows/theme/update-site-icon.js:24
 msgid "Canceled the site icon update"
 msgstr "Ακυρώθηκε η ενημέρωση του εικονιδίου ιστοτόπου"
 
 #. translators: confirm prompt before the agent performs a WordPress task it picked.
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:4
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:4
 #: src/Agent/workflows/abilities/components/AbilityRunGate.jsx:12
 msgid "Run this action?"
 msgstr "Να εκτελεστεί αυτή η ενέργεια;"
 
 #. translators: %s is the machine name of a WordPress ability the agent tried to run.
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:21
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:21
 #, js-format
 msgid "Ability \"%s\" is not available."
 msgstr "Η ικανότητα «%s» δεν είναι διαθέσιμη."
@@ -6078,6 +6078,11 @@ msgstr "Προτείνεται για εσάς"
 msgid "Reviewing your description..."
 msgstr "Ανασκόπηση της περιγραφής σας..."
 
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:32
+#: src/Agent/workflows/content/update-post-status.js:19
+msgid "Add this to the menu"
+msgstr "Προσθήκη αυτού στο μενού"
+
 #: app/Toolbar/Admin.php:46
 msgctxt "toolbar style"
 msgid "Simple"
@@ -6115,61 +6120,61 @@ msgid "Activated"
 msgstr "Ενεργοποιημένο"
 
 #. translators: "Slow" refers to a slower speed at which the animation effect occurs. This is an option in a list of animation speeds.
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:50
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:50
 #: src/Agent/workflows/theme/components/SelectAnimation.jsx:47
 msgctxt "animation speed"
 msgid "Slow"
 msgstr "Αργό"
 
 #. translators: "Medium" refers to a moderate speed at which the animation effect occurs. This is an option in a list of animation speeds.
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:52
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:52
 #: src/Agent/workflows/theme/components/SelectAnimation.jsx:52
 msgctxt "animation speed"
 msgid "Medium"
 msgstr "Μέτριο"
 
 #. translators: "Fast" refers to a quicker speed at which the animation effect occurs. This is an option in a list of animation speeds.
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:54
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:54
 #: src/Agent/workflows/theme/components/SelectAnimation.jsx:57
 msgctxt "animation speed"
 msgid "Fast"
 msgstr "Γρήγορο"
 
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:57
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:57
 #: src/Agent/workflows/theme/components/SelectAnimation.jsx:147
 msgctxt "animation speed"
 msgid "Speed"
 msgstr "Ταχύτητα"
 
 #. translators: Animation style where the element gradually appears by transitioning from transparent to visible. Translate as a simple, non-technical description of the visual effect (e.g., 'appear', 'show up') suitable for non-technical users.
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:42
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:42
 #: src/Agent/workflows/theme/components/SelectAnimation.jsx:20
 msgctxt "animation type"
 msgid "Fade In"
 msgstr "Εμφάνιση"
 
 #. translators: Animation style where the element appears while moving upward. Translate as a simple, non-technical description of the motion (e.g., 'appear from below', 'rise into view') suitable for non-technical users.
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:44
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:44
 #: src/Agent/workflows/theme/components/SelectAnimation.jsx:26
 msgctxt "animation type"
 msgid "Fade Up"
 msgstr "Εμφάνιση από κάτω"
 
 #. translators: Animation style where the element appears by scaling from small to its full size. Translate as a simple, non-technical description of the effect (e.g., 'zoom in', 'get closer') suitable for non-technical users. If the target language commonly uses the English term 'zoom', it's acceptable to keep it.
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:46
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:46
 #: src/Agent/workflows/theme/components/SelectAnimation.jsx:32
 msgctxt "animation type"
 msgid "Zoom In"
 msgstr "Μεγέθυνση"
 
 #. translators: None refers to 'no animation'. Apply the correct grammatical gender/form that agrees with the word for 'animation' in the target language.
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:48
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:48
 #: src/Agent/workflows/theme/components/SelectAnimation.jsx:38
 msgctxt "animation type"
 msgid "None"
 msgstr "Καμία"
 
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:57
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:57
 #: src/Agent/workflows/theme/components/SelectAnimation.jsx:128
 msgctxt "animation type"
 msgid "Type"

@@ -95,8 +95,8 @@ msgstr "お客様のホームページのタイプに最適なページをすで
 msgid "Pick the pages to add to your website"
 msgstr "お客様のホームページに追加するページを選択してください"
 
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:81
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:89
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:81
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:89
 #: public/build/extendify-launch-86d848925fad51ac7e3f.js:8
 #: src/Agent/components/redirects/RedirectFontsVariations.jsx:12
 #: src/Agent/components/redirects/RedirectThemeVariations.jsx:17
@@ -271,21 +271,21 @@ msgstr "中級"
 msgid "Beginner"
 msgstr "初級"
 
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:7
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:7
 #: public/build/extendify-help-center-eabc21dfe936d7b4ce8e.js:1
 #: src/Agent/components/Rating.jsx:49
 #: src/HelpCenter/components/ai-chat/Rating.jsx:48
 msgid "Rate that this answer was not helpful"
 msgstr "この回答は役に立たなかったと評価"
 
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:7
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:7
 #: public/build/extendify-help-center-eabc21dfe936d7b4ce8e.js:1
 #: src/Agent/components/Rating.jsx:28
 #: src/HelpCenter/components/ai-chat/Rating.jsx:27
 msgid "Rate that this answer was helpful"
 msgstr "この回答が役に立ったと評価"
 
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:7
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:7
 #: public/build/extendify-help-center-eabc21dfe936d7b4ce8e.js:1
 #: src/Agent/components/Rating.jsx:27
 #: src/Agent/components/Rating.jsx:48
@@ -345,56 +345,56 @@ msgstr "メニューを折りたたむ"
 msgid "Search for articles"
 msgstr "記事を検索"
 
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:19
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:19
 #: public/build/extendify-help-center-eabc21dfe936d7b4ce8e.js:4
 #: src/Agent/tours/library-tour.js:100
 #: src/HelpCenter/tours/library-tour.js:98
 msgid "The selected pattern has been inserted into the page."
 msgstr "選択したパターンがページに挿入されました。"
 
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:19
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:19
 #: public/build/extendify-help-center-eabc21dfe936d7b4ce8e.js:4
 #: src/Agent/tours/library-tour.js:99
 #: src/HelpCenter/tours/library-tour.js:97
 msgid "View the Inserted Pattern"
 msgstr "挿入済みのパターンを閲覧"
 
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:19
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:19
 #: public/build/extendify-help-center-eabc21dfe936d7b4ce8e.js:4
 #: src/Agent/tours/library-tour.js:80
 #: src/HelpCenter/tours/library-tour.js:78
 msgid "Simply select any pattern you wish to insert into a page by clicking on it."
 msgstr "クリックしてページに挿入したいパターンを選択してください。"
 
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:19
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:19
 #: public/build/extendify-help-center-eabc21dfe936d7b4ce8e.js:4
 #: src/Agent/tours/library-tour.js:79
 #: src/HelpCenter/tours/library-tour.js:77
 msgid "Select a Pattern"
 msgstr "パターンを選択"
 
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:19
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:19
 #: public/build/extendify-help-center-eabc21dfe936d7b4ce8e.js:4
 #: src/Agent/tours/library-tour.js:54
 #: src/HelpCenter/tours/library-tour.js:52
 msgid "Click on any pattern category to refine the selection."
 msgstr "任意のパターン・カテゴリーをクリックし、選択を絞り込んでください。"
 
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:19
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:19
 #: public/build/extendify-help-center-eabc21dfe936d7b4ce8e.js:4
 #: src/Agent/tours/library-tour.js:53
 #: src/HelpCenter/tours/library-tour.js:51
 msgid "Filter Patterns"
 msgstr "パターンをフィルタリング"
 
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:19
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:19
 #: public/build/extendify-help-center-eabc21dfe936d7b4ce8e.js:4
 #: src/Agent/tours/library-tour.js:32
 #: src/HelpCenter/tours/library-tour.js:30
 msgid "The Extendify pattern library can be opened by clicking the button to the left."
 msgstr "Extendifyのパターンライブラリは左のボタンをクリックして開くことができます。"
 
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:19
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:19
 #: public/build/extendify-help-center-eabc21dfe936d7b4ce8e.js:4
 #: src/Agent/tours/library-tour.js:31
 #: src/HelpCenter/tours/library-tour.js:29
@@ -510,21 +510,21 @@ msgstr "WordPressのデフォルトダッシュボードには、特定のプラ
 msgid "Access the Site Assistant at any time."
 msgstr "いつでもサイトアシスタントにアクセスできます。"
 
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:19
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:19
 #: public/build/extendify-help-center-eabc21dfe936d7b4ce8e.js:4
 #: src/Agent/tours/site-assistant.js:107
 #: src/HelpCenter/tours/site-assistant.js:127
 msgid "Come back to the Site Assistant any time by clicking the menu item."
 msgstr "メニュー項目をクリックすると、いつでもサイトアシスタントに戻ることができます。"
 
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:19
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:19
 #: public/build/extendify-help-center-eabc21dfe936d7b4ce8e.js:4
 #: src/Agent/tours/site-assistant.js:59
 #: src/HelpCenter/tours/site-assistant.js:58
 msgid "See our personalized recommendations for you that will help you accomplish your goals."
 msgstr "お客様の目標達成に役立つ、お客様へのおすすめをご覧ください。"
 
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:19
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:19
 #: public/build/extendify-help-center-eabc21dfe936d7b4ce8e.js:4
 #: src/Agent/tours/site-assistant.js:37
 #: src/HelpCenter/tours/site-assistant.js:36
@@ -538,7 +538,7 @@ msgstr "これらのクイックリンクを使って、WordPressで最もよく
 msgid "Knowledge Base"
 msgstr "ノウハウ集"
 
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:19
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:19
 #: public/build/extendify-help-center-eabc21dfe936d7b4ce8e.js:4
 #: src/Agent/tours/site-assistant.js:16
 #: src/HelpCenter/tours/site-assistant.js:15
@@ -588,56 +588,56 @@ msgstr "ツアー"
 msgid "Help Center"
 msgstr "ヘルプセンター"
 
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:19
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:19
 #: public/build/extendify-help-center-eabc21dfe936d7b4ce8e.js:4
 #: src/Agent/tours/users-screen.js:122
 #: src/HelpCenter/tours/users-screen.js:121
 msgid "Click the Add New button to add a new user to your site."
 msgstr "新規ボタン追加をクリックし、ホームページに新規ユーザーを追加。"
 
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:19
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:19
 #: public/build/extendify-help-center-eabc21dfe936d7b4ce8e.js:4
 #: src/Agent/tours/users-screen.js:121
 #: src/HelpCenter/tours/users-screen.js:120
 msgid "Add a new user"
 msgstr "新規ユーザー追加"
 
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:19
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:19
 #: public/build/extendify-help-center-eabc21dfe936d7b4ce8e.js:4
 #: src/Agent/tours/users-screen.js:96
 #: src/HelpCenter/tours/users-screen.js:95
 msgid "Use the search bar to find a particular user."
 msgstr "検索バーを使って特定のユーザーを検索する。"
 
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:19
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:19
 #: public/build/extendify-help-center-eabc21dfe936d7b4ce8e.js:4
 #: src/Agent/tours/users-screen.js:95
 #: src/HelpCenter/tours/users-screen.js:94
 msgid "Search for users"
 msgstr "ユーザー検索"
 
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:19
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:19
 #: public/build/extendify-help-center-eabc21dfe936d7b4ce8e.js:4
 #: src/Agent/tours/users-screen.js:65
 #: src/HelpCenter/tours/users-screen.js:64
 msgid "Click the edit button to change the user's role, manage their account, or change their profile information."
 msgstr "編集ボタンをクリックしてユーザーの役割を変更、アカウント管理、プロフィール情報を変更します。"
 
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:19
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:19
 #: public/build/extendify-help-center-eabc21dfe936d7b4ce8e.js:4
 #: src/Agent/tours/users-screen.js:64
 #: src/HelpCenter/tours/users-screen.js:63
 msgid "Edit user information"
 msgstr "ユーザー情報を編集"
 
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:19
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:19
 #: public/build/extendify-help-center-eabc21dfe936d7b4ce8e.js:4
 #: src/Agent/tours/users-screen.js:45
 #: src/HelpCenter/tours/users-screen.js:44
 msgid "See all of your users, including admin users in this table."
 msgstr "このテーブルの管理者を含めた全ユーザーを確認する。"
 
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:19
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:19
 #: public/build/extendify-help-center-eabc21dfe936d7b4ce8e.js:4
 #: src/Agent/tours/users-screen.js:44
 #: src/Agent/tours/welcome.js:250
@@ -646,154 +646,154 @@ msgstr "このテーブルの管理者を含めた全ユーザーを確認する
 msgid "Users"
 msgstr "ユーザー"
 
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:19
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:19
 #: public/build/extendify-help-center-eabc21dfe936d7b4ce8e.js:4
 #: src/Agent/tours/users-screen.js:19
 #: src/HelpCenter/tours/users-screen.js:18
 msgid "Click here to view and manage the users on your site."
 msgstr "こちらをクリックしてホームページのユーザーを閲覧、管理する。"
 
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:19
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:19
 #: public/build/extendify-help-center-eabc21dfe936d7b4ce8e.js:4
 #: src/Agent/tours/users-screen.js:18
 #: src/HelpCenter/tours/users-screen.js:17
 msgid "All Users menu"
 msgstr "全ユーザーのメニュー"
 
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:19
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:19
 #: public/build/extendify-help-center-eabc21dfe936d7b4ce8e.js:4
 #: src/Agent/tours/plugin-management.js:106
 #: src/HelpCenter/tours/plugin-management.js:105
 msgid "Click here to add another plugin to your site."
 msgstr "こちらをクリックしてホームページにその他のプラグインを追加"
 
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:19
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:19
 #: public/build/extendify-help-center-eabc21dfe936d7b4ce8e.js:4
 #: src/Agent/tours/plugin-management.js:105
 #: src/HelpCenter/tours/plugin-management.js:104
 msgid "Add another"
 msgstr "その他を追加"
 
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:19
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:19
 #: public/build/extendify-help-center-eabc21dfe936d7b4ce8e.js:4
 #: src/Agent/tours/plugin-management.js:65
 #: src/HelpCenter/tours/plugin-management.js:64
 msgid "Under each plugin you can activate or deactivate it."
 msgstr "それぞれのプラグインの下で有効化または無効化ができます。"
 
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:19
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:19
 #: public/build/extendify-help-center-eabc21dfe936d7b4ce8e.js:4
 #: src/Agent/tours/plugin-management.js:64
 #: src/HelpCenter/tours/plugin-management.js:63
 msgid "Deactivate/activate option"
 msgstr "無効化/有効化オプション"
 
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:19
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:19
 #: public/build/extendify-help-center-eabc21dfe936d7b4ce8e.js:4
 #: src/Agent/tours/plugin-management.js:45
 #: src/HelpCenter/tours/plugin-management.js:44
 msgid "See all plugins installed on your site. This includes plugins that are active and deactivated."
 msgstr "ホームページにインストール済みの全てのプラグインを確認してください。有効なプラグインと無効なプラグインの両方が含まれます。"
 
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:19
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:19
 #: public/build/extendify-help-center-eabc21dfe936d7b4ce8e.js:4
 #: src/Agent/tours/plugin-management.js:44
 #: src/HelpCenter/tours/plugin-management.js:43
 msgid "Installed plugins"
 msgstr "インストール済みのプラグイン"
 
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:19
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:19
 #: public/build/extendify-help-center-eabc21dfe936d7b4ce8e.js:4
 #: src/Agent/tours/plugin-management.js:19
 #: src/HelpCenter/tours/plugin-management.js:18
 msgid "Click this menu to see and manage the plugins you have installed."
 msgstr "このメニューをクリックしてインストール済みのプラグインを確認、管理。"
 
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:19
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:19
 #: public/build/extendify-help-center-eabc21dfe936d7b4ce8e.js:4
 #: src/Agent/tours/plugin-management.js:18
 #: src/HelpCenter/tours/plugin-management.js:17
 msgid "Installed Plugins menu"
 msgstr "インストール済みのプラグインメニュー"
 
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:19
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:19
 #: public/build/extendify-help-center-eabc21dfe936d7b4ce8e.js:4
 #: src/Agent/tours/plugin-install.js:114
 #: src/HelpCenter/tours/plugin-install.js:113
 msgid "If you have a plugin from an external source, you can upload it directly here."
 msgstr "外部ソースのプラグインをお持ちの場合、ここで直接アップロードできます。"
 
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:19
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:19
 #: public/build/extendify-help-center-eabc21dfe936d7b4ce8e.js:4
 #: src/Agent/tours/plugin-install.js:113
 #: src/HelpCenter/tours/plugin-install.js:112
 msgid "Upload Plugin"
 msgstr "プラグインをアップロード"
 
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:19
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:19
 #: public/build/extendify-help-center-eabc21dfe936d7b4ce8e.js:4
 #: src/Agent/tours/plugin-install.js:88
 #: src/HelpCenter/tours/plugin-install.js:87
 msgid "Install the plugin. Then, press this button again to activate the plugin."
 msgstr "プラグインをインストール。その後このボタンを再度クリックしてプラグインを有効化してください。"
 
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:19
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:19
 #: public/build/extendify-help-center-eabc21dfe936d7b4ce8e.js:4
 #: src/Agent/tours/plugin-install.js:87
 #: src/HelpCenter/tours/plugin-install.js:86
 msgid "Install now"
 msgstr "今すぐインストール"
 
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:19
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:19
 #: public/build/extendify-help-center-eabc21dfe936d7b4ce8e.js:4
 #: src/Agent/tours/plugin-install.js:68
 #: src/HelpCenter/tours/plugin-install.js:67
 msgid "See important information about each plugin."
 msgstr "それぞれのプラグインに関する重要な情報を確認。"
 
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:19
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:19
 #: public/build/extendify-help-center-eabc21dfe936d7b4ce8e.js:4
 #: src/Agent/tours/plugin-install.js:67
 #: src/HelpCenter/tours/plugin-install.js:66
 msgid "Plugin details"
 msgstr "プラグイン詳細"
 
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:19
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:19
 #: public/build/extendify-help-center-eabc21dfe936d7b4ce8e.js:4
 #: src/Agent/tours/plugin-install.js:42
 #: src/HelpCenter/tours/plugin-install.js:41
 msgid "Search for a plugin by name or functionality."
 msgstr "名前か機能でプラグインを検索する。"
 
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:19
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:19
 #: public/build/extendify-help-center-eabc21dfe936d7b4ce8e.js:4
 #: src/Agent/tours/plugin-install.js:19
 #: src/HelpCenter/tours/plugin-install.js:18
 msgid "Click here to access the Add Plugins page."
 msgstr "ここをクリックしてプラグイン追加のページにアクセス。"
 
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:19
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:19
 #: public/build/extendify-help-center-eabc21dfe936d7b4ce8e.js:4
 #: src/Agent/tours/plugin-install.js:18
 #: src/HelpCenter/tours/plugin-install.js:17
 msgid "Add New plugin menu"
 msgstr "新規プラグインメニューを追加"
 
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:19
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:19
 #: public/build/extendify-help-center-eabc21dfe936d7b4ce8e.js:4
 #: src/Agent/tours/page-editor.js:249
 #: src/HelpCenter/tours/page-editor.js:252
 msgid "Publish or Save"
 msgstr "公開または保存"
 
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:19
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:19
 #: public/build/extendify-help-center-eabc21dfe936d7b4ce8e.js:4
 #: src/Agent/tours/page-editor.js:229
 #: src/HelpCenter/tours/page-editor.js:232
 msgid "Click preview to view how your changes look on the front end of your site."
 msgstr "プレビューをクリックして、お客様が行った変更がホームページのフロントエンドでどのように表示されるかを確認します。"
 
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:19
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:19
 #: public/build/extendify-help-center-eabc21dfe936d7b4ce8e.js:4
 #: public/build/extendify-launch-86d848925fad51ac7e3f.js:8
 #: src/Agent/tours/page-editor.js:228
@@ -802,42 +802,42 @@ msgstr "プレビューをクリックして、お客様が行った変更がホ
 msgid "Preview"
 msgstr "プレビュー"
 
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:19
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:19
 #: public/build/extendify-help-center-eabc21dfe936d7b4ce8e.js:4
 #: src/Agent/tours/page-editor.js:186
 #: src/HelpCenter/tours/page-editor.js:189
 msgid "Select either page or block to change the settings for the entire page or the block that is selected."
 msgstr "ページかブロックを選択して、ページ全体または選択したブロックの設定を変更します。"
 
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:19
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:19
 #: public/build/extendify-help-center-eabc21dfe936d7b4ce8e.js:4
 #: src/Agent/tours/page-editor.js:185
 #: src/HelpCenter/tours/page-editor.js:188
 msgid "Page and Block Settings"
 msgstr "ページとブロックの設定"
 
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:19
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:19
 #: public/build/extendify-help-center-eabc21dfe936d7b4ce8e.js:4
 #: src/Agent/tours/page-editor.js:170
 #: src/HelpCenter/tours/page-editor.js:173
 msgid "This is a sample paragraph block. It can be several sentences long and will span multiple rows. You can add as many blocks as you'd like to the page."
 msgstr "これは段落ブロックのサンプルです。数文の長さセンテンスの長さは複数可能で、複数の行にまたがる場合があります。ページには好きなだけブロックを追加できます。"
 
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:19
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:19
 #: public/build/extendify-help-center-eabc21dfe936d7b4ce8e.js:4
 #: src/Agent/tours/page-editor.js:129
 #: src/HelpCenter/tours/page-editor.js:132
 msgid "Each block will show up on the page and can be edited by clicking on it."
 msgstr "各ブロックがページに表示され、クリックすると編集できます。"
 
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:19
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:19
 #: public/build/extendify-help-center-eabc21dfe936d7b4ce8e.js:4
 #: src/Agent/tours/page-editor.js:128
 #: src/HelpCenter/tours/page-editor.js:131
 msgid "Blocks"
 msgstr "ブロック"
 
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:19
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:19
 #: public/build/extendify-help-center-eabc21dfe936d7b4ce8e.js:4
 #: src/Agent/tours/page-editor.js:89
 #: src/HelpCenter/tours/page-editor.js:92
@@ -846,35 +846,35 @@ msgstr ""
 "\"クリックしてページタイトルを編集しましょう。\n"
 "注意: 利用したページテンプレートによって、タイトルは公開後のページ上に表示される場合と表示されない場合があります。\""
 
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:19
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:19
 #: public/build/extendify-help-center-eabc21dfe936d7b4ce8e.js:4
 #: src/Agent/tours/page-editor.js:88
 #: src/HelpCenter/tours/page-editor.js:91
 msgid "Page Title"
 msgstr "ページタイトル"
 
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:19
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:19
 #: public/build/extendify-help-center-eabc21dfe936d7b4ce8e.js:4
 #: src/Agent/tours/page-editor.js:48
 #: src/HelpCenter/tours/page-editor.js:48
 msgid "Add a block by clicking or dragging it onto the page."
 msgstr "ブロックをクリックするかページにドラッグすることでブロックを追加"
 
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:19
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:19
 #: public/build/extendify-help-center-eabc21dfe936d7b4ce8e.js:4
 #: src/Agent/tours/page-editor.js:47
 #: src/HelpCenter/tours/page-editor.js:47
 msgid "Block Inserter"
 msgstr "ブロックインサーター"
 
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:19
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:19
 #: public/build/extendify-help-center-eabc21dfe936d7b4ce8e.js:4
 #: src/Agent/tours/page-editor.js:27
 #: src/HelpCenter/tours/page-editor.js:27
 msgid "Click the plus to open the block inserter."
 msgstr "＋ボタンをクリックしてブロックインサーターを開く"
 
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:19
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:19
 #: public/build/extendify-help-center-eabc21dfe936d7b4ce8e.js:4
 #: src/Agent/tours/page-editor.js:26
 #: src/HelpCenter/tours/page-editor.js:26
@@ -907,14 +907,14 @@ msgstr "アシストにスキップ"
 msgid "Dashboard"
 msgstr "ダッシュボード"
 
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:19
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:19
 #: public/build/extendify-help-center-eabc21dfe936d7b4ce8e.js:4
 #: src/Agent/tours/site-assistant.js:15
 #: src/HelpCenter/tours/site-assistant.js:14
 msgid "Tasks"
 msgstr "タスク"
 
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:19
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:19
 #: public/build/extendify-assist-page-5abc4f3121f907529fcd.js:9
 #: public/build/extendify-help-center-eabc21dfe936d7b4ce8e.js:4
 #: src/Agent/tours/site-assistant.js:36
@@ -935,7 +935,7 @@ msgstr "いつでもホームページ名の下にある上部の管理バーか
 msgid "Use the pages menu to add, delete, or edit the pages on your site."
 msgstr "ページメニューを使って、ホームページ上でページを追加、削除、編集します。"
 
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:17
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:17
 #: public/build/extendify-assist-page-5abc4f3121f907529fcd.js:1
 #: public/build/extendify-help-center-eabc21dfe936d7b4ce8e.js:7
 #: src/Agent/components/GuidedTour.jsx:485
@@ -944,14 +944,14 @@ msgstr "ページメニューを使って、ホームページ上でページを
 msgid "Done"
 msgstr "完了"
 
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:14
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:14
 #: public/build/extendify-help-center-eabc21dfe936d7b4ce8e.js:4
 #: src/Agent/components/GuidedTour.jsx:434
 #: src/HelpCenter/components/tours/GuidedTour.jsx:441
 msgid "Tour Steps"
 msgstr "ツアーのステップ"
 
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:14
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:14
 #: public/build/extendify-help-center-eabc21dfe936d7b4ce8e.js:4
 #: src/Agent/components/GuidedTour.jsx:313
 #: src/HelpCenter/components/tours/GuidedTour.jsx:315
@@ -980,17 +980,17 @@ msgstr "新規ページでの%sの切り替え"
 msgid "We encountered a server error we cannot recover from. Please reload the page and try again."
 msgstr "修復できないサーバーエラーが発生しました。ページを再読み込みし、もう一度お試しください。"
 
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:17
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:21
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:24
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:27
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:40
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:57
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:61
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:71
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:77
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:85
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:89
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:17
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:21
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:24
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:27
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:40
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:57
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:61
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:71
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:77
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:85
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:89
 #: public/build/extendify-assist-page-5abc4f3121f907529fcd.js:1
 #: public/build/extendify-quick-edit-8bab8f8f62c3e7af92e2.js:4
 #: public/build/extendify-quick-edit-8bab8f8f62c3e7af92e2.js:16
@@ -1023,7 +1023,7 @@ msgstr "保存"
 msgid "Enter a site description..."
 msgstr "ホームページの概要を入力してください..."
 
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:19
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:19
 #: public/build/extendify-assist-page-5abc4f3121f907529fcd.js:1
 #: public/build/extendify-help-center-eabc21dfe936d7b4ce8e.js:4
 #: src/Agent/tours/page-creator.js:81
@@ -1044,7 +1044,7 @@ msgstr "ホームページのロゴを追加"
 
 #: app/AdminPageRouter.php:43
 #: app/AdminPageRouter.php:67
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:19
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:19
 #: public/build/extendify-assist-page-5abc4f3121f907529fcd.js:10
 #: public/build/extendify-help-center-eabc21dfe936d7b4ce8e.js:4
 #: src/Agent/tours/site-assistant.js:5
@@ -1075,28 +1075,28 @@ msgstr "ホームページを閲覧"
 msgid "Upload site icon"
 msgstr "ホームページアイコンをアップロード"
 
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:91
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:91
 #: public/build/extendify-assist-page-5abc4f3121f907529fcd.js:1
 #: src/Agent/workflows/theme/components/UpdateSiteIconConfirm.jsx:62
 #: src/Assist/components/tasks/UpdateSiteIcon.jsx:20
 msgid "Set site icon"
 msgstr "ホームページアイコンをセット"
 
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:91
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:91
 #: public/build/extendify-assist-page-5abc4f3121f907529fcd.js:1
 #: src/Agent/workflows/theme/components/UpdateSiteIconConfirm.jsx:61
 #: src/Assist/components/tasks/UpdateSiteIcon.jsx:19
 msgid "Site icon"
 msgstr "ホームページアイコン"
 
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:89
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:89
 #: public/build/extendify-assist-page-5abc4f3121f907529fcd.js:1
 #: src/Agent/workflows/theme/components/UpdateLogoConfirm.jsx:67
 #: src/Assist/components/tasks/UpdateLogo.jsx:20
 msgid "Set site logo"
 msgstr "ホームページのロゴを設定"
 
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:89
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:89
 #: public/build/extendify-assist-page-5abc4f3121f907529fcd.js:1
 #: public/build/extendify-quick-edit-8bab8f8f62c3e7af92e2.js:16
 #: src/Agent/workflows/theme/components/UpdateLogoConfirm.jsx:66
@@ -1116,14 +1116,14 @@ msgstr "画像を削除"
 msgid "Replace image"
 msgstr "画像を置換置き換え"
 
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:17
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:17
 #: public/build/extendify-assist-page-5abc4f3121f907529fcd.js:1
 #: src/Agent/components/ImageUploader.jsx:141
 #: src/Assist/components/ImageUploader.jsx:96
 msgid "Edit or update the image"
 msgstr "画像を編集または更新"
 
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:14
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:14
 #: public/build/extendify-assist-page-5abc4f3121f907529fcd.js:1
 #: public/build/extendify-help-center-eabc21dfe936d7b4ce8e.js:4
 #: src/Agent/components/GuidedTour.jsx:308
@@ -1134,7 +1134,7 @@ msgstr "モーダルを閉じる"
 
 #: app/PluginNotifications/NotificationsListTable.php:81
 #: app/PluginNotifications/NotificationsListTable.php:173
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:27
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:27
 #: public/build/extendify-assist-page-5abc4f3121f907529fcd.js:1
 #: public/build/extendify-quick-edit-8bab8f8f62c3e7af92e2.js:4
 #: src/Agent/workflows/content/components/GeneratePageResult.jsx:32
@@ -1189,7 +1189,7 @@ msgstr "サイトアシスタントを設定中"
 msgid "Starting off with a full website"
 msgstr "ホームページの作成をしています"
 
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:14
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:14
 #: public/build/extendify-auto-launch-fa577a30dd41aedded0e.js:51
 #: public/build/extendify-help-center-eabc21dfe936d7b4ce8e.js:4
 #: public/build/extendify-launch-86d848925fad51ac7e3f.js:8
@@ -1205,8 +1205,8 @@ msgstr "戻る"
 msgid "Site Industry"
 msgstr "ホームページの業種"
 
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:4
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:27
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:4
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:27
 #: public/build/extendify-auto-launch-fa577a30dd41aedded0e.js:46
 #: public/build/extendify-launch-86d848925fad51ac7e3f.js:17
 #: src/Agent/components/messages/AgentMessage.jsx:19
@@ -1242,7 +1242,7 @@ msgstr "プラグイン"
 msgid "View Site"
 msgstr "ホームページを表示する"
 
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:17
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:17
 #: public/build/extendify-auto-launch-fa577a30dd41aedded0e.js:46
 #: public/build/extendify-help-center-eabc21dfe936d7b4ce8e.js:7
 #: public/build/extendify-launch-86d848925fad51ac7e3f.js:8
@@ -1266,7 +1266,7 @@ msgstr "ページ"
 msgid "You can personalize this later."
 msgstr "後でカスタマイズすることもできます。"
 
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:21
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:21
 #: public/build/extendify-assist-page-5abc4f3121f907529fcd.js:1
 #: public/build/extendify-launch-86d848925fad51ac7e3f.js:8
 #: src/Agent/workflows/block-selector/components/UpdateBlockConfirm.jsx:99
@@ -1290,7 +1290,7 @@ msgstr "こちらを押して選択してください"
 msgid "Just a moment, this is taking longer than expected."
 msgstr "今しばらくお待ちください、予想以上に時間がかかっています。"
 
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:19
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:19
 #: public/build/extendify-assist-page-5abc4f3121f907529fcd.js:10
 #: public/build/extendify-help-center-eabc21dfe936d7b4ce8e.js:4
 #: public/build/extendify-library-15577c026d0b0bca0190.js:1
@@ -1335,7 +1335,7 @@ msgstr "送信"
 msgid "Settings"
 msgstr "設定"
 
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:19
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:19
 #: public/build/extendify-help-center-eabc21dfe936d7b4ce8e.js:4
 #: src/Agent/tours/plugin-install.js:41
 #: src/HelpCenter/tours/plugin-install.js:40
@@ -1358,7 +1358,7 @@ msgid "Extendify"
 msgstr "Extendify"
 
 #. translators: %1$s is the current step, %2$s is the total number of steps
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:17
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:17
 #: public/build/extendify-help-center-eabc21dfe936d7b4ce8e.js:7
 #: src/Agent/components/GuidedTour.jsx:443
 #: src/HelpCenter/components/tours/GuidedTour.jsx:450
@@ -1679,7 +1679,7 @@ msgstr "作成したい画像についてAIに指示してください"
 msgid "Image Prompt"
 msgstr "画像用プロンプト"
 
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:24
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:24
 #: public/build/extendify-draft-21d96962600c40354b54.js:7
 #: src/Agent/workflows/block-selector/components/GenerateImageConfirm.jsx:217
 #: src/Draft/components/image-generation/GenerateForm.jsx:90
@@ -1782,7 +1782,7 @@ msgstr "フッターを編集"
 msgid "Reset site"
 msgstr "ホームページをリセット"
 
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:19
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:19
 #: public/build/extendify-assist-page-5abc4f3121f907529fcd.js:10
 #: public/build/extendify-help-center-eabc21dfe936d7b4ce8e.js:4
 #: src/Agent/tours/site-assistant.js:58
@@ -2043,7 +2043,7 @@ msgstr "検索結果"
 msgid "Search the knowledge base"
 msgstr "ノウハウを検索"
 
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:19
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:19
 #: public/build/extendify-assist-page-5abc4f3121f907529fcd.js:10
 #: public/build/extendify-help-center-eabc21dfe936d7b4ce8e.js:4
 #: src/Agent/tours/page-editor.js:13
@@ -2053,14 +2053,14 @@ msgstr "ノウハウを検索"
 msgid "Page editor"
 msgstr "ページエディター"
 
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:19
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:19
 #: public/build/extendify-help-center-eabc21dfe936d7b4ce8e.js:4
 #: src/Agent/tours/page-editor.js:250
 #: src/HelpCenter/tours/page-editor.js:253
 msgid "Click publish or update to save the changes you have made to the page and make them live on the site."
 msgstr "「公開する」または「更新する」をクリックして、ページに加えた変更を保存し、ホームページに反映させてください。"
 
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:19
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:19
 #: public/build/extendify-assist-page-5abc4f3121f907529fcd.js:10
 #: public/build/extendify-help-center-eabc21dfe936d7b4ce8e.js:4
 #: src/Agent/tours/plugin-install.js:5
@@ -2070,7 +2070,7 @@ msgstr "「公開する」または「更新する」をクリックして、ペ
 msgid "Installing a plugin"
 msgstr "プラグインをインストールしています"
 
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:19
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:19
 #: public/build/extendify-assist-page-5abc4f3121f907529fcd.js:10
 #: public/build/extendify-help-center-eabc21dfe936d7b4ce8e.js:4
 #: src/Agent/tours/plugin-management.js:5
@@ -2085,21 +2085,21 @@ msgstr "プラグイン管理"
 msgid "You can always access the help center by clicking this button."
 msgstr "このボタンをクリックすると、いつでもヘルプセンターにアクセスできます。"
 
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:19
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:19
 #: public/build/extendify-help-center-eabc21dfe936d7b4ce8e.js:4
 #: src/Agent/tours/site-assistant.js:80
 #: src/HelpCenter/tours/site-assistant.js:100
 msgid "Visit your site"
 msgstr "お客様のホームページを訪問"
 
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:19
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:19
 #: public/build/extendify-help-center-eabc21dfe936d7b4ce8e.js:4
 #: src/Agent/tours/site-assistant.js:81
 #: src/HelpCenter/tours/site-assistant.js:101
 msgid "You can always visit your site by clicking this button."
 msgstr "このボタンをクリックすると、いつでもホームページを訪れることができます。"
 
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:19
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:19
 #: public/build/extendify-assist-page-5abc4f3121f907529fcd.js:10
 #: public/build/extendify-help-center-eabc21dfe936d7b4ce8e.js:4
 #: src/Agent/tours/users-screen.js:5
@@ -3244,7 +3244,7 @@ msgstr "既存のコンテンツを削除"
 msgid "Create a new page"
 msgstr "新しい固定ページを作成"
 
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:19
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:19
 #: public/build/extendify-help-center-eabc21dfe936d7b4ce8e.js:4
 #: public/build/extendify-page-creator-cbcefacf00c477a9dfaa.js:1
 #: src/Agent/tours/page-creator.js:6
@@ -3445,42 +3445,42 @@ msgstr "ホームページについて教えてください"
 msgid "Share your vision, and we'll craft a landing page that's perfectly tailored to your needs, ready to launch in no time. Let's begin by learning more about what you're building."
 msgstr "どんなランディングページを作りたいですか？ どんな目的で、どんな人に見てほしいですか？内容を詳しく教えていただければ、AIが最適なページを作成します。"
 
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:19
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:19
 #: public/build/extendify-help-center-eabc21dfe936d7b4ce8e.js:4
 #: src/Agent/tours/page-creator.js:30
 #: src/HelpCenter/tours/page-creator.js:30
 msgid "Press here to get started with your AI Page Generator."
 msgstr "こちらを押してAIページジェネレーターを始めましょう。"
 
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:19
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:19
 #: public/build/extendify-help-center-eabc21dfe936d7b4ce8e.js:4
 #: src/Agent/tours/page-creator.js:53
 #: src/HelpCenter/tours/page-creator.js:53
 msgid "Page description"
 msgstr "ページの説明"
 
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:19
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:19
 #: public/build/extendify-help-center-eabc21dfe936d7b4ce8e.js:4
 #: src/Agent/tours/page-creator.js:54
 #: src/HelpCenter/tours/page-creator.js:54
 msgid "Write a description of the page you want to create. Be as detailed as you like. We will create a page based on this description."
 msgstr "作成したい固定ページの説明をなるべく詳しく教えてください。こちらの説明を参考に、固定ページを作成します。"
 
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:19
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:19
 #: public/build/extendify-help-center-eabc21dfe936d7b4ce8e.js:4
 #: src/Agent/tours/page-creator.js:82
 #: src/HelpCenter/tours/page-creator.js:82
 msgid "If needed, update your site description here. We use this to add additional context about your website."
 msgstr "必要に応じて、こちらでホームページの説明を更新してください。こちらに入力された内容は、ホームページの情報を補足するために利用されます。"
 
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:19
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:19
 #: public/build/extendify-help-center-eabc21dfe936d7b4ce8e.js:4
 #: src/Agent/tours/page-creator.js:105
 #: src/HelpCenter/tours/page-creator.js:105
 msgid "Generate your page"
 msgstr "ページを生成"
 
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:19
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:19
 #: public/build/extendify-help-center-eabc21dfe936d7b4ce8e.js:4
 #: src/Agent/tours/page-creator.js:106
 #: src/HelpCenter/tours/page-creator.js:106
@@ -3549,39 +3549,39 @@ msgstr "ヘブライ語"
 msgid "Generate an image"
 msgstr "画像を生成"
 
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:81
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:81
 #: src/Agent/hooks/useThemeVariations.js:17
 msgid "Failed to fetch theme variations."
 msgstr "テーマのバリエーションを取得できませんでした。"
 
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:81
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:81
 #: src/Agent/components/redirects/RedirectThemeVariations.jsx:8
 msgid "Hey there! It looks like you are trying to change your theme colors, but you are not on a page where we can do that."
 msgstr "テーマの色を変更しようとしていますが、ここではできません。"
 
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:81
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:89
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:81
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:89
 #: src/Agent/components/redirects/RedirectFontsVariations.jsx:10
 #: src/Agent/components/redirects/RedirectThemeVariations.jsx:15
 #: src/Agent/workflows/theme/components/Redirect.jsx:10
 msgid "Suggestion:"
 msgstr "提案:"
 
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:4
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:17
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:21
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:24
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:27
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:30
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:32
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:35
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:40
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:57
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:61
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:71
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:77
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:83
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:89
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:4
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:17
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:21
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:24
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:27
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:30
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:32
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:35
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:40
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:57
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:61
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:71
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:77
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:83
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:89
 #: public/build/extendify-quick-edit-8bab8f8f62c3e7af92e2.js:4
 #: public/build/extendify-quick-edit-8bab8f8f62c3e7af92e2.js:16
 #: public/build/extendify-quick-edit-8bab8f8f62c3e7af92e2.js:19
@@ -3616,9 +3616,9 @@ msgstr "提案:"
 msgid "Cancel"
 msgstr "キャンセル"
 
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:21
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:27
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:40
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:21
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:27
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:40
 #: src/Agent/workflows/block-selector/components/UpdateBlockConfirm.jsx:107
 #: src/Agent/workflows/block-selector/components/UpdateImageConfirm.jsx:190
 #: src/Agent/workflows/content/components/UpdatePostConfirm.jsx:40
@@ -3626,121 +3626,121 @@ msgstr "キャンセル"
 msgid "The agent has made the changes in the browser. Please review and confirm."
 msgstr "エージェントがブラウザーで変更を行いました。確認して承認してください。"
 
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:19
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:19
 #: src/Agent/tours/library-tour.js:7
 msgid "Tour the design library"
 msgstr "デザインライブラリを見学"
 
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:19
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:19
 #: src/Agent/tours/page-creator.js:7
 msgid "Learn about the AI Page Generator"
 msgstr "AIページジェネレーターについて学ぶ"
 
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:19
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:19
 #: src/Agent/tours/page-editor.js:14
 msgid "Tour the page editor"
 msgstr "ページエディターを見学"
 
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:19
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:19
 #: src/Agent/tours/plugin-install.js:6
 msgid "See how to install a plugin"
 msgstr "プラグインのインストール方法を見る"
 
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:19
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:19
 #: src/Agent/tours/plugin-management.js:6
 msgid "Learn how to manage plugins"
 msgstr "プラグインの管理方法を学ぶ"
 
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:19
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:19
 #: src/Agent/tours/site-assistant.js:6
 msgid "Tour the Site Assistant"
 msgstr "サイトアシスタントを案内"
 
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:19
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:19
 #: src/Agent/tours/users-screen.js:6
 msgid "Tour the Users screen"
 msgstr "ユーザー画面を案内する"
 
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:4
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:4
 #: src/Agent/components/ChatInput.jsx:166
 msgid "Ask anything"
 msgstr "何でも質問してください"
 
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:4
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:4
 #: src/Agent/components/ChatInput.jsx:223
 msgid "Send message"
 msgstr "メッセージを送信"
 
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:7
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:7
 #: src/Agent/components/ScrollDownButton.jsx:22
 msgid "Scroll down"
 msgstr "下にスクロール"
 
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:4
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:4
 #: src/Agent/components/messages/StatusIndicator.jsx:18
 msgid "Working on it..."
 msgstr "処理中..."
 
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:4
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:4
 #: src/Agent/components/messages/StatusIndicator.jsx:24
 msgid "Gathering data..."
 msgstr "データを収集中..."
 
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:4
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:4
 #: src/Agent/components/messages/StatusIndicator.jsx:25
 msgid "Analyzing..."
 msgstr "分析中..."
 
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:4
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:4
 #: src/Agent/components/messages/StatusIndicator.jsx:26
 msgid "Usage limit reached"
 msgstr "使用制限に達しました"
 
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:4
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:4
 #: src/Agent/components/messages/StatusIndicator.jsx:27
 msgid "Usage limit restored"
 msgstr "使用制限が復元されました"
 
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:7
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:7
 #: src/Agent/components/messages/WorkflowMessage.jsx:75
 msgid "Workflow completed successfully"
 msgstr "ワークフローが正常に完了しました"
 
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:4
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:4
 #: src/Agent/components/messages/WorkflowComponent.jsx:17
 msgid "Component not available"
 msgstr "コンポーネントを利用できません"
 
 #. translators: This is for when a component doesn't exist
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:7
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:7
 #: src/Agent/components/messages/WorkflowComponent.jsx:22
 msgid "It may have been removed or is not available for your account."
 msgstr "削除されたか、お使いのアカウントでは利用できない可能性があります。"
 
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:7
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:7
 #: src/Agent/components/messages/WorkflowMessage.jsx:38
 msgid "What's next? Would you like to do something else?"
 msgstr "次はどうしますか？他に何かしますか？"
 
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:4
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:4
 #: src/Agent/components/layouts/DragResizeLayout.jsx:117
 #: src/Agent/components/layouts/SidebarLayout.jsx:116
 msgid "Close window"
 msgstr "ウィンドウを閉じる"
 
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:4
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:4
 #: src/Agent/components/layouts/DragResizeLayout.jsx:158
 msgid "Drag to move"
 msgstr "ドラッグして移動"
 
 #. translators: %s is a human-readable time difference, e.g. "2 hours from now"
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:10
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:10
 #: src/Agent/components/messages/UsageMessage.jsx:30
 #, js-format
 msgid "You have reached your daily messages limit. Your limit will reset in %s."
 msgstr "1日のメッセージ制限に達しました。制限は%s後にリセットされます。"
 
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:14
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:14
 #: src/Agent/components/buttons/AdminBar.jsx:42
 #: src/Agent/components/buttons/Mobile.jsx:38
 #: src/Agent/components/buttons/PostEditor.jsx:47
@@ -3748,7 +3748,7 @@ msgid "Open Agent"
 msgstr "エージェントを開く"
 
 #: app/Toolbar/Frontend.php:187
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:14
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:14
 #: src/Agent/components/buttons/AdminBar.jsx:45
 #: src/Agent/components/buttons/Mobile.jsx:46
 #: src/Agent/components/buttons/PostEditor.jsx:54
@@ -3856,7 +3856,7 @@ msgstr "この画面では、ホームページの幅、要素間の余白（パ
 msgid "Take the welcome tour"
 msgstr "ウェルカムツアーを開始する"
 
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:14
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:14
 #: src/Agent/components/buttons/Mobile.jsx:49
 msgid "How can we help you today?"
 msgstr "何かお手伝いできることはありますか？"
@@ -3893,33 +3893,33 @@ msgstr "編集ページへ移動するボタン"
 msgid "Welcome to your new site! When you're ready, press here to edit this page."
 msgstr "ホームページが完成しました！このページを編集するには、こちらをクリックしてください。"
 
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:10
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:10
 #: public/build/extendify-quick-edit-8bab8f8f62c3e7af92e2.js:16
 #: src/Agent/components/PageDocument.jsx:25
 #: src/QuickEdit/components/modals/SiteIdentityModal.jsx:167
 msgid "Remove"
 msgstr "削除"
 
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:4
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:4
 #: src/Agent/components/DOMHighlighter.jsx:250
 msgid "Remove highlight"
 msgstr "ハイライトを削除"
 
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:14
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:14
 #: src/Agent/Agent.jsx:624
 msgid "AI Agent can make mistakes. Check changes before saving."
 msgstr "AIエージェントは便利な機能ですが、提案内容が必ずしも正しいとは限りません。保存前に、変更箇所に間違いがないか確認してください。"
 
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:4
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:30
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:35
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:4
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:30
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:35
 #: src/Agent/workflows/abilities/components/AbilityRunGate.jsx:29
 #: src/Agent/workflows/content/components/UpdatePostStatusConfirm.jsx:51
 #: src/Agent/workflows/settings/components/UpdateSettingConfirm.jsx:62
 msgid "Confirm"
 msgstr "確認"
 
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:4
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:4
 #: src/Agent/components/messages/StatusIndicator.jsx:16
 msgid "Thinking..."
 msgstr "検討中…"
@@ -3931,73 +3931,73 @@ msgstr "検討中…"
 msgid "WP Admin Dashboard"
 msgstr "WP 管理画面"
 
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:75
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:75
 #: src/Agent/hooks/useThemeFontsVariations.js:29
 msgid "Failed to fetch theme font variations."
 msgstr "テーマフォントのバリエーションの取得に失敗しました。"
 
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:75
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:75
 #: src/Agent/workflows/theme/change-theme-fonts-variation.js:13
 msgid "Hey there! It looks like you are trying to change your theme fonts, but you are not on a page where we can do that."
 msgstr "テーマフォントを変更しようとしていますが、ここではそれができません。"
 
 #. translators: A chat message shown to the user
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:77
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:77
 #: src/Agent/workflows/theme/components/SelectThemeFontsVariation.jsx:58
 msgid "Loading font variations..."
 msgstr "フォントのバリエーションを読み込み中..."
 
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:4
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:4
 #: src/Agent/components/ChatTools.jsx:36
 msgid "Select"
 msgstr "選択"
 
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:4
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:4
 #: src/Agent/components/ChatInput.jsx:162
 msgid "What do you want to change in the selected content?"
 msgstr "選択したコンテンツで何を変更しますか?"
 
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:10
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:10
 #: src/Agent/components/PageDocument.jsx:12
 msgid "Selected content"
 msgstr "選択したコンテンツ"
 
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:17
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:27
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:17
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:27
 #: src/Agent/components/ImageUploader.jsx:204
 #: src/Agent/workflows/block-selector/components/UpdateImageConfirm.jsx:13
 msgid "Open Media Library"
 msgstr "メディアライブラリを開く"
 
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:27
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:27
 #: src/Agent/workflows/block-selector/components/UpdateImageConfirm.jsx:138
 #, js-format
 msgid "The agent has requested the media library. Press \"%s\" to upload or select an image."
 msgstr "エージェントがメディアライブラリを要求しました。「%s」を押して画像をアップロードまたは選択してください。"
 
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:27
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:27
 #: src/Agent/workflows/block-selector/components/UpdateImageConfirm.jsx:155
 msgid "Select or Upload Image"
 msgstr "画像を選択またはアップロード"
 
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:21
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:21
 #: src/Agent/workflows/block-selector/components/GenerateImageConfirm.jsx:121
 msgid "An unknown error occurred."
 msgstr "不明なエラーが発生しました。"
 
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:24
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:24
 #: src/Agent/workflows/block-selector/components/GenerateImageConfirm.jsx:228
 msgid "Image generated successfully!"
 msgstr "画像が正常に生成されました !"
 
 #. translators: %1$s is the number of credits remaining, %2$s is the total credits
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:27
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:27
 #: src/Agent/workflows/block-selector/components/GenerateImageConfirm.jsx:261
 #, js-format
 msgid "You have %1$s of %2$s daily image credits remaining."
 msgstr "1日の画像クレジットは %2$s 件中 %1$s 件残っています。"
 
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:27
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:27
 #: src/Agent/workflows/content/components/GeneratePageResult.jsx:19
 msgid "The agent has finished creating your page. Press take me there to visit your new page or dismiss to remove this notice."
 msgstr "エージェントが固定ページの作成を完了しました。「移動」を押して新しい固定ページを訪問するか、「閉じる」でこの通知を削除してください。"
@@ -4007,41 +4007,41 @@ msgstr "エージェントが固定ページの作成を完了しました。「
 msgid "E.g., Create an \"About Us\" page highlighting our story, mission, values and team overview."
 msgstr "例：「私たちについて」ページを作成し、ストーリー、ミッション、価値観、チーム概要を強調します。"
 
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:21
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:21
 #: src/Agent/workflows/block-selector/components/GenerateImageConfirm.jsx:116
 msgid "No image returned"
 msgstr "画像が返されていません"
 
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:4
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:4
 #: src/Agent/components/messages/StatusIndicator.jsx:20
 msgid "Formulating a response..."
 msgstr "フィードバックを作成中..."
 
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:4
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:4
 #: src/Agent/components/messages/StatusIndicator.jsx:21
 msgid "Reviewing logic..."
 msgstr "ロジックをレビュー中..."
 
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:4
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:4
 #: src/Agent/components/layouts/MobileLayout.jsx:63
 msgid "Minimize window"
 msgstr "ウィンドウを最小化"
 
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:4
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:4
 #: src/Agent/components/messages/StatusIndicator.jsx:19
 msgid "Interpreting message..."
 msgstr "メッセージを解釈中..."
 
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:32
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:32
 #: src/Agent/workflows/plugins/components/InstallPlugin.jsx:79
 msgid "There was an error installing the plugin. You may try again"
 msgstr "プラグインのインストール中にエラーが発生しました。再度お試しください。"
 
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:21
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:24
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:27
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:32
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:89
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:21
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:24
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:27
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:32
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:89
 #: src/Agent/workflows/block-selector/components/GenerateImageConfirm.jsx:245
 #: src/Agent/workflows/block-selector/components/UpdateBlockConfirm.jsx:126
 #: src/Agent/workflows/content/components/UpdatePostConfirm.jsx:60
@@ -4050,22 +4050,22 @@ msgstr "プラグインのインストール中にエラーが発生しました
 msgid "Try Again"
 msgstr "再試行"
 
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:32
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:32
 #: src/Agent/workflows/plugins/components/InstallPlugin.jsx:102
 msgid "Installing plugin..."
 msgstr "プラグインをインストール中…"
 
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:32
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:32
 #: src/Agent/workflows/plugins/components/InstallPlugin.jsx:103
 msgid "Activating plugin..."
 msgstr "プラグインを有効化しています..."
 
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:32
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:32
 #: src/Agent/workflows/plugins/components/InstallPlugin.jsx:115
 msgid "The agent is requesting to install and activate a plugin."
 msgstr "エージェントがプラグインのインストールと有効化を要求しています。"
 
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:35
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:35
 #: src/Agent/workflows/plugins/components/InstallPlugin.jsx:152
 msgid "Install Plugin"
 msgstr "プラグインをインストール"
@@ -4090,56 +4090,56 @@ msgid "By using AI features, you agree with the %1$sTerms of Use and Privacy Pol
 msgstr "AI機能を使用することで、%1$s利用規約とプライバシーポリシー%2$sに同意したことになります。"
 
 #. translators: A chat message shown to the user
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:75
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:75
 #: src/Agent/workflows/theme/components/SelectThemeFontsVariation.jsx:45
 msgid "We were unable to find any variations for your theme"
 msgstr "テーマのバリエーションが見つかりませんでした。"
 
 #. translators: This message is shown when the AI agent fails to find a suitable workflow.
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:12
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:12
 #: src/Agent/Agent.jsx:111
 msgid "Something went wrong while trying to start this request. Please try again."
 msgstr "このリクエストを開始する際に問題が発生しました。もう一度お試しください。"
 
 #. translators: This message is shown when the AI agent encounters a general error.
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:14
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:14
 #: src/Agent/Agent.jsx:565
 msgid "Sorry, something went wrong. I tried but wasn't able to do this request. Please try again."
 msgstr "申し訳ありません、何か問題が発生しました。リクエストを試みましたが、実行できませんでした。もう一度お試しください。"
 
 #. translators: A chat message shown to the user
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:24
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:24
 #: src/Agent/workflows/block-selector/components/GenerateImageConfirm.jsx:170
 #, js-format
 msgid "Error generating image: %s"
 msgstr "画像生成エラー: %s"
 
 #. translators: %1$s and %2$s are HTML tags. %1$s opens a span with screen-reader-only text, and %2$s closes that span.
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:35
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:35
 #: src/Agent/workflows/plugins/components/InstallPlugin.jsx:134
 #, js-format
 msgid "Plugin Details %1$s(opens in a new tab)%2$s"
 msgstr "プラグインの詳細 %1$s(新しいタブで開く)%2$s"
 
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:35
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:35
 #: src/Agent/workflows/settings/components/UpdateSettingConfirm.jsx:45
 msgid "Apply this setting change?"
 msgstr "この設定変更を適用しますか?"
 
 #. translators: "site style" refers to the structural aesthetic style for the site.
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:66
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:66
 #: src/Agent/workflows/theme/change-site-vibes.js:17
 msgid "Hey there! It looks like you are trying to change your site style, but you are not on a page where we can do that."
 msgstr "サイトスタイルを変更しようとしていますが、ここではそれができません。"
 
 #. translators: A chat message shown to the user
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:81
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:81
 #: src/Agent/workflows/theme/components/SelectThemeVariation.jsx:54
 msgid "We were unable to find any colors for your theme"
 msgstr "テーマに適した色が見つかりませんでした"
 
 #. translators: A chat message shown to the user
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:83
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:83
 #: src/Agent/workflows/theme/components/SelectThemeVariation.jsx:67
 msgid "Loading available colors..."
 msgstr "利用可能な色を読み込み中..."
@@ -4156,7 +4156,7 @@ msgstr "サイトスタイルの適用"
 msgid "Customizing your site style"
 msgstr "サイトスタイルのカスタマイズ"
 
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:4
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:4
 #: public/build/extendify-assist-page-5abc4f3121f907529fcd.js:10
 #: public/build/extendify-draft-21d96962600c40354b54.js:1
 #: src/Agent/icons.jsx:12
@@ -4165,46 +4165,46 @@ msgstr "サイトスタイルのカスタマイズ"
 msgid "Magic Icon"
 msgstr "マジックアイコン"
 
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:4
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:4
 #: src/Agent/icons.jsx:39
 msgid "Magic Sparkle Animation"
 msgstr "マジックスパークルアニメーション"
 
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:4
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:4
 #: public/build/extendify-help-center-eabc21dfe936d7b4ce8e.js:1
 #: src/Agent/icons.jsx:113
 #: src/HelpCenter/components/ai-chat/icons.jsx:41
 msgid "Thumb Down Icon"
 msgstr "サムダウンアイコン"
 
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:4
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:4
 #: public/build/extendify-help-center-eabc21dfe936d7b4ce8e.js:1
 #: src/Agent/icons.jsx:125
 #: src/HelpCenter/components/ai-chat/icons.jsx:53
 msgid "Thumb Up Icon"
 msgstr "サムアップアイコン"
 
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:4
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:4
 #: src/Agent/icons.jsx:132
 msgid "Sparkle Icon"
 msgstr "スパークルアイコン"
 
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:4
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:4
 #: src/Agent/icons.jsx:147
 msgid "Tool Select Icon"
 msgstr "ツール選択アイコン"
 
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:4
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:4
 #: src/Agent/icons.jsx:179
 msgid "Selected Content Icon"
 msgstr "選択されたコンテンツアイコン"
 
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:7
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:7
 #: src/Agent/components/messages/WorkflowMessage.jsx:65
 msgid "Success icon"
 msgstr "成功アイコン"
 
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:4
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:4
 #: src/Agent/components/ErrorMessage.jsx:15
 msgid "Error icon"
 msgstr "エラーアイコン"
@@ -4657,35 +4657,35 @@ msgstr "サイトを強化する"
 msgid "Setting up essential tools"
 msgstr "基本ツールの設定"
 
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:17
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:17
 #: src/Agent/components/ImageUploader.jsx:170
 msgid "Drop images to upload"
 msgstr "画像をドロップしてアップロード"
 
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:24
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:24
 #: src/Agent/workflows/block-selector/components/GenerateImageConfirm.jsx:65
 msgid "Failed to save image"
 msgstr "画像の保存に失敗しました"
 
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:24
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:24
 #: src/Agent/workflows/block-selector/components/GenerateImageConfirm.jsx:184
 #, js-format
 msgid "It looks like you've run out of credits. They'll refresh in %s, so check back then."
 msgstr "クレジットがなくなったようです。%s 後に更新されるので、その時に確認してください。"
 
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:24
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:24
 #: src/Agent/workflows/block-selector/components/GenerateImageConfirm.jsx:254
 msgid "Saving..."
 msgstr "保存中..."
 
 #. translators: %1$s is the current page or post status, and %2$s is the updated page or post status.
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:30
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:30
 #: src/Agent/workflows/content/components/UpdatePostStatusConfirm.jsx:28
 #, js-format
 msgid "Status will change from \"%s\" to \"%s\", please confirm to save."
 msgstr "ステータスが「%1$s」から「%2$s」に変更されます。保存を確認してください。"
 
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:4
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:4
 #: src/Agent/components/ChatInput.jsx:189
 msgid "Message too long"
 msgstr "メッセージが長すぎます"
@@ -4696,7 +4696,7 @@ msgid "A \"Shop\" page will also be automatically created."
 msgstr "「ショップ」固定ページも自動的に作成されます"
 
 #. translators: This is a status message. 'Loading' is a verb — the app is currently loading the animation options. It is not referring to 'loading animation' as a compound noun.
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:57
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:57
 #: src/Agent/workflows/theme/components/SelectAnimation.jsx:117
 msgid "Loading animation options..."
 msgstr "読み込みアニメーションオプション..."
@@ -4796,7 +4796,7 @@ msgstr "以前ここに来たことがあるようです 続行する前にい�
 msgid "%s pages/posts will be deleted."
 msgstr "%s 件の固定ページ/投稿が削除されます"
 
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:4
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:4
 #: public/build/extendify-auto-launch-fa577a30dd41aedded0e.js:49
 #: src/Agent/components/messages/StatusIndicator.jsx:23
 #: src/AutoLaunch/components/RestartLaunchModal.jsx:164
@@ -4808,7 +4808,7 @@ msgstr "処理中..."
 msgid "Describe the website you want to build"
 msgstr "作成したいウェブサイトを説明してください"
 
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:89
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:89
 #: src/Agent/workflows/theme/components/SelectGeneratedPalette.jsx:107
 msgid "We were unable to generate color palettes. Please try again."
 msgstr "カラーパレットを生成できませんでした。もう一度お試しください。"
@@ -4819,56 +4819,56 @@ msgstr "カラーパレットを生成できませんでした。もう一度お
 msgid "Setting the website style"
 msgstr "ウェブサイトのスタイル設定"
 
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:4
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:4
 #: src/Agent/components/OptionsPopover.jsx:78
 msgid "View more options"
 msgstr "さらに表示オプションを見る"
 
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:7
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:7
 #: src/Agent/components/messages/WorkflowMessage.jsx:91
 msgid "Workflow was canceled"
 msgstr "ワークフローがキャンセルされました"
 
 #. translators: This message show above a UI where the user can select a different animation for their site.
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:61
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:61
 #: src/Agent/workflows/theme/change-animation.js:16
 msgid "Below you can select a different animation for your site."
 msgstr "下でサイトの異なるアニメーションを選択できます。"
 
 #. translators: This message show above a UI where the user can select a different site style variation for their theme.
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:75
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:75
 #: src/Agent/workflows/theme/change-site-vibes.js:29
 msgid "Below you can select a different site style variation for your theme."
 msgstr "以下でテーマの異なるサイトスタイルバリエーションを選択できます。"
 
 #. translators: This message show above a UI where the user can select a different font variation for their theme.
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:81
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:81
 #: src/Agent/workflows/theme/change-theme-fonts-variation.js:27
 msgid "Below you can select a different font variation for your theme."
 msgstr "以下でテーマのフォントバリエーションを選択できます。"
 
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:81
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:81
 #: src/Agent/workflows/theme/change-theme-fonts-variation.js:34
 msgid "Updated the theme fonts"
 msgstr "テーマのフォントを更新しました"
 
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:81
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:81
 #: src/Agent/workflows/theme/change-theme-fonts-variation.js:35
 msgid "Canceled the theme fonts update"
 msgstr "テーマフォントの更新をキャンセルしました"
 
 #. translators: This message show above a UI where the user can select a different color variation for their theme.
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:89
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:89
 #: src/Agent/workflows/theme/change-theme-variation.js:21
 msgid "Below you can select a different color variation for your theme."
 msgstr "以下でテーマの色のバリエーションを選択できます。"
 
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:89
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:89
 #: src/Agent/workflows/theme/change-theme-variation.js:28
 msgid "Updated the theme color"
 msgstr "テーマの色を更新しました"
 
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:89
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:89
 #: src/Agent/workflows/theme/change-theme-variation.js:29
 msgid "Canceled the theme color update"
 msgstr "テーマカラーの更新をキャンセルしました"
@@ -4878,7 +4878,7 @@ msgstr "テーマカラーの更新をキャンセルしました"
 msgid "Enhance with AI"
 msgstr "AIで強化"
 
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:19
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:19
 #: src/Agent/state/chat.js:23
 msgid ""
 "#### Your site is ready 🎉\n"
@@ -4936,7 +4936,7 @@ msgid "Picking the perfect design"
 msgstr "最適なデザインを選択中"
 
 #. translators: No value found message for when a WP setting has no value.
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:40
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:40
 msgid "No value found"
 msgstr "値が見つかりませんでした"
 
@@ -5135,21 +5135,21 @@ msgstr "お客様の声"
 msgid "Latvian"
 msgstr "ラトビア語"
 
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:35
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:63
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:35
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:63
 #: src/Agent/workflows/settings/edit-wp-setting.js:20
 #: src/Agent/workflows/theme/change-site-design.js:46
 msgid "Change website title"
 msgstr "ウェブサイトのタイトルを変更"
 
 #. translators: "site style" refers to the structural aesthetic style for the site.
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:73
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:73
 #: src/Agent/workflows/theme/change-site-vibes.js:26
 msgid "Change website style"
 msgstr "ウェブサイトのスタイルを変更"
 
 #. translators: "site animation" refers to the animation style for the current site.
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:59
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:59
 #: src/Agent/workflows/theme/change-animation.js:13
 msgid "Change website animation"
 msgstr "サイトアニメーションを変更"
@@ -5222,39 +5222,39 @@ msgid "Enhancing the website description..."
 msgstr "ウェブサイトの説明を強化中…"
 
 #. translators: "theme colors" refers to the color palette variation for the current theme.
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:63
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:87
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:63
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:87
 #: src/Agent/workflows/theme/change-site-design.js:39
 #: src/Agent/workflows/theme/change-theme-variation.js:18
 msgid "Change website colors"
 msgstr "ウェブサイトの色を変更"
 
 #. translators: "theme fonts" refers to the font variation for the current theme.
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:79
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:79
 #: src/Agent/workflows/theme/change-theme-fonts-variation.js:24
 msgid "Change website fonts"
 msgstr "ウェブサイトのフォントを変更"
 
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:63
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:89
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:63
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:89
 #: src/Agent/workflows/theme/change-site-design.js:53
 #: src/Agent/workflows/theme/update-logo.js:13
 msgid "Change website logo"
 msgstr "ウェブサイトのロゴを変更"
 
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:7
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:7
 #: src/Agent/components/ChatSuggestions.jsx:138
 msgid "Show more"
 msgstr "さらに表示"
 
 #. translators: "site style" refers to the structural aesthetic style for the site.
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:66
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:66
 #: src/Agent/workflows/theme/components/SelectSiteVibes.jsx:48
 msgid "We were unable to find any website style for your theme."
 msgstr "テーマに適したサイトスタイルが見つかりませんでした。"
 
 #. translators: "site style" refers to the structural aesthetic style for the site.
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:71
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:71
 #: src/Agent/workflows/theme/components/SelectSiteVibes.jsx:64
 msgid "Loading website style options..."
 msgstr "サイトスタイルオプションを読み込み中..."
@@ -5276,7 +5276,7 @@ msgid "Adding page: %s"
 msgstr "ページを追加中: %s"
 
 #. translators: this is the initial message in the agent chat, welcoming the user. Keep it short and friendly and follow the same markdown format and emoji.
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:19
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:19
 #: src/Agent/state/chat.js:19
 msgid ""
 "#### Your site is ready 🎉\n"
@@ -5285,59 +5285,59 @@ msgstr ""
 "#### サイトの準備が整いました 🎉  \n"
 "他のウェブサイトデザインを見てみますか?"
 
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:61
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:61
 #: src/Agent/workflows/theme/components/change-site-design/DesignOption.jsx:144
 msgid "Preview site design"
 msgstr "サイトデザインをプレビュー"
 
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:61
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:61
 #: src/Agent/workflows/theme/components/change-site-design/SelectSiteDesign.jsx:391
 msgid "Load more"
 msgstr "もっと読み込む"
 
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:61
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:61
 #: src/Agent/workflows/theme/change-site-design.js:28
 msgid "Change website design"
 msgstr "ウェブサイトのデザインを変更"
 
 #. translators: This message show above a UI where the user can select a different site design.
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:63
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:63
 #: src/Agent/workflows/theme/change-site-design.js:31
 msgid "Below you can select a different design for your website."
 msgstr "以下でウェブサイトのデザインを変更できます。"
 
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:63
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:63
 #: src/Agent/workflows/theme/change-site-design.js:61
 msgid "Updated the website design"
 msgstr "ウェブサイトのデザインを更新しました"
 
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:63
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:63
 #: src/Agent/workflows/theme/change-site-design.js:62
 msgid "Canceled the website design update"
 msgstr "ウェブサイトデザインの更新をキャンセルしました"
 
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:61
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:61
 #: src/Agent/workflows/theme/change-animation.js:23
 msgid "Updated the website animation"
 msgstr "ウェブサイトのアニメーションを更新しました"
 
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:61
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:61
 #: src/Agent/workflows/theme/change-animation.js:24
 msgid "Canceled the website animation update"
 msgstr "ウェブサイトのアニメーション更新をキャンセルしました"
 
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:75
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:75
 #: src/Agent/workflows/theme/change-site-vibes.js:36
 msgid "Updated the website style"
 msgstr "ウェブサイトのスタイルを更新しました"
 
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:75
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:75
 #: src/Agent/workflows/theme/change-site-vibes.js:37
 msgid "Canceled the website style update"
 msgstr "ウェブサイトのスタイル更新をキャンセルしました"
 
 #. translators: A chat message shown to the user when their selected color variation cannot be applied
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:85
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:85
 #: src/Agent/workflows/theme/components/SelectThemeVariation.jsx:33
 msgid "We were unable to apply your selected colors. Please try again."
 msgstr "選択した色を適用できませんでした。もう一度お試しください。"
@@ -5348,14 +5348,14 @@ msgstr "選択した色を適用できませんでした。もう一度お試し
 msgid "206-555-0100"
 msgstr "206-555-0100"
 
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:71
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:71
 #: src/Agent/workflows/theme/components/SelectSiteVibes.jsx:88
 #: src/Agent/workflows/theme/components/SelectSiteVibes.jsx:107
 #, js-format
 msgid "Style %s"
 msgstr "スタイル%s"
 
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:61
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:61
 #: src/Agent/workflows/theme/change-site-design.js:18
 msgid "Hey there! It looks like you are trying to change your site design, but you are not on a page where we can do that."
 msgstr "サイトのデザインを変更しようとしているようですが、ここではそれを行うことはできません。"
@@ -5931,78 +5931,78 @@ msgstr "例: 家族法、遺産計画、不動産を専門とするブティッ�
 msgid "Create website"
 msgstr "サイトを作成"
 
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:30
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:30
 #: src/Agent/workflows/content/update-post-status.js:12
 msgid "Publish this page"
 msgstr "この固定ページを公開"
 
 #. translators: Shown when the user clicks the "Publish this page" suggestion, above a confirm card.
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:32
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:32
 #: src/Agent/workflows/content/update-post-status.js:15
 msgid "Ready to publish this page?"
 msgstr "この固定ページを公開してもよいですか ?"
 
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:32
-#: src/Agent/workflows/content/update-post-status.js:25
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:32
+#: src/Agent/workflows/content/update-post-status.js:32
 msgid "Published the page"
 msgstr "固定ページを公開しました"
 
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:32
-#: src/Agent/workflows/content/update-post-status.js:26
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:32
+#: src/Agent/workflows/content/update-post-status.js:33
 msgid "Canceled publishing the page"
 msgstr "ページの公開をキャンセルしました"
 
 #. translators: The agent asks this, then waits for the user to type their new site title.
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:37
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:37
 #: src/Agent/workflows/settings/edit-wp-setting.js:23
 msgid "What would you like your new website title to be?"
 msgstr "新しいサイトタイトルは何にしますか？"
 
 #. translators: This message shows above a UI where the user can upload or replace their site logo.
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:91
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:91
 #: src/Agent/workflows/theme/update-logo.js:16
 msgid "Below you can upload or replace your website logo."
 msgstr "以下でウェブサイトのロゴをアップロードまたは置換できます。"
 
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:91
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:91
 #: src/Agent/workflows/theme/update-logo.js:23
 msgid "Updated the site logo"
 msgstr "サイトロゴを更新しました。"
 
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:91
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:91
 #: src/Agent/workflows/theme/update-logo.js:24
 msgid "Canceled the site logo update"
 msgstr "サイトロゴの更新をキャンセルしました"
 
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:91
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:91
 #: src/Agent/workflows/theme/update-site-icon.js:13
 msgid "Change website browser icon"
 msgstr "ウェブサイトのブラウザーアイコンを変更"
 
 #. translators: This message shows above a UI where the user can upload or replace their browser icon (favicon).
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:93
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:93
 #: src/Agent/workflows/theme/update-site-icon.js:16
 msgid "Below you can upload or replace your website browser icon."
 msgstr "以下でウェブサイトのブラウザーアイコンをアップロードまたは置き換えることができます"
 
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:93
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:93
 #: src/Agent/workflows/theme/update-site-icon.js:23
 msgid "Updated the site icon"
 msgstr "サイトアイコンを更新しました。"
 
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:93
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:93
 #: src/Agent/workflows/theme/update-site-icon.js:24
 msgid "Canceled the site icon update"
 msgstr "サイトアイコンの更新をキャンセルしました"
 
 #. translators: confirm prompt before the agent performs a WordPress task it picked.
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:4
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:4
 #: src/Agent/workflows/abilities/components/AbilityRunGate.jsx:12
 msgid "Run this action?"
 msgstr "この操作を実行しますか?"
 
 #. translators: %s is the machine name of a WordPress ability the agent tried to run.
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:21
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:21
 #, js-format
 msgid "Ability \"%s\" is not available."
 msgstr "アビリティ「%s」は利用できません。"
@@ -6082,6 +6082,11 @@ msgstr "あなたへのおすすめ"
 msgid "Reviewing your description..."
 msgstr "説明をレビューしています ..."
 
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:32
+#: src/Agent/workflows/content/update-post-status.js:19
+msgid "Add this to the menu"
+msgstr "これをメニューに追加"
+
 #: app/Toolbar/Admin.php:46
 msgctxt "toolbar style"
 msgid "Simple"
@@ -6119,61 +6124,61 @@ msgid "Activated"
 msgstr "有効になりました"
 
 #. translators: "Slow" refers to a slower speed at which the animation effect occurs. This is an option in a list of animation speeds.
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:50
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:50
 #: src/Agent/workflows/theme/components/SelectAnimation.jsx:47
 msgctxt "animation speed"
 msgid "Slow"
 msgstr "スロー"
 
 #. translators: "Medium" refers to a moderate speed at which the animation effect occurs. This is an option in a list of animation speeds.
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:52
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:52
 #: src/Agent/workflows/theme/components/SelectAnimation.jsx:52
 msgctxt "animation speed"
 msgid "Medium"
 msgstr "中程度"
 
 #. translators: "Fast" refers to a quicker speed at which the animation effect occurs. This is an option in a list of animation speeds.
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:54
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:54
 #: src/Agent/workflows/theme/components/SelectAnimation.jsx:57
 msgctxt "animation speed"
 msgid "Fast"
 msgstr "速い"
 
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:57
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:57
 #: src/Agent/workflows/theme/components/SelectAnimation.jsx:147
 msgctxt "animation speed"
 msgid "Speed"
 msgstr "速度"
 
 #. translators: Animation style where the element gradually appears by transitioning from transparent to visible. Translate as a simple, non-technical description of the visual effect (e.g., 'appear', 'show up') suitable for non-technical users.
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:42
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:42
 #: src/Agent/workflows/theme/components/SelectAnimation.jsx:20
 msgctxt "animation type"
 msgid "Fade In"
 msgstr "フェードイン"
 
 #. translators: Animation style where the element appears while moving upward. Translate as a simple, non-technical description of the motion (e.g., 'appear from below', 'rise into view') suitable for non-technical users.
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:44
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:44
 #: src/Agent/workflows/theme/components/SelectAnimation.jsx:26
 msgctxt "animation type"
 msgid "Fade Up"
 msgstr "下から現れる"
 
 #. translators: Animation style where the element appears by scaling from small to its full size. Translate as a simple, non-technical description of the effect (e.g., 'zoom in', 'get closer') suitable for non-technical users. If the target language commonly uses the English term 'zoom', it's acceptable to keep it.
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:46
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:46
 #: src/Agent/workflows/theme/components/SelectAnimation.jsx:32
 msgctxt "animation type"
 msgid "Zoom In"
 msgstr "ズームイン"
 
 #. translators: None refers to 'no animation'. Apply the correct grammatical gender/form that agrees with the word for 'animation' in the target language.
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:48
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:48
 #: src/Agent/workflows/theme/components/SelectAnimation.jsx:38
 msgctxt "animation type"
 msgid "None"
 msgstr "なし"
 
-#: public/build/extendify-agent-abe6f2ed62c0fa79f20a.js:57
+#: public/build/extendify-agent-a8fd02232f3bfa246367.js:57
 #: src/Agent/workflows/theme/components/SelectAnimation.jsx:128
 msgctxt "animation type"
 msgid "Type"

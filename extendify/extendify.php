@@ -7,7 +7,7 @@
  * Plugin URI:        https://extendify.com/?utm_source=wp-plugins&utm_campaign=plugin-uri&utm_medium=wp-dash
  * Author:            Extendify
  * Author URI:        https://extendify.com/?utm_source=wp-plugins&utm_campaign=author-uri&utm_medium=wp-dash
- * Version:           3.1.2
+ * Version:           3.1.3
  * Requires at least: 6.5
  * Requires PHP:      7.0
  * License:           GPL-2.0-or-later
@@ -28,8 +28,6 @@
 // phpcs:enable Generic.Files.LineLength.TooLong
 
 defined('ABSPATH') || exit;
-
-use Extendify\PartnerData;
 
 /** ExtendifySdk is the previous class name used */
 if (!class_exists('ExtendifySdk') && !class_exists('Extendify')) :
@@ -81,29 +79,6 @@ if (!class_exists('ExtendifySdk') && !class_exists('Extendify')) :
         $extendify();
     });
 
-    add_action('update_option', function ($option) {
-        if (in_array($option, ['WPLANG', 'blogname'], true)) {
-            \delete_transient('extendify_recommendations');
-            \delete_transient('extendify_domains');
-            \delete_transient('extendify_supportArticles');
-        }
-
-        // Delete the partner transient so we can fetch new data when the locale is switched.
-        if (($option === 'WPLANG') && get_transient('extendify_partner_data_cache_check')) {
-            delete_transient('extendify_partner_data_cache_check');
-            PartnerData::getPartnerData();
-        }
-    });
-
-    // Delete the partner transient so we can fetch new data when the locale is switched via WP-CLI.
-    add_action('cli_init', function () {
-        $command = sanitize_text_field(wp_unslash(($_SERVER['argv'][1] ?? '')));
-        if ($command === 'language' && get_transient('extendify_partner_data_cache_check')) {
-            delete_transient('extendify_partner_data_cache_check');
-            PartnerData::getPartnerData();
-        }
-    });
-
     // phpcs:ignore Generic.CodeAnalysis.UnusedFunctionParameter.FoundBeforeLastUsed
     add_action('upgrader_process_complete', function ($upgrader, $options) {
         $updatedExtendify = isset($options['plugins']) && array_filter($options['plugins'], function ($plugin) {
@@ -147,20 +122,6 @@ if (!class_exists('ExtendifySdk') && !class_exists('Extendify')) :
             exit;
         }
     });
-
-    // Allow Extendify requests to have a longer timeout.
-    add_filter('http_request_args', function ($args, $url) {
-        $extendifyHosts = array_filter(array_map(function ($host) {
-            return wp_parse_url($host, PHP_URL_HOST);
-        }, \Extendify\Constants::serviceUrls()));
-
-        $host = wp_parse_url($url, PHP_URL_HOST);
-        if ($host && (str_contains($host, 'extendify') || in_array($host, $extendifyHosts, true))) {
-            $args['timeout'] = 45;
-        }
-
-        return $args;
-    }, 100, 2);
 
     // Clean up the site profile if being accessed
     add_filter('option_extendify_site_profile', function ($value) {

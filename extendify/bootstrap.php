@@ -47,6 +47,43 @@ if (is_readable(EXTENDIFY_PATH . 'vendor/autoload.php')) {
     require EXTENDIFY_PATH . 'vendor/autoload.php';
 }
 
+// Registered after the autoloader — these callbacks reference classes it loads.
+add_filter('http_request_args', function ($args, $url) {
+    $extendifyHosts = array_filter(array_map(function ($host) {
+        return wp_parse_url($host, PHP_URL_HOST);
+    }, \Extendify\Constants::serviceUrls()));
+
+    $host = wp_parse_url($url, PHP_URL_HOST);
+    if ($host && (str_contains($host, 'extendify') || in_array($host, $extendifyHosts, true))) {
+        $args['timeout'] = 45;
+    }
+
+    return $args;
+}, 100, 2);
+
+add_action('update_option', function ($option) {
+    if (in_array($option, ['WPLANG', 'blogname'], true)) {
+        \delete_transient('extendify_recommendations');
+        \delete_transient('extendify_domains');
+        \delete_transient('extendify_supportArticles');
+    }
+
+    // Delete the partner transient so we can fetch new data when the locale is switched.
+    if (($option === 'WPLANG') && get_transient('extendify_partner_data_cache_check')) {
+        delete_transient('extendify_partner_data_cache_check');
+        PartnerData::getPartnerData();
+    }
+});
+
+// Delete the partner transient so we can fetch new data when the locale is switched via WP-CLI.
+add_action('cli_init', function () {
+    $command = sanitize_text_field(wp_unslash(($_SERVER['argv'][1] ?? '')));
+    if ($command === 'language' && get_transient('extendify_partner_data_cache_check')) {
+        delete_transient('extendify_partner_data_cache_check');
+        PartnerData::getPartnerData();
+    }
+});
+
 if (!defined('EXTENDIFY_IS_THEME_EXTENDABLE')) {
     define('EXTENDIFY_IS_THEME_EXTENDABLE', get_option('stylesheet') === 'extendable');
 }
