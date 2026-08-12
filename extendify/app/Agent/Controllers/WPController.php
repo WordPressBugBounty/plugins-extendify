@@ -319,54 +319,19 @@ class WPController
             return new \WP_REST_Response(['error' => 'Post not found'], 404);
         }
 
-        $ignored = \Extendify\Agent\TagBlocks::$ignored;
+        $found = \Extendify\Agent\PostBlockFinder::find(parse_blocks($post->post_content), $blockId);
 
-        $ast = array_values(array_filter(
-            parse_blocks($post->post_content),
-            static function ($b) {
-                return is_array($b) && !empty($b['blockName']);
-            }
-        ));
-
-        $seq = 0;
-        $found = null;
-
-        $walk = function (array $list) use (&$walk, &$seq, $blockId, &$found, $ignored) {
-            foreach ($list as $b) {
-                $name = $b['blockName'] ?? null;
-                if (!$name) {
-                    continue;
-                }
-
-                // Ignore this block and its subtree (matches tagger behavior)
-                if (in_array($name, $ignored, true)) {
-                    continue; // do NOT increment seq, do NOT traverse children
-                }
-
-                $seq++;
-                if ($seq === $blockId) {
-                    $found = $b;
-                    return true;
-                }
-
-                if (!empty($b['innerBlocks']) && $walk($b['innerBlocks'])) {
-                    return true;
-                }
-            }
-            return false;
-        };
-        $walk($ast);
-
-        if (!is_array($found) || empty($found['blockName'])) {
+        if (!$found || empty($found['block']['blockName'])) {
             return new \WP_REST_Response(['error' => 'Block id not found in this post'], 404);
         }
 
+        $block = $found['block'];
         return new \WP_REST_Response([
             'postId'  => $postId,
             'blockId' => $blockId,
-            'name'    => $found['blockName'],
-            'attrs'   => $found['attrs'] ?? (object)[],
-            'block'   => serialize_blocks([$found]),
+            'name'    => $block['blockName'],
+            'attrs'   => $block['attrs'] ?? (object)[],
+            'block'   => serialize_blocks([$block]),
         ], 200);
     }
 
@@ -415,7 +380,13 @@ class WPController
         $blockCode = $request->get_param('blockCode');
         $content = \do_blocks($blockCode);
 
-        return new \WP_REST_Response(['content' => trim($content)]);
+        // Layout supports register per-container CSS for a page-side enqueue
+        // that never happens on a REST fragment — ship it with the markup.
+        $styles = function_exists('wp_style_engine_get_stylesheet_from_context')
+            ? \wp_style_engine_get_stylesheet_from_context('block-supports')
+            : '';
+
+        return new \WP_REST_Response(['content' => trim($content), 'styles' => $styles]);
     }
 
     /**

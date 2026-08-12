@@ -37,6 +37,9 @@ const state = (set, get) => ({
 			const finished = ['completed', 'canceled'].includes(details.status);
 			if (type === 'workflow' && finished) break;
 			if (type === 'workflow-component' && finished) break;
+			if (type === 'message' && details.error) break;
+			// A call with no result leaves the model answering a phantom.
+			if (type === 'tool' && !('result' in details)) continue;
 			if (type === 'tool' && includeTools) {
 				// buildToolMessages returns [call, result]; push reversed so the
 				// final toReversed() restores call-before-result order.
@@ -52,22 +55,34 @@ const state = (set, get) => ({
 		}
 		return messages.toReversed();
 	},
-	// API messages from every finished run of the given workflow.
+	// Most recent consecutive runs — another workflow in between resets the
+	// memory.
 	getMessagesFor: (workflowId) => {
 		if (!workflowId) return [];
-		const messages = [];
+		const segments = [];
 		let segment = [];
 		for (const { type, details } of get().messages) {
 			const finished = ['completed', 'canceled'].includes(details.status);
 			if (['workflow', 'workflow-component'].includes(type) && finished) {
-				if (details.workflowId === workflowId) messages.push(...segment);
+				segments.push({ workflowId: details.workflowId, segment });
 				segment = [];
 				continue;
 			}
-			if (type === 'tool') segment.push(...buildToolMessages(details));
+			// An error ended a run without a marker; what precedes it is dead.
+			if (type === 'message' && details.error) {
+				segment = [];
+				continue;
+			}
+			if (type === 'tool' && 'result' in details) {
+				segment.push(...buildToolMessages(details, { summarize: true }));
+				continue;
+			}
 			if (type === 'message') segment.push(details);
 		}
-		return messages;
+		const broken = segments.findLastIndex(
+			(finished) => finished.workflowId !== workflowId,
+		);
+		return segments.slice(broken + 1).flatMap(({ segment }) => segment);
 	},
 	getLastAssistantMessage: () =>
 		get()?.messages?.findLast(
@@ -92,6 +107,14 @@ const state = (set, get) => ({
 		useStatusStore.getState().clearStatuses();
 		return id;
 	},
+	updateMessage: (id, details) =>
+		set((state) => ({
+			messages: state.messages.map((message) =>
+				message.id === id
+					? { ...message, details: { ...message.details, ...details } }
+					: message,
+			),
+		})),
 	// pop messages all the way back to the last agent message
 	popMessage: () => {
 		set((state) => ({

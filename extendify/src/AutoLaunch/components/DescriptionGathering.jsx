@@ -19,13 +19,19 @@ import { __ } from '@wordpress/i18n';
 import { chevronRight, Icon, pencil } from '@wordpress/icons';
 import { isURL } from '@wordpress/url';
 
-const getShowTitle = () => getAbTest('AutoLaunch.ShowTitle').variant === 'B';
+const getShowTitle = () => Boolean(window.extLaunchData?.showLaunchTitle);
+
+const getSubmitOutside = () =>
+	getAbTest('AutoLaunch.SubmitOutside').variant === 'B' || getShowTitle();
 
 export const DescriptionGathering = () => {
 	const { setData, descriptionBackup, urlParams } = useLaunchDataStore();
 	useInstallRequiredPlugins();
 	const [input, setInput] = useState(
-		urlParams.description || urlParams.title || descriptionBackup || '',
+		urlParams.description ||
+			(!getShowTitle() && urlParams.title) ||
+			descriptionBackup ||
+			'',
 	);
 	const blogname = window.extSharedData?.siteTitle || '';
 	const titlePrefill =
@@ -269,12 +275,12 @@ const TitleField = ({ title, setTitle, setData, improving }) => {
 };
 
 const InlineSubmitButton = ({ disabled }) => {
-	if (getAbTest('AutoLaunch.SubmitOutside').variant === 'B') return null;
+	if (getSubmitOutside()) return null;
 	return <SubmitButton disabled={disabled} />;
 };
 
 const OutsideSubmitButton = ({ disabled, improving }) => {
-	if (getAbTest('AutoLaunch.SubmitOutside').variant !== 'B' || improving) {
+	if (!getSubmitOutside() || improving) {
 		return null;
 	}
 	return (

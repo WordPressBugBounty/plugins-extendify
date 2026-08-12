@@ -21,12 +21,15 @@ use Extendify\Agent\Frontend as AgentFrontend;
 use Extendify\QuickEdit\Frontend as QuickEditFrontend;
 use Extendify\PageCreator\Admin as PageCreatorAdmin;
 use Extendify\PartnerData;
+use Extendify\PartnerNotification\Admin as PartnerNotificationAdmin;
 use Extendify\Toolbar\Admin as ToolbarAdmin;
 use Extendify\Toolbar\Frontend as ToolbarFrontend;
 use Extendify\Recommendations\Admin as RecommendationsAdmin;
 use Extendify\PluginNotifications\Admin as PluginNotificationsAdmin;
 use Extendify\Shared\Admin as SharedAdmin;
+use Extendify\Shared\DataProvider\PartnerNotificationData;
 use Extendify\Shared\DataProvider\ResourceData;
+use Extendify\Shared\Services\ForcePluginReinstall;
 use Extendify\Shared\Services\Import\ImagesImporter;
 use Extendify\Shared\Services\PluginRedirectDisabler;
 use Extendify\Shared\Services\VersionMigrator;
@@ -99,6 +102,9 @@ if (!defined('EXTENDIFY_IS_THEME_EXTENDABLE')) {
     // Run various database updates depending on the plugin version.
     new VersionMigrator();
 
+    // Force-reinstall support for /wp/v2/plugins (opt-in via request header).
+    ForcePluginReinstall::register();
+
     // This class will fetch and cache partner data to be used
     // throughout every class below. If opt in.
     new PartnerData();
@@ -109,6 +115,7 @@ if (!defined('EXTENDIFY_IS_THEME_EXTENDABLE')) {
     // Set up scheduled cache (if opt-in and active).
     if (!PartnerData::setting('deactivated')) {
         ResourceData::scheduleCache();
+        PartnerNotificationData::scheduleCache();
     }
 
     if (!current_user_can(EXTENDIFY_REQUIRED_CAPABILITY)) {
@@ -183,6 +190,10 @@ if (!defined('EXTENDIFY_IS_THEME_EXTENDABLE')) {
 
     if (PartnerData::setting('showProductRecommendations') || constant('EXTENDIFY_DEVMODE')) {
         new RecommendationsAdmin();
+    }
+
+    if (PartnerData::setting('showPartnerNotifications') || constant('EXTENDIFY_DEVMODE')) {
+        new PartnerNotificationAdmin();
     }
 
     if (PartnerData::setting('showDraft') || constant('EXTENDIFY_DEVMODE')) {

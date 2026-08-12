@@ -11,6 +11,7 @@ defined('ABSPATH') || die('No direct access.');
 use Extendify\Agent\Controllers\ChatHistoryController;
 use Extendify\Shared\DataProvider\ResourceData;
 use Extendify\Shared\Services\AutoUpdate\AutoUpdate;
+use Extendify\Shared\Services\LaunchUpdate\LaunchUpdater;
 use Extendify\Shared\Services\Sanitizer;
 
 /**
@@ -157,10 +158,22 @@ class WPController
         \delete_transient('extendify_import_images_check_delay');
 
         \update_option('extendify_onboarding_completed', gmdate('Y-m-d\TH:i:s\Z'));
+        LaunchUpdater::clearAttempts();
 
         \do_action('extendify_after_launch');
 
         return new \WP_REST_Response('ok');
+    }
+
+    /**
+     * Apply pending theme / PUC-plugin upgrades before Launch runs (see
+     * LaunchUpdater::run, which never throws).
+     *
+     * @return \WP_REST_Response
+     */
+    public static function runUpdates()
+    {
+        return new \WP_REST_Response(LaunchUpdater::run());
     }
 
     /**

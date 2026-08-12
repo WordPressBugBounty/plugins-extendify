@@ -1,9 +1,9 @@
 import { isAbilityWorkflow } from '@agent/lib/abilities';
 import { isChangeSiteDesignWorkflowAvailable } from '@agent/lib/util';
-import { AbilityRunGate } from '@agent/workflows/abilities/components/AbilityRunGate';
+import { AbilityRun } from '@agent/workflows/abilities/components/run';
 import changeSiteDesignWorkflow from '@agent/workflows/theme/change-site-design';
 import variationsWorkflow from '@agent/workflows/theme/change-theme-variation';
-import { workflows } from '@agent/workflows/workflows';
+import { abilityWorkflows, workflows } from '@agent/workflows/workflows';
 import { useQuickEditStore } from '@quick-edit/state/store';
 import { deepMerge } from '@shared/lib/utils';
 import { create } from 'zustand';
@@ -35,11 +35,13 @@ const state = (set, get) => ({
 		const wf = workflows.find(({ id }) => id === currId);
 		if (!wf?.id) {
 			if (!curr) return null;
-			// Ability workflows are shaped per request, so they carry no static
-			// whenFinished component; give them the generic run gate.
-			return isAbilityWorkflow(curr.id)
-				? { ...curr, whenFinished: { component: AbilityRunGate } }
-				: curr;
+			if (!isAbilityWorkflow(curr.id)) return curr;
+			// The backend never sends whenFinished, so this supplies the gate.
+			const ability = deepMerge(
+				{ whenFinished: { component: AbilityRun } },
+				abilityWorkflows[curr.id] ?? {},
+			);
+			return { ...deepMerge(curr, ability), id: curr.id };
 		}
 		return { ...deepMerge(curr, wf || {}), id: curr?.id };
 	},
@@ -83,18 +85,39 @@ const state = (set, get) => ({
 	},
 	setWorkflow: (workflow) => {
 		const agentBlockCode = useQuickEditStore.getState().agentBlockCode;
+		const started = workflow
+			? { ...workflow, startingPage: window.location.href }
+			: null;
 		set({
-			workflow: workflow
-				? { ...workflow, startingPage: window.location.href }
-				: null,
+			workflow: started,
 			// If a block is selected, add it to the workflow data
 			// previousContent is named this way for legacy reasons
 			workflowData: agentBlockCode ? { previousContent: agentBlockCode } : null,
 			whenFinishedToolProps: null,
 		});
+		if (!started) return;
+		const workflowStarted = get().getWorkflow();
+		window.dispatchEvent(
+			new CustomEvent('extendify-workflow::started', {
+				detail: workflowStarted,
+			}),
+		);
+		try {
+			workflowStarted?.onStarted?.(workflowStarted);
+		} catch {
+			// A workflow that can't read the page still has to start.
+		}
 	},
 	setWhenFinishedToolProps: (whenFinishedToolProps) =>
 		set({ whenFinishedToolProps }),
+	// Declared up front it would hide the workflow while nothing is staged.
+	// Not setWorkflow: that resets workflowData and drops the run's data.
+	requireBlock: () =>
+		set((state) =>
+			state.workflow
+				? { workflow: { ...state.workflow, requires: ['block'] } }
+				: {},
+		),
 });
 
 export const useWorkflowStore = create()(
@@ -112,7 +135,18 @@ export const useWorkflowStore = create()(
 					whenFinishedToolProps: onboardingToolProps,
 				};
 			}
-			return { ...currentState, ...persistedState };
+			const merged = { ...currentState, ...persistedState };
+			// A reload can't carry the staged block a block-patching workflow
+			// depends on, so a rehydrated-open one is always stale.
+			if (merged.workflow?.id === 'block-patching') {
+				return {
+					...merged,
+					workflow: null,
+					whenFinishedToolProps: null,
+					workflowData: null,
+				};
+			}
+			return merged;
 		},
 	}),
 );

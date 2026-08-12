@@ -16,6 +16,7 @@ use Extendify\Shared\Services\Escaper;
 use Extendify\Shared\Services\HttpClient;
 use Extendify\Agent\TagBlocks;
 use Extendify\Agent\TagTemplateParts;
+use Extendify\Agent\WooProductImages;
 use Extendify\Agent\AbilitiesDiscovery;
 use Extendify\Agent\Controllers\SiteNavigationController;
 use Extendify\PartnerData;
@@ -43,6 +44,8 @@ class Admin
 
         // Add the site navigation ids to the navigation blocks
         SiteNavigationController::init();
+
+        WooProductImages::init();
 
         \add_action('extendify_agent_suggestions_refresh', [$this, 'refreshSuggestions']);
     }
@@ -106,6 +109,7 @@ class Admin
             'siteTitle' => \esc_attr(\get_bloginfo('name')),
             'siteDescription' => \esc_attr(\get_bloginfo('description')),
             'themePresets' => $this->getThemePresets(),
+            'presetSlugs' => $this->getPresetSlugs(),
         ];
         $recommendations = ProductsData::get() ?? [];
         $pluginRecommendations = array_filter($recommendations, function ($item) {
@@ -149,8 +153,7 @@ class Admin
                 'agentPosition' => $agentOnboarding && !is_admin() ? 'docked-left' : 'floating',
                 // Add context about where they are
                 'context' => $context,
-                // Context that the Agent might need when returning a response,
-                // but not for handling the workflow.
+                // Material a workflow may want; each declares the keys it reads.
                 'agentContext' => $agentContext,
                 // List of abilities the AI can perform for this user.
                 // For example, we could check whether their theme has variations.
@@ -276,6 +279,56 @@ class Admin
             'fontFamilies' => $fontFamilies,
             'colorPairs' => $colorPairs,
         ];
+    }
+
+    /**
+     * Preset slugs per design-token family across every origin. Feeds the Agent's
+     * block-attribute schema so the model picks named tokens, not raw CSS.
+     *
+     * @return array<string,string[]>
+     */
+    private function getPresetSlugs()
+    {
+        if (!function_exists('wp_get_global_settings')) {
+            return [];
+        }
+
+        $color = \wp_get_global_settings(['color']);
+        $typography = \wp_get_global_settings(['typography']);
+
+        return [
+            'color' => $this->originSlugs($color, 'palette', 'defaultPalette'),
+            'gradient' => $this->originSlugs($color, 'gradients', 'defaultGradients'),
+            'fontSize' => $this->originSlugs($typography, 'fontSizes', 'defaultFontSizes'),
+            'fontFamily' => $this->originSlugs($typography, 'fontFamilies', 'defaultFontFamilies'),
+        ];
+    }
+
+    /**
+     * Preset slugs from a settings node's origin buckets; drops the `default`
+     * origin when the theme opted the family out.
+     *
+     * @return string[]
+     */
+    private function originSlugs($node, $listKey, $defaultKey)
+    {
+        $list = $node[$listKey] ?? [];
+
+        $origins = ['custom', 'theme'];
+        if (($node[$defaultKey] ?? true) !== false) {
+            $origins[] = 'default';
+        }
+
+        $slugs = [];
+        foreach ($origins as $origin) {
+            foreach ($list[$origin] ?? [] as $item) {
+                if (isset($item['slug'])) {
+                    $slugs[] = (string) $item['slug'];
+                }
+            }
+        }
+
+        return array_values(array_unique($slugs));
     }
 
     private static function extractColorSlug(string $value)

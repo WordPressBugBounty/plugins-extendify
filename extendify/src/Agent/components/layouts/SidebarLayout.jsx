@@ -214,7 +214,6 @@ export const useLayoutShift = (open) => {
 					overflowY: 'auto',
 					// `auto` so the scrollTop below is instant; `smooth` would animate from 0.
 					scrollBehavior: 'auto',
-					colorScheme: 'light',
 				});
 				// Force layout so scrollTop respects the new height/overflow.
 				void siteBlocks.scrollHeight;
@@ -241,7 +240,6 @@ export const useLayoutShift = (open) => {
 					overflowY: '',
 					maxWidth: '100vw',
 					scrollBehavior: '',
-					colorScheme: '',
 				});
 				if (stickyHeader) {
 					stickyHeader.style.removeProperty(

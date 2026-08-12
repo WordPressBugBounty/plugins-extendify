@@ -1,10 +1,373 @@
+import { fetchBlockCodeById } from '@agent/lib/block-code';
+import { applyBlockPatch } from '@agent/lib/block-patch';
+import { processCustomCss } from '@agent/lib/custom-css';
+import { resolveDeleteTarget } from '@agent/lib/delete-target';
+import { buildNewBlock } from '@agent/lib/insertable-blocks';
 import { useQuickEditStore } from '@quick-edit/state/store';
 import { patchVariantClasses } from '@shared/lib/variant-classes';
 import apiFetch from '@wordpress/api-fetch';
+import { parse } from '@wordpress/blocks';
 import { useCallback, useEffect, useRef, useState } from '@wordpress/element';
 import { __ } from '@wordpress/i18n';
 
 const dynamicClasses = ['is-style-ext-preset', 'is-style-outline'];
+const wpBlockAttributeClasses =
+	/^has-([\w-]+-)?(background-color|color|font-size|gradient-background)$|^has-background$|^has-text-color$/;
+// Carrying stale align/layout classes renders the preview with the old layout
+const layoutEngineClasses =
+	/^align(full|wide|left|right|center)$|^is-layout-|^wp-container-|-is-layout-|^is-content-justification-|^is-(vertical|horizontal|nowrap|wrap)$|^has-global-padding$/;
+const themeAnimationClasses = /^ext-animated?(-|$)/;
+
+// Re-set ext-animated to prevent animating while patching
+const pinThemeAnimations = (el) => {
+	for (const node of [el, ...el.querySelectorAll('.ext-animate')]) {
+		if (node.classList?.contains('ext-animate'))
+			node.dataset.extAnimated = 'true';
+	}
+};
+const PREVIEW_CSS_ATTR = 'data-extendify-preview-css';
+
+const cssOf = (blockCode) =>
+	parse(blockCode)[0]?.attributes?.style?.css || null;
+
+// The wp-container-* layout rules enqueue page-side on a full render only, so
+// the fragment ships them and the preview injects them, tagged for teardown.
+const injectPreviewStylesheet = (blockId, cssText) => {
+	if (!cssText) return;
+	const style = document.createElement('style');
+	style.setAttribute(PREVIEW_CSS_ATTR, blockId);
+	style.textContent = cssText;
+	document.head.appendChild(style);
+};
+
+// The block fragment ships without style.css's server rule, so inject it here,
+// tagged for teardown. No rule means WP discards this CSS too — show nothing.
+const injectPreviewCss = (el, blockId, css) => {
+	const cls = `ext-preview-css-${blockId}`;
+	const rule = processCustomCss(css, `.${cls}`);
+	if (!rule) return;
+	el.classList.add(cls);
+	const style = document.createElement('style');
+	style.setAttribute(PREVIEW_CSS_ATTR, blockId);
+	style.textContent = rule;
+	document.head.appendChild(style);
+};
+
+// Swap the rendered preview in for the live element. Returns the detached
+// original (restored on cancel), or null when the target isn't on the page.
+const previewBlock = async (blockId, newContent, css) => {
+	const { content, styles } = await apiFetch({
+		path: '/extendify/v1/agent/get-block-html',
+		method: 'POST',
+		data: { blockCode: newContent },
+	});
+	const el = document.querySelector(
+		`[data-extendify-agent-block-id="${blockId}"]`,
+	);
+	if (!el) return null;
+	injectPreviewStylesheet(blockId, styles);
+
+	const patched = patchVariantClasses(
+		content,
+		el.cloneNode(true),
+		dynamicClasses,
+	);
+	const template = document.createElement('template');
+	template.innerHTML = patched || '<div style="display:none"></div>';
+	const newEl = template.content.firstElementChild;
+	if (!newEl) return null;
+
+	// Later ops anchor by id — the replacement and its children keep theirs;
+	// an attribute edit preserves child structure, so ids map by position.
+	newEl.setAttribute('data-extendify-agent-block-id', blockId);
+	for (const tagged of el.querySelectorAll('[data-extendify-agent-block-id]')) {
+		const path = [];
+		for (let node = tagged; node !== el; node = node.parentElement) {
+			if (!node.parentElement) break;
+			path.unshift([...node.parentElement.children].indexOf(node));
+		}
+		const match = path.reduce((node, i) => node?.children?.[i], newEl);
+		match?.setAttribute(
+			'data-extendify-agent-block-id',
+			tagged.getAttribute('data-extendify-agent-block-id'),
+		);
+	}
+	const newElClasses = new Set(newEl.classList);
+	el.classList.forEach((className) => {
+		if (newElClasses.has(className)) return;
+		if (wpBlockAttributeClasses.test(className)) return;
+		if (layoutEngineClasses.test(className)) return;
+		if (themeAnimationClasses.test(className)) return;
+		newEl.classList.add(className);
+	});
+	// The custom-CSS hash class points at a stale/absent server rule — drop it;
+	// injectPreviewCss applies the current css.
+	for (const className of [...newEl.classList]) {
+		if (
+			className === 'has-custom-css' ||
+			className.startsWith('wp-custom-css-')
+		)
+			newEl.classList.remove(className);
+	}
+	if (css) injectPreviewCss(newEl, blockId, css);
+	newEl.setAttribute('data-extendify-temp-replacement', blockId);
+	// ext-animate--on sets opacity:0 and won't re-run on a replaced node, so the
+	// preview would stay invisible — strip it.
+	for (const node of [newEl, ...newEl.querySelectorAll('.ext-animate--on')]) {
+		node.classList.remove('ext-animate--on');
+	}
+	el.parentNode.insertBefore(newEl, el.nextSibling);
+	el.parentNode.removeChild(el);
+	return el;
+};
+
+// Relocate the live node; a hidden marker holds its old slot so undo can put it back.
+const previewMove = ({ blockId, targetId, position }) => {
+	const el = document.querySelector(
+		`[data-extendify-agent-block-id="${blockId}"]`,
+	);
+	const target = document.querySelector(
+		`[data-extendify-agent-block-id="${targetId}"]`,
+	);
+	if (!el || !target) return null;
+	const marker = document.createElement('div');
+	marker.style.display = 'none';
+	marker.setAttribute('data-extendify-temp-replacement', blockId);
+	el.parentNode.insertBefore(marker, el);
+	pinThemeAnimations(el);
+	target.parentNode.insertBefore(
+		el,
+		position === 'after' ? target.nextSibling : target,
+	);
+	return el;
+};
+
+const renderAddedEl = async (block, index) => {
+	const { content, styles } = await apiFetch({
+		path: '/extendify/v1/agent/get-block-html',
+		method: 'POST',
+		data: { blockCode: block },
+	});
+	if (!content) return null;
+	injectPreviewStylesheet(`add-${index}`, styles);
+	const template = document.createElement('template');
+	template.innerHTML = content;
+	const newEl = template.content.firstElementChild;
+	if (!newEl) return null;
+	newEl.setAttribute('data-extendify-temp-addition', '');
+	const css = cssOf(block);
+	if (css) injectPreviewCss(newEl, `add-${index}`, css);
+	for (const node of [newEl, ...newEl.querySelectorAll('.ext-animate--on')]) {
+		node.classList.remove('ext-animate--on');
+	}
+	return newEl;
+};
+
+// Render the new block and slot it next to its anchor. Nothing detaches —
+// returns true so the caller counts it rendered; undo just removes the node.
+const previewAdd = async ({ anchorId, position, block }, index) => {
+	const anchor = document.querySelector(
+		`[data-extendify-agent-block-id="${anchorId}"]`,
+	);
+	if (!anchor) return null;
+	const newEl = await renderAddedEl(block, index);
+	if (!newEl) return null;
+	anchor.parentNode.insertBefore(
+		newEl,
+		position === 'after' ? anchor.nextSibling : anchor,
+	);
+	return true;
+};
+
+// Mirror the server's column routing off the DOM (spliceColumn owns the why).
+const previewColumnAdd = async (
+	{ anchorId, position, block },
+	index,
+	wrappers,
+) => {
+	const anchor = document.querySelector(
+		`[data-extendify-agent-block-id="${anchorId}"]`,
+	);
+	if (!anchor) return null;
+	if (anchor.classList.contains('wp-block-column')) {
+		return previewAdd({ anchorId, position, block }, index);
+	}
+	const shared = wrappers.get(`${anchorId}:${position}`);
+	if (shared) {
+		const newEl = await renderAddedEl(block, index);
+		if (!newEl) return null;
+		shared.appendChild(newEl);
+		return true;
+	}
+	const newEl = await renderAddedEl(
+		`<!-- wp:columns --><div class="wp-block-columns">${block}</div><!-- /wp:columns -->`,
+		index,
+	);
+	if (!newEl) return null;
+	anchor.parentNode.insertBefore(
+		newEl,
+		position === 'after' ? anchor.nextSibling : anchor,
+	);
+	wrappers.set(`${anchorId}:${position}`, newEl);
+	return true;
+};
+
+// Keyed by the model-facing container word — the code supplies the
+// core/columns parent a bare column needs, mirroring the server templates.
+const WRAP_SHELLS = {
+	'core/column':
+		'<!-- wp:columns --><div class="wp-block-columns"><!-- wp:column --><div class="wp-block-column"></div><!-- /wp:column --></div><!-- /wp:columns -->',
+	'core/group':
+		'<!-- wp:group {"layout":{"type":"constrained"}} --><div class="wp-block-group"></div><!-- /wp:group -->',
+};
+
+// The relocated node keeps its block id, so a later add in the batch can
+// still anchor to it; a hidden marker holds its old slot for undo.
+const previewWrap = async ({ blockId, container }, wrappers) => {
+	const el = document.querySelector(
+		`[data-extendify-agent-block-id="${blockId}"]`,
+	);
+	const shellCode = WRAP_SHELLS[container];
+	if (!el || !shellCode) return null;
+	// Two column wraps in one batch share one section, mirroring the save.
+	const sharedShell =
+		container === 'core/column' ? wrappers.get('wrap-shell') : null;
+	if (sharedShell && !el.contains(sharedShell)) {
+		const marker = document.createElement('div');
+		marker.style.display = 'none';
+		marker.setAttribute('data-extendify-temp-replacement', blockId);
+		el.parentNode.insertBefore(marker, el);
+		const column = document.createElement('div');
+		column.className = 'wp-block-column';
+		pinThemeAnimations(el);
+		column.appendChild(el);
+		sharedShell.appendChild(column);
+		wrappers.set(`${blockId}:after`, sharedShell);
+		wrappers.set(`${blockId}:before`, sharedShell);
+		return el;
+	}
+	const { content } = await apiFetch({
+		path: '/extendify/v1/agent/get-block-html',
+		method: 'POST',
+		data: { blockCode: shellCode },
+	});
+	const template = document.createElement('template');
+	template.innerHTML = content ?? '';
+	const shell = template.content.firstElementChild;
+	if (!shell) return null;
+	shell.setAttribute('data-extendify-temp-addition', '');
+	if (container === 'core/column') {
+		// A later column add anchored to the wrapped block joins this shell.
+		wrappers.set(`${blockId}:after`, shell);
+		wrappers.set(`${blockId}:before`, shell);
+		wrappers.set('wrap-shell', shell);
+	}
+	const marker = document.createElement('div');
+	marker.style.display = 'none';
+	marker.setAttribute('data-extendify-temp-replacement', blockId);
+	el.parentNode.insertBefore(marker, el);
+	el.parentNode.insertBefore(shell, marker);
+	pinThemeAnimations(el);
+	(shell.querySelector('.wp-block-column') ?? shell).appendChild(el);
+	return el;
+};
+
+// Remove the target, leaving a hidden marker so cancel restores it like a swapped preview.
+const previewDelete = (blockId) => {
+	const el = document.querySelector(
+		`[data-extendify-agent-block-id="${blockId}"]`,
+	);
+	if (!el) return null;
+	const marker = document.createElement('div');
+	marker.style.display = 'none';
+	marker.setAttribute('data-extendify-temp-replacement', blockId);
+	el.parentNode.insertBefore(marker, el.nextSibling);
+	el.parentNode.removeChild(el);
+	return el;
+};
+
+// Each target pairs the operation that saves with the preview that shows it.
+// Delete and move ids resolve off the pristine DOM before the preview
+// detaches anything, so preview + save agree on wrapper targets.
+const buildOperationTarget = async (
+	operation,
+	block,
+	postId,
+	index,
+	wrappers,
+) => {
+	if (operation?.op === 'add') {
+		// Same builder the save-time tool uses, so preview and save agree.
+		const markup = buildNewBlock(
+			operation.blockType,
+			operation.patch,
+			operation.clear ?? [],
+			window.extAgentData?.context?.presetSlugs ?? {},
+		);
+		return {
+			operation,
+			preview: () => {
+				if (!markup) return null;
+				const withMarkup = { ...operation, block: markup };
+				return operation.blockType === 'core/column'
+					? previewColumnAdd(withMarkup, index, wrappers)
+					: previewAdd(withMarkup, index);
+			},
+		};
+	}
+	if (operation?.op === 'wrap') {
+		// Wrapping just a lone child nests the new container inside its old wrapper.
+		const resolved = {
+			...operation,
+			blockId: resolveDeleteTarget(operation.blockId),
+		};
+		return {
+			operation: resolved,
+			preview: () => previewWrap(resolved, wrappers),
+		};
+	}
+	if (operation?.op === 'move') {
+		const resolved = {
+			...operation,
+			blockId: resolveDeleteTarget(operation.blockId),
+		};
+		return { operation: resolved, preview: () => previewMove(resolved) };
+	}
+	if (operation?.op === 'delete') {
+		const resolved = {
+			...operation,
+			blockId: resolveDeleteTarget(operation.blockId),
+		};
+		return {
+			operation: resolved,
+			preview: () => previewDelete(resolved.blockId),
+		};
+	}
+	// Image swaps live in ReplaceImageConfirm; a stray one here saves as no-change.
+	if (operation?.op === 'replace-image')
+		return { operation, preview: () => null };
+	const { blockId, patch, clear } = operation ?? {};
+	const newContent = applyBlockPatch(
+		await fetchBlockCodeById(blockId, block?.source, postId),
+		patch,
+		clear ?? [],
+		window.extAgentData?.context?.presetSlugs ?? {},
+	);
+	return {
+		operation,
+		preview: () =>
+			newContent ? previewBlock(blockId, newContent, cssOf(newContent)) : null,
+	};
+};
+
+// block-general workflows still send a whole-block newContent replace.
+const buildLegacyTarget = (inputs, block) => ({
+	operation: null,
+	preview: () =>
+		inputs.newContent
+			? previewBlock(block?.id, inputs.newContent, cssOf(inputs.newContent))
+			: null,
+});
 
 export const UpdateBlockConfirm = ({
 	inputs,
@@ -14,15 +377,30 @@ export const UpdateBlockConfirm = ({
 }) => {
 	const block = useQuickEditStore((s) => s.agentBlock);
 	const [loading, setLoading] = useState(true);
-	const detachedEl = useRef(null);
+	const detached = useRef([]);
+	// What actually saves — delete rewrites this to the DOM-resolved wrapper ids.
+	const saveData = useRef(inputs);
+
+	const operations = Array.isArray(inputs.operations)
+		? inputs.operations
+		: null;
 
 	const undoBlockChange = useCallback(() => {
-		const el = document.querySelector('[data-extendify-temp-replacement]');
-		if (detachedEl.current) {
-			el?.parentNode?.insertBefore(detachedEl.current, el);
-			detachedEl.current = null;
+		for (const original of detached.current) {
+			const replacement = document.querySelector(
+				`[data-extendify-temp-replacement="${original.getAttribute('data-extendify-agent-block-id')}"]`,
+			);
+			pinThemeAnimations(original);
+			replacement?.parentNode?.insertBefore(original, replacement);
+			replacement?.remove();
 		}
-		if (el) el.remove();
+		for (const added of document.querySelectorAll(
+			'[data-extendify-temp-addition]',
+		))
+			added.remove();
+		for (const style of document.querySelectorAll(`style[${PREVIEW_CSS_ATTR}]`))
+			style.remove();
+		detached.current = [];
 	}, []);
 
 	const confirmed = useRef(false);
@@ -30,11 +408,11 @@ export const UpdateBlockConfirm = ({
 		return () => {
 			if (!confirmed.current) undoBlockChange();
 		};
-	}, []);
+	}, [undoBlockChange]);
 
 	const handleConfirm = async () => {
 		confirmed.current = true;
-		await onConfirm({ data: inputs, shouldRefreshPage: true });
+		await onConfirm({ data: saveData.current, shouldRefreshPage: true });
 	};
 
 	const handleRetry = useCallback(() => {
@@ -42,56 +420,47 @@ export const UpdateBlockConfirm = ({
 		onRetry();
 	}, [undoBlockChange, onRetry]);
 
+	// Re-renders (the staged block changes identity on page clicks) must not
+	// inject the preview again and clobber the undo list.
+	const previewed = useRef(false);
 	useEffect(() => {
-		apiFetch({
-			path: '/extendify/v1/agent/get-block-html',
-			method: 'POST',
-			data: { blockCode: inputs.newContent },
-		}).then(({ content }) => {
-			// Remove the highlighter
-			window.dispatchEvent(new Event('extendify-agent:remove-block-highlight'));
-			// hide the block
-			const el = document.querySelector(
-				`[data-extendify-agent-block-id="${block?.id}"]`,
-			);
-			// TODO: work out a way to propagate an error here
-			if (!el && !detachedEl.current) return onCancel();
-			if (detachedEl.current) return; // already done
-			detachedEl.current = el;
+		if (previewed.current) return;
+		previewed.current = true;
+		const run = async () => {
+			const postId = window.extAgentData?.context?.postId;
+			const operations = Array.isArray(inputs.operations)
+				? inputs.operations
+				: null;
+			const wrappers = new Map();
+			const targets = operations
+				? await Promise.all(
+						operations.map((operation, index) =>
+							buildOperationTarget(operation, block, postId, index, wrappers),
+						),
+					)
+				: [buildLegacyTarget(inputs, block)];
+			if (operations)
+				saveData.current = {
+					...inputs,
+					operations: targets.map(({ operation }) => operation),
+				};
 
-			const patched = patchVariantClasses(
-				content,
-				el.cloneNode(true),
-				dynamicClasses,
-			);
-
-			const template = document.createElement('template');
-			template.innerHTML = patched || '<div style="display:none"></div>';
-			const newEl = template.content.firstElementChild;
-			if (!newEl) return onCancel();
-			const wpBlockAttributeClasses =
-				/^has-([\w-]+-)?(background-color|color|font-size|gradient-background)$|^has-background$|^has-text-color$/;
-			const newElClasses = new Set(newEl.classList);
-			el.classList.forEach((className) => {
-				if (newElClasses.has(className)) return;
-				if (wpBlockAttributeClasses.test(className)) return;
-				newEl.classList.add(className);
-			});
-			newEl.setAttribute('data-extendify-temp-replacement', true);
-			// Strip animation classes so the preview is visible immediately.
-			// The ext-animate--on class sets opacity:0 as initial state, but
-			// the animation JS won't re-run on replaced DOM elements.
-			for (const node of [
-				newEl,
-				...newEl.querySelectorAll('.ext-animate--on'),
-			]) {
-				node.classList.remove('ext-animate--on');
+			const originals = [];
+			let rendered = 0;
+			for (const target of targets) {
+				const original = await target.preview();
+				if (!original) continue;
+				rendered++;
+				// An add preview has no original to restore — only count it.
+				if (original !== true) originals.push(original);
 			}
-			el.parentNode.insertBefore(newEl, el.nextSibling);
-			el.parentNode?.removeChild(el);
+			detached.current = originals;
+			// Nothing rendered means none of the target blocks are on the page.
+			if (!rendered) return onCancel();
 			setLoading(false);
-		});
-	}, [block, inputs, onCancel]);
+		};
+		run();
+	}, [block, inputs, onCancel, operations]);
 
 	if (loading)
 		return (
@@ -100,15 +469,38 @@ export const UpdateBlockConfirm = ({
 			</Wrapper>
 		);
 
+	const onlyOp = (op) =>
+		Array.isArray(inputs.operations) &&
+		inputs.operations.every((operation) => operation?.op === op);
+	const message = onlyOp('delete')
+		? __(
+				'The agent will remove the selected block. Please review and confirm.',
+				'extendify-local',
+			)
+		: onlyOp('move')
+			? __(
+					'The agent has rearranged the blocks in the browser. Please review and confirm.',
+					'extendify-local',
+				)
+			: onlyOp('add')
+				? __(
+						'The agent has added the new block in the browser. Please review and confirm.',
+						'extendify-local',
+					)
+				: onlyOp('wrap')
+					? __(
+							'The agent has placed the block in its new container in the browser. Please review and confirm.',
+							'extendify-local',
+						)
+					: __(
+							'The agent has made the changes in the browser. Please review and confirm.',
+							'extendify-local',
+						);
+
 	return (
 		<Wrapper>
 			<Content>
-				<p className="m-0 p-0 text-sm text-gray-900">
-					{__(
-						'The agent has made the changes in the browser. Please review and confirm.',
-						'extendify-local',
-					)}
-				</p>
+				<p className="m-0 p-0 text-sm text-gray-900">{message}</p>
 			</Content>
 			<div className="flex flex-wrap justify-start gap-2 p-3">
 				<button
@@ -138,7 +530,7 @@ export const UpdateBlockConfirm = ({
 };
 
 const Wrapper = ({ children }) => (
-	<div className="mb-4 ml-10 mr-2 flex flex-col rounded-lg border border-gray-300 bg-gray-50 rtl:ml-2 rtl:mr-10">
+	<div className="mb-4 ms-12 me-2 flex flex-col rounded-lg border border-gray-300 bg-gray-50">
 		{children}
 	</div>
 );

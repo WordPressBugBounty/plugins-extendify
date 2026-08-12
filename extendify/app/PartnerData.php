@@ -68,6 +68,7 @@ class PartnerData
         'disableLibraryAutoOpen' => false,
         'enableApexDomain' => false,
         'showLaunch' => false,
+        'showLaunchTitle' => false,
         'deactivated' => true,
         'launchRedirectWebsite' => false,
         'showAILogo' => false,
@@ -77,6 +78,7 @@ class PartnerData
             'disabledProducts' => [],
             'customProducts' => [],
         ],
+        'showPartnerNotifications' => false,
         'license' => 'active',
         'showAIAgents' => false,
         'agentAbilitiesAllowlist' => [],
@@ -94,6 +96,7 @@ class PartnerData
         'hidePluginNotifications' => false,
         'hideLaunchExitLink' => false,
         'useAutoUpdate' => false,
+        'showLaunchUpdate' => false,
         'activeTests' => [],
         'showExtendifyCode' => false,
         'extendifyCodeData' => [
@@ -148,6 +151,7 @@ class PartnerData
         ];
         self::$config['showAIPageCreation'] = ($data['showAIPageCreation'] ?? self::$config['showAIPageCreation']);
         self::$config['showLaunch'] = ($data['showLaunch'] ?? self::$config['showLaunch']);
+        self::$config['showLaunchTitle'] = ($data['showLaunchTitle'] ?? self::$config['showLaunchTitle']);
         self::$config['deactivated'] = ($data['deactivated'] ?? self::$config['deactivated']);
         self::$config['launchRedirectWebsite'] = ($data['launchRedirectWebsite']
             ?? self::$config['launchRedirectWebsite']);
@@ -162,6 +166,8 @@ class PartnerData
             'customProducts' => ($data['productRecommendationCustomSlugs']
                 ?? self::$config['productRecommendations']['customProducts']),
         ];
+        self::$config['showPartnerNotifications'] = ($data['showPartnerNotifications']
+            ?? self::$config['showPartnerNotifications']);
         self::$config['license'] = ($data['license'] ?? self::$config['license']);
         self::$config['showImprint'] = ($data['showImprint'] ?? self::$config['showImprint']);
         self::$config['showLaunchQuestions'] = ($data['showLaunchQuestions'] ?? self::$config['showLaunchQuestions']);
@@ -180,6 +186,7 @@ class PartnerData
             ?? self::$config['hidePluginNotifications']);
         self::$config['hideLaunchExitLink'] = ($data['hideLaunchExitLink'] ?? self::$config['hideLaunchExitLink']);
         self::$config['useAutoUpdate'] = ($data['useAutoUpdate'] ?? self::$config['useAutoUpdate']);
+        self::$config['showLaunchUpdate'] = ($data['showLaunchUpdate'] ?? self::$config['showLaunchUpdate']);
         self::$config['activeTests'] = ($data['activeTests'] ?? self::$config['activeTests']);
         self::$config['showExtendifyCode'] = ($data['showExtendifyCode'] ?? self::$config['showExtendifyCode']);
         self::$config['extendifyCodeData'] = ($data['extendifyCodeData'] ?? self::$config['extendifyCodeData']);
@@ -268,7 +275,10 @@ class PartnerData
 
         $sanitizedData = array_merge(
             Sanitizer::sanitizeUnknown($result['data']),
-            ['consentTermsCustom' => \sanitize_text_field(htmlentities(($result['data']['consentTermsCustom'] ?? '')))]
+            ['consentTermsCustom' => \sanitize_text_field(htmlentities(
+                ($result['data']['consentTermsCustom'] ?? ''),
+                ENT_QUOTES | ENT_SUBSTITUTE | ENT_HTML401
+            ))]
         );
 
         // Merge before persisting as this data is accessed directly elsewhere.

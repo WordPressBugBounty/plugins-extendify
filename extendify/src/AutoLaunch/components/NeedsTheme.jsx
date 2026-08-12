@@ -9,7 +9,7 @@ export const NeedsTheme = () => {
 			<div className="relative mx-auto w-full max-w-xl text-gray-900">
 				<p className="text-base">
 					{__(
-						'Hey there, Launch is powered by Extendable and is required to proceed. You can install it from the link below and start over once activated.',
+						'Launch requires the Extendable theme to work. You can install it from the link below and start over once activated.',
 						'extendify-local',
 					)}
 				</p>

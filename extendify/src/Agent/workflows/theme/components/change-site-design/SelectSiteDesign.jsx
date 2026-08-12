@@ -58,6 +58,25 @@ const isAdmin = context?.adminPage;
 
 const PAGE_SIZE = 5;
 
+const resolveSiteImages = async ({ storedSiteImages, siteProfile }) => {
+	if (storedSiteImages.length) return storedSiteImages;
+
+	// A browser that didn't run Launch otherwise reuses one image on every option.
+	const { siteImages: localized } = window.extSharedData;
+	if (localized?.length) return localized;
+
+	if (siteProfile) {
+		const { siteImages } = await handleSiteImages({ siteProfile });
+		if (siteImages.length) return siteImages;
+	}
+
+	const stored = await apiFetch({
+		path: '/extendify/v1/shared/site-images',
+	}).catch(() => null);
+
+	return stored?.siteImages ?? [];
+};
+
 export const SelectSiteDesign = ({ onConfirm, onCancel }) => {
 	const [visibleCount, setVisibleCount] = useState(PAGE_SIZE);
 	const [isLoading, setIsLoading] = useState(false);
@@ -183,10 +202,10 @@ export const SelectSiteDesign = ({ onConfirm, onCancel }) => {
 			null;
 
 		(async () => {
-			const siteImages =
-				storedSiteImages.length > 0 || !siteProfile
-					? storedSiteImages
-					: (await handleSiteImages({ siteProfile })).siteImages;
+			const siteImages = await resolveSiteImages({
+				storedSiteImages,
+				siteProfile,
+			});
 
 			const resolvedDescription =
 				storedDescription || !siteProfile
@@ -321,7 +340,7 @@ export const SelectSiteDesign = ({ onConfirm, onCancel }) => {
 	}
 
 	return (
-		<div className="mb-4 ml-10 mr-2 flex flex-col rounded-lg border border-gray-300 bg-gray-50 rtl:ml-2 rtl:mr-10">
+		<div className="mb-4 ms-12 me-2 flex flex-col rounded-lg border border-gray-300 bg-gray-50">
 			<div className="rounded-lg border-b border-gray-300 bg-white">
 				<div className="flex flex-col gap-4 p-3">
 					{currentHeroHtml && (

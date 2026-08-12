@@ -3,6 +3,11 @@ import { addQueryArgs } from '@wordpress/url';
 
 const getRecaptchaToken = (action, siteKey) =>
 	new Promise((resolve, reject) => {
+		if (!siteKey) {
+			reject(new Error(`No reCAPTCHA site key for the ${action} action`));
+			return;
+		}
+
 		const existing = document.querySelector(
 			`script[src*="recaptcha/enterprise"]`,
 		);
@@ -96,5 +101,33 @@ export const pluginsActivation = {
 	imagify: {
 		createAccountCallback: (data) =>
 			createAccount({ slug: 'imagify', ...data }),
+	},
+	metricool: {
+		idempotent: false,
+		createAccountCallback: async ({
+			scriptData,
+			email,
+			marketingConsent,
+			termsAgreed,
+			signal,
+		}) => {
+			const captchaToken = await getRecaptchaToken(
+				scriptData?.recaptchaAction,
+				scriptData?.recaptchaSiteKey,
+			);
+
+			// The "/v1" segment is what makes Metricool register its logout route.
+			await apiFetch({
+				path: 'extendify/v1/metricool/v1/create-account',
+				method: 'POST',
+				data: {
+					email,
+					marketingConsent,
+					termsAgreed,
+					captcha_token: captchaToken,
+				},
+				signal,
+			});
+		},
 	},
 };

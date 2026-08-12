@@ -7,7 +7,7 @@ import { useQuickEditStore } from '@quick-edit/state/store';
 import { useEffect } from '@wordpress/element';
 import { SidebarLayout } from './components/layouts/SidebarLayout';
 
-export const Chat = ({ busy, children }) => {
+export const Chat = ({ busy, working, children }) => {
 	const { setIsMobile, isMobile, mode } = useGlobalStore();
 	const editModeOn = useEditModeStore((s) => s.on);
 	const block = useQuickEditStore((s) => s.agentBlock);
@@ -56,7 +56,7 @@ export const Chat = ({ busy, children }) => {
 				>
 					{children}
 				</div>
-				{editModeOn && <DOMHighlighter busy={busy} />}
+				{editModeOn && <DOMHighlighter busy={busy} working={working} />}
 			</SidebarLayout>
 		);
 	}
@@ -69,7 +69,7 @@ export const Chat = ({ busy, children }) => {
 			>
 				{children}
 			</div>
-			{editModeOn && <DOMHighlighter busy={busy} />}
+			{editModeOn && <DOMHighlighter busy={busy} working={working} />}
 		</DragResizeLayout>
 	);
 };

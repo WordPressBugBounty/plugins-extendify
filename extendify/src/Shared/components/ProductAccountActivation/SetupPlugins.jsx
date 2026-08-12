@@ -133,7 +133,7 @@ export const SetupPlugins = ({
 					type="checkbox"
 					checked={termsAgreed}
 					onChange={(e) => setTermsAgreed(e.target.checked)}
-					className="mt-0.5 h-4 w-4 shrink-0 rounded border-gray-300 accent-extendify-main focus:ring-extendify-main scheme-light"
+					className="mt-0.5 h-4 w-4 shrink-0 rounded border-gray-300 accent-extendify-main focus:ring-extendify-main"
 				/>
 				<span className="text-xs/relaxed text-gray-700">
 					{__(
@@ -148,7 +148,7 @@ export const SetupPlugins = ({
 					type="checkbox"
 					checked={marketingConsent}
 					onChange={(e) => setMarketingConsent(e.target.checked)}
-					className="mt-0.5 h-4 w-4 shrink-0 rounded border-gray-300 accent-extendify-main focus:ring-extendify-main scheme-light"
+					className="mt-0.5 h-4 w-4 shrink-0 rounded border-gray-300 accent-extendify-main focus:ring-extendify-main"
 				/>
 				<span className="text-xs/relaxed text-gray-700">
 					{__(

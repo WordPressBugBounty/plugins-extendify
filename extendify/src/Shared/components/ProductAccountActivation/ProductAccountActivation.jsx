@@ -140,7 +140,7 @@ export const ProductAccountActivation = () => {
 					email,
 					marketingConsent,
 					termsAgreed,
-					scriptData: scriptData?.[plugin.slug],
+					scriptData: { ...scriptData?.[plugin.slug], ...plugin.scriptData },
 				}),
 			),
 		);

@@ -2,6 +2,7 @@ import { CreditCounter } from '@draft/components/image-generation/CreditCounter'
 import { useImageGenerationStore } from '@shared/state/generate-images';
 import {
 	Button,
+	CheckboxControl,
 	TextareaControl,
 	__experimentalToggleGroupControl as ToggleGroupControl,
 	__experimentalToggleGroupControlOptionIcon as ToggleGroupControlOptionIcon,
@@ -9,7 +10,12 @@ import {
 import { useEffect, useState } from '@wordpress/element';
 import { __ } from '@wordpress/i18n';
 
-export const GenerateForm = ({ isGenerating, errorMessage }) => {
+export const GenerateForm = ({
+	isGenerating,
+	errorMessage,
+	disclose,
+	setDisclose,
+}) => {
 	const { imageCredits, resetImageCredits, aiImageOptions, setAiImageOption } =
 		useImageGenerationStore();
 	const usedCredits = imageCredits.total - imageCredits.remaining;
@@ -31,7 +37,7 @@ export const GenerateForm = ({ isGenerating, errorMessage }) => {
 	return (
 		<>
 			{isGenerating ? null : (
-				<div>
+				<div className="flex flex-col gap-4">
 					<TextareaControl
 						id="draft-ai-image-textarea"
 						autoFocus
@@ -74,6 +80,14 @@ export const GenerateForm = ({ isGenerating, errorMessage }) => {
 							value="1024x1536"
 						/>
 					</ToggleGroupControl>
+
+					<CheckboxControl
+						__nextHasNoMarginBottom
+						// translators: Checkbox that adds a visible "AI Generated" mark onto the image.
+						label={__('Label image as AI-generated', 'extendify-local')}
+						checked={disclose}
+						onChange={setDisclose}
+					/>
 				</div>
 			)}
 			{errorMessage.length > 0 && (

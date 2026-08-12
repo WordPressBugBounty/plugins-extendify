@@ -13,6 +13,8 @@ export const PLUGIN_OWNED_PAGES = [
 	{ slug: 'events', plugin: 'the-events-calendar' },
 ];
 
+export const isBlogPage = ({ originalSlug }) => originalSlug === 'blog';
+
 export const getPagesToCreate = (data) => {
 	const { home, pages, siteProfile } = data;
 	const homepage = {
@@ -21,15 +23,16 @@ export const getPagesToCreate = (data) => {
 		slug: 'home',
 		patterns: home.patterns,
 	};
-	const needsBlog = siteProfile.objective === 'blog';
-	const blogPage = needsBlog
-		? {
-				name: pageNames.blog.title,
-				id: 'blog',
-				patterns: [],
-				slug: 'blog',
-			}
-		: null;
+	const hasBlog = pages.some(({ slug }) => slug === 'blog');
+	const blogPage =
+		siteProfile.blog && !hasBlog
+			? {
+					name: pageNames.blog.title,
+					id: 'blog',
+					patterns: [],
+					slug: 'blog',
+				}
+			: null;
 
 	// Remove the page title pattern from all pages
 	const patternHasTitle = (pattern) =>
@@ -123,7 +126,10 @@ const transformHeadingToPostTitle = (rawHTML) => {
 	return serialize(parse(rawHTML).map(walk));
 };
 
-export const createWpPages = async (pagesRaw) => {
+export const createWpPages = async (
+	pagesRaw,
+	{ skipSectionIds = false } = {},
+) => {
 	const pages = [];
 
 	for (const page of pagesRaw) {
@@ -136,13 +142,12 @@ export const createWpPages = async (pagesRaw) => {
 			const code = pattern.code;
 			const patternType = pattern.patternTypes?.[0];
 
-			const { slug: defaultSlug } =
+			const { slug } =
 				Object.values(pageNames).find(({ alias }) =>
 					alias.includes(patternType),
 				) || {};
-			const slug = pattern.navSlug ?? defaultSlug;
 
-			if (seenPatternTypes.has(slug) || !slug) {
+			if (skipSectionIds || seenPatternTypes.has(slug) || !slug) {
 				content.push(code);
 				continue;
 			}
@@ -176,7 +181,7 @@ export const createWpPages = async (pagesRaw) => {
 		await updateOption('page_on_front', maybeHome.id);
 	}
 
-	const maybeBlog = pages.find(({ originalSlug }) => originalSlug === 'blog');
+	const maybeBlog = pages.find(isBlogPage);
 	if (maybeBlog) {
 		await updateOption('page_for_posts', maybeBlog.id);
 	}
@@ -235,9 +240,7 @@ export const addImprintPage = async ({ siteStyle }) => {
 		// Get the imprint page template
 		const imprintPage = await getImprintPageTemplate({ siteStyle });
 		// Create the page in WordPress with the fetched template
-		const [createdImprintPage] = await createWpPages([imprintPage], {
-			stickyNav: false,
-		});
+		const [createdImprintPage] = await createWpPages([imprintPage]);
 		return createdImprintPage;
 	} catch (error) {
 		console.error('Failed to add imprint page:', error);

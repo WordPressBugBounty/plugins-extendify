@@ -105,6 +105,17 @@ const webServers = [...blueprintPort.entries()]
 		stderr: 'pipe' as const,
 	}));
 
+// RequestUtils caches the discovered REST root to this file and reuses it
+// whenever it is already populated, skipping rediscovery. The default path is
+// one shared file and playground ports shift between runs, so a later run can
+// POST to whichever server held that port before. Scope it to the process.
+if (!process.env.STORAGE_STATE_PATH) {
+	process.env.STORAGE_STATE_PATH = resolve(
+		ROOT,
+		`artifacts/storage-states/admin-${process.pid}.json`,
+	);
+}
+
 // @wordpress/e2e-test-utils-playwright's RequestUtils HEADs process.env.WP_BASE_URL
 // (default http://localhost:8889 — wp-env's default port) to find the REST root,
 // regardless of each request context's configured baseURL. Pin it to the selected

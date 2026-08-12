@@ -1,9 +1,12 @@
 import { enhanceDomainSuggestion } from '@agent/lib/domain-suggestion';
+import { partnerNotificationSuggestion } from '@agent/lib/partner-notification-suggestion';
 import { create } from 'zustand';
 import { devtools, persist } from 'zustand/middleware';
 
+const partnerSuggestion = partnerNotificationSuggestion();
 const pluginSuggestions = (window.extAgentData?.suggestions || [])
 	.map(enhanceDomainSuggestion)
+	.concat(partnerSuggestion ? [partnerSuggestion] : [])
 	.filter(Boolean)
 	.map((s) => ({
 		...s,

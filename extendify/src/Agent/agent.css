@@ -2,6 +2,10 @@
 @import "../tailwind.css" source(none);
 @source ".";
 
+:root {
+	color-scheme: only light;
+}
+
 @layer components {
 	.extendify-agent-markdown :is(h1, h2, h3, h4) {
 		@apply font-sans! text-gray-900!;
@@ -71,25 +75,29 @@
 	}
 }
 
+/* animation-delay only spaces the first pass, so the hold is in the keyframes. */
 .status-animation {
+	/* On a full-width block the band sweeps mostly past the centered text. */
+	display: inline-block;
 	background-image: linear-gradient(
 		to right,
-		#1e1e1e 0% 40%,
-		#cccccc 55%,
-		#1e1e1e 60% 100%
+		var(--color-gray-900) 0% 40%,
+		var(--color-gray-600) 50%,
+		var(--color-gray-900) 60% 100%
 	);
-	background-size: 200% 100%;
+	background-size: 250% 100%;
 	color: transparent;
 	background-clip: text;
 	-webkit-background-clip: text;
-	animation: extendify-status-animation 2.5s linear infinite;
+	animation: extendify-status-animation 2s linear 1s infinite;
 }
 @keyframes extendify-status-animation {
 	0% {
 		background-position: 100% 50%;
 	}
+	50%,
 	100% {
-		background-position: 00% 50%;
+		background-position: 0% 50%;
 	}
 }
 
@@ -124,6 +132,12 @@ body.extendify-agent-mobile-btn-open
 /* no-prefix */
 .extendify-agent-highlighter-mode.extendify-agent-busy {
 	cursor: not-allowed !important;
+}
+/* The `*` is load-bearing: crosshair sits on the blocks, not on this root. */
+/* no-prefix */
+.extendify-agent-working,
+.extendify-agent-working * {
+	cursor: wait !important;
 }
 /* Ignore button block if inside buttons and only one button */
 /* no-prefix */

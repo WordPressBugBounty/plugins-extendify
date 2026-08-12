@@ -11,9 +11,10 @@ import {
 	getStyleShape,
 } from '@auto-launch/fetchers/shape';
 import { clearSiteImages } from '@auto-launch/functions/wp';
+import { safeLocalStorage } from '@shared/state/safe-local-storage';
 import { __ } from '@wordpress/i18n';
 import { create } from 'zustand';
-import { devtools, persist } from 'zustand/middleware';
+import { createJSONStorage, devtools, persist } from 'zustand/middleware';
 import { overrideWithUrlParams, urlParams, urlParamsShape } from './url-params';
 
 const shapeToKeyValue = (shape) => {
@@ -122,6 +123,7 @@ const keySchemas = {
 export const useLaunchDataStore = create(
 	persist(devtools(state, { name: 'Extendify Launch Data' }), {
 		name: `extendify-launch-data-${window.extSharedData.siteId}`,
+		storage: createJSONStorage(() => safeLocalStorage),
 		merge: (p, current) => {
 			// Make sure the persisted state is valid and not corrupted.
 			const persisted = p && typeof p === 'object' ? p : {};
@@ -147,7 +149,10 @@ export const useLaunchDataStore = create(
 				title: title || persisted.title,
 				description: description || persisted.description,
 				descriptionRaw: description || persisted.descriptionRaw,
-				descriptionBackup: persisted.descriptionBackup || description || title,
+				descriptionBackup:
+					persisted.descriptionBackup ||
+					description ||
+					(window.extLaunchData?.showLaunchTitle ? undefined : title),
 				go: go || persisted.go,
 				urlParams: {
 					title,
@@ -184,3 +189,7 @@ export const useLaunchDataStore = create(
 	}),
 	state,
 );
+
+export const clearPersistedLaunchData = () => {
+	useLaunchDataStore.persist.clearStorage();
+};

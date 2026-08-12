@@ -5,18 +5,18 @@ import { track } from '@shared/lib/track';
 import { __ } from '@wordpress/i18n';
 import { useEditModeStore } from '../state/edit-mode';
 import { useQuickEditStore } from '../state/store';
+import { whenAnimationsSettle } from './after-animations';
 import { isAgentEligibleForTarget } from './agent-gate';
 import {
 	askAiAboutElement,
 	hasAgentBlockSelected,
 	isAgentAvailable,
-	isAgentSidebarOpen,
-	stageAgentBlock,
 	subscribeToAgentBlock,
 } from './ask-ai';
 import { prefetchBlockSource } from './block-source-cache';
 import { decideClickAction } from './click-rule';
 import { resolveTarget } from './dom';
+import { needsContrastRing } from './over-media';
 import { hasQuickEditModalFor } from './quick-edit-handlers';
 import { hasSaver, saveSelected } from './save-bridge';
 import {
@@ -43,6 +43,10 @@ const debugLog = (label, el) => {
 // outline overhang would clip inside an ancestor's overflow:hidden,
 // and a single repositioning overlay gets the smooth-expand feel
 // for free via CSS transitions.
+// Must match DOMHighlighter's minimum, or the outline resizes on click.
+const MIN_OUTLINE_SIZE = 10;
+const framed = (size) => Math.max(size, MIN_OUTLINE_SIZE);
+
 const ensureOutline = () => {
 	if (hoverOutline) return hoverOutline;
 	hoverOutline = document.createElement('div');
@@ -58,23 +62,37 @@ const ensureOutline = () => {
 // while the outline is still en route, so the outline visibly trails the
 // content during a drag-scroll ("stays fixed in screen"). Hover-driven
 // updates (block A → block B) keep the spring animation.
-const showOutline = (el, { instant = false } = {}) => {
-	const overlay = ensureOutline();
+let dropSettle = () => {};
+
+const positionOutline = (overlay, el, instant) => {
 	if (instant) {
 		overlay.style.transition = 'none';
 	} else if (overlay.style.transition === 'none') {
 		overlay.style.transition = '';
 	}
 	const r = el.getBoundingClientRect();
-	overlay.style.top = `${r.top}px`;
-	overlay.style.left = `${r.left}px`;
-	overlay.style.width = `${r.width}px`;
-	overlay.style.height = `${r.height}px`;
+	const width = framed(r.width);
+	const height = framed(r.height);
+	overlay.style.top = `${r.top - (height - r.height) / 2}px`;
+	overlay.style.left = `${r.left - (width - r.width) / 2}px`;
+	overlay.style.width = `${width}px`;
+	overlay.style.height = `${height}px`;
+};
+
+const showOutline = (el, { instant = false } = {}) => {
+	const overlay = ensureOutline();
+	positionOutline(overlay, el, instant);
+	overlay.classList.toggle('is-over-media', needsContrastRing(el));
 	overlay.classList.add('is-visible');
+	dropSettle();
+	dropSettle = whenAnimationsSettle(el, () =>
+		positionOutline(overlay, el, true),
+	);
 	debugLog(instant ? 'showOutline (instant)' : 'showOutline', el);
 };
 
 const hideOutline = () => {
+	dropSettle();
 	hoverOutline?.classList.remove('is-visible');
 	debugLog('hideOutline');
 };
@@ -89,6 +107,10 @@ const PART_ATTR = 'data-extendify-part-block-id';
 const PRODUCT_ATTR = 'data-extendify-quick-edit-product-id';
 const WPFORM_FIELD_ATTR = 'data-extendify-quick-edit-wpform-field-id';
 const MEDIATEXT_MEDIA_ATTR = 'data-extendify-quick-edit-mediatext-media';
+
+// DOMHighlighter's class; a sync listener can't read a React prop.
+export const isAgentWorking = () =>
+	!!document.querySelector('.wp-site-blocks.extendify-agent-working');
 
 // Resolve the live DOM node for the currently-staged agent block, so the
 // click + hover gates can carve out "inside the staged block." Returns
@@ -235,10 +257,9 @@ const isPickerType = (blockType) =>
 const isTranslatedTextBlock = (target) =>
 	isTranslatedRender() && isTextBearing(target?.blockType);
 
-// Which pills a target would surface (without mounting the bar). Click rule
-// (Option 7) needs this to decide between opening QE directly, today's
-// sticky commit, and the silent agent stage. Exported so keyboard-entry
-// gates Enter on the same signal the hover bar uses.
+// Which pills a target would surface (without mounting the bar). A target
+// with no pills isn't worth pinning. Exported so keyboard-entry gates Enter
+// on the same signal the hover bar uses.
 export const pillContextFor = (target) => {
 	const quickEditEnabled = !!window.extQuickEditData?.quickEditEnabled;
 	const quickEditable =
@@ -252,7 +273,7 @@ export const pillContextFor = (target) => {
 	return { quickEditable, aiAvailable };
 };
 
-// Exported for keyboard-entry to bypass the bar's click handler.
+// Test seam for the Quick Edit pill's handler, which isn't exported.
 export const editTarget = (target) => onEditClick(target);
 
 const onEditClick = (target) => {
@@ -276,8 +297,9 @@ const onEditClick = (target) => {
 
 	const isPicker = isPickerType(target.blockType);
 	if (!isPicker) clearBar();
-	store.setCommittedSelection(null);
+	// Order matters: clearing the commit first drops a picker's anchor bar.
 	store.setSelected({ ...target, anchorRect, anchorPlacement: placement });
+	store.setCommittedSelection(null);
 
 	if (!isPicker) {
 		track('quick_edit_action', {
@@ -304,8 +326,7 @@ const onAiClick = (el) => {
 	askAiAboutElement(el);
 };
 
-// Exported for keyboard-entry to route Enter on an Ask-AI-only block
-// straight to the agent, mirroring the Ask AI pill's click handler.
+// Test seam for the Ask AI pill's handler, which isn't exported.
 export const askAiTarget = (el) => onAiClick(el);
 
 // Exported for keyboard-entry's focus-driven mount/dismiss.
@@ -318,6 +339,7 @@ const renderBar = (el) => {
 	// Defense in depth for any caller (a re-render, the keyboard
 	// entry's showBar) that might otherwise paint a stale bar.
 	if (hasAgentBlockSelected()) return;
+	if (isAgentWorking()) return;
 
 	const target = buildTarget(el);
 	const { quickEditable, aiAvailable } = pillContextFor(target);
@@ -409,9 +431,54 @@ const renderBar = (el) => {
 		bar.appendChild(aiBtn);
 	}
 
+	const closeBtn = document.createElement('button');
+	closeBtn.type = 'button';
+	closeBtn.className =
+		'extendify-quick-edit-pill extendify-quick-edit-pill-close';
+	closeBtn.setAttribute('data-extendify-quick-edit-pill', '');
+	closeBtn.setAttribute('aria-label', __('Dismiss', 'extendify-local'));
+	closeBtn.innerHTML = '<span aria-hidden="true">✕</span>';
+	closeBtn.addEventListener('mousedown', stopMouseDown);
+	closeBtn.addEventListener('click', (ev) => {
+		ev.preventDefault();
+		ev.stopPropagation();
+		useQuickEditStore.getState().setCommittedSelection(null);
+		clearBar();
+	});
+	bar.appendChild(closeBtn);
+
 	document.body.appendChild(bar);
 	hoverBar = bar;
+	syncDismissState();
 	positionBar(bar, anchorEl);
+};
+
+// Nothing to dismiss until a click pins the bar; hover ends with the pointer.
+const syncDismissState = () => {
+	const closeBtn = hoverBar?.querySelector('.extendify-quick-edit-pill-close');
+	if (!closeBtn) return;
+	closeBtn.disabled = !useQuickEditStore.getState().committedSelection;
+};
+
+// preventScroll: the pill is already on screen; scrolling to it jumps the page.
+const focusFirstPill = () => {
+	hoverBar
+		?.querySelector('.extendify-quick-edit-pill')
+		?.focus({ preventScroll: true });
+};
+
+export const pinTarget = (el, target = buildTarget(el)) => {
+	const { quickEditable, aiAvailable } = pillContextFor(target);
+	const store = useQuickEditStore.getState();
+	if (!quickEditable && !aiAvailable) {
+		store.setCommittedSelection(null);
+		clearBar();
+		return;
+	}
+	renderBar(el);
+	store.setCommittedSelection(target);
+	syncDismissState();
+	focusFirstPill();
 };
 
 // Walk up to the innermost tagged ancestor. resolveTarget then derives
@@ -438,6 +505,7 @@ const findTagged = (start) => {
 const onMouseOver = (e) => {
 	if (!useEditModeStore.getState().on) return;
 	if (useQuickEditStore.getState().selected) return;
+	if (isAgentWorking()) return;
 	// Sticky modes hard-suppress all hover-driven bar movement.
 	// - agentBlock staged: the bar is intentionally hidden; only
 	//   DOMHighlighter's X-close is shown. To re-engage Ask AI on the
@@ -504,22 +572,16 @@ const QE_INTERIOR = [
 const onDocClickCapture = (e) => {
 	if (!useEditModeStore.getState().on) return;
 	if (e.target?.closest?.(QE_INTERIOR)) return;
+	// Below QE_INTERIOR, or a run also deadens the sidebar and canvas.
+	if (isAgentWorking()) return;
 
 	// Implicit close on the QE text-edit canvas: clicks outside the canvas
 	// while it's open save the in-flight edits instead of discarding them.
-	// `alsoClear: false` only when the click will open QE on a different
-	// block (the `select` branch's `quickEditable` cell); otherwise save
-	// clears so the canvas unmounts. Without that distinction the click
-	// would race: save's `clearSelected(null)` would overwrite the new
-	// block's `setSelected(B)`. `hasSaver()` is false for picker blocks
-	// (image / cover) — they save synchronously on pick and never
-	// register. Fall through either way so the existing agentBlock-clear +
-	// clear-bar branches still run.
+	// `hasSaver()` is false for picker blocks (image / cover) — they save
+	// synchronously on pick and never register. Fall through either way so
+	// the existing agentBlock-clear + clear-bar branches still run.
 	if (hasSaver() && useQuickEditStore.getState().selected) {
-		const tagged = findTagged(e.target);
-		const willOpenQE =
-			!!tagged && hasQuickEditModalFor(buildTarget(tagged)?.blockType);
-		saveSelected({ alsoClear: !willOpenQE });
+		saveSelected();
 	}
 
 	// Soft selection: while a block is staged for Ask AI, clicks INSIDE
@@ -571,62 +633,21 @@ const onDocClickCapture = (e) => {
 		case 'select': {
 			e.preventDefault();
 			e.stopPropagation();
+			const store = useQuickEditStore.getState();
+			// Only pickers reach this — other canvases cover the block they
+			// opened on.
+			if (store.selected?.el === result.el) {
+				store.clearSelected();
+				store.setCommittedSelection(null);
+				clearBar();
+				return;
+			}
 			// stopPropagation above blocks ImagePicker's bubble-phase
 			// outside-click — without this clear its menu lingers (issue 19).
-			const store = useQuickEditStore.getState();
-			if (
-				store.selected &&
-				isPickerType(store.selected.blockType) &&
-				store.selected.el !== result.el
-			) {
+			if (store.selected && isPickerType(store.selected.blockType)) {
 				store.clearSelected();
 			}
-			const target = buildTarget(result.el);
-			const { quickEditable, aiAvailable } = pillContextFor(target);
-
-			// Click semantics by pill count + agent-open state:
-			//   QE-only           → open QE menu directly (collapsed gesture).
-			//   AI-only + closed  → today's sticky commit (the one path that
-			//                       keeps committedSelection alive).
-			//   AI-only + open    → silently stage agentBlock (bridge).
-			//   Both pills        → open QE menu directly; bridge agentBlock
-			//                       too when the agent sidebar is open. The
-			//                       Ask AI button now lives on the QE bar
-			//                       chrome (BlockTextEditor.jsx), so the
-			//                       collapsed click no longer hides Ask AI.
-			//                       Picker-type blocks (image, cover) are
-			//                       exempt from the silent stage — the
-			//                       hover bar stays mounted for them and
-			//                       keeps the Ask AI pill, so the user
-			//                       escalates explicitly rather than seeing
-			//                       both the picker dropdown AND the
-			//                       agent's X-close at once.
-			//   Tagged but neither → clear (no outline on a block the user
-			//                       can't act on).
-			if (quickEditable) {
-				renderBar(result.el);
-				onEditClick(target);
-				if (
-					aiAvailable &&
-					isAgentSidebarOpen() &&
-					!isPickerType(target.blockType)
-				) {
-					stageAgentBlock(result.el);
-				}
-				return;
-			}
-			if (aiAvailable && isAgentSidebarOpen()) {
-				useQuickEditStore.getState().setCommittedSelection(null);
-				clearBar();
-				stageAgentBlock(result.el);
-				return;
-			}
-			if (aiAvailable) {
-				useQuickEditStore.getState().setCommittedSelection(target);
-				renderBar(result.el);
-				return;
-			}
-			clearBar();
+			pinTarget(result.el);
 			return;
 		}
 		case 'clear':
@@ -640,6 +661,7 @@ const onDocClickCapture = (e) => {
 let unsubEditMode = null;
 let unsubSelected = null;
 let unsubAgentBlock = null;
+let workingObserver = null;
 let unsubCommitted = null;
 
 export const attach = () => {
@@ -649,10 +671,6 @@ export const attach = () => {
 	window.addEventListener('scroll', onScrollOrResize, true);
 	window.addEventListener('resize', onScrollOrResize);
 	document.addEventListener('click', onDocClickCapture, true);
-	// Warm the agent-sidebar state cache so the sync click rule has fresh
-	// state by the time the user clicks. The dynamic import resolves on
-	// the microtask queue; user clicks are seconds-later in real use.
-	isAgentSidebarOpen();
 
 	unsubEditMode = useEditModeStore.subscribe((state) => {
 		if (!state.on) {
@@ -669,7 +687,10 @@ export const attach = () => {
 	unsubCommitted = useQuickEditStore.subscribe((state) => {
 		const prev = lastCommitted;
 		lastCommitted = state.committedSelection;
-		if (prev && !state.committedSelection) clearBar();
+		if (!prev || state.committedSelection) return;
+		// A picker dropdown anchors to the bar; clearing here orphans it.
+		if (isPickerType(state.selected?.blockType)) return;
+		clearBar();
 	});
 	// Picker dropdown anchors to the bar; keep it visible for those.
 	// On the non-null → null transition (Esc / Cancel / Save closes the
@@ -711,11 +732,28 @@ export const attach = () => {
 		if (!prev?.el || !document.body.contains(prev.el)) return;
 		if (!useEditModeStore.getState().on) return;
 		if (hoverTarget === prev.el && hoverBar) return;
+		// A save resolves after a newer pin; re-rendering here steals its bar.
+		const committed = useQuickEditStore.getState().committedSelection;
+		if (committed?.el && committed.el !== prev.el) return;
 		renderBar(prev.el);
 	});
 	unsubAgentBlock = subscribeToAgentBlock((hasBlock) => {
 		if (hasBlock) clearBar();
 	});
+	// A bar mounted before the run began stays clickable otherwise.
+	workingObserver = new MutationObserver(() => {
+		if (!isAgentWorking()) return;
+		// Otherwise hover stays suppressed after the workflow ends.
+		useQuickEditStore.getState().setCommittedSelection(null);
+		clearBar();
+	});
+	const root = document.querySelector('.wp-site-blocks');
+	if (root) {
+		workingObserver.observe(root, {
+			attributes: true,
+			attributeFilter: ['class'],
+		});
+	}
 };
 
 export const detach = () => {
@@ -728,10 +766,12 @@ export const detach = () => {
 	unsubEditMode?.();
 	unsubSelected?.();
 	unsubAgentBlock?.();
+	workingObserver?.disconnect();
 	unsubCommitted?.();
 	unsubEditMode = null;
 	unsubSelected = null;
 	unsubAgentBlock = null;
+	workingObserver = null;
 	unsubCommitted = null;
 	clearBar();
 	removeOutline();

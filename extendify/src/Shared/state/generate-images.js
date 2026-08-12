@@ -9,7 +9,6 @@ const storage = {
 	setItem: async (_name, state) =>
 		await apiFetch({ path, method: 'POST', data: { state } }),
 };
-// Values added here should also be added to Admin.php ln ~200
 const startingState = {
 	aiImageOptions: {
 		prompt: '',

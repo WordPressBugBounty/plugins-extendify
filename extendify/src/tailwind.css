@@ -87,6 +87,9 @@
 	--color-wp-alert-yellow: #f0b849;
 	--color-wp-alert-red: #cc1818;
 	--color-wp-alert-green: #4ab866;
+	--color-wp-notice-success: #eff9f1;
+	--color-wp-notice-error: #fcf0f0;
+	--color-wp-notice-neutral: #c3c4c7;
 }
 
 /* sizing */

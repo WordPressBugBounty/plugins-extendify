@@ -8,18 +8,20 @@ import { Chat } from '@agent/Chat';
 import { ChatInput } from '@agent/components/ChatInput';
 import { ChatMessages } from '@agent/components/ChatMessages';
 import { UsageMessage } from '@agent/components/messages/UsageMessage';
-import { PageDocument } from '@agent/components/PageDocument';
 import { useLockPost } from '@agent/hooks/useLockPost';
+import { isAbilityTool, isAbilityWorkflow } from '@agent/lib/abilities';
 import {
-	abilityAffectsCurrentPage,
-	isAbilityWorkflow,
-} from '@agent/lib/abilities';
+	getClientToolFallbackReply,
+	getClientTools,
+} from '@agent/lib/client-tools';
+import { localPickWorkflow } from '@agent/lib/local-pick';
 import { getRedirectUrl } from '@agent/lib/redirects';
 import { useChatStore } from '@agent/state/chat';
 import { useGlobalStore } from '@agent/state/global';
 import { useStatusStore } from '@agent/state/status';
 import { useSuggestionsStore } from '@agent/state/suggestions';
 import { useWorkflowStore } from '@agent/state/workflows';
+import { hasRunComponent } from '@agent/workflows/abilities/components/run';
 import { useQuickEditStore } from '@quick-edit/state/store';
 import { digest } from '@shared/api/digest';
 import {
@@ -29,15 +31,28 @@ import {
 	useRef,
 	useState,
 } from '@wordpress/element';
-import { __ } from '@wordpress/i18n';
+import { __, _n, sprintf } from '@wordpress/i18n';
 
 const devmode = window.extSharedData.devbuild;
+// Logged with tool errors: the banner sends users here and support needs to
+// know which site the console they paste came from.
+const { siteId } = window.extSharedData;
 // Used to abort when wf canceled - reset in cleanup()
 let controller = new AbortController();
 const { postId } = window?.extAgentData?.context || {};
 
+// Floor a resolution so its result doesn't re-render over the still-animating
+// scroll-to-top, which leaves the chat scrolled to the wrong place.
+const withMinDuration = async (promise, ms) => {
+	const [result] = await Promise.all([
+		promise,
+		new Promise((resolve) => setTimeout(resolve, ms)),
+	]);
+	return result;
+};
+
 export const Agent = () => {
-	const { addMessage, popMessage } = useChatStore();
+	const { addMessage, updateMessage, popMessage, messages } = useChatStore();
 	const { pushStatus, clearStatuses } = useStatusStore();
 	const {
 		mergeWorkflowData,
@@ -48,74 +63,105 @@ export const Agent = () => {
 		setWhenFinishedToolProps,
 		whenFinishedToolProps,
 		getAvailableWorkflows,
+		requireBlock,
 	} = useWorkflowStore();
 	const block = useQuickEditStore((s) => s.agentBlock);
 	const setBlock = useQuickEditStore((s) => s.setAgentBlock);
-	const workflowIds = getAvailableWorkflows().map((w) => w.id);
 	const { open, setOpen, updateRetryAfter, isChatAvailable } = useGlobalStore();
 	useLockPost({ postId, enabled: !!open });
 	const [canType, setCanType] = useState(true);
 	const agentWorking = useRef(false);
 	const toolWorking = useRef(false);
 	const retrying = useRef(false);
-	const [waitingOnToolOrUser, setWaitingOnToolOrUser] = useState(false);
+	// Starting false would re-run the agent's last turn on every reload.
+	const [waitingOnToolOrUser, setWaitingOnToolOrUser] = useState(() => {
+		const last = useChatStore.getState().messages.at(-1);
+		if (last?.type === 'tool') return !('result' in (last.details ?? {}));
+		return last?.type === 'message' && last.details?.role === 'assistant';
+	});
 	const [loop, setLoop] = useState(0);
 	const workflow = getWorkflow();
 	const chatAvailable = useMemo(() => isChatAvailable(), [isChatAvailable]);
 	const { addSuggestions, getSuggestions } = useSuggestionsStore();
+	// Options render only while their message is last; a reply dismisses them.
+	const lastMessage = messages.at(-1);
+	const qaSuggestions =
+		lastMessage?.type === 'message' &&
+		lastMessage.details?.role === 'assistant' &&
+		Array.isArray(lastMessage.details?.qaSuggestions)
+			? lastMessage.details.qaSuggestions
+			: null;
 
 	const cleanup = useCallback(() => {
 		setCanType(true);
 		agentWorking.current = false;
 		setWaitingOnToolOrUser(false);
 		controller = new AbortController();
-		block && setBlock(null);
+		const { agentBlock, setCommittedSelection } = useQuickEditStore.getState();
+		agentBlock && setBlock(null);
+		// A class or pin left up freezes Quick Edit hover site-wide.
+		document
+			.querySelector('.wp-site-blocks')
+			?.classList.remove('extendify-agent-working', 'extendify-agent-busy');
+		setCommittedSelection(null);
 		clearStatuses();
 		window.dispatchEvent(new Event('extendify-agent:remove-block-highlight'));
-		// scrollIntoView below walks up and scrolls the page itself,
-		// fighting useLayoutShift's scroll restore when closing.
-		if (!useGlobalStore.getState().open) return;
-		const c = Array.from(
-			document.querySelectorAll(
-				'#extendify-agent-chat-scroll-area div:last-child',
-			),
-		)?.at(-1);
-		c?.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
-		c?.scrollBy({ top: -5, behavior: 'smooth' });
-	}, [setBlock, block, clearStatuses]);
+	}, [setBlock, clearStatuses]);
+
+	useEffect(() => {
+		const handle = ({ detail }) => {
+			if (!detail?.id) return;
+			updateMessage(detail.id, { result: detail.result });
+			setWaitingOnToolOrUser(false);
+			agentWorking.current = false;
+			// The main loop parks on a staged tool; leaving one strands the run.
+			setWhenFinishedToolProps(null);
+			setLoop((prev) => prev + 1);
+		};
+		window.addEventListener('extendify-agent:client-tool-done', handle);
+		return () =>
+			window.removeEventListener('extendify-agent:client-tool-done', handle);
+	}, [updateMessage, setWhenFinishedToolProps]);
 
 	const findAgent = useCallback(
 		async (options = {}) => {
 			pushStatus('calling-agent');
-			const response = await pickWorkflow({
-				workflows: workflowIds,
-				options: { signal: controller.signal, ...options },
-			}).catch(async (error) => {
-				devmode && console.error(error);
-				if (error?.response?.status === 429) {
-					updateRetryAfter(error?.response?.headers?.get('Retry-After'));
-					setCanType(false);
-					pushStatus('credits-exhausted');
-					return;
-				}
-				setCanType(true);
-				if (error === 'Workflow aborted') {
-					addMessage('workflow', { status: 'canceled' });
-					return;
-				}
+			const response = await withMinDuration(
+				pickWorkflow({
+					// A mid-turn drop clears the block after this closure was made.
+					workflows: getAvailableWorkflows().map((w) => w.id),
+					options: { signal: controller.signal, ...options },
+				}).catch(async (error) => {
+					devmode && console.error(error);
+					if (error?.response?.status === 429) {
+						updateRetryAfter(error?.response?.headers?.get('Retry-After'));
+						setCanType(false);
+						pushStatus('credits-exhausted');
+						return;
+					}
+					setCanType(true);
+					if (error === 'Workflow aborted') {
+						addMessage('workflow', {
+							status: 'canceled',
+							suggestions: getSuggestions(),
+						});
+						return;
+					}
 
-				await new Promise((resolve) => setTimeout(resolve, 1000));
-				addMessage('message', {
-					role: 'assistant',
-					// translators: This message is shown when the AI agent fails to find a suitable workflow.
-					content: __(
-						'Something went wrong while trying to start this request. Please try again.',
-						'extendify-local',
-					),
-					error: true,
-				});
-				return;
-			});
+					await new Promise((resolve) => setTimeout(resolve, 1000));
+					addMessage('message', {
+						role: 'assistant',
+						// translators: This message is shown when the AI agent fails to find a suitable workflow.
+						content: __(
+							'Something went wrong while trying to start this request. Please try again.',
+							'extendify-local',
+						),
+						error: true,
+					});
+					return;
+				}),
+				500,
+			);
 			if (!response) return;
 
 			const { workflow: wf, reply } = response;
@@ -126,17 +172,20 @@ export const Agent = () => {
 			}
 			if (!wf?.id) setCanType(true);
 		},
-		[addMessage, pushStatus, updateRetryAfter, setWorkflow, workflowIds],
+		[
+			addMessage,
+			pushStatus,
+			updateRetryAfter,
+			setWorkflow,
+			getAvailableWorkflows,
+			getSuggestions,
+		],
 	);
 
 	const handleSubmit = useCallback(
 		async (message) => {
-			// Save any in-flight QE canvas edits before the agent runs so
-			// the user doesn't lose their work to a workflow that touches
-			// the same block. No-op when no QE canvas is mounted.
-			window.dispatchEvent(
-				new CustomEvent('extendify-quick-edit:agent-submit'),
-			);
+			// Suggestions reach the agent without the textarea; disabling it isn't enough.
+			if (useQuickEditStore.getState().selected) return;
 			setWaitingOnToolOrUser(false);
 			agentWorking.current = false;
 			addMessage('message', { role: 'user', content: message });
@@ -167,10 +216,19 @@ export const Agent = () => {
 				return;
 			}
 
+			// Skip the network find-agent when the staged block makes the edit certain.
+			const localPick = localPickWorkflow({ block });
+			if (localPick) {
+				await new Promise((resolve) => setTimeout(resolve, 500));
+				setWorkflow(localPick);
+				return;
+			}
+
 			await findAgent().catch((e) => devmode && console.error(e));
 		},
 		[
 			addMessage,
+			block,
 			findAgent,
 			mergeWorkflowData,
 			whenFinishedToolProps,
@@ -219,6 +277,8 @@ export const Agent = () => {
 		addMessage('message', {
 			role: 'assistant',
 			content: agentResponse.reply,
+			// A workflow example can carry its own suggestions; none still asks.
+			qaSuggestions: agentResponse.qaSuggestions ?? [],
 		});
 		agentWorking.current = false;
 		setCanType(true);
@@ -239,13 +299,19 @@ export const Agent = () => {
 		const handleCleanup = () => {
 			controller.abort('Workflow aborted');
 			cleanup();
+			// Deferred a frame: the input stays disabled until the cancel lands.
+			requestAnimationFrame(() =>
+				document.querySelector('#extendify-agent-chat-textarea')?.focus(),
+			);
 
-			if (!workflow?.id) return;
+			// An options panel can outlive its workflow; cancel must still clear it.
+			if (!workflow?.id && !qaSuggestions) return;
 			setWorkflow(null);
 			addMessage('workflow', {
 				status: 'canceled',
-				agent: workflow.agent,
-				workflowId: workflow.id,
+				agent: workflow?.agent,
+				workflowId: workflow?.id,
+				suggestions: getSuggestions(),
 			});
 			return;
 		};
@@ -258,20 +324,30 @@ export const Agent = () => {
 			);
 			window.removeEventListener('extendify-agent:chat-submit', handleMessage);
 		};
-	}, [handleSubmit, cleanup, setWorkflow, addMessage, workflow]);
+	}, [
+		handleSubmit,
+		cleanup,
+		setWorkflow,
+		addMessage,
+		workflow,
+		qaSuggestions,
+		getSuggestions,
+	]);
 
 	// Handle whenFinished component confirm/cancel
 	useEffect(() => {
 		const handleConfirm = async ({ detail }) => {
 			if (toolWorking.current) return;
 			setWhenFinishedToolProps(null);
-			pushStatus('workflow-tool-processing');
 			toolWorking.current = true;
 			const { data, whenFinishedToolProps, shouldRefreshPage, redirectUrl } =
 				detail ?? {};
 			const { whenFinishedTool, answerId, redirectTo } =
 				whenFinishedToolProps?.agentResponse || {};
 			const { id, labels } = whenFinishedTool || {};
+			// Staged unanswered so its own component can show the run in progress.
+			const runMessageId = id ? addMessage('tool', { id, inputs: data }) : null;
+			if (!hasRunComponent(id)) pushStatus('workflow-tool-processing');
 			// Not all workflows have a tool at the end (e.g. tours)
 			const toolResponse = await callTool?.({ tool: id, inputs: data }).catch(
 				(error) => {
@@ -284,23 +360,50 @@ export const Agent = () => {
 							sessionId,
 						},
 					});
-					devmode && console.error(error);
+					console.error(`Extendify agent tool error: ${id}`, { siteId, error });
 					return { error: { message: error?.message, code: error?.code } };
 				},
 			);
 			toolWorking.current = false;
+			if (runMessageId) updateMessage(runMessageId, { result: toolResponse });
+			if (toolResponse?.refused) {
+				await new Promise((resolve) => setTimeout(resolve, 1000));
+				const refusalMessages = {
+					// translators: Shown when the AI agent's edit produced no change to the block, which is unexpected.
+					'no-op': __(
+						"That edit came back unchanged, which wasn't expected. Please try rephrasing what you'd like to change.",
+						'extendify-local',
+					),
+					// translators: Shown when the user asked the AI agent to edit a block that lives in a site template (e.g. the header or footer), which the agent cannot save yet.
+					'template-part': __(
+						"That block is part of your site's template, like the header or footer, and I can't make changes there yet.",
+						'extendify-local',
+					),
+				};
+				addMessage('message', {
+					role: 'assistant',
+					content:
+						refusalMessages[toolResponse.reason] ??
+						// translators: Shown when the AI agent could not safely apply an edit to the selected block.
+						__(
+							"I couldn't safely apply that edit to the selected block. Please re-select the block and try again.",
+							'extendify-local',
+						),
+					error: true,
+				});
+				setWorkflow(null);
+				cleanup();
+				return;
+			}
 			// Only loop back on error, so the model can recover. A clean
 			// whenFinished tool means the workflow is done.
 			if (toolResponse?.error) {
-				addMessage('tool', { id, inputs: data, result: toolResponse });
 				setWaitingOnToolOrUser(false);
 				agentWorking.current = false;
 				setLoop((prev) => prev + 1);
 				return;
 			}
 
-			// Later runs of this workflow need the result (e.g. created ids).
-			if (id) addMessage('tool', { id, inputs: data, result: toolResponse });
 			addSuggestions(whenFinishedToolProps.agentResponse?.recommendations);
 			addMessage('workflow', {
 				status: 'completed',
@@ -310,10 +413,27 @@ export const Agent = () => {
 				answerId,
 				suggestions: getSuggestions(),
 			});
+			// A chat message persists, so the next turn's model knows the save was partial.
+			const refusedCount = toolResponse?.refusedOperations?.length;
+			if (refusedCount) {
+				addMessage('message', {
+					role: 'assistant',
+					content: sprintf(
+						// translators: %d is how many of the requested edits were not applied.
+						_n(
+							"Heads up — %d of those changes couldn't be applied. If something still looks the same, ask me to redo just that part.",
+							"Heads up — %d of those changes couldn't be applied. If something still looks the same, ask me to redo just those parts.",
+							refusedCount,
+							'extendify-local',
+						),
+						refusedCount,
+					),
+				});
+			}
 			setWorkflow(null);
 
 			const url = getRedirectUrl(redirectTo, whenFinishedToolProps?.inputs);
-			const refreshForAbility = abilityAffectsCurrentPage(id, data);
+			const refreshForAbility = isAbilityTool(id);
 			if (url || redirectUrl || shouldRefreshPage || refreshForAbility) {
 				await new Promise((resolve) => setTimeout(resolve, 1000));
 			}
@@ -449,17 +569,41 @@ export const Agent = () => {
 				throw new Error(`Error handling workflow: ${agentResponse.error}`);
 			}
 			// The ai sent back some text to show to the user
-			if (agentResponse.reply) {
+			const reply =
+				agentResponse.reply ??
+				(agentResponse.tool
+					? getClientToolFallbackReply(agentResponse.tool.id)
+					: null);
+			if (reply) {
 				addMessage('message', {
 					role: 'assistant',
-					content: agentResponse.reply,
+					content: reply,
 					followup: !!agentResponse.tool,
 					pageSuggestion: agentResponse.pageSuggestion,
+					qaSuggestions: agentResponse.qaSuggestions,
 					agent: workflow.agent,
 					sessionId: workflow?.sessionId,
 					workflowId: workflow?.id,
 					language: workflow?.language,
 				});
+			}
+			// Set when the request needs something no block edit can do.
+			if (agentResponse.dropSelection) {
+				setBlock(null);
+				window.dispatchEvent(
+					new Event('extendify-agent:remove-block-highlight'),
+				);
+				setWorkflow(null);
+				pushStatus(
+					'tool-started',
+					// translators: Shown while the AI agent deselects a block that can't serve the request.
+					__('Removing selected block', 'extendify-local'),
+				);
+				// findAgent pushes its own status right away; let this one read first.
+				await new Promise((resolve) => setTimeout(resolve, 2500));
+				agentWorking.current = false;
+				await findAgent();
+				return;
 			}
 			// This is at the end of the workflow
 			// and we are about to execute the final tool
@@ -515,6 +659,15 @@ export const Agent = () => {
 			// Agent needs more info from a
 			if (agentResponse.tool) {
 				const { id, inputs, labels } = agentResponse.tool;
+				// A client tool is answered by in-chat UI, so the turn ends here.
+				if (getClientTools().includes(id)) {
+					addMessage('tool', { id, inputs });
+					// Clearing agentWorking here fires a second turn: the wait flag
+					// has not committed yet.
+					setWaitingOnToolOrUser(true);
+					setCanType(false);
+					return;
+				}
 				pushStatus('tool-started', labels?.started);
 				const toolData = await Promise.all([
 					callTool({ tool: id, inputs }),
@@ -531,17 +684,24 @@ export const Agent = () => {
 								sessionId,
 							},
 						});
-						devmode && console.error(error);
+						console.error(`Extendify agent tool error: ${id}`, {
+							siteId,
+							error,
+						});
 						// Don't throw; the loop hands the error to the model.
 						return { error: { message: error?.message, code: error?.code } };
 					});
-				pushStatus('tool-completed', labels?.confirm);
-				await new Promise((resolve) => setTimeout(resolve, 1000));
 				// do-when-finished spreads first-class workflowData into the tool.
 				if (!toolData?.error && !isAbilityWorkflow(workflow.id)) {
 					mergeWorkflowData(toolData);
 				}
-				addMessage('tool', { id, inputs, result: toolData });
+				if (toolData?.stagedBlockIds?.length) requireBlock();
+				addMessage('tool', {
+					id,
+					inputs,
+					result: toolData,
+					label: labels?.confirm,
+				});
 				setWaitingOnToolOrUser(false);
 				agentWorking.current = false;
 				setLoop((prev) => prev + 1); // Trigger next loop
@@ -581,10 +741,13 @@ export const Agent = () => {
 		agentWorking,
 		waitingOnToolOrUser,
 		mergeWorkflowData,
+		requireBlock,
 		canType,
 		whenFinishedToolProps,
 		setWhenFinishedToolProps,
 		block,
+		setBlock,
+		findAgent,
 		addSuggestions,
 		getSuggestions,
 	]);
@@ -595,9 +758,11 @@ export const Agent = () => {
 	}, [canType]);
 
 	const busy = !canType || !chatAvailable || workflow?.id;
+	// `busy` is true at rest; 429 is blocked, not working.
+	const working = !canType && chatAvailable;
 
 	return (
-		<Chat busy={busy}>
+		<Chat busy={busy} working={working}>
 			<div className="relative z-50 flex h-full flex-col justify-between overflow-auto">
 				<ChatMessages
 					redirectComponent={
@@ -606,7 +771,6 @@ export const Agent = () => {
 				/>
 				<div>
 					<div className="relative flex flex-col px-4 pb-2 pt-2.5 shadow-lg-flipped">
-						{block ? <PageDocument busy={busy} blockId={block.id} /> : null}
 						<UsageMessage
 							onReady={() => {
 								cleanup();
@@ -616,7 +780,7 @@ export const Agent = () => {
 					</div>
 					<div className="p-4 pb-2 pt-0">
 						<ChatInput
-							disabled={!canType || !chatAvailable}
+							disabled={!canType || !chatAvailable || !!qaSuggestions}
 							handleSubmit={handleSubmit}
 						/>
 					</div>

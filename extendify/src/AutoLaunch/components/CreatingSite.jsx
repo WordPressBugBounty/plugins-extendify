@@ -1,7 +1,10 @@
 import { useCreateSite } from '@auto-launch/hooks/useCreateSite';
 import { useRateLimitedCursor } from '@auto-launch/hooks/useRateLimitedCursor';
 import { loaderSiteCreation } from '@auto-launch/icons';
-import { useLaunchDataStore } from '@auto-launch/state/launch-data';
+import {
+	clearPersistedLaunchData,
+	useLaunchDataStore,
+} from '@auto-launch/state/launch-data';
 import { useEffect, useRef, useState } from '@wordpress/element';
 import { __ } from '@wordpress/i18n';
 import { Icon, info } from '@wordpress/icons';
@@ -64,6 +67,7 @@ export const CreatingSite = ({ height }) => {
 		if (!done) return;
 		setLoadAdmin(true);
 		const timeout = setTimeout(() => {
+			clearPersistedLaunchData();
 			window.location.replace(`${homeUrl}?extendify-launch-success=1`);
 		}, 3000);
 		return () => clearTimeout(timeout);

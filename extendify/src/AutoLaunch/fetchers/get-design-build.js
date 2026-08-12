@@ -1,4 +1,4 @@
-import { uploadLogo } from '@auto-launch/fetchers/get-logo';
+import { isExternalLogo, uploadLogo } from '@auto-launch/fetchers/get-logo';
 import { getThemeVariation } from '@auto-launch/fetchers/get-variation';
 import {
 	getDesignBuildShape,
@@ -6,6 +6,7 @@ import {
 	getPluginsShape,
 	getStyleShape,
 } from '@auto-launch/fetchers/shape';
+import { importBuiltPagesImages } from '@auto-launch/functions/get-imported-images';
 import {
 	fetchWithTimeout,
 	retryTwice,
@@ -20,6 +21,12 @@ import { mutate } from 'swr';
 
 const fallback = null;
 const headers = { 'Content-Type': 'application/json' };
+
+// Left set, the launch screen waits forever on a design that never arrives.
+const dropBuildId = () =>
+	useLaunchDataStore.setState((s) => ({
+		urlParams: { ...s.urlParams, 'build-id': '' },
+	}));
 
 export const handleDesignBuild = async ({ urlParams }) => {
 	const buildId = urlParams?.['build-id'];
@@ -44,6 +51,7 @@ export const handleDesignBuild = async ({ urlParams }) => {
 			},
 			details: { source: 'auto-launch', caller: 'handleDesignBuild' },
 		});
+		dropBuildId();
 		return fallback;
 	}
 
@@ -75,39 +83,54 @@ export const handleDesignBuild = async ({ urlParams }) => {
 		const sitePlugins = parsed.selectedPlugins;
 		mutate('sitePlugins', getPluginsShape.parse({ sitePlugins }), false);
 
-		// Stash the logo
-		await uploadLogo(parsed.logoUrl);
-		mutate('siteLogo', getLogoShape.parse({ logoUrl: parsed.logoUrl }), false);
+		// The logo upload swaps logoUrl for a Media Library URL without the
+		// logos-custom/ marker, so capture "is the brand's own logo" from the
+		// source URL now.
+		const hasExternalLogo = isExternalLogo(parsed.logoUrl);
 
-		const designBuild = { buildId, ...parsed, siteProfile: profile, siteStyle };
-		// Spreading it here sets it for other state values we override
-		return { designBuild, ...designBuild };
+		// Sideload the built-page images, and upload the logo alongside when the
+		// build provided one. logoUrl is nullable; without it we skip the upload
+		// so the siteLogo step falls through to AI logo generation.
+		const uploads = [importBuiltPagesImages(parsed.builtPages)];
+		if (parsed.logoUrl) {
+			mutate(
+				'siteLogo',
+				getLogoShape.parse({ logoUrl: parsed.logoUrl }),
+				false,
+			);
+			uploads.push(uploadLogo(parsed.logoUrl, { external: hasExternalLogo }));
+		}
+		const [builtPages] = await Promise.all(uploads);
+
+		const designBuild = {
+			buildId,
+			...parsed,
+			builtPages,
+			hasExternalLogo,
+			siteProfile: profile,
+			siteStyle,
+		};
+		// Exclude `pages` from the spread: the pages step owns it (templates with
+		// patterns); designBuild.pages (slug/name only) would clobber it.
+		const { pages, ...topLevel } = designBuild;
+		return { designBuild, ...topLevel };
 	} catch (e) {
 		digest({
 			error: e,
 			details: { source: 'auto-launch', caller: 'handleDesignBuild::parsing' },
 		});
 		console.error('handleDesignBuild:', e);
-		// Drop the build-id so downstream checks (e.g. skipDescription) fallback
-		useLaunchDataStore.setState((s) => ({
-			urlParams: { ...s.urlParams, 'build-id': '' },
-		}));
+		dropBuildId();
 		return fallback;
 	}
 };
 
-// Prepend the design build hero; flagged so it skips content regeneration.
+// Prepend the design build's hero to the fetched home template. Full-page
+// builds skip /api/home entirely and are assembled in handleHome.
 export const applyDesignBuildHero = (patterns, designBuild) => {
-	if (!designBuild?.patternCode) return patterns;
-	return [
-		{
-			name: designBuild.patternId,
-			code: designBuild.patternCode,
-			patternTypes: ['hero-header'],
-			contentGenerated: true,
-		},
-		...patterns,
-	];
+	const builtHome = designBuild?.builtPages?.find((p) => p.slug === 'home');
+	if (!builtHome?.patterns?.length) return patterns;
+	return [...builtHome.patterns, ...patterns];
 };
 
 // Reorder pages to match the design build's page order; extras fall to the end.
@@ -118,18 +141,4 @@ export const applyDesignBuildOrder = (pages, designBuild) => {
 		...order.map((slug) => pages.find((t) => t.slug === slug)).filter(Boolean),
 		...pages.filter((t) => !order.includes(t.slug)),
 	];
-};
-
-// Tag non-hero patterns with their aligned design build page slug/name.
-// For single-page sites mainly
-export const applyDesignBuildNav = (patterns, designBuild) => {
-	const pages = designBuild?.pages ?? [];
-	if (!pages.length) return patterns;
-	let i = 0;
-	return patterns.map((pattern) => {
-		if (pattern.patternTypes?.includes('hero-header')) return pattern;
-		const page = pages[i++];
-		if (!page) return pattern;
-		return { ...pattern, navSlug: page.slug, navLabel: page.name };
-	});
 };

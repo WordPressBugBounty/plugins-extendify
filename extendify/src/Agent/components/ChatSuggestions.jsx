@@ -1,7 +1,8 @@
 import { sparkle } from '@agent/icons';
 import { useDomainActivities } from '@agent/state/domain-activities';
 import { useSuggestionsStore } from '@agent/state/suggestions';
-import { useState } from '@wordpress/element';
+import { track } from '@shared/lib/track';
+import { useEffect, useState } from '@wordpress/element';
 import { __ } from '@wordpress/i18n';
 import {
 	chevronRight,
@@ -37,7 +38,9 @@ export const ChatSuggestions = ({ suggestions }) => {
 
 	const handleSelect = (suggestion) => {
 		markAsClicked(suggestion);
-		if (suggestion.tracking) {
+		if (suggestion.telemetry) {
+			track(suggestion.telemetry.key, suggestion.telemetry.payload);
+		} else if (suggestion.tracking) {
 			setDomainActivity({ ...suggestion.tracking, action: 'clicked' });
 		}
 		// External-link suggestions are plain links: the anchor opens the new tab.
@@ -76,7 +79,18 @@ export const ChatSuggestions = ({ suggestions }) => {
 };
 
 const SuggestionButton = ({ suggestion, onSelect }) => {
+	const { setDomainActivity } = useDomainActivities();
 	const icon = icons[suggestion?.icon] ?? icons.sparkle;
+
+	useEffect(() => {
+		if (suggestion.viewTelemetry) {
+			track(suggestion.viewTelemetry.key, suggestion.viewTelemetry.payload);
+		}
+		if (suggestion.tracking) {
+			setDomainActivity({ ...suggestion.tracking, action: 'viewed' });
+		}
+	}, [suggestion, setDomainActivity]);
+
 	const className =
 		'group flex items-center justify-between rounded-sm bg-transparent px-1 py-1 text-left text-sm not-italic text-gray-900 transition-colors duration-100 hover:bg-gray-100 focus:outline-hidden focus:ring-2 focus:ring-design-main';
 	const content = (

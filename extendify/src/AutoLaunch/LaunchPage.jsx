@@ -1,5 +1,6 @@
 import { ExtendifyCodeConnector } from '@auto-launch/components/ExtendifyCodeConnector';
 import { Launch } from '@auto-launch/components/Launch';
+import { LaunchUpdate } from '@auto-launch/components/LaunchUpdate';
 import { Logo } from '@auto-launch/components/Logo';
 import { MigrateChoice } from '@auto-launch/components/MigrateChoice';
 import { MovingGradient } from '@auto-launch/components/MovingGradients';
@@ -10,6 +11,7 @@ import { getAbTest } from '@auto-launch/functions/getAbTest';
 import { preLaunchFunctions } from '@auto-launch/functions/setup';
 import { updateOption } from '@auto-launch/functions/wp';
 import { useLaunchDataStore } from '@auto-launch/state/launch-data';
+import { digest } from '@shared/api/digest';
 import { registerCoreBlocks } from '@wordpress/block-library';
 import { getBlockTypes } from '@wordpress/blocks';
 import { useSelect } from '@wordpress/data';
@@ -27,6 +29,16 @@ export const LaunchPage = () => {
 
 	const oldPages = window.extLaunchData.resetSiteInformation.pagesIds ?? [];
 	const needsToReset = oldPages.length > 0;
+
+	const pluginUpdateNeeded = Boolean(window.extLaunchData?.pluginUpdateNeeded);
+	const themeUpdateNeeded = Boolean(window.extLaunchData?.themeUpdateNeeded);
+	const pluginUpdateViaRest = Boolean(
+		window.extLaunchData?.pluginUpdateViaRest,
+	);
+	const launchUpdateNeeded = pluginUpdateNeeded || themeUpdateNeeded;
+	const launchUpdateAttempt = window.extLaunchData?.launchUpdateAttempt ?? 0;
+	const launchUpdateStale = window.extLaunchData?.launchUpdateStale ?? {};
+	const launchUpdateGaveUp = Object.keys(launchUpdateStale).length > 0;
 
 	const {
 		title,
@@ -52,6 +64,17 @@ export const LaunchPage = () => {
 	const containerRef = useRef(null);
 
 	useEffect(() => {
+		if (launchUpdateNeeded) return;
+		if (launchUpdateGaveUp) {
+			digest({
+				error: new Error('Launch went ahead without the pending update'),
+				details: {
+					source: 'auto-launch',
+					caller: 'launch-update',
+					stale: launchUpdateStale,
+				},
+			});
+		}
 		// translators: Launch is a noun.
 		document.title = __('Launch - AI-Powered Web Creation', 'extendify-local');
 		updateOption('extendify_launch_loaded', new Date().toISOString());
@@ -61,7 +84,23 @@ export const LaunchPage = () => {
 		preLaunchFunctions();
 		checkIn({ stage: 'launch_page' });
 		reportRestApiStatus();
-	}, []);
+	}, [launchUpdateNeeded, launchUpdateGaveUp]);
+
+	if (launchUpdateNeeded) {
+		return (
+			<Wrapper>
+				<div className="bg-white w-full max-w-xl rounded-lg border border-design-main/60 relative z-10">
+					<LaunchUpdate
+						pluginUpdateNeeded={pluginUpdateNeeded}
+						themeUpdateNeeded={themeUpdateNeeded}
+						pluginUpdateViaRest={pluginUpdateViaRest}
+						pluginSlug={window.extLaunchData?.pluginSlug}
+						attempt={launchUpdateAttempt}
+					/>
+				</div>
+			</Wrapper>
+		);
+	}
 
 	if (needsTheme) {
 		return (

@@ -16,7 +16,7 @@ const workflow = {
 	redirectComponent: () =>
 		Redirect(
 			__(
-				'Hey there! It looks like you are trying to change your site design, but you are not on a page where we can do that.',
+				'It looks like you are trying to change your site design, but you are not on a page where we can do that.',
 				'extendify-local',
 			),
 		),

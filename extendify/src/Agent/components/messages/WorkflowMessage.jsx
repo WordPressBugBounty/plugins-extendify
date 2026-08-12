@@ -33,7 +33,7 @@ const WorkflowFooter = ({ answerId, suggestions }) => {
 		<div className="flex flex-col gap-px p-2 text-center text-xs italic">
 			{answerId && <Rating answerId={answerId} />}
 			{hasSuggestions && (
-				<div className="relative mb-4 ml-9 mr-2 mt-4 flex flex-col gap-0.5 border-t border-gray-300 p-0 pt-4 text-sm text-gray-800 rtl:ml-2 rtl:mr-9">
+				<div className="relative mb-4 ms-10 mt-4 flex flex-col gap-0.5 border-t border-gray-300 p-0 pt-4 text-sm text-gray-800">
 					<p className="m-0 mb-2 p-0 px-2 text-left text-sm not-italic text-gray-900 rtl:text-right">
 						{__(
 							"What's next? Would you like to do something else?",
@@ -49,11 +49,11 @@ const WorkflowFooter = ({ answerId, suggestions }) => {
 
 const WorkflowToolCompleted = ({ label }) => {
 	return (
-		<div className="flex w-full items-start gap-2.5 p-2">
+		<div className="flex w-full items-start gap-2.5 px-2.5 py-2">
 			<div className="w-7 shrink-0" />
 			<div className="flex min-w-0 flex-1 flex-col gap-1">
-				<div className="flex items-center gap-2 rounded-lg border border-wp-alert-green bg-wp-alert-green/20 p-3 text-green-900">
-					<div className="h-6 w-6 leading-none">
+				<div className="flex items-center gap-2 border-l-4 border-l-wp-alert-green bg-wp-notice-success p-3 text-gray-900">
+					<div className="h-6 w-6 leading-none text-wp-alert-green">
 						<svg
 							xmlns="http://www.w3.org/2000/svg"
 							fill="none"
@@ -72,7 +72,7 @@ const WorkflowToolCompleted = ({ label }) => {
 					</div>
 					<div className="text-sm">
 						{decodeEntities(label) ||
-							__('Workflow completed successfully', 'extendify-local')}
+							__('Your site was updated', 'extendify-local')}
 					</div>
 				</div>
 			</div>
@@ -82,13 +82,13 @@ const WorkflowToolCompleted = ({ label }) => {
 
 const WorkflowToolCanceled = ({ label }) => {
 	return (
-		<div className="flex w-full items-start gap-2.5 p-2">
+		<div className="flex w-full items-start gap-2.5 px-2.5 py-2">
 			<div className="w-7 shrink-0" />
 			<div className="flex min-w-0 flex-1 flex-col gap-1">
-				<div className="flex items-center gap-2 rounded-lg border border-gray-300 bg-gray-50 p-3 text-gray-700">
+				<div className="flex items-center gap-2 border-l-4 border-l-wp-notice-neutral bg-gray-50 p-3 text-gray-900">
 					<div className="text-sm">
 						{decodeEntities(label) ||
-							__('Workflow was canceled', 'extendify-local')}
+							__('Canceled — nothing was changed', 'extendify-local')}
 					</div>
 				</div>
 			</div>

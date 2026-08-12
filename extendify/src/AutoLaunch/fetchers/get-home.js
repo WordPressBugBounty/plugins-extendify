@@ -1,7 +1,4 @@
-import {
-	applyDesignBuildHero,
-	applyDesignBuildNav,
-} from '@auto-launch/fetchers/get-design-build';
+import { applyDesignBuildHero } from '@auto-launch/fetchers/get-design-build';
 import { getHomeShape, homeTemplateShape } from '@auto-launch/fetchers/shape';
 import {
 	fetchWithTimeout,
@@ -28,6 +25,22 @@ export const handleHome = async ({
 }) => {
 	// translators: this is for a action log UI. Keep it short
 	setStatus(__('Preparing your home page', 'extendify-local'));
+
+	// A full-page design build already carries the whole home; skip the
+	// /api/home fetch and build the page from the built patterns directly.
+	const builtHome = designBuild?.builtPages?.find((p) => p.slug === 'home');
+	if (builtHome?.fullPage && builtHome.patterns?.length) {
+		// The full page is final — keep the BE's sections verbatim and flag them
+		// so generatePageContent skips the /api/patterns rewrite.
+		const patterns = builtHome.patterns.map((p) => ({
+			...p,
+			contentGenerated: true,
+		}));
+		const parts = await resolveTemplateParts({ siteProfile, designBuild });
+		return getHomeShape.parse({
+			home: { id: 'home', slug: 'home', patterns, ...parts },
+		});
+	}
 
 	const body = JSON.stringify({
 		...reqDataBasics,
@@ -60,7 +73,17 @@ export const handleHome = async ({
 
 	const template = homeTemplateShape.parse(await response.json());
 	template.patterns = applyDesignBuildHero(template.patterns, designBuild);
-	template.patterns = applyDesignBuildNav(template.patterns, designBuild);
+
+	const parts = await resolveTemplateParts({ siteProfile, designBuild });
+	return getHomeShape.parse({ home: { ...template, ...parts } });
+};
+
+const resolveTemplateParts = async ({ siteProfile, designBuild }) => {
+	const headerPart = designBuild?.templateParts?.header;
+	const footerPart = designBuild?.templateParts?.footer;
+	// Both parts came from the design build; skip the template-parts fetch.
+	if (headerPart && footerPart)
+		return { headerCode: headerPart, footerCode: footerPart };
 
 	const hasFooterNav = Array.isArray(showImprint)
 		? showImprint.includes(wpLanguage ?? '') &&
@@ -72,8 +95,8 @@ export const handleHome = async ({
 	});
 	const randomHeader = head[Math.floor(Math.random() * head.length)];
 	const randomFooter = foot[Math.floor(Math.random() * foot.length)];
-	const headerCode =
-		designBuild?.headerCode ?? randomHeader?.content?.raw?.trim() ?? '';
-	const footerCode = randomFooter?.content?.raw?.trim() ?? '';
-	return getHomeShape.parse({ home: { ...template, headerCode, footerCode } });
+	return {
+		headerCode: headerPart ?? randomHeader?.content?.raw?.trim() ?? '',
+		footerCode: footerPart ?? randomFooter?.content?.raw?.trim() ?? '',
+	};
 };

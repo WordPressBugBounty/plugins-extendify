@@ -88,7 +88,9 @@ class MediaText implements Schema
                         if (is_string($style) && stripos($style, 'background-image') !== false) {
                             $tp->set_attribute('style', preg_replace_callback(
                                 '/background-image\s*:\s*url\([^)]*\)/i',
-                                static fn () => 'background-image:url(' . $url . ')',
+                                static function () use ($url) {
+                                    return 'background-image:url(' . $url . ')';
+                                },
                                 $style
                             ));
                             $patched = true;
@@ -131,7 +133,9 @@ class MediaText implements Schema
                 $block['innerContent'] = $innerContent;
                 // Inspection-only; the serializer rebuilds innerHTML from innerContent.
                 $block['innerHTML'] = implode('', array_map(
-                    static fn ($c) => is_string($c) ? $c : '',
+                    static function ($c) {
+                        return is_string($c) ? $c : '';
+                    },
                     $innerContent
                 ));
                 break;
@@ -151,7 +155,9 @@ class MediaText implements Schema
         }
         $classes = array_filter(
             preg_split('/\s+/', $attrs['className']) ?: [],
-            static fn ($c) => $c !== '' && $c !== 'extendify-image-import'
+            static function ($c) {
+                return $c !== '' && $c !== 'extendify-image-import';
+            }
         );
         if ($classes) {
             $attrs['className'] = implode(' ', $classes);

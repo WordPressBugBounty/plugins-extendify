@@ -1,5 +1,6 @@
 import { recordAgentActivity } from '@agent/api';
 import { AnimateChunks } from '@agent/components/messages/AnimateChunks';
+import { ReplyOptions } from '@agent/components/ReplyOptions';
 import { magic } from '@agent/icons';
 import pageTours from '@agent/lib/page-tours';
 import tours from '@agent/tours/tours';
@@ -30,11 +31,12 @@ const agentIcons = {
 	agent4: cog,
 };
 
-export const AgentMessage = ({ message, animate }) => {
+export const AgentMessage = ({ message, animate, active }) => {
 	const {
 		content,
 		role,
 		pageSuggestion,
+		qaSuggestions,
 		agent,
 		sessionId = 'not-set',
 	} = message.details;
@@ -52,7 +54,7 @@ export const AgentMessage = ({ message, animate }) => {
 	return (
 		<div
 			data-agent-message-role={role}
-			className="flex w-full items-start gap-2.5 p-2"
+			className="flex w-full items-start gap-2.5 px-2.5 py-2"
 		>
 			<div className="w-7 shrink-0">
 				{agent?.avatar ? (
@@ -95,6 +97,19 @@ export const AgentMessage = ({ message, animate }) => {
 						<SingleTour tour={agentSuggestion.tour} />
 					</div>
 				)}
+				{/* An empty array still renders — it's the agent asking with no drafts. */}
+				{active && Array.isArray(qaSuggestions) ? (
+					<ReplyOptions
+						options={qaSuggestions}
+						onSubmit={(message) =>
+							window.dispatchEvent(
+								new CustomEvent('extendify-agent:chat-submit', {
+									detail: { message },
+								}),
+							)
+						}
+					/>
+				) : null}
 			</div>
 		</div>
 	);

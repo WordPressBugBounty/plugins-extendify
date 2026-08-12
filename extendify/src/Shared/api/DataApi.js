@@ -4,6 +4,24 @@ import { useImageGenerationStore } from '@shared/state/generate-images';
 import apiFetch from '@wordpress/api-fetch';
 import { __ } from '@wordpress/i18n';
 
+const imageErrorMessage = (status) => {
+	if (status === 'content_policy_violation') {
+		// translators: shown when the AI image generator refuses a prompt on safety grounds.
+		return __(
+			'That request was blocked by our safety system. Try a different description.',
+			'extendify-local',
+		);
+	}
+	if (status === 'no_image_returned') {
+		// translators: shown when the AI image generator returns nothing, cause unknown.
+		return __(
+			"Couldn't create that image. Try describing it differently.",
+			'extendify-local',
+		);
+	}
+	return __('Service temporarily unavailable', 'extendify-local');
+};
+
 export const generateImage = async (imageData, signal) => {
 	const response = await fetch(`${AI_HOST}/api/draft/image`, {
 		method: 'POST',
@@ -26,19 +44,7 @@ export const generateImage = async (imageData, signal) => {
 	};
 
 	if (!response.ok) {
-		if (body.status && body.status === 'content-policy-violation') {
-			throw {
-				message: __(
-					'Your request was rejected as a result of our safety system. Your prompt may contain text that is not allowed by our safety system.',
-					'extendify-local',
-				),
-				imageCredits,
-			};
-		}
-		throw {
-			message: __('Service temporarily unavailable', 'extendify-local'),
-			imageCredits,
-		};
+		throw { message: imageErrorMessage(body.status), imageCredits };
 	}
 	return {
 		images: body,

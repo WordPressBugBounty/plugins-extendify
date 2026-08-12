@@ -62,11 +62,16 @@ export const handleSiteLogo = async ({ siteProfile }) => {
 	return getLogoShape.parse({ logoUrl });
 };
 
-export const uploadLogo = async (url) => {
+// The backend serves the real brand logo from a `logos-custom/` path; other
+// logos keep the duotone-prefixed upload name.
+export const isExternalLogo = (url) => url?.includes('logos-custom/') ?? false;
+
+export const uploadLogo = async (url, { external = false } = {}) => {
 	const blob = await (await fetch(url)).blob();
 	const type = blob.type;
 	const fileExtension = type.replace('image/', '');
-	const logoName = `ext-custom-logo-${Date.now()}`;
+	const prefix = external ? 'ext-logo-' : 'ext-custom-logo-';
+	const logoName = `${prefix}${Date.now()}`;
 	const image = new File([blob], `${logoName}.${fileExtension}`, { type });
 
 	await uploadMedia({

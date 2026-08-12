@@ -2,6 +2,8 @@
 // DOMHighlighter's click commit and ask-ai's pill click can't drift on
 // which metadata flags exist or how they're detected.
 
+import { detectBlockType } from '@quick-edit/lib/dom';
+
 const AGENT_ATTR = 'data-extendify-agent-block-id';
 const PART_ID_ATTR = 'data-extendify-part-block-id';
 const PART_ATTR = 'data-extendify-part';
@@ -12,6 +14,9 @@ export const buildAgentBlockDescriptor = (match) => {
 	const details = {
 		id: match.getAttribute(AGENT_ATTR),
 		target: AGENT_ATTR,
+		// local-pick + classify-block-edit gate on this; without it every edit
+		// falls through to find-agent.
+		blockType: detectBlockType(match),
 		hasNav:
 			!!match.querySelector('.wp-block-navigation') ||
 			match.classList.contains('wp-block-navigation'),

@@ -16,6 +16,25 @@ class SimplyBook extends PluginActivation
         return \wp_create_nonce('simplybook_nonce');
     }
 
+    public static function scriptData(): array
+    {
+        // Only their React bundle carries the action, so it can't be read alongside the key.
+        return [
+            'recaptchaSiteKey' => static::recaptchaSiteKey(),
+            'recaptchaAction' => 'create_company',
+        ];
+    }
+
+    // SimplyBook assesses the captcha itself, so a token minted with any other site key fails.
+    protected static function recaptchaSiteKey(): string
+    {
+        $config = WP_PLUGIN_DIR . '/' . static::slug() . '/config/env.php';
+        $env = is_readable($config) ? require $config : [];
+        $key = $env['simplybook']['recaptcha']['site_key'] ?? '';
+
+        return is_string($key) ? $key : '';
+    }
+
     public static function createAccount(\WP_REST_Request $request): \WP_REST_Response
     {
         if (!static::isActive()) {

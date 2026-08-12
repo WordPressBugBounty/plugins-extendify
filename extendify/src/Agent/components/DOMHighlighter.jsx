@@ -1,5 +1,7 @@
 import { usePortal } from '@agent/hooks/usePortal';
 import { useWorkflowStore } from '@agent/state/workflows';
+import { whenAnimationsSettle } from '@quick-edit/lib/after-animations';
+import { MEDIA_RING, needsContrastRing } from '@quick-edit/lib/over-media';
 import { useQuickEditStore } from '@quick-edit/state/store';
 import apiFetch from '@wordpress/api-fetch';
 import {
@@ -12,29 +14,25 @@ import {
 import { __ } from '@wordpress/i18n';
 import { close, Icon } from '@wordpress/icons';
 import { addQueryArgs } from '@wordpress/url';
+import classNames from 'classnames';
 import { motion } from 'framer-motion';
+
+const MIN_OUTLINE_SIZE = 10;
 
 // Render-only after the selector unification: `agentBlock` is set
 // by Quick Edit's Ask AI flow (or future workflows), and this component
 // draws the outline + X-close indicator. Hover-bar owns hover + click
 // selection on the live page; DOMHighlighter no longer listens for either.
-export const DOMHighlighter = ({ busy = false }) => {
+export const DOMHighlighter = ({ busy = false, working = false }) => {
 	const [rect, setRect] = useState(null);
+	const [ringNeeded, setRingNeeded] = useState(false);
 	const mountNode = usePortal('extendify-agent-dom-mount');
 	const el = useRef(null);
 	const { getWorkflowsByFeature } = useWorkflowStore();
 	const block = useQuickEditStore((s) => s.agentBlock);
-	const selected = useQuickEditStore((s) => s.selected);
 	const setBlock = useQuickEditStore((s) => s.setAgentBlock);
 	const setBlockCode = useQuickEditStore((s) => s.setAgentBlockCode);
 	const enabled = getWorkflowsByFeature({ requires: ['block'] })?.length > 0;
-	// When the QE canvas is mounted on the same block the agent is staged
-	// on, this overlay must NOT intercept clicks — otherwise text-selection
-	// inside the contenteditable underneath is eaten by the outline.
-	const sameBlockAsQE =
-		selected?.blockId != null &&
-		block?.id != null &&
-		String(selected.blockId) === String(block.id);
 
 	const clearBlock = useCallback(() => {
 		setBlock(null);
@@ -77,6 +75,7 @@ export const DOMHighlighter = ({ busy = false }) => {
 		);
 		if (!match) return;
 		el.current = match;
+		setRingNeeded(needsContrastRing(match));
 
 		const measure = () => {
 			const r = match.getBoundingClientRect();
@@ -94,12 +93,21 @@ export const DOMHighlighter = ({ busy = false }) => {
 		wsb?.addEventListener('transitionend', onTransitionEnd);
 		const t1 = window.setTimeout(measure, 80);
 		const t2 = window.setTimeout(measure, 360);
+		const dropSettle = whenAnimationsSettle(match, measure);
 
 		return () => {
 			wsb?.removeEventListener('transitionend', onTransitionEnd);
 			window.clearTimeout(t1);
 			window.clearTimeout(t2);
+			dropSettle();
 		};
+	}, [block]);
+
+	// The chip's X clears the block without firing the event.
+	useEffect(() => {
+		if (block?.id) return;
+		setRect(null);
+		el.current = null;
 	}, [block]);
 
 	useEffect(() => {
@@ -123,7 +131,8 @@ export const DOMHighlighter = ({ busy = false }) => {
 		const onScrollOrResize = () => {
 			if (!el.current) return;
 			const { top, left, width, height } = el.current.getBoundingClientRect();
-			setRect({ top, left, width, height });
+			// Animating this re-targets the spring mid-scroll, so it never lands.
+			setRect({ top, left, width, height, instant: true });
 		};
 		window.addEventListener('scroll', onScrollOrResize, {
 			passive: true,
@@ -212,25 +221,44 @@ export const DOMHighlighter = ({ busy = false }) => {
 		return () => root.classList.remove('extendify-agent-busy');
 	}, [busy]);
 
+	useEffect(() => {
+		if (!working) return;
+		const root = document.querySelector('.wp-site-blocks');
+		if (!root) return;
+		root.classList.add('extendify-agent-working');
+		return () => root.classList.remove('extendify-agent-working');
+	}, [working]);
+
 	if (!enabled || !rect || !mountNode) return null;
 
-	const { top, left, width, height } = rect;
-	const animate = { x: left, y: top, width, height, opacity: 1 };
-	const transition = {
-		type: 'spring',
-		stiffness: 700,
-		damping: 40,
-		mass: 0.25,
+	const { top, left, width, height, instant } = rect;
+	// A separator's box is sub-pixel tall; 4px dashes read as a broken line.
+	const framed = (size) => Math.max(size, MIN_OUTLINE_SIZE);
+	const animate = {
+		x: left - (framed(width) - width) / 2,
+		y: top - (framed(height) - height) / 2,
+		width: framed(width),
+		height: framed(height),
+		opacity: 1,
 	};
+	const transition = instant
+		? { duration: 0 }
+		: {
+				type: 'spring',
+				stiffness: 700,
+				damping: 40,
+				mass: 0.25,
+			};
 	return createPortal(
 		<>
 			{block && !busy ? (
 				// biome-ignore lint: Using <button> is complicated with unknown themes
 				<div
 					role="button"
-					className={
-						'fixed z-9 h-6 w-6 -translate-y-3.5 cursor-pointer select-none flex items-center justify-center rounded-full text-center font-bold ring-1 ring-black'
-					}
+					className={classNames(
+						'fixed z-9 h-6 w-6 -translate-y-3.5 cursor-pointer select-none flex items-center justify-center rounded-full text-center font-bold',
+						{ 'ring-1 ring-white/20': ringNeeded },
+					)}
 					tabIndex={0}
 					onClick={clearBlock}
 					onKeyDown={clearBlock}
@@ -256,13 +284,15 @@ export const DOMHighlighter = ({ busy = false }) => {
 				aria-hidden
 				animate={animate}
 				transition={transition}
-				className="fixed z-8 mix-blend-hard-light outline-dashed outline-4"
+				className="fixed z-8 outline-dashed outline-4"
 				style={{
 					top: 0,
 					left: 0,
 					willChange: 'transform,width,height,opacity',
 					outlineColor: 'var(--wp--preset--color--primary, red)',
-					pointerEvents: block && !busy && !sameBlockAsQE ? 'auto' : 'none',
+					boxShadow: ringNeeded ? MEDIA_RING : undefined,
+					// This mount sits outside the scroller; 'auto' eats page scroll.
+					pointerEvents: 'none',
 				}}
 			/>
 		</>,

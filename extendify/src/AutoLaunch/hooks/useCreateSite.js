@@ -20,15 +20,18 @@ import {
 } from '@auto-launch/functions/links';
 import {
 	addPageLinksToNav,
+	addSectionLinksFromDesign,
 	addSectionLinksToNav,
 	createNavigation,
 	injectNavExtras,
+	injectWooCommerceIcons,
 	updateNavAttributes,
 } from '@auto-launch/functions/nav';
 import {
 	addImprintPage,
 	createWpPages,
 	getPagesToCreate,
+	isBlogPage,
 	PLUGIN_OWNED_PAGES,
 	setHelloWorldFeaturedImage,
 	updatePageTitlePattern,
@@ -39,12 +42,13 @@ import {
 	ensurePluginsActive,
 	getActivePlugins,
 	replacePlaceholderPatterns,
-	verifyPluginsActive,
+	reportInactivePlugins,
 } from '@auto-launch/functions/plugins';
 import {
 	postLaunchFunctions,
 	prefetchAssistData,
 } from '@auto-launch/functions/setup';
+import { applySocialProfiles } from '@auto-launch/functions/social-links';
 import {
 	setThemeRenderingMode,
 	updateTemplatePart,
@@ -66,13 +70,11 @@ import { useEffect, useRef, useState } from '@wordpress/element';
 import { __ } from '@wordpress/i18n';
 import useSWRImmutable from 'swr/immutable';
 
-const { homeUrl, showImprint, wpLanguage, installedPluginsSlugs } =
-	window.extSharedData;
+const { homeUrl, showImprint, wpLanguage } = window.extSharedData;
 
 // TODO: I think a good strategy is "if something fails, try to refetch some state"
 
 export const useCreateSite = () => {
-	// All the data we need to finish
 	const { setErrorMessage, addStatusMessage, needToStall, setData, ...data } =
 		useLaunchDataStore();
 	const { setUserGaveConsent } = useAIConsentStore();
@@ -116,6 +118,9 @@ export const useCreateSite = () => {
 		'siteLogo',
 		() => {
 			if (!data.siteProfile?.title) return null;
+			// Logo was already uploaded by handleDesignBuild;
+			// generating an AI logo here is not necessary.
+			if (data.designBuild?.logoUrl) return null;
 			return data;
 		},
 		async (params) => {
@@ -125,11 +130,10 @@ export const useCreateSite = () => {
 	);
 
 	// needs: siteProfile
-	// provides:sitePlugins: [{name, wordpressSlug}]
+	// provides: sitePlugins: [{name, wordpressSlug}]
 	useRunStep(
 		'sitePlugins',
 		() => {
-			// We just need the site profile, which has this
 			if (!data.siteProfile?.title) return null;
 			return data;
 		},
@@ -149,7 +153,6 @@ export const useCreateSite = () => {
 		);
 		ensurePluginsActive(
 			data.sitePlugins.map(({ wordpressSlug }) => wordpressSlug),
-			{ installedSlugs: installedPluginsSlugs },
 		);
 	}, [data.sitePlugins]);
 
@@ -158,7 +161,6 @@ export const useCreateSite = () => {
 	useRunStep(
 		'siteStyle',
 		() => {
-			// We just need the site profile, which has this
 			if (!data.siteProfile?.title) return null;
 			return data;
 		},
@@ -173,7 +175,6 @@ export const useCreateSite = () => {
 	useRunStep(
 		'siteStrings',
 		() => {
-			// We just need the site profile, which has this
 			if (!data.siteProfile?.title) return null;
 			return data;
 		},
@@ -188,7 +189,6 @@ export const useCreateSite = () => {
 	useRunStep(
 		'siteImages',
 		() => {
-			// We just need the site profile, which has this
 			if (!data.siteProfile?.title) return null;
 			return data;
 		},
@@ -217,7 +217,6 @@ export const useCreateSite = () => {
 	useRunStep(
 		'home',
 		() => {
-			// Checking various data from calls above
 			const ok = [
 				data.siteProfile,
 				data.siteStyle,
@@ -233,12 +232,11 @@ export const useCreateSite = () => {
 		},
 	);
 
-	// 	siteProfile, sitePlugins, siteStyle, siteImages
+	// needs: siteProfile, sitePlugins, siteStyle, siteImages
 	// provides: pages: [{ id, slug, name, patterns, siteStyle }]
 	useRunStep(
 		'pages',
 		() => {
-			// Checking various data from calls above
 			const ok = [
 				data.siteProfile,
 				data.siteStyle,
@@ -268,11 +266,8 @@ export const useCreateSite = () => {
 			const { title } = siteProfile;
 			// translators: this is for a action log UI. Keep it short
 			addStatusMessage(__('Adding admin configurations', 'extendify-local'));
-			// update permalinks
 			await updateOption('permalink_structure', '/%postname%/');
-			// make sure consent is set
 			setUserGaveConsent(true);
-			// Update title
 			if (title) await updateOption('blogname', title);
 		},
 	);
@@ -320,14 +315,20 @@ export const useCreateSite = () => {
 		homeStretch.current = true;
 		(async () => {
 			const { objective, structure, category } = siteProfile;
-
-			// Guarantee plugins are active before the pattern imports below rely on them.
-			await verifyPluginsActive(
-				(sitePlugins ?? []).map(({ wordpressSlug }) => wordpressSlug),
-				{ installedSlugs: installedPluginsSlugs },
+			const builtHome = designBuild?.builtPages?.find((p) => p.slug === 'home');
+			// Must match get-home.js's full-page test; if they drift, the home is
+			// built one way and planted another.
+			const isSinglePageDesign =
+				structure === 'single-page' &&
+				Boolean(builtHome?.fullPage && builtHome.patterns?.length) &&
+				Boolean(designBuild?.pages?.length);
+			const intendedPlugins = (sitePlugins ?? []).map(
+				({ wordpressSlug }) => wordpressSlug,
 			);
 
-			// Do they need an imprint page?
+			// Guarantee plugins are active before the pattern imports below rely on them.
+			await ensurePluginsActive(intendedPlugins);
+
 			const needsImprint = Array.isArray(showImprint)
 				? showImprint.includes(wpLanguage ?? '') && category === 'Business'
 				: false;
@@ -395,6 +396,13 @@ export const useCreateSite = () => {
 			// footer
 			let footerNavId = null;
 			let footerCode = home.footerCode || '';
+			// The logo already carries the brand, so the site title would be redundant.
+			if (designBuild?.hasExternalLogo && footerCode.includes('wp:site-logo')) {
+				footerCode = footerCode.replace(
+					/\s*<!--\s*wp:site-title[\s\S]*?\/-->/g,
+					'',
+				);
+			}
 			if (needsImprint) {
 				const nav = await createNavigation({
 					title: __('Footer Navigation', 'extendify-local'),
@@ -403,6 +411,7 @@ export const useCreateSite = () => {
 				footerNavId = nav.id;
 				footerCode = updateNavAttributes(footerCode, { ref: footerNavId });
 			}
+			footerCode = applySocialProfiles(footerCode, siteProfile.socialProfiles);
 			checkIn({ stage: 'set_footer' });
 			await updateTemplatePart('extendable/footer', footerCode);
 
@@ -419,7 +428,7 @@ export const useCreateSite = () => {
 			}
 
 			const activePlugins = await getActivePlugins();
-			// This lets us keep plugin pages in th enav but skip making the page
+			// Keep plugin pages in the nav but skip creating the page itself.
 			const reservedSlugs = new Set(
 				PLUGIN_OWNED_PAGES.filter(
 					({ plugin }) =>
@@ -454,18 +463,23 @@ export const useCreateSite = () => {
 			const heroDesc = pMatch?.[1]?.replace(/<[^>]+>/g, '').trim();
 			setData('heroDescription', heroDesc || data.heroDescription);
 
-			const createdPagesWP = await createWpPages(customPages);
+			const createdPagesWP = await createWpPages(customPages, {
+				skipSectionIds: isSinglePageDesign,
+			});
 			// Aux pages
-			const hasBlogPattern = home?.patterns?.some((pattern) =>
+			const blogPattern = home?.patterns?.find((pattern) =>
 				pattern.patternTypes.includes('blog-section'),
 			);
-			if (objective === 'blog' || hasBlogPattern) {
+			if (siteProfile.blog || blogPattern) {
 				checkIn({ stage: 'create_blog_sample_data' });
 				// translators: this is for a action log UI. Keep it short
 				addStatusMessage(__('Creating blog sample data', 'extendify-local'));
-				await createBlogSampleData({ aiBlogTitles }, siteImages);
+				await createBlogSampleData(
+					{ aiBlogTitles },
+					siteImages,
+					blogPattern?.blogImages,
+				);
 			}
-			// If we have site images then set up the hello world image
 			if (siteImages?.length) {
 				checkIn({ stage: 'set_hello_world_image' });
 				await setHelloWorldFeaturedImage(siteImages);
@@ -499,23 +513,33 @@ export const useCreateSite = () => {
 				});
 			}
 
+			// The design's page list omits the posts page like it omits shop, so the
+			// nav needs it here — but it's ours to create, not a PLUGIN_OWNED_PAGES.
+			pluginPages.push(...createdPagesWP.filter(isBlogPage));
+
 			// Adding pages to the nav
 			checkIn({ stage: 'set_page_links' });
-			const linksResult =
-				structure === 'single-page'
-					? await updateSinglePageLinksToSections(
-							createdPagesWP,
-							customPages,
-							{
-								objective,
-								activePlugins,
-								landingPageCTALink: siteProfile.landingPageCTALink,
-							},
-							headerCode,
-						)
-					: await updateButtonLinks(createdPagesWP, pluginPages, headerCode);
+			let linksResult = { wpPages: createdPagesWP, headerCode };
+			if (!isSinglePageDesign) {
+				linksResult =
+					structure === 'single-page'
+						? await updateSinglePageLinksToSections(
+								createdPagesWP,
+								customPages,
+								{
+									objective,
+									activePlugins,
+									landingPageCTALink: siteProfile.landingPageCTALink,
+								},
+								headerCode,
+							)
+						: await updateButtonLinks(createdPagesWP, pluginPages, headerCode);
+			}
 			const pagesWithLinksUpdated = linksResult.wpPages;
 			headerCode = linksResult.headerCode;
+			if (alreadyActive(activePlugins, 'woocommerce')) {
+				headerCode = injectWooCommerceIcons(headerCode);
+			}
 			await updateTemplatePart('extendable/header', headerCode);
 			const footerNavPages = [];
 			if (footerNavId && imprint?.title) {
@@ -531,7 +555,13 @@ export const useCreateSite = () => {
 			checkIn({ stage: 'set_navigation_links' });
 			if (objective !== 'landing-page') {
 				const orderedSlugs = designBuild?.pages?.map((p) => p.slug) ?? [];
-				if (structure === 'single-page') {
+				if (isSinglePageDesign) {
+					await addSectionLinksFromDesign(
+						headerNavId,
+						designBuild.pages,
+						pluginPages,
+					);
+				} else if (structure === 'single-page') {
 					await addSectionLinksToNav(
 						headerNavId,
 						home?.patterns,
@@ -570,7 +600,10 @@ export const useCreateSite = () => {
 			}
 			// translators: this is for a action log UI. Keep it short
 			addStatusMessage(__('All done!', 'extendify-local'));
-			await checkIn({ stage: 'finished', siteProfile, sitePlugins, siteStyle });
+			await Promise.all([
+				reportInactivePlugins(intendedPlugins).catch(() => null),
+				checkIn({ stage: 'finished', siteProfile, sitePlugins, siteStyle }),
+			]);
 			setWarnOnReload(false);
 			setDone(true);
 		})().catch((error) => {

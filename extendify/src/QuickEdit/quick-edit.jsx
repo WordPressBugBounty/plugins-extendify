@@ -23,7 +23,7 @@ import { useQuickEditStore } from './state/store';
 import './quick-edit.css';
 
 // Cross-bundle race: edit-mode.js is shared with the Agent bundle (via
-// Chat.jsx + ChatTools.jsx). When the Agent bundle's script tag fires
+// Chat.jsx and the QuickEdit store). When the Agent bundle's script tag fires
 // first, the shared chunk evaluates before this bundle's inline
 // `window.extQuickEditData = …` has run, so DEFAULT_ON resolves to
 // false and the store freezes with on=false. By the time THIS module

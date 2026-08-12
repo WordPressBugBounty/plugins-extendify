@@ -20,7 +20,7 @@ class Insights
 {
     /**
      * Option name storing each site's A/B test assignments, keyed by the
-     * screen/feature under test (e.g. 'AutoLaunch.ShowTitle').
+     * screen/feature under test (e.g. 'AutoLaunch.HideEnhanceAI').
      *
      * @var string
      */
@@ -36,7 +36,6 @@ class Insights
     // phpcs:ignore PSR12.Properties.ConstantVisibility.NotFound
     const AVAILABLE_TESTS = [
         'AutoLaunch.HideEnhanceAI',
-        'AutoLaunch.ShowTitle',
         'AutoLaunch.SubmitOutside',
         'AutoLaunch.SubmitCreateWebsite',
         'AutoLaunch.DescriptionPlaceholderLaw',
@@ -80,7 +79,7 @@ class Insights
      * inactive tests are dropped.
      *
      * @param string[] $activeTests Active tests in `Name:Percentage` form
-     *                              (e.g. 'AutoLaunch.ShowTitle:20'); a bare
+     *                              (e.g. 'AutoLaunch.HideEnhanceAI:20'); a bare
      *                              name defaults to a 50% rollout.
      * @return void
      */

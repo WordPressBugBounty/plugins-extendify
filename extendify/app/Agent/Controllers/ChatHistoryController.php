@@ -115,8 +115,9 @@ class ChatHistoryController
         $startIndex = 0;
         if ($latest) {
             foreach ($messages as $i => $msg) {
+                // Tool results land on the newest row after insert; skipping it loses them.
                 if ($msg['id'] === $latest) {
-                    $startIndex = $i + 1;
+                    $startIndex = $i;
                     break;
                 }
             }
@@ -188,7 +189,8 @@ class ChatHistoryController
             foreach ($columns as $name => $type) {
                 $cols[] = "$name $type";
             }
-            $sql = "CREATE TABLE $table (" . implode(',', $cols) . ", INDEX(user_id))";
+            $indexes = "INDEX(user_id), UNIQUE INDEX unique_event_id (event_id, user_id)";
+            $sql = "CREATE TABLE $table (" . implode(',', $cols) . ", $indexes)";
             $sql .= " " . $wpdb->get_charset_collate() . ";";
             $wpdb->query($sql);
             return;

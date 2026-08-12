@@ -10,15 +10,41 @@ export const getActivePlugins = () =>
 export const alreadyActive = (activePlugins, pluginSlug) =>
 	activePlugins?.filter((p) => p.includes(pluginSlug))?.length;
 
-export const installPlugin = async (slug) => {
+// WP unpacks every install through one shared dir; two at once corrupt both.
+let installQueue = Promise.resolve();
+
+// Re-installing is not free: WP unpacks before it finds the folder exists.
+const installed = new Map();
+
+const enqueue = (task) => {
+	const result = installQueue.then(task);
+	installQueue = result.catch(() => {});
+	return result;
+};
+
+const INSTALL_DRAIN_MS = 60_000;
+
+// The install POST has no timeout; uncapped, one stall parks the build.
+const waitForInstalls = () => {
+	let timer;
+	return Promise.race([
+		installQueue,
+		new Promise((resolve) => {
+			timer = setTimeout(resolve, INSTALL_DRAIN_MS);
+		}),
+	]).finally(() => clearTimeout(timer));
+};
+
+const install = async (slug) => {
 	const fn = async () => {
 		const p = await apiFetch({
 			path: '/wp/v2/plugins',
 			method: 'POST',
 			data: { slug },
 		});
-		await recordPluginActivity({ slug, source: 'auto-launch' });
-		await enableAutoUpdate(p?.plugin);
+		// Unawaited: no timeout on these, and a stall would hold the queue.
+		recordPluginActivity({ slug, source: 'auto-launch' });
+		enableAutoUpdate(p?.plugin);
 		return p;
 	};
 	try {
@@ -39,6 +65,16 @@ export const installPlugin = async (slug) => {
 		}
 	}
 };
+
+export const installPlugin = (slug) =>
+	enqueue(async () => {
+		const known = installed.get(slug);
+		if (known) return { plugin: known };
+
+		const plugin = await install(slug);
+		if (plugin?.plugin) installed.set(slug, plugin.plugin);
+		return plugin;
+	});
 
 export const getPlugin = async (slug) => {
 	const response = await apiFetch({
@@ -74,18 +110,29 @@ export const activatePlugin = async (slug) => {
 	}
 };
 
-// Isolates per-plugin failures so one bad plugin can't block the rest;
-// returns the slugs that never went active.
-export const ensurePluginsActive = async (
-	slugs,
-	{ installedSlugs = [] } = {},
-) => {
+// Exact match, not substring: woocommerce-payments would mask a missing woocommerce.
+const notActive = (activePlugins, slugs) =>
+	slugs.filter(
+		(slug) => !activePlugins?.some((path) => path.split('/')[0] === slug),
+	);
+
+export const ensurePluginsActive = async (slugs) => {
+	// Two callers don't await this; a throw here silently skips every install.
+	const active = await getActivePlugins().catch((error) => {
+		digest({
+			error,
+			details: { source: 'auto-launch', caller: 'ensurePluginsActive' },
+		});
+		return [];
+	});
+	const missing = notActive(active, slugs);
+	if (!missing.length) return { failed: [] };
+
+	const onDisk = window.extSharedData?.installedPluginsSlugs ?? [];
 	const failed = [];
-	for (const slug of slugs) {
+	for (const slug of missing) {
 		try {
-			const plugin = installedSlugs.includes(slug)
-				? null
-				: await installPlugin(slug);
+			const plugin = onDisk.includes(slug) ? null : await installPlugin(slug);
 			const activated = await activatePlugin(plugin?.plugin ?? slug);
 			if (!activated) failed.push(slug);
 		} catch (_) {
@@ -95,26 +142,21 @@ export const ensurePluginsActive = async (
 	return { failed };
 };
 
-// Last-chance guarantee before dependent work builds on these plugins: the
-// optimistic install pass is best-effort and unverified.
-export const verifyPluginsActive = async (
-	slugs,
-	{ installedSlugs = [] } = {},
-) => {
-	const activePlugins = await getActivePlugins();
-	// Exact slug match here (not alreadyActive's substring test): matching
-	// woocommerce against an active woocommerce-payments would skip a real miss.
-	const missing = slugs.filter(
-		(slug) => !activePlugins?.some((path) => path.split('/')[0] === slug),
-	);
-	if (!missing.length) return;
+export const reportInactivePlugins = async (slugs) => {
+	// Falling back to an empty list would name every plugin as inactive.
+	const active = await getActivePlugins().catch(() => null);
+	if (!active) return;
 
-	const { failed } = await ensurePluginsActive(missing, { installedSlugs });
-	if (!failed.length) return;
+	const inactive = notActive(active, slugs);
+	if (!inactive.length) return;
 
 	digest({
-		error: { message: `Plugins inactive after verify: ${failed.join(', ')}` },
-		details: { source: 'auto-launch', caller: 'verifyPluginsActive', failed },
+		error: { message: `Plugins inactive after launch: ${inactive.join(', ')}` },
+		details: {
+			source: 'auto-launch',
+			caller: 'reportInactivePlugins',
+			inactive,
+		},
 	});
 };
 
@@ -164,9 +206,12 @@ export const replacePlaceholderPatterns = async (patterns) => {
 	}
 };
 
-export const processPlaceholders = (patterns) =>
-	apiFetch({
+// This endpoint installs pattern dependencies from PHP, outside the queue.
+export const processPlaceholders = async (patterns) => {
+	await waitForInstalls();
+	return apiFetch({
 		path: '/extendify/v1/shared/process-placeholders',
 		method: 'POST',
 		data: { patterns },
 	});
+};

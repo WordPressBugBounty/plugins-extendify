@@ -42,8 +42,15 @@ export default async ({ ability, input }) => {
 
 	// Optional inputs the model didn't fill come through as null at any depth —
 	// drop them so schema defaults stand in and the ability sees only real values.
+	const isEmptyEntry = (value) =>
+		!!value &&
+		typeof value === 'object' &&
+		!Array.isArray(value) &&
+		!Object.keys(value).length;
 	const withoutNulls = (value) => {
-		if (Array.isArray(value)) return value.map(withoutNulls);
+		// An entry the model left blank still has to satisfy the item schema.
+		if (Array.isArray(value))
+			return value.map(withoutNulls).filter((entry) => !isEmptyEntry(entry));
 		if (value && typeof value === 'object') {
 			return Object.fromEntries(
 				Object.entries(value)

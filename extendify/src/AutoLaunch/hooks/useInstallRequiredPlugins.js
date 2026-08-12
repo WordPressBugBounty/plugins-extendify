@@ -3,8 +3,6 @@ import { ensurePluginsActive } from '@auto-launch/functions/plugins';
 import { useEffect, useRef } from '@wordpress/element';
 import useSWR from 'swr/immutable';
 
-const { installedPluginsSlugs } = window.extSharedData || {};
-
 export const useInstallRequiredPlugins = () => {
 	const { data, error } = useSWR('required-plugins', () =>
 		handleSitePlugins({ requiredOnly: true }),
@@ -16,7 +14,6 @@ export const useInstallRequiredPlugins = () => {
 		started.current = true;
 		ensurePluginsActive(
 			data.sitePlugins.map(({ wordpressSlug }) => wordpressSlug),
-			{ installedSlugs: installedPluginsSlugs },
 		);
 	}, [data]);
 

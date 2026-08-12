@@ -33,6 +33,7 @@ use Extendify\PageCreator\Controllers\SiteController as PageCreatorSiteControlle
 use Extendify\Agent\Controllers\WPController as AgentWPController;
 use Extendify\Agent\Controllers\ChatHistoryController as AgentChatController;
 use Extendify\Agent\Controllers\SiteNavigationController as AgentSiteNavigationController;
+use Extendify\Agent\Controllers\UpdateBlocksController as AgentUpdateBlocksController;
 
 use Extendify\PluginNotifications\Controllers\NotificationsController;
 use Extendify\Shared\Controllers\AutoUpdateController;
@@ -47,6 +48,7 @@ use Extendify\Shared\Controllers\ImageGenerationController;
 use Extendify\Shared\Services\PluginsActivation\SimplyBook as SimplyBookActivation;
 use Extendify\Shared\Services\PluginsActivation\TranslatePress as TranslatePressActivation;
 use Extendify\Shared\Services\PluginsActivation\Imagify as ImagifyActivation;
+use Extendify\Shared\Services\PluginsActivation\Metricool as MetricoolActivation;
 
 \add_action(
     'rest_api_init',
@@ -80,6 +82,7 @@ use Extendify\Shared\Services\PluginsActivation\Imagify as ImagifyActivation;
         ApiRouter::get('/auto-launch/get-navigation', [AutoLaunchWPController::class, 'getNavigation']);
         ApiRouter::post('/auto-launch/pre-launch-functions', [AutoLaunchWPController::class, 'preLaunch']);
         ApiRouter::post('/auto-launch/post-launch-functions', [AutoLaunchWPController::class, 'postLaunch']);
+        ApiRouter::post('/auto-launch/run-updates', [AutoLaunchWPController::class, 'runUpdates']);
         ApiRouter::get(
             '/auto-launch/import-woocommerce',
             [AutoLaunchWooCommerceController::class, 'importTemporaryProducts']
@@ -115,6 +118,7 @@ use Extendify\Shared\Services\PluginsActivation\Imagify as ImagifyActivation;
         ApiRouter::get('/agent/theme-fonts-variations', [AgentWPController::class, 'getFontsVariations']);
         ApiRouter::get('/agent/get-block-code', [AgentWPController::class, 'getBlockCode']);
         ApiRouter::post('/agent/get-block-html', [AgentWPController::class, 'getBlockHtml']);
+        ApiRouter::post('/agent/update-blocks', [AgentUpdateBlocksController::class, 'updateBlocks']);
         ApiRouter::post('/agent/lock-post', [AgentWPController::class, 'lockPost']);
         ApiRouter::get('/agent/chat-events', [AgentChatController::class, 'get']);
         ApiRouter::post('/agent/chat-events', [AgentChatController::class, 'store']);
@@ -155,6 +159,10 @@ use Extendify\Shared\Services\PluginsActivation\Imagify as ImagifyActivation;
         ApiRouter::post(
             '/' . ImagifyActivation::slug() . '/create-account',
             [ImagifyActivation::class, 'createAccount']
+        );
+        ApiRouter::post(
+            MetricoolActivation::createAccountRoute(),
+            [MetricoolActivation::class, 'createAccount']
         );
     }
 );
