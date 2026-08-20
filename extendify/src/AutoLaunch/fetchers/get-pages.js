@@ -7,6 +7,7 @@ import {
 } from '@auto-launch/functions/helpers';
 import { PATTERNS_HOST } from '@constants';
 import { reqDataBasics } from '@shared/lib/data';
+import { siteImageUrls } from '@shared/lib/site-images';
 import { __ } from '@wordpress/i18n';
 import { z } from 'zod';
 
@@ -36,7 +37,8 @@ export const handlePages = async ({
 		...reqDataBasics,
 		siteProfile,
 		siteStyle,
-		siteImages: { siteImages },
+		// This route reads urls only; the keyed shape silently drops every image.
+		siteImages: { siteImages: siteImageUrls(siteImages) },
 		sitePlugins,
 		includeOptional: false,
 		// If pages are passed in they may be used

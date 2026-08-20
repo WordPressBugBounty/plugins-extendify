@@ -125,11 +125,21 @@ const state = (set, get) => ({
 });
 
 const path = '/extendify/v1/agent/chat-events';
+let lastSave = Promise.resolve();
 const storage = {
 	getItem: async () => await apiFetch({ path }),
-	setItem: async (_name, state) =>
-		await apiFetch({ path, method: 'POST', data: { state } }),
+	setItem: (_name, state) => {
+		lastSave = apiFetch({ path, method: 'POST', data: { state } });
+		return lastSave;
+	},
 };
+
+// Await before navigating — an aborted in-flight save loses the newest messages.
+export const flushChatStorage = (timeout = 5000) =>
+	Promise.race([
+		lastSave.catch(() => null),
+		new Promise((resolve) => setTimeout(resolve, timeout)),
+	]);
 
 export const useChatStore = create()(
 	persist(devtools(state, { name: 'Extendify Agent Chat' }), {

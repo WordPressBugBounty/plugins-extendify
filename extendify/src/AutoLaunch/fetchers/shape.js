@@ -23,8 +23,12 @@ export const getHomeShape = z.looseObject({
 });
 
 // get-images
+const libraryImageShape = z.looseObject({ url: z.string() });
 export const getImagesShape = z.looseObject({
-	siteImages: z.array(z.string()),
+	siteImages: z.object({
+		hero: z.array(libraryImageShape).default([]),
+		general: z.array(libraryImageShape).default([]),
+	}),
 });
 
 // get-logo

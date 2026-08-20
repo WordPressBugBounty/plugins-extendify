@@ -1,12 +1,14 @@
 import { useSiteVibesOverride } from '@agent/hooks/useSiteVibesOverride';
 import { useSiteVibesVariations } from '@agent/hooks/useSiteVibesVariations';
 import { useVariationOverride } from '@agent/hooks/useVariationOverride';
+import { refreshBlockHighlight } from '@agent/lib/block-highlight';
 import { DesignOption } from '@agent/workflows/theme/components/change-site-design/DesignOption';
 import { removeAnimationClasses } from '@agent/workflows/theme/components/change-site-design/utils/removeAnimationClasses';
 import { handleSiteImages } from '@auto-launch/fetchers/get-images';
 import { handleSiteStrings } from '@auto-launch/fetchers/get-strings';
 import { useUserSelectionStore } from '@launch/state/user-selections';
 import { safeParseJson } from '@shared/lib/parsing';
+import { normalizeSiteImages } from '@shared/lib/site-images';
 import apiFetch from '@wordpress/api-fetch';
 import { registerCoreBlocks } from '@wordpress/block-library';
 import { getBlockTypes, parse, serialize } from '@wordpress/blocks';
@@ -58,23 +60,27 @@ const isAdmin = context?.adminPage;
 
 const PAGE_SIZE = 5;
 
+const hasImages = ({ hero, general }) => hero.length > 0 || general.length > 0;
+
 const resolveSiteImages = async ({ storedSiteImages, siteProfile }) => {
-	if (storedSiteImages.length) return storedSiteImages;
+	const stored = normalizeSiteImages(storedSiteImages);
+	if (hasImages(stored)) return stored;
 
 	// A browser that didn't run Launch otherwise reuses one image on every option.
-	const { siteImages: localized } = window.extSharedData;
-	if (localized?.length) return localized;
+	const localized = normalizeSiteImages(window.extSharedData.siteImages);
+	if (hasImages(localized)) return localized;
 
 	if (siteProfile) {
 		const { siteImages } = await handleSiteImages({ siteProfile });
-		if (siteImages.length) return siteImages;
+		const fetched = normalizeSiteImages(siteImages);
+		if (hasImages(fetched)) return fetched;
 	}
 
-	const stored = await apiFetch({
+	const saved = await apiFetch({
 		path: '/extendify/v1/shared/site-images',
 	}).catch(() => null);
 
-	return stored?.siteImages ?? [];
+	return normalizeSiteImages(saved?.siteImages);
 };
 
 export const SelectSiteDesign = ({ onConfirm, onCancel }) => {
@@ -134,7 +140,8 @@ export const SelectSiteDesign = ({ onConfirm, onCancel }) => {
 		useSiteVibesVariations();
 
 	const vibes = useMemo(() => {
-		if (isLoadingVibes) return null;
+		// Null for a theme with no block variations, which .css would throw on.
+		if (isLoadingVibes || !vibesData?.css) return [];
 
 		const vibes = Object.entries(vibesData.css)
 			.filter(([slug]) => slug !== vibesData.currentVibe)
@@ -268,7 +275,15 @@ export const SelectSiteDesign = ({ onConfirm, onCancel }) => {
 		undoColorAndFontsChange();
 		undoVibesChange();
 		removeInjectedLinks();
+		refreshBlockHighlight();
 	};
+
+	const confirmed = useRef(false);
+	useEffect(() => {
+		return () => {
+			if (!confirmed.current) undoChanges();
+		};
+	}, []);
 
 	const handleCancel = () => {
 		undoChanges();
@@ -279,6 +294,7 @@ export const SelectSiteDesign = ({ onConfirm, onCancel }) => {
 		if (!selectedHeroPattern) return;
 
 		if (selectedHeroPattern.isCurrent) {
+			confirmed.current = true;
 			onConfirm({
 				data: { postId: context?.postId },
 				shouldRefreshPage: false,
@@ -315,6 +331,7 @@ export const SelectSiteDesign = ({ onConfirm, onCancel }) => {
 				}),
 			);
 
+			confirmed.current = true;
 			onConfirm({
 				data: {
 					updatedPageBlocks,
@@ -333,8 +350,8 @@ export const SelectSiteDesign = ({ onConfirm, onCancel }) => {
 
 	if (isLoading || isLoadingVibes) {
 		return (
-			<div className="flex justify-center flex-col gap-1">
-				<Spinner />
+			<div className="min-h-24 p-2 text-center text-sm">
+				{__('Loading design options...', 'extendify-local')}
 			</div>
 		);
 	}
@@ -390,6 +407,7 @@ export const SelectSiteDesign = ({ onConfirm, onCancel }) => {
 									injectLinkStyles(heroPattern.linkStyles);
 
 									updateHeroSection(heroPattern.renderedHtml);
+									refreshBlockHighlight();
 								}
 							}}
 						/>

@@ -7,6 +7,9 @@ const HTML_CLASS = 'extendify-quick-edit-on';
 
 const DEFAULT_ON = !!window.extQuickEditData?.defaultOn;
 
+// One origin serves many sites over its life.
+export const STORAGE_KEY = `extendify-quick-edit-mode-${window.extSharedData?.siteId}`;
+
 export const useEditModeStore = create()(
 	persist(
 		(set, get) => ({
@@ -19,7 +22,7 @@ export const useEditModeStore = create()(
 			toggle: () => set({ on: !get().on }),
 		}),
 		{
-			name: 'extendify-quick-edit-mode',
+			name: STORAGE_KEY,
 			partialize: ({ on }) => ({ on }),
 		},
 	),

@@ -32,6 +32,8 @@ use Extendify\PageCreator\Controllers\SiteController as PageCreatorSiteControlle
 
 use Extendify\Agent\Controllers\WPController as AgentWPController;
 use Extendify\Agent\Controllers\ChatHistoryController as AgentChatController;
+use Extendify\Agent\Controllers\ContentController as AgentContentController;
+use Extendify\Agent\Controllers\OptionsController as AgentOptionsController;
 use Extendify\Agent\Controllers\SiteNavigationController as AgentSiteNavigationController;
 use Extendify\Agent\Controllers\UpdateBlocksController as AgentUpdateBlocksController;
 
@@ -128,6 +130,9 @@ use Extendify\Shared\Services\PluginsActivation\Metricool as MetricoolActivation
         ApiRouter::get('/agent/block-style-variations', [AgentWPController::class, 'getBlockStyleVariations']);
         ApiRouter::post('/agent/options', [AgentWPController::class, 'updateOption']);
         ApiRouter::get('/agent/options', [AgentWPController::class, 'getOption']);
+        ApiRouter::post('/agent/site-options', [AgentOptionsController::class, 'handle']);
+        ApiRouter::post('/agent/content-search', [AgentContentController::class, 'search']);
+        ApiRouter::post('/agent/content-read', [AgentContentController::class, 'read']);
 
         // Notifications.
         ApiRouter::post('/notifications/dismiss', [NotificationsController::class, 'dismiss']);

@@ -141,12 +141,8 @@ class BlocksUpdater
         $html->next_tag('img');
         $src = $html->get_attribute('src');
 
-        return $src && preg_match(
-            '(' . implode('|', array_map('preg_quote', ImageUploader::$imagesDomains, ['/'])) . ')i',
-            $src
-        )
-        ? $src
-        : '';
+        // Feeds a server-side fetch, so a path-matched domain would let any host through.
+        return ($src && ImageUploader::isAllowedImageHost($src)) ? $src : '';
     }
 
     /**

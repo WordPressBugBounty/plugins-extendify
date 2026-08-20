@@ -326,7 +326,7 @@ const onAiClick = (el) => {
 	askAiAboutElement(el);
 };
 
-// Test seam for the Ask AI pill's handler, which isn't exported.
+// The Ask AI pill's handler, for callers holding an element, not a pill.
 export const askAiTarget = (el) => onAiClick(el);
 
 // Exported for keyboard-entry's focus-driven mount/dismiss.

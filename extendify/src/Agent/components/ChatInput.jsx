@@ -1,7 +1,9 @@
+import { useCanvasWorkflow } from '@agent/components/Canvas';
 import { PageDocument } from '@agent/components/PageDocument';
 import { cancelRequest } from '@agent/icons';
 import { useChatStore } from '@agent/state/chat';
 import { useWorkflowStore } from '@agent/state/workflows';
+import { askAiTarget } from '@quick-edit/lib/hover-bar';
 import { useQuickEditStore } from '@quick-edit/state/store';
 import {
 	useCallback,
@@ -37,13 +39,15 @@ export const ChatInput = ({ disabled, handleSubmit }) => {
 	const dirtyRef = useRef(false);
 	const [historyIndex, setHistoryIndex] = useState(null);
 	const { workflow } = useWorkflowStore();
+	const canvasWorkflow = useCanvasWorkflow();
 	const block = useQuickEditStore((s) => s.agentBlock);
 	// Quick Edit's modals mount off `selected` too, so this covers them.
 	const editing = useQuickEditStore((s) => Boolean(s.selected));
 	const INPUT_LIMIT = 1500;
 	const inputTrimmed = input.trim();
 	const overLimit = inputTrimmed.length > INPUT_LIMIT;
-	const busy = disabled || Boolean(workflow?.id);
+	// The workflow stays set with a canvas open, so this would show cancel.
+	const busy = disabled || (Boolean(workflow?.id) && !canvasWorkflow);
 	const inputDisabled = disabled || editing;
 
 	// resize the height of the textarea based on the content
@@ -150,6 +154,13 @@ export const ChatInput = ({ disabled, handleSubmit }) => {
 		[history, historyIndex, submitForm, overLimit],
 	);
 
+	// Typing beside a pinned bar is a request about that block.
+	const stagePinnedSelection = useCallback(() => {
+		const { committedSelection, agentBlock } = useQuickEditStore.getState();
+		if (!committedSelection?.el || agentBlock) return;
+		askAiTarget(committedSelection.el);
+	}, []);
+
 	const handleCancel = useCallback((e) => {
 		e.stopPropagation();
 		window.dispatchEvent(new CustomEvent('extendify-agent:cancel-workflow'));
@@ -191,6 +202,7 @@ export const ChatInput = ({ disabled, handleSubmit }) => {
 					adjustHeight();
 				}}
 				onKeyDown={handleKeyDown}
+				onFocus={stagePinnedSelection}
 			/>
 			<div className="flex justify-between gap-4 px-2 pb-2">
 				<div className="ms-auto flex items-center gap-1">

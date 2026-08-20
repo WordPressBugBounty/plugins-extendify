@@ -10,6 +10,7 @@ defined('ABSPATH') || die('No direct access.');
 
 use Extendify\Constants;
 use Extendify\Shared\Services\Sanitizer;
+use Extendify\Shared\Services\SiteImages;
 
 /**
  * The controller for interacting with WordPress.
@@ -561,24 +562,26 @@ class WPController
             return array_reverse($images);
         }
 
-        if (!$postId || empty($siteImages)) {
+        $candidates = SiteImages::urls($siteImages);
+
+        if (!$postId || empty($candidates)) {
             return $images;
         }
 
         $usedImages = self::resolveUsedImages($postId);
-        $siteImages = array_map(function ($url) {
+        $candidates = array_map(function ($url) {
             return self::stripQueryString($url);
-        }, $siteImages);
+        }, $candidates);
 
-        $unusedSiteImages = array_values(array_filter(
-            $siteImages,
+        $unusedImages = array_values(array_filter(
+            $candidates,
             function ($url) use ($usedImages, $images) {
                 return !in_array($url, $usedImages, true) && !in_array($url, $images, true);
             }
         ));
 
         $unusedSlots = $maxSlots - count($images);
-        return array_merge(array_slice($unusedSiteImages, 0, $unusedSlots), $images);
+        return array_merge(array_slice($unusedImages, 0, $unusedSlots), $images);
     }
 
     protected static function stripQueryString(string $url): string

@@ -133,6 +133,17 @@ export const applyDesignBuildHero = (patterns, designBuild) => {
 	return [...builtHome.patterns, ...patterns];
 };
 
+// /api/home answers a locked nav with one section per entry, in order, and holds back
+// the hero, so a count mismatch means that broke: leave the names to the pattern types.
+export const applyDesignBuildNav = (patterns, designBuild, structure) => {
+	const pages = designBuild?.pages ?? [];
+	if (structure !== 'single-page' || patterns.length !== pages.length) {
+		return patterns;
+	}
+
+	return patterns.map((pattern, i) => ({ ...pattern, navSlug: pages[i].slug }));
+};
+
 // Reorder pages to match the design build's page order; extras fall to the end.
 export const applyDesignBuildOrder = (pages, designBuild) => {
 	const order = designBuild?.pages?.map((p) => p.slug) ?? [];

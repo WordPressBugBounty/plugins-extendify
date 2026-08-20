@@ -1,7 +1,7 @@
 import { DOMHighlighter } from '@agent/components/DOMHighlighter';
 import { DragResizeLayout } from '@agent/components/layouts/DragResizeLayout';
 import { MobileLayout } from '@agent/components/layouts/MobileLayout';
-import { useGlobalStore } from '@agent/state/global';
+import { DESKTOP_MIN_WIDTH, useGlobalStore } from '@agent/state/global';
 import { useEditModeStore } from '@quick-edit/state/edit-mode';
 import { useQuickEditStore } from '@quick-edit/state/store';
 import { useEffect } from '@wordpress/element';
@@ -24,7 +24,7 @@ export const Chat = ({ busy, working, children }) => {
 		const onResize = () => {
 			clearTimeout(timeout);
 			timeout = window.setTimeout(() => {
-				setIsMobile(window.innerWidth < 783);
+				setIsMobile(window.innerWidth < DESKTOP_MIN_WIDTH);
 			}, 10);
 		};
 		window.addEventListener('resize', onResize);

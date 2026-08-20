@@ -12,7 +12,7 @@ import {
 import { Full } from '@assist/pages/layouts/Full';
 import { useGlobalStore } from '@assist/state/globals';
 import { useTasksStore } from '@assist/state/tasks';
-import { PartnerNotification } from '@partner-notification/PartnerNotification';
+import { Notification } from '@notifications/Notification';
 
 export const Dashboard = () => {
 	const { tasks } = useTasks();
@@ -32,7 +32,7 @@ export const Dashboard = () => {
 				)}
 
 			<div className="mb-6">
-				<PartnerNotification slot="site-assistant" />
+				<Notification slot="admin-assist" />
 			</div>
 
 			<DesktopCards

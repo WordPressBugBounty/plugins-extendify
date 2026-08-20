@@ -68,11 +68,16 @@ class AbilitiesDiscovery
             $meta = $ability->get_meta();
             $name = $ability->get_name();
             $label = $ability->get_label();
+            $schema = $ability->get_input_schema();
+            // Filters out unnecessary context
+            if (function_exists('wp_prepare_json_schema_for_client')) {
+                $schema = wp_prepare_json_schema_for_client($schema);
+            }
             $byCategory[$ability->get_category()][] = [
                 'name' => $name,
                 'label' => $glossary[$label] ?? $label,
                 'description' => $ability->get_description(),
-                'inputSchema' => $ability->get_input_schema(),
+                'inputSchema' => $schema,
                 'annotations' => $meta['annotations'] ?? null,
                 'runHref' => \rest_url('wp-abilities/v1/abilities/' . $name . '/run'),
             ];

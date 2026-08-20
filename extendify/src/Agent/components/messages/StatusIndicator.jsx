@@ -37,9 +37,13 @@ const useCurrentLine = (lines) => {
 };
 
 export const StatusIndicator = () => {
+	const leavingPage = useStatusStore((s) => s.leavingPage);
 	const { type, label } = useStatusStore((s) => s.statuses.at(-1)) ?? {};
 	const lines = useMemo(() => linesFor(label)[type], [label, type]);
-	const text = useCurrentLine(lines);
+	const currentLine = useCurrentLine(lines);
+	const text = leavingPage
+		? __('Refreshing the page to show your changes…', 'extendify-local')
+		: currentLine;
 
 	if (!text) return null;
 

@@ -5,6 +5,9 @@ import { create } from 'zustand';
 // or sent to the AI; the chat store clears them on every real message.
 export const useStatusStore = create((set, get) => ({
 	statuses: [],
+	// Never cleared — navigation replaces the page.
+	leavingPage: false,
+	setLeavingPage: (leavingPage) => set({ leavingPage }),
 	pushStatus: (type, label) =>
 		set((state) => ({
 			statuses: [...state.statuses, { id: makeId(), type, label }],

@@ -35,7 +35,11 @@ function watch(target, options, callback) {
 function findExtendifyAgentButton() {
 	const host = document.getElementById(AGENT_BTN_HOST_ID);
 	if (!host) return null;
-	return host.querySelector('button') || host;
+	const mounted = host.querySelector('button:not([disabled])');
+	if (mounted) return mounted;
+	// The stand-in never leaves the slot, so a disabled button means not-yet-mounted.
+	if (host.querySelector('button')) return null;
+	return host;
 }
 
 function clickExtendifyAgent() {

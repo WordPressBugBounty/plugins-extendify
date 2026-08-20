@@ -1,12 +1,19 @@
+import {
+	CANVAS_PANE_WIDTH,
+	CanvasPane,
+	DOT_GRID,
+	useCanvasOpen,
+} from '@agent/components/Canvas';
 import { usePortal } from '@agent/hooks/usePortal';
-import { useGlobalStore } from '@agent/state/global';
+import { DESKTOP_MIN_WIDTH, useGlobalStore } from '@agent/state/global';
 import { createPortal, useEffect, useRef } from '@wordpress/element';
 import { __ } from '@wordpress/i18n';
 import { close, Icon } from '@wordpress/icons';
 import { motion } from 'framer-motion';
 import { OptionsPopover } from '../OptionsPopover';
 
-const SIDEBAR_WIDTH = 384; // 96 * 4 (w-96)
+const SIDEBAR_WIDTH = 384;
+const CANVAS_WIDTH = SIDEBAR_WIDTH + CANVAS_PANE_WIDTH;
 const FRAME_WIDTH = 8; // border-8
 const ANIMATE_TIME = 300;
 
@@ -14,6 +21,7 @@ export const SidebarLayout = ({ children }) => {
 	const mountNode = usePortal('extendify-agent-sidebar-mount');
 	const frameNode = usePortal('extendify-agent-border-frame-mount');
 	const { open, setOpen } = useGlobalStore();
+	const canvasOpen = useCanvasOpen();
 	useLayoutShift(open);
 
 	const closeAgent = () => {
@@ -78,47 +86,63 @@ export const SidebarLayout = ({ children }) => {
 			)
 		: null;
 
+	// app/Agent/Skeleton.php mirrors this markup for the deferred mount; edit both.
 	const sidebar = mountNode
 		? createPortal(
 				<motion.div
-					style={{ width: SIDEBAR_WIDTH }}
-					className=" fixed top-0 bottom-0 left-0 w-96 flex-col z-higher border-transparent border-8"
+					className=" fixed top-0 bottom-0 left-0 z-higher border-transparent border-8"
 					id="extendify-agent-sidebar"
 					initial={false}
 					inert={open ? undefined : ''}
-					animate={{ x: open ? 0 : -SIDEBAR_WIDTH }}
+					animate={{
+						x: open ? 0 : -SIDEBAR_WIDTH,
+						width: canvasOpen ? CANVAS_WIDTH : SIDEBAR_WIDTH,
+					}}
 					transition={{ duration: ANIMATE_TIME / 1000, ease: 'easeInOut' }}
 				>
-					<div className="h-full flex flex-col shadow-lg rounded-2xl overflow-hidden bg-white">
-						<div className="group flex shrink-0 items-center justify-between overflow-hidden bg-banner-main text-banner-text">
-							<div className="flex h-full grow items-center justify-between gap-1 p-0 py-2.5">
-								<div className="flex h-5 px-4 max-w-36 overflow-hidden">
-									<img
-										className="max-h-full max-w-full object-contain"
-										src={window.extSharedData.partnerLogo}
-										alt={window.extSharedData.partnerName}
-									/>
+					<div
+						className={`h-full flex shadow-lg rounded-2xl overflow-hidden ${canvasOpen ? 'bg-gray-50' : 'bg-white'}`}
+						style={canvasOpen ? DOT_GRID : undefined}
+					>
+						<div
+							className="relative z-10 h-full flex shrink-0 flex-col rounded-2xl overflow-hidden bg-white shadow-lg"
+							style={{ width: SIDEBAR_WIDTH - FRAME_WIDTH * 2 }}
+						>
+							<div className="group flex shrink-0 items-center justify-between overflow-hidden bg-banner-main text-banner-text">
+								<div className="flex h-full grow items-center justify-between gap-1 p-0 py-2.5">
+									<div className="flex h-5 px-4 max-w-36 overflow-hidden">
+										<img
+											className="max-h-full max-w-full object-contain"
+											src={window.extSharedData.partnerLogo}
+											alt={window.extSharedData.partnerName}
+										/>
+									</div>
+								</div>
+								<div className="flex gap-1 h-full items-center p-2">
+									{canvasOpen ? null : (
+										<>
+											<OptionsPopover />
+											<button
+												type="button"
+												className="relative z-10 flex justify-center h-6 w-6 items-center border-0 bg-banner-main text-banner-text outline-hidden ring-design-main focus:shadow-none focus:outline-hidden focus-visible:outline-design-main focus:ring-2 hover:opacity-80 rounded-sm"
+												onClick={closeAgent}
+											>
+												<Icon
+													className="pointer-events-none fill-current leading-none"
+													icon={close}
+													size={18}
+												/>
+												<span className="sr-only">
+													{__('Close window', 'extendify-local')}
+												</span>
+											</button>
+										</>
+									)}
 								</div>
 							</div>
-							<div className="flex gap-1 h-full items-center p-2">
-								<OptionsPopover />
-								<button
-									type="button"
-									className="relative z-10 flex justify-center h-6 w-6 items-center border-0 bg-banner-main text-banner-text outline-hidden ring-design-main focus:shadow-none focus:outline-hidden focus-visible:outline-design-main focus:ring-2 hover:opacity-80 rounded-sm"
-									onClick={closeAgent}
-								>
-									<Icon
-										className="pointer-events-none fill-current leading-none"
-										icon={close}
-										size={18}
-									/>
-									<span className="sr-only">
-										{__('Close window', 'extendify-local')}
-									</span>
-								</button>
-							</div>
+							{open ? children : null}
 						</div>
-						{open ? children : null}
+						<CanvasPane />
 					</div>
 				</motion.div>,
 				mountNode,
@@ -194,7 +218,8 @@ export const useLayoutShift = (open) => {
 		const applyScaling = () => {
 			if (!siteBlocks) return;
 
-			if (open) {
+			// Unmount leaves these styles, so scaling below the breakpoint is permanent.
+			if (open && window.innerWidth >= DESKTOP_MIN_WIDTH) {
 				// Capture before `position: fixed` zeroes window.scrollY.
 				// Fall through to savedScroll.current so resize / strict-mode
 				// re-runs don't clobber it with the now-pinned scrollY (0).

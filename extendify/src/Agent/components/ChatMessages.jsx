@@ -1,3 +1,4 @@
+import { useCanvasWorkflow } from '@agent/components/Canvas';
 import { ErrorMessage } from '@agent/components/ErrorMessage';
 import { AgentMessage } from '@agent/components/messages/AgentMessage';
 import { ImageToolMessage } from '@agent/components/messages/ImageToolMessage';
@@ -39,6 +40,7 @@ export const ChatMessages = () => {
 	const { getWorkflow } = useWorkflowStore();
 	const workflow = getWorkflow();
 	const whenFinishedToolProps = useWhenFinishedToolProps();
+	const canvasWorkflow = useCanvasWorkflow();
 	const whenFinishedComponent = workflow?.whenFinished?.component;
 	const [canScrollDown, setCanScrollDown] = useState(false);
 	const containerRef = useRef(null);
@@ -60,7 +62,8 @@ export const ChatMessages = () => {
 	const isUserMessage = messages.at(-1)?.details?.role === 'user';
 
 	useEffect(() => {
-		if (!containerRef.current || !open) return;
+		// The frontend agent shows the chat even while the store says closed.
+		if (!containerRef.current) return;
 		if (!isFreshPageLoad.current) return;
 		isFreshPageLoad.current = false;
 		// Scroll to the bottom of the chat container on load
@@ -75,9 +78,12 @@ export const ChatMessages = () => {
 				setReady(true);
 			});
 		});
+		// A hidden tab suspends animation frames, leaving the list invisible.
+		const fallback = setTimeout(() => setReady(true), 500);
 		return () => {
 			cancelAnimationFrame(id);
 			cancelAnimationFrame(id2);
+			clearTimeout(fallback);
 			isFreshPageLoad.current = true;
 			setReady(false);
 		};
@@ -324,6 +330,7 @@ export const ChatMessages = () => {
 				{awaitingPicker ? null : <StatusIndicator />}
 				{!workflow?.needsRedirect?.() &&
 				whenFinishedToolProps?.id &&
+				!canvasWorkflow &&
 				whenFinishedComponent
 					? createElement(whenFinishedComponent, whenFinishedToolProps)
 					: null}

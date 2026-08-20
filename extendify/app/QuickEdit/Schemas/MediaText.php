@@ -104,19 +104,16 @@ class MediaText implements Schema
                         $tp->set_attribute('alt', $alt);
                     }
 
-                    // Gutenberg's media-text save() derives wp-image-{id} from
-                    // attrs.mediaId; a mismatch trips the validator. Strip any
-                    // pre-existing first so re-edits don't stack.
-                    $cls = (string) ($tp->get_attribute('class') ?? '');
-                    $cls = trim((string) preg_replace('/\bwp-image-\d+\b/', '', $cls));
-                    if ($id !== null && $id > 0) {
-                        $cls = trim($cls . ' wp-image-' . $id);
+                    // Core's save() derives wp-image-{id} + size-{mediaSizeSlug||full}
+                    // from attrs; mismatched markup trips the block validator.
+                    foreach ($tp->class_list() as $class) {
+                        if (str_starts_with($class, 'wp-image-') || str_starts_with($class, 'size-')) {
+                            $tp->remove_class($class);
+                        }
                     }
-                    $cls = (string) preg_replace('/\s{2,}/', ' ', $cls);
-                    if ($cls === '') {
-                        $tp->remove_attribute('class');
-                    } else {
-                        $tp->set_attribute('class', $cls);
+                    if ($id !== null && $id > 0) {
+                        $tp->add_class('wp-image-' . $id);
+                        $tp->add_class('size-' . ($attrs['mediaSizeSlug'] ?? 'full'));
                     }
 
                     if ($id === null || $id <= 0) {

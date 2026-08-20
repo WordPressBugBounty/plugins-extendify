@@ -78,7 +78,6 @@ class PartnerData
             'disabledProducts' => [],
             'customProducts' => [],
         ],
-        'showPartnerNotifications' => false,
         'license' => 'active',
         'showAIAgents' => false,
         'agentAbilitiesAllowlist' => [],
@@ -166,8 +165,6 @@ class PartnerData
             'customProducts' => ($data['productRecommendationCustomSlugs']
                 ?? self::$config['productRecommendations']['customProducts']),
         ];
-        self::$config['showPartnerNotifications'] = ($data['showPartnerNotifications']
-            ?? self::$config['showPartnerNotifications']);
         self::$config['license'] = ($data['license'] ?? self::$config['license']);
         self::$config['showImprint'] = ($data['showImprint'] ?? self::$config['showImprint']);
         self::$config['showLaunchQuestions'] = ($data['showLaunchQuestions'] ?? self::$config['showLaunchQuestions']);

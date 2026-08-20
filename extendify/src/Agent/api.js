@@ -1,3 +1,4 @@
+import { abilityDescriptors, getAbilities } from '@agent/abilities/abilities';
 import { buildBlockSchema } from '@agent/lib/block-schema';
 import {
 	classifyBlockEdit,
@@ -10,6 +11,7 @@ import {
 	buildSubtreeManifest,
 	buildSubtreeTree,
 } from '@agent/lib/subtree-manifest';
+import { activeCanvasStep } from '@agent/state/canvas';
 import { useChatStore } from '@agent/state/chat';
 import { useGlobalStore } from '@agent/state/global';
 import { tools } from '@agent/workflows/workflows';
@@ -174,6 +176,35 @@ export const handleWorkflow = async ({ workflow, workflowData, options }) => {
 	return await response.json();
 };
 
+export const handleCanvas = async ({
+	toolId,
+	sessionId,
+	abilities,
+	options,
+}) => {
+	const { getCurrentMessages, getMessagesFor } = useChatStore.getState();
+	const { values } = activeCanvasStep();
+	const response = await fetch(`${AI_HOST}/api/agent/handle-canvas`, {
+		method: 'POST',
+		headers: { 'Content-Type': 'application/json' },
+		signal: options?.signal,
+		body: JSON.stringify({
+			...reqDataBasics,
+			toolId,
+			values,
+			abilities: abilityDescriptors(getAbilities(abilities)),
+			messages: getCurrentMessages(),
+			previousMessages: getMessagesFor(toolId),
+			context: window.extAgentData.context,
+			sessionId,
+			extra: extra(),
+		}),
+	});
+
+	if (!response.ok) throw new Error('Bad response from server');
+	return await response.json();
+};
+
 export const rateAnswer = ({ answerId, rating }) =>
 	fetch(`${AI_HOST}/api/agent/rate-workflow`, {
 		method: 'POST',
@@ -186,8 +217,35 @@ export const rateAnswer = ({ answerId, rating }) =>
 		}),
 	);
 
-export const callTool = async ({ tool, inputs }) => {
+// An error with no message serializes to {}, which the model reads as an empty success.
+const reasonFor = async (error) => {
+	// An unparsed apiFetch rejects with the Response, whose body holds the reason.
+	if (typeof error?.json === 'function') {
+		const body = await error.json().catch(() => null);
+		return body?.message ?? `The site answered ${error.status}.`;
+	}
+
+	return (
+		error?.error ?? error?.message ?? 'The ability failed without saying why.'
+	);
+};
+
+// A throw would reach the model outside the tool's slot, reading as no result.
+const runAbility = async (ability, inputs) => {
+	try {
+		return await ability.execute(inputs);
+	} catch (error) {
+		return { error: await reasonFor(error) };
+	}
+};
+
+export const callTool = async ({ tool, inputs, abilities = [] }) => {
 	if (tools[tool]) return await tools[tool](inputs);
+	// Ours wins a name collision, so a duplicate WP ability can't change what runs.
+	const ours =
+		getAbilities(abilities).find(({ name }) => name === tool) ??
+		getAbilities([tool])[0];
+	if (ours) return { [tool]: await runAbility(ours, inputs) };
 	// Ability tools are named after the ability and have no file; the generic
 	// runner executes them. Key the result to its slot so the loop sees it filled.
 	const isAbility = (window.extAgentData?.wpAbilities ?? []).some((category) =>

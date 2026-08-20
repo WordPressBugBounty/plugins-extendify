@@ -123,6 +123,31 @@ export const DOMHighlighter = ({ busy = false, working = false }) => {
 			);
 	}, []);
 
+	useEffect(() => {
+		if (!block?.id) return;
+		const attr = block.target || 'data-extendify-agent-block-id';
+		const handle = () => {
+			const match = document.querySelector(
+				`[${attr}="${CSS.escape(String(block.id))}"]`,
+			);
+			// Clearing only the rect leaves the chip counting a gone node.
+			if (!match) {
+				clearBlock();
+				return;
+			}
+			el.current = match;
+			const r = match.getBoundingClientRect();
+			if (r.width <= 0 || r.height <= 0) return;
+			setRect({ top: r.top, left: r.left, width: r.width, height: r.height });
+		};
+		window.addEventListener('extendify-agent:refresh-block-highlight', handle);
+		return () =>
+			window.removeEventListener(
+				'extendify-agent:refresh-block-highlight',
+				handle,
+			);
+	}, [block, clearBlock]);
+
 	// Use capture phase for `scroll` so we hear it on any scrollable
 	// ancestor (e.g. wp-site-blocks when something repositions it as
 	// the page scroll container). Bubble-phase `scroll` doesn't
@@ -153,6 +178,8 @@ export const DOMHighlighter = ({ busy = false, working = false }) => {
 		const resizeObserver = new ResizeObserver(() => {
 			if (!el.current) return;
 			const { top, left, width, height } = el.current.getBoundingClientRect();
+			// A detached node reports 0x0, which draws as a corner dot.
+			if (width <= 0 || height <= 0) return;
 			setRect({ top, left, width, height });
 		});
 

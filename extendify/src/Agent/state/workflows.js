@@ -50,6 +50,7 @@ const state = (set, get) => ({
 			({ example: ex }) => collator.compare(ex?.text, example) === 0,
 		);
 		if (!wf?.id) return null;
+		if (!wf.available()) return null;
 		return wf;
 	},
 	// Gets the workflows available to the user
@@ -137,8 +138,11 @@ export const useWorkflowStore = create()(
 			}
 			const merged = { ...currentState, ...persistedState };
 			// A reload can't carry the staged block a block-patching workflow
-			// depends on, so a rehydrated-open one is always stale.
-			if (merged.workflow?.id === 'block-patching') {
+			// depends on, so a rehydrated-open one is always stale. A canvas
+			// session is stale too: its field values never persist.
+			const id = merged.workflow?.templateId || merged.workflow?.id;
+			const registered = workflows.find((wf) => wf.id === id);
+			if (id === 'block-patching' || registered?.whenFinished?.canvas) {
 				return {
 					...merged,
 					workflow: null,

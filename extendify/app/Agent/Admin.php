@@ -45,9 +45,25 @@ class Admin
         // Add the site navigation ids to the navigation blocks
         SiteNavigationController::init();
 
+        Skeleton::init();
+
         WooProductImages::init();
 
         \add_action('extendify_agent_suggestions_refresh', [$this, 'refreshSuggestions']);
+    }
+
+    /**
+     * Where the agent panel mounts — docked-left only on the onboarding front end.
+     *
+     * @return string
+     */
+    public static function agentPosition()
+    {
+        $agentOnboarding = PartnerData::setting('useAgentOnboarding') ||
+            Config::preview('agent-onboarding') ||
+            constant('EXTENDIFY_DEVMODE');
+
+        return $agentOnboarding && !is_admin() ? 'docked-left' : 'floating';
     }
 
     /**
@@ -150,7 +166,7 @@ class Admin
             'window.extAgentData = ' . \wp_json_encode([
                 // phpcs:ignore WordPress.Security.NonceVerification.Recommended
                 'startOnboarding' => isset($_GET['extendify-launch-success']) && $agentOnboarding,
-                'agentPosition' => $agentOnboarding && !is_admin() ? 'docked-left' : 'floating',
+                'agentPosition' => self::agentPosition(),
                 // Add context about where they are
                 'context' => $context,
                 // Material a workflow may want; each declares the keys it reads.

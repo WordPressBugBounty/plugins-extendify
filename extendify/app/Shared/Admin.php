@@ -10,15 +10,19 @@ defined('ABSPATH') || die('No direct access.');
 
 use Extendify\Config;
 use Extendify\PartnerData;
+use Extendify\Notifications\Availability;
 use Extendify\Shared\Controllers\UserSelectionController;
-use Extendify\Shared\DataProvider\PartnerNotificationData;
+use Extendify\Shared\DataProvider\NotificationData;
 use Extendify\Shared\DataProvider\ResourceData;
 use Extendify\Shared\Services\AdminMenuList;
 use Extendify\Shared\Services\ApexDomain\ApexDomain;
 use Extendify\Shared\Services\Escaper;
 use Extendify\Shared\Services\PluginDependencies\SimplyBook;
+use Extendify\Shared\Services\PluginsActivation\Imagify as ImagifyActivation;
 use Extendify\Shared\Services\PluginsActivation\Metricool as MetricoolActivation;
 use Extendify\Shared\Services\PluginsActivation\SimplyBook as SimplyBookActivation;
+use Extendify\Shared\Services\PluginsActivation\TranslatePress as TranslatePressActivation;
+use Extendify\Shared\Services\SiteImages;
 use Extendify\SiteSettings;
 use Extendify\Shared\Controllers\ImageGenerationController;
 use Extendify\Shared\DataProvider\ProductsData;
@@ -157,10 +161,20 @@ class Admin
             }
         );
 
-        $productActivationPlugins = array_map(function ($plugin) {
-            foreach ([MetricoolActivation::class, SimplyBookActivation::class] as $activation) {
+        $activations = [
+            ImagifyActivation::class,
+            MetricoolActivation::class,
+            SimplyBookActivation::class,
+            TranslatePressActivation::class,
+        ];
+
+        $productActivationPlugins = array_map(function ($plugin) use ($activations) {
+            foreach ($activations as $activation) {
                 if ($plugin['slug'] === $activation::slug()) {
-                    return array_merge($plugin, ['scriptData' => $activation::scriptData()]);
+                    return array_merge($plugin, [
+                        'scriptData' => $activation::scriptData(),
+                        'eligible' => $activation::isEligible(),
+                    ]);
                 }
             }
 
@@ -207,7 +221,7 @@ class Admin
                 'siteTitle' => \esc_attr(\get_bloginfo('name')),
                 'siteProfile' => \get_option('extendify_site_profile', []),
                 // Empty when the launch-time image fetch failed.
-                'siteImages' => \get_option('extendify_site_images', []),
+                'siteImages' => SiteImages::normalize(\get_option('extendify_site_images', [])),
                 'wpLanguage' => \esc_attr(\get_locale()),
                 'aiImageLabel' => $aiImageLabel,
                 'aiImageAltPattern' => $aiImageAltPattern,
@@ -223,12 +237,14 @@ class Admin
                 'partnerName' => \esc_attr(PartnerData::$name),
                 'launchDataLegacy' => \wp_json_encode((UserSelectionController::get()->get_data() ?? [])),
                 'resourceData' => \wp_json_encode((new ResourceData())->getData()),
-                'partnerNotifications' => \wp_json_encode(PartnerNotificationData::get()),
-                'notifications' => \get_user_meta(
+                'notifications' => \wp_json_encode(
+                    Availability::available(NotificationData::get())
+                ),
+                'notificationState' => \get_user_meta(
                     \get_current_user_id(),
-                    'extendify_notifications',
+                    'extendify_notification_state',
                     true
-                ) ?: ['dismissed' => [], 'viewed' => []],
+                ) ?: ['cards' => []],
                 'showAIConsent' => isset($partnerData['showAIConsent']) ? (bool) $partnerData['showAIConsent'] : false,
                 'showChat' => (bool) (PartnerData::setting('showChat') || constant('EXTENDIFY_DEVMODE')),
                 'useAgentOnboarding' => (bool) (

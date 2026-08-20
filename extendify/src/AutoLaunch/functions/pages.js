@@ -126,6 +126,13 @@ const transformHeadingToPostTitle = (rawHTML) => {
 	return serialize(parse(rawHTML).map(walk));
 };
 
+// navSlug: the design menu entry this section was picked for (applyDesignBuildNav).
+export const sectionSlug = (pattern) =>
+	pattern.navSlug ??
+	Object.values(pageNames).find(({ alias }) =>
+		alias.includes(pattern.patternTypes?.[0]),
+	)?.slug;
+
 export const createWpPages = async (
 	pagesRaw,
 	{ skipSectionIds = false } = {},
@@ -140,12 +147,7 @@ export const createWpPages = async (
 
 		for (const [_, pattern] of page.patterns.entries()) {
 			const code = pattern.code;
-			const patternType = pattern.patternTypes?.[0];
-
-			const { slug } =
-				Object.values(pageNames).find(({ alias }) =>
-					alias.includes(patternType),
-				) || {};
+			const slug = sectionSlug(pattern);
 
 			if (skipSectionIds || seenPatternTypes.has(slug) || !slug) {
 				content.push(code);

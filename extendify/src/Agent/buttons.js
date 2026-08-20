@@ -13,20 +13,29 @@ import { registerPlugin } from '@wordpress/plugins';
 domReady(() => {
 	if (isOnLaunch()) return;
 	const id = 'wp-admin-bar-extendify-agent-btn';
-	if (document.getElementById(id)) return;
-	const agent = Object.assign(document.createElement('li'), {
-		className: 'extendify-agent',
-		id,
-	});
+	// Skeleton.php may already own this node; reuse it so the item never moves.
+	const agent =
+		document.getElementById(id) ??
+		Object.assign(document.createElement('li'), {
+			className: 'extendify-agent',
+			id,
+		});
+	// Presence no longer proves a mount, so the marker guards it.
+	if (agent.dataset.extendifyMounted) return;
+	agent.dataset.extendifyMounted = '1';
 	agent.style.height = '1.75rem';
 	agent.style.marginInlineEnd = '4px';
-	// TODO: If we want to allow swapping live we need to rethink this
-	const loc =
-		window.extAgentData.agentPosition === 'floating'
-			? '#wp-admin-bar-my-account'
-			: '#wp-admin-bar-wp-logo';
-	document.querySelector(loc)?.before(agent);
-	render(<AdminBar />, agent);
+	if (!agent.isConnected) {
+		// TODO: If we want to allow swapping live we need to rethink this
+		const loc =
+			window.extAgentData.agentPosition === 'floating'
+				? '#wp-admin-bar-my-account'
+				: '#wp-admin-bar-wp-logo';
+		document.querySelector(loc)?.before(agent);
+	}
+	// Clearing the slot first paints it empty when React commits a task later.
+	const mount = agent.appendChild(document.createElement('span'));
+	render(<AdminBar />, mount);
 });
 
 // Mobile

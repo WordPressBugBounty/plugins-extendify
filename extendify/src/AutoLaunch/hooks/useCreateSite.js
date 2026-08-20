@@ -65,6 +65,7 @@ import {
 import { useWarnOnLeave } from '@auto-launch/hooks/useWarnOnLeave';
 import { useLaunchDataStore } from '@auto-launch/state/launch-data';
 import { digest } from '@shared/api/digest';
+import { siteImageUrls } from '@shared/lib/site-images';
 import { useAIConsentStore } from '@shared/state/ai-consent';
 import { useEffect, useRef, useState } from '@wordpress/element';
 import { __ } from '@wordpress/i18n';
@@ -322,6 +323,7 @@ export const useCreateSite = () => {
 				structure === 'single-page' &&
 				Boolean(builtHome?.fullPage && builtHome.patterns?.length) &&
 				Boolean(designBuild?.pages?.length);
+			const imageUrls = siteImageUrls(siteImages);
 			const intendedPlugins = (sitePlugins ?? []).map(
 				({ wordpressSlug }) => wordpressSlug,
 			);
@@ -476,13 +478,13 @@ export const useCreateSite = () => {
 				addStatusMessage(__('Creating blog sample data', 'extendify-local'));
 				await createBlogSampleData(
 					{ aiBlogTitles },
-					siteImages,
+					imageUrls,
 					blogPattern?.blogImages,
 				);
 			}
-			if (siteImages?.length) {
+			if (imageUrls.length) {
 				checkIn({ stage: 'set_hello_world_image' });
-				await setHelloWorldFeaturedImage(siteImages);
+				await setHelloWorldFeaturedImage(imageUrls);
 			}
 
 			let imprint = {};
@@ -555,7 +557,12 @@ export const useCreateSite = () => {
 			checkIn({ stage: 'set_navigation_links' });
 			if (objective !== 'landing-page') {
 				const orderedSlugs = designBuild?.pages?.map((p) => p.slug) ?? [];
-				if (isSinglePageDesign) {
+				// The tag only exists where the sections came back matched 1:1 to our list;
+				// read it off what was planted, so menu and section ids can't disagree.
+				const designOwnsNav =
+					isSinglePageDesign ||
+					Boolean(homePage?.patterns?.some(({ navSlug }) => navSlug));
+				if (designOwnsNav) {
 					await addSectionLinksFromDesign(
 						headerNavId,
 						designBuild.pages,
@@ -595,7 +602,7 @@ export const useCreateSite = () => {
 			checkIn({ stage: 'final_steps' });
 			await setThemeRenderingMode('template-locked');
 			await postLaunchFunctions();
-			if (siteImages?.length) {
+			if (imageUrls.length) {
 				await storeSiteImages(siteImages).catch(() => null);
 			}
 			// translators: this is for a action log UI. Keep it short

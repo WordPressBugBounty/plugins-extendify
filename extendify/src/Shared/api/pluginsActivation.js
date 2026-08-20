@@ -1,38 +1,72 @@
 import apiFetch from '@wordpress/api-fetch';
 import { addQueryArgs } from '@wordpress/url';
 
-const getRecaptchaToken = (action, siteKey) =>
-	new Promise((resolve, reject) => {
-		if (!siteKey) {
-			reject(new Error(`No reCAPTCHA site key for the ${action} action`));
+let recaptchaReady;
+const loadRecaptcha = () => {
+	recaptchaReady ??= new Promise((resolve, reject) => {
+		const ready = () => window.grecaptcha.enterprise.ready(resolve);
+		if (window.grecaptcha?.enterprise) {
+			ready();
 			return;
 		}
 
 		const existing = document.querySelector(
-			`script[src*="recaptcha/enterprise"]`,
+			'script[src*="recaptcha/enterprise"]',
 		);
-		const load = () =>
-			window.grecaptcha.enterprise.ready(async () => {
-				try {
-					resolve(
-						await window.grecaptcha.enterprise.execute(siteKey, { action }),
-					);
-				} catch (error) {
-					reject(error);
-				}
-			});
-
 		if (existing) {
-			load();
+			existing.addEventListener('load', ready);
 			return;
 		}
 
 		const script = document.createElement('script');
-		script.src = `https://www.google.com/recaptcha/enterprise.js?render=${siteKey}`;
+		script.src =
+			'https://www.google.com/recaptcha/enterprise.js?render=explicit';
 		script.async = true;
-		script.onload = load;
+		script.onload = ready;
+		script.onerror = () => {
+			// A cached rejection would block every retry.
+			recaptchaReady = undefined;
+			reject(new Error('Failed to load the reCAPTCHA script'));
+		};
 		document.head.appendChild(script);
 	});
+	return recaptchaReady;
+};
+
+// enterprise.js can't load twice, and execute() needs a rendered site key —
+// one widget per key.
+const recaptchaWidgets = new Map();
+const getRecaptchaToken = async (action, siteKey, timings = {}) => {
+	if (!siteKey) {
+		throw new Error(`No reCAPTCHA site key for the ${action} action`);
+	}
+
+	const start = Date.now();
+
+	try {
+		await loadRecaptcha();
+
+		if (!recaptchaWidgets.has(siteKey)) {
+			const container = document.createElement('div');
+			document.body.appendChild(container);
+			recaptchaWidgets.set(
+				siteKey,
+				window.grecaptcha.enterprise.render(container, {
+					sitekey: siteKey,
+					size: 'invisible',
+				}),
+			);
+		}
+
+		// Without await, finally runs before execute settles and records ~0ms.
+		return await window.grecaptcha.enterprise.execute(
+			recaptchaWidgets.get(siteKey),
+			{ action },
+		);
+	} finally {
+		timings.captchaTimeInMs = Date.now() - start;
+	}
+};
 
 const createAccount = async ({
 	slug,
@@ -58,7 +92,8 @@ const createAccount = async ({
 /*
  * Plugin entries shape:
  *   createAccountCallback: (data) => Promise<void> — performs the account creation request
- *   idempotent: boolean (default true)             — false skips retries; use when re-sending the same request could cause errors
+ *   idempotent: boolean (default true)             — false skips retries; an aborted fetch does not stop the PHP call, so a retry creates a second account
+ *   data.timings: out-param                        — write captchaTimeInMs here; it survives a throw
  */
 export const pluginsActivation = {
 	simplybook: {
@@ -69,10 +104,12 @@ export const pluginsActivation = {
 			marketingConsent,
 			termsAgreed,
 			signal,
+			timings,
 		}) => {
 			const captchaToken = await getRecaptchaToken(
 				scriptData?.recaptchaAction,
 				scriptData?.recaptchaSiteKey,
+				timings,
 			);
 
 			// Hit the endpoint via ?rest_route= so the request URL contains "simplybook" —
@@ -95,10 +132,12 @@ export const pluginsActivation = {
 		},
 	},
 	'translatepress-multilingual': {
+		idempotent: false,
 		createAccountCallback: (data) =>
 			createAccount({ slug: 'translatepress-multilingual', ...data }),
 	},
 	imagify: {
+		idempotent: false,
 		createAccountCallback: (data) =>
 			createAccount({ slug: 'imagify', ...data }),
 	},
@@ -110,10 +149,12 @@ export const pluginsActivation = {
 			marketingConsent,
 			termsAgreed,
 			signal,
+			timings,
 		}) => {
 			const captchaToken = await getRecaptchaToken(
 				scriptData?.recaptchaAction,
 				scriptData?.recaptchaSiteKey,
+				timings,
 			);
 
 			// The "/v1" segment is what makes Metricool register its logout route.

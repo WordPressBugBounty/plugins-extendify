@@ -160,3 +160,18 @@ body.extendify-agent-mobile-btn-open
 .extendify-agent-highlighter-mode .wp-lightbox-container img {
 	pointer-events: none !important;
 }
+/* no-prefix */
+body.extendify-agent-canvas-blurred {
+	--extendify-canvas-blur: 3px;
+}
+/* Blurring the wp-block-* descendants instead would compound at every level. */
+/* no-prefix */
+.extendify-agent-canvas-open .wp-site-blocks > header,
+.extendify-agent-canvas-open .wp-site-blocks > main,
+.extendify-agent-canvas-open .wp-site-blocks > footer,
+.extendify-agent-canvas-open #wpwrap,
+.extendify-agent-canvas-open #wpadminbar,
+.extendify-agent-canvas-open #extendify-toolbar {
+	filter: blur(var(--extendify-canvas-blur, 0px));
+	transition: filter 300ms ease-in-out;
+}

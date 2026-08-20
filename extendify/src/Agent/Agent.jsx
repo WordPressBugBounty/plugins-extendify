@@ -1,10 +1,12 @@
 import {
 	callTool,
+	handleCanvas,
 	handleWorkflow,
 	pickWorkflow,
 	recordAgentActivity,
 } from '@agent/api';
 import { Chat } from '@agent/Chat';
+import { Canvas, useCanvasOpen } from '@agent/components/Canvas';
 import { ChatInput } from '@agent/components/ChatInput';
 import { ChatMessages } from '@agent/components/ChatMessages';
 import { UsageMessage } from '@agent/components/messages/UsageMessage';
@@ -16,6 +18,8 @@ import {
 } from '@agent/lib/client-tools';
 import { localPickWorkflow } from '@agent/lib/local-pick';
 import { getRedirectUrl } from '@agent/lib/redirects';
+import { doReload } from '@agent/lib/reload';
+import { useCanvasStore } from '@agent/state/canvas';
 import { useChatStore } from '@agent/state/chat';
 import { useGlobalStore } from '@agent/state/global';
 import { useStatusStore } from '@agent/state/status';
@@ -53,7 +57,7 @@ const withMinDuration = async (promise, ms) => {
 
 export const Agent = () => {
 	const { addMessage, updateMessage, popMessage, messages } = useChatStore();
-	const { pushStatus, clearStatuses } = useStatusStore();
+	const { pushStatus, clearStatuses, leavingPage } = useStatusStore();
 	const {
 		mergeWorkflowData,
 		getWorkflow,
@@ -81,6 +85,7 @@ export const Agent = () => {
 	});
 	const [loop, setLoop] = useState(0);
 	const workflow = getWorkflow();
+	const canvasOpen = useCanvasOpen();
 	const chatAvailable = useMemo(() => isChatAvailable(), [isChatAvailable]);
 	const { addSuggestions, getSuggestions } = useSuggestionsStore();
 	// Options render only while their message is last; a reply dismisses them.
@@ -91,6 +96,11 @@ export const Agent = () => {
 		Array.isArray(lastMessage.details?.qaSuggestions)
 			? lastMessage.details.qaSuggestions
 			: null;
+
+	// Without this the input stays disabled for as long as the canvas is open.
+	useEffect(() => {
+		if (canvasOpen) setCanType(true);
+	}, [canvasOpen]);
 
 	const cleanup = useCallback(() => {
 		setCanType(true);
@@ -182,6 +192,71 @@ export const Agent = () => {
 		],
 	);
 
+	// The backend caps tool runs; nothing here bounds the loop.
+	const handleCanvasMessage = useCallback(async () => {
+		setCanType(false);
+		// cleanup() replaces the controller, so a cancel is lost between passes.
+		const { signal } = controller;
+		while (!signal.aborted) {
+			pushStatus('agent-working');
+			const response = await handleCanvas({
+				toolId: whenFinishedToolProps?.id,
+				sessionId: workflow?.sessionId,
+				abilities: workflow?.abilities,
+				options: { signal },
+			}).catch((error) => {
+				if (error === 'Workflow aborted') return null;
+				const { sessionId } = workflow || {};
+				digest({
+					error,
+					details: { source: 'agent', caller: 'handle-canvas', sessionId },
+				});
+				devmode && console.error(error);
+				return { error: error.message };
+			});
+			// A request that settled before the abort still resolves with a reply.
+			if (!response || signal.aborted) break;
+			if (response.error) {
+				addMessage('message', {
+					role: 'assistant',
+					// translators: Shown when the AI agent could not answer a question about the form it has open on screen.
+					content: __(
+						'Sorry, something went wrong. Please try asking again.',
+						'extendify-local',
+					),
+					error: true,
+				});
+				break;
+			}
+			if (response.reply) {
+				addMessage('message', {
+					role: 'assistant',
+					content: response.reply,
+					followup: !!response.tool,
+					agent: workflow?.agent,
+				});
+			}
+			if (!response.tool) break;
+			const { id, inputs, labels } = response.tool;
+			pushStatus('tool-started', labels?.started);
+			const result = await callTool({
+				tool: id,
+				inputs,
+				abilities: workflow?.abilities,
+			}).catch((error) => {
+				const { sessionId } = workflow || {};
+				digest({
+					error,
+					details: { source: 'agent', caller: `canvas: ${id}`, sessionId },
+				});
+				console.error(`Extendify agent tool error: ${id}`, { siteId, error });
+				return { error: { message: error?.message, code: error?.code } };
+			});
+			addMessage('tool', { id, inputs, result, label: labels?.confirm });
+		}
+		setCanType(true);
+	}, [addMessage, pushStatus, whenFinishedToolProps, workflow]);
+
 	const handleSubmit = useCallback(
 		async (message) => {
 			// Suggestions reach the agent without the textarea; disabling it isn't enough.
@@ -189,6 +264,9 @@ export const Agent = () => {
 			setWaitingOnToolOrUser(false);
 			agentWorking.current = false;
 			addMessage('message', { role: 'user', content: message });
+
+			// Without this a typed message would drop the workflow and close the canvas.
+			if (canvasOpen) return handleCanvasMessage();
 
 			// Let some phrases auto load workflows
 			const bypass = getWorkflowByExample(message);
@@ -229,7 +307,9 @@ export const Agent = () => {
 		[
 			addMessage,
 			block,
+			canvasOpen,
 			findAgent,
+			handleCanvasMessage,
 			mergeWorkflowData,
 			whenFinishedToolProps,
 			setWorkflow,
@@ -431,20 +511,19 @@ export const Agent = () => {
 				});
 			}
 			setWorkflow(null);
+			useCanvasStore.getState().endSession();
 
 			const url = getRedirectUrl(redirectTo, whenFinishedToolProps?.inputs);
 			const refreshForAbility = isAbilityTool(id);
 			if (url || redirectUrl || shouldRefreshPage || refreshForAbility) {
-				await new Promise((resolve) => setTimeout(resolve, 1000));
+				return doReload(url || redirectUrl);
 			}
-			if (url) return window.location.assign(url);
-			if (redirectUrl) return window.location.assign(redirectUrl);
-			if (shouldRefreshPage || refreshForAbility)
-				return window.location.reload();
 			cleanup();
 		};
 		const handleCancel = ({ detail }) => {
 			if (toolWorking.current) return;
+			// Without this a canvas closed mid-turn keeps replying into the chat.
+			controller.abort('Workflow aborted');
 			const { answerId, whenFinishedTool } =
 				detail.whenFinishedToolProps?.agentResponse || {};
 			addMessage('workflow', {
@@ -456,6 +535,7 @@ export const Agent = () => {
 				suggestions: getSuggestions(),
 			});
 			setWorkflow(null);
+			useCanvasStore.getState().endSession();
 			cleanup();
 		};
 		const handleRetry = () => {
@@ -614,7 +694,8 @@ export const Agent = () => {
 				});
 				// If static, add it as a message
 				const { id, inputs, static: staticC } = agentResponse.whenFinishedTool;
-				if (staticC) {
+				// A canvas workflow renders in the canvas and ends on close or submit.
+				if (staticC && !workflow.whenFinished?.canvas) {
 					addMessage('workflow-component', {
 						id,
 						status: 'completed',
@@ -762,36 +843,41 @@ export const Agent = () => {
 	const working = !canType && chatAvailable;
 
 	return (
-		<Chat busy={busy} working={working}>
-			<div className="relative z-50 flex h-full flex-col justify-between overflow-auto">
-				<ChatMessages
-					redirectComponent={
-						workflow?.needsRedirect?.() ? workflow.redirectComponent : null
-					}
-				/>
-				<div>
-					<div className="relative flex flex-col px-4 pb-2 pt-2.5 shadow-lg-flipped">
-						<UsageMessage
-							onReady={() => {
-								cleanup();
-								pushStatus('credits-restored');
-							}}
-						/>
-					</div>
-					<div className="p-4 pb-2 pt-0">
-						<ChatInput
-							disabled={!canType || !chatAvailable || !!qaSuggestions}
-							handleSubmit={handleSubmit}
-						/>
-					</div>
-					<div className="text-pretty px-4 pb-2 text-center text-xss leading-none text-gray-700">
-						{__(
-							'AI Agent can make mistakes. Check changes before saving.',
-							'extendify-local',
-						)}
+		<>
+			<Canvas />
+			<Chat busy={busy} working={working}>
+				<div className="relative z-50 flex h-full flex-col justify-between overflow-auto">
+					<ChatMessages
+						redirectComponent={
+							workflow?.needsRedirect?.() ? workflow.redirectComponent : null
+						}
+					/>
+					<div>
+						<div className="relative flex flex-col px-4 pb-2 pt-2.5 shadow-lg-flipped">
+							<UsageMessage
+								onReady={() => {
+									cleanup();
+									pushStatus('credits-restored');
+								}}
+							/>
+						</div>
+						<div className="p-4 pb-2 pt-0">
+							<ChatInput
+								disabled={
+									!canType || !chatAvailable || !!qaSuggestions || leavingPage
+								}
+								handleSubmit={handleSubmit}
+							/>
+						</div>
+						<div className="text-pretty px-4 pb-2 text-center text-xss leading-none text-gray-700">
+							{__(
+								'AI Agent can make mistakes. Check changes before saving.',
+								'extendify-local',
+							)}
+						</div>
 					</div>
 				</div>
-			</div>
-		</Chat>
+			</Chat>
+		</>
 	);
 };

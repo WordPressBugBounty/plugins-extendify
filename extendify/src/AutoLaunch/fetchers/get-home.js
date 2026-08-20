@@ -1,4 +1,7 @@
-import { applyDesignBuildHero } from '@auto-launch/fetchers/get-design-build';
+import {
+	applyDesignBuildHero,
+	applyDesignBuildNav,
+} from '@auto-launch/fetchers/get-design-build';
 import { getHomeShape, homeTemplateShape } from '@auto-launch/fetchers/shape';
 import {
 	fetchWithTimeout,
@@ -9,6 +12,7 @@ import { getHeadersAndFooters } from '@auto-launch/functions/wp';
 import { PATTERNS_HOST } from '@constants';
 import { digest } from '@shared/api/digest';
 import { reqDataBasics } from '@shared/lib/data';
+import { siteImageUrlsByType } from '@shared/lib/site-images';
 import { __ } from '@wordpress/i18n';
 
 const url = `${PATTERNS_HOST}/api/home`;
@@ -45,7 +49,7 @@ export const handleHome = async ({
 	const body = JSON.stringify({
 		...reqDataBasics,
 		siteProfile,
-		siteImages,
+		siteImages: siteImageUrlsByType(siteImages),
 		sitePlugins,
 		aiHeaders,
 		// If pages are passed in they may be used
@@ -72,6 +76,11 @@ export const handleHome = async ({
 	}
 
 	const template = homeTemplateShape.parse(await response.json());
+	template.patterns = applyDesignBuildNav(
+		template.patterns,
+		designBuild,
+		siteProfile.structure,
+	);
 	template.patterns = applyDesignBuildHero(template.patterns, designBuild);
 
 	const parts = await resolveTemplateParts({ siteProfile, designBuild });

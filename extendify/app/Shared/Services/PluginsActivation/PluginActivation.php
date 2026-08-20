@@ -23,6 +23,11 @@ abstract class PluginActivation
         return false;
     }
 
+    public static function isEligible(): bool
+    {
+        return true;
+    }
+
     protected static function pluginNotActiveResponse(): \WP_REST_Response
     {
         return new \WP_REST_Response(
@@ -49,6 +54,8 @@ abstract class PluginActivation
         $body = (array) ($request->get_param('body') ?? []);
 
         $response = \wp_safe_remote_post(static::API_URL, [
+            // http_request_args only lifts Extendify hosts, and it overrides this value if it ever matches.
+            'timeout' => 15,
             'headers' => array_merge(['Content-Type' => 'application/json'], $headers),
             'body' => \wp_json_encode(array_merge(['email' => $email], $body)),
         ]);

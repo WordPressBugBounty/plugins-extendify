@@ -11,6 +11,7 @@ import {
 	getStyleShape,
 } from '@auto-launch/fetchers/shape';
 import { clearSiteImages } from '@auto-launch/functions/wp';
+import { siteImageUrls } from '@shared/lib/site-images';
 import { safeLocalStorage } from '@shared/state/safe-local-storage';
 import { __ } from '@wordpress/i18n';
 import { create } from 'zustand';
@@ -181,9 +182,11 @@ export const useLaunchDataStore = create(
 				...rest
 			} = state;
 			return Object.fromEntries(
-				Object.entries(rest).filter(([, v]) =>
-					Array.isArray(v) ? v.length > 0 : Boolean(v),
-				),
+				Object.entries(rest).filter(([key, v]) => {
+					// An empty set means the fetch failed; keeping it skips the retry.
+					if (key === 'siteImages') return siteImageUrls(v).length > 0;
+					return Array.isArray(v) ? v.length > 0 : Boolean(v);
+				}),
 			);
 		},
 	}),

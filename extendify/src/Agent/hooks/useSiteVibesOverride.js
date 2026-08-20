@@ -1,3 +1,4 @@
+import { refreshBlockHighlight } from '@agent/lib/block-highlight';
 import { isInEditor } from '@agent/lib/util';
 import { useCallback, useEffect, useRef, useState } from '@wordpress/element';
 
@@ -26,6 +27,7 @@ export const useSiteVibesOverride = ({ css, slug }) => {
 			blockStyles.current = style.innerHTML;
 		}
 		style.innerHTML = transformVibeCSS(css, slug);
+		refreshBlockHighlight();
 	}, [css, slug, onEditor]);
 
 	useEffect(() => {

@@ -17,7 +17,7 @@ import {
 } from './lib/keyboard-undo';
 import { fetchLinkSuggestions } from './lib/link-suggestions';
 // Side-effect import: subscribes html.extendify-quick-edit-on before first paint.
-import { useEditModeStore } from './state/edit-mode';
+import { STORAGE_KEY, useEditModeStore } from './state/edit-mode';
 import { useQuickEditStore } from './state/store';
 
 import './quick-edit.css';
@@ -34,9 +34,7 @@ import './quick-edit.css';
 	if (!window.extQuickEditData?.defaultOn) return;
 	let persisted;
 	try {
-		persisted = JSON.parse(
-			localStorage.getItem('extendify-quick-edit-mode') ?? 'null',
-		);
+		persisted = JSON.parse(localStorage.getItem(STORAGE_KEY) ?? 'null');
 	} catch {
 		persisted = null;
 	}
