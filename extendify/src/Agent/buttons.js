@@ -50,7 +50,8 @@ domReady(() => {
 	agent.style.position = 'sticky';
 	agent.style.top = 'calc(100% - var(--extendify-agent-mobile-btn-height))';
 	agent.style.bottom = '0';
-	agent.style.zIndex = '99999';
+	// Under the canvas scrim the tap that restores the chat never lands.
+	agent.style.zIndex = '999999';
 	document.body.appendChild(agent);
 	render(<Mobile />, agent);
 });

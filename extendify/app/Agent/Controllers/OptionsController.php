@@ -149,8 +149,25 @@ class OptionsController
 
         return [
             'name' => $name,
-            'value' => mb_strcut($value, 0, self::MAX_VALUE_BYTES),
+            'value' => self::cut($value, self::MAX_VALUE_BYTES),
             'truncated' => 'Cut after ' . self::MAX_VALUE_BYTES . ' bytes, of ' . $size . ' the option holds.',
         ];
+    }
+
+    /**
+     * Cut at a byte cap without splitting a multibyte character.
+     *
+     * @param string  $value The string to cut.
+     * @param integer $bytes The cap.
+     * @return string
+     */
+    private static function cut($value, $bytes)
+    {
+        // A UTF-8 lead byte the cap separated from its continuation bytes.
+        return (string) preg_replace(
+            '/(?:[\xC2-\xDF]|[\xE0-\xEF][\x80-\xBF]?|[\xF0-\xF4][\x80-\xBF]{0,2})$/D',
+            '',
+            substr($value, 0, $bytes)
+        );
     }
 }

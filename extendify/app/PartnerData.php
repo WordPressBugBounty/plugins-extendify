@@ -60,6 +60,7 @@ class PartnerData
         'domainTLDs' => ['com', 'net'],
         'priorityDomainTLDs' => [],
         'stagingSites' => ['wordpress'],
+        'trialDomains' => [],
         'domainSearchURL' => '',
         'showDraft' => false,
         'showChat' => false,
@@ -130,6 +131,7 @@ class PartnerData
         self::$config['priorityDomainTLDs'] = ($data['priorityDomainTLDs']
             ?? self::$config['priorityDomainTLDs']);
         self::$config['stagingSites'] = array_map('trim', ($data['stagingSites'] ?? self::$config['stagingSites']));
+        self::$config['trialDomains'] = array_map('trim', ($data['trialDomains'] ?? self::$config['trialDomains']));
         self::$config['domainSearchURL'] = ($data['domainSearchURL'] ?? self::$config['domainSearchURL']);
         self::$logo = isset($data['logo'][0]['thumbnails']['large']['url'])
             ? $data['logo'][0]['thumbnails']['large']['url']

@@ -1,0 +1,1 @@
+<?php return array('dependencies' => array('react', 'react-jsx-runtime', 'wp-api-fetch', 'wp-dom-ready', 'wp-element', 'wp-i18n', 'wp-primitives'), 'version' => 'f36e85970521abd48ace', 'handle' => 'undefined-extendify-notifications-2b29baf418ebf2f7d8dd');

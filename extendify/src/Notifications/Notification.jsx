@@ -19,6 +19,7 @@ export const Notification = ({ slot }) => {
 
 	const slug = notification?.slug;
 	const source = notification?.source;
+	const dismissible = notification?.dismissible ?? false;
 	// Only wp-admin defines pagenow; frontend slots never mount there.
 	const page =
 		window.pagenow ?? (slot.startsWith('frontend-') ? 'frontend' : '');
@@ -52,6 +53,7 @@ export const Notification = ({ slot }) => {
 				notification={notification}
 				href={href}
 				external={external}
+				dismissible={dismissible}
 				onDismiss={dismiss}
 				onClick={click}
 			/>

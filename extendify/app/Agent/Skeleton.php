@@ -129,10 +129,12 @@ class Skeleton
                     position: fixed;
                     top: <?php echo (int) self::FRAME; ?>px;
                     right: <?php echo (int) self::FRAME; ?>px;
-                    bottom: <?php echo (int) self::FRAME; ?>px;
+                    bottom: calc(<?php echo (int) self::FRAME; ?>px + var(--extendify-notification-bar-height, 0px));
                     left: <?php echo (int) self::WIDTH; ?>px;
                     border-radius: 1rem;
                     box-shadow: 0 20px 25px -5px #0000001a, 0 8px 10px -6px #0000001a, #e0e0e0 0 0 0 9999px;
+                    /* Unclipped, the 9999px shadow covers the notification bar. */
+                    clip-path: inset(-9999px -9999px -<?php echo (int) self::FRAME; ?>px -9999px);
                     pointer-events: none;
                     z-index: 100000;
                 }
@@ -140,7 +142,7 @@ class Skeleton
                     display: block;
                     position: fixed;
                     top: 0;
-                    bottom: 0;
+                    bottom: var(--extendify-notification-bar-height, 0px);
                     left: 0;
                     width: <?php echo (int) self::WIDTH; ?>px;
                     padding: <?php echo (int) self::FRAME; ?>px;

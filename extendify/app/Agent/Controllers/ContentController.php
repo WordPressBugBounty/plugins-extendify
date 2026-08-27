@@ -261,29 +261,70 @@ class ContentController
      */
     private static function snippets($text, $query, $context)
     {
-        $length = mb_strlen($query);
-        $end = mb_strlen($text);
-
-        $matches = [];
-        $count = 0;
-        $quoted = 0;
-        $offset = 0;
         // Turkish İ lower cases to two characters, so a folded copy's offsets miss the match.
-        while (($at = mb_stripos($text, $query, $offset)) !== false) {
-            $count++;
-            $offset = $at + $length;
+        $pattern = '/' . preg_quote($query, '/') . '/iu';
+        if (!preg_match_all($pattern, $text, $found, PREG_OFFSET_CAPTURE)) {
+            return ['matches' => [], 'count' => 0];
+        }
+
+        $end = strlen($text);
+        $matches = [];
+        $quoted = 0;
+        foreach ($found[0] as $occurrence) {
+            list($match, $at) = $occurrence;
             if (count($matches) >= self::MAX_MATCHES || $at < $quoted) {
                 continue;
             }
 
-            $from = max(0, $at - $context);
-            $quoted = min($end, $at + $length + $context);
-            $matches[] = ($from > 0 ? '…' : '')
-                . mb_substr($text, $from, $quoted - $from)
+            $before = self::quoteBefore($text, $at, $context);
+            $after = self::quoteAfter($text, $at + strlen($match), $context);
+            $quoted = $at + strlen($match) + strlen($after);
+            $matches[] = ($at > strlen($before) ? '…' : '')
+                . $before . $match . $after
                 . ($quoted < $end ? '…' : '');
         }
 
-        return ['matches' => $matches, 'count' => $count];
+        return ['matches' => $matches, 'count' => count($found[0])];
+    }
+
+    /**
+     * Up to $context characters of $text ending at byte offset $at.
+     *
+     * @param string  $text    The text a match was found in.
+     * @param integer $at      Where the match begins, in bytes.
+     * @param integer $context How many characters to quote.
+     * @return string
+     */
+    private static function quoteBefore($text, $at, $context)
+    {
+        // A character is at most four bytes, so the window always holds enough.
+        $slice = substr($text, max(0, $at - (4 * $context)), min($at, 4 * $context));
+        // A slice starting mid-character would fail the /u match and empty the quote.
+        $slice = (string) preg_replace('/^[\x80-\xBF]+/', '', $slice);
+        preg_match('/.{0,' . $context . '}$/su', $slice, $match);
+
+        return $match[0] ?? '';
+    }
+
+    /**
+     * Up to $context characters of $text starting at byte offset $at.
+     *
+     * @param string  $text    The text a match was found in.
+     * @param integer $at      Where the match ends, in bytes.
+     * @param integer $context How many characters to quote.
+     * @return string
+     */
+    private static function quoteAfter($text, $at, $context)
+    {
+        // A slice ending mid-character would fail the /u match and empty the quote.
+        $slice = (string) preg_replace(
+            '/(?:[\xC2-\xDF]|[\xE0-\xEF][\x80-\xBF]?|[\xF0-\xF4][\x80-\xBF]{0,2})$/D',
+            '',
+            substr($text, $at, 4 * $context)
+        );
+        preg_match('/^.{0,' . $context . '}/su', $slice, $match);
+
+        return $match[0] ?? '';
     }
 
     /**

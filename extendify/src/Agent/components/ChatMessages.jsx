@@ -48,6 +48,13 @@ export const ChatMessages = () => {
 	const [ready, setReady] = useState(false);
 	const userScrolledAway = useRef(false);
 	const confirmScrolledFor = useRef(null);
+	// Remounting into another layout would otherwise animate the whole backlog past.
+	const settling = useRef(true);
+	const behavior = () => {
+		if (!settling.current) return 'smooth';
+		settling.current = false;
+		return 'auto';
+	};
 
 	const lastId = messages.at(-1)?.id;
 	const lastDetails = messages.at(-1)?.details;
@@ -130,7 +137,7 @@ export const ChatMessages = () => {
 			const overflows =
 				last.getBoundingClientRect().bottom > c.getBoundingClientRect().bottom;
 			if (!overflows) return;
-			last.scrollIntoView({ behavior: 'smooth', block: 'end' });
+			last.scrollIntoView({ behavior: behavior(), block: 'end' });
 		});
 		return () => cancelAnimationFrame(id);
 	}, [ready, isUserMessage, messages, pinTarget]);
@@ -160,7 +167,7 @@ export const ChatMessages = () => {
 				target.getBoundingClientRect().top -
 				scrollArea.getBoundingClientRect().top;
 			scrollArea.style.minHeight = `${offset + c.clientHeight}px`;
-			target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+			target.scrollIntoView({ behavior: behavior(), block: 'start' });
 		};
 		pinWhenOutOfView();
 		// The confirm grows while its preview loads and can leave the viewport.
@@ -262,6 +269,19 @@ export const ChatMessages = () => {
 					}
 					if (message.type === 'workflow-component') {
 						return <WorkflowComponent key={message.id} message={message} />;
+					}
+					if (message.type === 'canvas-notice') {
+						return (
+							<ToolReceipt key={message.id}>
+								{
+									// translators: Shown in the agent chat when the user asks for something the open canvas cannot do. Canvas is the panel open on screen beside the chat.
+									__(
+										'Canvas interactions are limited. When finished, use the button in the top corner to exit.',
+										'extendify-local',
+									)
+								}
+							</ToolReceipt>
+						);
 					}
 					if (
 						message.type === 'tool' &&

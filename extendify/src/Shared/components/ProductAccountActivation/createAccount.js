@@ -2,6 +2,7 @@ const describeError = (error, signal) => ({
 	message: error?.message,
 	code: error?.code,
 	data: error?.data,
+	httpStatus: error?.httpStatus,
 	// api-fetch collapses our AbortSignal.timeout into a generic fetch_error.
 	timedOut: signal.aborted,
 });

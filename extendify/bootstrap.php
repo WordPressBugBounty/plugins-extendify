@@ -30,6 +30,7 @@ use Extendify\PluginNotifications\Admin as PluginNotificationsAdmin;
 use Extendify\Shared\Admin as SharedAdmin;
 use Extendify\Shared\DataProvider\NotificationData;
 use Extendify\Shared\DataProvider\ResourceData;
+use Extendify\Shared\Services\BlockStyleVariations;
 use Extendify\Shared\Services\ForcePluginReinstall;
 use Extendify\Shared\Services\Import\ImagesImporter;
 use Extendify\Shared\Services\PluginRedirectDisabler;
@@ -106,6 +107,9 @@ if (!defined('EXTENDIFY_IS_THEME_EXTENDABLE')) {
 
     // Force-reinstall support for /wp/v2/plugins (opt-in via request header).
     ForcePluginReinstall::register();
+
+    // Keeps our design variation names registered so global styles can hold them.
+    BlockStyleVariations::register();
 
     // Their registration callback comes in unauthenticated, so this cannot sit behind the capability gate.
     SimplyBook::register();

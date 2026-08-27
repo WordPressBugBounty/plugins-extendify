@@ -216,19 +216,11 @@ html.extendify-quick-edit-on #extendify-toolbar .ext-tb-toggle-thumb {
 /* When Extendify Agent sidebar is open, reframe the toolbar to
    match the way Extendify reframes the core admin bar (slot it
    next to the sidebar inside the rounded frame). */
-/* no-prefix */
-#extendify-toolbar.ext-tb-agent-open {
-	top: 8px;
-	left: 384px;
-	right: 8px;
-	border-radius: 8px 8px 0 0;
-	overflow: hidden;
-}
-
 /* 783px tracks Skeleton::DESKTOP; no 384px rail below it. */
 @media (min-width: 783px) {
 	/* .ext-tb-agent-open lands only once the sidebar mounts; the rail needs it sooner. */
 	/* no-prefix */
+	#extendify-toolbar.ext-tb-agent-open,
 	html.extendify-agent-skeleton #extendify-toolbar {
 		top: 8px;
 		left: 384px;

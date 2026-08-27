@@ -72,6 +72,8 @@ export const handleDesignBuild = async ({ urlParams }) => {
 			{ fallback: true },
 		);
 		const siteStyle = { ...style, variation };
+		// The Agent reads extendify_siteStyle; the legacy row keeps old readers.
+		await updateOption('extendify_siteStyle', siteStyle);
 		await updateOption('extendify_site_style', siteStyle);
 		await updateOption('extendify_animation_settings', {
 			type: style.animation ?? 'fade',

@@ -1,4 +1,4 @@
-import { useCanvasWorkflow } from '@agent/components/Canvas';
+import { useCanvasAssist } from '@agent/components/Canvas';
 import { PageDocument } from '@agent/components/PageDocument';
 import { cancelRequest } from '@agent/icons';
 import { useChatStore } from '@agent/state/chat';
@@ -39,7 +39,7 @@ export const ChatInput = ({ disabled, handleSubmit }) => {
 	const dirtyRef = useRef(false);
 	const [historyIndex, setHistoryIndex] = useState(null);
 	const { workflow } = useWorkflowStore();
-	const canvasWorkflow = useCanvasWorkflow();
+	const canvasAssist = useCanvasAssist();
 	const block = useQuickEditStore((s) => s.agentBlock);
 	// Quick Edit's modals mount off `selected` too, so this covers them.
 	const editing = useQuickEditStore((s) => Boolean(s.selected));
@@ -47,7 +47,7 @@ export const ChatInput = ({ disabled, handleSubmit }) => {
 	const inputTrimmed = input.trim();
 	const overLimit = inputTrimmed.length > INPUT_LIMIT;
 	// The workflow stays set with a canvas open, so this would show cancel.
-	const busy = disabled || (Boolean(workflow?.id) && !canvasWorkflow);
+	const busy = disabled || (Boolean(workflow?.id) && !canvasAssist);
 	const inputDisabled = disabled || editing;
 
 	// resize the height of the textarea based on the content

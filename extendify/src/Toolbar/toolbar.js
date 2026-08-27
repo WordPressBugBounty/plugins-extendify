@@ -71,28 +71,40 @@ function waitFor(predicate, maxTries, intervalMs) {
  * agent bundle.
  */
 function watchAgentSidebar(toolbar, aiBtn) {
-	let attached = false;
+	const setOpen = (open) => {
+		toolbar.classList.toggle('ext-tb-agent-open', open);
+		if (!aiBtn) return;
+		aiBtn.inert = open;
+		if (open) {
+			aiBtn.setAttribute('tabindex', '-1');
+			aiBtn.setAttribute('aria-hidden', 'true');
+		} else {
+			aiBtn.removeAttribute('tabindex');
+			aiBtn.removeAttribute('aria-hidden');
+		}
+	};
+	// A resize past the mobile breakpoint replaces this node, so never latch on one.
+	let watched = null;
+	let inertObserver = null;
 	const observer = watch(
 		document.body,
 		{ childList: true, subtree: true },
 		() => {
 			const sidebar = document.getElementById(AGENT_SIDEBAR_ID);
-			if (!sidebar || attached) return;
-			attached = true;
-			const update = () => {
-				const open = !sidebar.hasAttribute('inert');
-				toolbar.classList.toggle('ext-tb-agent-open', open);
-				if (!aiBtn) return;
-				aiBtn.inert = open;
-				if (open) {
-					aiBtn.setAttribute('tabindex', '-1');
-					aiBtn.setAttribute('aria-hidden', 'true');
-				} else {
-					aiBtn.removeAttribute('tabindex');
-					aiBtn.removeAttribute('aria-hidden');
-				}
-			};
-			watch(sidebar, { attributes: true, attributeFilter: ['inert'] }, update);
+			if (sidebar === watched) return;
+			watched = sidebar;
+			inertObserver?.disconnect();
+			inertObserver = null;
+			if (!sidebar) {
+				setOpen(false);
+				return;
+			}
+			const update = () => setOpen(!sidebar.hasAttribute('inert'));
+			inertObserver = watch(
+				sidebar,
+				{ attributes: true, attributeFilter: ['inert'] },
+				update,
+			);
 			update();
 		},
 	);

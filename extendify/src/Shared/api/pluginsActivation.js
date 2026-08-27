@@ -68,17 +68,28 @@ const getRecaptchaToken = async (action, siteKey, timings = {}) => {
 	}
 };
 
-const createAccount = async ({
+// api-fetch throws the parsed body and drops the Response, so parse:false is the only way to keep the status.
+const post = async (options) => {
+	try {
+		await apiFetch({ ...options, method: 'POST', parse: false });
+	} catch (error) {
+		if (typeof error?.json !== 'function') throw error;
+
+		const body = await error.json().catch(() => ({ code: 'invalid_json' }));
+		throw { ...body, httpStatus: error.status };
+	}
+};
+
+const createAccount = ({
 	slug,
 	email,
 	marketingConsent,
 	termsAgreed,
 	signal,
 	scriptData,
-}) => {
-	await apiFetch({
+}) =>
+	post({
 		path: `extendify/v1/${slug}/create-account`,
-		method: 'POST',
 		data: {
 			email,
 			marketingConsent,
@@ -87,7 +98,6 @@ const createAccount = async ({
 		},
 		signal,
 	});
-};
 
 /*
  * Plugin entries shape:
@@ -118,9 +128,8 @@ export const pluginsActivation = {
 				rest_route: '/extendify/v1/simplybook/create-account',
 			});
 
-			await apiFetch({
+			await post({
 				url,
-				method: 'POST',
 				data: {
 					email,
 					marketingConsent,
@@ -158,9 +167,8 @@ export const pluginsActivation = {
 			);
 
 			// The "/v1" segment is what makes Metricool register its logout route.
-			await apiFetch({
+			await post({
 				path: 'extendify/v1/metricool/v1/create-account',
-				method: 'POST',
 				data: {
 					email,
 					marketingConsent,

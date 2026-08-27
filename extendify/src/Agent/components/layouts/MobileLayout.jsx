@@ -32,6 +32,7 @@ export const MobileLayout = ({ children }) => {
 
 	return createPortal(
 		<div
+			data-extendify-agent-panel
 			className={`fixed inset-0 z-max-1 items-center justify-center ${
 				minimized ? 'hidden' : 'flex'
 			}`}

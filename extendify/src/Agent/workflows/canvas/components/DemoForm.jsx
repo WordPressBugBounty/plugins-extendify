@@ -205,11 +205,12 @@ const StepBadge = ({ index, active, done }) => {
 };
 
 const StepCard = ({ step, index, activeStep, isLast, onFinish }) => {
-	const { values, setValue, goToStep } = useCanvasStore();
+	const { values, setValue, goToStep, reached } = useCanvasStore();
 	const reduceMotion = useReducedMotion();
 	const card = useRef(null);
 	const active = index === activeStep;
 	const done = index < activeStep;
+	const opened = index <= reached;
 
 	useEffect(() => {
 		if (!active) return;
@@ -246,39 +247,43 @@ const StepCard = ({ step, index, activeStep, isLast, onFinish }) => {
 							<StepBadge index={index} active={active} done={done} />
 							{step.title}
 						</div>
-						<div className="flex min-w-0 flex-col gap-4 p-4">
-							{Object.entries(step.inputSchema.properties).map(
-								([name, property]) => (
-									<Field
-										key={name}
-										name={name}
-										property={property}
-										value={values[name] ?? ''}
-										onChange={(value) => setValue(name, value)}
-									/>
-								),
-							)}
-						</div>
-					</div>
-					<div className="flex justify-end gap-2 p-3">
-						{index > 0 ? (
-							<button
-								type="button"
-								className="rounded-sm border border-gray-500 bg-white px-4 py-2 text-sm text-gray-900"
-								onClick={() => goToStep(index - 1)}
-							>
-								{__('Back', 'extendify-local')}
-							</button>
+						{opened ? (
+							<div className="flex min-w-0 flex-col gap-4 p-4">
+								{Object.entries(step.inputSchema.properties).map(
+									([name, property]) => (
+										<Field
+											key={name}
+											name={name}
+											property={property}
+											value={values[name] ?? ''}
+											onChange={(value) => setValue(name, value)}
+										/>
+									),
+								)}
+							</div>
 						) : null}
-						<button
-							type="submit"
-							className="rounded-sm border border-design-main bg-design-main px-4 py-2 text-sm text-white"
-						>
-							{isLast
-								? __('Submit', 'extendify-local')
-								: __('Next', 'extendify-local')}
-						</button>
 					</div>
+					{opened ? (
+						<div className="flex justify-end gap-2 p-3">
+							{index > 0 ? (
+								<button
+									type="button"
+									className="rounded-sm border border-gray-500 bg-white px-4 py-2 text-sm text-gray-900"
+									onClick={() => goToStep(index - 1)}
+								>
+									{__('Back', 'extendify-local')}
+								</button>
+							) : null}
+							<button
+								type="submit"
+								className="rounded-sm border border-design-main bg-design-main px-4 py-2 text-sm text-white"
+							>
+								{isLast
+									? __('Submit', 'extendify-local')
+									: __('Next', 'extendify-local')}
+							</button>
+						</div>
+					) : null}
 				</fieldset>
 			</form>
 		</div>
@@ -331,7 +336,7 @@ export const DemoForm = ({ onConfirm }) => {
 	}
 
 	return (
-		<div className="flex flex-col gap-3 pb-[70vh]">
+		<div className="flex flex-col gap-3 pb-[200px]">
 			{steps.map((step, index) => (
 				<StepCard
 					key={step.id}

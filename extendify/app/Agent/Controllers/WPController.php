@@ -52,6 +52,10 @@ class WPController
         'glasgow',
         'royal',
         'obsidian',
+        'heath',
+        'signal',
+        'marzipan',
+        'butterscotch',
     ];
 
     /**
@@ -285,7 +289,8 @@ class WPController
                 'letterSpacing' => $typography['letterSpacing'] ?? null,
                 'fontStyle' => $typography['fontStyle'] ?? null,
                 'fontWeight' => $typography['fontWeight'] ?? null,
-                'textTransform' => $typography['textTransform'] ?? 'none',
+                // Defaulting to 'none' would cancel the applied vibe's uppercase.
+                'textTransform' => $typography['textTransform'] ?? null,
             ], function ($v) {
                 return $v !== null;
             })

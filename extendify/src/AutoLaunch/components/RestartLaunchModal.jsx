@@ -5,6 +5,14 @@ import { useState } from '@wordpress/element';
 import { __, sprintf } from '@wordpress/i18n';
 import { chevronRight, Icon } from '@wordpress/icons';
 
+// A build-id deep link must resume its build after the restart cleanup.
+export const restartUrl = (href, buildId) => {
+	if (!buildId) return null;
+	const url = new URL(href);
+	url.searchParams.set('build-id', buildId);
+	return url.toString();
+};
+
 export const RestartLaunchModal = ({ pages }) => {
 	const { resetSiteInformation } = window.extLaunchData;
 	const { navigationIds, templatePartsIds, pageWithTitleTemplateId } =
@@ -19,6 +27,7 @@ export const RestartLaunchModal = ({ pages }) => {
 
 	const handleOk = async () => {
 		setProcessing(true);
+		const buildId = useLaunchDataStore.getState().urlParams?.['build-id'];
 		resetLaunchData({ exclude: ['descriptionBackup'] });
 		// remove any workflow info
 		localStorage.removeItem(
@@ -107,6 +116,11 @@ export const RestartLaunchModal = ({ pages }) => {
 			);
 		}
 
+		const target = restartUrl(window.location.href, buildId);
+		if (target) {
+			window.location.href = target;
+			return;
+		}
 		window.location.reload();
 	};
 

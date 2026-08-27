@@ -88,42 +88,41 @@ export const ProductAccountActivation = () => {
 
 	return (
 		plugins.length > 0 && (
-			<Dialog
-				open={isOpen}
-				onClose={() => {}}
-				className="relative z-high extendify-shared"
-			>
-				<DialogBackdrop
-					transition
-					className="fixed inset-0 bg-black/30 transition-opacity data-closed:opacity-0"
-				/>
-
-				<div className="z-10 fixed inset-0 flex w-screen items-center justify-center p-4 [body:has(#extendify-agent-chat)_&]:ml-96 [body:has(#extendify-agent-chat)_&]:w-[calc(100%-24rem)]">
-					<DialogPanel
+			<Dialog open={isOpen} onClose={() => {}} className="extendify-shared">
+				{/* Utilities on the scope-class element itself never match the prefixed CSS. */}
+				<div className="relative z-high">
+					<DialogBackdrop
 						transition
-						className="relative w-full max-w-208 bg-white rounded-lg shadow-xl transition-all data-closed:opacity-0 data-closed:scale-95"
-					>
-						{!isFinished && !isLoading && (
-							<SetupPlugins
-								plugins={plugins}
-								setPlugins={setPlugins}
-								handleCreateAccounts={handleCreateAccounts}
-								email={email}
-								setEmail={setEmail}
-								handleClose={handleClose}
-								marketingConsent={marketingConsent}
-								setMarketingConsent={setMarketingConsent}
-								termsAgreed={termsAgreed}
-								setTermsAgreed={setTermsAgreed}
-							/>
-						)}
+						className="fixed inset-0 bg-black/30 transition-opacity data-closed:opacity-0"
+					/>
 
-						{!isFinished && isLoading && <Loading />}
+					<div className="z-10 fixed inset-0 flex w-screen items-center justify-center p-4 [body:has(#extendify-agent-chat)_&]:ml-96 [body:has(#extendify-agent-chat)_&]:w-[calc(100%-24rem)]">
+						<DialogPanel
+							transition
+							className="relative w-full max-w-208 bg-white rounded-lg shadow-xl transition-all data-closed:opacity-0 data-closed:scale-95"
+						>
+							{!isFinished && !isLoading && (
+								<SetupPlugins
+									plugins={plugins}
+									setPlugins={setPlugins}
+									handleCreateAccounts={handleCreateAccounts}
+									email={email}
+									setEmail={setEmail}
+									handleClose={handleClose}
+									marketingConsent={marketingConsent}
+									setMarketingConsent={setMarketingConsent}
+									termsAgreed={termsAgreed}
+									setTermsAgreed={setTermsAgreed}
+								/>
+							)}
 
-						{isFinished && (
-							<SetupComplete handleClose={() => setIsOpen(false)} />
-						)}
-					</DialogPanel>
+							{!isFinished && isLoading && <Loading />}
+
+							{isFinished && (
+								<SetupComplete handleClose={() => setIsOpen(false)} />
+							)}
+						</DialogPanel>
+					</div>
 				</div>
 			</Dialog>
 		)

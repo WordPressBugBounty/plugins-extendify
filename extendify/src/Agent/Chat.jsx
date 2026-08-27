@@ -1,4 +1,6 @@
+import { useCanvasSeat } from '@agent/components/Canvas';
 import { DOMHighlighter } from '@agent/components/DOMHighlighter';
+import { CanvasModalLayout } from '@agent/components/layouts/CanvasModalLayout';
 import { DragResizeLayout } from '@agent/components/layouts/DragResizeLayout';
 import { MobileLayout } from '@agent/components/layouts/MobileLayout';
 import { DESKTOP_MIN_WIDTH, useGlobalStore } from '@agent/state/global';
@@ -9,6 +11,7 @@ import { SidebarLayout } from './components/layouts/SidebarLayout';
 
 export const Chat = ({ busy, working, children }) => {
 	const { setIsMobile, isMobile, mode } = useGlobalStore();
+	const canvasModal = useCanvasSeat() === 'modal';
 	const editModeOn = useEditModeStore((s) => s.on);
 	const block = useQuickEditStore((s) => s.agentBlock);
 	const setBlock = useQuickEditStore((s) => s.setAgentBlock);
@@ -44,6 +47,23 @@ export const Chat = ({ busy, working, children }) => {
 					{children}
 				</div>
 			</MobileLayout>
+		);
+	}
+
+	if (canvasModal) {
+		return (
+			<>
+				{/* The docked panel holds the page's offset, so it stays behind. */}
+				{mode === 'docked-left' ? <SidebarLayout /> : null}
+				<CanvasModalLayout>
+					<div
+						id="extendify-agent-chat"
+						className="flex min-h-0 flex-1 grow flex-col font-sans"
+					>
+						{children}
+					</div>
+				</CanvasModalLayout>
+			</>
 		);
 	}
 

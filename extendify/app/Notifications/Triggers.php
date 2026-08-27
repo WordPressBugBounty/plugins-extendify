@@ -14,7 +14,7 @@ class Triggers
 {
     // phpcs:ignore PSR12.Properties.ConstantVisibility.NotFound -- 7.0 floor: no const visibility
     const PREDICATES = [
-        'staging-domain' => 'onStagingDomain',
+        'trial-domain' => 'onTrialDomain',
     ];
 
     public static function passes($trigger)
@@ -31,10 +31,10 @@ class Triggers
     }
 
     // Substring match, mirroring the domain-suggestion matcher in src/Assist/lib/domains.js.
-    private static function onStagingDomain()
+    private static function onTrialDomain()
     {
         $host = strtolower((string) \wp_parse_url(\home_url(), PHP_URL_HOST));
-        $sites = (array) PartnerData::setting('stagingSites');
+        $sites = (array) PartnerData::setting('trialDomains');
 
         foreach (array_filter($sites, 'is_string') as $site) {
             $site = strtolower(trim($site));

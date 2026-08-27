@@ -9,7 +9,6 @@ import { deepMerge } from '@shared/lib/utils';
 import { create } from 'zustand';
 import { devtools, persist } from 'zustand/middleware';
 
-const onboarding = window.extAgentData.chatHistory?.length === 0;
 const agentResponse = isChangeSiteDesignWorkflowAvailable()
 	? changeSiteDesignWorkflow.example?.agentResponse
 	: variationsWorkflow.example?.agentResponse;
@@ -126,7 +125,7 @@ export const useWorkflowStore = create()(
 		name: `extendify-agent-workflows-${window.extSharedData.siteId}`,
 		merge: (persistedState, currentState) => {
 			// if we are in onboarding mode, add the starting workflow
-			if (onboarding) {
+			if (window.extAgentData?.startOnboarding) {
 				return {
 					...currentState,
 					...persistedState,

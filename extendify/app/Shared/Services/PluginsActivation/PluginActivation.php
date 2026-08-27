@@ -61,7 +61,10 @@ abstract class PluginActivation
         ]);
 
         if (\is_wp_error($response)) {
-            return new \WP_REST_Response(['message' => $response->get_error_message()], 500);
+            return new \WP_REST_Response([
+                'code' => $response->get_error_code(),
+                'message' => $response->get_error_message(),
+            ], 500);
         }
 
         $code = \wp_remote_retrieve_response_code($response);

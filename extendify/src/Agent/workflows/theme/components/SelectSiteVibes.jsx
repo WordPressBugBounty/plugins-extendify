@@ -68,7 +68,7 @@ export const SelectSiteVibes = ({ onConfirm, onCancel }) => {
 		<div className="mb-4 ms-12 me-2 flex flex-col rounded-lg border border-gray-300 bg-gray-50">
 			<div className="rounded-lg border-b border-gray-400 bg-white">
 				<div className="grid gap-3 p-4 grid-cols-2">
-					{shuffled?.slice(0, 10).map(({ slug }, index) => (
+					{shuffled?.slice(0, 12).map(({ slug }, index) => (
 						<Fragment key={slug}>
 							<style>
 								{styles[slug]

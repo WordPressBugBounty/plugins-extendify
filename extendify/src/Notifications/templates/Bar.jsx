@@ -1,26 +1,67 @@
+import { useEffect, useRef } from '@wordpress/element';
 import { __ } from '@wordpress/i18n';
 import { Icon } from '@wordpress/icons';
+import classNames from 'classnames';
+import {
+	bannerButtonVariables,
+	barVariables,
+	buttonHoverClasses,
+	colorsOf,
+} from '../colors';
 import { DismissButton } from '../DismissButton';
 import { iconFor } from '../icons';
 import { externalLinkProps } from '../notification-link';
 
-export const Bar = ({ notification, href, external, onDismiss, onClick }) => {
+export const Bar = ({
+	notification,
+	href,
+	external,
+	dismissible,
+	onDismiss,
+	onClick,
+}) => {
 	const { title, content } = notification;
 	const ctaLabel = notification['cta-label'];
 	const icon = iconFor(notification.icon);
+	const colors = colorsOf(notification);
+	const ref = useRef(null);
+
+	// The agent reads this to keep its panel and the scaled page off the bar.
+	useEffect(() => {
+		const root = document.documentElement;
+		const publish = () =>
+			root.style.setProperty(
+				'--extendify-notification-bar-height',
+				// 0 below the breakpoint, where the bar is display:none.
+				`${ref.current.offsetHeight}px`,
+			);
+
+		publish();
+		const observer = new ResizeObserver(publish);
+		observer.observe(ref.current);
+		return () => {
+			observer.disconnect();
+			root.style.removeProperty('--extendify-notification-bar-height');
+		};
+	}, []);
 
 	return (
 		<aside
+			ref={ref}
 			aria-label={
 				// translators: label for the bar reporting whether the site is public.
 				__('Site status', 'extendify-local')
 			}
 			// Below core's admin-bar breakpoint a full-width banner covers the content it reports on.
-			className="fixed bottom-0 left-0 right-0 z-high-1 hidden items-center gap-4 bg-design-main px-5 py-3.5 text-base text-design-text md:flex [body:has(#extendify-agent-chat)_&]:ml-96"
+			className="fixed bottom-0 left-0 right-0 z-higher hidden items-center gap-4 bg-design-main px-5 py-3.5 text-base text-design-text md:flex"
+			style={barVariables(colors)}
 			data-test="notification-bar"
 		>
 			{icon && (
-				<span className="flex size-10 shrink-0 items-center justify-center rounded-full bg-banner-main text-banner-text">
+				<span
+					className="flex size-10 shrink-0 items-center justify-center rounded-full bg-banner-main text-banner-text"
+					data-test="notification-bar-icon"
+				>
 					<Icon icon={icon} size={24} className="fill-current" />
 				</span>
 			)}
@@ -33,16 +74,22 @@ export const Bar = ({ notification, href, external, onDismiss, onClick }) => {
 					href={href}
 					{...externalLinkProps(external)}
 					onClick={onClick}
-					className="inline-flex h-10 shrink-0 cursor-pointer items-center rounded-md bg-banner-main px-5 text-sm font-medium text-banner-text no-underline hover:opacity-90"
+					className={classNames(
+						'inline-flex h-10 shrink-0 cursor-pointer items-center rounded-md bg-banner-main px-5 text-sm font-medium text-banner-text no-underline',
+						buttonHoverClasses(colors),
+					)}
+					style={bannerButtonVariables(colors)}
 				>
 					{ctaLabel}
 				</a>
 			)}
-			<DismissButton
-				onClick={onDismiss}
-				size={24}
-				className="flex size-8 shrink-0 items-center justify-center rounded-xs text-design-text hover:opacity-80"
-			/>
+			{dismissible && (
+				<DismissButton
+					onClick={onDismiss}
+					size={24}
+					className="flex size-8 shrink-0 items-center justify-center rounded-xs text-design-text hover:opacity-80"
+				/>
+			)}
 		</aside>
 	);
 };

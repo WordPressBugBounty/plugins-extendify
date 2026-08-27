@@ -6,7 +6,11 @@ import {
 	recordAgentActivity,
 } from '@agent/api';
 import { Chat } from '@agent/Chat';
-import { Canvas, useCanvasOpen } from '@agent/components/Canvas';
+import {
+	Canvas,
+	useCanvasAssist,
+	useCanvasOpen,
+} from '@agent/components/Canvas';
 import { ChatInput } from '@agent/components/ChatInput';
 import { ChatMessages } from '@agent/components/ChatMessages';
 import { UsageMessage } from '@agent/components/messages/UsageMessage';
@@ -86,6 +90,8 @@ export const Agent = () => {
 	const [loop, setLoop] = useState(0);
 	const workflow = getWorkflow();
 	const canvasOpen = useCanvasOpen();
+	const canvasAssist = useCanvasAssist();
+	const canvasNoticeShown = useRef(false);
 	const chatAvailable = useMemo(() => isChatAvailable(), [isChatAvailable]);
 	const { addSuggestions, getSuggestions } = useSuggestionsStore();
 	// Options render only while their message is last; a reply dismisses them.
@@ -99,8 +105,10 @@ export const Agent = () => {
 
 	// Without this the input stays disabled for as long as the canvas is open.
 	useEffect(() => {
-		if (canvasOpen) setCanType(true);
-	}, [canvasOpen]);
+		if (canvasOpen && canvasAssist) setCanType(true);
+		// A workflow reached by example carries no sessionId to key this on.
+		if (!canvasOpen) canvasNoticeShown.current = false;
+	}, [canvasOpen, canvasAssist]);
 
 	const cleanup = useCallback(() => {
 		setCanType(true);
@@ -236,6 +244,11 @@ export const Agent = () => {
 					agent: workflow?.agent,
 				});
 			}
+			// The model is never told what is on screen around the canvas.
+			if (response.cannotHelp && !canvasNoticeShown.current) {
+				canvasNoticeShown.current = true;
+				addMessage('canvas-notice', {});
+			}
 			if (!response.tool) break;
 			const { id, inputs, labels } = response.tool;
 			pushStatus('tool-started', labels?.started);
@@ -266,7 +279,7 @@ export const Agent = () => {
 			addMessage('message', { role: 'user', content: message });
 
 			// Without this a typed message would drop the workflow and close the canvas.
-			if (canvasOpen) return handleCanvasMessage();
+			if (canvasOpen && canvasAssist) return handleCanvasMessage();
 
 			// Let some phrases auto load workflows
 			const bypass = getWorkflowByExample(message);
@@ -307,6 +320,7 @@ export const Agent = () => {
 		[
 			addMessage,
 			block,
+			canvasAssist,
 			canvasOpen,
 			findAgent,
 			handleCanvasMessage,

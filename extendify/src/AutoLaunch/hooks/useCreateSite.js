@@ -54,7 +54,7 @@ import {
 	updateTemplatePart,
 	updateVariation,
 } from '@auto-launch/functions/theme';
-import { computeVibeAdjustedBlocks } from '@auto-launch/functions/vibes';
+import { computeVibeAdjustments } from '@auto-launch/functions/vibes';
 import {
 	createBlogSampleData,
 	getOption,
@@ -352,15 +352,11 @@ export const useCreateSite = () => {
 				// translators: vibe in this context is a noun - the feeling of their site design.
 				addStatusMessage(__('Setting the website style', 'extendify-local'));
 				checkIn({ stage: 'compute_vibe' });
-				const vibeBlocks = await computeVibeAdjustedBlocks(
+				const vibe = await computeVibeAdjustments(
 					siteStyle.vibe,
+					variation,
 				).catch(() => null);
-				if (vibeBlocks) {
-					variation = {
-						...variation,
-						styles: { ...variation.styles, blocks: vibeBlocks },
-					};
-				}
+				if (vibe) variation = { ...variation, ...vibe };
 			}
 
 			checkIn({ stage: 'set_vibe' });

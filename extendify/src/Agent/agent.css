@@ -169,9 +169,31 @@ body.extendify-agent-canvas-blurred {
 .extendify-agent-canvas-open .wp-site-blocks > header,
 .extendify-agent-canvas-open .wp-site-blocks > main,
 .extendify-agent-canvas-open .wp-site-blocks > footer,
-.extendify-agent-canvas-open #wpwrap,
+/* Leaves only: a filter re-anchors fixed children — the bar, the menu backdrop. */
+.extendify-agent-canvas-open #adminmenuback,
+.extendify-agent-canvas-open #adminmenuwrap,
+.extendify-agent-canvas-open #wpbody,
+.extendify-agent-canvas-open #wpfooter,
 .extendify-agent-canvas-open #wpadminbar,
+.extendify-agent-canvas-open [data-extendify-agent-emptied],
 .extendify-agent-canvas-open #extendify-toolbar {
 	filter: blur(var(--extendify-canvas-blur, 0px));
 	transition: filter 300ms ease-in-out;
+}
+
+/* no-prefix */
+.extendify-agent-canvas-dims-agent [data-extendify-agent-panel] {
+	filter: blur(var(--extendify-canvas-blur, 0px));
+	transition: filter 300ms ease-in-out;
+}
+
+/* Below 783px the sidebar unmounts, and an offset left behind strands the bar. */
+/* 384 and 8 mirror Skeleton::printStyles; drift shows up as a jump on mount. */
+@media (min-width: 783px) {
+	/* no-prefix */
+	html.extendify-agent-docked #wpadminbar {
+		margin: 8px 8px 0 384px;
+		max-width: calc(100% - 392px);
+		border-radius: 8px 8px 0 0;
+	}
 }

@@ -21,11 +21,13 @@
 }
 
 /* Core's `.ab-item` chrome would frame the pill. Raw lengths, not the spacing
-   scale: the theme vars are scoped below this element. */
+   scale: the theme vars are scoped below this element. Core's fixed height
+   would leave the margins overflowing the bar. */
 /* no-prefix */
 #wpadminbar #wp-admin-bar-extendify-notifications > .ab-item {
 	display: flex !important;
 	align-items: center !important;
+	height: auto !important;
 	margin: 4px 8px !important;
 	padding: 0 !important;
 	background: transparent !important;

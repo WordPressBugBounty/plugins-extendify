@@ -1,3 +1,4 @@
+import { useSiteVibesVariations } from '@agent/hooks/useSiteVibesVariations';
 import { refreshBlockHighlight } from '@agent/lib/block-highlight';
 import { isInEditor } from '@agent/lib/util';
 import { useCallback, useEffect, useRef, useState } from '@wordpress/element';
@@ -14,10 +15,12 @@ const getEditorDocument = () => {
 // update the CSS so that it won't affect the switcher preview area
 const transformVibeCSS = (css, slug) => css.replaceAll(slug, 'natural-1');
 
-export const useSiteVibesOverride = ({ css, slug }) => {
+export const useSiteVibesOverride = ({ css: vibeCss, slug }) => {
 	const blockStyles = useRef(null);
 	const [theDocument, setDocument] = useState(null);
 	const onEditor = isInEditor();
+	const { data } = useSiteVibesVariations();
+	const css = vibeCss ? `${data?.resets?.[slug] ?? ''}${vibeCss}` : vibeCss;
 
 	useEffect(() => {
 		if (!css || onEditor || !slug) return;

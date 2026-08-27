@@ -2,7 +2,7 @@ import {
 	CANVAS_PANE_WIDTH,
 	CanvasPane,
 	DOT_GRID,
-	useCanvasOpen,
+	useCanvasSeat,
 } from '@agent/components/Canvas';
 import { usePortal } from '@agent/hooks/usePortal';
 import { DESKTOP_MIN_WIDTH, useGlobalStore } from '@agent/state/global';
@@ -21,7 +21,8 @@ export const SidebarLayout = ({ children }) => {
 	const mountNode = usePortal('extendify-agent-sidebar-mount');
 	const frameNode = usePortal('extendify-agent-border-frame-mount');
 	const { open, setOpen } = useGlobalStore();
-	const canvasOpen = useCanvasOpen();
+	const seat = useCanvasSeat();
+	const beside = seat === 'beside';
 	useLayoutShift(open);
 
 	const closeAgent = () => {
@@ -56,9 +57,10 @@ export const SidebarLayout = ({ children }) => {
 		},
 	};
 
+	// Unclipped, the 9999px shadow covers the notification bar.
 	const frameBar = frameNode
 		? createPortal(
-				<div className="fixed inset-0 pointer-events-none z-high">
+				<div className="fixed top-0 left-0 right-0 bottom-(--extendify-notification-bar-height,0px) overflow-hidden pointer-events-none z-high">
 					<motion.div
 						className="absolute overflow-hidden"
 						initial={false}
@@ -90,19 +92,24 @@ export const SidebarLayout = ({ children }) => {
 	const sidebar = mountNode
 		? createPortal(
 				<motion.div
-					className=" fixed top-0 bottom-0 left-0 z-higher border-transparent border-8"
+					className={`fixed top-0 bottom-[var(--extendify-notification-bar-height,0px)] left-0 border-transparent border-8 ${
+						// An emptied panel belongs under the scrim with the rest of the page.
+						seat === 'modal' ? 'z-high' : 'z-higher'
+					}`}
 					id="extendify-agent-sidebar"
+					data-extendify-agent-panel
+					data-extendify-agent-emptied={seat === 'modal' ? '' : undefined}
 					initial={false}
 					inert={open ? undefined : ''}
 					animate={{
 						x: open ? 0 : -SIDEBAR_WIDTH,
-						width: canvasOpen ? CANVAS_WIDTH : SIDEBAR_WIDTH,
+						width: beside ? CANVAS_WIDTH : SIDEBAR_WIDTH,
 					}}
 					transition={{ duration: ANIMATE_TIME / 1000, ease: 'easeInOut' }}
 				>
 					<div
-						className={`h-full flex shadow-lg rounded-2xl overflow-hidden ${canvasOpen ? 'bg-gray-50' : 'bg-white'}`}
-						style={canvasOpen ? DOT_GRID : undefined}
+						className={`relative h-full flex shadow-lg rounded-2xl overflow-hidden ${beside ? 'bg-gray-50' : 'bg-white'}`}
+						style={beside ? DOT_GRID : undefined}
 					>
 						<div
 							className="relative z-10 h-full flex shrink-0 flex-col rounded-2xl overflow-hidden bg-white shadow-lg"
@@ -119,7 +126,7 @@ export const SidebarLayout = ({ children }) => {
 									</div>
 								</div>
 								<div className="flex gap-1 h-full items-center p-2">
-									{canvasOpen ? null : (
+									{seat ? null : (
 										<>
 											<OptionsPopover />
 											<button
@@ -142,7 +149,7 @@ export const SidebarLayout = ({ children }) => {
 							</div>
 							{open ? children : null}
 						</div>
-						<CanvasPane />
+						<CanvasPane seat="beside" />
 					</div>
 				</motion.div>,
 				mountNode,
@@ -231,11 +238,15 @@ export const useLayoutShift = (open) => {
 
 				// Subtract 40 because translateY(40px) below pushes the element down.
 				const scaledHeight = (window.innerHeight - 40) / scale;
+				// Divided by the scale because this height is in pre-scale units.
+				const height =
+					`calc(${scaledHeight}px - ` +
+					`var(--extendify-notification-bar-height, 0px) / ${scale})`;
 
 				Object.assign(siteBlocks.style, {
 					transformOrigin: 'top left',
 					transform: `translateX(${SIDEBAR_WIDTH}px) translateY(40px) scale(${scale})`,
-					height: `${scaledHeight}px`,
+					height,
 					overflowY: 'auto',
 					// `auto` so the scrollTop below is instant; `smooth` would animate from 0.
 					scrollBehavior: 'auto',
@@ -302,9 +313,6 @@ export const useLayoutShift = (open) => {
 		}
 
 		const raf = requestAnimationFrame(() => {
-			const fw = open ? `${FRAME_WIDTH}px` : '0px';
-			const ml = open ? `${SIDEBAR_WIDTH}px` : '0px';
-
 			applyScaling();
 
 			// External contract: no in-repo listener by design — lets host-page
@@ -315,18 +323,9 @@ export const useLayoutShift = (open) => {
 				}),
 			);
 
-			if (wpadminbar) {
-				Object.assign(wpadminbar.style, {
-					marginTop: fw,
-					marginRight: fw,
-					marginBottom: '0px',
-					marginLeft: ml,
-					borderRadius: open ? '8px 8px 0 0' : '0',
-					maxWidth: open
-						? `calc(100% - ${SIDEBAR_WIDTH + FRAME_WIDTH}px)`
-						: '100%',
-				});
-			}
+			// agent.css carries the bar offsets, so they drop with the
+			// breakpoint rather than with this component.
+			document.documentElement.classList.toggle('extendify-agent-docked', open);
 		});
 
 		window.addEventListener('resize', applyScaling);

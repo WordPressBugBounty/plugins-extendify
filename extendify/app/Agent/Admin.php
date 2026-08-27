@@ -119,9 +119,7 @@ class Admin
                 false,
             'isOnEditorOrFSE' => $this->isGutenbergOrFse(),
             'activePlugins' => array_values(\get_option('active_plugins', [])),
-            // Whether the user is using the vibes experience or not.
-            'isUsingVibes' => (bool) file_exists(EXTENDIFY_PATH . 'src/Launch/_data/block-style-variations.json') &&
-                version_compare(wp_get_theme("extendable")->get('Version'), '2.0.32', '>='),
+            'isUsingVibes' => version_compare((string) wp_get_theme('extendable')->get('Version'), '2.0.32', '>='),
             'siteTitle' => \esc_attr(\get_bloginfo('name')),
             'siteDescription' => \esc_attr(\get_bloginfo('description')),
             'themePresets' => $this->getThemePresets(),
