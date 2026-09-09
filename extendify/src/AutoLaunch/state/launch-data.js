@@ -11,9 +11,9 @@ import {
 	getStyleShape,
 } from '@auto-launch/fetchers/shape';
 import { clearSiteImages } from '@auto-launch/functions/wp';
+import { launchStrings } from '@auto-launch/strings';
 import { siteImageUrls } from '@shared/lib/site-images';
 import { safeLocalStorage } from '@shared/state/safe-local-storage';
-import { __ } from '@wordpress/i18n';
 import { create } from 'zustand';
 import { createJSONStorage, devtools, persist } from 'zustand/middleware';
 import { overrideWithUrlParams, urlParams, urlParamsShape } from './url-params';
@@ -28,7 +28,7 @@ const initialState = {
 	go: false,
 	showExtendifyCodeScreen: false,
 	// translators: this is for a action log UI. Keep it short
-	statusMessages: [__('Booting things up', 'extendify-local')],
+	statusMessages: [launchStrings().statusBooting],
 	errorMessage: null,
 	errorCount: 0,
 	title: null,
@@ -64,8 +64,6 @@ const state = (set, get) => ({
 	description: undefined,
 	descriptionBackup: undefined,
 	descriptionRaw: undefined,
-	pulse: false,
-	setPulse: (value) => set({ pulse: value }),
 	setData: (key, value) => {
 		if (!isValidKey(key)) return;
 		if (get()[key] === value) return; // avoid unnecessary updates
@@ -174,7 +172,6 @@ export const useLaunchDataStore = create(
 				statusMessages,
 				errorMessage,
 				errorCount,
-				pulse,
 				description,
 				descriptionRaw,
 				title,

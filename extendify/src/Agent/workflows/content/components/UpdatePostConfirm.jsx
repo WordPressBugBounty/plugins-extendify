@@ -20,7 +20,8 @@ export const UpdatePostConfirm = ({ inputs, onConfirm, onCancel, onRetry }) => {
 
 	const handleConfirm = () => {
 		confirmed.current = true;
-		onConfirm({ data: inputs });
+		// The preview patched the DOM, so only a reload shows what was saved.
+		onConfirm({ data: inputs, shouldRefreshPage: true });
 	};
 
 	const handleRetry = useCallback(() => {
@@ -71,6 +72,11 @@ export const UpdatePostConfirm = ({ inputs, onConfirm, onCancel, onRetry }) => {
 	);
 };
 
+const PART_ID_ATTR = 'data-extendify-part-block-id';
+
+// The save rewrites this post alone, so a part preview reverts on the reload.
+const isInTemplatePart = (el) => Boolean(el?.closest?.(`[${PART_ID_ATTR}]`));
+
 const updateAllTextNodesAndAttributes = (replacements) => {
 	const chat = document.getElementById('extendify-agent-chat');
 	const isInChat = (node) => chat?.contains(node);
@@ -85,8 +91,8 @@ const updateAllTextNodesAndAttributes = (replacements) => {
 	while (node) {
 		const current = node;
 		node = walker.nextNode();
-		// Skip nodes that are inside the chat
 		if (isInChat(current.parentNode)) continue;
+		if (isInTemplatePart(current.parentElement)) continue;
 
 		for (const { original, updated } of replacements ?? []) {
 			const value = current.nodeValue ?? '';
@@ -98,8 +104,8 @@ const updateAllTextNodesAndAttributes = (replacements) => {
 	// Update attributes
 	['alt', 'title', 'aria-label', 'href', 'data-id'].forEach((attr) => {
 		document.querySelectorAll(`[${attr}]`).forEach((el) => {
-			// Skip elements that are inside the chat
 			if (isInChat(el)) return;
+			if (isInTemplatePart(el)) return;
 			for (const { original, updated } of replacements ?? []) {
 				const val = el.getAttribute(attr);
 				if (!val?.includes(original)) continue;

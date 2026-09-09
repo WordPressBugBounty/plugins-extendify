@@ -15,6 +15,12 @@ export const preLaunchFunctions = () =>
 		method: 'POST',
 	});
 
+export const resetLaunchState = () =>
+	apiFetch({
+		path: '/extendify/v1/auto-launch/reset-launch-state',
+		method: 'POST',
+	});
+
 export const runUpdates = () =>
 	apiFetch({
 		path: '/extendify/v1/auto-launch/run-updates',

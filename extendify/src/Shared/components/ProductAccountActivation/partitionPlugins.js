@@ -7,7 +7,6 @@ export const partitionPlugins = (available = []) => {
 			selected: true,
 			createAccountCallback:
 				pluginsActivation[pluginData.slug]?.createAccountCallback ?? null,
-			idempotent: pluginsActivation[pluginData.slug]?.idempotent ?? true,
 		}))
 		.filter((plugin) => plugin.createAccountCallback);
 

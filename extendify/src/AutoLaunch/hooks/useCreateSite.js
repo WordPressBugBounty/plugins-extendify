@@ -64,6 +64,7 @@ import {
 } from '@auto-launch/functions/wp';
 import { useWarnOnLeave } from '@auto-launch/hooks/useWarnOnLeave';
 import { useLaunchDataStore } from '@auto-launch/state/launch-data';
+import { launchStrings } from '@auto-launch/strings';
 import { digest } from '@shared/api/digest';
 import { siteImageUrls } from '@shared/lib/site-images';
 import { useAIConsentStore } from '@shared/state/ai-consent';
@@ -150,7 +151,7 @@ export const useCreateSite = () => {
 
 		setStatus(
 			// translators: this is for a action log UI. Keep it short
-			__('Setting up functionality for your website', 'extendify-local'),
+			launchStrings().statusFunctionality,
 		);
 		ensurePluginsActive(
 			data.sitePlugins.map(({ wordpressSlug }) => wordpressSlug),
@@ -266,7 +267,7 @@ export const useCreateSite = () => {
 
 			const { title } = siteProfile;
 			// translators: this is for a action log UI. Keep it short
-			addStatusMessage(__('Adding admin configurations', 'extendify-local'));
+			addStatusMessage(launchStrings().statusAdmin);
 			await updateOption('permalink_structure', '/%postname%/');
 			setUserGaveConsent(true);
 			if (title) await updateOption('blogname', title);
@@ -341,7 +342,7 @@ export const useCreateSite = () => {
 			if (customFonts?.length) {
 				checkIn({ stage: 'install_fonts' });
 				// translators: this is for a action log UI. Keep it short
-				addStatusMessage(__('Installing fonts locally', 'extendify-local'));
+				addStatusMessage(launchStrings().statusFonts);
 				const installed = await installFontFamilies(customFonts).catch(
 					() => [],
 				);
@@ -350,7 +351,7 @@ export const useCreateSite = () => {
 
 			if (siteStyle?.vibe && siteStyle.vibe !== 'natural-1') {
 				// translators: vibe in this context is a noun - the feeling of their site design.
-				addStatusMessage(__('Setting the website style', 'extendify-local'));
+				addStatusMessage(launchStrings().statusSiteStyle);
 				checkIn({ stage: 'compute_vibe' });
 				const vibe = await computeVibeAdjustments(
 					siteStyle.vibe,
@@ -363,7 +364,7 @@ export const useCreateSite = () => {
 			await updateVariation(variation);
 
 			// navigation menu
-			addStatusMessage(__('Working on the navigation', 'extendify-local'));
+			addStatusMessage(launchStrings().statusNavigation);
 			const { id: headerNavId } = await createNavigation({
 				title: __('Header Navigation', 'extendify-local'),
 				slug: 'site-navigation',
@@ -375,7 +376,7 @@ export const useCreateSite = () => {
 			// remove the header navigation from the landing page
 			if (objective === 'landing-page') {
 				// translators: this is for a action log UI. Keep it short
-				addStatusMessage(__('Perfecting a landing page', 'extendify-local'));
+				addStatusMessage(launchStrings().statusLanding);
 				const social =
 					/<!--\s*wp:social-links\b[^>]*>.*?<!--\s*\/wp:social-links\s*-->/gis;
 				headerCode = headerCode
@@ -415,7 +416,7 @@ export const useCreateSite = () => {
 
 			// pages
 			// translators: this is for a action log UI. Keep it short
-			addStatusMessage(__('Creating pages', 'extendify-local'));
+			addStatusMessage(launchStrings().statusCreatingPages);
 			const pagesToCreate = getPagesToCreate(data);
 			const titlePattern = pages?.[0]?.patterns?.find((p) =>
 				p.patternTypes?.includes('page-title'),
@@ -471,7 +472,7 @@ export const useCreateSite = () => {
 			if (siteProfile.blog || blogPattern) {
 				checkIn({ stage: 'create_blog_sample_data' });
 				// translators: this is for a action log UI. Keep it short
-				addStatusMessage(__('Creating blog sample data', 'extendify-local'));
+				addStatusMessage(launchStrings().statusBlog);
 				await createBlogSampleData(
 					{ aiBlogTitles },
 					imageUrls,
@@ -494,7 +495,7 @@ export const useCreateSite = () => {
 				checkIn({ stage: 'import_woocommerce_products' });
 				addStatusMessage(
 					// translators: this is for a action log UI. Keep it short
-					__('Setting up your online store', 'extendify-local'),
+					launchStrings().statusStore,
 				);
 				await apiFetchWithTimeout({
 					path: '/extendify/v1/auto-launch/import-woocommerce',
@@ -602,7 +603,7 @@ export const useCreateSite = () => {
 				await storeSiteImages(siteImages).catch(() => null);
 			}
 			// translators: this is for a action log UI. Keep it short
-			addStatusMessage(__('All done!', 'extendify-local'));
+			addStatusMessage(launchStrings().statusDone);
 			await Promise.all([
 				reportInactivePlugins(intendedPlugins).catch(() => null),
 				checkIn({ stage: 'finished', siteProfile, sitePlugins, siteStyle }),
@@ -618,12 +619,7 @@ export const useCreateSite = () => {
 			// if we error here we can try again by resetting the home stretch and stalling again to refetch data
 			homeStretch.current = false;
 			needToStall(true);
-			setErrorMessage(
-				__(
-					'Something went wrong during the final steps. We will try again but you may need to refresh the page.',
-					'extendify-local',
-				),
-			);
+			setErrorMessage(launchStrings().errorFinalSteps);
 		});
 	}, [data, needToStall, setUserGaveConsent]);
 
@@ -649,11 +645,6 @@ const useRunStep = (stepKey, getParams, fetcher) => {
 		if (!error || needToStall()) return;
 		console.error(error);
 		digest({ error, details: { source: 'auto-launch', caller: 'run-step' } });
-		setErrorMessage(
-			__(
-				'Having some trouble with this step. Trying again...',
-				'extendify-local',
-			),
-		);
+		setErrorMessage(launchStrings().errorStep);
 	}, [error, setErrorMessage, needToStall]);
 };

@@ -25,6 +25,11 @@ class Metricool extends PluginActivation
         ];
     }
 
+    public static function isEligible(): bool
+    {
+        return empty(\get_option('metricool_auth_token'));
+    }
+
     // Metricool assesses the captcha itself, so a token minted with any other site key fails.
     protected static function recaptchaSiteKey(): string
     {
@@ -41,7 +46,18 @@ class Metricool extends PluginActivation
             return static::pluginNotActiveResponse();
         }
 
-        $create = static::dispatch('onboarding/create_account', [
+        $steps = [];
+        $response = static::signUp($steps, $request);
+
+        return new \WP_REST_Response(
+            array_merge((array) $response->get_data(), ['stepTimeInMs' => $steps]),
+            $response->get_status()
+        );
+    }
+
+    protected static function signUp(array &$steps, \WP_REST_Request $request): \WP_REST_Response
+    {
+        $create = static::dispatch($steps, 'onboarding/create_account', [
             'email' => \sanitize_email($request->get_param('email')),
             'terms' => (bool) $request->get_param('termsAgreed'),
             'marketing' => (bool) $request->get_param('marketingConsent'),
@@ -49,24 +65,67 @@ class Metricool extends PluginActivation
             'password' => static::generatePassword(),
         ]);
         if ($create->is_error()) {
-            // Metricool 500 = account created but a later step failed; not retryable.
-            if ($create->get_status() >= 500) {
-                static::dispatch('logout');
-            }
-            return $create;
+            return static::withFallbackCode($create, 'metricool_create_account_failed');
         }
 
-        $finish = static::dispatch('onboarding/finish_onboarding');
-        $completed = $finish->get_data()['data']['onboarding']['state']['completed'] ?? false;
-        if ($finish->is_error() || !$completed) {
-            static::dispatch('logout');
-            return $finish->is_error() ? $finish : new \WP_REST_Response([
-                'code' => 'metricool_onboarding_incomplete',
-                'message' => \__('Metricool onboarding did not complete.', 'extendify-local'),
-            ], 500);
+        $finish = static::dispatch($steps, 'onboarding/finish_onboarding');
+        if ($finish->is_error()) {
+            return static::withFallbackCode($finish, 'metricool_finish_onboarding_failed');
+        }
+
+        if (static::isComplete($finish)) {
+            return new \WP_REST_Response(['success' => true], 200);
+        }
+
+        return static::connectTheOnlyBrand($steps, $finish);
+    }
+
+    // Their onboarding stops at a brand picker no user will reach here.
+    protected static function connectTheOnlyBrand(array &$steps, \WP_REST_Response $finish): \WP_REST_Response
+    {
+        $response = static::dispatch($steps, 'connected_brands', [], 'GET');
+        $brands = $response->is_error() ? [] : (array) ($response->get_data()['data'] ?? []);
+        $brandCount = count($brands);
+
+        // Their own signup connects a brand only when the account owns exactly one.
+        $brand = $brandCount === 1 ? (array) reset($brands) : [];
+        $blogId = (string) ($brand['id'] ?? '');
+        if ($blogId === '') {
+            return static::brandNotConnected($finish, $brandCount);
+        }
+
+        $retry = static::dispatch($steps, 'onboarding/finish_onboarding', ['blogId' => $blogId]);
+        if ($retry->is_error() || !static::isComplete($retry)) {
+            return static::brandNotConnected($finish, $brandCount);
         }
 
         return new \WP_REST_Response(['success' => true], 200);
+    }
+
+    protected static function brandNotConnected(\WP_REST_Response $finish, int $brandCount): \WP_REST_Response
+    {
+        $state = static::onboardingState($finish);
+
+        return new \WP_REST_Response([
+            'code' => 'metricool_brand_not_connected',
+            'message' => \__('Metricool could not connect a brand to this site.', 'extendify-local'),
+            // authenticated means the account exists and only the brand connection failed.
+            'data' => [
+                'authenticated' => (bool) ($state['authenticated'] ?? false),
+                'blog_id_selected' => (bool) ($state['blog_id_selected'] ?? false),
+                'brand_count' => $brandCount,
+            ],
+        ], 500);
+    }
+
+    protected static function isComplete(\WP_REST_Response $response): bool
+    {
+        return !empty(static::onboardingState($response)['completed']);
+    }
+
+    protected static function onboardingState(\WP_REST_Response $response): array
+    {
+        return (array) ($response->get_data()['data']['onboarding']['state'] ?? []);
     }
 
     protected static function generatePassword(): string
@@ -79,15 +138,37 @@ class Metricool extends PluginActivation
         return $password;
     }
 
-    protected static function dispatch(string $route, array $body = []): \WP_REST_Response
-    {
-        $request = new \WP_REST_Request('POST', '/metricool/v1/' . $route);
-        $request->set_header('Content-Type', 'application/json');
-        $request->set_body(\wp_json_encode(array_merge(
-            $body,
-            ['nonce' => \wp_create_nonce('metricool_nonce')]
-        )));
+    protected static function dispatch(
+        array &$steps,
+        string $route,
+        array $body = [],
+        string $method = 'POST'
+    ): \WP_REST_Response {
+        $request = new \WP_REST_Request($method, '/metricool/v1/' . $route);
+        // Their nonce middleware only enforces on the verbs that write.
+        if ($method !== 'GET') {
+            $request->set_header('Content-Type', 'application/json');
+            $request->set_body(\wp_json_encode(array_merge(
+                $body,
+                ['nonce' => \wp_create_nonce('metricool_nonce')]
+            )));
+        }
 
-        return \rest_do_request($request);
+        $start = microtime(true);
+        $response = \rest_do_request($request);
+        $steps[static::stepKey($steps, $route)] = (int) round((microtime(true) - $start) * 1000);
+
+        return $response;
+    }
+
+    // finish_onboarding can run twice; a plain key would drop the first timing.
+    protected static function stepKey(array $steps, string $route): string
+    {
+        $key = basename($route);
+        for ($n = 2; isset($steps[$key]); $n++) {
+            $key = basename($route) . '_' . $n;
+        }
+
+        return $key;
     }
 }

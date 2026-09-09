@@ -6,7 +6,7 @@ import { __ } from '@wordpress/i18n';
 import { useEditModeStore } from '../state/edit-mode';
 import { useQuickEditStore } from '../state/store';
 import { whenAnimationsSettle } from './after-animations';
-import { isAgentEligibleForTarget } from './agent-gate';
+import { escapesDynamicBlock, isAgentEligibleForTarget } from './agent-gate';
 import {
 	askAiAboutElement,
 	hasAgentBlockSelected,
@@ -107,6 +107,11 @@ const PART_ATTR = 'data-extendify-part-block-id';
 const PRODUCT_ATTR = 'data-extendify-quick-edit-product-id';
 const WPFORM_FIELD_ATTR = 'data-extendify-quick-edit-wpform-field-id';
 const MEDIATEXT_MEDIA_ATTR = 'data-extendify-quick-edit-mediatext-media';
+const PART_SLUG_ATTR = 'data-extendify-part-slug';
+
+// A synced pattern's blocks live in the wp_block post the id names; Quick
+// Edit's save only ever writes the container, so it can't reach them.
+const isSyncedPatternId = (id) => /^block:\d+:\d+$/.test(String(id ?? ''));
 
 // DOMHighlighter's class; a sync listener can't read a React prop.
 export const isAgentWorking = () =>
@@ -115,11 +120,22 @@ export const isAgentWorking = () =>
 // Resolve the live DOM node for the currently-staged agent block, so the
 // click + hover gates can carve out "inside the staged block." Returns
 // null when no block is staged or its node has detached from the tree.
+// Without the slug an id matches another part's block of the same number, and
+// a click inside the staged block reads as an outside-click.
 const stagedBlockEl = () => {
 	const block = useQuickEditStore.getState().agentBlock;
 	if (!block?.id) return null;
 	const attr = block.target || POST_ATTR;
-	return document.querySelector(`[${attr}="${CSS.escape(String(block.id))}"]`);
+	const slug = block.source?.partSlug || null;
+	const matches = [
+		...document.querySelectorAll(`[${attr}="${CSS.escape(String(block.id))}"]`),
+	];
+	const inScope = matches.filter(
+		(el) =>
+			(el.closest(`[${PART_SLUG_ATTR}]`)?.getAttribute(PART_SLUG_ATTR) ??
+				null) === slug,
+	);
+	return inScope[0] ?? matches[0] ?? null;
 };
 
 // Resolve the committed selection's live DOM node. buildTarget stashes
@@ -224,7 +240,7 @@ const clearBar = () => {
 // parent. Without this, hovering the middle of a hero cover that
 // surfaces post-title returned blockType=null and — combined with the
 // template-part source gating Ask AI off — produced no bar at all.
-const buildTarget = (el) => {
+const buildTarget = (el, fromEl = el) => {
 	let current = resolveTarget(el);
 	let safety = 5;
 	while (
@@ -236,6 +252,9 @@ const buildTarget = (el) => {
 		const next = resolveTarget(current.el.parentElement);
 		if (!next) return current;
 		current = next;
+	}
+	if (current && escapesDynamicBlock(fromEl, current.el)) {
+		return { ...current, dynamicInterior: true };
 	}
 	return current;
 };
@@ -262,10 +281,24 @@ const isTranslatedTextBlock = (target) =>
 // on the same signal the hover bar uses.
 export const pillContextFor = (target) => {
 	const quickEditEnabled = !!window.extQuickEditData?.quickEditEnabled;
+	// A synced pattern is addressed off whichever tagger stamped it, so both
+	// id spaces have to be checked or the pill returns on pages.
+	const compositeId =
+		target?.el?.getAttribute?.(PART_ATTR) ??
+		target?.el?.getAttribute?.(POST_ATTR);
 	const quickEditable =
-		quickEditEnabled && hasQuickEditModalFor(target?.blockType);
+		quickEditEnabled &&
+		hasQuickEditModalFor(target?.blockType) &&
+		!isSyncedPatternId(compositeId);
 	const sourceKind = target?.source?.kind ?? null;
-	const agentSupportedSource = sourceKind === 'post' || sourceKind === null;
+	// A ref-nav item routes Quick Edit's save through wp_navigation, but the
+	// agent reaches it through the id the part tagger stamped.
+	const agentSupportedSource =
+		sourceKind === 'post' ||
+		sourceKind === 'template-part' ||
+		sourceKind === null ||
+		(sourceKind === 'wp-navigation' &&
+			!!target?.el?.getAttribute?.('data-extendify-part-block-id'));
 	const aiAvailable =
 		isAgentAvailable() &&
 		agentSupportedSource &&
@@ -333,7 +366,7 @@ export const askAiTarget = (el) => onAiClick(el);
 export const showBar = (el) => renderBar(el);
 export const hideBar = () => clearBar();
 
-const renderBar = (el) => {
+const renderBar = (el, fromEl = el) => {
 	// While an agent block is staged, the hover bar is intentionally
 	// hidden — only DOMHighlighter's X-close indicator is shown.
 	// Defense in depth for any caller (a re-render, the keyboard
@@ -341,7 +374,7 @@ const renderBar = (el) => {
 	if (hasAgentBlockSelected()) return;
 	if (isAgentWorking()) return;
 
-	const target = buildTarget(el);
+	const target = buildTarget(el, fromEl);
 	const { quickEditable, aiAvailable } = pillContextFor(target);
 	// Bail BEFORE clearing the current bar — when the cursor traverses
 	// from a renderable block to an UNSUPPORTED tagged ancestor (e.g. a
@@ -523,7 +556,7 @@ const onMouseOver = (e) => {
 	const el = findTagged(e.target);
 	if (el === hoverTarget) return;
 	if (!el) return;
-	renderBar(el);
+	renderBar(el, e.target);
 };
 
 const onScrollOrResize = () => {

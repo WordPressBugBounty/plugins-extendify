@@ -3,20 +3,21 @@ import {
 	PickerActions,
 	PickerButton,
 } from '@agent/components/ImagePicker';
+import { SharedBlockNotice } from '@agent/components/SharedBlockNotice';
 import { targetFor } from '@agent/hooks/useImageAcquisition';
+import { BLOCK_ID_SEL, findBlockEl } from '@agent/lib/block-el';
 import { useChatStore } from '@agent/state/chat';
+import { useQuickEditStore } from '@quick-edit/state/store';
 import { useCallback, useEffect, useRef } from '@wordpress/element';
 import { __ } from '@wordpress/i18n';
 
 // The block's own image — never one belonging to a nested tagged block.
-const findBlockImage = (blockId) => {
-	const scope = document.querySelector(
-		`[data-extendify-agent-block-id="${blockId}"]`,
-	);
+const findBlockImage = (blockId, partSlug) => {
+	const scope = findBlockEl(blockId, document, { partSlug });
 	if (!scope) return null;
 	return (
 		[...scope.querySelectorAll('img')].find(
-			(img) => img.closest('[data-extendify-agent-block-id]') === scope,
+			(img) => img.closest(BLOCK_ID_SEL) === scope,
 		) ?? null
 	);
 };
@@ -31,6 +32,9 @@ export const ReplaceImageConfirm = ({ inputs, onConfirm, onCancel }) => {
 	const confirmed = useRef(false);
 	const addMessage = useChatStore((state) => state.addMessage);
 	const updateMessage = useChatStore((state) => state.updateMessage);
+	// A part block's id repeats in post content, so the scope picks the instance.
+	const partSlug =
+		useQuickEditStore((state) => state.agentBlock?.source?.partSlug) ?? null;
 
 	const restoreOriginal = useCallback(() => {
 		const saved = original.current;
@@ -42,7 +46,7 @@ export const ReplaceImageConfirm = ({ inputs, onConfirm, onCancel }) => {
 
 	const previewOnPage = useCallback(
 		(url) => {
-			const img = findBlockImage(blockId);
+			const img = findBlockImage(blockId, partSlug);
 			if (!img) return;
 			original.current ??= {
 				el: img,
@@ -56,15 +60,15 @@ export const ReplaceImageConfirm = ({ inputs, onConfirm, onCancel }) => {
 			img.removeAttribute('srcset');
 			img.src = url;
 		},
-		[blockId, restoreOriginal],
+		[blockId, partSlug, restoreOriginal],
 	);
 
 	// Nothing on the page means there is nothing to replace.
 	const receipt = useRef(null);
 	useEffect(() => {
-		if (!findBlockImage(blockId)) return onCancel();
+		if (!findBlockImage(blockId, partSlug)) return onCancel();
 		receipt.current ??= addMessage('image', {});
-	}, [blockId, onCancel, addMessage]);
+	}, [blockId, partSlug, onCancel, addMessage]);
 
 	useEffect(() => {
 		return () => {
@@ -81,7 +85,7 @@ export const ReplaceImageConfirm = ({ inputs, onConfirm, onCancel }) => {
 			search={operation.prompt ?? ''}
 			tab={operation.source === 'generate' ? 'generate' : 'media'}
 			autoGenerate={operation.source === 'generate'}
-			target={() => targetFor(findBlockImage(blockId))}
+			target={() => targetFor(findBlockImage(blockId, partSlug))}
 			onSelect={previewOnPage}
 			onSubmit={async (image) => {
 				confirmed.current = true;
@@ -104,16 +108,19 @@ export const ReplaceImageConfirm = ({ inputs, onConfirm, onCancel }) => {
 				});
 			}}
 			footer={({ ready, busy, submit }) => (
-				<PickerActions>
-					<PickerButton disabled={busy} onClick={onCancel}>
-						{__('Cancel', 'extendify-local')}
-					</PickerButton>
-					<PickerButton primary disabled={!ready || busy} onClick={submit}>
-						{busy
-							? __('Saving...', 'extendify-local')
-							: __('Save', 'extendify-local')}
-					</PickerButton>
-				</PickerActions>
+				<>
+					<SharedBlockNotice blockIds={[blockId]} />
+					<PickerActions>
+						<PickerButton disabled={busy} onClick={onCancel}>
+							{__('Cancel', 'extendify-local')}
+						</PickerButton>
+						<PickerButton primary disabled={!ready || busy} onClick={submit}>
+							{busy
+								? __('Saving...', 'extendify-local')
+								: __('Save', 'extendify-local')}
+						</PickerButton>
+					</PickerActions>
+				</>
 			)}
 		/>
 	);

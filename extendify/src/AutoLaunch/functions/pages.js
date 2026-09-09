@@ -1,10 +1,11 @@
 import { importImage, updateOption } from '@auto-launch/functions/wp';
+import { launchStrings } from '@auto-launch/strings';
 import { PATTERNS_HOST } from '@constants';
 import { reqDataBasics } from '@shared/lib/data';
 import { pageNames } from '@shared/lib/pages';
 import apiFetch from '@wordpress/api-fetch';
 import { createBlock, parse, serialize } from '@wordpress/blocks';
-import { __, sprintf } from '@wordpress/i18n';
+import { __ } from '@wordpress/i18n';
 import { setStatus } from './helpers';
 
 // Slugs that plugins own — skip creating design-build pages for these.
@@ -143,7 +144,7 @@ export const createWpPages = async (
 		const content = [];
 		const seenPatternTypes = new Set();
 
-		setStatus(sprintf(__('Adding page: %s', 'extendify-local'), page.name));
+		setStatus(launchStrings().statusAddingPage(page.name));
 
 		for (const [_, pattern] of page.patterns.entries()) {
 			const code = pattern.code;

@@ -1,3 +1,4 @@
+import { RICH_TEXT_ATTRIBUTES } from '@agent/lib/block-schema';
 import { getBlockType, parse, serialize } from '@wordpress/blocks';
 import { colord } from 'colord';
 
@@ -163,13 +164,14 @@ const applyClears = (attributes, clear) => {
 	return out;
 };
 
-// The model always says `text`; blocks whose rich text is `content` need the remap.
+// The model always says `text`; blocks that keep theirs elsewhere need the remap.
 const remapText = (block, patch) => {
 	if (patch?.text == null) return patch;
 	const attributes = getBlockType(block.name)?.attributes ?? {};
-	if (attributes.text || !attributes.content) return patch;
+	const real = RICH_TEXT_ATTRIBUTES.find((name) => attributes[name]);
+	if (!real || real === 'text') return patch;
 	const { text, ...rest } = patch;
-	return { ...rest, content: text };
+	return { ...rest, [real]: text };
 };
 
 // Re-serializing runs the block's own save(), which core/button needs to render

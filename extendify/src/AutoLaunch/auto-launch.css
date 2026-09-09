@@ -62,13 +62,14 @@
 }
 
 .status-animation {
+	/* Follows the ink token so the shimmer stays legible on a dark palette. */
 	background-image: linear-gradient(
 		to right,
-		#1e1e1e 0%,
-		#1e1e1e 25%,
-		#999999 50%,
-		#1e1e1e 75%,
-		#1e1e1e 100%
+		var(--ext-ui-status-color, var(--color-ui-ink)) 0%,
+		var(--ext-ui-status-color, var(--color-ui-ink)) 25%,
+		var(--color-ui-ink-muted) 50%,
+		var(--ext-ui-status-color, var(--color-ui-ink)) 75%,
+		var(--ext-ui-status-color, var(--color-ui-ink)) 100%
 	);
 	background-size: 300% 100%;
 	color: transparent;

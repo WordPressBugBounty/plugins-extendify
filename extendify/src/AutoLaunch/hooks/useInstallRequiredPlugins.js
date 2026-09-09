@@ -3,8 +3,8 @@ import { ensurePluginsActive } from '@auto-launch/functions/plugins';
 import { useEffect, useRef } from '@wordpress/element';
 import useSWR from 'swr/immutable';
 
-export const useInstallRequiredPlugins = () => {
-	const { data, error } = useSWR('required-plugins', () =>
+export const useInstallRequiredPlugins = ({ enabled = true } = {}) => {
+	const { data, error } = useSWR(enabled ? 'required-plugins' : null, () =>
 		handleSitePlugins({ requiredOnly: true }),
 	);
 	const started = useRef(false);

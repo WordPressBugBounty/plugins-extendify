@@ -27,6 +27,11 @@ class PostBlockFinder
                     continue;
                 }
 
+                // Numbered off the post it renders from, never this one.
+                if (isset(TagBlocks::$refContainers[$block['blockName']])) {
+                    continue;
+                }
+
                 $seq++;
                 $list[$i][self::REF_KEY] = $seq;
                 if (!empty($block['innerBlocks'])) {

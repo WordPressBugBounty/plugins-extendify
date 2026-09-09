@@ -5,10 +5,10 @@ import {
 	retryTwice,
 	setStatus,
 } from '@auto-launch/functions/helpers';
+import { launchStrings } from '@auto-launch/strings';
 import { PATTERNS_HOST } from '@constants';
 import { reqDataBasics } from '@shared/lib/data';
 import { siteImageUrls } from '@shared/lib/site-images';
-import { __ } from '@wordpress/i18n';
 import { z } from 'zod';
 
 const url = `${PATTERNS_HOST}/api/page-templates`;
@@ -31,7 +31,7 @@ export const handlePages = async ({
 	}
 
 	// translators: this is for a action log UI. Keep it short
-	setStatus(__('Preparing your pages', 'extendify-local'));
+	setStatus(launchStrings().statusPages);
 
 	const body = JSON.stringify({
 		...reqDataBasics,

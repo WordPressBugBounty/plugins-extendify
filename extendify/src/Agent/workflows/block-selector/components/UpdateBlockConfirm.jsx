@@ -1,8 +1,18 @@
+import { SharedBlockNotice } from '@agent/components/SharedBlockNotice';
 import { fetchBlockCodeById } from '@agent/lib/block-code';
+import {
+	BLOCK_ID_SEL,
+	blockIdOf,
+	findBlockEl,
+	idAttrOf,
+	parseScopedId,
+	scopeOf,
+} from '@agent/lib/block-el';
 import { applyBlockPatch } from '@agent/lib/block-patch';
 import { processCustomCss } from '@agent/lib/custom-css';
 import { resolveDeleteTarget } from '@agent/lib/delete-target';
 import { buildNewBlock } from '@agent/lib/insertable-blocks';
+import { SETTING_TEXT_BLOCKS } from '@agent/lib/setting-text-blocks';
 import { useQuickEditStore } from '@quick-edit/state/store';
 import { patchVariantClasses } from '@shared/lib/variant-classes';
 import apiFetch from '@wordpress/api-fetch';
@@ -26,6 +36,14 @@ const pinThemeAnimations = (el) => {
 	}
 };
 const PREVIEW_CSS_ATTR = 'data-extendify-preview-css';
+const PART_SLUG_ATTR = 'data-extendify-part-slug';
+
+// Without this a later op in the batch can't tell the replacement from the
+// same-numbered block in another part.
+const carryPartSlug = (from, to) => {
+	const slug = from?.getAttribute?.(PART_SLUG_ATTR);
+	if (slug) to?.setAttribute?.(PART_SLUG_ATTR, slug);
+};
 
 const cssOf = (blockCode) =>
 	parse(blockCode)[0]?.attributes?.style?.css || null;
@@ -55,15 +73,13 @@ const injectPreviewCss = (el, blockId, css) => {
 
 // Swap the rendered preview in for the live element. Returns the detached
 // original (restored on cancel), or null when the target isn't on the page.
-const previewBlock = async (blockId, newContent, css) => {
+const previewBlock = async (blockId, newContent, css, scope) => {
 	const { content, styles } = await apiFetch({
 		path: '/extendify/v1/agent/get-block-html',
 		method: 'POST',
 		data: { blockCode: newContent },
 	});
-	const el = document.querySelector(
-		`[data-extendify-agent-block-id="${blockId}"]`,
-	);
+	const el = findBlockEl(blockId, document, scope);
 	if (!el) return null;
 	injectPreviewStylesheet(blockId, styles);
 
@@ -79,18 +95,17 @@ const previewBlock = async (blockId, newContent, css) => {
 
 	// Later ops anchor by id — the replacement and its children keep theirs;
 	// an attribute edit preserves child structure, so ids map by position.
-	newEl.setAttribute('data-extendify-agent-block-id', blockId);
-	for (const tagged of el.querySelectorAll('[data-extendify-agent-block-id]')) {
+	newEl.setAttribute(idAttrOf(el), blockId);
+	carryPartSlug(el, newEl);
+	for (const tagged of el.querySelectorAll(BLOCK_ID_SEL)) {
 		const path = [];
 		for (let node = tagged; node !== el; node = node.parentElement) {
 			if (!node.parentElement) break;
 			path.unshift([...node.parentElement.children].indexOf(node));
 		}
 		const match = path.reduce((node, i) => node?.children?.[i], newEl);
-		match?.setAttribute(
-			'data-extendify-agent-block-id',
-			tagged.getAttribute('data-extendify-agent-block-id'),
-		);
+		match?.setAttribute(idAttrOf(tagged), blockIdOf(tagged));
+		carryPartSlug(tagged, match);
 	}
 	const newElClasses = new Set(newEl.classList);
 	el.classList.forEach((className) => {
@@ -122,13 +137,9 @@ const previewBlock = async (blockId, newContent, css) => {
 };
 
 // Relocate the live node; a hidden marker holds its old slot so undo can put it back.
-const previewMove = ({ blockId, targetId, position }) => {
-	const el = document.querySelector(
-		`[data-extendify-agent-block-id="${blockId}"]`,
-	);
-	const target = document.querySelector(
-		`[data-extendify-agent-block-id="${targetId}"]`,
-	);
+const previewMove = ({ blockId, targetId, position }, scope) => {
+	const el = findBlockEl(blockId, document, scope);
+	const target = findBlockEl(targetId, document, scope);
 	if (!el || !target) return null;
 	const marker = document.createElement('div');
 	marker.style.display = 'none';
@@ -165,10 +176,8 @@ const renderAddedEl = async (block, index) => {
 
 // Render the new block and slot it next to its anchor. Nothing detaches —
 // returns true so the caller counts it rendered; undo just removes the node.
-const previewAdd = async ({ anchorId, position, block }, index) => {
-	const anchor = document.querySelector(
-		`[data-extendify-agent-block-id="${anchorId}"]`,
-	);
+const previewAdd = async ({ anchorId, position, block }, index, scope) => {
+	const anchor = findBlockEl(anchorId, document, scope);
 	if (!anchor) return null;
 	const newEl = await renderAddedEl(block, index);
 	if (!newEl) return null;
@@ -184,13 +193,12 @@ const previewColumnAdd = async (
 	{ anchorId, position, block },
 	index,
 	wrappers,
+	scope,
 ) => {
-	const anchor = document.querySelector(
-		`[data-extendify-agent-block-id="${anchorId}"]`,
-	);
+	const anchor = findBlockEl(anchorId, document, scope);
 	if (!anchor) return null;
 	if (anchor.classList.contains('wp-block-column')) {
-		return previewAdd({ anchorId, position, block }, index);
+		return previewAdd({ anchorId, position, block }, index, scope);
 	}
 	const shared = wrappers.get(`${anchorId}:${position}`);
 	if (shared) {
@@ -223,10 +231,8 @@ const WRAP_SHELLS = {
 
 // The relocated node keeps its block id, so a later add in the batch can
 // still anchor to it; a hidden marker holds its old slot for undo.
-const previewWrap = async ({ blockId, container }, wrappers) => {
-	const el = document.querySelector(
-		`[data-extendify-agent-block-id="${blockId}"]`,
-	);
+const previewWrap = async ({ blockId, container }, wrappers, scope) => {
+	const el = findBlockEl(blockId, document, scope);
 	const shellCode = WRAP_SHELLS[container];
 	if (!el || !shellCode) return null;
 	// Two column wraps in one batch share one section, mirroring the save.
@@ -272,11 +278,22 @@ const previewWrap = async ({ blockId, container }, wrappers) => {
 	return el;
 };
 
+// Re-rendering the markup would preview the old text — the option holds it.
+const previewSettingText = (blockId, text, scope) => {
+	const el = findBlockEl(blockId, document, scope);
+	if (!el) return null;
+	const preview = el.cloneNode(true);
+	const textNode = preview.querySelector('a') ?? preview;
+	textNode.textContent = text;
+	preview.setAttribute('data-extendify-temp-replacement', blockId);
+	el.parentNode.insertBefore(preview, el.nextSibling);
+	el.parentNode.removeChild(el);
+	return el;
+};
+
 // Remove the target, leaving a hidden marker so cancel restores it like a swapped preview.
-const previewDelete = (blockId) => {
-	const el = document.querySelector(
-		`[data-extendify-agent-block-id="${blockId}"]`,
-	);
+const previewDelete = (blockId, scope) => {
+	const el = findBlockEl(blockId, document, scope);
 	if (!el) return null;
 	const marker = document.createElement('div');
 	marker.style.display = 'none';
@@ -286,16 +303,31 @@ const previewDelete = (blockId) => {
 	return el;
 };
 
+// The DOM attribute and the save both carry the bare id, not the scoped one.
+const unscope = (operation, fallback) => {
+	if (!operation) return { operation, scope: fallback };
+	const next = { ...operation };
+	let partSlug = null;
+	for (const field of ['blockId', 'anchorId', 'targetId']) {
+		if (next[field] == null) continue;
+		const parsed = parseScopedId(next[field]);
+		if (parsed.partSlug) partSlug = parsed.partSlug;
+		next[field] = parsed.blockId;
+	}
+	return { operation: next, scope: partSlug ? { partSlug } : fallback };
+};
+
 // Each target pairs the operation that saves with the preview that shows it.
 // Delete and move ids resolve off the pristine DOM before the preview
 // detaches anything, so preview + save agree on wrapper targets.
 const buildOperationTarget = async (
-	operation,
+	rawOperation,
 	block,
 	postId,
 	index,
 	wrappers,
 ) => {
+	const { operation, scope } = unscope(rawOperation, scopeOf(block));
 	if (operation?.op === 'add') {
 		// Same builder the save-time tool uses, so preview and save agree.
 		const markup = buildNewBlock(
@@ -310,8 +342,8 @@ const buildOperationTarget = async (
 				if (!markup) return null;
 				const withMarkup = { ...operation, block: markup };
 				return operation.blockType === 'core/column'
-					? previewColumnAdd(withMarkup, index, wrappers)
-					: previewAdd(withMarkup, index);
+					? previewColumnAdd(withMarkup, index, wrappers, scope)
+					: previewAdd(withMarkup, index, scope);
 			},
 		};
 	}
@@ -319,34 +351,40 @@ const buildOperationTarget = async (
 		// Wrapping just a lone child nests the new container inside its old wrapper.
 		const resolved = {
 			...operation,
-			blockId: resolveDeleteTarget(operation.blockId),
+			blockId: resolveDeleteTarget(operation.blockId, scope),
 		};
 		return {
 			operation: resolved,
-			preview: () => previewWrap(resolved, wrappers),
+			preview: () => previewWrap(resolved, wrappers, scope),
 		};
 	}
 	if (operation?.op === 'move') {
 		const resolved = {
 			...operation,
-			blockId: resolveDeleteTarget(operation.blockId),
+			blockId: resolveDeleteTarget(operation.blockId, scope),
 		};
-		return { operation: resolved, preview: () => previewMove(resolved) };
+		return { operation: resolved, preview: () => previewMove(resolved, scope) };
 	}
 	if (operation?.op === 'delete') {
 		const resolved = {
 			...operation,
-			blockId: resolveDeleteTarget(operation.blockId),
+			blockId: resolveDeleteTarget(operation.blockId, scope),
 		};
 		return {
 			operation: resolved,
-			preview: () => previewDelete(resolved.blockId),
+			preview: () => previewDelete(resolved.blockId, scope),
 		};
 	}
 	// Image swaps live in ReplaceImageConfirm; a stray one here saves as no-change.
 	if (operation?.op === 'replace-image')
 		return { operation, preview: () => null };
 	const { blockId, patch, clear } = operation ?? {};
+	if (SETTING_TEXT_BLOCKS[block?.blockType] && patch?.text != null) {
+		return {
+			operation,
+			preview: () => previewSettingText(blockId, patch.text, scope),
+		};
+	}
 	const newContent = applyBlockPatch(
 		await fetchBlockCodeById(blockId, block?.source, postId),
 		patch,
@@ -356,7 +394,9 @@ const buildOperationTarget = async (
 	return {
 		operation,
 		preview: () =>
-			newContent ? previewBlock(blockId, newContent, cssOf(newContent)) : null,
+			newContent
+				? previewBlock(blockId, newContent, cssOf(newContent), scope)
+				: null,
 	};
 };
 
@@ -365,7 +405,12 @@ const buildLegacyTarget = (inputs, block) => ({
 	operation: null,
 	preview: () =>
 		inputs.newContent
-			? previewBlock(block?.id, inputs.newContent, cssOf(inputs.newContent))
+			? previewBlock(
+					block?.id,
+					inputs.newContent,
+					cssOf(inputs.newContent),
+					scopeOf(block),
+				)
 			: null,
 });
 
@@ -388,7 +433,7 @@ export const UpdateBlockConfirm = ({
 	const undoBlockChange = useCallback(() => {
 		for (const original of detached.current) {
 			const replacement = document.querySelector(
-				`[data-extendify-temp-replacement="${original.getAttribute('data-extendify-agent-block-id')}"]`,
+				`[data-extendify-temp-replacement="${CSS.escape(blockIdOf(original))}"]`,
 			);
 			pinThemeAnimations(original);
 			replacement?.parentNode?.insertBefore(original, replacement);
@@ -501,6 +546,12 @@ export const UpdateBlockConfirm = ({
 		<Wrapper>
 			<Content>
 				<p className="m-0 p-0 text-sm text-gray-900">{message}</p>
+				<SharedBlockNotice
+					blockIds={[
+						...(operations ?? []).map((operation) => operation?.blockId),
+						block?.id,
+					]}
+				/>
 			</Content>
 			<div className="flex flex-wrap justify-start gap-2 p-3">
 				<button

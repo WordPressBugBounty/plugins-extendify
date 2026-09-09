@@ -1,3 +1,4 @@
+import { findBlockEl, scopeOf } from '@agent/lib/block-el';
 import { buildSubtreeManifest } from '@agent/lib/subtree-manifest';
 import { useQuickEditStore } from '@quick-edit/state/store';
 import { useMemo } from '@wordpress/element';
@@ -8,17 +9,14 @@ import classNames from 'classnames';
 export const PageDocument = ({ busy }) => {
 	const setBlock = useQuickEditStore((s) => s.setAgentBlock);
 	const block = useQuickEditStore((s) => s.agentBlock);
-	const attr = block?.target || 'data-extendify-agent-block-id';
 
 	// The same manifest the agent works from, so the count matches what it
 	// can actually address — not every node in the subtree.
 	const count = useMemo(() => {
 		if (!block?.id) return 1;
-		const node = document.querySelector(
-			`[${attr}="${CSS.escape(String(block.id))}"]`,
-		);
+		const node = findBlockEl(block.id, document, scopeOf(block));
 		return Math.max(node ? buildSubtreeManifest(node).length : 1, 1);
-	}, [block, attr]);
+	}, [block]);
 
 	return (
 		// The input darkens to gray-300 while disabled; a gray-200 chip vanishes into it.

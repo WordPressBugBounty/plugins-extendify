@@ -33,10 +33,12 @@ const pillPath = (ctx, x, y, width, height) => {
 	ctx.closePath();
 };
 
+const pillLineWidth = (fontSize) => Math.max(1, fontSize / 12);
+
 const drawPill = (ctx, x, y, fontSize) => {
 	const label = aiLabelText();
 	const { width, height } = pillSize(ctx, fontSize, label);
-	const lineWidth = Math.max(1, fontSize / 12);
+	const lineWidth = pillLineWidth(fontSize);
 	pillPath(ctx, x, y, width, height);
 	ctx.fillStyle = '#1a1a1a';
 	ctx.fill();
@@ -66,15 +68,16 @@ const drawPill = (ctx, x, y, fontSize) => {
 	ctx.fillText(label, x + width / 2, y + height / 2 + (ascent - descent) / 2);
 };
 
+// Beyond 87.5% our narrowest crop, a 3:4 cover, eats the label.
+const PILL_RIGHT_EDGE = 0.85;
+
 export const stampAiLabel = (ctx, width, height) => {
 	const fontSize = Math.max(12, Math.round(Math.min(width, height) * 0.02));
 	const pill = pillSize(ctx, fontSize, aiLabelText());
-	// The 16px is to the border's outer edge, which sits past the fill.
-	const inset = 16 + Math.max(1, fontSize / 12);
 	drawPill(
 		ctx,
-		width - pill.width - inset,
-		height - pill.height - inset,
+		width * PILL_RIGHT_EDGE - pill.width - pillLineWidth(fontSize),
+		(height - pill.height) / 2,
 		fontSize,
 	);
 };

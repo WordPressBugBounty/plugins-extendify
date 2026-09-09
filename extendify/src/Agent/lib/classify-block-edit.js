@@ -3,8 +3,8 @@ import { buildSubtreeManifest } from './subtree-manifest';
 // Wrapper/child units edited as one so both schemas ship; grow over time.
 const COMBO_BLOCKS = new Set(['core/buttons', 'core/button']);
 
-// Temporary ignore logos until we add template support
-export const IGNORED_BLOCKS = new Set(['core/site-logo']);
+// Blocks local-pick and schema-loading skip; empty today, kept as the seam.
+export const IGNORED_BLOCKS = new Set([]);
 
 // single/combo pin the selection's schema; multi ships the subtree's or narrows.
 export const classifyBlockEdit = ({ block, root }) => {

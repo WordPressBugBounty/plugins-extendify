@@ -9,11 +9,11 @@ import {
 	setStatus,
 } from '@auto-launch/functions/helpers';
 import { getHeadersAndFooters } from '@auto-launch/functions/wp';
+import { launchStrings } from '@auto-launch/strings';
 import { PATTERNS_HOST } from '@constants';
 import { digest } from '@shared/api/digest';
 import { reqDataBasics } from '@shared/lib/data';
 import { siteImageUrlsByType } from '@shared/lib/site-images';
-import { __ } from '@wordpress/i18n';
 
 const url = `${PATTERNS_HOST}/api/home`;
 const { wpLanguage, showImprint } = window.extSharedData;
@@ -28,7 +28,7 @@ export const handleHome = async ({
 	designBuild,
 }) => {
 	// translators: this is for a action log UI. Keep it short
-	setStatus(__('Preparing your home page', 'extendify-local'));
+	setStatus(launchStrings().statusHome);
 
 	// A full-page design build already carries the whole home; skip the
 	// /api/home fetch and build the page from the built patterns directly.

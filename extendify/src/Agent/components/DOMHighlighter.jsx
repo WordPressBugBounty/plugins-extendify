@@ -1,4 +1,6 @@
 import { usePortal } from '@agent/hooks/usePortal';
+import { blockCodeQueryArgs } from '@agent/lib/block-code';
+import { findBlockEl, scopeOf } from '@agent/lib/block-el';
 import { useWorkflowStore } from '@agent/state/workflows';
 import { whenAnimationsSettle } from '@quick-edit/lib/after-animations';
 import { MEDIA_RING, needsContrastRing } from '@quick-edit/lib/over-media';
@@ -43,12 +45,11 @@ export const DOMHighlighter = ({ busy = false, working = false }) => {
 	useEffect(() => {
 		if (!block?.id) return;
 		const ac = new AbortController();
-		const postId = window.extAgentData?.context?.postId;
-		if (!postId) return;
-		const queryArgs = {
-			postId: String(postId),
-			blockId: String(block.id),
-		};
+		const queryArgs = blockCodeQueryArgs(
+			block,
+			window.extAgentData?.context?.postId,
+		);
+		if (!queryArgs) return;
 
 		const isAlive = { current: true };
 		(async () => {
@@ -69,10 +70,7 @@ export const DOMHighlighter = ({ busy = false, working = false }) => {
 	// and after the wp-site-blocks open/close transform settles.
 	useEffect(() => {
 		if (!block?.id) return;
-		const attr = block.target || 'data-extendify-agent-block-id';
-		const match = document.querySelector(
-			`[${attr}="${CSS.escape(String(block.id))}"]`,
-		);
+		const match = findBlockEl(block.id, document, scopeOf(block));
 		if (!match) return;
 		el.current = match;
 		setRingNeeded(needsContrastRing(match));
@@ -125,11 +123,8 @@ export const DOMHighlighter = ({ busy = false, working = false }) => {
 
 	useEffect(() => {
 		if (!block?.id) return;
-		const attr = block.target || 'data-extendify-agent-block-id';
 		const handle = () => {
-			const match = document.querySelector(
-				`[${attr}="${CSS.escape(String(block.id))}"]`,
-			);
+			const match = findBlockEl(block.id, document, scopeOf(block));
 			// Clearing only the rect leaves the chip counting a gone node.
 			if (!match) {
 				clearBlock();
@@ -190,25 +185,19 @@ export const DOMHighlighter = ({ busy = false, working = false }) => {
 		};
 	}, [el.current]);
 
-	// Workflows can mutate the page while the outline is up: a tool that
-	// re-renders the block produces a new DOM node with the same
-	// data-extendify-agent-block-id, and ancestor reflows can shift the
-	// element without changing its own size (ResizeObserver misses both).
-	// Re-query and re-measure on any wp-site-blocks subtree mutation,
-	// rAF-debounced so a burst of mutations costs one measurement.
+	// ResizeObserver misses a replaced node and an ancestor reflow, so the
+	// outline stays on the old box.
 	useEffect(() => {
 		if (!block?.id) return;
 		const root = document.querySelector('.wp-site-blocks');
 		if (!root) return;
-		const attr = block.target || 'data-extendify-agent-block-id';
-		const sel = `[${attr}="${CSS.escape(String(block.id))}"]`;
 
 		let rafId = 0;
 		const observer = new MutationObserver(() => {
 			if (rafId) return;
 			rafId = window.requestAnimationFrame(() => {
 				rafId = 0;
-				const match = document.querySelector(sel);
+				const match = findBlockEl(block.id, document, scopeOf(block));
 				if (!match) return;
 				el.current = match;
 				const r = match.getBoundingClientRect();

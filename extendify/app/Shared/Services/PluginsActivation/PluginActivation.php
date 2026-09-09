@@ -8,6 +8,11 @@ abstract class PluginActivation
 {
     abstract public static function slug(): string;
 
+    public static function createAccountRoute(): string
+    {
+        return '/' . static::slug() . '/create-account';
+    }
+
     public static function scriptData(): array
     {
         return [];
@@ -26,6 +31,15 @@ abstract class PluginActivation
     public static function isEligible(): bool
     {
         return true;
+    }
+
+    // rest_no_route names the failure better than the code we would mint.
+    protected static function withFallbackCode(\WP_REST_Response $response, string $code): \WP_REST_Response
+    {
+        return new \WP_REST_Response(
+            array_merge(['code' => $code], (array) $response->get_data()),
+            $response->get_status()
+        );
     }
 
     protected static function pluginNotActiveResponse(): \WP_REST_Response

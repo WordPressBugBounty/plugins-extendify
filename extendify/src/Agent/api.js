@@ -1,4 +1,5 @@
 import { abilityDescriptors, getAbilities } from '@agent/abilities/abilities';
+import { findBlockEl, scopeOf } from '@agent/lib/block-el';
 import { buildBlockSchema } from '@agent/lib/block-schema';
 import {
 	classifyBlockEdit,
@@ -14,6 +15,10 @@ import {
 import { activeCanvasStep } from '@agent/state/canvas';
 import { useChatStore } from '@agent/state/chat';
 import { useGlobalStore } from '@agent/state/global';
+import {
+	currentHeaderState,
+	isExtendableHeader,
+} from '@agent/workflows/theme/tools/update-header-style';
 import { tools } from '@agent/workflows/workflows';
 import { AI_HOST } from '@constants';
 import { useQuickEditStore } from '@quick-edit/state/store';
@@ -21,9 +26,12 @@ import { digest } from '@shared/api/digest';
 import { reqDataBasics } from '@shared/lib/data';
 import { getBlockType } from '@wordpress/blocks';
 
+// page-templates:v1 declares that find-blocks and stage-block reach into parts.
+export const API_FEATURES = ['qa-tool', 'page-templates:v1'];
+
 const rootFor = (block) =>
 	block?.id && block?.target
-		? document.querySelector(`[${block.target}="${block.id}"]`)
+		? findBlockEl(block.id, document, scopeOf(block))
 		: null;
 
 // If greater than 5 blocks the agent will narrow the scope
@@ -107,6 +115,7 @@ export const pickWorkflow = async ({ workflows, options }) => {
 			messages: messages.slice(-5),
 			hasBlock: Boolean(block), // todo: remove this
 			blockDetails: block,
+			features: API_FEATURES,
 			...options,
 			extra: extra(),
 		}),
@@ -156,7 +165,11 @@ export const handleWorkflow = async ({ workflow, workflowData, options }) => {
 			messages: getCurrentMessages(),
 			previousMessages: getMessagesFor(workflow?.id),
 			context: window.extAgentData.context,
-			agentContext: window.extAgentData.agentContext,
+			agentContext: {
+				...window.extAgentData.agentContext,
+				// Without this the model offers the state the header is already in.
+				headerState: currentHeaderState(),
+			},
 			wpAbilities: window.extAgentData.wpAbilities ?? [],
 			clientTools: getClientTools(),
 			// The manifest is the backend's block-patching signal — never send it
@@ -166,8 +179,11 @@ export const handleWorkflow = async ({ workflow, workflowData, options }) => {
 			// The plugin owns the add catalog so old fielded builds are never
 			// offered a type they can't build.
 			insertableBlockTypes: isBlockPatching ? INSERTABLE_BLOCK_TYPES : [],
+			// The patcher writes dead CSS for these switches and claims success.
+			isExtendableHeader:
+				isBlockPatching && block?.template === 'header' && isExtendableHeader(),
 			retry: options?.retry || false,
-			features: ['qa-tool'],
+			features: API_FEATURES,
 			extra: extra(),
 		}),
 	});

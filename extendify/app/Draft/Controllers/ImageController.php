@@ -24,6 +24,14 @@ use Extendify\Shared\Services\Sanitizer;
 class ImageController
 {
     /**
+     * Must match `PILL_RIGHT_EDGE` in `src/Shared/lib/ai-label.js`.
+     *
+     * @var float
+     */
+    // phpcs:ignore PSR12.Properties.ConstantVisibility.NotFound -- 7.0 floor: no const visibility
+    const PILL_RIGHT_EDGE = 0.85;
+
+    /**
      * Upload the provided image
      *
      * @param \WP_REST_Request $request - The request.
@@ -85,8 +93,8 @@ class ImageController
     }
 
     /**
-     * Composite the client-rendered disclosure label onto the attachment,
-     * bottom-right at a 16px inset, matching the canvas-path stamp.
+     * Composite the client-rendered disclosure label onto the attachment. The
+     * PNG already includes its border, unlike the canvas path's fill box.
      *
      * @param int    $imageId - The attachment ID.
      * @param string $labelPath - Path to the uploaded label PNG.
@@ -123,8 +131,8 @@ class ImageController
         imagecopyresampled(
             $image,
             $label,
-            ($width - $labelWidth - 16),
-            ($height - $labelHeight - 16),
+            (int) round(($width * self::PILL_RIGHT_EDGE) - $labelWidth),
+            (int) round(($height - $labelHeight) / 2),
             0,
             0,
             $labelWidth,

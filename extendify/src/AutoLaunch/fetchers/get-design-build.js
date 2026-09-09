@@ -1,5 +1,5 @@
 import { isExternalLogo, uploadLogo } from '@auto-launch/fetchers/get-logo';
-import { getThemeVariation } from '@auto-launch/fetchers/get-variation';
+import { getStyleDocument } from '@auto-launch/fetchers/get-style-document';
 import {
 	getDesignBuildShape,
 	getLogoShape,
@@ -14,9 +14,9 @@ import {
 } from '@auto-launch/functions/helpers';
 import { updateOption } from '@auto-launch/functions/wp';
 import { useLaunchDataStore } from '@auto-launch/state/launch-data';
+import { launchStrings } from '@auto-launch/strings';
 import { AI_HOST } from '@constants';
 import { digest } from '@shared/api/digest';
-import { __ } from '@wordpress/i18n';
 import { mutate } from 'swr';
 
 const fallback = null;
@@ -33,7 +33,7 @@ export const handleDesignBuild = async ({ urlParams }) => {
 	if (!buildId) return fallback;
 
 	// translators: this is for a action log UI. Keep it short
-	setStatus(__('Loading your design', 'extendify-local'));
+	setStatus(launchStrings().statusDesign);
 
 	const url = `${AI_HOST}/api/design/${encodeURIComponent(buildId)}`;
 	const response = await retryTwice(() =>
@@ -63,14 +63,11 @@ export const handleDesignBuild = async ({ urlParams }) => {
 		await updateOption('extendify_site_profile', JSON.stringify(profile));
 		mutate('siteProfile', { siteProfile: profile }, false);
 
-		// Stash the site style and variation
 		const style = parsed.siteStyle;
-		const fonts =
-			style.fonts?.heading || style.fonts?.body ? style.fonts : null;
-		const variation = await getThemeVariation(
-			{ slug: style.colorPalette, fonts },
-			{ fallback: true },
-		);
+		const variation = await getStyleDocument({
+			colorPalette: style.colorPalette,
+			fonts: style.fonts,
+		});
 		const siteStyle = { ...style, variation };
 		// The Agent reads extendify_siteStyle; the legacy row keeps old readers.
 		await updateOption('extendify_siteStyle', siteStyle);

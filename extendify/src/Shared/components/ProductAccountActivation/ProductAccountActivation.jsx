@@ -1,4 +1,5 @@
 import { Dialog, DialogBackdrop, DialogPanel } from '@headlessui/react';
+import { prewarmRecaptcha } from '@shared/api/pluginsActivation';
 import { useEffect, useState } from '@wordpress/element';
 import { isEmail } from '@wordpress/url';
 import { createAccount } from './createAccount';
@@ -34,6 +35,14 @@ export const ProductAccountActivation = () => {
 		document.head.appendChild(style);
 	}, []);
 
+	useEffect(() => {
+		// Site keys come from PHP, so the prewarm needs no SWR wait.
+		for (const plugin of offered) {
+			const siteKey = plugin.scriptData?.recaptchaSiteKey;
+			if (siteKey) prewarmRecaptcha(siteKey).catch(() => {});
+		}
+	}, []);
+
 	const handleClose = () => {
 		activatePlugins({
 			status: ACTIVATION_STATUS.skipped,
@@ -62,13 +71,21 @@ export const ProductAccountActivation = () => {
 		const context = Object.fromEntries(
 			selectedPlugins.map((plugin, index) => {
 				const result = results[index];
-				const { requestTimeInMs, captchaTimeInMs, retries, errors } =
-					result.status === 'fulfilled' ? result.value : result.reason;
+				const {
+					requestTimeInMs,
+					captchaTimeInMs,
+					captchaWasWarm,
+					stepTimeInMs,
+					retries,
+					errors,
+				} = result.status === 'fulfilled' ? result.value : result.reason;
 				const entry = {
 					status: result.status === 'fulfilled' ? 'success' : 'error',
 					requestTimeInMs,
 					captchaTimeInMs,
-					endpoint: `extendify/v1/${plugin.slug}/create-account`,
+					captchaWasWarm,
+					stepTimeInMs,
+					endpoint: plugin.endpoint,
 					extendifyVersion: window.extSharedData?.version,
 					retries,
 					...(errors.length > 0 && { errors }),
@@ -96,31 +113,33 @@ export const ProductAccountActivation = () => {
 						className="fixed inset-0 bg-black/30 transition-opacity data-closed:opacity-0"
 					/>
 
-					<div className="z-10 fixed inset-0 flex w-screen items-center justify-center p-4 [body:has(#extendify-agent-chat)_&]:ml-96 [body:has(#extendify-agent-chat)_&]:w-[calc(100%-24rem)]">
+					<div className="z-10 fixed top-0 left-0 right-0 bottom-(--extendify-notification-bar-height,0px) flex items-center justify-center p-4 [body:has(#extendify-agent-chat)_&]:ml-96 [body:has(#extendify-agent-chat)_&]:w-[calc(100%-24rem)]">
 						<DialogPanel
 							transition
-							className="relative w-full max-w-208 bg-white rounded-lg shadow-xl transition-all data-closed:opacity-0 data-closed:scale-95"
+							className="relative w-full max-w-208 max-h-full overflow-hidden flex flex-col bg-white rounded-lg shadow-xl transition-all data-closed:opacity-0 data-closed:scale-95"
 						>
-							{!isFinished && !isLoading && (
-								<SetupPlugins
-									plugins={plugins}
-									setPlugins={setPlugins}
-									handleCreateAccounts={handleCreateAccounts}
-									email={email}
-									setEmail={setEmail}
-									handleClose={handleClose}
-									marketingConsent={marketingConsent}
-									setMarketingConsent={setMarketingConsent}
-									termsAgreed={termsAgreed}
-									setTermsAgreed={setTermsAgreed}
-								/>
-							)}
+							<div className="overflow-y-auto">
+								{!isFinished && !isLoading && (
+									<SetupPlugins
+										plugins={plugins}
+										setPlugins={setPlugins}
+										handleCreateAccounts={handleCreateAccounts}
+										email={email}
+										setEmail={setEmail}
+										handleClose={handleClose}
+										marketingConsent={marketingConsent}
+										setMarketingConsent={setMarketingConsent}
+										termsAgreed={termsAgreed}
+										setTermsAgreed={setTermsAgreed}
+									/>
+								)}
 
-							{!isFinished && isLoading && <Loading />}
+								{!isFinished && isLoading && <Loading />}
 
-							{isFinished && (
-								<SetupComplete handleClose={() => setIsOpen(false)} />
-							)}
+								{isFinished && (
+									<SetupComplete handleClose={() => setIsOpen(false)} />
+								)}
+							</div>
 						</DialogPanel>
 					</div>
 				</div>

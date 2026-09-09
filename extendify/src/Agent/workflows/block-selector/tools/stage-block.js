@@ -1,9 +1,8 @@
+import { blockIdOf, resolveScopedId } from '@agent/lib/block-el';
 import { buildAgentBlockDescriptor } from '@quick-edit/lib/agent-block-descriptor';
 import { useQuickEditStore } from '@quick-edit/state/store';
 
-const BLOCK_ID_ATTR = 'data-extendify-agent-block-id';
-
-const tagged = (el) => Boolean(el?.getAttribute?.(BLOCK_ID_ATTR));
+const tagged = (el) => Boolean(blockIdOf(el));
 
 const nearestTagged = (el) => {
 	let node = el;
@@ -32,19 +31,17 @@ const enclosing = (els) => {
 
 export default ({ blockIds } = {}) => {
 	const ids = (blockIds ?? []).filter(Boolean);
-	const els = ids
-		.map((id) =>
-			document.querySelector(`[${BLOCK_ID_ATTR}="${CSS.escape(String(id))}"]`),
-		)
-		.filter(Boolean);
-	if (!els.length) {
+	// Any tool error renders as a red error banner in chat.
+	if (!ids.length) {
 		return {
-			error: {
-				message: ids.length
-					? `Block ${ids[0]} is no longer on the page`
-					: 'No block id was given',
-			},
+			stagedBlockIds: [],
+			message:
+				'No block id was given. Call find-blocks first, then stage an id it returned.',
 		};
+	}
+	const els = ids.map((id) => resolveScopedId(id)).filter(Boolean);
+	if (!els.length) {
+		return { error: { message: `Block ${ids[0]} is no longer on the page` } };
 	}
 	const target = els.length > 1 ? enclosing(els) : patternFor(els[0]);
 	const descriptor = buildAgentBlockDescriptor(target);

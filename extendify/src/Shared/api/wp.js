@@ -156,10 +156,12 @@ export const downloadImage = async (
 	metadata = { alt: '', caption: '' },
 ) => {
 	let image;
+	const aiGenerated = source === 'ai-generated';
 	if (unsplashId) {
 		await downloadPing(id, source, { unsplashId });
+	} else if (aiGenerated && id) {
+		await downloadPing(id, source, { disclose: metadata.disclose });
 	}
-	const aiGenerated = source === 'ai-generated';
 	try {
 		image = await importImage(src, {
 			alt: metadata.alt,

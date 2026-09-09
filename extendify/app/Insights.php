@@ -36,10 +36,8 @@ class Insights
     // phpcs:ignore PSR12.Properties.ConstantVisibility.NotFound
     const AVAILABLE_TESTS = [
         'AutoLaunch.HideEnhanceAI',
-        'AutoLaunch.SubmitOutside',
         'AutoLaunch.SubmitCreateWebsite',
         'AutoLaunch.DescriptionPlaceholderLaw',
-        'AutoLaunch.HeaderParagraphOld',
         'AutoLaunch.MigrateScreen',
     ];
 

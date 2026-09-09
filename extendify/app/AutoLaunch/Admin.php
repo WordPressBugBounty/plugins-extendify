@@ -77,6 +77,8 @@ class Admin
                 'wpRoot' => \rest_url(),
                 'activeTests' => \get_option(Insights::ACTIVE_TESTS_OPTION, []),
                 'showLaunchTitle' => (bool) PartnerData::setting('showLaunchTitle'),
+                'customDesign' => PartnerData::setting('customDesign'),
+                'partnerStrings' => PartnerData::setting('strings'),
                 'resetSiteInformation' => [
                     'pagesIds' => array_map('esc_attr', $this->getLaunchCreatedPages()),
                     'navigationsIds' => array_map('esc_attr', $this->getLaunchCreatedNavigations()),

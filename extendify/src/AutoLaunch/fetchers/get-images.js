@@ -6,9 +6,9 @@ import {
 	retryTwice,
 	setStatus,
 } from '@auto-launch/functions/helpers';
+import { launchStrings } from '@auto-launch/strings';
 import { IMAGES_HOST } from '@constants';
 import { reqDataBasics } from '@shared/lib/data';
-import { __ } from '@wordpress/i18n';
 
 const fallback = { siteImages: { hero: [], general: [] } };
 const url = `${IMAGES_HOST}/api/images`;
@@ -25,7 +25,7 @@ const asSections = (urls) => ({ hero: [], general: asImages(urls) });
 
 export const handleSiteImages = async ({ siteProfile, designBuild }) => {
 	// translators: this is for a action log UI. Keep it short
-	setStatus(__('Finding the perfect images', 'extendify-local'));
+	setStatus(launchStrings().statusImages);
 
 	// Reuse the design preview's own images; only search for what is missing.
 	const seeded = collectBuiltPageImageUrls(designBuild?.builtPages);

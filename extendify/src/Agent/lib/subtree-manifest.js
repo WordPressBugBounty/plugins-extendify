@@ -1,7 +1,6 @@
+import { BLOCK_ID_SEL, blockIdOf } from './block-el';
 import { detectBlockType } from './block-type';
 import { readComputedStyles } from './computed-styles';
-
-const BLOCK_ID_ATTR = 'data-extendify-agent-block-id';
 
 // Signal-less but edit targets ("swap the columns", "round the image") — dropped, they're unaddressable.
 const ALWAYS_KEPT_TYPES = new Set([
@@ -52,11 +51,19 @@ const customCss = (el) => {
 	return null;
 };
 
+const PART_SLUG_ATTR = 'data-extendify-part-slug';
+
+// One request carries one partSlug, so a nested part's blocks would resolve
+// against the wrong post.
+const partScope = (root) => {
+	const rootSlug = root?.getAttribute?.(PART_SLUG_ATTR) ?? null;
+	return (el) => (el?.getAttribute?.(PART_SLUG_ATTR) ?? null) === rootSlug;
+};
+
 // Stops at nested tagged blocks so a container's text never bleeds from its children.
 const ownSubtree = (el) => {
 	const clone = el.cloneNode(true);
-	for (const nested of clone.querySelectorAll(`[${BLOCK_ID_ATTR}]`))
-		nested.remove();
+	for (const nested of clone.querySelectorAll(BLOCK_ID_SEL)) nested.remove();
 	return clone;
 };
 
@@ -86,10 +93,12 @@ const colorSlugs = (clone) => {
 export const buildSubtreeManifest = (root) => {
 	if (!root) return [];
 	const manifest = [];
+	const inScope = partScope(root);
 	// A directly-selected block is its own (and only) target, so the root is included.
-	const els = [root, ...root.querySelectorAll(`[${BLOCK_ID_ATTR}]`)];
+	const els = [root, ...root.querySelectorAll(BLOCK_ID_SEL)].filter(inScope);
 	for (const [index, el] of els.entries()) {
-		if (!el.getAttribute?.(BLOCK_ID_ATTR)) continue;
+		const blockId = blockIdOf(el);
+		if (!blockId) continue;
 		const type = detectBlockType(el);
 		if (!type) continue;
 		const clone = ownSubtree(el);
@@ -107,7 +116,7 @@ export const buildSubtreeManifest = (root) => {
 		const styles = renderedStyles(el);
 		const css = customCss(el);
 		manifest.push({
-			blockId: el.getAttribute(BLOCK_ID_ATTR),
+			blockId,
 			type,
 			...(text && { text }),
 			...colors,
@@ -119,24 +128,26 @@ export const buildSubtreeManifest = (root) => {
 };
 
 // Tagged blocks directly beneath el, past any untagged wrappers.
-const childBlockEls = (el) => {
+const childBlockEls = (el, inScope) => {
 	const out = [];
 	for (const child of el.children ?? []) {
-		if (child.getAttribute?.(BLOCK_ID_ATTR)) out.push(child);
-		else out.push(...childBlockEls(child));
+		if (!inScope(child)) continue;
+		if (blockIdOf(child)) out.push(child);
+		else out.push(...childBlockEls(child, inScope));
 	}
 	return out;
 };
 
 // Keeps every tagged block; the flat manifest drops signal-less ones.
-const treeNodesFor = (el) =>
-	childBlockEls(el).flatMap((child) => {
+const treeNodesFor = (el, inScope) =>
+	childBlockEls(el, inScope).flatMap((child) => {
 		const type = detectBlockType(child);
-		const children = treeNodesFor(child);
-		if (!type || !child.getAttribute?.(BLOCK_ID_ATTR)) return children;
+		const children = treeNodesFor(child, inScope);
+		const blockId = blockIdOf(child);
+		if (!type || !blockId) return children;
 		return [
 			{
-				blockId: child.getAttribute(BLOCK_ID_ATTR),
+				blockId,
 				type,
 				...(children.length && { children }),
 			},
@@ -145,4 +156,4 @@ const treeNodesFor = (el) =>
 
 // Nested block structure for the selection.
 export const buildSubtreeTree = (root) =>
-	root ? treeNodesFor({ children: [root] }) : [];
+	root ? treeNodesFor({ children: [root] }, partScope(root)) : [];

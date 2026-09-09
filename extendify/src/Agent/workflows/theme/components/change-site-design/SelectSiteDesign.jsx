@@ -1,12 +1,17 @@
+import { usePaletteOverride } from '@agent/hooks/usePaletteOverride';
+import { usePalettes } from '@agent/hooks/usePalettes';
 import { useSiteVibesOverride } from '@agent/hooks/useSiteVibesOverride';
 import { useSiteVibesVariations } from '@agent/hooks/useSiteVibesVariations';
 import { useVariationOverride } from '@agent/hooks/useVariationOverride';
 import { refreshBlockHighlight } from '@agent/lib/block-highlight';
 import { DesignOption } from '@agent/workflows/theme/components/change-site-design/DesignOption';
+import { fontsOnlyVariation } from '@agent/workflows/theme/components/change-site-design/utils/fontsOnlyVariation';
 import { removeAnimationClasses } from '@agent/workflows/theme/components/change-site-design/utils/removeAnimationClasses';
 import { handleSiteImages } from '@auto-launch/fetchers/get-images';
 import { handleSiteStrings } from '@auto-launch/fetchers/get-strings';
 import { useUserSelectionStore } from '@launch/state/user-selections';
+import { paletteDuotone } from '@shared/lib/palette-preview';
+import { samplePalettes } from '@shared/lib/palettes';
 import { safeParseJson } from '@shared/lib/parsing';
 import { normalizeSiteImages } from '@shared/lib/site-images';
 import apiFetch from '@wordpress/api-fetch';
@@ -97,6 +102,7 @@ export const SelectSiteDesign = ({ onConfirm, onCancel }) => {
 	const [selectedColorAndFonts, setSelectedColorAndFonts] = useState();
 	const [selectedHeroPattern, setSelectedHeroPattern] = useState();
 	const [selectedVibe, setSelectedVibe] = useState();
+	const [selectedPalette, setSelectedPalette] = useState();
 
 	const { updateSettings } = useDispatch('core/block-editor');
 
@@ -125,10 +131,31 @@ export const SelectSiteDesign = ({ onConfirm, onCancel }) => {
 		injectedLinksRef.current = [];
 	};
 
+	const {
+		palettes,
+		preferred,
+		css: paletteCss,
+		isLoading: isLoadingPalettes,
+	} = usePalettes();
+	const onPalettes = Boolean(palettes?.length);
+	const shownPalettes = useMemo(
+		() => samplePalettes(palettes, preferred),
+		[palettes, preferred],
+	);
+	const paletteFor = (index) =>
+		onPalettes ? shownPalettes[index % shownPalettes.length] : undefined;
+
 	const { undoChange: undoColorAndFontsChange } = useVariationOverride({
 		css: !isAdmin && selectedColorAndFonts?.css,
 		duotoneTheme:
-			!isAdmin && selectedColorAndFonts?.settings?.color?.duotone?.theme,
+			!isAdmin &&
+			!onPalettes &&
+			selectedColorAndFonts?.settings?.color?.duotone?.theme,
+	});
+
+	const { undoChange: undoPaletteChange } = usePaletteOverride({
+		css: (!isAdmin && paletteCss?.[selectedPalette?.slug]) || '',
+		duotoneTheme: (!isAdmin && paletteDuotone(selectedPalette)) || null,
 	});
 
 	const { undoChange: undoVibesChange } = useSiteVibesOverride({
@@ -148,6 +175,11 @@ export const SelectSiteDesign = ({ onConfirm, onCancel }) => {
 			.map(([slug, css]) => ({
 				slug,
 				css: css?.replaceAll(slug, 'natural-1'),
+				// Css only adds, so a cloned page keeps the applied vibe's slots.
+				previewCss: `${vibesData.resets?.[slug] ?? ''}${css ?? ''}`.replaceAll(
+					slug,
+					'natural-1',
+				),
 			}))
 			.sort(() => Math.random() - 0.5);
 
@@ -273,6 +305,7 @@ export const SelectSiteDesign = ({ onConfirm, onCancel }) => {
 	const undoChanges = () => {
 		undoHeroSectionChange();
 		undoColorAndFontsChange();
+		undoPaletteChange();
 		undoVibesChange();
 		removeInjectedLinks();
 		refreshBlockHighlight();
@@ -337,7 +370,10 @@ export const SelectSiteDesign = ({ onConfirm, onCancel }) => {
 					updatedPageBlocks,
 					postId,
 					vibeSlug: selectedVibe.slug,
-					colorAndFontsVariation: selectedColorAndFonts,
+					colorAndFontsVariation: onPalettes
+						? fontsOnlyVariation(selectedColorAndFonts)
+						: selectedColorAndFonts,
+					colorPalette: selectedPalette?.slug,
 				},
 				shouldRefreshPage: true,
 			});
@@ -348,7 +384,7 @@ export const SelectSiteDesign = ({ onConfirm, onCancel }) => {
 		}
 	};
 
-	if (isLoading || isLoadingVibes) {
+	if (isLoading || isLoadingVibes || isLoadingPalettes) {
 		return (
 			<div className="min-h-24 p-2 text-center text-sm">
 				{__('Loading design options...', 'extendify-local')}
@@ -369,6 +405,7 @@ export const SelectSiteDesign = ({ onConfirm, onCancel }) => {
 								setSelectedHeroPattern(currentDesignOption);
 								setSelectedColorAndFonts(null);
 								setSelectedVibe(null);
+								setSelectedPalette(null);
 
 								undoChanges();
 							}}
@@ -382,15 +419,18 @@ export const SelectSiteDesign = ({ onConfirm, onCancel }) => {
 							styles={{
 								linkStyles: heroPattern.linkStyles,
 								colorAndFontsVariations: colorAndFontsVariations[i].css,
-								duotoneTheme:
-									colorAndFontsVariations[i]?.settings?.color?.duotone?.theme,
-								vibes: vibes[i]?.css,
+								paletteCss: paletteCss?.[paletteFor(i)?.slug],
+								duotoneTheme: onPalettes
+									? paletteDuotone(paletteFor(i))
+									: colorAndFontsVariations[i]?.settings?.color?.duotone?.theme,
+								vibes: vibes[i]?.previewCss,
 								blockSupportsCss: heroPattern.blockSupportsCss,
 							}}
 							onClick={() => {
 								setSelectedHeroPattern(heroPattern);
 								setSelectedColorAndFonts(colorAndFontsVariations[i]);
 								setSelectedVibe(vibes[i]);
+								setSelectedPalette(paletteFor(i));
 
 								if (!isAdmin) {
 									const blockSupportsCss = heroPattern.blockSupportsCss;

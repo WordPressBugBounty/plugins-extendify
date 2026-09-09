@@ -1,6 +1,8 @@
 // Patch schema from the block's real `supports` — the model never hand-authors HTML.
 // Structure only: the backend overlays the model-facing field descriptions.
 
+import { SETTING_TEXT_BLOCKS } from '@agent/lib/setting-text-blocks';
+
 const str = { type: 'string' };
 const obj = (properties) => ({
 	type: 'object',
@@ -115,6 +117,10 @@ const layoutSchema = (supports) => {
 	});
 };
 
+// Where a block keeps its editable text, most-specific first: `text` (button),
+// `content` (paragraph, heading), `label` (menu item, search).
+export const RICH_TEXT_ATTRIBUTES = ['text', 'content', 'label'];
+
 // Identity attributes (ref, id, className, lock, metadata) stay out —
 // bad values there break the block, not just its look.
 const SIMPLE_ATTRIBUTES = [
@@ -152,9 +158,12 @@ export const buildBlockSchema = (blockType) => {
 		...simple,
 		align: attributes.align ? alignSchema(supports.align) : null,
 		layout: attributes.layout ? layoutSchema(supports) : null,
-		// Rich text lives in `text` (button) or `content` (paragraph, heading, …);
-		// the model always sees `text` — the patcher maps it to the real attribute.
-		text: attributes.text || attributes.content ? str : null,
+		// Model-facing name; block-patch maps it back to the real home.
+		text:
+			RICH_TEXT_ATTRIBUTES.some((name) => attributes[name]) ||
+			SETTING_TEXT_BLOCKS[blockType.name]
+				? str
+				: null,
 		url: attributes.url ? str : null,
 		backgroundColor:
 			attributes.backgroundColor && colorChannel(supports.color, 'background')

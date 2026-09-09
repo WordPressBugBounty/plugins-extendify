@@ -174,6 +174,8 @@ class Admin
                     return array_merge($plugin, [
                         'scriptData' => $activation::scriptData(),
                         'eligible' => $activation::isEligible(),
+                        'endpoint' => Config::$slug . '/' . Config::$apiVersion
+                            . $activation::createAccountRoute(),
                     ]);
                 }
             }

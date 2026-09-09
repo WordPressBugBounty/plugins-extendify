@@ -177,21 +177,30 @@ class WPController
     }
 
     /**
-     * Runs every time the launch page loads: resets launch state (a no-op on a
-     * fresh site, the expected reset on an existing one) and enables auto-updates.
+     * Runs on every launch page load, so it must not discard site state.
      *
      * @return \WP_REST_Response
      */
     public static function preLaunch()
     {
-        \delete_option('extendify_onboarding_completed');
-        ChatHistoryController::clear();
-
         if (AutoUpdate::isEnabled()) {
             AutoUpdate::enableAutoUpdateForPlugin(EXTENDIFY_PLUGIN_BASENAME);
             AutoUpdate::addToAutoUpdateList('auto_update_themes', 'extendable');
             AutoUpdate::enableAutoUpdateForCore();
         }
+
+        return new \WP_REST_Response(['success' => true]);
+    }
+
+    /**
+     * Discards the launched state after the user confirms the restart.
+     *
+     * @return \WP_REST_Response
+     */
+    public static function resetLaunchState()
+    {
+        \delete_option('extendify_onboarding_completed');
+        ChatHistoryController::clear();
 
         return new \WP_REST_Response(['success' => true]);
     }

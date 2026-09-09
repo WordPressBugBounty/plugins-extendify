@@ -105,6 +105,8 @@ class PartnerData
             'message' => '',
             'cta-primary' => '',
         ],
+        'customDesign' => null,
+        'strings' => [],
     ];
 
     // phpcs:disable Generic.Metrics.CyclomaticComplexity.MaxExceeded
@@ -189,6 +191,8 @@ class PartnerData
         self::$config['activeTests'] = ($data['activeTests'] ?? self::$config['activeTests']);
         self::$config['showExtendifyCode'] = ($data['showExtendifyCode'] ?? self::$config['showExtendifyCode']);
         self::$config['extendifyCodeData'] = ($data['extendifyCodeData'] ?? self::$config['extendifyCodeData']);
+        self::$config['customDesign'] = ($data['customDesign'] ?? self::$config['customDesign']);
+        self::$config['strings'] = ($data['strings'] ?? self::$config['strings']);
 
         // Add the job hook to fetch the partner data.
         \add_action('extendify_fetch_partner_data', [self::class, 'fetchPartnerData']);
@@ -274,10 +278,14 @@ class PartnerData
 
         $sanitizedData = array_merge(
             Sanitizer::sanitizeUnknown($result['data']),
-            ['consentTermsCustom' => \sanitize_text_field(htmlentities(
-                ($result['data']['consentTermsCustom'] ?? ''),
-                ENT_QUOTES | ENT_SUBSTITUTE | ENT_HTML401
-            ))]
+            [
+                'consentTermsCustom' => \sanitize_text_field(htmlentities(
+                    ($result['data']['consentTermsCustom'] ?? ''),
+                    ENT_QUOTES | ENT_SUBSTITUTE | ENT_HTML401
+                )),
+                'customDesign' => self::sanitizeDesign($result['data']['customDesign'] ?? null),
+                'strings' => self::sanitizeStrings($result['data']['strings'] ?? null),
+            ]
         );
 
         // Merge before persisting as this data is accessed directly elsewhere.
@@ -285,6 +293,74 @@ class PartnerData
         \update_option('extendify_partner_data_v2', $mergedData);
 
         return $mergedData;
+    }
+
+    /**
+     * Partner copy overriding the shipped strings.
+     *
+     * Which keys exist is the flow's to know, so only shape and text are checked here.
+     *
+     * @param mixed $strings The map as the partner-data response carried it.
+     * @return array
+     */
+    public static function sanitizeStrings($strings)
+    {
+        return array_map(
+            'sanitize_text_field',
+            self::designEntries($strings, '/^[a-zA-Z][a-zA-Z0-9]*$/', 'is_string')
+        );
+    }
+
+    /**
+     * A design carries GLSL, which the text sanitizers break, so only its shape is checked.
+     *
+     * Empty members are left out rather than kept: json_encode writes an empty
+     * PHP array as [], and the page reads the design as an object.
+     *
+     * @param mixed $design The design as the partner-data response carried it.
+     * @return array|null
+     */
+    private static function sanitizeDesign($design)
+    {
+        if (!is_array($design)) {
+            return null;
+        }
+
+        $shader = ($design['shader'] ?? null);
+        $logo = ($design['logo'] ?? null);
+        $kept = array_filter([
+            'vars' => self::designEntries(
+                ($design['vars'] ?? null),
+                '/^--ext-(ui|tpl)-[a-z0-9-]+$/',
+                function ($value) {
+                    // A CSS value is a string, but 0.88 is a natural way to write one.
+                    return is_string($value) || is_int($value) || is_float($value);
+                }
+            ),
+            'templates' => self::designEntries(($design['templates'] ?? null), '/^[A-Za-z0-9_-]+$/', 'is_string'),
+            'shader' => is_string($shader) ? \wp_check_invalid_utf8($shader) : '',
+            'logo' => is_string($logo) ? \esc_url_raw($logo) : '',
+        ]);
+
+        return $kept ?: null;
+    }
+
+    private static function designEntries($entries, $keyPattern, callable $accepts)
+    {
+        if (!is_array($entries)) {
+            return [];
+        }
+
+        $kept = [];
+        foreach ($entries as $key => $value) {
+            if (!is_string($key) || !preg_match($keyPattern, $key) || !$accepts($value)) {
+                continue;
+            }
+
+            $kept[$key] = is_string($value) ? \wp_check_invalid_utf8($value) : $value;
+        }
+
+        return $kept;
     }
 
     /**

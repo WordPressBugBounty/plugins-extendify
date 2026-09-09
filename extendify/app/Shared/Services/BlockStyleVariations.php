@@ -34,7 +34,13 @@ class BlockStyleVariations
      */
     public static function registerStored()
     {
-        self::registerNames(get_option(self::OPTION, []));
+        $stored = get_option(self::OPTION, []);
+        $valid = self::validBlockTypes($stored);
+        if ($valid !== $stored) {
+            update_option(self::OPTION, $valid);
+        }
+
+        self::registerNames($valid);
     }
 
     /**
@@ -50,6 +56,11 @@ class BlockStyleVariations
     {
         $isWrite = in_array($request->get_method(), ['POST', 'PUT', 'PATCH'], true);
         if (!$isWrite || strpos($request->get_route(), '/wp/v2/global-styles') !== 0) {
+            return $response;
+        }
+
+        // This filter runs before the route's permission_callback, so auth is checked here.
+        if (!current_user_can('edit_theme_options')) {
             return $response;
         }
 
@@ -73,6 +84,10 @@ class BlockStyleVariations
         $blocks = is_array($styles) ? ($styles['blocks'] ?? []) : [];
         $names = [];
         foreach ((array) $blocks as $blockType => $block) {
+            if (!self::isValidBlockType($blockType)) {
+                continue;
+            }
+
             $variations = is_array($block) ? ($block['variations'] ?? []) : [];
             $ours = array_filter(array_keys((array) $variations), function ($name) {
                 return is_string($name) && strpos($name, 'ext-') === 0;
@@ -103,6 +118,29 @@ class BlockStyleVariations
     }
 
     /**
+     * A block-style key is interpolated unescaped into core's inline
+     * registerBlockStyle() script, so only a real "namespace/block" name is
+     * ever stored or registered — anything else is an injection attempt.
+     *
+     * @param mixed $blockType - The array key from a global-styles write.
+     * @return bool
+     */
+    private static function isValidBlockType($blockType)
+    {
+        return is_string($blockType) && preg_match('~^[a-z0-9-]+/[a-z0-9-]+$~', $blockType) === 1;
+    }
+
+    /**
+     * @param mixed $stored - The persisted names per block type.
+     * @return array<string, array<string>>
+     */
+    private static function validBlockTypes($stored)
+    {
+        $names = is_array($stored) ? $stored : [];
+        return array_filter($names, [self::class, 'isValidBlockType'], ARRAY_FILTER_USE_KEY);
+    }
+
+    /**
      * @param mixed $names - Variation names per block type.
      * @return void
      */
@@ -110,8 +148,12 @@ class BlockStyleVariations
     {
         $registry = \WP_Block_Styles_Registry::get_instance();
         foreach ((array) $names as $blockType => $blockNames) {
+            if (!self::isValidBlockType($blockType)) {
+                continue;
+            }
+
             foreach ((array) $blockNames as $name) {
-                if (!is_string($blockType) || !is_string($name) || $registry->is_registered($blockType, $name)) {
+                if (!is_string($name) || $registry->is_registered($blockType, $name)) {
                     continue;
                 }
 

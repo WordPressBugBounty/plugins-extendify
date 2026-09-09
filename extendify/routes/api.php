@@ -83,6 +83,7 @@ use Extendify\Shared\Services\PluginsActivation\Metricool as MetricoolActivation
         ApiRouter::post('/auto-launch/create-navigation', [AutoLaunchWPController::class, 'createNavigationWithMeta']);
         ApiRouter::get('/auto-launch/get-navigation', [AutoLaunchWPController::class, 'getNavigation']);
         ApiRouter::post('/auto-launch/pre-launch-functions', [AutoLaunchWPController::class, 'preLaunch']);
+        ApiRouter::post('/auto-launch/reset-launch-state', [AutoLaunchWPController::class, 'resetLaunchState']);
         ApiRouter::post('/auto-launch/post-launch-functions', [AutoLaunchWPController::class, 'postLaunch']);
         ApiRouter::post('/auto-launch/run-updates', [AutoLaunchWPController::class, 'runUpdates']);
         ApiRouter::get(
@@ -119,6 +120,7 @@ use Extendify\Shared\Services\PluginsActivation\Metricool as MetricoolActivation
         ApiRouter::get('/agent/theme-variations', [AgentWPController::class, 'getVariations']);
         ApiRouter::get('/agent/theme-fonts-variations', [AgentWPController::class, 'getFontsVariations']);
         ApiRouter::get('/agent/get-block-code', [AgentWPController::class, 'getBlockCode']);
+        ApiRouter::get('/agent/shared-block-usage', [AgentWPController::class, 'getSharedBlockUsage']);
         ApiRouter::post('/agent/get-block-html', [AgentWPController::class, 'getBlockHtml']);
         ApiRouter::post('/agent/update-blocks', [AgentUpdateBlocksController::class, 'updateBlocks']);
         ApiRouter::post('/agent/lock-post', [AgentWPController::class, 'lockPost']);
@@ -154,15 +156,15 @@ use Extendify\Shared\Services\PluginsActivation\Metricool as MetricoolActivation
         ApiRouter::get('/shared/ping', [SharedDataController::class, 'ping']);
         ApiRouter::get('/shared/partner-plugins', [SharedDataController::class, 'getPartnerPlugins']);
         ApiRouter::post(
-            '/' . SimplyBookActivation::slug() . '/create-account',
+            SimplyBookActivation::createAccountRoute(),
             [SimplyBookActivation::class, 'createAccount']
         );
         ApiRouter::post(
-            '/' . TranslatePressActivation::slug() . '/create-account',
+            TranslatePressActivation::createAccountRoute(),
             [TranslatePressActivation::class, 'createAccount']
         );
         ApiRouter::post(
-            '/' . ImagifyActivation::slug() . '/create-account',
+            ImagifyActivation::createAccountRoute(),
             [ImagifyActivation::class, 'createAccount']
         );
         ApiRouter::post(

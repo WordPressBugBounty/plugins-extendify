@@ -133,10 +133,8 @@ export const getPageProfile = async ({ description, siteProfile }) => {
 };
 
 export const getPageImages = async ({ pageProfile }) => {
-	const { aiSiteType, aiSiteCategory, aiDescription, aiKeywords } = pageProfile;
+	const { aiDescription, aiKeywords } = pageProfile;
 	const search = new URLSearchParams({
-		aiSiteType,
-		aiSiteCategory,
 		aiDescription,
 		aiKeywords,
 		...extraBody,

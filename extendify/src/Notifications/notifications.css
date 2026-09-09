@@ -6,6 +6,28 @@
 	color-scheme: only light;
 }
 
+/* The bar is fixed, and the agent reserves its height only while its panel is open. */
+/* no-prefix */
+body {
+	padding-bottom: var(--extendify-notification-bar-height, 0px);
+}
+
+/* Fixed positioning escapes the body padding; --bottom is TranslatePress's own offset. */
+/* no-prefix */
+.trp-floating-switcher.trp-switcher-position-bottom {
+	bottom: calc(
+		var(--bottom, 0px) +
+		var(--extendify-notification-bar-height, 0px)
+	);
+}
+
+/* The legacy switcher; a site setting picks which generation renders. */
+/* no-prefix */
+#trp-floater-ls.trp-bottom-right,
+#trp-floater-ls.trp-bottom-left {
+	bottom: var(--extendify-notification-bar-height, 0px);
+}
+
 /* Without this the wrapper divs stretch the pill to the host bar's full height. */
 /* no-prefix */
 #wpadminbar .extendify-notifications,

@@ -5,9 +5,9 @@ import {
 	retryTwice,
 	setStatus,
 } from '@auto-launch/functions/helpers';
+import { launchStrings } from '@auto-launch/strings';
 import { AI_HOST } from '@constants';
 import { reqDataBasics } from '@shared/lib/data';
-import { __ } from '@wordpress/i18n';
 
 const fallback = { aiHeaders: [], aiBlogTitles: [], heroDescription: '' };
 const url = `${AI_HOST}/api/site-strings`;
@@ -16,7 +16,7 @@ const headers = { 'Content-Type': 'application/json' };
 
 export const handleSiteStrings = async ({ siteProfile }) => {
 	// translators: this is for a action log UI. Keep it short
-	setStatus(__('Generating site content ideas', 'extendify-local'));
+	setStatus(launchStrings().statusIdeas);
 
 	const body = JSON.stringify({ ...reqDataBasics, siteProfile });
 

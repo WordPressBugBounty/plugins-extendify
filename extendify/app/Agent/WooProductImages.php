@@ -4,6 +4,8 @@ namespace Extendify\Agent;
 
 defined('ABSPATH') || die('No direct access.');
 
+use Extendify\Shared\Services\Import\ImageUploader;
+
 /**
  * Adds an `images` field to WooCommerce's product abilities, which ship with no
  * way to set a product image at all.
@@ -177,15 +179,9 @@ class WooProductImages
             return false;
         }
 
-        if (!function_exists('\media_sideload_image')) {
-            require_once ABSPATH . 'wp-admin/includes/media.php';
-            require_once ABSPATH . 'wp-admin/includes/file.php';
-            require_once ABSPATH . 'wp-admin/includes/image.php';
-        }
+        $uploaded = (new ImageUploader())->uploadImage($url);
 
-        $id = \media_sideload_image($url, 0, null, 'id');
-
-        return \is_wp_error($id) ? false : $id;
+        return \is_wp_error($uploaded) ? false : $uploaded['attachment_id'];
     }
 
     private static function inputSchema()

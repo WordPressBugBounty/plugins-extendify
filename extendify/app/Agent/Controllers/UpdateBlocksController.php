@@ -5,11 +5,20 @@ namespace Extendify\Agent\Controllers;
 defined('ABSPATH') || die('No direct access.');
 
 use Extendify\Agent\PostBlockFinder;
+use Extendify\Agent\TemplatePartBlockFinder;
 
 // Ops splice in request order against one stamped parse, so earlier ops never
 // invalidate later ids; untouched blocks round-trip byte-for-byte.
 class UpdateBlocksController
 {
+    // Labels match the words the apply helpers use for a missing id.
+    // phpcs:ignore PSR12.Properties.ConstantVisibility.NotFound
+    const ID_FIELDS = [
+        'blockId' => 'block id',
+        'anchorId' => 'anchor block',
+        'targetId' => 'target block',
+    ];
+
     // Keyed by the model-facing container word; the placeholder paragraph
     // marks the wrapped block's slot.
     // phpcs:ignore PSR12.Properties.ConstantVisibility.NotFound
@@ -36,22 +45,28 @@ class UpdateBlocksController
         $params = $request->get_json_params();
         $params = is_array($params) ? $params : [];
 
-        // Template parts have a separate id space; refusing beats a silent no-op.
-        if (!empty($params['partSlug'])) {
-            return new \WP_REST_Response(
-                ['error' => 'Template-part blocks cannot be saved by this endpoint'],
-                400
-            );
-        }
+        $partSlug = (string) ($params['partSlug'] ?? '');
+        $inTemplatePart = $partSlug !== '';
 
-        $postId = (int) ($params['postId'] ?? 0);
-        $post = $postId ? \get_post($postId) : null;
-        if (!$post) {
-            return new \WP_REST_Response(['error' => 'Post not found'], 404);
-        }
-
-        if (!\current_user_can('edit_post', $post->ID)) {
-            return new \WP_REST_Response(['error' => 'Forbidden for this post'], 403);
+        if ($inTemplatePart) {
+            $post = self::resolveTemplatePart($partSlug);
+            if (\is_wp_error($post)) {
+                return new \WP_REST_Response(['error' => $post->get_error_message()], 404);
+            }
+            if (!\current_user_can('edit_theme_options')) {
+                return new \WP_REST_Response(['error' => 'Forbidden for this template part'], 403);
+            }
+            $blocks = TemplatePartBlockFinder::stamp(\parse_blocks($post->post_content));
+        } else {
+            $postId = (int) ($params['postId'] ?? 0);
+            $post = $postId ? \get_post($postId) : null;
+            if (!$post) {
+                return new \WP_REST_Response(['error' => 'Post not found'], 404);
+            }
+            if (!\current_user_can('edit_post', $post->ID)) {
+                return new \WP_REST_Response(['error' => 'Forbidden for this post'], 403);
+            }
+            $blocks = PostBlockFinder::stamp(\parse_blocks($post->post_content));
         }
 
         $operations = isset($params['operations']) && is_array($params['operations'])
@@ -61,61 +76,167 @@ class UpdateBlocksController
             return new \WP_REST_Response(['error' => 'operations required'], 400);
         }
 
-        $blocks = PostBlockFinder::stamp(\parse_blocks($post->post_content));
+        $trees = [$post->ID => self::newTree($post, $blocks)];
 
         $applied = [];
         $refused = [];
-        $sharedWrappers = [];
         foreach ($operations as $operation) {
             $operation = is_array($operation) ? $operation : [];
             $op = (string) ($operation['op'] ?? '');
+            $reportKey = $op === 'add' ? 'anchorId' : 'blockId';
+            $reportId = $operation[$reportKey] ?? null;
+
+            $routed = self::route($operation, $trees, $post);
+            if (\is_wp_error($routed)) {
+                $refused[] = [$reportKey => $reportId, 'reason' => $routed->get_error_message()];
+                continue;
+            }
+            $owner = $routed['owner'];
+            $operation = $routed['operation'];
             $blockId = (int) ($operation['blockId'] ?? 0);
 
             if ($op === 'add') {
-                $anchorId = (int) ($operation['anchorId'] ?? 0);
-                $reason = self::applyAdd($blocks, $anchorId, $operation, $sharedWrappers);
-                if ($reason !== null) {
-                    $refused[] = ['anchorId' => ($anchorId ?: null), 'reason' => $reason];
-                    continue;
-                }
-                $applied[] = ['op' => 'add', 'anchorId' => $anchorId];
-                continue;
+                $reason = self::applyAdd(
+                    $trees[$owner]['blocks'],
+                    (int) ($operation['anchorId'] ?? 0),
+                    $operation,
+                    $trees[$owner]['wrappers']
+                );
+            } elseif ($op === 'wrap') {
+                $reason = self::applyWrap(
+                    $trees[$owner]['blocks'],
+                    $blockId,
+                    $operation,
+                    $trees[$owner]['wrappers']
+                );
+            } elseif (in_array($op, ['edit', 'delete', 'move'], true)) {
+                $reason = self::applyOperation($trees[$owner]['blocks'], $op, $blockId, $operation);
+            } else {
+                $reason = 'unknown op';
             }
 
-            if ($op === 'wrap') {
-                $reason = self::applyWrap($blocks, $blockId, $operation, $sharedWrappers);
-                if ($reason !== null) {
-                    $refused[] = ['blockId' => ($blockId ?: null), 'reason' => $reason];
-                    continue;
-                }
-                $applied[] = ['op' => 'wrap', 'blockId' => $blockId];
-                continue;
-            }
-
-            if (!in_array($op, ['edit', 'delete', 'move'], true)) {
-                $refused[] = ['blockId' => ($blockId ?: null), 'reason' => 'unknown op'];
-                continue;
-            }
-
-            $reason = self::applyOperation($blocks, $op, $blockId, $operation);
             if ($reason !== null) {
-                $refused[] = ['blockId' => ($blockId ?: null), 'reason' => $reason];
+                $refused[] = [$reportKey => $reportId, 'reason' => $reason];
                 continue;
             }
-            $applied[] = ['op' => $op, 'blockId' => $blockId];
+            $trees[$owner]['dirty'] = true;
+            $applied[] = ['op' => $op, $reportKey => $reportId, 'owner' => $owner];
         }
 
-        if ($applied) {
+        $failed = [];
+        foreach ($trees as $tree) {
+            if (!$tree['dirty']) {
+                continue;
+            }
             $update = \wp_update_post([
-                'ID' => $post->ID,
-                'post_content' => \wp_slash(\serialize_blocks($blocks)),
+                'ID' => $tree['post']->ID,
+                'post_content' => \wp_slash(\serialize_blocks($tree['blocks'])),
             ], true);
             if (\is_wp_error($update)) {
-                return new \WP_REST_Response(['error' => $update->get_error_message()], 500);
+                $failed[$tree['post']->ID] = $update->get_error_message();
             }
         }
 
-        return new \WP_REST_Response(['applied' => $applied, 'refused' => $refused], 200);
+        // An earlier post is already written, so a failed save reports itself.
+        foreach ($applied as $index => $entry) {
+            if (!isset($failed[$entry['owner']])) {
+                continue;
+            }
+            $refused[] = [
+                'blockId' => $entry['blockId'] ?? ($entry['anchorId'] ?? null),
+                'reason' => $failed[$entry['owner']],
+            ];
+            unset($applied[$index]);
+        }
+
+        return new \WP_REST_Response([
+            'applied' => array_values(array_map(function ($entry) {
+                unset($entry['owner']);
+                return $entry;
+            }, $applied)),
+            'refused' => $refused,
+        ], 200);
+    }
+
+    // A composite id names another post, and a splice can't reach across two of
+    // them — so an operation whose ids disagree on the owner has nowhere to land.
+    private static function route(array $operation, array &$trees, \WP_Post $container)
+    {
+        $owner = null;
+        foreach (self::ID_FIELDS as $field => $label) {
+            if (!isset($operation[$field])) {
+                continue;
+            }
+            $resolved = TemplatePartBlockFinder::owningPost($operation[$field], $container);
+            if ($resolved === null) {
+                return new \WP_Error('not_found', "{$label} not found in this post");
+            }
+            $postId = $resolved['post']->ID;
+            if ($owner !== null && $owner !== $postId) {
+                return new \WP_Error('spans_posts', 'one operation cannot span two posts');
+            }
+            if (!isset($trees[$postId])) {
+                if (!\current_user_can('edit_post', $postId)) {
+                    return new \WP_Error('forbidden', 'Forbidden for the post that owns this block');
+                }
+                $trees[$postId] = self::newTree(
+                    $resolved['post'],
+                    TemplatePartBlockFinder::stamp(\parse_blocks($resolved['post']->post_content))
+                );
+            }
+            $owner = $postId;
+            $operation[$field] = $resolved['blockId'];
+        }
+
+        return ['owner' => $owner ?? $container->ID, 'operation' => $operation];
+    }
+
+    // `wrappers` is per-post: an add can only join a container this same batch
+    // created in the same post.
+    private static function newTree(\WP_Post $post, array $blocks): array
+    {
+        return ['post' => $post, 'blocks' => $blocks, 'wrappers' => [], 'dirty' => false];
+    }
+
+    // Resolve via WP's own resolver so the save lands on the post WP renders
+    // from; no wp_id means an uncustomized theme-file part with nothing to
+    // save to. Mirrors QuickEdit's SaveController::resolveSourcePost.
+    private static function resolveTemplatePart(string $slug)
+    {
+        $stylesheet = \wp_get_theme()->get_stylesheet();
+        $template = \get_block_template("{$stylesheet}//{$slug}", 'wp_template_part');
+        if (!$template) {
+            return new \WP_Error('not_found', 'Template part not found');
+        }
+        $post = empty($template->wp_id) ? null : \get_post($template->wp_id);
+        if ($post) {
+            return $post;
+        }
+        return self::forkThemeTemplatePart($template, $stylesheet, $slug);
+    }
+
+    // An untouched part has no post, so the first edit has to mint one.
+    private static function forkThemeTemplatePart($template, string $stylesheet, string $slug)
+    {
+        $postId = \wp_insert_post([
+            'post_type' => 'wp_template_part',
+            'post_name' => $slug,
+            'post_title' => empty($template->title) ? $slug : $template->title,
+            'post_content' => $template->content,
+            'post_status' => 'publish',
+        ], true);
+        if (\is_wp_error($postId)) {
+            return $postId;
+        }
+
+        // Absent the theme term, get_block_template never resolves the fork again.
+        \wp_set_object_terms($postId, $stylesheet, 'wp_theme');
+        if (!empty($template->area)) {
+            \wp_set_object_terms($postId, $template->area, 'wp_template_part_area');
+        }
+
+        $post = \get_post($postId);
+        return $post ? $post : new \WP_Error('not_found', 'Template part not found');
     }
 
     // Returns null when the op spliced in, or the refusal reason.

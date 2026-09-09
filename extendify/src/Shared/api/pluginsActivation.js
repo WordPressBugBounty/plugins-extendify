@@ -36,33 +36,45 @@ const loadRecaptcha = () => {
 // enterprise.js can't load twice, and execute() needs a rendered site key —
 // one widget per key.
 const recaptchaWidgets = new Map();
+const renderedKeys = new Set();
+
+const renderWidget = async (siteKey) => {
+	await loadRecaptcha();
+
+	const container = document.createElement('div');
+	document.body.appendChild(container);
+	const widget = window.grecaptcha.enterprise.render(container, {
+		sitekey: siteKey,
+		size: 'invisible',
+	});
+	renderedKeys.add(siteKey);
+
+	return widget;
+};
+
+// Keeps the script load and the widget render off the click's 15s deadline.
+export const prewarmRecaptcha = (siteKey) => {
+	if (!recaptchaWidgets.has(siteKey)) {
+		const widget = renderWidget(siteKey);
+		widget.catch(() => recaptchaWidgets.delete(siteKey));
+		recaptchaWidgets.set(siteKey, widget);
+	}
+	return recaptchaWidgets.get(siteKey);
+};
+
 const getRecaptchaToken = async (action, siteKey, timings = {}) => {
 	if (!siteKey) {
 		throw new Error(`No reCAPTCHA site key for the ${action} action`);
 	}
 
+	timings.captchaWasWarm = renderedKeys.has(siteKey);
 	const start = Date.now();
 
 	try {
-		await loadRecaptcha();
-
-		if (!recaptchaWidgets.has(siteKey)) {
-			const container = document.createElement('div');
-			document.body.appendChild(container);
-			recaptchaWidgets.set(
-				siteKey,
-				window.grecaptcha.enterprise.render(container, {
-					sitekey: siteKey,
-					size: 'invisible',
-				}),
-			);
-		}
+		const widget = await prewarmRecaptcha(siteKey);
 
 		// Without await, finally runs before execute settles and records ~0ms.
-		return await window.grecaptcha.enterprise.execute(
-			recaptchaWidgets.get(siteKey),
-			{ action },
-		);
+		return await window.grecaptcha.enterprise.execute(widget, { action });
 	} finally {
 		timings.captchaTimeInMs = Date.now() - start;
 	}
@@ -71,7 +83,12 @@ const getRecaptchaToken = async (action, siteKey, timings = {}) => {
 // api-fetch throws the parsed body and drops the Response, so parse:false is the only way to keep the status.
 const post = async (options) => {
 	try {
-		await apiFetch({ ...options, method: 'POST', parse: false });
+		const response = await apiFetch({
+			...options,
+			method: 'POST',
+			parse: false,
+		});
+		return await response.json().catch(() => undefined);
 	} catch (error) {
 		if (typeof error?.json !== 'function') throw error;
 
@@ -81,7 +98,7 @@ const post = async (options) => {
 };
 
 const createAccount = ({
-	slug,
+	endpoint,
 	email,
 	marketingConsent,
 	termsAgreed,
@@ -89,7 +106,7 @@ const createAccount = ({
 	scriptData,
 }) =>
 	post({
-		path: `extendify/v1/${slug}/create-account`,
+		path: endpoint,
 		data: {
 			email,
 			marketingConsent,
@@ -101,15 +118,15 @@ const createAccount = ({
 
 /*
  * Plugin entries shape:
- *   createAccountCallback: (data) => Promise<void> — performs the account creation request
- *   idempotent: boolean (default true)             — false skips retries; an aborted fetch does not stop the PHP call, so a retry creates a second account
- *   data.timings: out-param                        — write captchaTimeInMs here; it survives a throw
+ *   createAccountCallback: (data) => Promise<body> — performs the account creation request
+ *   data.endpoint: the route PHP registered        — requesting and recording must not drift
+ *   data.timings: out-param                        — write the captcha timings here; they survive a throw
  */
 export const pluginsActivation = {
 	simplybook: {
-		idempotent: false,
 		createAccountCallback: async ({
 			scriptData,
+			endpoint,
 			email,
 			marketingConsent,
 			termsAgreed,
@@ -125,10 +142,10 @@ export const pluginsActivation = {
 			// Hit the endpoint via ?rest_route= so the request URL contains "simplybook" —
 			// SimplyBook only registers its onboarding routes when it does, else they 404.
 			const url = addQueryArgs(`${window.extSharedData.homeUrl}/`, {
-				rest_route: '/extendify/v1/simplybook/create-account',
+				rest_route: `/${endpoint}`,
 			});
 
-			await post({
+			return post({
 				url,
 				data: {
 					email,
@@ -141,19 +158,15 @@ export const pluginsActivation = {
 		},
 	},
 	'translatepress-multilingual': {
-		idempotent: false,
-		createAccountCallback: (data) =>
-			createAccount({ slug: 'translatepress-multilingual', ...data }),
+		createAccountCallback: createAccount,
 	},
 	imagify: {
-		idempotent: false,
-		createAccountCallback: (data) =>
-			createAccount({ slug: 'imagify', ...data }),
+		createAccountCallback: createAccount,
 	},
 	metricool: {
-		idempotent: false,
 		createAccountCallback: async ({
 			scriptData,
+			endpoint,
 			email,
 			marketingConsent,
 			termsAgreed,
@@ -166,9 +179,8 @@ export const pluginsActivation = {
 				timings,
 			);
 
-			// The "/v1" segment is what makes Metricool register its logout route.
-			await post({
-				path: 'extendify/v1/metricool/v1/create-account',
+			return post({
+				path: endpoint,
 				data: {
 					email,
 					marketingConsent,

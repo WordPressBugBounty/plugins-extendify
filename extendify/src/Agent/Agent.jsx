@@ -59,6 +59,13 @@ const withMinDuration = async (promise, ms) => {
 	return result;
 };
 
+// cleanup() swaps in a fresh controller; a signal read after the wait is never aborted.
+const canceledDuring = async (ms) => {
+	const { signal } = controller;
+	await new Promise((resolve) => setTimeout(resolve, ms));
+	return signal.aborted;
+};
+
 export const Agent = () => {
 	const { addMessage, updateMessage, popMessage, messages } = useChatStore();
 	const { pushStatus, clearStatuses, leavingPage } = useStatusStore();
@@ -144,11 +151,12 @@ export const Agent = () => {
 	const findAgent = useCallback(
 		async (options = {}) => {
 			pushStatus('calling-agent');
+			const { signal } = controller;
 			const response = await withMinDuration(
 				pickWorkflow({
 					// A mid-turn drop clears the block after this closure was made.
 					workflows: getAvailableWorkflows().map((w) => w.id),
-					options: { signal: controller.signal, ...options },
+					options: { signal, ...options },
 				}).catch(async (error) => {
 					devmode && console.error(error);
 					if (error?.response?.status === 429) {
@@ -158,13 +166,7 @@ export const Agent = () => {
 						return;
 					}
 					setCanType(true);
-					if (error === 'Workflow aborted') {
-						addMessage('workflow', {
-							status: 'canceled',
-							suggestions: getSuggestions(),
-						});
-						return;
-					}
+					if (error === 'Workflow aborted') return;
 
 					await new Promise((resolve) => setTimeout(resolve, 1000));
 					addMessage('message', {
@@ -180,7 +182,7 @@ export const Agent = () => {
 				}),
 				500,
 			);
-			if (!response) return;
+			if (!response || signal.aborted) return;
 
 			const { workflow: wf, reply } = response;
 			if (wf?.id) setWorkflow(wf);
@@ -196,7 +198,6 @@ export const Agent = () => {
 			updateRetryAfter,
 			setWorkflow,
 			getAvailableWorkflows,
-			getSuggestions,
 		],
 	);
 
@@ -310,7 +311,7 @@ export const Agent = () => {
 			// Skip the network find-agent when the staged block makes the edit certain.
 			const localPick = localPickWorkflow({ block });
 			if (localPick) {
-				await new Promise((resolve) => setTimeout(resolve, 500));
+				if (await canceledDuring(500)) return;
 				setWorkflow(localPick);
 				return;
 			}
@@ -341,7 +342,7 @@ export const Agent = () => {
 		setWorkflow(workflow);
 		setCanType(false);
 		agentWorking.current = true;
-		await new Promise((resolve) => setTimeout(resolve, 750));
+		if (await canceledDuring(750)) return;
 		addMessage('message', {
 			role: 'assistant',
 			content: agentResponse.reply,
@@ -367,7 +368,7 @@ export const Agent = () => {
 		setWaitingOnToolOrUser(true);
 		setCanType(false);
 		agentWorking.current = true;
-		await new Promise((resolve) => setTimeout(resolve, 750));
+		if (await canceledDuring(750)) return;
 		addMessage('message', {
 			role: 'assistant',
 			content: agentResponse.reply,
@@ -391,6 +392,8 @@ export const Agent = () => {
 		};
 		// Allow external code to clear the block and workflow
 		const handleCleanup = () => {
+			// cleanup() resets canType and agentWorking, so read them before it runs.
+			const interrupted = agentWorking.current || !canType;
 			controller.abort('Workflow aborted');
 			cleanup();
 			// Deferred a frame: the input stays disabled until the cancel lands.
@@ -399,7 +402,7 @@ export const Agent = () => {
 			);
 
 			// An options panel can outlive its workflow; cancel must still clear it.
-			if (!workflow?.id && !qaSuggestions) return;
+			if (!workflow?.id && !qaSuggestions && !interrupted) return;
 			setWorkflow(null);
 			addMessage('workflow', {
 				status: 'canceled',
@@ -426,6 +429,7 @@ export const Agent = () => {
 		workflow,
 		qaSuggestions,
 		getSuggestions,
+		canType,
 	]);
 
 	// Handle whenFinished component confirm/cancel
@@ -466,11 +470,6 @@ export const Agent = () => {
 					// translators: Shown when the AI agent's edit produced no change to the block, which is unexpected.
 					'no-op': __(
 						"That edit came back unchanged, which wasn't expected. Please try rephrasing what you'd like to change.",
-						'extendify-local',
-					),
-					// translators: Shown when the user asked the AI agent to edit a block that lives in a site template (e.g. the header or footer), which the agent cannot save yet.
-					'template-part': __(
-						"That block is part of your site's template, like the header or footer, and I can't make changes there yet.",
 						'extendify-local',
 					),
 				};
@@ -694,7 +693,7 @@ export const Agent = () => {
 					__('Removing selected block', 'extendify-local'),
 				);
 				// findAgent pushes its own status right away; let this one read first.
-				await new Promise((resolve) => setTimeout(resolve, 2500));
+				if (await canceledDuring(2500)) return;
 				agentWorking.current = false;
 				await findAgent();
 				return;
