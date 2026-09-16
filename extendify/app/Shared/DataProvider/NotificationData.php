@@ -17,6 +17,14 @@ use Extendify\PartnerData;
 class NotificationData
 {
     /**
+     * Kept in sync with the token withSiteHost() swaps in src/Notifications/notification-link.js.
+     *
+     * @var string
+     */
+    // phpcs:ignore PSR12.Properties.ConstantVisibility.NotFound -- 7.0 floor: no const visibility
+    const SITE_URL_TOKEN = '{SITEURL}';
+
+    /**
      * Registers the wp-cron handler that refreshes stale notifications.
      *
      * @return void
@@ -42,7 +50,7 @@ class NotificationData
         $cached = \get_option('extendify_notifications_' . $locale);
 
         if (!is_array($cached) || !isset($cached['fetchedAt'])) {
-            return self::refresh($locale) ?? [];
+            return self::withSafeLinks(self::refresh($locale) ?? []);
         }
 
         $age = time() - $cached['fetchedAt'];
@@ -57,7 +65,54 @@ class NotificationData
             }
         }
 
-        return $cached['data'] ?? [];
+        return self::withSafeLinks($cached['data'] ?? []);
+    }
+
+    /**
+     * Drops any link a browser must not follow.
+     *
+     * A feed link becomes an href in wp-admin, so javascript: would run as the site owner.
+     *
+     * @param mixed $notifications - Notifications as the feed sent them.
+     * @return array
+     */
+    private static function withSafeLinks($notifications)
+    {
+        if (!is_array($notifications)) {
+            return [];
+        }
+
+        return array_map([self::class, 'withSafeLink'], $notifications);
+    }
+
+    /**
+     * Drops one notification's link unless it is http, https or site-relative.
+     *
+     * esc_url_raw strips the placeholder's braces, so only the probe copy goes through it.
+     *
+     * @param mixed $notification - One notification as the feed sent it.
+     * @return mixed
+     */
+    private static function withSafeLink($notification)
+    {
+        if (!is_array($notification) || !isset($notification['link'])) {
+            return $notification;
+        }
+
+        if (!is_string($notification['link'])) {
+            unset($notification['link']);
+
+            return $notification;
+        }
+
+        $host = (string) \wp_parse_url(\home_url(), PHP_URL_HOST);
+        $probe = str_replace(self::SITE_URL_TOKEN, $host, $notification['link']);
+
+        if (\esc_url_raw($probe, ['http', 'https']) === '') {
+            unset($notification['link']);
+        }
+
+        return $notification;
     }
 
     /**

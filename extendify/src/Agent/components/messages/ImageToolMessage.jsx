@@ -35,14 +35,14 @@ export const ImageToolMessage = ({ url, failed }) => {
 
 	if (removed) {
 		return (
-			<div className="mb-4 ms-12 me-2 flex h-24 w-24 items-center justify-center rounded-lg border border-gray-300 bg-gray-50 p-2 text-center text-xs text-gray-700">
+			<div className="mb-4 ms-2 me-2 flex h-24 w-24 items-center justify-center rounded-lg border border-gray-300 bg-gray-50 p-2 text-center text-xs text-gray-700">
 				{__('Image removed', 'extendify-local')}
 			</div>
 		);
 	}
 
 	return (
-		<div className="mb-4 ms-12 me-2">
+		<div className="mb-4 ms-2 me-2">
 			<img
 				className="m-0 h-24 w-auto max-w-full rounded-lg border border-gray-300 object-contain"
 				src={url}

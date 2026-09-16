@@ -157,6 +157,10 @@ export const buildBlockSchema = (blockType) => {
 	const properties = prune({
 		...simple,
 		align: attributes.align ? alignSchema(supports.align) : null,
+		// Quote and pullquote align text with an attribute, not a typography support.
+		textAlign: attributes.textAlign
+			? { type: 'string', enum: ['left', 'center', 'right'] }
+			: null,
 		layout: attributes.layout ? layoutSchema(supports) : null,
 		// Model-facing name; block-patch maps it back to the real home.
 		text:

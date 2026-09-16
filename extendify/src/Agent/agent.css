@@ -7,8 +7,9 @@
 }
 
 @layer components {
+	/* Theme variations like hong-kong and tokyo uppercase every heading. */
 	.extendify-agent-markdown :is(h1, h2, h3, h4) {
-		@apply font-sans! text-gray-900!;
+		@apply font-sans! normal-case! tracking-normal! text-gray-900!;
 	}
 	.extendify-agent-markdown h1 {
 		@apply mb-2! mt-0! text-2xl! font-bold!;

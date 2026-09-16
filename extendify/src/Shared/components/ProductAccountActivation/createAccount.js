@@ -8,7 +8,7 @@ const describeError = (error, signal) => ({
 });
 
 export const createAccount = async (plugin, data) => {
-	const signal = AbortSignal.timeout(15000);
+	const signal = AbortSignal.timeout(55000);
 	const timings = {};
 	const attemptStart = Date.now();
 

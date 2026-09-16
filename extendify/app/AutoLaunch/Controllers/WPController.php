@@ -9,10 +9,12 @@ namespace Extendify\AutoLaunch\Controllers;
 defined('ABSPATH') || die('No direct access.');
 
 use Extendify\Agent\Controllers\ChatHistoryController;
+use Extendify\PartnerData;
 use Extendify\Shared\DataProvider\ResourceData;
 use Extendify\Shared\Services\AutoUpdate\AutoUpdate;
 use Extendify\Shared\Services\LaunchUpdate\LaunchUpdater;
 use Extendify\Shared\Services\Sanitizer;
+use Extendify\SiteVisibility;
 
 /**
  * The controller for interacting with WordPress.
@@ -158,7 +160,13 @@ class WPController
         \delete_transient('extendify_import_images_check_delay');
 
         \update_option('extendify_onboarding_completed', gmdate('Y-m-d\TH:i:s\Z'));
+        // Anything already in the chat reads as an onboarding offer the user answered.
+        ChatHistoryController::clear();
         LaunchUpdater::clearAttempts();
+
+        if (PartnerData::setting('useComingSoon')) {
+            SiteVisibility::markUnpublished();
+        }
 
         \do_action('extendify_after_launch');
 

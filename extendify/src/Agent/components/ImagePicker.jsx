@@ -150,7 +150,7 @@ export const ImagePicker = ({
 	};
 
 	return (
-		<div className="mb-4 ms-12 me-2 flex flex-col overflow-hidden rounded-lg border border-gray-300 bg-gray-50">
+		<div className="mb-4 ms-2 me-2 flex flex-col overflow-hidden rounded-lg border border-gray-300 bg-gray-50">
 			<div
 				className="flex border-0 border-b border-solid border-gray-300 bg-gray-100"
 				role="tablist"

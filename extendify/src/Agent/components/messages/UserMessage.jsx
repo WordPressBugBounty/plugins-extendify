@@ -1,7 +1,8 @@
 import { decodeEntities } from '@wordpress/html-entities';
 
 export const UserMessage = ({ message }) => {
-	const { content, role } = message.details;
+	const { content, role, hidden } = message.details;
+	if (hidden) return null;
 	return (
 		<div
 			data-agent-message-role={role}

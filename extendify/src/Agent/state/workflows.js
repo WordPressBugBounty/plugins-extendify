@@ -1,21 +1,10 @@
 import { isAbilityWorkflow } from '@agent/lib/abilities';
-import { isChangeSiteDesignWorkflowAvailable } from '@agent/lib/util';
 import { AbilityRun } from '@agent/workflows/abilities/components/run';
-import changeSiteDesignWorkflow from '@agent/workflows/theme/change-site-design';
-import variationsWorkflow from '@agent/workflows/theme/change-theme-variation';
 import { abilityWorkflows, workflows } from '@agent/workflows/workflows';
 import { useQuickEditStore } from '@quick-edit/state/store';
 import { deepMerge } from '@shared/lib/utils';
 import { create } from 'zustand';
 import { devtools, persist } from 'zustand/middleware';
-
-const agentResponse = isChangeSiteDesignWorkflowAvailable()
-	? changeSiteDesignWorkflow.example?.agentResponse
-	: variationsWorkflow.example?.agentResponse;
-const onboardingToolProps = {
-	...agentResponse.whenFinishedTool,
-	agentResponse,
-};
 
 // Used to check case-insensitive matches for workflow examples
 const collator = new Intl.Collator(undefined, {
@@ -124,17 +113,6 @@ export const useWorkflowStore = create()(
 	persist(devtools(state, { name: 'Extendify Agent Workflows' }), {
 		name: `extendify-agent-workflows-${window.extSharedData.siteId}`,
 		merge: (persistedState, currentState) => {
-			// if we are in onboarding mode, add the starting workflow
-			if (window.extAgentData?.startOnboarding) {
-				return {
-					...currentState,
-					...persistedState,
-					workflow: isChangeSiteDesignWorkflowAvailable()
-						? changeSiteDesignWorkflow
-						: variationsWorkflow,
-					whenFinishedToolProps: onboardingToolProps,
-				};
-			}
 			const merged = { ...currentState, ...persistedState };
 			// A reload can't carry the staged block a block-patching workflow
 			// depends on, so a rehydrated-open one is always stale. A canvas

@@ -9,6 +9,7 @@ defined('ABSPATH') || die('No direct access.');
 use Extendify\AdminPageRouter;
 use Extendify\Assist\Admin as AssistAdmin;
 use Extendify\Agent\Admin as AgentAdmin;
+use Extendify\ComingSoon\Frontend as ComingSoonFrontend;
 use Extendify\Config;
 use Extendify\Draft\Admin as DraftAdmin;
 use Extendify\HelpCenter\Admin as HelpCenterAdmin;
@@ -36,6 +37,7 @@ use Extendify\Shared\Services\Import\ImagesImporter;
 use Extendify\Shared\Services\PluginRedirectDisabler;
 use Extendify\Shared\Services\PluginsActivation\SimplyBook;
 use Extendify\Shared\Services\VersionMigrator;
+use Extendify\SiteVisibility;
 
 if (!defined('EXTENDIFY_REQUIRED_CAPABILITY')) {
     define('EXTENDIFY_REQUIRED_CAPABILITY', 'manage_options');
@@ -128,6 +130,10 @@ if (!defined('EXTENDIFY_IS_THEME_EXTENDABLE')) {
     }
 
     if (!current_user_can(EXTENDIFY_REQUIRED_CAPABILITY)) {
+        if (!SiteVisibility::isPublished()) {
+            new ComingSoonFrontend();
+        }
+
         return;
     }
 

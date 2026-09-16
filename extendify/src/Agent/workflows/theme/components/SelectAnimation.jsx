@@ -116,7 +116,7 @@ export const SelectAnimation = ({ onConfirm, onCancel }) => {
 	}
 
 	return (
-		<div className="mb-4 ms-12 me-2 flex flex-col rounded-lg border border-gray-300 bg-gray-50">
+		<div className="mb-4 ms-2 me-2 flex flex-col rounded-lg border border-gray-300 bg-gray-50">
 			<div className="rounded-lg p-3 border-b border-gray-300 bg-white">
 				<div className="text-xs uppercase mb-3 text-gray-700 font-medium">
 					{/* translators: "Type" refers to the category of animation effects available. e.g. The type could be 'Zoom In', 'Fade', etc. */}

@@ -1,6 +1,10 @@
 import { recordPluginActivity } from '@shared/api/DataApi';
 import { digest } from '@shared/api/digest';
 import { enableAutoUpdate } from '@shared/api/wp';
+import {
+	failedDependencies,
+	processWithSecondPass,
+} from '@shared/lib/patterns';
 import apiFetch from '@wordpress/api-fetch';
 import { addQueryArgs } from '@wordpress/url';
 
@@ -160,6 +164,24 @@ export const reportInactivePlugins = async (slugs) => {
 	});
 };
 
+export const reportFailedDependencies = (pages) => {
+	const failed = [
+		...new Set(pages.flatMap(({ patterns }) => failedDependencies(patterns))),
+	];
+	if (!failed.length) return;
+
+	digest({
+		error: {
+			message: `Patterns left static after a failed dependency: ${failed.join(', ')}`,
+		},
+		details: {
+			source: 'auto-launch',
+			caller: 'reportFailedDependencies',
+			failed,
+		},
+	});
+};
+
 // Currently this only processes patterns with placeholders
 // by swapping out the placeholders with the actual code
 // returns the patterns as blocks with the placeholders replaced
@@ -196,14 +218,7 @@ export const replacePlaceholderPatterns = async (patterns) => {
 		});
 	}
 
-	try {
-		return await processPlaceholders(patterns);
-	} catch (_e) {
-		// Try one more time (plugins installed may not be fully loaded)
-		return await processPlaceholders(patterns)
-			// If this fails, just return the original patterns
-			.catch(() => patterns);
-	}
+	return await processWithSecondPass(processPlaceholders, patterns);
 };
 
 // This endpoint installs pattern dependencies from PHP, outside the queue.

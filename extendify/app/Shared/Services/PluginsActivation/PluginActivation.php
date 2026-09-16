@@ -69,7 +69,7 @@ abstract class PluginActivation
 
         $response = \wp_safe_remote_post(static::API_URL, [
             // http_request_args only lifts Extendify hosts, and it overrides this value if it ever matches.
-            'timeout' => 15,
+            'timeout' => 45,
             'headers' => array_merge(['Content-Type' => 'application/json'], $headers),
             'body' => \wp_json_encode(array_merge(['email' => $email], $body)),
         ]);

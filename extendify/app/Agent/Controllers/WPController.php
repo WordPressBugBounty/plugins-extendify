@@ -11,6 +11,7 @@ defined('ABSPATH') || die('No direct access.');
 use Extendify\Agent\PostBlockFinder;
 use Extendify\Agent\TemplatePartBlockFinder;
 use Extendify\Constants;
+use Extendify\Shared\Services\HeroDescription;
 use Extendify\Shared\Services\Sanitizer;
 use Extendify\Shared\Services\SiteImages;
 
@@ -573,7 +574,15 @@ class WPController
                 );
             }
 
-            if ($description) {
+            if (trim((string) $description) === '') {
+                // Catalog paragraphs describe the slot, not the site.
+                $code = preg_replace(
+                    '/<!-- wp:paragraph[\s\S]*?<!-- \/wp:paragraph -->/m',
+                    '',
+                    $code,
+                    1
+                );
+            } else {
                 $code = preg_replace(
                     '/(<!-- wp:paragraph[^>]*-->[\s\S]*?<p[^>]*>)[\s\S]*?(<\/p>[\s\S]*?<!-- \/wp:paragraph -->)/m',
                     '${1}' . esc_html($description) . '${2}',
@@ -763,7 +772,7 @@ class WPController
     public static function getSiteDesignVariations(\WP_REST_Request $request)
     {
         $title = $request->get_param('title');
-        $description = $request->get_param('description');
+        $description = HeroDescription::resolve($request->get_param('description'));
         $images = $request->get_param('images') ?? [];
         $cta = $request->get_param('cta');
         $featuredOnly = true; // Only show featured patterns

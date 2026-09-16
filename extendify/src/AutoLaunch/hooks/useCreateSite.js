@@ -42,6 +42,7 @@ import {
 	ensurePluginsActive,
 	getActivePlugins,
 	replacePlaceholderPatterns,
+	reportFailedDependencies,
 	reportInactivePlugins,
 } from '@auto-launch/functions/plugins';
 import {
@@ -460,7 +461,13 @@ export const useCreateSite = () => {
 			);
 			const pMatch = heroPattern?.code?.match(/<p[^>]*>([\s\S]*?)<\/p>/);
 			const heroDesc = pMatch?.[1]?.replace(/<[^>]+>/g, '').trim();
-			setData('heroDescription', heroDesc || data.heroDescription);
+			const heroDescription = heroDesc || data.heroDescription;
+			setData('heroDescription', heroDescription);
+			if (heroDescription) {
+				await updateOption('extendify_hero_description', heroDescription).catch(
+					() => null,
+				);
+			}
 
 			const createdPagesWP = await createWpPages(customPages, {
 				skipSectionIds: isSinglePageDesign,
@@ -606,6 +613,7 @@ export const useCreateSite = () => {
 			addStatusMessage(launchStrings().statusDone);
 			await Promise.all([
 				reportInactivePlugins(intendedPlugins).catch(() => null),
+				reportFailedDependencies(pagesReplaced),
 				checkIn({ stage: 'finished', siteProfile, sitePlugins, siteStyle }),
 			]);
 			setWarnOnReload(false);

@@ -165,7 +165,7 @@ export const downloadImage = async (
 	try {
 		image = await importImage(src, {
 			alt: metadata.alt,
-			filename: 'image.jpg',
+			filename: metadata.filename ?? 'image.jpg',
 			caption: metadata.caption,
 			aiGenerated,
 			disclose: metadata.disclose,
@@ -173,7 +173,6 @@ export const downloadImage = async (
 	} catch (_e) {
 		image = await importImageServer(src, {
 			alt: metadata.alt,
-			filename: 'image.jpg',
 			caption: metadata.caption,
 			aiGenerated,
 			disclose: metadata.disclose,

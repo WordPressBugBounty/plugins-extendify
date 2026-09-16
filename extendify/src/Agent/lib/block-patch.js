@@ -69,14 +69,30 @@ const COLOR_CHANNELS = [
 
 // A known slug maps to a theme preset class; anything else routes to inline
 // style.color.* — so "yellow" (no matching token) never lands on a wrong slug.
-const routeColors = (attributes, patch, colorSlugs) => {
+// Kept inline, a token's own hex stops the block following the palette.
+const slugForValue = (value, colorValues) => {
+	const wanted = colord(value);
+	if (!wanted.isValid()) return null;
+	const hex = wanted.toHex();
+	const match = Object.entries(colorValues ?? {}).find(([, preset]) => {
+		const parsed = colord(String(preset));
+		return parsed.isValid() && parsed.toHex() === hex;
+	});
+	return match?.[0] ?? null;
+};
+
+const routeColors = (attributes, patch, colorSlugs, colorValues) => {
 	const slugs = new Set(colorSlugs ?? []);
 	const stripped = {};
 	let out = attributes;
 	for (const [named, key] of COLOR_CHANNELS) {
 		const value = patch?.[named];
 		if (value == null) continue;
-		if (slugs.has(value)) {
+		const named_slug = slugs.has(value)
+			? value
+			: slugForValue(value, colorValues);
+		if (named_slug) {
+			if (named_slug !== value) out = setPath(out, named, named_slug);
 			out = unsetPath(out, `style.color.${key}`);
 			continue;
 		}
@@ -176,6 +192,22 @@ const remapText = (block, patch) => {
 
 // Re-serializing runs the block's own save(), which core/button needs to render
 // the color/border styles it marks __experimentalSkipSerialization.
+// Merging an empty value leaves a dead key and keeps the preset class.
+const emptyLeafPaths = (patch, prefix = '') =>
+	Object.entries(patch ?? {}).flatMap(([key, value]) => {
+		const path = prefix ? `${prefix}.${key}` : key;
+		if (isMergeable(value)) return emptyLeafPaths(value, path);
+		return value === '' ? [path] : [];
+	});
+
+const withoutEmptyLeaves = (patch) =>
+	Object.fromEntries(
+		Object.entries(patch ?? {}).flatMap(([key, value]) => {
+			if (isMergeable(value)) return [[key, withoutEmptyLeaves(value)]];
+			return value === '' ? [] : [[key, value]];
+		}),
+	);
+
 export const applyBlockPatch = (
 	serializedBlock,
 	patch,
@@ -184,13 +216,21 @@ export const applyBlockPatch = (
 ) => {
 	const blocks = parse(serializedBlock).map((block) => {
 		if (!block.name) return block;
-		const merged = deepMerge(block.attributes, remapText(block, patch));
+		const remapped = remapText(block, patch);
+		const filled = withoutEmptyLeaves(remapped);
+		const merged = deepMerge(block.attributes, filled);
 		const routed = routeNamedPresets(
-			routeColors(merged, patch, presetSlugs.color),
-			patch,
+			routeColors(merged, filled, presetSlugs.color, presetSlugs.colorValues),
+			filled,
 			presetSlugs,
 		);
-		return { ...block, attributes: applyClears(routed, clear ?? []) };
+		return {
+			...block,
+			attributes: applyClears(routed, [
+				...(clear ?? []),
+				...emptyLeafPaths(remapped),
+			]),
+		};
 	});
 	return serialize(blocks);
 };

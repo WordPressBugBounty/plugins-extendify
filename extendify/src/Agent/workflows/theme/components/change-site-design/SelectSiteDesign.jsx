@@ -8,7 +8,6 @@ import { DesignOption } from '@agent/workflows/theme/components/change-site-desi
 import { fontsOnlyVariation } from '@agent/workflows/theme/components/change-site-design/utils/fontsOnlyVariation';
 import { removeAnimationClasses } from '@agent/workflows/theme/components/change-site-design/utils/removeAnimationClasses';
 import { handleSiteImages } from '@auto-launch/fetchers/get-images';
-import { handleSiteStrings } from '@auto-launch/fetchers/get-strings';
 import { useUserSelectionStore } from '@launch/state/user-selections';
 import { paletteDuotone } from '@shared/lib/palette-preview';
 import { samplePalettes } from '@shared/lib/palettes';
@@ -234,22 +233,11 @@ export const SelectSiteDesign = ({ onConfirm, onCancel }) => {
 			stored?.state?.siteImages ?? launchState?.siteImages?.siteImages ?? [];
 		const siteProfile = stored?.state?.siteProfile ?? launchState?.siteProfile;
 
-		const storedDescription =
-			description ??
-			stored?.state?.heroDescription ??
-			launchState?.siteStrings?.heroDescription ??
-			null;
-
 		(async () => {
 			const siteImages = await resolveSiteImages({
 				storedSiteImages,
 				siteProfile,
 			});
-
-			const resolvedDescription =
-				storedDescription || !siteProfile
-					? storedDescription
-					: (await handleSiteStrings({ siteProfile })).heroDescription;
 
 			apiFetch({
 				path: '/extendify/v1/agent/site-design-variations',
@@ -259,7 +247,7 @@ export const SelectSiteDesign = ({ onConfirm, onCancel }) => {
 					images: domImages,
 					siteImages,
 					postId: context?.postId,
-					description: resolvedDescription,
+					description,
 					currentHeroPattern: heroPatternName,
 					source: 'change-site-design-workflow',
 					cta: {
@@ -393,7 +381,7 @@ export const SelectSiteDesign = ({ onConfirm, onCancel }) => {
 	}
 
 	return (
-		<div className="mb-4 ms-12 me-2 flex flex-col rounded-lg border border-gray-300 bg-gray-50">
+		<div className="mb-4 ms-2 me-2 flex flex-col rounded-lg border border-gray-300 bg-gray-50">
 			<div className="rounded-lg border-b border-gray-300 bg-white">
 				<div className="flex flex-col gap-4 p-3">
 					{currentHeroHtml && (

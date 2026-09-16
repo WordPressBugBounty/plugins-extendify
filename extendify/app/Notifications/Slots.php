@@ -18,9 +18,11 @@ class Slots
     const ADMIN_DASHBOARD = 'admin-dashboard';
     const ADMIN_OTHERS = 'admin-others';
     const ADMIN_ASSIST = 'admin-assist';
+    const ADMIN_MODAL = 'admin-modal';
     const AGENT_CHAT = 'agent-chat';
     const FRONTEND_BOTTOM = 'frontend-bottom';
     const FRONTEND_TOPBAR = 'frontend-topbar';
+    const FRONTEND_MODAL = 'frontend-modal';
 
     /**
      * A slot missing from src/Notifications/slots.js renders nothing.
@@ -29,9 +31,11 @@ class Slots
         self::ADMIN_DASHBOARD,
         self::ADMIN_OTHERS,
         self::ADMIN_ASSIST,
+        self::ADMIN_MODAL,
         self::AGENT_CHAT,
         self::FRONTEND_BOTTOM,
         self::FRONTEND_TOPBAR,
+        self::FRONTEND_MODAL,
     ];
     // phpcs:enable PSR12.Properties.ConstantVisibility.NotFound
 

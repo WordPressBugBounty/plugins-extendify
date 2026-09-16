@@ -103,7 +103,7 @@ export const OptimizeMedia = ({ inputs, result, onConfirm, onCancel }) => {
 	const blocked = blockedMessage(preview?.status);
 
 	return (
-		<div className="mb-4 ms-12 me-2 flex flex-col rounded-lg border border-gray-300 bg-gray-50">
+		<div className="mb-4 ms-2 me-2 flex flex-col rounded-lg border border-gray-300 bg-gray-50">
 			<div className="rounded-lg border-b border-gray-300 bg-white p-3">
 				<Body gate={gate} preview={preview} blocked={blocked} result={result} />
 			</div>

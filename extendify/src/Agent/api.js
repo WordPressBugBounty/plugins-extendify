@@ -6,6 +6,7 @@ import {
 	IGNORED_BLOCKS,
 } from '@agent/lib/classify-block-edit';
 import { getClientTools } from '@agent/lib/client-tools';
+import { isExtendableHeader } from '@agent/lib/extendable-header';
 import { INSERTABLE_BLOCK_TYPES } from '@agent/lib/insertable-blocks';
 import { ensureCoreBlocksRegistered } from '@agent/lib/register-blocks';
 import {
@@ -15,10 +16,6 @@ import {
 import { activeCanvasStep } from '@agent/state/canvas';
 import { useChatStore } from '@agent/state/chat';
 import { useGlobalStore } from '@agent/state/global';
-import {
-	currentHeaderState,
-	isExtendableHeader,
-} from '@agent/workflows/theme/tools/update-header-style';
 import { tools } from '@agent/workflows/workflows';
 import { AI_HOST } from '@constants';
 import { useQuickEditStore } from '@quick-edit/state/store';
@@ -165,11 +162,7 @@ export const handleWorkflow = async ({ workflow, workflowData, options }) => {
 			messages: getCurrentMessages(),
 			previousMessages: getMessagesFor(workflow?.id),
 			context: window.extAgentData.context,
-			agentContext: {
-				...window.extAgentData.agentContext,
-				// Without this the model offers the state the header is already in.
-				headerState: currentHeaderState(),
-			},
+			agentContext: window.extAgentData.agentContext,
 			wpAbilities: window.extAgentData.wpAbilities ?? [],
 			clientTools: getClientTools(),
 			// The manifest is the backend's block-patching signal — never send it

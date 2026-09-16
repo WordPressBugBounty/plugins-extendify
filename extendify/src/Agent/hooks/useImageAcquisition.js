@@ -63,7 +63,11 @@ export const useImageAcquisition = ({ source, onUrlReady } = {}) => {
 			setItemState(key, { status: 'generating' });
 			subtractOneCredit();
 			try {
-				const { imageCredits: credits, images } = await generateImage({
+				const {
+					imageCredits: credits,
+					images,
+					id,
+				} = await generateImage({
 					prompt,
 					source,
 					quality: 'low',
@@ -77,6 +81,7 @@ export const useImageAcquisition = ({ source, onUrlReady } = {}) => {
 					status: 'ready',
 					url,
 					alt: images[0].alt ?? prompt,
+					requestId: id ?? null,
 				});
 			} catch (error) {
 				if (error?.imageCredits) updateImageCredits(error.imageCredits);
@@ -139,10 +144,16 @@ export const useImageAcquisition = ({ source, onUrlReady } = {}) => {
 				state.photoId,
 			);
 		}
-		return await downloadImage(null, state.url, 'ai-generated', null, {
-			alt: state.alt,
-			disclose,
-		});
+		return await downloadImage(
+			state.requestId,
+			state.url,
+			'ai-generated',
+			null,
+			{
+				alt: state.alt,
+				disclose,
+			},
+		);
 	}, []);
 
 	return {

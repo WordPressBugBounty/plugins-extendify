@@ -30,6 +30,7 @@ import { useStatusStore } from '@agent/state/status';
 import { useSuggestionsStore } from '@agent/state/suggestions';
 import { useWorkflowStore } from '@agent/state/workflows';
 import { hasRunComponent } from '@agent/workflows/abilities/components/run';
+import startOnboardingWorkflow from '@agent/workflows/misc/start-onboarding';
 import { useQuickEditStore } from '@quick-edit/state/store';
 import { digest } from '@shared/api/digest';
 import {
@@ -272,15 +273,29 @@ export const Agent = () => {
 	}, [addMessage, pushStatus, whenFinishedToolProps, workflow]);
 
 	const handleSubmit = useCallback(
-		async (message) => {
+		async (message, { hidden = false } = {}) => {
 			// Suggestions reach the agent without the textarea; disabling it isn't enough.
 			if (useQuickEditStore.getState().selected) return;
 			setWaitingOnToolOrUser(false);
 			agentWorking.current = false;
-			addMessage('message', { role: 'user', content: message });
+			addMessage('message', { role: 'user', content: message, hidden });
 
 			// Without this a typed message would drop the workflow and close the canvas.
 			if (canvasOpen && canvasAssist) return handleCanvasMessage();
+
+			// A staged tool the user walked away from still owes its receipt.
+			if (workflow?.id && whenFinishedToolProps?.id) {
+				const { answerId, whenFinishedTool } =
+					whenFinishedToolProps.agentResponse || {};
+				addMessage('workflow', {
+					status: 'canceled',
+					label: whenFinishedTool?.labels?.cancel,
+					agent: workflow.agent,
+					workflowId: workflow.id,
+					answerId,
+					suggestions: getSuggestions(),
+				});
+			}
 
 			// Let some phrases auto load workflows
 			const bypass = getWorkflowByExample(message);
@@ -331,6 +346,7 @@ export const Agent = () => {
 			workflow,
 			workflowData,
 			getAvailableWorkflows,
+			getSuggestions,
 		],
 	);
 
@@ -388,7 +404,7 @@ export const Agent = () => {
 		// Allow external messages to trigger the agent
 		const handleMessage = ({ detail }) => {
 			if (!detail?.message) return;
-			handleSubmit(detail.message);
+			handleSubmit(detail.message, { hidden: detail.hidden });
 		};
 		// Allow external code to clear the block and workflow
 		const handleCleanup = () => {
@@ -431,6 +447,16 @@ export const Agent = () => {
 		getSuggestions,
 		canType,
 	]);
+
+	// Dispatching before chat-submit has a listener drops the workflow.
+	useEffect(() => {
+		if (!startOnboardingWorkflow.available()) return;
+		window.dispatchEvent(
+			new CustomEvent('extendify-agent:chat-submit', {
+				detail: { message: startOnboardingWorkflow.example.text, hidden: true },
+			}),
+		);
+	}, []);
 
 	// Handle whenFinished component confirm/cancel
 	useEffect(() => {

@@ -11,6 +11,12 @@ export const ACTIVATION_STATUS = {
 	skipped: 'skipped',
 };
 
+export const ACCOUNT_STATUS = {
+	pending: 'pending',
+	success: 'success',
+	error: 'error',
+};
+
 export const getPluginsScriptData = async ([slugs, ineligible]) => {
 	const params = new URLSearchParams(slugs.map((slug) => ['plugins', slug]));
 	for (const slug of ineligible) {
@@ -30,6 +36,7 @@ export const patchActivation = async ({
 	status,
 	context,
 }) => {
+	// Losing this record must not cost the account it was recording.
 	await fetch(`${AI_HOST}/api/plugins/activate`, {
 		method: 'PATCH',
 		headers: { 'Content-Type': 'application/json' },
@@ -40,7 +47,9 @@ export const patchActivation = async ({
 			status,
 			context,
 		}),
-	});
+		// The copy invites closing the window; the settled write has to outlive it.
+		keepalive: true,
+	}).catch(() => {});
 };
 
 export const usePluginsActivation = (plugins, ineligible = []) => {

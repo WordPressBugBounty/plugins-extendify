@@ -1,7 +1,7 @@
 import { __ } from '@wordpress/i18n';
 
 export const ErrorMessage = ({ children }) => (
-	<div className="mb-4 ms-12 me-2 min-w-0 flex-1 flex-col gap-1 rtl:flex">
+	<div className="mb-4 ms-2 me-2 min-w-0 flex-1 flex-col gap-1 rtl:flex">
 		<div className="flex items-center gap-2 border-l-4 border-l-wp-alert-red bg-wp-notice-error p-3 text-gray-900">
 			<div className="text-wp-alert-red">
 				<svg

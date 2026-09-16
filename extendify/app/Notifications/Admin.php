@@ -14,6 +14,7 @@ class Admin
     {
         \add_action('admin_enqueue_scripts', [$this, 'loadScriptsAndStyles']);
         \add_action('admin_notices', [$this, 'renderMountPoint']);
+        \add_action('admin_footer', [$this, 'renderModalMountPoint']);
     }
 
     /**
@@ -23,7 +24,7 @@ class Admin
      */
     public function loadScriptsAndStyles()
     {
-        if ($this->container() === '') {
+        if ($this->container() === '' && $this->modalContainer() === '') {
             return;
         }
 
@@ -42,6 +43,17 @@ class Admin
     }
 
     /**
+     * Prints the modal mount node on screens admin_notices never reaches
+     *
+     * @return void
+     */
+    public function renderModalMountPoint()
+    {
+        // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- Mount escapes
+        echo $this->modalContainer();
+    }
+
+    /**
      * notifications.js wraps a container carrying data-admin-notice in
      * admin-notice spacing.
      *
@@ -51,6 +63,11 @@ class Admin
     {
         $slot = $this->currentSlot();
         return $slot ? Mount::container($slot, ['data-admin-notice']) : '';
+    }
+
+    private function modalContainer()
+    {
+        return Mount::container(Slots::ADMIN_MODAL);
     }
 
     private function currentSlot()

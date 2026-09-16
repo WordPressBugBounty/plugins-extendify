@@ -1,34 +1,14 @@
 import { buildToolMessages } from '@agent/lib/tool-messages';
-import { isChangeSiteDesignWorkflowAvailable, makeId } from '@agent/lib/util';
+import { makeId } from '@agent/lib/util';
 import { useStatusStore } from '@agent/state/status';
 import apiFetch from '@wordpress/api-fetch';
-import { __ } from '@wordpress/i18n';
 import { create } from 'zustand';
 import { createJSONStorage, devtools, persist } from 'zustand/middleware';
 
 const { chatHistory } = window.extAgentData;
 
-const welcomeMessage = [
-	{
-		id: 1,
-		type: 'message',
-		details: {
-			role: 'assistant',
-			// translators: this is the initial message in the agent chat, welcoming the user. Keep it short and friendly and follow the same markdown format and emoji.
-			content: isChangeSiteDesignWorkflowAvailable()
-				? __(
-						'#### Your site is ready 🎉\nWant to explore other website designs?',
-						'extendify-local',
-					)
-				: __(
-						'#### Your site is ready 🎉\nWant to explore other site colors?',
-						'extendify-local',
-					),
-		},
-	},
-];
 const state = (set, get) => ({
-	messages: chatHistory?.length ? chatHistory.toReversed() : welcomeMessage,
+	messages: chatHistory?.length ? chatHistory.toReversed() : [],
 	// API messages, back to the last finished workflow.
 	getCurrentMessages: ({ includeTools = true } = {}) => {
 		const messages = [];

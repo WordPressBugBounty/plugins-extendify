@@ -20,6 +20,7 @@ class Frontend
     {
         \add_action('wp_enqueue_scripts', [$this, 'loadScriptsAndStyles']);
         \add_action('wp_footer', [$this, 'renderMountPoint']);
+        \add_action('wp_footer', [$this, 'renderModalMountPoint']);
         \add_action('admin_bar_menu', [$this, 'registerAdminBarNode'], 100);
         \add_action('extendify_toolbar_right', [$this, 'renderToolbarMountPoint']);
     }
@@ -37,11 +38,13 @@ class Frontend
      */
     public function loadScriptsAndStyles()
     {
-        if (!self::shouldRender(Slots::FRONTEND_BOTTOM) && !self::shouldRender(Slots::FRONTEND_TOPBAR)) {
-            return;
+        $slots = [Slots::FRONTEND_BOTTOM, Slots::FRONTEND_TOPBAR, Slots::FRONTEND_MODAL];
+        foreach ($slots as $slot) {
+            if (self::shouldRender($slot)) {
+                Assets::enqueue();
+                return;
+            }
         }
-
-        Assets::enqueue();
     }
 
     /**
@@ -51,6 +54,15 @@ class Frontend
     {
         // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- Mount escapes
         echo self::container(Slots::FRONTEND_BOTTOM);
+    }
+
+    /**
+     * @return void
+     */
+    public function renderModalMountPoint()
+    {
+        // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- Mount escapes
+        echo self::container(Slots::FRONTEND_MODAL);
     }
 
     /**

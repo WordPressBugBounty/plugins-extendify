@@ -44,6 +44,7 @@ use Extendify\Shared\Controllers\UserSelectionController;
 use Extendify\Shared\Controllers\UserSettingsController as SharedUserSettingsController;
 use Extendify\Shared\Controllers\ActivityController;
 use Extendify\Shared\Controllers\SiteProfileController;
+use Extendify\Shared\Controllers\SiteVisibilityController;
 use Extendify\Shared\Controllers\SiteImagesController;
 use Extendify\Shared\Controllers\DataController as SharedDataController;
 use Extendify\Shared\Controllers\ImageGenerationController;
@@ -135,6 +136,10 @@ use Extendify\Shared\Services\PluginsActivation\Metricool as MetricoolActivation
         ApiRouter::post('/agent/site-options', [AgentOptionsController::class, 'handle']);
         ApiRouter::post('/agent/content-search', [AgentContentController::class, 'search']);
         ApiRouter::post('/agent/content-read', [AgentContentController::class, 'read']);
+
+        // Site visibility.
+        ApiRouter::post('/site-visibility/publish', [SiteVisibilityController::class, 'publish']);
+        ApiRouter::post('/site-visibility/unpublish', [SiteVisibilityController::class, 'unpublish']);
 
         // Notifications.
         ApiRouter::post('/notifications/dismiss', [NotificationsController::class, 'dismiss']);

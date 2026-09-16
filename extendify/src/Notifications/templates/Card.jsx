@@ -1,12 +1,6 @@
-import classNames from 'classnames';
-import {
-	buttonHoverClasses,
-	cardVariables,
-	colorsOf,
-	designButtonVariables,
-} from '../colors';
+import { Cta } from '../Cta';
+import { cardVariables, colorsOf } from '../colors';
 import { DismissButton } from '../DismissButton';
-import { externalLinkProps } from '../notification-link';
 
 export const Card = ({
 	notification,
@@ -17,7 +11,6 @@ export const Card = ({
 	onClick,
 }) => {
 	const { title, content, image } = notification;
-	const ctaLabel = notification['cta-label'];
 	const colors = colorsOf(notification);
 
 	return (
@@ -41,20 +34,14 @@ export const Card = ({
 					<div className="text-lg font-semibold">{title}</div>
 					<div className="mt-1 text-sm">{content}</div>
 				</div>
-				{ctaLabel && href && (
-					<a
-						href={href}
-						{...externalLinkProps(external)}
-						onClick={onClick}
-						className={classNames(
-							'inline-flex h-10 cursor-pointer items-center rounded-xs bg-design-main px-4 text-sm text-design-text no-underline',
-							buttonHoverClasses(colors),
-						)}
-						style={designButtonVariables(colors)}
-					>
-						{ctaLabel}
-					</a>
-				)}
+				<Cta
+					notification={notification}
+					href={href}
+					external={external}
+					onClick={onClick}
+					surface="design"
+					className="inline-flex h-10 cursor-pointer items-center rounded-xs bg-design-main px-4 text-sm text-design-text no-underline"
+				/>
 			</div>
 		</div>
 	);

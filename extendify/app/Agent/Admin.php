@@ -21,6 +21,7 @@ use Extendify\Agent\AbilitiesDiscovery;
 use Extendify\Agent\Controllers\SiteNavigationController;
 use Extendify\PartnerData;
 use Extendify\Shared\DataProvider\ProductsData;
+use Extendify\SiteVisibility;
 
 /**
  * This class handles any file loading for the admin area.
@@ -140,6 +141,8 @@ class Admin
         $agentContext = [
             'availableAdminPages' => get_option('_transient_extendify_admin_pages_menu', []),
             'pluginRecommendations' => $mappedPluginRecommendations,
+            'sitePublished' => SiteVisibility::isPublished(),
+            'comingSoonEnabled' => (bool) PartnerData::setting('useComingSoon'),
         ];
         $abilities = [
             'canEditPost' => (bool) \current_user_can('edit_post', \get_queried_object_id()),
@@ -312,10 +315,37 @@ class Admin
 
         return [
             'color' => $this->originSlugs($color, 'palette', 'defaultPalette'),
+            'colorValues' => $this->originValues($color, 'palette', 'defaultPalette', 'color'),
             'gradient' => $this->originSlugs($color, 'gradients', 'defaultGradients'),
             'fontSize' => $this->originSlugs($typography, 'fontSizes', 'defaultFontSizes'),
             'fontFamily' => $this->originSlugs($typography, 'fontFamilies', 'defaultFontFamilies'),
         ];
+    }
+
+    /**
+     * Slug => value, so a colour written as its own hex finds the token naming it.
+     *
+     * @return array<string, string>
+     */
+    private function originValues($node, $listKey, $defaultKey, $valueKey)
+    {
+        $list = $node[$listKey] ?? [];
+
+        $origins = ['custom', 'theme'];
+        if (($node[$defaultKey] ?? true) !== false) {
+            $origins[] = 'default';
+        }
+
+        $values = [];
+        foreach ($origins as $origin) {
+            foreach ($list[$origin] ?? [] as $item) {
+                if (isset($item['slug'], $item[$valueKey])) {
+                    $values[(string) $item['slug']] = (string) $item[$valueKey];
+                }
+            }
+        }
+
+        return $values;
     }
 
     /**

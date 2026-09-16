@@ -52,7 +52,7 @@ const renderWidget = async (siteKey) => {
 	return widget;
 };
 
-// Keeps the script load and the widget render off the click's 15s deadline.
+// Keeps the script load and the widget render off the click's deadline.
 export const prewarmRecaptcha = (siteKey) => {
 	if (!recaptchaWidgets.has(siteKey)) {
 		const widget = renderWidget(siteKey);

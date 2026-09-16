@@ -1,5 +1,5 @@
 import { generateImage } from '@shared/api/DataApi';
-import { importImage, importImageServer } from '@shared/api/wp';
+import { downloadImage } from '@shared/api/wp';
 import { useStampedPreview } from '@shared/hooks/useStampedPreview';
 import { track } from '@shared/lib/track';
 import { useImageGenerationStore } from '@shared/state/generate-images';
@@ -104,23 +104,18 @@ export const AiImagePickerModal = ({ selected, field, onAfterSave }) => {
 		setError('');
 		setApplying(true);
 		try {
-			let attachment;
-			try {
-				attachment = await importImage(preview.src, {
+			const attachment = await downloadImage(
+				preview.id,
+				preview.src,
+				'ai-generated',
+				null,
+				{
 					alt: preview.alt,
 					filename: 'ai-image.jpg',
 					caption: '',
-					aiGenerated: true,
 					disclose,
-				});
-			} catch (_e) {
-				attachment = await importImageServer(preview.src, {
-					alt: preview.alt,
-					caption: '',
-					aiGenerated: true,
-					disclose,
-				});
-			}
+				},
+			);
 			const mediaId = attachment?.id;
 			if (!mediaId) throw new Error('No media id returned');
 

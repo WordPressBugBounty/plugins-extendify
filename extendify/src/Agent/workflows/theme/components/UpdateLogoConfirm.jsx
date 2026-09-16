@@ -75,7 +75,7 @@ export const UpdateLogoConfirm = ({ onConfirm, onCancel }) => {
 };
 
 const Wrapper = ({ children }) => (
-	<div className="mb-4 ms-12 me-2 flex flex-col rounded-lg border border-gray-300 bg-gray-50">
+	<div className="mb-4 ms-2 me-2 flex flex-col rounded-lg border border-gray-300 bg-gray-50">
 		{children}
 	</div>
 );

@@ -2,20 +2,20 @@ import { Dialog, DialogBackdrop, DialogPanel } from '@headlessui/react';
 import { prewarmRecaptcha } from '@shared/api/pluginsActivation';
 import { useEffect, useState } from '@wordpress/element';
 import { isEmail } from '@wordpress/url';
+import { accountContext } from './accountContext';
 import { createAccount } from './createAccount';
-import { Loading } from './Loading';
 import { partitionPlugins } from './partitionPlugins';
 import { SetupComplete } from './SetupComplete';
 import { SetupPlugins } from './SetupPlugins';
 import {
+	ACCOUNT_STATUS,
 	ACTIVATION_STATUS,
 	usePluginsActivation,
 } from './usePluginsActivation';
 
 export const ProductAccountActivation = () => {
 	const [isOpen, setIsOpen] = useState(true);
-	const [isLoading, setIsLoading] = useState(false);
-	const [isFinished, setIsFinished] = useState(false);
+	const [submitted, setSubmitted] = useState(null);
 	const { offered, ineligible } = partitionPlugins(
 		window.extSharedData?.showProductActivation,
 	);
@@ -50,57 +50,60 @@ export const ProductAccountActivation = () => {
 		setIsOpen(false);
 	};
 
+	const trackStatus = (slug, request) => {
+		const record = (status) =>
+			setSubmitted((current) =>
+				current.map((plugin) =>
+					plugin.slug === slug ? { ...plugin, status } : plugin,
+				),
+			);
+
+		request.then(
+			() => record(ACCOUNT_STATUS.success),
+			() => record(ACCOUNT_STATUS.error),
+		);
+
+		return request;
+	};
+
 	const handleCreateAccounts = async () => {
 		if (!isEmail(email)) return;
 
-		setIsLoading(true);
+		const selectedPlugins = plugins.filter((plugin) => plugin.selected);
 
-		const selectedPlugins = plugins?.filter((plugin) => plugin.selected) ?? [];
+		setSubmitted(
+			selectedPlugins.map((plugin) => ({
+				...plugin,
+				status: ACCOUNT_STATUS.pending,
+			})),
+		);
 
-		const results = await Promise.allSettled(
+		const settling = Promise.allSettled(
 			selectedPlugins.map((plugin) =>
-				createAccount(plugin, {
-					email,
-					marketingConsent,
-					termsAgreed,
-					scriptData: { ...scriptData?.[plugin.slug], ...plugin.scriptData },
-				}),
+				trackStatus(
+					plugin.slug,
+					createAccount(plugin, {
+						email,
+						marketingConsent,
+						termsAgreed,
+						scriptData: { ...scriptData?.[plugin.slug], ...plugin.scriptData },
+					}),
+				),
 			),
 		);
 
-		const context = Object.fromEntries(
-			selectedPlugins.map((plugin, index) => {
-				const result = results[index];
-				const {
-					requestTimeInMs,
-					captchaTimeInMs,
-					captchaWasWarm,
-					stepTimeInMs,
-					retries,
-					errors,
-				} = result.status === 'fulfilled' ? result.value : result.reason;
-				const entry = {
-					status: result.status === 'fulfilled' ? 'success' : 'error',
-					requestTimeInMs,
-					captchaTimeInMs,
-					captchaWasWarm,
-					stepTimeInMs,
-					endpoint: plugin.endpoint,
-					extendifyVersion: window.extSharedData?.version,
-					retries,
-					...(errors.length > 0 && { errors }),
-				};
-				return [plugin.slug, entry];
-			}),
-		);
+		// A record stuck on pending is a user who left before the answer.
+		await activatePlugins({
+			status: ACTIVATION_STATUS.completed,
+			context: accountContext(selectedPlugins),
+		});
+
+		const results = await settling;
 
 		await activatePlugins({
 			status: ACTIVATION_STATUS.completed,
-			context,
+			context: accountContext(selectedPlugins, results),
 		});
-
-		setIsFinished(true);
-		setIsLoading(false);
 	};
 
 	return (
@@ -119,7 +122,12 @@ export const ProductAccountActivation = () => {
 							className="relative w-full max-w-208 max-h-full overflow-hidden flex flex-col bg-white rounded-lg shadow-xl transition-all data-closed:opacity-0 data-closed:scale-95"
 						>
 							<div className="overflow-y-auto">
-								{!isFinished && !isLoading && (
+								{submitted ? (
+									<SetupComplete
+										plugins={submitted}
+										handleClose={() => setIsOpen(false)}
+									/>
+								) : (
 									<SetupPlugins
 										plugins={plugins}
 										setPlugins={setPlugins}
@@ -132,12 +140,6 @@ export const ProductAccountActivation = () => {
 										termsAgreed={termsAgreed}
 										setTermsAgreed={setTermsAgreed}
 									/>
-								)}
-
-								{!isFinished && isLoading && <Loading />}
-
-								{isFinished && (
-									<SetupComplete handleClose={() => setIsOpen(false)} />
 								)}
 							</div>
 						</DialogPanel>

@@ -58,7 +58,7 @@ export const SelectThemeFontsVariation = ({ onConfirm, onCancel }) => {
 	if (noVariations) return null;
 
 	return (
-		<div className="mb-4 ms-12 me-2 flex flex-col rounded-lg border border-gray-300 bg-gray-50">
+		<div className="mb-4 ms-2 me-2 flex flex-col rounded-lg border border-gray-300 bg-gray-50">
 			<div className="rounded-lg border-b border-gray-300 bg-white">
 				<div className="grid grid-cols-2 gap-2 p-3">
 					{shuffled?.slice(0, 10)?.map(({ title, css, styles }) => (
