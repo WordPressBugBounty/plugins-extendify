@@ -17,8 +17,8 @@ use Extendify\PartnerData;
 /**
  * A hidden wp-admin page, so WordPress's own login does the authenticating.
  *
- * An invalid request is explained here and never redirected: the return
- * address is the thing that could not be trusted.
+ * An invalid request is explained here and never redirected on its own:
+ * anyone can register an assistant with any return address.
  */
 class Authorize
 {
@@ -183,7 +183,7 @@ class Authorize
             'userId' => \get_current_user_id(),
             'client' => $request['client']['id'],
             'label' => $request['client']['name'],
-            'redirectUri' => $request['redirectUri'],
+            'redirectUri' => $request['sentRedirectUri'],
             'codeChallenge' => $request['codeChallenge'],
             'grants' => $write ? Grants::names() : [Grants::READ],
             'offline' => $request['offline'],
@@ -230,13 +230,9 @@ class Authorize
             return is_string($params[$key] ?? null) ? $params[$key] : '';
         };
 
-        if ($sent('response_type') !== 'code') {
-            return self::refused(\__('The request from the assistant is incomplete or malformed.', 'extendify-local'));
-        }
-
         $client = Clients::find($sent('client_id'));
         if (!$client) {
-            return self::refused(\__(
+            return self::invalid(\__(
                 'The assistant could not be identified. Its identity document is missing or does not name it.',
                 'extendify-local'
             ));
@@ -244,38 +240,55 @@ class Authorize
 
         $redirect = Clients::redirect($client, $sent('redirect_uri'));
         if ($redirect === null) {
-            return self::refused(\__(
+            return self::invalid(\__(
                 'The assistant asked to be sent back to an address it did not register.',
                 'extendify-local'
             ));
         }
 
+        $request = ['client' => $client, 'redirectUri' => $redirect, 'state' => $sent('state')];
+        if ($sent('response_type') !== 'code') {
+            return self::invalid(
+                \__('The request from the assistant is incomplete or malformed.', 'extendify-local'),
+                $sent('response_type') === '' ? 'invalid_request' : 'unsupported_response_type',
+                $request
+            );
+        }
+
         $challenge = $sent('code_challenge');
         if ($sent('code_challenge_method') !== 'S256' || !preg_match('/^[A-Za-z0-9._~-]{43,128}$/', $challenge)) {
-            return self::refused(\__('The request is missing the code challenge that protects it.', 'extendify-local'));
+            return self::invalid(
+                \__('The request is missing the code challenge that protects it.', 'extendify-local'),
+                'invalid_request',
+                $request
+            );
         }
 
         if (!Metadata::isResource($sent('resource'))) {
-            return self::refused(\__('The request is for a different site or endpoint.', 'extendify-local'));
+            return self::invalid(
+                \__('The request is for a different site or endpoint.', 'extendify-local'),
+                'invalid_target',
+                $request
+            );
         }
 
-        return [
-            'client' => $client,
-            'redirectUri' => $redirect,
+        return $request + [
+            'sentRedirectUri' => $sent('redirect_uri'),
             'codeChallenge' => $challenge,
-            'state' => $sent('state'),
             'grants' => Grants::fromScope($sent('scope')),
             'offline' => in_array('offline_access', preg_split('/\s+/', trim($sent('scope'))), true),
         ];
     }
 
     /**
-     * @param string $message - What to tell the user.
+     * @param string      $message - What to tell the user.
+     * @param string|null $error   - The RFC 6749 error to offer the client, or null when it can't be told.
+     * @param array|null  $request - The client and return address the error goes back to.
      * @return \WP_Error
      */
-    private static function refused($message)
+    private static function invalid($message, $error = null, $request = null)
     {
-        return new \WP_Error('extendify_mcp_invalid_request', $message);
+        return new \WP_Error('extendify_mcp_invalid_request', $message, ['error' => $error, 'request' => $request]);
     }
 
     /**
@@ -299,8 +312,10 @@ class Authorize
             $answer['state'] = $request['state'];
         }
 
-        // add_query_arg encodes nothing it is handed.
-        return \add_query_arg(array_map('rawurlencode', $answer), $request['redirectUri']);
+        // add_query_arg would re-parse the client's own query and rename keys like a.b.
+        $glue = strpos($request['redirectUri'], '?') === false ? '?' : '&';
+
+        return $request['redirectUri'] . $glue . http_build_query($answer, '', '&', PHP_QUERY_RFC3986);
     }
 
     /**
@@ -329,14 +344,39 @@ class Authorize
         $request = self::validate($params);
         if (\is_wp_error($request)) {
             printf(
-                '<div class="notice notice-error inline"><p>%1$s</p></div><p>%2$s</p>',
-                \esc_html($request->get_error_message()),
-                \esc_html__('Nothing was sent back to the assistant. Try connecting again from it.', 'extendify-local')
+                '<div class="notice notice-error inline"><p>%s</p></div>',
+                \esc_html($request->get_error_message())
             );
+            self::renderReturn($request->get_error_data());
             return;
         }
 
         self::renderConsent($request);
+    }
+
+    /**
+     * @param array $data - The error to offer the client, and where it goes.
+     * @return void
+     */
+    private static function renderReturn(array $data)
+    {
+        if (!isset($data['error'])) {
+            printf('<p>%s</p>', \esc_html__(
+                'Nothing was sent back to the assistant. Try connecting again from it.',
+                'extendify-local'
+            ));
+            return;
+        }
+
+        printf(
+            '<p><a class="button" href="%1$s">%2$s</a></p>',
+            \esc_url(self::back($data['request'], ['error' => $data['error']])),
+            \esc_html(sprintf(
+                /* translators: %s: a website's host name, such as claude.ai. */
+                \__('Return to %s', 'extendify-local'),
+                (string) \wp_parse_url($data['request']['redirectUri'], PHP_URL_HOST)
+            ))
+        );
     }
 
     /**

@@ -19,30 +19,22 @@ class Reachability
     const LOCAL_SUFFIXES = '/(^|\.)(localhost|local|test|internal|lan|home|home\.arpa|invalid|example)$/i';
 
     /**
-     * @return string|null local, http, auth or blocked; null when nothing stands in the way.
+     * @return string|null local, auth or blocked; null when nothing stands in the way.
      */
     public static function obstacle()
     {
         $url = Metadata::resource();
-        $parts = \wp_parse_url($url);
 
-        if (self::isLocal(trim((string) ($parts['host'] ?? ''), '[]'))) {
-            return 'local';
-        }
-
-        if (($parts['scheme'] ?? '') !== 'https') {
-            return 'http';
-        }
-
-        return self::loopback($url);
+        return self::isLocal($url) ? 'local' : self::loopback($url);
     }
 
     /**
-     * @param string $host - The host part of the site's address, brackets stripped.
+     * @param string $url - The site's address.
      * @return boolean
      */
-    private static function isLocal($host)
+    public static function isLocal($url)
     {
+        $host = trim((string) \wp_parse_url($url, PHP_URL_HOST), '[]');
         if (filter_var($host, FILTER_VALIDATE_IP)) {
             return !filter_var($host, FILTER_VALIDATE_IP, FILTER_FLAG_NO_PRIV_RANGE | FILTER_FLAG_NO_RES_RANGE);
         }

@@ -22,6 +22,20 @@ class Log
 
     const ERROR_LENGTH = 500;
 
+    const REASON_NAME = 64;
+
+    const REASONS_SENT = 5;
+
+    /**
+     * Stored in place of a reason that could be text a user typed.
+     */
+    const UNLISTED = 'extendify_mcp_unlisted';
+
+    /**
+     * Insights drops a reason outside this pattern, so the two must match.
+     */
+    const REASON_PATTERN = '/^(option:|php:)?[A-Za-z0-9_*]{1,' . self::REASON_NAME . '}$/';
+
     const SHOWN = 10;
 
     const USAGE_DAYS = 2;
@@ -38,21 +52,23 @@ class Log
     /**
      * @param array  $connection - The connection the call arrived on.
      * @param string $tool       - The tool that was called.
-     * @param array  $details    - outcome, error and duration in seconds.
+     * @param array  $details    - outcome, error, reason and duration in seconds.
      * @return void
      */
     public static function write(array $connection, $tool, array $details)
     {
         self::install();
         $wpdb = $GLOBALS['wpdb'];
+        $userId = (int) ($connection['userId'] ?? \get_current_user_id());
         $wpdb->insert(self::table(), [
             'created_at' => gmdate('Y-m-d H:i:s'),
-            'user_id' => (int) ($connection['userId'] ?? \get_current_user_id()),
+            'user_id' => $userId,
             'connection' => (string) ($connection['id'] ?? ''),
             'client' => substr((string) ($connection['data']['label'] ?? ''), 0, Connections::LABEL_LENGTH),
             'tool' => substr((string) $tool, 0, Surface::MAX_NAME),
             'outcome' => (string) $details['outcome'],
             'error' => substr((string) ($details['error'] ?? ''), 0, self::ERROR_LENGTH),
+            'reason' => self::reason((string) ($details['reason'] ?? ''), $userId),
             'duration_ms' => (int) round(((float) ($details['duration'] ?? 0)) * 1000),
         ]);
 
@@ -71,11 +87,12 @@ class Log
             return [];
         }
 
+        self::install();
         $wpdb = $GLOBALS['wpdb'];
         $table = self::table();
 
         return $wpdb->get_results($wpdb->prepare(
-            "SELECT created_at, tool, outcome, error FROM {$table}"
+            "SELECT created_at, tool, outcome, error, reason FROM {$table}"
                 . ' WHERE user_id = %d AND `connection` = %s ORDER BY id DESC LIMIT %d',
             (int) $userId,
             (string) $connection,
@@ -94,6 +111,7 @@ class Log
             return [];
         }
 
+        self::install();
         $wpdb = $GLOBALS['wpdb'];
         $table = self::table();
         $tools = array_merge(array_keys(Tools::all()), Surface::abilityNames());
@@ -102,21 +120,76 @@ class Log
 
         // Binary, or the collation lets `LIST_POSTS` or a trailing space pass as ours.
         $rows = $wpdb->get_results($wpdb->prepare(
-            "SELECT DATE(created_at), IF(CAST(tool AS BINARY) IN ({$in}), tool, 'ability'), COUNT(*),"
+            "SELECT DATE(created_at), IF(CAST(tool AS BINARY) IN ({$in}), tool, 'ability'), reason, COUNT(*),"
                 . " SUM(outcome = 'error'), SUM(outcome = 'refused') FROM {$table}"
-                . ' WHERE created_at >= %s GROUP BY 1, 2 ORDER BY 1, 2',
+                . ' WHERE created_at >= %s GROUP BY 1, 2, 3 ORDER BY 1, 2',
             array_merge($tools, [$since])
         ), ARRAY_N) ?: [];
 
-        return array_map(function ($row) {
-            return [
-                'day' => $row[0],
-                'tool' => $row[1],
-                'calls' => (int) $row[2],
-                'errors' => (int) $row[3],
-                'refused' => (int) $row[4],
-            ];
-        }, $rows);
+        $usage = [];
+        foreach ($rows as list($day, $tool, $reason, $calls, $errors, $refused)) {
+            $key = $day . ' ' . $tool;
+            $usage[$key] = $usage[$key]
+                ?? ['day' => $day, 'tool' => $tool, 'calls' => 0, 'errors' => 0, 'refused' => 0];
+            $usage[$key]['calls'] += (int) $calls;
+            $usage[$key]['errors'] += (int) $errors;
+            $usage[$key]['refused'] += (int) $refused;
+            if ($reason !== '') {
+                $usage[$key]['reasons'][$reason] = ($usage[$key]['reasons'][$reason] ?? 0) + (int) $calls;
+            }
+        }
+
+        return array_values(array_map(function ($row) {
+            if (isset($row['reasons'])) {
+                $row['reasons'] = self::mostFrequent($row['reasons']);
+            }
+
+            return $row;
+        }, $usage));
+    }
+
+    /**
+     * Segments with a digit hold ids or hashes, and the caller's login names a person.
+     *
+     * @param string  $reason - A WP_Error code, php:<class> or option:<name>.
+     * @param integer $userId - The user the call ran as.
+     * @return string
+     */
+    private static function reason($reason, $userId)
+    {
+        if ($reason === '') {
+            return '';
+        }
+
+        preg_match('/^(option:|php:)?(.*)$/s', $reason, $parts);
+        $name = implode('_', array_map(function ($segment) {
+            return preg_match('/\d/', $segment) ? '*' : $segment;
+        }, explode('_', $parts[2])));
+
+        $user = \get_userdata($userId);
+        foreach ($user ? [$user->user_login, $user->user_nicename] : [] as $person) {
+            $person = trim(preg_replace('/[^a-z0-9]+/', '_', strtolower($person)), '_');
+            if ($person !== '' && strpos('_' . strtolower($name) . '_', '_' . $person . '_') !== false) {
+                return self::UNLISTED;
+            }
+        }
+
+        $reason = $parts[1] . substr($name, 0, self::REASON_NAME);
+
+        return preg_match(self::REASON_PATTERN, $reason) ? $reason : self::UNLISTED;
+    }
+
+    /**
+     * @param array $reasons - Each reason and how many calls failed with it.
+     * @return array
+     */
+    private static function mostFrequent(array $reasons)
+    {
+        uksort($reasons, function ($a, $b) use ($reasons) {
+            return [$reasons[$b], (string) $a] <=> [$reasons[$a], (string) $b];
+        });
+
+        return array_slice($reasons, 0, self::REASONS_SENT, true);
     }
 
     /**
@@ -209,6 +282,7 @@ class Log
             'tool' => 'VARCHAR(' . Surface::MAX_NAME . ') NOT NULL DEFAULT \'\'',
             'outcome' => 'VARCHAR(16) NOT NULL DEFAULT \'\'',
             'error' => 'VARCHAR(' . self::ERROR_LENGTH . ') NOT NULL DEFAULT \'\'',
+            'reason' => 'VARCHAR(80) NOT NULL DEFAULT \'\'',
             'duration_ms' => 'INT UNSIGNED NOT NULL DEFAULT 0',
         ];
     }

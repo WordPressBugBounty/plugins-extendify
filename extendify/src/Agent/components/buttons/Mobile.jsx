@@ -15,7 +15,7 @@ export const Mobile = () => {
 	};
 
 	useEffect(() => {
-		if (!isMobile || minimized) return;
+		if (!isMobile || !minimized) return;
 		// Set button height as root var
 		document.body.style.setProperty(
 			'--extendify-agent-mobile-btn-height',

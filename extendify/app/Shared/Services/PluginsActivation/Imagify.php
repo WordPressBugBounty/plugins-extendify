@@ -34,9 +34,14 @@ class Imagify extends PluginActivation
             return;
         }
 
-        $settings = (array) \get_option('imagify_settings', []);
-        $settings['api_key'] = \sanitize_text_field($key);
-        \update_option('imagify_settings', $settings);
+        $values = ['api_key' => \sanitize_text_field($key), 'auto_optimize' => 1];
+
+        try {
+            // Imagify's set() keeps its first-install defaults; a raw option write drops them.
+            \Imagify_Options::get_instance()->set($values);
+        } catch (\Throwable $e) {
+            \update_option('imagify_settings', array_merge((array) \get_option('imagify_settings', []), $values));
+        }
 
         // clear the stale validation cache.
         \delete_transient('imagify_user_cache');

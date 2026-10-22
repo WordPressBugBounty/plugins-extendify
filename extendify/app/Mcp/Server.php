@@ -48,6 +48,15 @@ class Server
      * The tool list moves with the partner config, which is refreshed every ten minutes.
      */
     const LIST_TTL_MS = 300000;
+
+    /**
+     * Not every client shows these to the model, so list_tools' description repeats them.
+     */
+    const INSTRUCTIONS = 'Call list_tools first in every conversation. It lists every tool and plugin ability'
+        . ' this site offers you right now, including any the site added after your tool list was loaded. Call it'
+        . ' again whenever the user asks for something none of your tools do, and after install_plugin or'
+        . ' set_plugin_status. Run anything it lists that is not in your tool list with run_tool, or with'
+        . ' run_tool_write if it changes the site.';
     // phpcs:enable PSR12.Properties.ConstantVisibility.NotFound
 
     /**
@@ -84,6 +93,12 @@ class Server
      */
     public static function authorize(\WP_REST_Request $request)
     {
+        // A browser sends Origin cross-site; a page holding the URL could otherwise drive the site.
+        $origin = $request->get_header('origin');
+        if ($origin !== null && !self::ownOrigin($origin)) {
+            return new \WP_Error('extendify_mcp_forbidden_origin', 'Origin not allowed', ['status' => 403]);
+        }
+
         $presented = self::bearer($request) !== null;
         $connection = Tokens::findAccess(self::bearer($request));
         if (!$connection) {
@@ -239,12 +254,6 @@ class Server
             return new \WP_REST_Response(null, 405);
         }
 
-        // A browser sends Origin on a cross-site POST; a page holding the URL could otherwise drive the site.
-        $origin = $request->get_header('origin');
-        if ($origin !== null && !self::ownOrigin($origin)) {
-            return self::error(null, -32600, 'Origin not allowed', 403);
-        }
-
         $message = $request->get_json_params();
         if (!is_array($message) || !isset($message['method'])) {
             return self::error(null, -32600, 'Invalid Request');
@@ -261,7 +270,9 @@ class Server
         }
 
         $id = $message['id'];
-        $refused = $stateless ? self::held($request, $message, $meta) : null;
+        $refused = $stateless
+            ? self::held($request, $message, $meta)
+            : self::negotiated($request, $id, (string) $message['method']);
         if ($refused) {
             return $refused;
         }
@@ -321,10 +332,7 @@ class Server
         }
 
         if (!in_array($version, self::STATELESS_VERSIONS, true)) {
-            return self::error($id, -32022, 'Unsupported protocol version', 400, [
-                'supported' => self::STATELESS_VERSIONS,
-                'requested' => $version,
-            ]);
+            return self::unsupported($id, $version, self::STATELESS_VERSIONS);
         }
 
         if (!array_key_exists(self::META . 'clientCapabilities', $meta)) {
@@ -332,6 +340,42 @@ class Server
         }
 
         return null;
+    }
+
+    /**
+     * The header is only required after negotiation, so initialize itself is not held to it.
+     *
+     * @param \WP_REST_Request $request - The incoming request.
+     * @param mixed            $id      - The JSON-RPC request id.
+     * @param string           $method  - The JSON-RPC method.
+     * @return \WP_REST_Response|null - The refusal, or null when the request stands.
+     */
+    private static function negotiated(\WP_REST_Request $request, $id, $method)
+    {
+        $version = $request->get_header('MCP-Protocol-Version');
+        if ($method === 'initialize' || $version === null || in_array($version, self::INITIALIZE_VERSIONS, true)) {
+            return null;
+        }
+
+        if (in_array($version, self::STATELESS_VERSIONS, true)) {
+            return self::error($id, -32020, 'Header mismatch: MCP-Protocol-Version does not match the body', 400);
+        }
+
+        return self::unsupported($id, $version, array_merge(self::INITIALIZE_VERSIONS, self::STATELESS_VERSIONS));
+    }
+
+    /**
+     * @param mixed  $id        - The JSON-RPC request id.
+     * @param string $version   - The version the client named.
+     * @param array  $supported - The versions it could have named instead.
+     * @return \WP_REST_Response
+     */
+    private static function unsupported($id, $version, array $supported)
+    {
+        return self::error($id, -32022, 'Unsupported protocol version', 400, [
+            'supported' => $supported,
+            'requested' => $version,
+        ]);
     }
 
     /**
@@ -388,6 +432,7 @@ class Server
         return [
             'supportedVersions' => self::STATELESS_VERSIONS,
             'capabilities' => ['tools' => (object) []],
+            'instructions' => self::INSTRUCTIONS,
             'ttlMs' => HOUR_IN_SECONDS * 1000,
             'cacheScope' => 'private',
         ];
@@ -405,6 +450,7 @@ class Server
             'protocolVersion' => in_array($asked, self::INITIALIZE_VERSIONS, true) ? $asked : self::INITIALIZE_FALLBACK,
             'capabilities' => ['tools' => (object) []],
             'serverInfo' => self::serverInfo(),
+            'instructions' => self::INSTRUCTIONS,
         ];
     }
 

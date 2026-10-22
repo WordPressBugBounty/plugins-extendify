@@ -127,6 +127,13 @@ class Skeleton
                     max-width: calc(100% - <?php echo (int) (self::WIDTH + self::FRAME); ?>px);
                     border-radius: <?php echo (int) self::FRAME; ?>px <?php echo (int) self::FRAME; ?>px 0 0;
                 }
+                .extendify-agent-skeleton #coming-soon-footer-banner {
+                    left: <?php echo (int) self::WIDTH; ?>px;
+                    right: <?php echo (int) self::FRAME; ?>px;
+                    bottom: calc(<?php echo (int) self::FRAME; ?>px + var(--extendify-notification-bar-height, 0px));
+                    width: auto;
+                    border-radius: 0 0 1rem 1rem;
+                }
                 .extendify-agent-skeleton #extendify-agent-skeleton-frame {
                     display: block;
                     position: fixed;

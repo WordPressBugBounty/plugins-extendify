@@ -1,6 +1,18 @@
+import { Spinner } from '@wordpress/components';
+import { useState } from '@wordpress/element';
+import classNames from 'classnames';
 import { Cta } from '../Cta';
-import { cardVariables, colorsOf } from '../colors';
+import {
+	buttonHoverClasses,
+	cardVariables,
+	colorsOf,
+	designButtonVariables,
+} from '../colors';
+import { ctaActionFor, runCtaAction } from '../cta-action';
 import { DismissButton } from '../DismissButton';
+
+const CTA_CLASSES =
+	'inline-flex h-10 items-center gap-2 rounded-xs bg-design-main px-4 text-sm text-design-text no-underline';
 
 export const Card = ({
 	notification,
@@ -11,7 +23,15 @@ export const Card = ({
 	onClick,
 }) => {
 	const { title, content, image } = notification;
+	const ctaLabel = notification['cta-label'];
 	const colors = colorsOf(notification);
+	const [running, setRunning] = useState(false);
+	const action = ctaActionFor(notification);
+
+	const runAction = () => {
+		setRunning(true);
+		runCtaAction(action, onClick);
+	};
 
 	return (
 		<div
@@ -34,14 +54,33 @@ export const Card = ({
 					<div className="text-lg font-semibold">{title}</div>
 					<div className="mt-1 text-sm">{content}</div>
 				</div>
-				<Cta
-					notification={notification}
-					href={href}
-					external={external}
-					onClick={onClick}
-					surface="design"
-					className="inline-flex h-10 cursor-pointer items-center rounded-xs bg-design-main px-4 text-sm text-design-text no-underline"
-				/>
+				{ctaLabel && action && (
+					<button
+						type="button"
+						onClick={runAction}
+						disabled={running}
+						aria-busy={running}
+						className={classNames(
+							CTA_CLASSES,
+							running ? 'cursor-not-allowed' : 'cursor-pointer',
+							!running && buttonHoverClasses(colors),
+						)}
+						style={designButtonVariables(colors)}
+					>
+						{ctaLabel}
+						{running && <Spinner className="m-0 h-4 text-design-text" />}
+					</button>
+				)}
+				{!action && (
+					<Cta
+						notification={notification}
+						href={href}
+						external={external}
+						onClick={onClick}
+						surface="design"
+						className={classNames(CTA_CLASSES, 'cursor-pointer')}
+					/>
+				)}
 			</div>
 		</div>
 	);

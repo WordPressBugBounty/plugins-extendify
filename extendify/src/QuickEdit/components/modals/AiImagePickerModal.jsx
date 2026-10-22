@@ -14,7 +14,7 @@ import {
 	__experimentalToggleGroupControl as ToggleGroupControl,
 	__experimentalToggleGroupControlOption as ToggleGroupControlOption,
 } from '@wordpress/components';
-import { useRef, useState } from '@wordpress/element';
+import { useEffect, useRef, useState } from '@wordpress/element';
 import { __, sprintf } from '@wordpress/i18n';
 import { loadProduct, save, saveProduct } from '../../lib/api';
 import { invalidateBlockSource } from '../../lib/block-source-cache';
@@ -57,7 +57,19 @@ export const AiImagePickerModal = ({ selected, field, onAfterSave }) => {
 	const [error, setError] = useState('');
 	const [preview, setPreview] = useState(null); // { src, id }
 	const abortRef = useRef(null);
+	const promptRef = useRef(null);
 	const previewSrc = useStampedPreview(preview?.src, disclose);
+
+	// The last description is kept on purpose, so the caret goes to its end.
+	useEffect(() => {
+		const el = promptRef.current;
+		el?.setSelectionRange(el.value.length, el.value.length);
+	}, []);
+
+	const clearPrompt = () => {
+		setAiImageOption('prompt', '');
+		promptRef.current?.focus();
+	};
 
 	useImageCreditsSync();
 
@@ -226,19 +238,35 @@ export const AiImagePickerModal = ({ selected, field, onAfterSave }) => {
 				</div>
 			) : (
 				<form onSubmit={onGenerate} className="extendify-quick-edit-ai-form">
-					<TextareaControl
-						autoFocus
-						label={__('Image description', 'extendify-local')}
-						placeholder={__(
-							'Describe the image you want to create',
-							'extendify-local',
-						)}
-						value={aiImageOptions.prompt}
-						onChange={(v) => setAiImageOption('prompt', v)}
-						rows={4}
-						disabled={generating}
-						__nextHasNoMarginBottom
-					/>
+					<div className="relative">
+						<TextareaControl
+							ref={promptRef}
+							autoFocus
+							label={__('Image description', 'extendify-local')}
+							placeholder={__(
+								'Describe the image you want to create',
+								'extendify-local',
+							)}
+							value={aiImageOptions.prompt}
+							onChange={(v) => setAiImageOption('prompt', v)}
+							rows={4}
+							disabled={generating}
+							__nextHasNoMarginBottom
+						/>
+						{aiImageOptions.prompt ? (
+							<Button
+								variant="link"
+								onClick={clearPrompt}
+								disabled={generating}
+								className="absolute top-0 right-0 text-[12px]"
+							>
+								{
+									// translators: Link that empties the AI image description box.
+									__('Clear', 'extendify-local')
+								}
+							</Button>
+						) : null}
+					</div>
 					<ToggleGroupControl
 						isBlock
 						label={__('Aspect ratio', 'extendify-local')}

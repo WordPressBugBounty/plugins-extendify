@@ -50,7 +50,7 @@ export const launchStrings = () => {
 		needsThemeAction: __('Take me there', 'extendify-local'),
 		restartTitle: __('Start Over?', 'extendify-local'),
 		restartBody: __(
-			'It looks like you have been here before. We need to clean up some things before we can continue.',
+			"It looks like you've already created a website. To start over, we'll delete the pages and posts it created and reset your site's menus, header, footer and styles. Everything else will be kept.",
 			'extendify-local',
 		),
 		restartNote: (count) =>

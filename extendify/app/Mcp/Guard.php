@@ -79,8 +79,8 @@ class Guard
      */
     public static function mark()
     {
-        foreach (self::hooks() as list($hook, $method, $arguments)) {
-            \add_filter($hook, [self::class, $method], 10, $arguments);
+        foreach (self::hooks() as list($hook, $method, $priority, $arguments)) {
+            \add_filter($hook, [self::class, $method], $priority, $arguments);
         }
     }
 
@@ -91,25 +91,26 @@ class Guard
      */
     public static function unmark()
     {
-        foreach (self::hooks() as list($hook, $method)) {
-            \remove_filter($hook, [self::class, $method], 10);
+        foreach (self::hooks() as list($hook, $method, $priority)) {
+            \remove_filter($hook, [self::class, $method], $priority);
         }
     }
 
     /**
-     * @return array - Each hook, the method it calls and how many arguments it takes.
+     * @return array - Each hook, the method it calls, its priority and how many arguments it takes.
      */
     private static function hooks()
     {
         $hooks = [
-            ['pre_update_option', 'refuseOption', 3],
-            ['add_option', 'refuseOptionChange', 1],
-            ['delete_option', 'refuseOptionChange', 1],
-            ['pre_uninstall_plugin', 'lift', 1],
-            ['delete_plugin', 'hold', 1],
+            // Last, or a later filter can change a value after it passes here.
+            ['pre_update_option', 'refuseOption', PHP_INT_MAX, 3],
+            ['add_option', 'refuseOptionChange', 10, 1],
+            ['delete_option', 'refuseOptionChange', 10, 1],
+            ['pre_uninstall_plugin', 'lift', 10, 1],
+            ['delete_plugin', 'hold', 10, 1],
         ];
         foreach (['add', 'update', 'delete'] as $change) {
-            $hooks[] = [$change . '_user_metadata', 'refuseRole', 4];
+            $hooks[] = [$change . '_user_metadata', 'refuseRole', 10, 4];
         }
 
         return $hooks;
@@ -144,11 +145,16 @@ class Guard
             return $value;
         }
 
+        // Core skips an unchanged write too, but only after this filter runs.
+        if ($value === $oldValue || \maybe_serialize($value) === \maybe_serialize($oldValue)) {
+            return $value;
+        }
+
         if (!self::$calling) {
             return $oldValue;
         }
 
-        throw new Refused(\esc_html(self::optionMessage($option)));
+        self::refuse($option);
     }
 
     /**
@@ -163,7 +169,7 @@ class Guard
             return;
         }
 
-        throw new Refused(\esc_html(self::optionMessage($option)));
+        self::refuse($option);
     }
 
     /**
@@ -185,7 +191,7 @@ class Guard
             return false;
         }
 
-        throw new Refused('Changing a user role is not something a connection may do.');
+        throw new Refused('Changing a user role is not something a connection may do.', 'extendify_mcp_role');
     }
 
     /**
@@ -261,13 +267,14 @@ class Guard
         }
 
         // Core writes these as it registers a user, publishes a post or renders a calendar,
-        // and WPForms as it saves a form, or its abilities abort with the form half-written.
+        // WPForms and WooCommerce as they save a form or product; refusing one fails that save.
         $caches = [
             'user_count',
             'fresh_site',
             'wp_calendar_block_has_published_posts',
             'wpforms_dashboard_cache_generation',
             'wpforms_forms_first_created',
+            'woocommerce_task_list_tracked_completed_tasks',
         ];
         if (in_array($option, $caches, true)) {
             return true;
@@ -275,6 +282,11 @@ class Guard
 
         // set_auto_updates writes these, and an update schedule grants nothing either.
         if (in_array($option, ['auto_update_plugins', 'auto_update_themes'], true)) {
+            return true;
+        }
+
+        // Imagify queues an upload's optimization here, and the queue runs only Imagify's own optimizer.
+        if (strpos($option, 'imagify_optimize_media_batch_') === 0) {
             return true;
         }
 
@@ -289,11 +301,26 @@ class Guard
 
     /**
      * @param string $option - The option refused.
+     * @return void
+     * @throws Refused - Always.
+     */
+    private static function refuse($option)
+    {
+        // phpcs:ignore WordPress.Security.EscapeOutput.ExceptionNotEscaped -- the reason is a log code, never printed.
+        throw new Refused(\esc_html(self::optionMessage($option)), 'option:' . $option);
+    }
+
+    /**
+     * @param string $option - The option refused.
      * @return string
      */
     private static function optionMessage($option)
     {
-        return sprintf('Changing the %s option is not something a connection may do.', $option);
+        return sprintf(
+            'Changing the %s option is not something a connection may do.'
+                . ' The same call will be refused again, so do not retry it.',
+            $option
+        );
     }
 
     /**

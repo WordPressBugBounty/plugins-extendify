@@ -9,6 +9,10 @@ use Extendify\Shared\Services\SupportedPlugins;
 
 class Admin
 {
+    // Excluded here, not from SLUGS, because other features read that list too.
+    // phpcs:ignore PSR12.Properties.ConstantVisibility.NotFound
+    const SKIPPED_PLUGINS = ['imagify'];
+
     private static $pluginsCache = null;
 
     public function __construct()
@@ -75,7 +79,11 @@ class Admin
                 }
 
                 $slug = self::extractPluginSlug($file);
-                if (!$slug || !in_array($slug, SupportedPlugins::SLUGS, true)) {
+                if (
+                    !$slug
+                    || !in_array($slug, SupportedPlugins::SLUGS, true)
+                    || in_array($slug, self::SKIPPED_PLUGINS, true)
+                ) {
                     // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
                     echo $html;
                     continue;

@@ -8,5 +8,8 @@ const DEFAULT_URLS = {
 	DASHBOARD_HOST: 'https://dashboard.extendify.com',
 };
 
-export const { AI_HOST, PATTERNS_HOST, KB_HOST, INSIGHTS_HOST, IMAGES_HOST } =
-	DEFAULT_URLS;
+// A site that points a backend elsewhere prints window.extendifyHosts first.
+export const { AI_HOST, PATTERNS_HOST, KB_HOST, INSIGHTS_HOST, IMAGES_HOST } = {
+	...DEFAULT_URLS,
+	...globalThis.extendifyHosts,
+};

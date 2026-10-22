@@ -52,6 +52,18 @@ class Metadata
                 'show_in_index' => false,
             ]
         );
+
+        \register_rest_route(
+            Config::$slug . '/' . Config::$apiVersion,
+            '/oauth/jwks',
+            [
+                'methods' => 'GET',
+                'callback' => [self::class, 'keys'],
+                // Public by design: the set is empty and read before sign-in.
+                'permission_callback' => '__return_true',
+                'show_in_index' => false,
+            ]
+        );
     }
 
     /**
@@ -65,6 +77,16 @@ class Metadata
             : self::authorizationServer();
 
         return new \WP_REST_Response($document);
+    }
+
+    /**
+     * The server signs nothing, so the key set is empty.
+     *
+     * @return \WP_REST_Response
+     */
+    public static function keys()
+    {
+        return new \WP_REST_Response(['keys' => []]);
     }
 
     /**
@@ -157,6 +179,10 @@ class Metadata
             'client_id_metadata_document_supported' => true,
             'authorization_response_iss_parameter_supported' => true,
             'scopes_supported' => ['read', 'write', 'offline_access'],
+            // SDK clients parse this as OIDC and reject it without these.
+            'jwks_uri' => self::url('oauth/jwks'),
+            'subject_types_supported' => ['public'],
+            'id_token_signing_alg_values_supported' => ['RS256'],
         ];
     }
 

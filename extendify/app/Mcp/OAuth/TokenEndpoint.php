@@ -17,8 +17,8 @@ use Extendify\PartnerData;
  * Exchanges a code, or a refresh token, for an access token (RFC 6749 §4.1.3
  * and §6). The client posts a form and reads JSON.
  *
- * A refresh rotates: the token the client sent is gone in the same request,
- * so a copied refresh token dies as soon as the real one is used.
+ * A refresh rotates, and a rotated token presented again revokes the connection:
+ * whichever of the client and a copier refreshes second ends access for both.
  */
 class TokenEndpoint
 {
@@ -83,9 +83,9 @@ class TokenEndpoint
      */
     private static function fromCode(callable $sent)
     {
-        $required = ['code', 'code_verifier', 'client_id', 'redirect_uri'];
+        $required = ['code', 'code_verifier', 'client_id'];
         if (in_array('', array_map($sent, $required), true)) {
-            return self::refused('invalid_request', 'code, code_verifier, client_id and redirect_uri are required.');
+            return self::refused('invalid_request', 'code, code_verifier and client_id are required.');
         }
 
         $target = self::wrongTarget($sent('resource'));
@@ -98,7 +98,9 @@ class TokenEndpoint
             return self::refused('invalid_grant', 'The code is unknown, spent or expired.');
         }
 
-        if ($code['client'] !== $sent('client_id') || $sent('redirect_uri') !== $code['redirectUri']) {
+        // RFC 6749 §4.1.3 binds the return address only when the authorization request named one.
+        $redirectDiffers = $code['redirectUri'] !== '' && $sent('redirect_uri') !== $code['redirectUri'];
+        if ($code['client'] !== $sent('client_id') || $redirectDiffers) {
             return self::refused('invalid_grant', 'The code was issued to another client or return address.');
         }
 
@@ -136,10 +138,13 @@ class TokenEndpoint
         $grant = Tokens::findGrant($sent('refresh_token'));
         if ($grant) {
             PartnerData::refreshIfStale();
+        } else {
+            Tokens::revokeRotated($sent('refresh_token'));
         }
 
+        $unknown = self::refused('invalid_grant', 'The refresh token is unknown, expired or revoked.');
         if (!$grant || !Availability::live() || $grant['data']['client'] !== $sent('client_id')) {
-            return self::refused('invalid_grant', 'The refresh token is unknown, expired or revoked.');
+            return $unknown;
         }
 
         if ($sent('scope') !== '' && array_diff(Grants::fromScope($sent('scope')), $grant['grants'])) {
@@ -147,8 +152,9 @@ class TokenEndpoint
         }
 
         $refresh = Tokens::rotateGrant($grant);
+        $grant = Tokens::findGrant($refresh);
 
-        return self::issued(Tokens::findGrant($refresh), $refresh);
+        return $grant ? self::issued($grant, $refresh) : $unknown;
     }
 
     /**

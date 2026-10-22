@@ -24,6 +24,8 @@ class Tools
         return [
             'list_posts' => self::listPosts(),
             'get_post' => self::getPost(),
+            'create_post' => self::createPost(),
+            'update_post_content' => self::updatePostContent(),
             'update_posts_metadata' => self::updatePostsMetadata(),
             'search_site' => self::searchSite(),
             'list_comments' => self::listComments(),
@@ -32,6 +34,8 @@ class Tools
             'list_terms' => self::listTerms(),
             'create_term' => self::createTerm(),
             'set_post_terms' => self::setPostTerms(),
+            'update_term' => self::updateTerm(),
+            'delete_terms' => self::deleteTerms(),
             'list_media' => self::listMedia(),
             'add_media_from_url' => self::addMediaFromUrl(),
             'update_alt_texts' => self::updateAltTexts(),
@@ -54,6 +58,9 @@ class Tools
             'update_core' => self::updateCore(),
             'get_task_status' => self::getTaskStatus(),
             'request_feature' => self::requestFeature(),
+            'list_tools' => self::listTools(),
+            'run_tool' => self::runTool(Grants::READ),
+            'run_tool_write' => self::runTool(Grants::WRITE),
         ];
     }
 
@@ -70,7 +77,48 @@ class Tools
     }
 
     /**
-     * A role that manages the site is left out, so a model cannot name one and be refused.
+     * Only hides types from the enum; the REST route's own check is what refuses the write.
+     *
+     * @param string $cap - The type's capability to hold: edit_posts, or create_posts for a new item.
+     * @return array - The types a write tool may name.
+     */
+    private static function editableTypes($cap = 'edit_posts')
+    {
+        return array_values(array_filter(self::types(), function ($type) use ($cap) {
+            return \current_user_can(\get_post_type_object($type)->cap->$cap);
+        }));
+    }
+
+    /**
+     * Offering a generic tool beside a plugin's own leaves the model to pick between them.
+     * Not Surface::offered(), which builds on Tools::all().
+     *
+     * @return array - Each type a plugin's own abilities serve on this connection, with the abilities' names.
+     */
+    public static function servedElsewhere()
+    {
+        $served = [];
+        foreach (Surface::reachable() as $reached) {
+            $name = $reached['ability']->get_name();
+            if (strpos($name, 'woocommerce/product-') === 0) {
+                $served['product'][] = $name;
+            }
+        }
+
+        return $served;
+    }
+
+    /**
+     * @param array $values - The choices this site offers right now.
+     * @return array - The enum, marked as one that changes with the site.
+     */
+    private static function siteChoice(array $values)
+    {
+        return ['enum' => $values, 'live' => true];
+    }
+
+    /**
+     * Roles that manage the site are left out, so they are refused before an account exists.
      *
      * @return array - The roles create_user may give someone.
      */
@@ -96,6 +144,19 @@ class Tools
     }
 
     /**
+     * Only hides taxonomies from the enum; the REST route's own check is what refuses the write.
+     *
+     * @param string $cap - The taxonomy's capability to hold: edit_terms or delete_terms.
+     * @return array - The taxonomies a term write may name.
+     */
+    private static function editableTaxonomies($cap = 'edit_terms')
+    {
+        return array_values(array_filter(self::taxonomies(), function ($taxonomy) use ($cap) {
+            return \current_user_can(\get_taxonomy($taxonomy)->cap->$cap);
+        }));
+    }
+
+    /**
      * @return array
      */
     private static function listPosts()
@@ -113,11 +174,10 @@ class Tools
                 'properties' => [
                     'type' => [
                         'type' => 'string',
-                        'enum' => self::types(),
                         'default' => 'post',
                         'description' => "Content type to list. 'post' for blog posts, 'page' for pages."
                             . ' Custom types vary by site and are reported by get_site_info.',
-                    ],
+                    ] + self::siteChoice(self::types()),
                     'search' => [
                         'type' => 'string',
                         'description' => 'Only return items whose title or content matches this text.',
@@ -169,12 +229,79 @@ class Tools
                     ],
                     'type' => [
                         'type' => 'string',
-                        'enum' => self::types(),
                         'default' => 'post',
                         'description' => 'Content type the id belongs to.',
-                    ],
+                    ] + self::siteChoice(self::types()),
                 ],
                 'required' => ['id'],
+            ],
+        ];
+    }
+
+    /**
+     * @return array
+     */
+    private static function createPost()
+    {
+        return [
+            'mode' => Grants::WRITE,
+            'handler' => 'createPost',
+            'description' => 'Creates a new post, page or other content type as a draft. It is never published'
+                . ' from here: the draft stays out of sight until the user publishes it in the editor, or asks'
+                . ' for update_posts_metadata to do it. Show the user the title and content you mean to write'
+                . ' before calling, then give them the edit link it returns so they can review the draft. Write'
+                . ' the content as block markup, the way get_post returns it, or the editor opens it as one'
+                . ' classic block. The address comes from the title when it is published; update_posts_metadata'
+                . ' sets a different slug.',
+            'inputSchema' => [
+                'type' => 'object',
+                'properties' => [
+                    'type' => [
+                        'type' => 'string',
+                        'default' => 'post',
+                        'description' => "Content type to create. 'post' for blog posts, 'page' for pages."
+                            . ' Custom types vary by site and are reported by get_site_info.',
+                    ] + self::siteChoice(self::editableTypes('create_posts')),
+                    'title' => ['type' => 'string', 'description' => 'The title.'],
+                    'content' => ['type' => 'string', 'description' => 'The body, as block markup.'],
+                    'excerpt' => ['type' => 'string', 'description' => 'A short summary some themes show.'],
+                ] + self::postDetails(),
+                'required' => ['title'],
+            ],
+        ];
+    }
+
+    /**
+     * @return array
+     */
+    private static function updatePostContent()
+    {
+        return [
+            'mode' => Grants::WRITE,
+            'handler' => 'updatePostContent',
+            'description' => 'Replaces the whole body of one post, page or other content item with new block'
+                . ' markup. Read it with get_post first and keep every block you were not asked to change:'
+                . ' anything left out of content is removed. Show the user the exact change before calling. When'
+                . ' get_post reported revisions true, the old body stays in the revision history and can be'
+                . ' restored from the editor. When it reported revisions false, tell the user this change cannot'
+                . ' be undone and wait for them to agree. Title, excerpt and status are changed with'
+                . ' update_posts_metadata.',
+            'inputSchema' => [
+                'type' => 'object',
+                'properties' => [
+                    'id' => ['type' => 'integer', 'description' => 'The post id, from list_posts or search_site.'],
+                    'type' => [
+                        'type' => 'string',
+                        'default' => 'post',
+                        'description' => 'Content type the id belongs to.',
+                    ] + self::siteChoice(self::editableTypes()),
+                    'content' => [
+                        'type' => 'string',
+                        'minLength' => 1,
+                        'description' => 'The complete new body, as block markup.',
+                    ],
+                ],
+                'required' => ['id', 'content'],
             ],
         ];
     }
@@ -188,7 +315,8 @@ class Tools
             'mode' => Grants::WRITE,
             'handler' => 'updatePostsMetadata',
             'description' => 'Changes fields on posts and pages, one or many in a single call: title, status,'
-                . ' excerpt, slug, publication date, and any custom field the site has registered for its own API.'
+                . ' excerpt, slug, publication date, featured image, author, parent page, comment setting, page'
+                . ' template, and any custom field the site has registered for its own API.'
                 . ' Use it for the bulk work a person would otherwise click through - publishing a batch of drafts,'
                 . ' trashing an old series, rewriting excerpts. Earlier wording stays in each post revision'
                 . ' history, so text is recoverable, but a changed slug breaks every link to the old address and a'
@@ -209,10 +337,9 @@ class Tools
                                 'id' => ['type' => 'integer', 'description' => 'The post id.'],
                                 'type' => [
                                     'type' => 'string',
-                                    'enum' => self::types(),
                                     'default' => 'post',
                                     'description' => 'The content type of that post.',
-                                ],
+                                ] + self::siteChoice(self::editableTypes()),
                                 'title' => ['type' => 'string', 'description' => 'New title.'],
                                 'status' => [
                                     'type' => 'string',
@@ -236,12 +363,42 @@ class Tools
                                         . ' registered for its own API are accepted, and never footnotes, which'
                                         . ' are part of the content; anything else is refused.',
                                 ],
-                            ],
+                            ] + self::postDetails(),
                             'required' => ['id'],
                         ],
                     ],
                 ],
                 'required' => ['items'],
+            ],
+        ];
+    }
+
+    /**
+     * @return array - The details create_post and update_posts_metadata both set.
+     */
+    private static function postDetails()
+    {
+        return [
+            'featured_media' => [
+                'type' => 'integer',
+                'minimum' => 0,
+                'description' => 'Attachment id of the featured image, from list_media. 0 removes it.',
+            ],
+            'author' => ['type' => 'integer', 'description' => 'User id to credit as the author.'],
+            'parent' => [
+                'type' => 'integer',
+                'minimum' => 0,
+                'description' => 'Id of the parent page, for types that nest, such as pages. 0 makes it top level.',
+            ],
+            'comment_status' => [
+                'type' => 'string',
+                'enum' => ['open', 'closed'],
+                'description' => 'Whether visitors may comment.',
+            ],
+            'template' => [
+                'type' => 'string',
+                'description' => 'The slug of a template the theme offers for this type. An empty string returns'
+                    . ' to the default; a slug the theme lacks is refused with the ones it offers.',
             ],
         ];
     }
@@ -387,10 +544,10 @@ class Tools
                 'properties' => [
                     'taxonomy' => [
                         'type' => 'string',
-                        'enum' => self::taxonomies(),
                         'default' => 'category',
-                        'description' => 'Which set of terms to list.',
-                    ],
+                        'description' => "Which set of terms to list: 'category', 'post_tag', or one a plugin"
+                            . ' registers. A name the site lacks is refused with the ones it has.',
+                    ] + self::siteChoice(self::taxonomies()),
                     'search' => ['type' => 'string', 'description' => 'Match against the term name.'],
                     'post' => ['type' => 'integer', 'description' => 'Only terms assigned to this post id.'],
                     'per_page' => ['type' => 'integer', 'minimum' => 1, 'maximum' => 100, 'default' => 50],
@@ -416,10 +573,9 @@ class Tools
                 'properties' => [
                     'taxonomy' => [
                         'type' => 'string',
-                        'enum' => self::taxonomies(),
                         'default' => 'category',
                         'description' => 'Which set of terms to add to.',
-                    ],
+                    ] + self::siteChoice(self::taxonomies()),
                     'name' => ['type' => 'string', 'description' => 'The term name, as a visitor would read it.'],
                     'parent' => [
                         'type' => 'integer',
@@ -455,16 +611,14 @@ class Tools
                     'id' => ['type' => 'integer', 'description' => 'The post id.'],
                     'type' => [
                         'type' => 'string',
-                        'enum' => self::types(),
                         'default' => 'post',
                         'description' => 'The content type of that post.',
-                    ],
+                    ] + self::siteChoice(self::editableTypes()),
                     'taxonomy' => [
                         'type' => 'string',
-                        'enum' => self::taxonomies(),
                         'default' => 'category',
                         'description' => 'Which set of terms is being set.',
-                    ],
+                    ] + self::siteChoice(self::taxonomies()),
                     'terms' => [
                         'type' => 'array',
                         'items' => ['type' => ['integer', 'string']],
@@ -478,6 +632,94 @@ class Tools
                     ],
                 ],
                 'required' => ['id', 'terms'],
+            ],
+        ];
+    }
+
+    /**
+     * @return array
+     */
+    private static function updateTerm()
+    {
+        return [
+            'mode' => Grants::WRITE,
+            'handler' => 'updateTerm',
+            'description' => 'Renames or edits one category, tag or other taxonomy term: its name, slug, description'
+                . ' or the term it sits under. Find the id with list_terms. A changed slug breaks every link to'
+                . " the term's archive at the old address, so say so before changing one. Merging two terms is"
+                . ' set_post_terms to move the posts, then delete_terms for the one left empty.',
+            'inputSchema' => [
+                'type' => 'object',
+                'properties' => [
+                    'taxonomy' => [
+                        'type' => 'string',
+                        'default' => 'category',
+                        'description' => 'Which set of terms the id belongs to.',
+                    ] + self::siteChoice(self::editableTaxonomies()),
+                    'id' => ['type' => 'integer', 'description' => 'The term id, from list_terms.'],
+                    'name' => ['type' => 'string', 'description' => 'New name, as a visitor would read it.'],
+                    'slug' => [
+                        'type' => 'string',
+                        'description' => "New slug, the last part of the archive's address.",
+                    ],
+                    'description' => [
+                        'type' => 'string',
+                        'description' => 'New text some themes show on the term archive. An empty string clears it.',
+                    ],
+                    'parent' => [
+                        'type' => 'integer',
+                        'minimum' => 0,
+                        'description' => 'Sit it under this term id, or 0 for the top level. Only taxonomies that'
+                            . ' nest accept one.',
+                    ],
+                ],
+                'required' => ['id'],
+            ],
+        ];
+    }
+
+    /**
+     * @return array
+     */
+    private static function deleteTerms()
+    {
+        return [
+            'mode' => Grants::WRITE,
+            'handler' => 'deleteTerms',
+            'description' => 'Permanently deletes categories, tags or other taxonomy terms. Terms have no trash, so'
+                . ' a deleted term cannot be restored. The posts that carried it stay, without it, and a post left'
+                . ' with no category falls into the default one, which itself cannot be deleted. Always preview'
+                . ' first: show the user every term listed with how many posts carry it, tell them the terms cannot'
+                . ' be restored, and wait for them to agree before calling again with preview false and the'
+                . ' confirm_token.',
+            'inputSchema' => [
+                'type' => 'object',
+                'properties' => [
+                    'taxonomy' => [
+                        'type' => 'string',
+                        'default' => 'category',
+                        'description' => 'Which set of terms the ids belong to.',
+                    ] + self::siteChoice(self::editableTaxonomies('delete_terms')),
+                    'ids' => [
+                        'type' => 'array',
+                        'minItems' => 1,
+                        'maxItems' => Handlers::DELETE_BATCH,
+                        'items' => ['type' => 'integer'],
+                        'description' => 'The term ids to delete, from list_terms.',
+                    ],
+                    'preview' => [
+                        'type' => 'boolean',
+                        'default' => true,
+                        'description' => 'When true, lists the terms that would go and returns a confirm_token'
+                            . ' without deleting anything.',
+                    ],
+                    'confirm_token' => [
+                        'type' => 'string',
+                        'description' => 'The token returned by a previous preview. Only valid for the exact set'
+                            . ' of terms that preview reported.',
+                    ],
+                ],
+                'required' => ['ids'],
             ],
         ];
     }
@@ -863,10 +1105,9 @@ class Tools
                     ],
                     'role' => [
                         'type' => 'string',
-                        'enum' => self::roles(),
                         'default' => 'subscriber',
                         'description' => 'What the account may do.',
-                    ],
+                    ] + self::siteChoice(self::roles()),
                     'name' => [
                         'type' => 'string',
                         'description' => 'The name shown beside their posts and comments.',
@@ -1268,6 +1509,63 @@ class Tools
                 . ' site this is before doing anything else. update_site_settings changes the ones that can be'
                 . ' changed.',
             'inputSchema' => ['type' => 'object', 'properties' => (object) []],
+        ];
+    }
+
+    /**
+     * @return array
+     */
+    private static function listTools()
+    {
+        return [
+            'mode' => Grants::READ,
+            'handler' => 'listTools',
+            'description' => 'Call this first in every conversation. Lists every tool and plugin ability this site'
+                . ' offers you right now, read fresh on each call, so it includes any the site added after your'
+                . ' tool list was loaded. Call it again whenever the user asks for something none of your tools'
+                . ' do, and after install_plugin or set_plugin_status. Pass names for the full description and'
+                . ' input schema of the ones you need, then call each directly if it is in your tool list. If it is'
+                . ' not, run it with run_tool, or with run_tool_write if it changes the site.',
+            'inputSchema' => [
+                'type' => 'object',
+                'properties' => [
+                    'names' => [
+                        'type' => 'array',
+                        'items' => ['type' => 'string'],
+                        'description' => 'Names from an earlier call to describe in full. Leave it out to list'
+                            . ' everything.',
+                    ],
+                ],
+            ],
+        ];
+    }
+
+    /**
+     * @param string $mode - The grant each tool it runs needs.
+     * @return array
+     */
+    private static function runTool($mode)
+    {
+        $which = $mode === Grants::WRITE
+            ? 'It runs only those that change the site. Run the others with run_tool.'
+            : 'It runs only those that change nothing on the site. Run the others with run_tool_write.';
+
+        return [
+            'mode' => $mode,
+            'runs' => $mode,
+            'description' => 'Runs a tool or plugin ability that list_tools names, for one that is not in your own'
+                . ' tool list. ' . $which,
+            'inputSchema' => [
+                'type' => 'object',
+                'properties' => [
+                    'name' => ['type' => 'string', 'description' => 'The name list_tools gave it.'],
+                    'arguments' => [
+                        'type' => 'object',
+                        'description' => 'Its arguments, matching the input schema list_tools gave for it.',
+                    ],
+                ],
+                'required' => ['name'],
+            ],
         ];
     }
 }

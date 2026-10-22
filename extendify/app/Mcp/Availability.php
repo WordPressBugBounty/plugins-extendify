@@ -8,6 +8,7 @@ namespace Extendify\Mcp;
 
 defined('ABSPATH') || die('No direct access.');
 
+use Extendify\Mcp\OAuth\Metadata;
 use Extendify\PartnerData;
 
 /**
@@ -32,7 +33,27 @@ class Availability
      */
     public static function live()
     {
-        return self::offered() && !self::turnedOff();
+        return self::offered() && !self::turnedOff() && !self::blocker();
+    }
+
+    /**
+     * MCP clients build discovery URLs from the issuer's path and drop its query.
+     * Over http, sign-in codes travel unencrypted; local hosts stay usable for development.
+     *
+     * @return string|null permalinks or http; null when nothing in the site's setup stops a connection.
+     */
+    public static function blocker()
+    {
+        if (\wp_parse_url(Metadata::issuer(), PHP_URL_QUERY)) {
+            return 'permalinks';
+        }
+
+        $url = Metadata::resource();
+        if (\wp_parse_url($url, PHP_URL_SCHEME) === 'https' || Reachability::isLocal($url)) {
+            return null;
+        }
+
+        return 'http';
     }
 
     /**

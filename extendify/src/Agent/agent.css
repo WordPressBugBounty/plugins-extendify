@@ -156,6 +156,11 @@ body.extendify-agent-mobile-btn-open
 		16px
 	) !important;
 }
+/* The mobile Agent bar hides WooCommerce's coming-soon notice and its dismiss button. */
+/* no-prefix */
+body.extendify-agent-mobile-btn-open #coming-soon-footer-banner {
+	bottom: var(--extendify-agent-mobile-btn-height, 64px);
+}
 /* no-prefix */
 .extendify-agent-highlighter-mode {
 	user-select: none !important;
@@ -229,5 +234,14 @@ body.extendify-agent-canvas-blurred {
 		margin: 8px 8px 0 384px;
 		max-width: calc(100% - 392px);
 		border-radius: 8px 8px 0 0;
+	}
+	/* WooCommerce's coming-soon notice spans the viewport, so the panel hides its start. */
+	/* no-prefix */
+	html.extendify-agent-docked #coming-soon-footer-banner {
+		left: 384px;
+		right: 8px;
+		bottom: calc(8px + var(--extendify-notification-bar-height, 0px));
+		width: auto;
+		border-radius: 0 0 1rem 1rem;
 	}
 }

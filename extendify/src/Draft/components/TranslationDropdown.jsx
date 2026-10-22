@@ -21,6 +21,11 @@ export const DropdownTranslate = ({
 			languageName: 'Arabic (Morocco)',
 		},
 		{
+			language: __('Basque', 'extendify-local'),
+			code: 'eu',
+			languageName: 'Basque',
+		},
+		{
 			language: __('Bulgarian', 'extendify-local'),
 			code: 'bg_BG',
 			languageName: 'Bulgarian',

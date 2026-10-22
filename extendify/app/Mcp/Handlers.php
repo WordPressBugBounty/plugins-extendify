@@ -26,10 +26,19 @@ class Handlers
 
     const FEATURE_REQUEST_GAP = 60;
 
+    const PLUGINS_CHANGED = 'Call list_tools for the tools and plugin abilities this site offers you now.';
+
     /**
      * An unlisted field reaching the route would change more than the tool says it does.
      */
     const POST_FIELDS = ['title', 'status', 'excerpt', 'slug', 'date', 'meta'];
+
+    /**
+     * No status, so it stays a draft; no slug, since core warns on a draft given one.
+     */
+    const CREATE_FIELDS = ['title', 'content', 'excerpt'];
+
+    const DETAIL_FIELDS = ['featured_media', 'author', 'parent', 'comment_status', 'template'];
 
     /**
      * Core renders these into the post itself, and this tool never changes a post's body.
@@ -114,8 +123,43 @@ class Handlers
             'parent' => (int) ($item['parent'] ?? 0),
             'featured_media' => (int) ($item['featured_media'] ?? 0),
             'excerpt' => self::raw($item['excerpt'] ?? ''),
-            'content' => self::raw($item['content'] ?? ''),
+            // ChatGPT hands the model {} when a field named content carries a page's HTML.
+            'body' => self::raw($item['content'] ?? ''),
+            'revisions' => \wp_revisions_enabled(\get_post((int) $arguments['id'])),
         ]);
+    }
+
+    /**
+     * @param array $arguments - The validated tool arguments.
+     * @return array|\WP_Error
+     */
+    public static function createPost(array $arguments)
+    {
+        self::leaveToPlugin([$arguments['type']], $arguments['type']);
+        $body = array_intersect_key($arguments, array_flip(array_merge(self::CREATE_FIELDS, self::DETAIL_FIELDS)));
+        $response = self::request('POST', self::typeRoute($arguments['type']), ['status' => 'draft'] + $body);
+        if (\is_wp_error($response)) {
+            return $response;
+        }
+
+        $created = self::shapePost((array) $response->get_data());
+
+        return array_merge($created, ['edit_link' => (string) \get_edit_post_link($created['id'], 'raw')]);
+    }
+
+    /**
+     * @param array $arguments - The validated tool arguments.
+     * @return array|\WP_Error
+     */
+    public static function updatePostContent(array $arguments)
+    {
+        self::leaveToPlugin([$arguments['type']], $arguments['type']);
+        $id = (int) $arguments['id'];
+        self::keepRevision($id);
+        $route = self::typeRoute($arguments['type']) . '/' . $id;
+        $response = self::request('POST', $route, ['content' => (string) $arguments['content']]);
+
+        return \is_wp_error($response) ? $response : self::shapePost((array) $response->get_data());
     }
 
     /**
@@ -129,7 +173,7 @@ class Handlers
         foreach ((array) $arguments['items'] as $item) {
             $item = (array) $item;
             $id = (int) ($item['id'] ?? 0);
-            $body = array_intersect_key($item, array_flip(self::POST_FIELDS));
+            $body = array_intersect_key($item, array_flip(array_merge(self::POST_FIELDS, self::DETAIL_FIELDS)));
             if (!$body) {
                 $failed[] = ['id' => $id, 'error' => 'No field to change was given for this post.'];
                 continue;
@@ -160,6 +204,10 @@ class Handlers
             $trashing = ($body['status'] ?? '') === 'trash';
             if ($trashing) {
                 unset($body['status']);
+            }
+
+            if (array_intersect_key($body, array_flip(['title', 'excerpt']))) {
+                self::keepRevision($id);
             }
 
             $response = $body ? self::request('POST', $route, $body) : null;
@@ -198,8 +246,8 @@ class Handlers
                 'id' => (int) ($item['id'] ?? 0),
                 'title' => self::title($item['title'] ?? ''),
                 'url' => (string) ($item['url'] ?? ''),
-                'type' => (string) ($item['type'] ?? ''),
-                'subtype' => (string) ($item['subtype'] ?? ''),
+                // Core's type is always post here, which get_post answers with Invalid post ID.
+                'type' => (string) ($item['subtype'] ?? ''),
             ];
         });
     }
@@ -309,6 +357,66 @@ class Handlers
         return \is_wp_error($response)
             ? $response
             : self::shapeTerm((array) $response->get_data(), $taxonomy);
+    }
+
+    /**
+     * @param array $arguments - The validated tool arguments.
+     * @return array|\WP_Error
+     */
+    public static function updateTerm(array $arguments)
+    {
+        $taxonomy = (string) $arguments['taxonomy'];
+        self::leaveToPlugin((array) \get_taxonomy($taxonomy)->object_type, $taxonomy);
+        $body = array_intersect_key($arguments, array_flip(['name', 'slug', 'description', 'parent']));
+        $response = self::request('POST', self::taxonomyRoute($taxonomy) . '/' . (int) $arguments['id'], $body);
+
+        return \is_wp_error($response)
+            ? $response
+            : self::shapeTerm((array) $response->get_data(), $taxonomy);
+    }
+
+    /**
+     * @param array $arguments - The validated tool arguments.
+     * @return array|\WP_Error
+     */
+    public static function deleteTerms(array $arguments)
+    {
+        $taxonomy = (string) $arguments['taxonomy'];
+        self::leaveToPlugin((array) \get_taxonomy($taxonomy)->object_type, $taxonomy);
+        $route = self::taxonomyRoute($taxonomy);
+        $response = self::request('GET', $route, [
+            'include' => array_map('intval', (array) $arguments['ids']),
+            'per_page' => self::DELETE_BATCH,
+        ]);
+        if (\is_wp_error($response)) {
+            return $response;
+        }
+
+        $items = array_map(function ($item) use ($taxonomy) {
+            return self::shapeTerm((array) $item, $taxonomy);
+        }, (array) $response->get_data());
+        if (!empty($arguments['preview'])) {
+            return self::preview('delete_terms', $items, 'id');
+        }
+
+        $refused = self::unconfirmed('delete_terms', array_column($items, 'id'), $arguments);
+        if ($refused) {
+            return $refused;
+        }
+
+        $deleted = [];
+        $failed = [];
+        foreach ($items as $item) {
+            $response = self::request('DELETE', $route . '/' . $item['id'], ['force' => true]);
+            if (\is_wp_error($response)) {
+                $failed[] = ['id' => $item['id'], 'error' => $response->get_error_message()];
+                continue;
+            }
+
+            $deleted[] = $item['id'];
+        }
+
+        return ['deleted' => $deleted, 'failed' => $failed];
     }
 
     /**
@@ -569,13 +677,14 @@ class Handlers
         }
 
         $item = (array) $response->get_data();
-
-        return [
+        $installed = [
             'slug' => (string) ($item['plugin'] ?? $slug),
             'name' => self::title($item['name'] ?? ''),
             'version' => (string) ($item['version'] ?? ''),
             'status' => (string) ($item['status'] ?? ''),
         ];
+
+        return $installed + ($installed['status'] === 'active' ? ['note' => self::PLUGINS_CHANGED] : []);
     }
 
     /**
@@ -597,7 +706,7 @@ class Handlers
             $changed[] = ['slug' => $slug, 'status' => (string) (((array) $response->get_data())['status'] ?? '')];
         }
 
-        return ['changed' => $changed, 'failed' => $failed];
+        return ['changed' => $changed, 'failed' => $failed] + ($changed ? ['note' => self::PLUGINS_CHANGED] : []);
     }
 
     /**
@@ -1094,8 +1203,33 @@ class Handlers
         }
 
         $response = \rest_do_request($request);
+        if (!$response->is_error()) {
+            return $response;
+        }
 
-        return $response->is_error() ? $response->as_error() : $response;
+        $error = $response->as_error();
+        if ($error->get_error_code() !== 'rest_invalid_param') {
+            return $error;
+        }
+
+        // Core's message names only the field; the reason, such as the valid values, is in params.
+        $reasons = (array) ($error->get_error_data()['params'] ?? []);
+
+        return new \WP_Error('rest_invalid_param', implode(' ', $reasons) ?: $error->get_error_message());
+    }
+
+    /**
+     * Core's first revision holds the new value, so a post with none would lose the old one.
+     *
+     * @param int $id - The post about to change.
+     * @return void
+     */
+    private static function keepRevision($id)
+    {
+        // Stops a revision being written on a post this user cannot edit.
+        if (\current_user_can('edit_post', $id)) {
+            \wp_save_post_revision($id);
+        }
     }
 
     /**
@@ -1327,6 +1461,27 @@ class Handlers
             'author' => (int) ($item['author'] ?? 0),
             'link' => (string) ($item['link'] ?? ''),
         ];
+    }
+
+    /**
+     * @param array  $types - The content types the write would touch.
+     * @param string $named - The type or taxonomy the call named.
+     * @return void
+     * @throws Refused - When a plugin's own abilities serve every one of those types.
+     */
+    private static function leaveToPlugin(array $types, $named)
+    {
+        $served = array_intersect_key(Tools::servedElsewhere(), array_flip($types));
+        if (!$types || count($served) < count($types)) {
+            return;
+        }
+
+        throw new Refused(\esc_html(sprintf(
+            '%1$s is written with the abilities a plugin on this site provides: %2$s. Call list_tools with'
+                . ' their names for the input each takes, then run one with run_tool_write.',
+            $named,
+            implode(', ', array_unique(array_merge(...array_values($served))))
+        )), 'extendify_mcp_served_elsewhere');
     }
 
     /**
@@ -1646,6 +1801,53 @@ class Handlers
             'extendify_mcp_feature_request_failed',
             'The request could not be sent. Nothing on this site is wrong; tell the user it did not go out.'
         );
+    }
+
+    /**
+     * Cached, this would miss a plugin activated mid-chat.
+     *
+     * @param array $arguments - The validated tool arguments.
+     * @param array $grants    - What the connection is allowed to do.
+     * @return array
+     */
+    public static function listTools(array $arguments, array $grants)
+    {
+        $catalog = Surface::catalog(Surface::offered($grants));
+        $entries = [];
+        if (empty($arguments['names'])) {
+            foreach ($catalog as $name => $tool) {
+                $entries[] = [
+                    'name' => $name,
+                    'summary' => self::summary($tool['definition']['description']),
+                    'changes_site' => $tool['mode'] === Grants::WRITE,
+                ];
+            }
+
+            return ['tools' => $entries];
+        }
+
+        foreach ($arguments['names'] as $asked) {
+            $name = Surface::find($catalog, $asked);
+            if ($name !== null) {
+                $entries[$name] = [
+                    'name' => $name,
+                    'description' => $catalog[$name]['definition']['description'],
+                    'changes_site' => $catalog[$name]['mode'] === Grants::WRITE,
+                    'input_schema' => $catalog[$name]['definition']['inputSchema'],
+                ];
+            }
+        }
+
+        return ['tools' => array_values($entries)];
+    }
+
+    /**
+     * @param string $description - A tool's full description.
+     * @return string - Its first sentence.
+     */
+    private static function summary($description)
+    {
+        return preg_split('/(?<=[.!?])\s+/', trim((string) $description), 2)[0];
     }
 
     /**

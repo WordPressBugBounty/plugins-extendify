@@ -40,6 +40,7 @@ export const DescriptionForm = ({
 					onChange={onTitleChange}
 					label={strings.titleLabel}
 					placeholder={strings.titlePlaceholder}
+					onEnter={() => descriptionRef?.current?.focus()}
 				/>
 			)}
 			<div className="flex w-full flex-col">
@@ -84,6 +85,7 @@ export const TitleField = ({
 	autoFocus,
 	label,
 	placeholder,
+	onEnter,
 }) => (
 	<div className="w-full">
 		<label
@@ -105,6 +107,12 @@ export const TitleField = ({
 				// the form's onClick refocuses the textarea; keep clicks here local
 				onClick={(e) => e.stopPropagation()}
 				onChange={(e) => onChange?.(e.target.value)}
+				// Enter would submit, and a title alone is enough to start the build.
+				onKeyDown={(e) => {
+					if (e.key !== 'Enter' || e.nativeEvent.isComposing) return;
+					e.preventDefault();
+					onEnter?.();
+				}}
 				placeholder={placeholder}
 			/>
 		</div>

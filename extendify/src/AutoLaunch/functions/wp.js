@@ -1,6 +1,6 @@
 // Functions that interact with WordPress
 
-import blogSampleData from '@launch/_data/blog-sample.json';
+import blogSampleData from '@auto-launch/_data/blog-sample.json';
 import apiFetch from '@wordpress/api-fetch';
 import { __, sprintf } from '@wordpress/i18n';
 import { addQueryArgs } from '@wordpress/url';

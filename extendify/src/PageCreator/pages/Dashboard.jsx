@@ -58,7 +58,7 @@ export const Dashboard = () => {
 				<Title
 					title={__('AI Page Creation', 'extendify-local')}
 					description={__(
-						'Describe the page you want to create, adding key details, and Al will generate a unique, ready-to-use page for you.',
+						'Describe the page you want to create, adding key details, and AI will generate a unique, ready-to-use page for you.',
 						'extendify-local',
 					)}
 				/>

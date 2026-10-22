@@ -1,14 +1,12 @@
 import { ctaActionFor } from './cta-action';
-import { Bar } from './templates/Bar';
-import { Card } from './templates/Card';
-import { Pill } from './templates/Pill';
-import { Pricing } from './templates/Pricing';
+import { templates } from './templates/registry';
 
 export const SLOTS = {
 	ADMIN_DASHBOARD: 'admin-dashboard',
 	ADMIN_OTHERS: 'admin-others',
 	ADMIN_ASSIST: 'admin-assist',
 	ADMIN_MODAL: 'admin-modal',
+	ADMIN_TOPBAR: 'admin-topbar',
 	AGENT_CHAT: 'agent-chat',
 	FRONTEND_BOTTOM: 'frontend-bottom',
 	FRONTEND_TOPBAR: 'frontend-topbar',
@@ -17,27 +15,32 @@ export const SLOTS = {
 
 // agent-chat is null because the Agent renders it as a chat suggestion.
 const TEMPLATES = {
-	[SLOTS.ADMIN_DASHBOARD]: Card,
-	[SLOTS.ADMIN_OTHERS]: Card,
-	[SLOTS.ADMIN_ASSIST]: Card,
-	[SLOTS.ADMIN_MODAL]: Pricing,
+	[SLOTS.ADMIN_DASHBOARD]: 'card',
+	[SLOTS.ADMIN_OTHERS]: 'card',
+	[SLOTS.ADMIN_ASSIST]: 'card',
+	[SLOTS.ADMIN_MODAL]: 'pricing',
+	[SLOTS.ADMIN_TOPBAR]: 'pill',
 	[SLOTS.AGENT_CHAT]: null,
-	[SLOTS.FRONTEND_BOTTOM]: Bar,
-	[SLOTS.FRONTEND_TOPBAR]: Pill,
-	[SLOTS.FRONTEND_MODAL]: Pricing,
+	[SLOTS.FRONTEND_BOTTOM]: 'bar',
+	[SLOTS.FRONTEND_TOPBAR]: 'pill',
+	[SLOTS.FRONTEND_MODAL]: 'pricing',
 };
 
-export const templateFor = (slot) => TEMPLATES[slot] ?? null;
+export const templateFor = (slot) =>
+	templates.find(({ id }) => id === TEMPLATES[slot])?.Template ?? null;
 
 // A trial-block modal is the paywall, so without an offer there is nothing to show.
 const hasOfferWhenBlocking = (notification) =>
 	notification.trigger !== 'trial-block' || Boolean(notification.offer);
 
+// A pill that acts in place needs no href.
+const hasPillAction = (notification, href) =>
+	Boolean(notification['cta-label'] && (href || ctaActionFor(notification)));
+
 // Deciding this inside Pill would count a view for a pill that never rendered.
 const REQUIREMENTS = {
-	[SLOTS.FRONTEND_TOPBAR]: (notification, href) =>
-		// A pill that acts in place needs no href.
-		Boolean(notification['cta-label'] && (href || ctaActionFor(notification))),
+	[SLOTS.FRONTEND_TOPBAR]: hasPillAction,
+	[SLOTS.ADMIN_TOPBAR]: hasPillAction,
 	[SLOTS.ADMIN_MODAL]: hasOfferWhenBlocking,
 	[SLOTS.FRONTEND_MODAL]: hasOfferWhenBlocking,
 };
@@ -45,7 +48,7 @@ const REQUIREMENTS = {
 export const fillsSlot = (slot, notification, href) =>
 	REQUIREMENTS[slot]?.(notification, href) ?? true;
 
-// The pill stays as the persistent reminder after the bar is dismissed.
-const DISMISSAL_EXEMPT = [SLOTS.FRONTEND_TOPBAR];
+// The pill stays as the persistent reminder after the bar or card is dismissed.
+const DISMISSAL_EXEMPT = [SLOTS.FRONTEND_TOPBAR, SLOTS.ADMIN_TOPBAR];
 
 export const ignoresDismissal = (slot) => DISMISSAL_EXEMPT.includes(slot);

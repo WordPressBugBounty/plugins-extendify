@@ -19,6 +19,7 @@ class Slots
     const ADMIN_OTHERS = 'admin-others';
     const ADMIN_ASSIST = 'admin-assist';
     const ADMIN_MODAL = 'admin-modal';
+    const ADMIN_TOPBAR = 'admin-topbar';
     const AGENT_CHAT = 'agent-chat';
     const FRONTEND_BOTTOM = 'frontend-bottom';
     const FRONTEND_TOPBAR = 'frontend-topbar';
@@ -32,6 +33,7 @@ class Slots
         self::ADMIN_OTHERS,
         self::ADMIN_ASSIST,
         self::ADMIN_MODAL,
+        self::ADMIN_TOPBAR,
         self::AGENT_CHAT,
         self::FRONTEND_BOTTOM,
         self::FRONTEND_TOPBAR,

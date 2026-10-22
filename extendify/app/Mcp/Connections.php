@@ -97,13 +97,15 @@ class Connections
             return false;
         }
 
+        // A refresh race leaves two rows with one id for a moment.
+        $ended = false;
         foreach (self::all($userId) as $connection) {
             if ($connection['id'] === $id) {
-                return self::end($userId, $connection);
+                $ended = self::end($userId, $connection) || $ended;
             }
         }
 
-        return false;
+        return $ended;
     }
 
     /**

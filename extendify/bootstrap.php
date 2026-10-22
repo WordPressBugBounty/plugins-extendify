@@ -64,6 +64,10 @@ if (is_readable(EXTENDIFY_PATH . 'vendor/autoload.php')) {
 }
 
 // Registered after the autoloader — these callbacks reference classes it loads.
+// Priority 1 runs before WordPress prints any enqueued script.
+add_action('wp_head', [\Extendify\Constants::class, 'printOverriddenHosts'], 1);
+add_action('admin_print_scripts', [\Extendify\Constants::class, 'printOverriddenHosts'], 1);
+
 add_filter('http_request_args', function ($args, $url) {
     $extendifyHosts = array_filter(array_map(function ($host) {
         return wp_parse_url($host, PHP_URL_HOST);

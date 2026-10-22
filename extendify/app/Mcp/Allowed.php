@@ -26,7 +26,7 @@ use Extendify\PartnerData;
  * its namespace on the read list: readonly is the plugin's own claim, so
  * nothing a plugin registers reaches a connection until the read list names it.
  *
- * A few tools skip the lists and are offered whenever connections are on.
+ * A few tools skip the lists, but never the dial for the grant they need.
  */
 class Allowed
 {
@@ -39,7 +39,7 @@ class Allowed
 
     const NAMESPACE_PREFIX = 'ability:';
 
-    const ALWAYS_OFFERED = ['request_feature'];
+    const ALWAYS_OFFERED = ['request_feature', 'list_tools', 'run_tool', 'run_tool_write'];
     // phpcs:enable PSR12.Properties.ConstantVisibility.NotFound
 
     /**
@@ -107,10 +107,6 @@ class Allowed
      */
     public static function forTool($name, $mode = Grants::WRITE)
     {
-        if (self::reads() !== self::NONE && in_array((string) $name, self::ALWAYS_OFFERED, true)) {
-            return true;
-        }
-
         $reach = $mode === Grants::WRITE ? self::writes() : self::reads();
         if ($reach === self::ALL) {
             return true;
@@ -118,7 +114,8 @@ class Allowed
 
         $list = $mode === Grants::WRITE ? 'mcpWriteList' : 'mcpReadList';
 
-        return $reach === self::SOME && in_array((string) $name, self::listed($list), true);
+        return $reach === self::SOME
+            && in_array((string) $name, array_merge(self::ALWAYS_OFFERED, self::listed($list)), true);
     }
 
     /**

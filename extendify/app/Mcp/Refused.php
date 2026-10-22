@@ -13,4 +13,26 @@ defined('ABSPATH') || die('No direct access.');
  */
 class Refused extends \RuntimeException
 {
+    /**
+     * @var string
+     */
+    private $reason;
+
+    /**
+     * @param string $message - What the model reads.
+     * @param string $reason  - The code the usage ping may send in place of the message.
+     */
+    public function __construct($message, $reason)
+    {
+        parent::__construct($message);
+        $this->reason = $reason;
+    }
+
+    /**
+     * @return string
+     */
+    public function reason()
+    {
+        return $this->reason;
+    }
 }

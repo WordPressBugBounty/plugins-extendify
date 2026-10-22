@@ -31,6 +31,8 @@ class Tokens
     const CODE_PREFIX = 'extendify_mcp_code_';
 
     const ACCESS_PREFIX = 'extendify_mcp_access_';
+
+    const ROTATED_PREFIX = 'extendify_mcp_rotated_';
     // phpcs:enable PSR12.Properties.ConstantVisibility.NotFound
 
     /**
@@ -61,7 +63,11 @@ class Tokens
             return null;
         }
 
-        \delete_transient($key);
+        // Without this, two parallel redemptions of one code both mint tokens.
+        if (!\delete_transient($key)) {
+            return null;
+        }
+
         if (isset($payload['spentFor'])) {
             // A second presentation means one of the two was not the client's (RFC 6749 §4.1.2).
             Connections::revoke($payload['spentFor']['userId'], $payload['spentFor']['id']);
@@ -115,16 +121,45 @@ class Tokens
      * Access tokens minted under the old row die with it.
      *
      * @param array $grant - The grant a refresh token was just presented for.
-     * @return string - The refresh token that replaces the one presented.
+     * @return string|null - The refresh token that replaces the one presented, or null when it was replayed.
      */
     public static function rotateGrant(array $grant)
     {
         $data = $grant['data'];
         $data['expires'] = time() + self::GRANT_TTL;
         $token = self::store($grant['userId'], $data);
-        \delete_user_meta($grant['userId'], $grant['metaKey']);
+
+        // Two requests with one token both find the row; the one whose delete misses is a replay.
+        if (!\delete_user_meta($grant['userId'], $grant['metaKey'])) {
+            Connections::revoke($grant['userId'], $grant['id']);
+            return null;
+        }
+
+        \set_transient(
+            self::ROTATED_PREFIX . $grant['metaKey'],
+            ['userId' => $grant['userId'], 'id' => $grant['id']],
+            max(1, $grant['data']['expires'] - time())
+        );
 
         return $token;
+    }
+
+    /**
+     * A second presentation means one of the two was not the client's (OAuth 2.1 §4.3.1).
+     *
+     * @param mixed $token - A refresh token that matched no grant.
+     * @return void
+     */
+    public static function revokeRotated($token)
+    {
+        if (!is_string($token) || $token === '') {
+            return;
+        }
+
+        $rotated = \get_transient(self::ROTATED_PREFIX . self::grantKey($token));
+        if (is_array($rotated)) {
+            Connections::revoke($rotated['userId'], $rotated['id']);
+        }
     }
 
     /**

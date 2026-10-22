@@ -284,8 +284,14 @@ class Profile
 
         /* translators: heading over the steps that connect the person's AI assistant to this site; not a sign-in. */
         self::openSection(\__('Connect your AI assistant', 'extendify-local'), 'extendify-mcp');
-        self::renderReachability();
-        self::renderPicker();
+        $blocker = Availability::blocker();
+        if ($blocker) {
+            self::renderBlocker($blocker);
+        } else {
+            self::renderReachability();
+            self::renderPicker();
+        }
+
         echo '</div></details>';
 
         self::openSection(\_n(
@@ -374,11 +380,6 @@ class Profile
                 'This site needs to be publicly accessible for an AI assistant to connect to it.',
                 'extendify-local'
             ),
-            /* translators: HTTPS is a protocol name; keep it in English. */
-            'http' => \__(
-                'This site needs to be served over HTTPS for an AI assistant to connect to it.',
-                'extendify-local'
-            ),
             /* translators: shown when the whole site sits behind a password prompt. */
             'auth' => \__(
                 'Remove the site\'s password protection so an AI assistant can connect to it.',
@@ -392,6 +393,35 @@ class Profile
         ];
 
         printf('<div class="notice notice-warning inline"><p>%s</p></div>', \esc_html($reasons[$obstacle]));
+    }
+
+    /**
+     * @param string $blocker - What Availability::blocker() named.
+     * @return void
+     */
+    private static function renderBlocker($blocker)
+    {
+        $reasons = [
+            /* translators: "Plain" is the WordPress permalink setting that puts ?p=123 in page addresses. */
+            'permalinks' => \__('AI assistants can\'t connect while permalinks are set to Plain.', 'extendify-local'),
+            /* translators: HTTPS is a protocol name; keep it in English. */
+            'http' => \__(
+                'This site needs to be served over HTTPS for an AI assistant to connect to it.',
+                'extendify-local'
+            ),
+        ];
+
+        printf('<div class="notice notice-error inline"><p>%s</p>', \esc_html($reasons[$blocker]));
+        if ($blocker === 'permalinks') {
+            printf(
+                '<p><a class="button" href="%1$s">%2$s</a></p>',
+                \esc_url(\admin_url('options-permalink.php')),
+                /* translators: button that opens the Settings → Permalinks screen. */
+                \esc_html__('Change permalink settings', 'extendify-local')
+            );
+        }
+
+        echo '</div>';
     }
 
     /**

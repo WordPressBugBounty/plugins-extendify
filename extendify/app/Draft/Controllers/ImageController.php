@@ -24,14 +24,6 @@ use Extendify\Shared\Services\Sanitizer;
 class ImageController
 {
     /**
-     * Must match `PILL_RIGHT_EDGE` in `src/Shared/lib/ai-label.js`.
-     *
-     * @var float
-     */
-    // phpcs:ignore PSR12.Properties.ConstantVisibility.NotFound -- 7.0 floor: no const visibility
-    const PILL_RIGHT_EDGE = 0.85;
-
-    /**
      * Upload the provided image
      *
      * @param \WP_REST_Request $request - The request.
@@ -135,15 +127,16 @@ class ImageController
         $width = imagesx($image);
         $height = imagesy($image);
         // The client renders the label at a 48px font; the canvas stamp uses 2% of the shorter side.
-        $scale = max(12, round(min($width, $height) * 0.02)) / 48;
+        $fontSize = (int) max(12, round(min($width, $height) * 0.02));
+        $scale = $fontSize / 48;
         $labelWidth = (int) round(imagesx($label) * $scale);
         $labelHeight = (int) round(imagesy($label) * $scale);
         imagealphablending($image, true);
         imagecopyresampled(
             $image,
             $label,
-            (int) round(($width * self::PILL_RIGHT_EDGE) - $labelWidth),
-            (int) round(($height - $labelHeight) / 2),
+            $width - $labelWidth - $fontSize,
+            $height - $labelHeight - $fontSize,
             0,
             0,
             $labelWidth,
