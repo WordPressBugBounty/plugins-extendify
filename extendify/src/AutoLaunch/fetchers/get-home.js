@@ -105,7 +105,20 @@ const resolveTemplateParts = async ({ siteProfile, designBuild }) => {
 	const randomHeader = head[Math.floor(Math.random() * head.length)];
 	const randomFooter = foot[Math.floor(Math.random() * foot.length)];
 	return {
-		headerCode: headerPart ?? randomHeader?.content?.raw?.trim() ?? '',
+		headerCode:
+			headerPart ?? withSiteTitle(randomHeader?.content?.raw?.trim() ?? ''),
 		footerCode: footerPart ?? randomFooter?.content?.raw?.trim() ?? '',
 	};
+};
+
+const siteTitleBlock =
+	'<!-- wp:site-title {"style":{"typography":{"textTransform":"none"}},"fontSize":"small"} /-->';
+
+// Extendable dropped the title from some headers; AutoLaunch sites always show it.
+const withSiteTitle = (header) => {
+	if (header.includes('wp:site-title')) return header;
+	return header.replace(
+		/([ \t]*)(<!--\s*wp:site-logo\b[\s\S]*?\/-->)/,
+		`$1$2\n$1${siteTitleBlock}`,
+	);
 };

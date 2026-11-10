@@ -35,6 +35,12 @@
 	}
 }
 
+/* Inlined: ::selection can't read variables set on the scoping wrapper. */
+@theme inline {
+	--color-selection: #bedbff;
+	--color-selection-text: #1e1e1e;
+}
+
 @theme {
 	--breakpoint-xxs: 280px;
 	--breakpoint-xs: 480px;

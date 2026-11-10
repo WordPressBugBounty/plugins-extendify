@@ -121,7 +121,7 @@ export const SetupPlugins = ({
 					value={email}
 					onChange={(e) => setEmail(e.target.value)}
 					placeholder="admin@example.com"
-					className="text-gray-900 w-full px-4 py-3 text-sm border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-extendify-main focus:border-transparent"
+					className="bg-white text-gray-900 w-full px-4 py-3 text-sm border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-extendify-main focus:border-transparent"
 				/>
 				<Description className="mt-2 text-xss text-gray-700">
 					{_n(

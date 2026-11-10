@@ -12,7 +12,6 @@ export const Answer = ({ question, answer, reset, error, answerId }) => {
 	const scrollRef = useRef(null);
 	const { addHistory, setCurrentQuestion } = useAIChatStore();
 
-	// check https://github.com/extendify/extendify-sdk/issues/1560
 	const parsedAnswer = pasteHandler({
 		plainText: answer?.replace(/[\r\n]+/g, '<br />') ?? '',
 	});

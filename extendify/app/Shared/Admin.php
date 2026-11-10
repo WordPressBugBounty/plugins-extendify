@@ -12,7 +12,6 @@ use Extendify\Config;
 use Extendify\PartnerData;
 use Extendify\Notifications\Availability;
 use Extendify\Shared\Controllers\UserSelectionController;
-use Extendify\Shared\DataProvider\NotificationData;
 use Extendify\Shared\DataProvider\ResourceData;
 use Extendify\Shared\Services\AdminMenuList;
 use Extendify\Shared\Services\ApexDomain\ApexDomain;
@@ -58,6 +57,10 @@ class Admin
      */
     public function loadGlobalScripts()
     {
+        if (!\apply_filters('extendify_load_shared_scripts', true)) {
+            return;
+        }
+
         \wp_enqueue_media();
 
         $this->updateUserMeta();
@@ -239,9 +242,7 @@ class Admin
                 'partnerName' => \esc_attr(PartnerData::$name),
                 'launchDataLegacy' => \wp_json_encode((UserSelectionController::get()->get_data() ?? [])),
                 'resourceData' => \wp_json_encode((new ResourceData())->getData()),
-                'notifications' => \wp_json_encode(
-                    Availability::available(NotificationData::get())
-                ),
+                'notifications' => \wp_json_encode(Availability::now()),
                 'notificationState' => \get_user_meta(
                     \get_current_user_id(),
                     'extendify_notification_state',
@@ -249,6 +250,9 @@ class Admin
                 ) ?: ['cards' => []],
                 'showAIConsent' => isset($partnerData['showAIConsent']) ? (bool) $partnerData['showAIConsent'] : false,
                 'showChat' => (bool) (PartnerData::setting('showChat') || constant('EXTENDIFY_DEVMODE')),
+                'showAgentReportIssue' => (bool) (
+                    !PartnerData::setting('hideAgentReportIssue') || constant('EXTENDIFY_DEVMODE')
+                ),
                 'useAgentOnboarding' => (bool) (
                     PartnerData::setting('useAgentOnboarding') ||
                     Config::preview('agent-onboarding') ||

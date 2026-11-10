@@ -688,7 +688,7 @@ const onDocClickCapture = (e) => {
 				return;
 			}
 			// stopPropagation above blocks ImagePicker's bubble-phase
-			// outside-click — without this clear its menu lingers (issue 19).
+			// Outside-click — without this clear its menu lingers.
 			if (store.selected && isPickerType(store.selected.blockType)) {
 				store.clearSelected();
 			}

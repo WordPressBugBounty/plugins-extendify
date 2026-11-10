@@ -26,6 +26,14 @@ class Surface
     const REFUSALS = ['extendify_mcp_refused', 'extendify_mcp_unconfirmed'];
 
     /**
+     * A plugin's AI switch stays the owner's to turn on, so we link to it, never lift it.
+     */
+    const WRITE_SWITCHES = [
+        'wpforms_writes_disabled' => ['WPForms', 'admin.php?page=wpforms-tools&view=ai-mcp'],
+        'charitable_write_access_disabled' => ['Charitable', 'admin.php?page=charitable-tools&tab=ai-mcp'],
+    ];
+
+    /**
      * A client validates the schema it is handed, and a plugin may write keys JSON Schema lacks.
      */
     const SCHEMA_KEYWORDS = [
@@ -56,6 +64,42 @@ class Surface
     ];
 
     const DISCOVERY = ['list_tools', 'run_tool', 'run_tool_write'];
+
+    /**
+     * Plugins write these as one run, which a word match never sees.
+     */
+    const SECRET_RUNS = [
+        'apikey',
+        'authcode',
+        'credential',
+        'passphrase',
+        'passwd',
+        'password',
+        'secret',
+        'signature',
+        'token',
+    ];
+
+    /**
+     * Matched as whole words only: monkey, keywords and passes would all go.
+     */
+    const SECRET_WORDS = ['key', 'keys', 'pass', 'pwd', 'salt', 'salts'];
+
+    /**
+     * Vendor prefixes, for the second copy a plugin keeps under a field name that says nothing.
+     */
+    const SECRET_SHAPES = '/\b(?:sk|rk)_(?:live|test)_[0-9A-Za-z]{10,}'
+        . '|\bwhsec_[0-9A-Za-z]{10,}'
+        . '|\bAKIA[0-9A-Z]{16}\b'
+        . '|\bxox[abprs]-[0-9A-Za-z-]{10,}'
+        . '|\bgh[pousr]_[0-9A-Za-z]{30,}/';
+
+    /**
+     * Minted for the model to hand straight back, single-use, and spent on the next call.
+     */
+    const OPEN_FIELDS = ['confirm_token'];
+
+    const REDACTED = '[redacted]';
     // phpcs:enable PSR12.Properties.ConstantVisibility.NotFound
 
     /**
@@ -80,6 +124,7 @@ class Surface
         $name = (string) ($params['name'] ?? '');
         $started = microtime(true);
         $outcome = ['outcome' => 'ok'];
+        $buffers = ob_get_level();
 
         try {
             $offered = self::offered($grants);
@@ -106,13 +151,21 @@ class Surface
                 return $answered;
             }
 
+            $code = (string) $answered->get_error_code();
+            $switch = self::WRITE_SWITCHES[$code] ?? null;
             $outcome = [
-                'outcome' => in_array($answered->get_error_code(), self::REFUSALS, true) ? 'refused' : 'error',
+                'outcome' => $switch || in_array($code, self::REFUSALS, true) ? 'refused' : 'error',
                 'error' => $answered->get_error_message(),
-                'reason' => (string) $answered->get_error_code(),
+                'reason' => $code,
             ];
+            $hint = $switch ? sprintf(
+                "\n\n" . 'Tell the user %1$s keeps AI changes off on this site, '
+                    . 'and give them this link to turn them on: %2$s',
+                $switch[0],
+                \admin_url($switch[1])
+            ) : '';
 
-            return self::problem($answered->get_error_message());
+            return self::problem($answered->get_error_message() . $hint);
         } catch (Refused $refused) {
             $outcome = ['outcome' => 'refused', 'error' => $refused->getMessage(), 'reason' => $refused->reason()];
 
@@ -127,6 +180,11 @@ class Surface
 
             return self::problem(sprintf('%s failed: %s', $name, $failed->getMessage()));
         } finally {
+            // Left open by a crashed activate_plugin(), it would put the plugin's output before the answer.
+            while (ob_get_level() > $buffers) {
+                ob_end_clean();
+            }
+
             $outcome['duration'] = microtime(true) - $started;
             Log::write($connection, $name, $outcome);
         }
@@ -411,6 +469,7 @@ class Surface
             'mode' => $mode,
             'method' => $method,
             'ability' => $ability->get_name(),
+            'takesInput' => !empty($ability->get_input_schema()),
             'definition' => $definition,
         ];
     }
@@ -425,6 +484,11 @@ class Surface
     private static function abilityRequest(array $tool, array $arguments)
     {
         $request = new \WP_REST_Request($tool['method'], '/wp-abilities/v1/abilities/' . $tool['ability'] . '/run');
+        // Core rejects even empty input without a schema.
+        if (!$tool['takesInput']) {
+            return $request;
+        }
+
         if ($tool['method'] !== 'POST') {
             $request->set_query_params(['input' => $arguments]);
 
@@ -454,7 +518,7 @@ class Surface
 
         // A tool that named an output schema owes the client a result shaped like it.
         if (isset($tool['definition']['outputSchema']) && (is_array($data) || is_object($data))) {
-            $answer['structuredContent'] = (object) $data;
+            $answer['structuredContent'] = (object) self::redact($data);
         }
 
         return $answer;
@@ -466,9 +530,80 @@ class Surface
      */
     private static function json($data)
     {
-        $text = \wp_json_encode($data, JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE | JSON_PRETTY_PRINT);
+        // Both branches of a call funnel here, so a field added to any handler is covered.
+        $text = \wp_json_encode(
+            self::redact($data),
+            JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE | JSON_PRETTY_PRINT
+        );
 
         return ['content' => [['type' => 'text', 'text' => $text]]];
+    }
+
+    /**
+     * Length and entropy are deliberately not measured: a nonce, a post GUID and an
+     * attachment hash all read as secrets that way.
+     *
+     * @param mixed $value - A tool answer, or part of one.
+     * @return mixed - The same shape, with every credential replaced.
+     */
+    public static function redact($value)
+    {
+        if (is_object($value)) {
+            return (object) self::redact(get_object_vars($value));
+        }
+
+        if (is_string($value)) {
+            // Replacing the match, not the field: a post that pasted a key keeps its text.
+            return preg_replace(self::SECRET_SHAPES, self::REDACTED, $value) ?? $value;
+        }
+
+        if (!is_array($value)) {
+            return $value;
+        }
+
+        $kept = [];
+        foreach ($value as $name => $item) {
+            $kept[$name] = self::secret($name) && !self::named($item) ? self::REDACTED : self::redact($item);
+        }
+
+        return $kept;
+    }
+
+    /**
+     * A schema node sits under the field it describes, so list_tools would hide
+     * the type a client has to send for confirm_token.
+     *
+     * @param mixed $value - What one field holds.
+     * @return boolean - Whether it describes named entries rather than holding a credential.
+     */
+    private static function named($value)
+    {
+        if (is_object($value)) {
+            return true;
+        }
+
+        return is_array($value) && $value !== [] && array_keys($value) !== range(0, count($value) - 1);
+    }
+
+    /**
+     * @param string|integer $name - A field name from a tool answer.
+     * @return boolean
+     */
+    private static function secret($name)
+    {
+        if (in_array((string) $name, self::OPEN_FIELDS, true)) {
+            return false;
+        }
+
+        foreach (self::SECRET_RUNS as $run) {
+            if (stripos((string) $name, $run) !== false) {
+                return true;
+            }
+        }
+
+        $words = preg_split('/[^a-zA-Z0-9]+|(?<=[a-z0-9])(?=[A-Z])/', (string) $name, -1, PREG_SPLIT_NO_EMPTY);
+
+        return (bool) array_intersect(array_map('strtolower', (array) $words), self::SECRET_WORDS);
     }
 
     /**

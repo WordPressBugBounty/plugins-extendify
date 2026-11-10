@@ -109,8 +109,7 @@ export const createWpPages = async (pages, { stickyNav }) => {
 		try {
 			newPage = await createPage(pageData);
 		} catch (_e) {
-			// The above could fail is they are on extendable < 2.0.12
-			// TODO: can remove in a month or so
+			// Extendable below 2.0.12 has no page-with-title template, so the create fails.
 			pageData.template = 'no-title';
 			newPage = await createPage(pageData);
 		}

@@ -82,7 +82,6 @@ export const updateTemplatePart = (part, content) =>
 		theme: 'extendable',
 		type: 'wp_template_part',
 		status: 'publish',
-		// See: https://github.com/extendify/company-product/issues/833#issuecomment-1804179527
 		// translators: Launch is the product name. Unless otherwise specified by the glossary, do not translate this name.
 		description: __('Added by Launch', 'extendify-local'),
 		content,

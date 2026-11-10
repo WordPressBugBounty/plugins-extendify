@@ -57,6 +57,10 @@ class PatternPlaceholderController
                 if (is_wp_error($code)) {
                     // The caller renders whatever is in code, so leaving it is the fallback.
                     $pattern['pluginDependencyFailed'] = true;
+                    $pattern['pluginDependencyError'] = [
+                        'code' => $code->get_error_code(),
+                        'message' => $code->get_error_message(),
+                    ];
                     return $pattern;
                 }
 

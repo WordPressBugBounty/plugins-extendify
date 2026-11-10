@@ -17,12 +17,13 @@ const DROP = [
 	'MiniCSSExtractPlugin',
 ];
 
-export default {
+// Each designer is its own folder on extendify.com, so each build carries its own chunks.
+const designer = (tool, pages) => ({
 	...base,
-	entry: { designer: './src/Designer/designer.js' },
+	entry: { designer: `./src/Designer/${tool}.js` },
 	output: {
 		filename: '[name].js',
-		path: resolve(__dirname, 'designer-dist'),
+		path: resolve(__dirname, 'designer-dist', tool),
 		publicPath: './',
 		clean: true,
 	},
@@ -30,7 +31,10 @@ export default {
 		...base.plugins.filter((p) => !DROP.includes(p.constructor.name)),
 		new MiniCSSExtractPlugin({ filename: '[name].css' }),
 		new CopyPlugin({
-			patterns: [{ from: 'src/Designer/index.html', to: 'index.html' }],
+			patterns: [
+				{ from: `src/Designer/${tool}.html`, to: 'index.html' },
+				...pages,
+			],
 		}),
 	],
 	optimization: {
@@ -38,4 +42,16 @@ export default {
 		runtimeChunk: false,
 		splitChunks: false,
 	},
-};
+});
+
+export default [
+	designer('launch-designer', [
+		{
+			from: 'src/Designer/old-address.html',
+			to: '../extendify-designer/index.html',
+		},
+	]),
+	designer('agent-designer', [
+		{ from: 'src/Designer/agent/site.html', to: 'site.html' },
+	]),
+];

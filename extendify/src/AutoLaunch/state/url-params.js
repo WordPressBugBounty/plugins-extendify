@@ -50,7 +50,7 @@ export const urlParamsShape = z.object({
 		.optional()
 		.catch(() => false),
 	multilingual: z
-		.boolean()
+		.union([z.boolean(), z.string()])
 		.optional()
 		.catch(() => false),
 	contact: z
@@ -97,10 +97,12 @@ export const overrideWithUrlParams = (urlParams) => {
 	const {
 		'landing-page': landingPage,
 		'cta-link': landingPageCTALink,
+		multilingual,
 		...rest
 	} = urlParams;
 	const mapped = {
 		...rest,
+		multilingual: typeof multilingual === 'string' ? true : multilingual,
 		landingPage: landingPage === 'clickthrough' || undefined,
 		landingPageCTALink,
 	};

@@ -11,6 +11,12 @@ const headers = {
 };
 
 const { urlParams, activeTests } = window.extLaunchData;
+const { multilingual } = urlParams ?? {};
+// Insights filters multilingual as a boolean
+const urlParameters =
+	typeof multilingual === 'string'
+		? { ...urlParams, multilingual: true, multilingualLocale: multilingual }
+		: urlParams;
 export const checkIn = ({
 	stage,
 	description,
@@ -37,7 +43,7 @@ export const checkIn = ({
 		siteURL: homeUrl,
 		language: wpLanguage,
 		sitePlugins: sitePlugins?.map((p) => p?.name),
-		urlParameters: urlParams,
+		urlParameters,
 		siteStyle,
 		style: siteStyle?.colorPalette,
 		siteProfile,

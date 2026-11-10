@@ -289,8 +289,7 @@ export const CreatingSite = () => {
 					if (!found) acc.push(plugin);
 					return acc;
 				}, [])
-				// We add give to the front. See here why:
-				// https://github.com/extendify/company-product/issues/713
+				// Give installs first: its own setup screen takes over once active.
 				.sort(({ wordpressSlug }) => (wordpressSlug === 'give' ? -1 : 1));
 
 			if (sortedPlugins?.length) {

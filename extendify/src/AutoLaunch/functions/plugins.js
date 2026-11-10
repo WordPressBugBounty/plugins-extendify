@@ -1,3 +1,5 @@
+import { apiFetchWithTimeout } from '@auto-launch/functions/helpers';
+import { secondLanguageRequest } from '@auto-launch/functions/second-language';
 import { recordPluginActivity } from '@shared/api/DataApi';
 import { digest } from '@shared/api/digest';
 import { enableAutoUpdate } from '@shared/api/wp';
@@ -91,6 +93,12 @@ export const getPlugin = async (slug) => {
 	return response?.find((p) => p.plugin?.split('/')[0] === slug);
 };
 
+// Exact match, not substring: woocommerce-payments would mask a missing woocommerce.
+const notActive = (activePlugins, slugs) =>
+	slugs.filter(
+		(slug) => !activePlugins?.some((path) => path.split('/')[0] === slug),
+	);
+
 export const activatePlugin = async (slug) => {
 	const fn = (s) =>
 		apiFetch({
@@ -103,7 +111,11 @@ export const activatePlugin = async (slug) => {
 		await fn(slug);
 		return true;
 	} catch (error) {
-		const report = (e) => {
+		// Activation can error after the plugin is active.
+		const report = async (e) => {
+			const active = await getActivePlugins().catch(() => null);
+			const folder = slug.split('/')[0];
+			if (active && !notActive(active, [folder]).length) return true;
 			digest({
 				error: e,
 				details: {
@@ -119,12 +131,6 @@ export const activatePlugin = async (slug) => {
 		return fn(found.plugin).then(() => true, report);
 	}
 };
-
-// Exact match, not substring: woocommerce-payments would mask a missing woocommerce.
-const notActive = (activePlugins, slugs) =>
-	slugs.filter(
-		(slug) => !activePlugins?.some((path) => path.split('/')[0] === slug),
-	);
 
 export const ensurePluginsActive = async (slugs) => {
 	// Two callers don't await this; a throw here silently skips every install.
@@ -152,6 +158,18 @@ export const ensurePluginsActive = async (slugs) => {
 	return { failed };
 };
 
+// PHP can't create forms for plugins activated mid-request.
+export const activatePlaceholderDependencies = async (pages) => {
+	const slugs = new Set(
+		pages
+			.flatMap((page) => page.patterns)
+			.filter((p) => p.patternReplacementCode && p.pluginDependency)
+			.map((p) => p.pluginDependency),
+	);
+	if (!slugs.size) return;
+	await ensurePluginsActive([...slugs]);
+};
+
 export const reportInactivePlugins = async (slugs) => {
 	// Falling back to an empty list would name every plugin as inactive.
 	const active = await getActivePlugins().catch(() => null);
@@ -171,10 +189,15 @@ export const reportInactivePlugins = async (slugs) => {
 };
 
 export const reportFailedDependencies = (pages) => {
-	const failed = [
-		...new Set(pages.flatMap(({ patterns }) => failedDependencies(patterns))),
-	];
+	const patterns = pages.flatMap((page) => page.patterns);
+	const failed = [...new Set(failedDependencies(patterns))];
 	if (!failed.length) return;
+
+	const errors = Object.fromEntries(
+		patterns
+			.filter((p) => p.pluginDependencyError)
+			.map((p) => [p.pluginDependency, p.pluginDependencyError]),
+	);
 
 	digest({
 		error: {
@@ -184,6 +207,7 @@ export const reportFailedDependencies = (pages) => {
 			source: 'auto-launch',
 			caller: 'reportFailedDependencies',
 			failed,
+			errors,
 		},
 	});
 };
@@ -224,7 +248,28 @@ export const replacePlaceholderPatterns = async (patterns) => {
 		});
 	}
 
-	return await processWithSecondPass(processPlaceholders, patterns);
+	let error;
+	const attempt = (batch) =>
+		processPlaceholders(batch).catch((e) => {
+			error = e;
+			throw e;
+		});
+	const processed = await processWithSecondPass(attempt, patterns);
+	if (processed !== patterns) return processed;
+
+	// Unmarked, a thrown request ships the dummy form and goes unreported.
+	return patterns.map((pattern) =>
+		pattern.patternReplacementCode && pattern.pluginDependency
+			? {
+					...pattern,
+					pluginDependencyFailed: true,
+					pluginDependencyError: {
+						code: error?.code ?? 'request_failed',
+						message: error?.message,
+					},
+				}
+			: pattern,
+	);
 };
 
 // This endpoint installs pattern dependencies from PHP, outside the queue.
@@ -236,3 +281,15 @@ export const processPlaceholders = async (patterns) => {
 		data: { patterns },
 	});
 };
+
+// TranslatePress itself rejects unknown or main-language locales.
+export const addSecondLanguage = (locale) =>
+	apiFetchWithTimeout(secondLanguageRequest(locale))
+		.then(() => true)
+		.catch((error) => {
+			digest({
+				error,
+				details: { source: 'auto-launch', caller: 'addSecondLanguage', locale },
+			});
+			return false;
+		});

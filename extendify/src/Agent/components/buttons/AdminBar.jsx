@@ -5,7 +5,7 @@ import { __ } from '@wordpress/i18n';
 import classNames from 'classnames';
 import { motion } from 'framer-motion';
 
-// TODO: this isnt great if we allow the user to "pop out" the sidebar
+// Read once at load, so a sidebar moved after it keeps the position from then.
 const isSidebarDocked = window.extAgentData.agentPosition !== 'floating';
 
 export const AdminBar = () => {

@@ -4,6 +4,8 @@ namespace Extendify\Agent\Controllers;
 
 defined('ABSPATH') || die('No direct access.');
 
+use Extendify\Mcp\Surface;
+
 class OptionsController
 {
     // phpcs:disable PSR12.Properties.ConstantVisibility.NotFound
@@ -137,6 +139,9 @@ class OptionsController
         if ($value === null) {
             return ['name' => $name, 'error' => "Nothing is stored under {$name}"];
         }
+
+        // A model-callable search can ask for keys; redaction matches on the field name.
+        $value = Surface::redact([$name => $value])[$name];
 
         $size = is_string($value) ? strlen($value) : self::bytes($value);
         if ($size <= self::MAX_VALUE_BYTES) {

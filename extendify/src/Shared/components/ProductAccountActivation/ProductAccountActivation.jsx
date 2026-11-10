@@ -110,7 +110,7 @@ export const ProductAccountActivation = () => {
 		plugins.length > 0 && (
 			<Dialog open={isOpen} onClose={() => {}} className="extendify-shared">
 				{/* Utilities on the scope-class element itself never match the prefixed CSS. */}
-				<div className="relative z-high">
+				<div className="relative z-high selection:bg-selection selection:text-selection-text">
 					<DialogBackdrop
 						transition
 						className="fixed inset-0 bg-black/30 transition-opacity data-closed:opacity-0"

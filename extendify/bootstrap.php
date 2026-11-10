@@ -9,6 +9,10 @@ defined('ABSPATH') || die('No direct access.');
 use Extendify\AdminPageRouter;
 use Extendify\Assist\Admin as AssistAdmin;
 use Extendify\Agent\Admin as AgentAdmin;
+use Extendify\AgentX\Admin as AgentXAdmin;
+use Extendify\AgentX\PluginFacts;
+use Extendify\AgentX\SectionEdges;
+use Extendify\AgentX\ThemeFixes;
 use Extendify\ComingSoon\Frontend as ComingSoonFrontend;
 use Extendify\Config;
 use Extendify\Draft\Admin as DraftAdmin;
@@ -125,6 +129,12 @@ if (!defined('EXTENDIFY_IS_THEME_EXTENDABLE')) {
     // Keeps our design variation names registered so global styles can hold them.
     BlockStyleVariations::register();
 
+    // A section's edges the agent turned off stay off for visitors, whom the capability gate turns away.
+    SectionEdges::register();
+
+    // Visitors see these theme bugs too, so this sits outside the capability gate.
+    ThemeFixes::register();
+
     // Their registration callback comes in unauthenticated, so this cannot sit behind the capability gate.
     SimplyBook::register();
 
@@ -139,6 +149,8 @@ if (!defined('EXTENDIFY_IS_THEME_EXTENDABLE')) {
     if (!PartnerData::setting('deactivated')) {
         ResourceData::scheduleCache();
         NotificationData::scheduleCache();
+        // wp-cron runs with no user logged in, so the capability gate would drop this hook.
+        PluginFacts::watch();
     }
 
     // A token request carries no session and would fail the capability check.
@@ -185,8 +197,21 @@ if (!defined('EXTENDIFY_IS_THEME_EXTENDABLE')) {
         return;
     }
 
+    $extendifyShowAgent = constant('EXTENDIFY_IS_THEME_EXTENDABLE')
+        && Config::$launchCompleted
+        && (PartnerData::setting('showAIAgents') || Config::preview('ai-agent'));
+
+    // True when the AI Agent is actually loaded this request — the gate
+    // above, or dev mode (so it can be exercised locally). Quick Edit and
+    // the simple toolbar both build on the Agent, so they share this
+    // decision rather than gating themselves independently.
+    $extendifyLoadAgent = $extendifyShowAgent || constant('EXTENDIFY_DEVMODE');
+
+    $extendifyLoadAgentX = $extendifyLoadAgent && (PartnerData::setting('useAgentX') || Config::preview('agentx'));
+
     // This class handles the admin pages required for the plugin.
     new AdminPageRouter();
+
     new PluginRedirectDisabler();
 
     // This class will handle loading  page creator assets.
@@ -213,16 +238,6 @@ if (!defined('EXTENDIFY_IS_THEME_EXTENDABLE')) {
         new AssistAdmin();
     }
 
-    $extendifyShowAgent = constant('EXTENDIFY_IS_THEME_EXTENDABLE')
-        && Config::$launchCompleted
-        && (PartnerData::setting('showAIAgents') || Config::preview('ai-agent'));
-
-    // True when the AI Agent is actually loaded this request — the gate
-    // above, or dev mode (so it can be exercised locally). Quick Edit and
-    // the simple toolbar both build on the Agent, so they share this
-    // decision rather than gating themselves independently.
-    $extendifyLoadAgent = $extendifyShowAgent || constant('EXTENDIFY_DEVMODE');
-
     if (!$extendifyShowAgent) {
         new HelpCenterAdmin();
     }
@@ -236,6 +251,12 @@ if (!defined('EXTENDIFY_IS_THEME_EXTENDABLE')) {
 
     if (PartnerData::setting('showDraft') || constant('EXTENDIFY_DEVMODE')) {
         new DraftAdmin();
+    }
+
+    // Quick Edit and the toolbar drive the current Agent, so they stay off.
+    if ($extendifyLoadAgentX) {
+        new AgentXAdmin();
+        return;
     }
 
     if ($extendifyLoadAgent) {

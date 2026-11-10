@@ -4,12 +4,27 @@ namespace Extendify\Notifications;
 
 defined('ABSPATH') || die('No direct access.');
 
+use Extendify\Shared\DataProvider\NotificationData;
+
 /**
  * Availability is site state, so PHP decides it and JS is left with
  * dismissed/viewed.
  */
 class Availability
 {
+    /**
+     * What the site's state makes available right now.
+     *
+     * A trigger reads live site state, so a save after the page loaded can drop
+     * a notification from this list or bring one back into it.
+     *
+     * @return array
+     */
+    public static function now()
+    {
+        return self::available(NotificationData::get());
+    }
+
     public static function available(array $notifications)
     {
         $candidates = array_filter($notifications, 'is_array');

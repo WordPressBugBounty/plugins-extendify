@@ -47,9 +47,9 @@ export const clearSiteImages = () =>
 		method: 'POST',
 	});
 
-export const getPageById = (id) => {
+export const getPageById = async (id) => {
 	try {
-		return apiFetch({ path: `/wp/v2/pages/${id}` });
+		return await apiFetch({ path: `/wp/v2/pages/${id}` });
 	} catch {
 		return null;
 	}

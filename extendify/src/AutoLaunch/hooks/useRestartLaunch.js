@@ -33,7 +33,7 @@ export const useRestartLaunch = ({ pages }) => {
 		} catch (resetError) {
 			console.warn('Failed to reset launch state:', resetError);
 		}
-		resetLaunchData({ exclude: ['descriptionBackup'] });
+		resetLaunchData({ exclude: ['descriptionBackup', 'urlParams'] });
 		localStorage.removeItem(
 			`extendify-agent-workflows-${window.extSharedData.siteId}`,
 		);

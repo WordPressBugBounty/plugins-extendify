@@ -101,6 +101,7 @@ export const getStringsShape = z.looseObject({
 	aiHeaders: z.array(z.string()),
 	aiBlogTitles: z.array(z.string()),
 	heroDescription: z.string().optional(),
+	tagline: z.string().optional(),
 });
 
 // get-style
@@ -139,5 +140,7 @@ const designBuildShape = z.looseObject({
 			patterns: z.array(patternShape),
 		}),
 	),
+	sampleContent: z.boolean().optional(),
+	launchDecisions: getLaunchDecisionsShape.nullish(),
 });
 export const getDesignBuildShape = designBuildShape;

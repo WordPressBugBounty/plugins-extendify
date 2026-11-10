@@ -1,12 +1,13 @@
 import { siteHost } from '@shared/lib/site-host';
 import { track } from '@shared/lib/track';
 import { useEffect, useState } from '@wordpress/element';
+import { useAvailableStore } from './available';
 import { resolveNotificationLink } from './notification-link';
 import { notificationFor } from './selection';
 import { fillsSlot, ignoresDismissal, templateFor } from './slots';
 import { useNotificationsStore } from './state';
 
-export const Notification = ({ slot }) => {
+export const Notification = ({ slot, placement }) => {
 	const {
 		dismissBanner,
 		isDismissedBanner,
@@ -14,9 +15,15 @@ export const Notification = ({ slot }) => {
 		recordNotificationClick,
 	} = useNotificationsStore();
 	const Template = templateFor(slot);
+	const notifications = useAvailableStore((state) => state.notifications);
 
-	// Frozen at mount so dismissing doesn't reveal the next notification until reload.
-	const [notification] = useState(() => notificationFor(slot));
+	// Dismissing one must not reveal the next; a new list from the server must.
+	const [notification, setNotification] = useState(() =>
+		notificationFor(slot, notifications),
+	);
+	useEffect(() => {
+		setNotification(notificationFor(slot, notifications));
+	}, [slot, notifications]);
 
 	const slug = notification?.slug;
 	const source = notification?.source;
@@ -57,6 +64,7 @@ export const Notification = ({ slot }) => {
 				dismissible={dismissible}
 				onDismiss={dismiss}
 				onClick={click}
+				placement={placement}
 			/>
 		</div>
 	);

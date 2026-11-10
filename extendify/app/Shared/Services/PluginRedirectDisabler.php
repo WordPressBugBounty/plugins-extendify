@@ -100,6 +100,8 @@ class PluginRedirectDisabler
         \add_filter('monsterinsights_enable_onboarding_wizard', '__return_false');
         \add_filter('charitable_disable_activation_redirect', '__return_true');
         \add_filter('tec_admin_update_page_bypass', '__return_true');
+        // WPForms arms its wizard on a first wp-admin visit, even when activated outside our hook.
+        \add_filter('wpforms_setup_wizard_setup_wizard_is_disabled', '__return_true');
 
         \add_action('activated_plugin', [$this, 'cleanupRedirectTriggers'], 0);
 

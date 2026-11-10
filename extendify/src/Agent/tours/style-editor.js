@@ -11,7 +11,7 @@ export default {
 		allowOverflow: false,
 		startFrom: [
 			adminUrl +
-				// TODO: This needs attention as it was sending me into an infinite frontend loop
+				// Changing this start URL has sent the front end into a reload loop.
 				`site-editor.php?canvas=edit&postType=wp_template&postId=${themeSlug}%2F%2Fhome`,
 		],
 		enabled: isBlockTheme ?? false,

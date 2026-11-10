@@ -266,8 +266,8 @@ class Guard
             return true;
         }
 
-        // Core writes these as it registers a user, publishes a post or renders a calendar,
-        // WPForms and WooCommerce as they save a form or product; refusing one fails that save.
+        // Core writes these as it registers a user, publishes a post or renders a calendar; WPForms, WooCommerce,
+        // WP Super Cache, SimplyBook and Avada as they save a form, product or post. Refusing one fails that save.
         $caches = [
             'user_count',
             'fresh_site',
@@ -275,6 +275,11 @@ class Guard
             'wpforms_dashboard_cache_generation',
             'wpforms_forms_first_created',
             'woocommerce_task_list_tracked_completed_tasks',
+            'wpsc_feed_list',
+            '_simplybook_pages_with_shortcode',
+            'simplybook_tasks',
+            'simplybook_notices',
+            'fusion_dynamic_css_ids',
         ];
         if (in_array($option, $caches, true)) {
             return true;

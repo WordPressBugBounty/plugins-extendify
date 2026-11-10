@@ -58,6 +58,12 @@ export const handleDesignBuild = async ({ urlParams }) => {
 	try {
 		const parsed = getDesignBuildShape.parse(await response.json());
 
+		// A second call can pick another nav extra than the preview showed.
+		const { launchDecisions } = parsed;
+		if (launchDecisions) {
+			mutate('launchDecisions', { launchDecisions }, false);
+		}
+
 		// Stash the site profile
 		const profile = parsed.siteProfile;
 		await updateOption('extendify_site_profile', JSON.stringify(profile));
@@ -97,7 +103,12 @@ export const handleDesignBuild = async ({ urlParams }) => {
 				getLogoShape.parse({ logoUrl: parsed.logoUrl }),
 				false,
 			);
-			uploads.push(uploadLogo(parsed.logoUrl, { external: hasExternalLogo }));
+			uploads.push(
+				uploadLogo(parsed.logoUrl, {
+					external: hasExternalLogo,
+					title: profile.title,
+				}),
+			);
 		}
 		const [builtPages] = await Promise.all(uploads);
 

@@ -98,7 +98,7 @@ const mount = () => {
 
 	announcePostReload();
 
-	// Toolbar bundle (#3334) dispatches this event so it doesn't need to import our store.
+	// Toolbar bundle dispatches this event so it doesn't need to import our store.
 	window.addEventListener('extendify-quick-edit:toggle', () => {
 		useEditModeStore.getState().toggle();
 	});

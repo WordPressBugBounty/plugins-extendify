@@ -22,7 +22,9 @@ export const Bar = ({
 	dismissible,
 	onDismiss,
 	onClick,
+	placement,
 }) => {
+	const inSlot = placement === 'slot';
 	const { title, content } = notification;
 	const ctaLabel = notification['cta-label'];
 	const icon = iconFor(notification.icon);
@@ -44,6 +46,7 @@ export const Bar = ({
 
 	// The agent reads this to keep its panel and the scaled page off the bar.
 	useEffect(() => {
+		if (inSlot) return;
 		const root = document.documentElement;
 		const publish = () =>
 			root.style.setProperty(
@@ -59,7 +62,7 @@ export const Bar = ({
 			observer.disconnect();
 			root.style.removeProperty('--extendify-notification-bar-height');
 		};
-	}, []);
+	}, [inSlot]);
 
 	return (
 		<aside
@@ -69,7 +72,12 @@ export const Bar = ({
 				__('Site status', 'extendify-local')
 			}
 			// Below core's admin-bar breakpoint a full-width banner covers the content it reports on.
-			className="fixed bottom-0 left-0 right-0 z-higher hidden items-center gap-4 bg-design-main px-5 py-3.5 text-base text-design-text md:flex"
+			className={classNames(
+				'items-center gap-4 bg-design-main px-5 py-3.5 text-base text-design-text',
+				inSlot
+					? 'flex size-full rounded-[inherit]'
+					: 'fixed bottom-0 left-0 right-0 z-higher hidden md:flex',
+			)}
 			style={barVariables(colors)}
 			data-test="notification-bar"
 		>

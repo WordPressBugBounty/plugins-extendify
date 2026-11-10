@@ -1049,7 +1049,10 @@ class Tools
             'inputSchema' => [
                 'type' => 'object',
                 'properties' => [
-                    'role' => ['type' => 'string', 'description' => 'Only return users with this role.'],
+                    'role' => [
+                        'type' => 'string',
+                        'description' => 'Only return users with this role. Name several separated by commas.',
+                    ],
                     'registered_after' => [
                         'type' => 'string',
                         'format' => 'date-time',
@@ -1068,7 +1071,7 @@ class Tools
                     ],
                     'search' => [
                         'type' => 'string',
-                        'description' => 'Match against username and display name.',
+                        'description' => 'Match against username and display name, or give an account id.',
                     ],
                     'per_page' => ['type' => 'integer', 'minimum' => 1, 'maximum' => 100, 'default' => 20],
                     'page' => ['type' => 'integer', 'minimum' => 1, 'default' => 1],
@@ -1158,7 +1161,8 @@ class Tools
                     ],
                     'role' => [
                         'type' => 'string',
-                        'description' => 'Only delete users with this role. Administrators are refused regardless.',
+                        'description' => 'Only delete users with this role. Name several separated by commas.'
+                            . ' Administrators are refused regardless.',
                     ],
                     'max_posts' => [
                         'type' => 'integer',

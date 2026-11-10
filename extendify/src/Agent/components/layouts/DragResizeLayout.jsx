@@ -14,10 +14,8 @@ import { __ } from '@wordpress/i18n';
 import { close, Icon } from '@wordpress/icons';
 import { AnimatePresence, motion } from 'framer-motion';
 
-// TODO: some of the bound checking isn't working that well.
-// For example, the user shrinks the height of the browser.
-// On reload this should at least put the window in bounds.
-// Maybe a resize observer would be useful.
+// Bounds are checked on drag only, so a browser shrunk after one leaves the
+// window out of bounds until it is moved again.
 
 export const DragResizeLayout = ({ children }) => {
 	const [el, setEl] = useState(null);

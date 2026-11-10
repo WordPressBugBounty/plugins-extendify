@@ -8,6 +8,8 @@ namespace Extendify\Agent;
 
 defined('ABSPATH') || die('No direct access.');
 
+use Extendify\Shared\Services\Iubenda;
+
 /**
  * This class handles frontend concerns for the Agent.
  */
@@ -15,6 +17,7 @@ class Frontend
 {
     public function __construct()
     {
+        new Iubenda();
         $this->loadIntegrations();
     }
 

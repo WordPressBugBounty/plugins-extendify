@@ -201,7 +201,7 @@ class Admin
             'appointments' => 'boolean',
             'events' => 'boolean',
             'donations' => 'boolean',
-            'multilingual' => 'boolean',
+            'multilingual' => 'string|boolean',
             'contact' => 'boolean',
             'address' => 'string|boolean',
             'blog' => 'boolean',

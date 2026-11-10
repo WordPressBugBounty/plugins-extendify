@@ -1,13 +1,10 @@
-import { safeParseJson } from '@shared/lib/parsing';
+import { availableNotifications } from './available';
 import { ignoresDismissal } from './slots';
 import { useNotificationsStore } from './state';
 
-const notificationsOnThisPage = () =>
-	safeParseJson(window.extSharedData?.notifications, []);
-
 export const notificationFor = (
 	slot,
-	notifications = notificationsOnThisPage(),
+	notifications = availableNotifications(),
 ) => {
 	const { isDismissedBanner } = useNotificationsStore.getState();
 	return (

@@ -206,14 +206,18 @@ class Handlers
                 unset($body['status']);
             }
 
-            if (array_intersect_key($body, array_flip(['title', 'excerpt']))) {
-                self::keepRevision($id);
-            }
+            $response = self::contained(function () use ($id, $route, $body, $trashing) {
+                if (array_intersect_key($body, array_flip(['title', 'excerpt']))) {
+                    self::keepRevision($id);
+                }
 
-            $response = $body ? self::request('POST', $route, $body) : null;
-            if ($trashing && !\is_wp_error($response)) {
-                $response = self::request('DELETE', $route);
-            }
+                $response = $body ? self::request('POST', $route, $body) : null;
+                if ($trashing && !\is_wp_error($response)) {
+                    $response = self::request('DELETE', $route);
+                }
+
+                return $response;
+            });
 
             if (\is_wp_error($response)) {
                 $failed[] = ['id' => $id, 'error' => $response->get_error_message()];
@@ -282,7 +286,9 @@ class Handlers
         $changed = [];
         $failed = [];
         foreach (array_unique(array_map('intval', (array) $arguments['ids'])) as $id) {
-            $response = self::request('POST', 'wp/v2/comments/' . $id, ['status' => $status]);
+            $response = self::contained(function () use ($id, $status) {
+                return self::request('POST', 'wp/v2/comments/' . $id, ['status' => $status]);
+            });
             if (\is_wp_error($response)) {
                 $failed[] = ['id' => $id, 'error' => $response->get_error_message()];
                 continue;
@@ -407,7 +413,9 @@ class Handlers
         $deleted = [];
         $failed = [];
         foreach ($items as $item) {
-            $response = self::request('DELETE', $route . '/' . $item['id'], ['force' => true]);
+            $response = self::contained(function () use ($route, $item) {
+                return self::request('DELETE', $route . '/' . $item['id'], ['force' => true]);
+            });
             if (\is_wp_error($response)) {
                 $failed[] = ['id' => $item['id'], 'error' => $response->get_error_message()];
                 continue;
@@ -583,7 +591,9 @@ class Handlers
                 continue;
             }
 
-            $response = self::request('POST', 'wp/v2/media/' . $id, ['alt_text' => $item['alt_text']]);
+            $response = self::contained(function () use ($id, $item) {
+                return self::request('POST', 'wp/v2/media/' . $id, ['alt_text' => $item['alt_text']]);
+            });
             if (\is_wp_error($response)) {
                 $skipped[] = ['id' => $id, 'reason' => $response->get_error_message()];
                 continue;
@@ -651,7 +661,14 @@ class Handlers
         $deleted = [];
         $failed = [];
         foreach ($items as $item) {
-            $response = self::request('DELETE', 'wp/v2/plugins/' . $item['slug']);
+            $response = self::contained(function () use ($item) {
+                try {
+                    return self::request('DELETE', 'wp/v2/plugins/' . $item['slug']);
+                } finally {
+                    // A crashed uninstall skips delete_plugin, the hook that would hold the Guard again.
+                    Guard::hold();
+                }
+            });
             if (\is_wp_error($response)) {
                 $failed[] = ['slug' => $item['slug'], 'error' => $response->get_error_message()];
                 continue;
@@ -697,7 +714,9 @@ class Handlers
         $changed = [];
         $failed = [];
         foreach (array_unique(array_map('strval', (array) $arguments['plugins'])) as $slug) {
-            $response = self::unguarded('POST', 'wp/v2/plugins/' . $slug, ['status' => $status]);
+            $response = self::contained(function () use ($slug, $status) {
+                return self::unguarded('POST', 'wp/v2/plugins/' . $slug, ['status' => $status]);
+            });
             if (\is_wp_error($response)) {
                 $failed[] = ['slug' => $slug, 'error' => $response->get_error_message()];
                 continue;
@@ -748,42 +767,36 @@ class Handlers
      */
     public static function listUsers(array $arguments)
     {
-        $registered = self::registeredBetween($arguments);
-        if ($registered) {
-            \add_filter('rest_user_query', $registered);
+        // Blocks a connection user without list_users from reading every account.
+        if (!\current_user_can('list_users')) {
+            return new \WP_Error('extendify_mcp_refused', 'This user may not list users.');
         }
 
-        try {
-            $response = self::request('GET', 'wp/v2/users', [
-                'context' => 'edit',
-                'roles' => $arguments['role'] ?? null,
-                'search' => $arguments['search'] ?? null,
-                'exclude' => isset($arguments['max_posts']) ? self::wroteMoreThan($arguments['max_posts']) : null,
-                'per_page' => $arguments['per_page'],
-                'page' => $arguments['page'],
-            ]);
-        } finally {
-            if ($registered) {
-                \remove_filter('rest_user_query', $registered);
+        $args = self::userFilters($arguments) + [
+            'number' => $arguments['per_page'],
+            'paged' => $arguments['page'],
+            'orderby' => 'display_name',
+            'order' => 'ASC',
+            'count_total' => true,
+        ];
+        if (($arguments['search'] ?? '') !== '') {
+            $args['search'] = '*' . $arguments['search'] . '*';
+            // Email stays out, or a search would confirm who holds an address.
+            $args['search_columns'] = ['user_login', 'user_nicename', 'display_name'];
+            if (is_numeric($arguments['search'])) {
+                // Core searches ids itself only when the columns are left unset.
+                $args['search_columns'][] = 'ID';
             }
         }
 
-        if (\is_wp_error($response)) {
-            return $response;
-        }
+        $query = new \WP_User_Query($args);
+        $total = (int) $query->get_total();
 
-        $counts = \count_many_users_posts(array_column((array) $response->get_data(), 'id'), Tools::types());
-
-        return self::listed($response, function (array $item) use ($counts) {
-            return [
-                'id' => (int) $item['id'],
-                'name' => (string) ($item['name'] ?? ''),
-                'username' => (string) ($item['username'] ?? ''),
-                'roles' => array_values((array) ($item['roles'] ?? [])),
-                'registered' => (string) ($item['registered_date'] ?? ''),
-                'post_count' => (int) ($counts[$item['id']] ?? 0),
-            ];
-        });
+        return [
+            'items' => self::shapeUsers($query->get_results()),
+            'total' => $total,
+            'pages' => (int) ceil($total / $arguments['per_page']),
+        ];
     }
 
     /**
@@ -835,6 +848,11 @@ class Handlers
      */
     public static function deleteUsers(array $arguments)
     {
+        // Blocks a connection user without list_users from reading every account through the preview.
+        if (!\current_user_can('list_users')) {
+            return new \WP_Error('extendify_mcp_refused', 'This user may not list users.');
+        }
+
         if (\is_multisite()) {
             return new \WP_Error('extendify_mcp_refused', 'Deleting users is not available on a multisite network.');
         }
@@ -845,16 +863,12 @@ class Handlers
         }
 
         $admins = self::adminRoles();
-        if (in_array($arguments['role'] ?? '', $admins, true)) {
+        if (array_intersect(self::roles($arguments), $admins)) {
             return new \WP_Error('extendify_mcp_refused', 'Administrators are never deleted by this tool.');
         }
 
         $query = new \WP_User_Query(self::deletable($arguments, $reassign, $admins));
-        $users = $query->get_results();
-        $counts = \count_many_users_posts(\wp_list_pluck($users, 'ID'), Tools::types());
-        $items = array_map(function (\WP_User $user) use ($counts) {
-            return self::shapeUser($user, $counts);
-        }, $users);
+        $items = self::shapeUsers($query->get_results());
         if (!empty($arguments['preview'])) {
             return self::preview('delete_users', $items, 'id', (int) $query->get_total());
         }
@@ -867,10 +881,12 @@ class Handlers
         $deleted = [];
         $failed = [];
         foreach ($items as $item) {
-            $response = self::request('DELETE', 'wp/v2/users/' . $item['id'], [
-                'force' => true,
-                'reassign' => $reassign,
-            ]);
+            $response = self::contained(function () use ($item, $reassign) {
+                return self::request('DELETE', 'wp/v2/users/' . $item['id'], [
+                    'force' => true,
+                    'reassign' => $reassign,
+                ]);
+            });
             if (\is_wp_error($response)) {
                 $failed[] = ['id' => $item['id'], 'error' => $response->get_error_message()];
                 continue;
@@ -1216,6 +1232,29 @@ class Handlers
         $reasons = (array) ($error->get_error_data()['params'] ?? []);
 
         return new \WP_Error('rest_invalid_param', implode(' ', $reasons) ?: $error->get_error_message());
+    }
+
+    /**
+     * Other plugins' code runs per item, so one crash fails only that item.
+     *
+     * @param callable $request - The REST call for the one item.
+     * @return \WP_REST_Response|\WP_Error
+     */
+    private static function contained(callable $request)
+    {
+        $buffers = ob_get_level();
+        try {
+            return $request();
+        } catch (Refused $refused) {
+            throw $refused;
+        } catch (\Throwable $failed) {
+            // A crash inside activate_plugin() leaves its output buffer open.
+            while (ob_get_level() > $buffers) {
+                ob_end_clean();
+            }
+
+            return new \WP_Error('extendify_mcp_crashed', $failed->getMessage());
+        }
     }
 
     /**
@@ -1602,24 +1641,6 @@ class Handlers
     }
 
     /**
-     * @param array $arguments - The validated tool arguments.
-     * @return callable|null
-     */
-    private static function registeredBetween(array $arguments)
-    {
-        $registered = self::registered($arguments);
-        if (!$registered) {
-            return null;
-        }
-
-        return function (array $args) use ($registered) {
-            $args['date_query'] = $registered;
-
-            return $args;
-        };
-    }
-
-    /**
      * @param array   $arguments - The validated tool arguments.
      * @param integer $reassign  - The user inheriting the content.
      * @param array   $admins    - The roles that may manage the site.
@@ -1627,25 +1648,40 @@ class Handlers
      */
     private static function deletable(array $arguments, $reassign, array $admins)
     {
-        $kept = array_merge([\get_current_user_id(), $reassign], self::wroteMoreThan((int) $arguments['max_posts']));
-        $args = [
+        $filters = self::userFilters($arguments);
+
+        return array_merge($filters, [
             'role__not_in' => $admins,
-            'exclude' => $kept,
+            'exclude' => array_merge([\get_current_user_id(), $reassign], $filters['exclude'] ?? []),
             'number' => self::DELETE_BATCH,
             'orderby' => 'ID',
             'order' => 'ASC',
             'count_total' => true,
-        ];
-        if (!empty($arguments['role'])) {
-            $args['role'] = $arguments['role'];
-        }
+        ]);
+    }
 
-        $registered = self::registered($arguments);
-        if ($registered) {
-            $args['date_query'] = $registered;
-        }
+    /**
+     * @param array $arguments - The validated tool arguments.
+     * @return array - The role, registration and post-count clauses list_users and delete_users share.
+     */
+    private static function userFilters(array $arguments)
+    {
+        return array_filter([
+            'role__in' => self::roles($arguments),
+            'date_query' => self::registered($arguments),
+            'exclude' => isset($arguments['max_posts']) ? self::wroteMoreThan((int) $arguments['max_posts']) : [],
+        ]);
+    }
 
-        return $args;
+    /**
+     * @param array $arguments - The validated tool arguments.
+     * @return array - Every role named, since one filter may name several and WP_User_Query's role takes one.
+     */
+    private static function roles(array $arguments)
+    {
+        $named = array_map('trim', explode(',', (string) ($arguments['role'] ?? '')));
+
+        return array_values(array_filter($named, 'strlen'));
     }
 
     /**
@@ -1664,20 +1700,23 @@ class Handlers
     }
 
     /**
-     * @param \WP_User $user   - A user the query found.
-     * @param array    $counts - Post counts by user id.
+     * @param \WP_User[] $users - The users a query found.
      * @return array
      */
-    private static function shapeUser(\WP_User $user, array $counts)
+    private static function shapeUsers(array $users)
     {
-        return [
-            'id' => (int) $user->ID,
-            'name' => (string) $user->display_name,
-            'username' => (string) $user->user_login,
-            'roles' => array_values((array) $user->roles),
-            'registered' => gmdate('c', strtotime($user->user_registered)),
-            'post_count' => (int) ($counts[$user->ID] ?? 0),
-        ];
+        $counts = \count_many_users_posts(\wp_list_pluck($users, 'ID'), Tools::types());
+
+        return array_map(function (\WP_User $user) use ($counts) {
+            return [
+                'id' => (int) $user->ID,
+                'name' => (string) $user->display_name,
+                'username' => (string) $user->user_login,
+                'roles' => array_values((array) $user->roles),
+                'registered' => gmdate('c', strtotime($user->user_registered)),
+                'post_count' => (int) ($counts[$user->ID] ?? 0),
+            ];
+        }, $users);
     }
 
     /**

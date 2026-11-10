@@ -10,7 +10,12 @@ import { AI_HOST } from '@constants';
 import { digest } from '@shared/api/digest';
 import { reqDataBasics } from '@shared/lib/data';
 
-const fallback = { aiHeaders: [], aiBlogTitles: [], heroDescription: '' };
+const fallback = {
+	aiHeaders: [],
+	aiBlogTitles: [],
+	heroDescription: '',
+	tagline: '',
+};
 const url = `${AI_HOST}/api/site-strings`;
 const method = 'POST';
 const headers = { 'Content-Type': 'application/json' };

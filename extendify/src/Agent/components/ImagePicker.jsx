@@ -183,7 +183,7 @@ export const ImagePicker = ({
 								<textarea
 									// biome-ignore lint/a11y/noAutofocus: the pencil opened it to type in
 									autoFocus
-									className="m-0 h-48 w-full resize-none overflow-y-auto rounded-sm border border-gray-300 p-2 text-sm"
+									className="m-0 h-48 w-full resize-none overflow-y-auto rounded-sm border border-gray-300 bg-white p-2 text-sm text-gray-900"
 									aria-label={__('Image description', 'extendify-local')}
 									value={draftPrompt}
 									onChange={(event) => setDraftPrompt(event.target.value)}
@@ -489,7 +489,7 @@ const UnsplashTab = ({
 			)}
 			<input
 				type="search"
-				className="w-full rounded-sm border border-gray-300 p-2 text-sm"
+				className="w-full rounded-sm border border-gray-300 bg-white p-2 text-sm text-gray-900"
 				placeholder={__('Search photos...', 'extendify-local')}
 				aria-label={__('Search photos', 'extendify-local')}
 				value={search}

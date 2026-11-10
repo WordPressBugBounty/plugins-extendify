@@ -1,0 +1,1045 @@
+@import "tailwindcss" source(none) important;
+@import "../tailwind.css" source(none);
+@source ".";
+@source "../../app/AgentX";
+/* Notifications draw in the shell. */
+@source "../Notifications";
+
+@theme {
+	--color-agentx-surface: #f7f7f7;
+	--color-agentx-ink: #1e1e1e;
+	--color-agentx-hover: rgb(0 0 0 / 0.05);
+	--color-agentx-panel: rgb(255 255 255 / 0.6);
+	--color-agentx-panel-border: var(
+		--color-agentx-border,
+		rgb(255 255 255 / 0.6)
+	);
+	--color-agentx-field: var(--color-agentx-raised);
+	--color-agentx-field-border: var(--color-agentx-border, rgb(0 0 0 / 0.08));
+	--color-agentx-plan-stop: transparent;
+	--color-agentx-accent: #2563eb;
+	--color-agentx-accent-ink: #ffffff;
+	--text-agentx-message: var(--text-agentx-body);
+	--text-agentx-message--line-height: var(--text-agentx-body--line-height);
+	--color-agentx-muted: color-mix(
+		in srgb,
+		var(--color-agentx-ink) 60%,
+		transparent
+	);
+	--color-agentx-notice: var(--color-agentx-cards);
+	--color-agentx-notice-border: var(
+		--color-agentx-cards-border,
+		var(--color-agentx-border, rgb(0 0 0 / 0.16))
+	);
+	--agentx-notice-shadow: var(--agentx-cards-shadow);
+	--color-agentx-alert: #cc1818;
+	--color-agentx-sheet: var(--color-agentx-cards);
+	--agentx-sheet-shadow: 0 -8px 24px rgb(0 0 0 / 0.12);
+	--color-agentx-focus: var(--color-agentx-accent);
+	--color-agentx-card: var(--color-agentx-cards);
+	--color-agentx-card-border: var(
+		--color-agentx-cards-border,
+		var(--color-agentx-border, rgb(0 0 0 / 0.08))
+	);
+	--color-agentx-tabs: color-mix(
+		in srgb,
+		var(--color-agentx-accent) 6%,
+		transparent
+	);
+	--color-agentx-tab: var(--color-agentx-raised);
+	--agentx-tab-shadow: 0 1px 3px rgb(0 0 0 / 0.1);
+	--color-agentx-picked: var(--color-agentx-accent);
+	--color-agentx-selection: var(--color-agentx-accent);
+	/* Lighter than the edge, or the fill clouds dark text under it. */
+	--color-agentx-selection-fill: color-mix(
+		in srgb,
+		var(--color-agentx-selection) 60%,
+		transparent
+	);
+	--agentx-quick-edit-cursor: default;
+	--color-agentx-quick-edit-text: var(--color-agentx-accent);
+	--color-agentx-quick-edit-highlight: #fde047;
+	--color-agentx-bubble: var(--color-agentx-menu);
+	--color-agentx-bubble-ink: var(--color-agentx-ink);
+	--color-agentx-bubble-border: var(--color-agentx-field-border);
+	--color-agentx-bubble-hover: var(--color-agentx-hover);
+	--color-agentx-bubble-muted: var(--color-agentx-muted);
+	--agentx-quick-edit-shadow: var(
+		--agentx-shadow,
+		0 8px 24px -6px rgb(15 23 42 / 0.25),
+		0 0 0 1px rgb(15 23 42 / 0.06)
+	);
+	--color-agentx-presence: #f0b849;
+	--color-agentx-unsaved: var(--color-agentx-accent);
+	--color-agentx-menu: var(--color-agentx-raised);
+	--color-agentx-menu-divider: var(--color-agentx-border, rgb(0 0 0 / 0.08));
+	--color-agentx-shimmer: var(--color-agentx-ink);
+	--animate-agentx-shimmer: agentx-shimmer 2s linear infinite;
+	--color-agentx-tooltip: #1e1e1e;
+	--color-agentx-tooltip-ink: #ffffff;
+	--animate-agentx-tooltip: agentx-tooltip 150ms cubic-bezier(0.23, 1, 0.32, 1);
+	--spacing-agentx-steps-indent: 0.5rem;
+	--color-agentx-steps-line: var(--color-agentx-border, rgb(0 0 0 / 0.08));
+	--spacing-agentx-spinner: 1rem;
+	/* A partner's backdrop shader; auto colors come from the surface and accent. */
+	--agentx-bg-color-1: auto;
+	--agentx-bg-color-2: auto;
+	--agentx-bg-color-3: auto;
+	--agentx-bg-speed: 1;
+	--agentx-bg-scale: 1;
+	--agentx-bg-intensity: 1;
+	--agentx-bg-offset-x: 0;
+	--agentx-bg-offset-y: 0;
+	/* WordPress's admin bar colors, since the closed toolbar takes its place. */
+	--color-agentx-inverse: #1d2327;
+	--color-agentx-inverse-ink: #f0f0f1;
+	--color-agentx-inverse-accent: #72aee6;
+	--color-agentx-site: #ffffff;
+	--color-agentx-veil: rgb(255 255 255 / 0.5);
+	/* The host's banner colors, the ones its logo is drawn for; none for a white banner. */
+	--color-agentx-brand: var(--agentx-host-banner, transparent);
+	--color-agentx-brand-ink: var(--agentx-host-ink, #1e1e1e);
+	--color-agentx-brand-border: transparent;
+	/* A white banner sets no host color, so the welcome falls back to the accent. */
+	--color-agentx-welcome: var(--agentx-host-banner, var(--color-agentx-accent));
+	--agentx-brand-border-width: 1px;
+	/* On a clear bar the logo lines up with the chat; a colored one needs room.
+	   It goes on both sides: on the start alone the logo sat 15px in and 3px out. */
+	--spacing-agentx-brand-inset: calc(3px + 0.75rem * var(--agentx-host-bar, 0));
+	--color-agentx-brand-hover: color-mix(
+		in srgb,
+		var(--color-agentx-brand-ink) 12%,
+		transparent
+	);
+	--color-agentx-brand-focus: var(--color-agentx-brand-ink);
+	--font-agentx:
+		ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji",
+		"Segoe UI Symbol", "Noto Color Emoji";
+	--spacing-agentx-gap: 2rem;
+	--color-agentx-grip: rgb(0 0 0 / 0.15);
+	--color-agentx-grip-active: var(--color-agentx-accent);
+	--radius-agentx-control: 0.5rem;
+	--radius-agentx: 1rem;
+	/* Inline cards stop here while the chat's text takes the whole panel. */
+	--container-agentx-card: 500px;
+	--agentx-panel-shadow: var(
+		--agentx-shadow,
+		0 4px 6px -1px rgb(0 0 0 / 0.1),
+		0 2px 4px -2px rgb(0 0 0 / 0.1)
+	);
+	/* Built-in shadows cast down, invisible on a box flush to the bottom. */
+	--agentx-site-shadow: 0 0 24px rgb(0 0 0 / 0.18);
+	/* Read by the site switch's script, not by any utility. */
+	--agentx-switch-hold: 1s;
+	/* The toast saying the agent is working: an arc turning around its edge, and a glow off the frame's foot. */
+	--color-agentx-working-shine: var(--color-agentx-accent);
+	--agentx-working-shine-speed: 2s;
+	--agentx-working-shine-width: 1px;
+	--agentx-working-shine-arc: 200deg;
+	--color-agentx-working-glow: var(--color-agentx-accent);
+	--agentx-working-glow-height: 60px;
+	--agentx-working-glow-strength: 0.8;
+	--agentx-working-glow-speed: 2s;
+	--agentx-working-glow-blur: 14px;
+	--agentx-surface-image:
+		radial-gradient(
+			28rem 22rem at 4% 6%,
+			var(--color-agentx-surface-glow-top-left),
+			transparent 70%
+		),
+		radial-gradient(
+			44rem 18rem at 62% -6%,
+			var(--color-agentx-surface-glow-top),
+			transparent 70%
+		),
+		radial-gradient(
+			26rem 30rem at -4% 52%,
+			var(--color-agentx-surface-glow-left),
+			transparent 70%
+		),
+		radial-gradient(
+			30rem 26rem at 22% 104%,
+			var(--color-agentx-surface-glow-bottom-left),
+			transparent 70%
+		),
+		radial-gradient(
+			30rem 30rem at 104% 100%,
+			var(--color-agentx-surface-glow-bottom-right),
+			transparent 70%
+		),
+		linear-gradient(
+			160deg,
+			var(--color-agentx-surface-base-from),
+			var(--color-agentx-surface-base-to)
+		);
+
+	--color-agentx-raised: #ffffff;
+	--color-agentx-placeholder: color-mix(
+		in oklab,
+		currentcolor 50%,
+		transparent
+	);
+	--agentx-focus-width: 2px;
+	--text-agentx-body: 0.875rem;
+	--text-agentx-body--line-height: calc(1.25 / 0.875);
+	--text-agentx-caption: 0.75rem;
+	--text-agentx-caption--line-height: calc(1 / 0.75);
+	--font-weight-agentx-button: 500;
+	--color-agentx-checkbox: var(--color-agentx-accent);
+	--color-agentx-primary: var(--color-agentx-accent);
+	--color-agentx-primary-ink: var(--color-agentx-accent-ink);
+	--color-agentx-button: var(--color-agentx-field);
+	--color-agentx-button-ink: var(--color-agentx-ink);
+	--color-agentx-button-border: var(--color-agentx-field-border);
+	--color-agentx-button-hover: var(--color-agentx-hover);
+	--color-agentx-danger: var(--color-agentx-alert);
+	--color-agentx-danger-ink: #ffffff;
+	--agentx-hover-brightness: 110%;
+	--agentx-press-scale: 0.97;
+	--color-agentx-chat-box: var(--color-agentx-field);
+	--color-agentx-chat-box-ink: var(--color-agentx-ink);
+	--color-agentx-chat-box-muted: var(--color-agentx-muted);
+	--color-agentx-chat-box-border: var(--color-agentx-border, rgb(0 0 0 / 0.16));
+	--agentx-chat-box-border-width: 1px;
+	--radius-agentx-chat-box: var(--radius-agentx);
+	--agentx-chat-box-shadow: var(--agentx-shadow, 0 0 #0000);
+	--color-agentx-chat-box-hover: var(--color-agentx-hover);
+	--color-agentx-chat-box-focus: var(--color-agentx-focus);
+	--agentx-chat-box-disabled-opacity: var(--agentx-disabled-opacity, 60%);
+	--color-agentx-header-ink: var(--color-agentx-ink);
+	--color-agentx-header-hover: var(--color-agentx-hover);
+	--radius-agentx-header-button: var(--radius-agentx-control);
+	--color-agentx-message-ink: var(--color-agentx-ink);
+	--color-agentx-message-muted: var(--color-agentx-muted);
+	--color-agentx-cards: var(--color-agentx-raised);
+	--color-agentx-cards-ink: var(--color-agentx-ink);
+	--color-agentx-cards-muted: var(--color-agentx-muted);
+	--radius-agentx-cards: var(--radius-agentx);
+	--agentx-cards-shadow: var(--agentx-shadow, 0 0 #0000);
+	--color-agentx-cards-primary: var(--color-agentx-primary);
+	--color-agentx-cards-primary-ink: var(--color-agentx-primary-ink);
+	--color-agentx-quick-edit-pressed: var(--color-agentx-bubble-hover);
+	--radius-agentx-quick-edit: var(--radius-agentx-control);
+	--radius-agentx-quick-edit-control: calc(
+		var(--radius-agentx-quick-edit) -
+		0.125rem
+	);
+	--text-agentx-quick-edit: calc(var(--text-agentx-body) - 1px);
+	--font-weight-agentx-quick-edit: var(--font-weight-agentx-button);
+	--radius-agentx-site: var(--radius-agentx);
+	--color-agentx-site-border: transparent;
+	--color-agentx-chat-box-placeholder: var(--color-agentx-placeholder);
+	--text-agentx-chat-box-input: var(--text-agentx-body);
+	--text-agentx-chat-box-input--line-height: var(
+		--text-agentx-body--line-height
+	);
+	--color-agentx-chat-box-history-ink: var(--color-agentx-chat-box-muted);
+	--color-agentx-select-button: transparent;
+	--color-agentx-select-button-ink: var(--color-agentx-chat-box-ink);
+	--color-agentx-select-button-hover: var(--color-agentx-chat-box-hover);
+	--radius-agentx-select-button: calc(
+		var(--radius-agentx-chat-box) -
+		0.5625rem
+	);
+	--color-agentx-pill: var(--color-agentx-tabs);
+	--color-agentx-pill-ink: var(--color-agentx-accent);
+	--color-agentx-pill-hover: var(--color-agentx-chat-box-hover);
+	--radius-agentx-pill: calc(var(--radius-agentx-chat-box) - 0.5625rem);
+	--font-weight-agentx-pill: var(--font-weight-agentx-button);
+	--color-agentx-send: var(--color-agentx-primary);
+	--color-agentx-send-ink: var(--color-agentx-primary-ink);
+	--color-agentx-send-hover: var(--color-agentx-send);
+	--radius-agentx-send: calc(var(--radius-agentx-chat-box) - 0.5625rem);
+	--color-agentx-stop: var(--color-agentx-send);
+	--color-agentx-stop-ink: var(--color-agentx-send-ink);
+	--color-agentx-tools-ink: var(--color-agentx-chat-box-muted);
+	--color-agentx-tools-hover: var(--color-agentx-chat-box-hover);
+	--color-agentx-tools-hover-ink: var(--color-agentx-chat-box-ink);
+	--color-agentx-tools-active: var(--color-agentx-tab);
+	--color-agentx-tools-active-ink: var(--color-agentx-chat-box-ink);
+	--agentx-tools-active-shadow: var(--agentx-tab-shadow);
+	--radius-agentx-tools: calc(var(--radius-agentx-control) - 0.25rem);
+	--color-agentx-tools-divider: color-mix(
+		in oklab,
+		var(--color-agentx-chat-box-ink) 15%,
+		transparent
+	);
+	--color-agentx-saving: var(--color-agentx-accent);
+	--color-agentx-checkbox-ink: var(--color-agentx-accent-ink);
+	--color-agentx-checkbox-border: color-mix(
+		in oklab,
+		var(--color-agentx-ink) 30%,
+		transparent
+	);
+	--radius-agentx-checkbox: 0.25rem;
+	--font-weight-agentx-settings-item: var(--font-weight-agentx-button);
+	--color-agentx-disclaimer-ink: var(--color-agentx-chat-box-muted);
+	--radius-agentx-brand: calc(
+		var(--radius-agentx-header-button) +
+		3px +
+		var(--agentx-brand-border-width)
+	);
+	--agentx-brand-shadow: 0 0 #0000;
+	--spacing-agentx-logo: 1.5rem;
+	--container-agentx-logo-width: 9rem;
+	--text-agentx-brand-name: var(--text-agentx-body);
+	--text-agentx-brand-name--line-height: var(--text-agentx-body--line-height);
+	--font-weight-agentx-brand-name: var(--font-weight-agentx-title, 600);
+	--color-agentx-mark-ink: var(--color-agentx-header-ink);
+	--text-agentx-mark-title: 1rem;
+	--text-agentx-mark-title--line-height: 1.5;
+	--font-weight-agentx-mark: var(--font-weight-agentx-title, 600);
+	--color-agentx-header-button: transparent;
+	--color-agentx-header-active: var(--color-agentx-header-hover);
+	--text-agentx-header-label: var(--text-agentx-body);
+	--text-agentx-header-label--line-height: var(--text-agentx-body--line-height);
+	--color-agentx-chat-toggle-ink: var(--color-agentx-header-ink);
+	--color-agentx-chat-toggle-hover: var(--color-agentx-header-hover);
+	--color-agentx-bell-ink: var(--color-agentx-header-ink);
+	--color-agentx-bell-hover: var(--color-agentx-header-hover);
+	--color-agentx-unread: var(--color-agentx-alert);
+	--color-agentx-unread-ink: #ffffff;
+	/* Lifted while tasks wait and inset while none do, the way the site's view switch reads. */
+	--color-agentx-bell-waiting: var(--color-agentx-tab);
+	--color-agentx-bell-rest: var(--color-agentx-tabs);
+	--agentx-bell-waiting-shadow: var(--agentx-tab-shadow);
+	--color-agentx-more-ink: var(--color-agentx-header-ink);
+	--color-agentx-more-hover: var(--color-agentx-header-hover);
+	--color-agentx-header-link-ink: var(--color-agentx-header-ink);
+	--color-agentx-header-link-hover: var(--color-agentx-header-hover);
+	--color-agentx-menu-border: var(--color-agentx-panel-border);
+	--agentx-menu-shadow: var(--agentx-panel-shadow);
+	--radius-agentx-menu: var(--radius-agentx-control);
+	--color-agentx-menu-ink: var(--color-agentx-ink);
+	--color-agentx-menu-icon: var(--color-agentx-menu-ink);
+	--color-agentx-menu-muted: var(--color-agentx-muted);
+	--color-agentx-menu-hover: var(--color-agentx-hover);
+	--radius-agentx-menu-item: var(--radius-agentx-menu);
+	--text-agentx-menu-item: var(--text-agentx-body);
+	--text-agentx-menu-item--line-height: var(--text-agentx-body--line-height);
+	--color-agentx-notification-ink: var(--color-agentx-menu-ink);
+	--color-agentx-notification-icon: var(--color-agentx-notification-ink);
+	--color-agentx-notification-title-ink: var(--color-agentx-menu-muted);
+	--color-agentx-notification-hover: var(--color-agentx-menu-hover);
+	--color-agentx-notification-dismiss: var(--color-agentx-menu-muted);
+	--color-agentx-user-message: var(--color-agentx-field);
+	--color-agentx-user-message-ink: var(--color-agentx-ink);
+	--color-agentx-user-message-border: var(--color-agentx-field-border);
+	--radius-agentx-user-message: var(--radius-agentx-control);
+	--agentx-user-message-shadow: 0 0 #0000;
+	--color-agentx-user-message-attachment: var(--color-agentx-message-muted);
+	--color-agentx-not-answered: var(--color-agentx-message-muted);
+	--color-agentx-reply-ink: var(--color-agentx-message-ink);
+	--leading-agentx-reply: 1.625;
+	--color-agentx-reply-link: var(--color-agentx-reply-ink);
+	--font-weight-agentx-reply-heading: var(--font-weight-agentx-title, 600);
+	--color-agentx-code: var(--color-agentx-hover);
+	--radius-agentx-code: 0.125rem;
+	--color-agentx-status: var(--color-agentx-message-muted);
+	--color-agentx-spinner: var(--color-agentx-message-muted);
+	--color-agentx-spinner-accent: var(--color-agentx-accent);
+	--color-agentx-steps: var(--color-agentx-message-muted);
+	--color-agentx-step-failed: var(--color-agentx-alert);
+	--color-agentx-step-failed-ink: var(--color-agentx-accent-ink);
+	--color-agentx-record-label: var(--color-agentx-message-muted);
+	--color-agentx-thumb: var(--color-agentx-field);
+	--color-agentx-thumb-border: var(--color-agentx-field-border);
+	--radius-agentx-thumb: var(--radius-agentx-control);
+	--color-agentx-plan: transparent;
+	--color-agentx-plan-ink: var(--color-agentx-message-ink);
+	--color-agentx-plan-muted: var(--color-agentx-message-muted);
+	--color-agentx-plan-border: var(--color-agentx-field-border);
+	--radius-agentx-plan: var(--radius-agentx);
+	--agentx-plan-shadow: var(--agentx-shadow, 0 0 #0000);
+	--agentx-plan-blur: 12px;
+	--font-weight-agentx-plan-title: var(--font-weight-agentx-title, 500);
+	--color-agentx-plan-done: var(--color-agentx-plan-muted);
+	--color-agentx-plan-done-check: var(--color-agentx-field);
+	--color-agentx-plan-running: var(--color-agentx-plan-ink);
+	--color-agentx-plan-stop-ink: var(--color-agentx-plan-ink);
+	--color-agentx-plan-stop-border: var(--color-agentx-field-border);
+	--color-agentx-plan-stop-hover: var(--color-agentx-hover);
+	--text-agentx-plan-stop-label: calc(var(--text-agentx-body) - 1px);
+	--color-agentx-queued: var(--color-agentx-user-message);
+	--color-agentx-queued-ink: var(--color-agentx-user-message-ink);
+	--color-agentx-queued-border: var(--color-agentx-user-message-border);
+	--radius-agentx-queued: var(--radius-agentx-user-message);
+	--color-agentx-queued-action: var(--color-agentx-message-muted);
+	--color-agentx-queued-action-hover: var(--color-agentx-message-ink);
+	--color-agentx-greeting-ink: var(--color-agentx-message-ink);
+	--color-agentx-greeting-muted: var(--color-agentx-message-muted);
+	--text-agentx-greeting-title: 1.25rem;
+	--text-agentx-greeting-title--line-height: calc(1.75 / 1.25);
+	--font-weight-agentx-greeting-title: var(--font-weight-agentx-title, 600);
+	--color-agentx-suggestion: transparent;
+	--color-agentx-suggestion-ink: var(--color-agentx-message-ink);
+	--color-agentx-suggestion-border: var(--color-agentx-field-border);
+	--color-agentx-suggestion-hover: var(--color-agentx-hover);
+	--radius-agentx-suggestion: calc(infinity * 1px);
+	--color-agentx-scrollbar: var(--color-agentx-message-muted);
+	--spacing-agentx-log-fade: 4rem;
+	--color-agentx-notice-ink: var(--color-agentx-cards-ink);
+	--color-agentx-notice-muted: var(--color-agentx-cards-muted);
+	--radius-agentx-notice: var(--radius-agentx-cards);
+	--radius-agentx-notice-row: calc(var(--radius-agentx-control) + 0.5rem);
+	--text-agentx-notice-body: var(--text-agentx-body);
+	--text-agentx-notice-body--line-height: var(--text-agentx-body--line-height);
+	--color-agentx-notice-title-ink: var(--color-agentx-notice-ink);
+	--color-agentx-notice-close: var(--color-agentx-notice-muted);
+	--color-agentx-option: var(--color-agentx-field);
+	--color-agentx-option-ink: var(--color-agentx-ink);
+	--color-agentx-option-border: var(--color-agentx-field-border);
+	--color-agentx-option-hover: var(--color-agentx-hover);
+	--radius-agentx-option: var(--radius-agentx-control);
+	--color-agentx-list: var(--color-agentx-field);
+	--color-agentx-list-ink: var(--color-agentx-ink);
+	--color-agentx-list-border: var(--color-agentx-field-border);
+	--color-agentx-list-hover: var(--color-agentx-hover);
+	--color-agentx-badge: var(--color-agentx-field);
+	--color-agentx-badge-ink: var(--color-agentx-ink);
+	--color-agentx-badge-border: var(--color-agentx-field-border);
+	--color-agentx-preview-pressed: var(--color-agentx-accent);
+	--color-agentx-question-card: var(--color-agentx-notice);
+	--color-agentx-question-card-border: var(--color-agentx-notice-border);
+	--color-agentx-question-card-ink: var(--color-agentx-notice-ink);
+	--color-agentx-choice-card: var(--color-agentx-notice);
+	--color-agentx-choice-card-border: var(--color-agentx-notice-border);
+	--color-agentx-choice-card-ink: var(--color-agentx-notice-ink);
+	--color-agentx-checklist-card: var(--color-agentx-notice);
+	--color-agentx-checklist-card-border: var(--color-agentx-notice-border);
+	--color-agentx-checklist-card-ink: var(--color-agentx-notice-ink);
+	--color-agentx-form-card: var(--color-agentx-notice);
+	--color-agentx-form-card-border: var(--color-agentx-notice-border);
+	--color-agentx-form-card-ink: var(--color-agentx-notice-ink);
+	--color-agentx-confirm-card: var(--color-agentx-notice);
+	--color-agentx-confirm-card-border: var(--color-agentx-notice-border);
+	--color-agentx-confirm-card-ink: var(--color-agentx-notice-ink);
+	--color-agentx-update-card: var(--color-agentx-notice);
+	--color-agentx-update-card-border: var(--color-agentx-notice-border);
+	--color-agentx-update-card-ink: var(--color-agentx-notice-ink);
+	--color-agentx-error-card: var(--color-agentx-notice);
+	--color-agentx-error-card-border: var(--color-agentx-notice-border);
+	--color-agentx-error-card-ink: var(--color-agentx-notice-ink);
+	--color-agentx-page-choice-card: var(--color-agentx-notice);
+	--color-agentx-page-choice-card-border: var(--color-agentx-notice-border);
+	--color-agentx-page-choice-card-ink: var(--color-agentx-notice-ink);
+	--color-agentx-color-choice-card: var(--color-agentx-notice);
+	--color-agentx-color-choice-card-border: var(--color-agentx-notice-border);
+	--color-agentx-color-choice-card-ink: var(--color-agentx-notice-ink);
+	--color-agentx-color-picker-card: var(--color-agentx-notice);
+	--color-agentx-color-picker-card-border: var(--color-agentx-notice-border);
+	--color-agentx-color-picker-card-ink: var(--color-agentx-notice-ink);
+	--color-agentx-swatch-check-dark: #1e1e1e;
+	--color-agentx-swatch-check-light: #ffffff;
+	--color-agentx-image-card: var(--color-agentx-notice);
+	--color-agentx-image-card-border: var(--color-agentx-notice-border);
+	--color-agentx-image-card-ink: var(--color-agentx-notice-ink);
+	--color-agentx-image-card-drop: var(--color-agentx-accent);
+	--color-agentx-report-card: var(--color-agentx-notice);
+	--color-agentx-report-card-border: var(--color-agentx-notice-border);
+	--color-agentx-report-card-ink: var(--color-agentx-notice-ink);
+	--color-agentx-nudge-card: var(--color-agentx-notice);
+	--color-agentx-nudge-card-border: var(--color-agentx-notice-border);
+	--color-agentx-nudge-card-ink: var(--color-agentx-notice-ink);
+	--color-agentx-nudge-card-hover: var(--color-agentx-hover);
+	--color-agentx-refresh-card: var(--color-agentx-notice);
+	--color-agentx-refresh-card-border: var(--color-agentx-notice-border);
+	--color-agentx-refresh-card-ink: var(--color-agentx-notice-ink);
+	--color-agentx-refresh-card-quote: color-mix(
+		in oklab,
+		var(--color-agentx-ink) 15%,
+		transparent
+	);
+	--color-agentx-task-card: var(--color-agentx-notice);
+	--color-agentx-task-card-border: var(--color-agentx-notice-border);
+	--color-agentx-task-card-ink: var(--color-agentx-notice-ink);
+	--color-agentx-feedback-card: var(--color-agentx-notice);
+	--color-agentx-feedback-card-border: var(--color-agentx-notice-border);
+	--color-agentx-feedback-card-ink: var(--color-agentx-notice-ink);
+	--color-agentx-proactive-card: var(--color-agentx-notice);
+	--color-agentx-proactive-card-border: var(--color-agentx-notice-border);
+	--color-agentx-proactive-card-ink: var(--color-agentx-notice-ink);
+	--color-agentx-action-card: var(--color-agentx-notice);
+	--color-agentx-action-card-border: var(--color-agentx-notice-border);
+	--color-agentx-action-card-ink: var(--color-agentx-notice-ink);
+	--color-agentx-too-long-card: var(--color-agentx-notice);
+	--color-agentx-too-long-card-border: var(--color-agentx-notice-border);
+	--color-agentx-too-long-card-ink: var(--color-agentx-alert);
+	--color-agentx-unsaved-bar: var(--color-agentx-notice);
+	--color-agentx-unsaved-bar-border: var(--color-agentx-notice-border);
+	--color-agentx-unsaved-bar-ink: var(--color-agentx-notice-ink);
+	--color-agentx-unsaved-bar-hover: var(--color-agentx-hover);
+	--agentx-unsaved-bar-blur: 12px;
+	--color-agentx-save: var(--color-agentx-cards-primary);
+	--color-agentx-save-ink: var(--color-agentx-cards-primary-ink);
+	--color-agentx-presence-card: var(--color-agentx-unsaved-bar);
+	--color-agentx-presence-card-border: var(--color-agentx-unsaved-bar-border);
+	--color-agentx-presence-card-ink: var(--color-agentx-notice-muted);
+	--color-agentx-card-ink: var(--color-agentx-cards-ink);
+	--color-agentx-card-muted: var(--color-agentx-cards-muted);
+	--radius-agentx-card: var(--radius-agentx-cards);
+	--agentx-card-shadow: var(--agentx-cards-shadow);
+	--color-agentx-card-header: transparent;
+	--color-agentx-card-header-ink: var(--color-agentx-card-ink);
+	--color-agentx-card-header-hover: transparent;
+	--color-agentx-card-header-border: transparent;
+	--color-agentx-card-chevron: var(--color-agentx-card-muted);
+	--color-agentx-card-chevron-hover: var(--color-agentx-card-header-ink);
+	--color-agentx-card-icon: transparent;
+	--color-agentx-card-icon-ink: var(--color-agentx-card-header-ink);
+	--color-agentx-card-icon-border: var(--color-agentx-card-border);
+	--color-agentx-card-title-ink: var(--color-agentx-card-header-ink);
+	--text-agentx-card-title: var(--text-agentx-body);
+	--text-agentx-card-title--line-height: var(--text-agentx-body--line-height);
+	--font-weight-agentx-card-title: var(--font-weight-agentx-title, 600);
+	--color-agentx-card-subtitle: var(--color-agentx-card-muted);
+	--color-agentx-design-tabs: var(--color-agentx-tabs);
+	--color-agentx-design-tabs-ink: var(--color-agentx-card-muted);
+	--color-agentx-design-tabs-hover-ink: var(--color-agentx-card-ink);
+	--color-agentx-design-tab: var(--color-agentx-tab);
+	--color-agentx-design-tab-ink: var(--color-agentx-card-ink);
+	--agentx-design-tab-shadow: var(--agentx-tab-shadow);
+	--color-agentx-design-tabs-disabled-ink: color-mix(
+		in oklab,
+		var(--color-agentx-card-ink) 30%,
+		transparent
+	);
+	--color-agentx-design-option: var(--color-agentx-card);
+	--color-agentx-design-option-ink: var(--color-agentx-card-ink);
+	--color-agentx-design-option-border: var(--color-agentx-card-border);
+	--color-agentx-design-option-hover-border: currentColor;
+	--radius-agentx-design-option: var(--radius-agentx-control);
+	--color-agentx-design-option-loading: var(--color-agentx-hover);
+	--color-agentx-picked-ink: var(--color-agentx-accent-ink);
+	--color-agentx-picked-rim: #ffffff;
+	--agentx-picked-shadow: var(--agentx-panel-shadow);
+	--color-agentx-layout-thumb: var(--color-agentx-hover);
+	--color-agentx-layout-thumb-border: var(--color-agentx-card-border);
+	--color-agentx-layout-thumb-hover-border: var(--color-agentx-card-ink);
+	--color-agentx-layout-thumb-picked: var(--color-agentx-tile-picked);
+	--color-agentx-scroll-track: var(--color-agentx-tabs);
+	--color-agentx-scroll-thumb: var(--color-agentx-card-muted);
+	--color-agentx-scroll-thumb-hover: var(--color-agentx-card-ink);
+	--color-agentx-card-image-border: var(--color-agentx-card-border);
+	--color-agentx-sheet-ink: var(--color-agentx-cards-ink);
+	--color-agentx-sheet-muted: var(--color-agentx-cards-muted);
+	--color-agentx-sheet-border: transparent;
+	--radius-agentx-sheet: var(--radius-agentx-cards);
+	--color-agentx-sheet-hover: var(--color-agentx-hover);
+	--color-agentx-sheet-line: var(--color-agentx-field-border);
+	--color-agentx-sheet-scrim: transparent;
+	--color-agentx-sheet-title-ink: var(--color-agentx-sheet-ink);
+	--text-agentx-sheet-title: 1rem;
+	--text-agentx-sheet-title--line-height: 1.5;
+	--font-weight-agentx-sheet-title: var(--font-weight-agentx-title, 500);
+	--color-agentx-sheet-close: var(--color-agentx-sheet-muted);
+	--color-agentx-sheet-handle: var(--color-agentx-sheet-line);
+	--color-agentx-sheet-handle-hover: var(--color-agentx-sheet-muted);
+	--color-agentx-sheet-tab-ink: var(--color-agentx-sheet-muted);
+	--color-agentx-sheet-tab-hover: var(--color-agentx-sheet-hover);
+	--color-agentx-sheet-tab-selected-ink: var(--color-agentx-sheet-ink);
+	--color-agentx-sheet-tab-indicator: var(--color-agentx-accent);
+	--color-agentx-sheet-upload-border: var(--color-agentx-sheet-line);
+	--color-agentx-sheet-upload-active: var(--color-agentx-accent);
+	--color-agentx-sheet-upload-ink: var(--color-agentx-sheet-muted);
+	--color-agentx-sheet-field: var(--color-agentx-field);
+	--color-agentx-sheet-field-ink: var(--color-agentx-ink);
+	--color-agentx-sheet-field-border: var(--color-agentx-sheet-line);
+	--color-agentx-sheet-tile: var(--color-agentx-sheet-hover);
+	--color-agentx-sheet-tile-hover-ring: var(--color-agentx-sheet-line);
+	--color-agentx-sheet-tile-picked: var(--color-agentx-accent);
+	--color-agentx-sheet-tag: color-mix(
+		in oklab,
+		var(--color-agentx-ink) 70%,
+		transparent
+	);
+	--color-agentx-sheet-tag-ink: #ffffff;
+	--color-agentx-sheet-primary: var(--color-agentx-cards-primary);
+	--color-agentx-sheet-primary-ink: var(--color-agentx-cards-primary-ink);
+	--color-agentx-commands-heading: var(--color-agentx-sheet-muted);
+	--color-agentx-commands-item-ink: var(--color-agentx-sheet-ink);
+	--color-agentx-commands-item-active: var(--color-agentx-sheet-hover);
+	--color-agentx-history-row: var(--color-agentx-card);
+	--color-agentx-history-row-border: var(--color-agentx-card-border);
+	--color-agentx-history-row-ink: var(--color-agentx-card-ink);
+	--color-agentx-history-icon: var(--color-agentx-sheet-hover);
+	--color-agentx-history-viewing: var(--color-agentx-picked);
+	--color-agentx-history-current: var(--color-agentx-accent);
+	--color-agentx-history-current-ink: var(--color-agentx-accent-ink);
+	--color-agentx-bubble-menu: var(--color-agentx-bubble);
+	--radius-agentx-bubble-menu: calc(var(--radius-agentx-quick-edit) + 0.25rem);
+	--agentx-bubble-menu-shadow: var(--agentx-quick-edit-shadow);
+	--color-agentx-bubble-row-ink: var(--color-agentx-bubble-ink);
+	--color-agentx-bubble-row-hover: var(--color-agentx-bubble-hover);
+	--color-agentx-bubble-row-muted: var(--color-agentx-bubble-muted);
+	--color-agentx-quick-edit-bar: var(--color-agentx-bubble);
+	--color-agentx-quick-edit-bar-ink: var(--color-agentx-bubble-ink);
+	--agentx-quick-edit-bar-shadow: var(--agentx-quick-edit-shadow);
+	--color-agentx-quick-edit-divider: var(--color-agentx-bubble-border);
+	--color-agentx-quick-edit-popover: var(--color-agentx-quick-edit-bar);
+	--color-agentx-quick-edit-popover-ink: var(--color-agentx-quick-edit-bar-ink);
+	--color-agentx-quick-edit-tool-ink: var(--color-agentx-quick-edit-bar-ink);
+	--color-agentx-quick-edit-tool-hover: var(--color-agentx-bubble-hover);
+	--color-agentx-quick-edit-tool-pressed: var(
+		--color-agentx-quick-edit-pressed
+	);
+	--color-agentx-quick-edit-highlight-ink: var(
+		--color-agentx-quick-edit-tool-ink
+	);
+	--color-agentx-quick-edit-button-ink: var(--color-agentx-quick-edit-bar-ink);
+	--color-agentx-quick-edit-button-hover: var(--color-agentx-bubble-hover);
+	--color-agentx-quick-edit-save: var(--color-agentx-primary);
+	--color-agentx-quick-edit-save-ink: var(--color-agentx-primary-ink);
+	--color-agentx-quick-edit-save-hover: var(--color-agentx-quick-edit-save);
+	--color-agentx-quick-edit-field: transparent;
+	--color-agentx-quick-edit-field-ink: var(--color-agentx-quick-edit-bar-ink);
+	--color-agentx-quick-edit-field-border: var(--color-agentx-bubble-border);
+	--color-agentx-quick-edit-field-focus: var(--color-agentx-accent);
+	--color-agentx-quick-edit-option-hover: var(--color-agentx-bubble-hover);
+	--color-agentx-quick-edit-option-selected: var(
+		--color-agentx-quick-edit-pressed
+	);
+	--color-agentx-quick-edit-option-detail: var(--color-agentx-bubble-muted);
+	--color-agentx-quick-edit-swatch-border: var(--color-agentx-bubble-border);
+	--color-agentx-quick-edit-swatch-picked: var(--color-agentx-accent);
+	--radius-agentx-quick-edit-swatch: calc(infinity * 1px);
+	--color-agentx-quick-edit-slider: var(--color-agentx-accent);
+	--color-agentx-quick-edit-label: var(--color-agentx-bubble-muted);
+	--color-agentx-quick-edit-drag: var(--color-agentx-quick-edit-label);
+	--color-agentx-quick-edit-problem: var(--color-agentx-quick-edit-bar-ink);
+	--color-agentx-quick-edit-tab-ink: var(--color-agentx-quick-edit-bar-ink);
+	--color-agentx-quick-edit-tab-hover: var(--color-agentx-bubble-hover);
+	--color-agentx-quick-edit-tab-selected: var(
+		--color-agentx-quick-edit-pressed
+	);
+	--color-agentx-quick-edit-tile: var(--color-agentx-bubble-hover);
+	--color-agentx-quick-edit-tile-picked: var(--color-agentx-accent);
+	--color-agentx-quick-edit-drop-border: var(--color-agentx-bubble-border);
+	--color-agentx-quick-edit-drop-active: var(--color-agentx-accent);
+	--color-agentx-quick-edit-image-button: var(--color-agentx-primary);
+	--color-agentx-quick-edit-image-button-ink: var(--color-agentx-primary-ink);
+	--agentx-selection-width: 3px;
+	--agentx-selection-grain: 0.14;
+	--agentx-selection-blur: 2px;
+	--color-agentx-selection-veil: rgb(255 255 255 / 0.06);
+	/* Tints of the background color, so the gradient follows it. */
+	--color-agentx-surface-glow-top-left: color-mix(
+		in oklch,
+		var(--color-agentx-surface) 60%,
+		white
+	);
+	--color-agentx-surface-glow-top: color-mix(
+		in oklch,
+		var(--color-agentx-surface) 70%,
+		oklch(0.7 0.16 262)
+	);
+	--color-agentx-surface-glow-left: color-mix(
+		in oklch,
+		var(--color-agentx-surface) 70%,
+		oklch(0.75 0.17 70)
+	);
+	--color-agentx-surface-glow-bottom-left: color-mix(
+		in oklch,
+		var(--color-agentx-surface) 70%,
+		oklch(0.72 0.16 200)
+	);
+	--color-agentx-surface-glow-bottom-right: color-mix(
+		in oklch,
+		var(--color-agentx-surface) 75%,
+		oklch(0.7 0.12 300)
+	);
+	--color-agentx-surface-base-from: color-mix(
+		in oklch,
+		var(--color-agentx-surface) 95%,
+		oklch(0.8 0.08 260)
+	);
+	--color-agentx-surface-base-to: color-mix(
+		in oklch,
+		var(--color-agentx-surface) 80%,
+		oklch(0.605 0.04 260)
+	);
+	--color-agentx-page-preview: var(--color-agentx-site);
+	--radius-agentx-page-preview: var(--radius-agentx-site);
+	--agentx-page-preview-shadow: var(--agentx-site-shadow);
+	--color-agentx-view-switch: var(--color-agentx-tabs);
+	--color-agentx-view-switch-ink: var(--color-agentx-muted);
+	--color-agentx-view-switch-hover: var(--color-agentx-hover);
+	--color-agentx-view-switch-hover-ink: var(--color-agentx-ink);
+	--color-agentx-view-switch-active: var(--color-agentx-tab);
+	--color-agentx-view-switch-active-ink: var(--color-agentx-ink);
+	--agentx-view-switch-active-shadow: var(--agentx-tab-shadow);
+	--radius-agentx-view-switch: var(--radius-agentx-control);
+	--color-agentx-switch-spinner: var(--color-agentx-ink);
+	--color-agentx-switch-spinner-mid: #ffffff;
+	--color-agentx-tooltip-muted: color-mix(
+		in oklab,
+		var(--color-agentx-tooltip-ink) 60%,
+		transparent
+	);
+	--radius-agentx-tooltip: var(--radius-agentx-control);
+	--agentx-tooltip-shadow: var(--agentx-panel-shadow);
+	--text-agentx-tooltip-label: var(--text-agentx-caption);
+	--text-agentx-tooltip-label--line-height: var(
+		--text-agentx-caption--line-height
+	);
+	--color-agentx-phone-sheet: var(--color-agentx-surface);
+	--radius-agentx-phone-sheet: var(--radius-agentx);
+	--agentx-phone-sheet-shadow: var(--agentx-site-shadow);
+	--color-agentx-phone-sheet-handle: color-mix(
+		in oklab,
+		var(--color-agentx-ink) 25%,
+		transparent
+	);
+	--color-agentx-admin-window-border: var(--color-agentx-notice-border);
+	--agentx-admin-window-shadow: var(--agentx-notice-shadow);
+	--radius-agentx-admin-window: var(--radius-agentx);
+	--color-agentx-admin-window-drag: color-mix(
+		in oklab,
+		var(--color-agentx-brand-ink) 60%,
+		transparent
+	);
+	--radius-agentx-slot: var(--radius-agentx);
+	--color-agentx-inverse-hover: color-mix(
+		in oklab,
+		var(--color-agentx-inverse-ink) 10%,
+		transparent
+	);
+	--color-agentx-guide-ink: var(--color-agentx-ink);
+	--color-agentx-guide-muted: var(--color-agentx-muted);
+	--text-agentx-guide-title: 1rem;
+	--text-agentx-guide-title--line-height: 1.5;
+	--font-weight-agentx-guide-title: var(--font-weight-agentx-title, 600);
+	--color-agentx-guide-progress: var(--color-agentx-accent);
+	--color-agentx-guide-progress-track: color-mix(
+		in oklab,
+		var(--color-agentx-guide-progress) 20%,
+		transparent
+	);
+	--color-agentx-guide-progress-ink: var(--color-agentx-accent-ink);
+	--color-agentx-guide-step-hover: var(--color-agentx-hover);
+	--color-agentx-guide-step-done-ink: var(--color-agentx-guide-muted);
+	/* Under 65% fails AA on the darker parts of the surface gradient. */
+	--color-agentx-guide-idle-ink: color-mix(
+		in srgb,
+		var(--color-agentx-guide-ink) 70%,
+		transparent
+	);
+	--radius-agentx-guide-step: var(--radius-agentx);
+	--color-agentx-guide-circle: var(--color-agentx-card);
+	--color-agentx-guide-circle-ink: var(--color-agentx-card-ink);
+	--color-agentx-guide-circle-border: var(--color-agentx-card-border);
+	--color-agentx-guide-circle-done: color-mix(
+		in oklab,
+		var(--color-agentx-ink) 6%,
+		transparent
+	);
+	--color-agentx-guide-line: color-mix(
+		in oklab,
+		var(--color-agentx-ink) 15%,
+		transparent
+	);
+	--color-agentx-guide-step: var(--color-agentx-card);
+	--color-agentx-guide-step-border: transparent;
+	--agentx-guide-step-shadow: var(--agentx-notice-shadow);
+	--color-agentx-guide-next: var(--color-agentx-primary);
+	--color-agentx-guide-next-ink: var(--color-agentx-primary-ink);
+	--color-agentx-guide-field: transparent;
+	--color-agentx-guide-list: var(--color-agentx-card);
+	--color-agentx-guide-list-border: color-mix(
+		in oklab,
+		var(--color-agentx-ink) 10%,
+		transparent
+	);
+	--color-agentx-tile-border: color-mix(
+		in oklab,
+		var(--color-agentx-ink) 10%,
+		transparent
+	);
+	--color-agentx-tile-hover-border: color-mix(
+		in oklab,
+		var(--color-agentx-ink) 30%,
+		transparent
+	);
+	--color-agentx-tile-picked: var(--color-agentx-accent);
+	--color-agentx-guide-speed-ink: color-mix(
+		in oklab,
+		var(--color-agentx-ink) 60%,
+		transparent
+	);
+	--color-agentx-drop-zone-border: var(--color-agentx-field-border);
+	--color-agentx-drop-zone-active: var(--color-agentx-accent);
+	--color-agentx-drop-zone-hover: var(--color-agentx-hover);
+	--color-agentx-guide-divider: var(--color-agentx-field-border);
+	--color-agentx-guide-link: var(--color-agentx-guide-muted);
+	--color-agentx-guide-danger-ink: var(--color-agentx-alert);
+
+	@keyframes agentx-tooltip {
+		from {
+			opacity: 0;
+			scale: 0.97;
+		}
+	}
+
+	@keyframes agentx-shimmer {
+		from {
+			background-position: 100% 0;
+		}
+		to {
+			background-position: -100% 0;
+		}
+	}
+
+	/* Each speed plays a tile, then rests 1.5s; the tile's own properties set its start. */
+	@keyframes agentx-tile-slow {
+		from {
+			opacity: var(--agentx-tile-opacity, 1);
+			translate: var(--agentx-tile-translate, 0);
+			scale: var(--agentx-tile-scale, 1);
+		}
+		37.5%,
+		to {
+			opacity: 1;
+			translate: 0;
+			scale: 1;
+		}
+	}
+
+	@keyframes agentx-tile-medium {
+		from {
+			opacity: var(--agentx-tile-opacity, 1);
+			translate: var(--agentx-tile-translate, 0);
+			scale: var(--agentx-tile-scale, 1);
+		}
+		28.6%,
+		to {
+			opacity: 1;
+			translate: 0;
+			scale: 1;
+		}
+	}
+
+	@keyframes agentx-tile-fast {
+		from {
+			opacity: var(--agentx-tile-opacity, 1);
+			translate: var(--agentx-tile-translate, 0);
+			scale: var(--agentx-tile-scale, 1);
+		}
+		18.9%,
+		to {
+			opacity: 1;
+			translate: 0;
+			scale: 1;
+		}
+	}
+}
+
+@custom-variant keys (:root[data-agentx-keys] &);
+
+/* The ring the keyboard's focus draws, the same on every control. */
+@utility agentx-focus {
+	/* Otherwise the browser rings focus moved by script, like a card a run ends on. */
+	&:focus-visible {
+		outline: none;
+	}
+	:root[data-agentx-keys] &:focus-visible {
+		outline: var(--agentx-focus-width) solid var(--color-agentx-focus);
+		outline-offset: 2px;
+	}
+}
+
+/* Drawn inside the edge, for fields and tabs that sit flush against their neighbors. */
+@utility agentx-focus-inset {
+	&:focus-visible {
+		outline: none;
+	}
+	:root[data-agentx-keys] &:focus-visible {
+		outline: var(--agentx-focus-width) solid var(--color-agentx-focus);
+		outline-offset: calc(var(--agentx-focus-width) * -1);
+	}
+}
+
+@layer components {
+	.extendify-agentx-surface {
+		@apply bg-agentx-surface font-agentx text-agentx-ink;
+		background-image: var(--agentx-surface-image);
+	}
+
+	/* A partner's shader takes the gradient's place behind the chat and the site. */
+	.extendify-agentx-surface:has(> [data-agentx-backdrop]) {
+		background-image: none;
+	}
+
+	/* The lit arc is a square larger than the pill, turning behind it; the pill's own fill hides all but the edge. */
+	.extendify-agentx-working-shine {
+		position: relative;
+		display: inline-block;
+		padding: var(--agentx-working-shine-width);
+		border-radius: 9999px;
+		overflow: hidden;
+		isolation: isolate;
+	}
+
+	/* The pill paints over the turning arc, leaving only the rim of it showing. */
+	.extendify-agentx-working-shine > * {
+		position: relative;
+	}
+
+	.extendify-agentx-working-shine::before {
+		content: "";
+		position: absolute;
+		left: 50%;
+		top: 50%;
+		width: 320px;
+		height: 320px;
+		margin: -160px 0 0 -160px;
+		background: conic-gradient(
+			transparent 0deg,
+			transparent calc(360deg - var(--agentx-working-shine-arc)),
+			var(--color-agentx-working-shine)
+				calc(360deg - var(--agentx-working-shine-arc) / 2),
+			transparent 360deg
+		);
+		animation: extendify-agentx-working-turn var(--agentx-working-shine-speed)
+			linear infinite;
+	}
+
+	/* Fades out just past the toast; no height turns it off. */
+	.extendify-agentx-working-glow {
+		position: absolute;
+		inset-inline: 0;
+		bottom: 0;
+		height: var(--agentx-working-glow-height);
+		pointer-events: none;
+		/* A light under the toast rather than a band across the foot: blurred, it reads as glow.
+		 */
+		background: radial-gradient(
+			130% 110% at 50% 100%,
+			color-mix(
+					in srgb,
+					var(--color-agentx-working-glow)
+						calc(var(--agentx-working-glow-strength) * 100%),
+					transparent
+				)
+				0%,
+			color-mix(
+					in srgb,
+					var(--color-agentx-working-glow)
+						calc(var(--agentx-working-glow-strength) * 40%),
+					transparent
+				)
+				45%,
+			transparent 100%
+		);
+		filter: blur(var(--agentx-working-glow-blur));
+		animation: extendify-agentx-working-breathe var(--agentx-working-glow-speed)
+			ease-in-out infinite;
+	}
+
+	@media (prefers-reduced-motion: reduce) {
+		.extendify-agentx-working-shine::before,
+		.extendify-agentx-working-glow {
+			animation: none;
+		}
+	}
+}
+
+@keyframes extendify-agentx-working-turn {
+	to {
+		transform: rotate(1turn);
+	}
+}
+
+@keyframes extendify-agentx-working-breathe {
+	0%,
+	100% {
+		opacity: 0.55;
+	}
+	50% {
+		opacity: 1;
+	}
+}
+
+/* no-prefix */
+html:has(#extendify-agentx-toolbar) #wpadminbar {
+	display: none !important;
+}
+
+/* no-prefix */
+#wpadminbar #wp-admin-bar-extendify-agentx > .ab-item {
+	display: flex;
+	align-items: center;
+	gap: 4px;
+}
+
+/* no-prefix */
+#wpadminbar #wp-admin-bar-extendify-agentx svg {
+	flex-shrink: 0;
+}
+
+/* wp-admin styles text and fields unlayered, which outranks the layered reset in the floating agent. */
+/* no-prefix */
+#extendify-agentx-admin-panel
+	:where(p, h1, h2, h3, h4, ul, ol, li, figure, blockquote, pre, code) {
+	margin: 0;
+	font-size: inherit;
+	line-height: inherit;
+}
+
+/* no-prefix */
+#extendify-agentx-admin-panel :where(a) {
+	color: inherit;
+}
+
+/* no-prefix */
+#extendify-agentx-admin-panel :where(input, textarea, select),
+#extendify-agentx-admin-panel :where(input, textarea, select):focus {
+	box-shadow: none;
+	border-radius: 0;
+	min-height: 0;
+	max-width: none;
+	background-image: none;
+	font-size: inherit;
+	line-height: inherit;
+	color: inherit;
+}
+
+/* no-prefix */
+#extendify-agentx-admin-panel
+	:where(input[type="checkbox"], input[type="radio"]) {
+	appearance: auto;
+	border: 0;
+	background: none;
+}
+
+/* no-prefix */
+#extendify-agentx-admin-panel
+	:where(input[type="checkbox"], input[type="radio"])::before {
+	content: none;
+}
+
+/* WordPress hides most admin bar items on a phone, which would leave no way to open it. */
+@media screen and (max-width: 782px) {
+	/* no-prefix */
+	#wpadminbar li#wp-admin-bar-extendify-agentx {
+		display: block;
+	}
+
+	/* no-prefix */
+	#wpadminbar #wp-admin-bar-extendify-agentx > .ab-item {
+		justify-content: center;
+		width: 52px;
+		height: 46px;
+		padding: 0;
+	}
+
+	/* no-prefix */
+	#wpadminbar #wp-admin-bar-extendify-agentx .ab-label {
+		display: none;
+	}
+
+	/* no-prefix */
+	#wpadminbar #wp-admin-bar-extendify-agentx svg {
+		width: 26px;
+		height: 26px;
+	}
+}

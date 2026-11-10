@@ -2,16 +2,21 @@ import { handleDesignBuild } from '@auto-launch/fetchers/get-design-build';
 import { handleHome } from '@auto-launch/fetchers/get-home';
 import { handleSiteImages } from '@auto-launch/fetchers/get-images';
 import { handleLaunchDecisions } from '@auto-launch/fetchers/get-launch-decisions';
-import { handleSiteLogo } from '@auto-launch/fetchers/get-logo';
+import {
+	handleFallbackSiteIcon,
+	handleSiteLogo,
+} from '@auto-launch/fetchers/get-logo';
 import { handlePages } from '@auto-launch/fetchers/get-pages';
 import { handleSitePlugins } from '@auto-launch/fetchers/get-plugins';
 import { handleSiteProfile } from '@auto-launch/fetchers/get-profile';
 import { handleSiteStrings } from '@auto-launch/fetchers/get-strings';
 import { handleSiteStyle } from '@auto-launch/fetchers/get-style';
+import { businessInfoOf } from '@auto-launch/functions/business-info';
 import {
 	installFontFamilies,
 	mergeFontsIntoVariation,
 } from '@auto-launch/functions/fonts';
+import { emptyFailedFormSections } from '@auto-launch/functions/form-sections';
 import { apiFetchWithTimeout, setStatus } from '@auto-launch/functions/helpers';
 import { checkIn } from '@auto-launch/functions/insights';
 import {
@@ -38,6 +43,8 @@ import {
 } from '@auto-launch/functions/pages';
 import { generatePageContent } from '@auto-launch/functions/patterns';
 import {
+	activatePlaceholderDependencies,
+	addSecondLanguage,
 	alreadyActive,
 	ensurePluginsActive,
 	getActivePlugins,
@@ -174,7 +181,7 @@ export const useCreateSite = () => {
 	);
 
 	// needs: siteProfile
-	// provides: aiHeaders: [], aiBlogTitles: []
+	// provides: aiHeaders: [], aiBlogTitles: [], tagline
 	useRunStep(
 		'siteStrings',
 		() => {
@@ -263,15 +270,19 @@ export const useCreateSite = () => {
 			);
 			return ok ? data : null;
 		},
-		async ({ siteProfile, sitePlugins, siteStyle }) => {
+		async ({ siteProfile, sitePlugins, siteStyle, tagline, designBuild }) => {
 			checkIn({ stage: 'set_general', siteProfile, sitePlugins, siteStyle });
 
-			const { title } = siteProfile;
 			// translators: this is for a action log UI. Keep it short
 			addStatusMessage(launchStrings().statusAdmin);
 			await updateOption('permalink_structure', '/%postname%/');
 			setUserGaveConsent(true);
+			const { title } = siteProfile;
 			if (title) await updateOption('blogname', title);
+			if (tagline) {
+				await updateOption('blogdescription', tagline).catch(() => null);
+			}
+			await handleFallbackSiteIcon({ siteProfile, designBuild });
 		},
 	);
 
@@ -325,6 +336,7 @@ export const useCreateSite = () => {
 				structure === 'single-page' &&
 				Boolean(builtHome?.fullPage && builtHome.patterns?.length) &&
 				Boolean(designBuild?.pages?.length);
+			const skipSampleContent = designBuild?.sampleContent === false;
 			const imageUrls = siteImageUrls(siteImages);
 			const intendedPlugins = (sitePlugins ?? []).map(
 				({ wordpressSlug }) => wordpressSlug,
@@ -384,12 +396,16 @@ export const useCreateSite = () => {
 					.replace(/<!--\s*wp:navigation\b[^>]*.*\/-->/gis, '')
 					.replace(social, '');
 			}
-			headerCode = headerCode.replaceAll(
-				'206-555-0100',
+			const phone =
 				(typeof siteProfile.phoneNumber === 'string' &&
 					siteProfile.phoneNumber) ||
-					// translators: Use a number that is appropriate for the locale. It does not need to be this exact number. This is a placeholder phone number. For example, in pt_BR you could use (11) 91234-5678.
-					__('206-555-0100', 'extendify-local'),
+				// translators: Use a number that is appropriate for the locale. It does not need to be this exact number. This is a placeholder phone number. For example, in pt_BR you could use (11) 91234-5678.
+				__('206-555-0100', 'extendify-local');
+			const shown = headerCode.includes('206-555-0100') ? phone : '';
+			headerCode = headerCode.replaceAll('206-555-0100', phone);
+			await updateOption(
+				'extendify_business_info',
+				businessInfoOf(siteProfile, { shown }),
 			);
 			checkIn({ stage: 'set_navigation' });
 
@@ -446,8 +462,11 @@ export const useCreateSite = () => {
 			// Run these one page at a time so we don't end up
 			// with duplicate dependency issues
 			checkIn({ stage: 'replace_placeholder_patterns' });
+			await activatePlaceholderDependencies(pagesToActuallyCreate);
 			for (const page of pagesToActuallyCreate) {
-				const patterns = await replacePlaceholderPatterns(page.patterns);
+				const patterns = emptyFailedFormSections(
+					await replacePlaceholderPatterns(page.patterns),
+				);
 				const updatedPage = { ...page, patterns };
 				pagesReplaced.push(updatedPage);
 			}
@@ -476,7 +495,7 @@ export const useCreateSite = () => {
 			const blogPattern = home?.patterns?.find((pattern) =>
 				pattern.patternTypes.includes('blog-section'),
 			);
-			if (siteProfile.blog || blogPattern) {
+			if (!skipSampleContent && (siteProfile.blog || blogPattern)) {
 				checkIn({ stage: 'create_blog_sample_data' });
 				// translators: this is for a action log UI. Keep it short
 				addStatusMessage(launchStrings().statusBlog);
@@ -497,16 +516,32 @@ export const useCreateSite = () => {
 				imprint = await addImprintPage({ siteStyle }).catch(() => null);
 			}
 
+			const secondLanguage = data.urlParams?.multilingual;
+			if (typeof secondLanguage === 'string') {
+				if (alreadyActive(activePlugins, 'translatepress-multilingual')) {
+					const added = await addSecondLanguage(secondLanguage);
+					checkIn({
+						stage: added ? 'second_language_added' : 'second_language_failed',
+					});
+				}
+				setData('urlParams', {
+					...useLaunchDataStore.getState().urlParams,
+					multilingual: undefined,
+				});
+			}
+
 			const pluginPages = [];
 			if (alreadyActive(activePlugins, 'woocommerce')) {
-				checkIn({ stage: 'import_woocommerce_products' });
-				addStatusMessage(
-					// translators: this is for a action log UI. Keep it short
-					launchStrings().statusStore,
-				);
-				await apiFetchWithTimeout({
-					path: '/extendify/v1/auto-launch/import-woocommerce',
-				}).catch(() => null);
+				if (!skipSampleContent) {
+					checkIn({ stage: 'import_woocommerce_products' });
+					addStatusMessage(
+						// translators: this is for a action log UI. Keep it short
+						launchStrings().statusStore,
+					);
+					await apiFetchWithTimeout({
+						path: '/extendify/v1/auto-launch/import-woocommerce',
+					}).catch(() => null);
+				}
 				const id = await getOption('woocommerce_shop_page_id');
 				const shopPage = id ? await getPageById(id) : null;
 				if (shopPage) pluginPages.push(shopPage);

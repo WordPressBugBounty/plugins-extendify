@@ -96,9 +96,10 @@ class AdminPageRouter
             }
 
             // Check for extendify-launch-success as other plugins will not override
-            // this as they intercept the request.
+            // this as they intercept the request. On the site, rewriting sent the
+            // agent's open redirect into wp-admin.
             // phpcs:ignore WordPress.Security.NonceVerification
-            if (isset($_GET['extendify-launch-success'])) {
+            if (isset($_GET['extendify-launch-success']) && \is_admin()) {
                 return \admin_url() . $this->getRoute();
             }
 

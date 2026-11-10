@@ -71,6 +71,7 @@ class PartnerData
         'enableImageImports-1-14-6' => false,
         'disableLibraryAutoOpen' => false,
         'enableApexDomain' => false,
+        'hideAgentReportIssue' => false,
         'showLaunch' => false,
         'showLaunchTitle' => false,
         'deactivated' => true,
@@ -103,6 +104,7 @@ class PartnerData
         'activeTests' => [],
         'showExtendifyCode' => false,
         'useComingSoon' => false,
+        'useAgentX' => false,
         'useSearchEngineBlock' => false,
         'extendifyCodeData' => [
             'link' => '',
@@ -111,6 +113,7 @@ class PartnerData
             'cta-primary' => '',
         ],
         'customDesign' => null,
+        'customDesignAgent' => null,
         'strings' => [],
     ];
 
@@ -158,6 +161,8 @@ class PartnerData
         self::$config['disableLibraryAutoOpen'] = ($data['disableLibraryAutoOpen']
             ?? self::$config['disableLibraryAutoOpen']);
         self::$config['enableApexDomain'] = ($data['enableApexDomain'] ?? self::$config['enableApexDomain']);
+        self::$config['hideAgentReportIssue'] = ($data['hideAgentReportIssue']
+            ?? self::$config['hideAgentReportIssue']);
         self::$name = ($data['Name'] ?? self::$name);
         self::$colors = [
             'backgroundColor' => ($data['backgroundColor'] ?? null),
@@ -207,10 +212,12 @@ class PartnerData
         self::$config['activeTests'] = ($data['activeTests'] ?? self::$config['activeTests']);
         self::$config['showExtendifyCode'] = ($data['showExtendifyCode'] ?? self::$config['showExtendifyCode']);
         self::$config['useComingSoon'] = ($data['useComingSoon'] ?? self::$config['useComingSoon']);
+        self::$config['useAgentX'] = ($data['useAgentX'] ?? self::$config['useAgentX']);
         self::$config['useSearchEngineBlock'] = ($data['useSearchEngineBlock']
             ?? self::$config['useSearchEngineBlock']);
         self::$config['extendifyCodeData'] = ($data['extendifyCodeData'] ?? self::$config['extendifyCodeData']);
         self::$config['customDesign'] = ($data['customDesign'] ?? self::$config['customDesign']);
+        self::$config['customDesignAgent'] = ($data['customDesignAgent'] ?? self::$config['customDesignAgent']);
         self::$config['strings'] = ($data['strings'] ?? self::$config['strings']);
 
         // Add the job hook to fetch the partner data.
@@ -333,6 +340,7 @@ class PartnerData
             return [];
         }
 
+        $agentDesign = self::sanitizeAgentDesign(($result['data']['customDesignAgent'] ?? null));
         $sanitizedData = array_merge(
             Sanitizer::sanitizeUnknown($result['data']),
             [
@@ -341,6 +349,7 @@ class PartnerData
                     ENT_QUOTES | ENT_SUBSTITUTE | ENT_HTML401
                 )),
                 'customDesign' => self::sanitizeDesign($result['data']['customDesign'] ?? null),
+                'customDesignAgent' => ($agentDesign ?: null),
                 'strings' => self::sanitizeStrings($result['data']['strings'] ?? null),
             ]
         );
@@ -400,6 +409,50 @@ class PartnerData
         ]);
 
         return $kept ?: null;
+    }
+
+    /**
+     * The AI Agent's design, from its own column: CSS variables, templates, logos, spinner and backdrop shader.
+     *
+     * @param mixed $agent The customDesignAgent the partner-data response carried.
+     * @return array
+     */
+    private static function sanitizeAgentDesign($agent)
+    {
+        if (!is_array($agent)) {
+            return [];
+        }
+
+        // A cell pasted from the old combined export holds the agent's design under agent.
+        if (is_array($agent['agent'] ?? null)) {
+            $agent = $agent['agent'];
+        }
+
+        $spinner = ($agent['spinner'] ?? null);
+        $source = ($agent['spinnerSource'] ?? null);
+        $shader = ($agent['shader'] ?? null);
+        $logos = self::designEntries(($agent['logos'] ?? null), '/^(primary|secondary)$/', 'is_string');
+        return array_filter([
+            'tokens' => self::designEntries(
+                ($agent['tokens'] ?? null),
+                '/^--(?:[a-z]+-)*agentx(?:-[a-z0-9-]+)?$/',
+                function ($value) {
+                    // Printed inside a style tag, so nothing that could close the rule or the tag.
+                    return is_string($value) && !preg_match('/[<>{};]/', $value);
+                }
+            ),
+            'templates' => self::designEntries(
+                ($agent['templates'] ?? null),
+                '/^(template|header|bar|actions|notifications)$/',
+                function ($value) {
+                    return is_string($value) && preg_match('/^[A-Za-z0-9_-]+$/', $value);
+                }
+            ),
+            'logos' => array_filter(array_map('esc_url_raw', $logos)),
+            'spinner' => is_string($spinner) && preg_match('/^[A-Za-z0-9_-]+$/', $spinner) ? $spinner : '',
+            'spinnerSource' => is_string($source) ? \wp_check_invalid_utf8($source) : '',
+            'shader' => is_string($shader) ? \wp_check_invalid_utf8($shader) : '',
+        ]);
     }
 
     private static function designEntries($entries, $keyPattern, callable $accepts)

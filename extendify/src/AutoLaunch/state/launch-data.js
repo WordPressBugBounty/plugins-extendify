@@ -158,6 +158,9 @@ export const useLaunchDataStore = create(
 					description,
 					go,
 					...urlParamsMapped,
+					// The start-over reload arrives with no url params.
+					multilingual:
+						urlParams.multilingual ?? persisted.urlParams?.multilingual,
 				},
 			};
 		},

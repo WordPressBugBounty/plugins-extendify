@@ -9,6 +9,10 @@ import { useQuickEditStore } from '@quick-edit/state/store';
 import { useEffect } from '@wordpress/element';
 import { SidebarLayout } from './components/layouts/SidebarLayout';
 
+// Extendable colours selections with the design's highlight, unreadable on dark designs.
+const chatClass =
+	'flex min-h-0 flex-1 grow flex-col font-sans selection:bg-selection selection:text-selection-text';
+
 export const Chat = ({ busy, working, waiting, taskActive, children }) => {
 	const { setIsMobile, isMobile, mode } = useGlobalStore();
 	const canvasModal = useCanvasSeat() === 'modal';
@@ -40,10 +44,7 @@ export const Chat = ({ busy, working, waiting, taskActive, children }) => {
 	if (isMobile) {
 		return (
 			<MobileLayout>
-				<div
-					id="extendify-agent-chat"
-					className="flex min-h-0 flex-1 grow flex-col font-sans"
-				>
+				<div id="extendify-agent-chat" className={chatClass}>
 					{children}
 				</div>
 			</MobileLayout>
@@ -56,10 +57,7 @@ export const Chat = ({ busy, working, waiting, taskActive, children }) => {
 				{/* The docked panel holds the page's offset, so it stays behind. */}
 				{mode === 'docked-left' ? <SidebarLayout /> : null}
 				<CanvasModalLayout>
-					<div
-						id="extendify-agent-chat"
-						className="flex min-h-0 flex-1 grow flex-col font-sans"
-					>
+					<div id="extendify-agent-chat" className={chatClass}>
 						{children}
 					</div>
 				</CanvasModalLayout>
@@ -70,10 +68,7 @@ export const Chat = ({ busy, working, waiting, taskActive, children }) => {
 	if (mode === 'docked-left') {
 		return (
 			<SidebarLayout>
-				<div
-					id="extendify-agent-chat"
-					className="flex min-h-0 flex-1 grow flex-col font-sans"
-				>
+				<div id="extendify-agent-chat" className={chatClass}>
 					{children}
 				</div>
 				{editModeOn && (
@@ -90,10 +85,7 @@ export const Chat = ({ busy, working, waiting, taskActive, children }) => {
 
 	return (
 		<DragResizeLayout>
-			<div
-				id="extendify-agent-chat"
-				className="flex min-h-0 flex-1 grow flex-col font-sans"
-			>
+			<div id="extendify-agent-chat" className={chatClass}>
 				{children}
 			</div>
 			{editModeOn && (
